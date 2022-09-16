@@ -1,14 +1,16 @@
-<div id="title">
- <p><img src="https://avatars.githubusercontent.com/u/34801215?v=4" width="250" ><p>
- <h1>blnkn</h1>
-</div>
+<!doctype html>
+<html lang="en-US">
+<head>
+</head>
 
-<center><p><h3><strong>Writeups</strong></h3></p></center>
+<body>
+  <div id="title">
+   <p><img src="https://avatars.githubusercontent.com/u/34801215?v=4" width="250"><p>
+   <h1>blnkn</h1>
+   <p><h3><strong>HTB Writeups</strong></h3></p>
+  </div>
+  <div id="title">
+    <a href="url">link text</a>
+  </div>
 
-## Hello World
-```
-ls -la 
-apt-get install 1337-package -y
-rm -rf /
-```
-> works great now
+</body>
