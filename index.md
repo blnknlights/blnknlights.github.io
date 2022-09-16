@@ -1,6 +1,6 @@
 <p align="center">
-  <pre>blnkn</pre><br>
+  <h1>blnkn</h>
   <img src="https://avatars.githubusercontent.com/u/34801215?v=4" width="250">
-  <pre>HTB Writeups</pre><br>
+  <h3>HTB Writeups</h>
   <a href="/htb/trick">trick</a>
 </p>
