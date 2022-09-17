@@ -37,12 +37,12 @@ trick.htb.              604800  IN      SOA     trick.htb. root.trick.htb. 5 604
 ---
 
 ## SQLi
-<a href="http://preprod-payroll.trick.htb" target="_blank">http://preprod-payroll.trick.htb</a>
-The preprod portal has a login page, which is vulnerable to SQli  
+<a href="http://preprod-payroll.trick.htb" target="_blank">http://preprod-payroll.trick.htb</a><br/>
+The preprod portal has a login page, which is vulnerable to SQli<br/>
 ![sqli](./sqli.png)
 
 We now have access to the payroll portal, it might be worth testing the site for more SQLi vulns  
-After tryin sqlmap on various forms, the 'save deduction' form seems to be vulnerable   
+After tryin sqlmap on various forms, the 'save deduction' form seems to be vulnerable<br/>
 ![save-deductions-form](./deductions.png)
 
 ```
@@ -54,8 +54,7 @@ Table: users
 [1 entry]
 +----+-----------+----------------+------+---------+---------+-----------------------+------------+
 | id | doctor_id | name           | type | address | contact | password              | username   |
-+----+-----------+----------------+------+---------+---------+-----------------------+------------+
+---+-----------+----------------+------+---------+---------+-----------------------+------------+
 | 1  | 0         | Administrateur | 1    | <blank> | <blank> | SuperGucciRainbowCake | Enemigosss |
 +----+-----------+----------------+------+---------+---------+-----------------------+------------+
 ```
----
