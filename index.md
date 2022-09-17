@@ -4,10 +4,12 @@
   <h1>HTB Writeups</h1>
   <br>
 </div>
+
 ## Easy
 ---
 ---
 <br>
+
 ## Medium
 ---
 <img align="right" width="40" src="http://www.fillmurray.com/100/100">
@@ -20,6 +22,7 @@
 <p align="left" ><a href="/htb/machines/trick">trick</a></p>
 ---
 <br>
+
 ## Hard
 ---
 ---
