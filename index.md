@@ -1,6 +1,17 @@
-<p align="center">
-  <h1>blnkn</h1>
-  <img src="https://avatars.githubusercontent.com/u/34801215?v=4" width="250">
-  <h3>HTB Writeups</h3>
-  <a href="/htb/trick" align="center">trick</a>
-</p>
+<p align="center"><h1>blnkn</h1></p>
+<p align="center"><img src="https://avatars.githubusercontent.com/u/34801215?v=4" width="250"></p>
+<p align="center"><h3>HTB Writeups</h3></p>
+
+<p align="center"><a href="/htb/trick" align="center">trick</a></p>
+---
+
+## `right` alignment
+
+<img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100">
+
+This is the code you need to align images to the right:
+```
+<img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100">
+```
+
+---
