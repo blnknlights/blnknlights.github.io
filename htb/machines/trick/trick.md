@@ -207,6 +207,7 @@ michael security
 ```
 a quick google search for "fail2ban privesc" an we know we can execute arbitrary command with this  
 let's try to make a bash suid  
+I'm now realising that that fail2ban file in the home folder is probably not a hint, but a leftover from somebody else, lets copy over the original.
 ```bash
 cp /etc/fail2ban/action.d/iptables-multiport.conf iptables-multiport.conf
 ```
