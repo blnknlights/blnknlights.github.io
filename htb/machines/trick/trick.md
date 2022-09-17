@@ -1,4 +1,5 @@
 # Nmap 
+---
 ```
 22 - OpenSSH 7.9p1 Debian 10+deb10u2
 25 - Postfix
@@ -8,6 +9,7 @@
 ---
 
 ## DNS Enum
+---
 ```
 nslookup
 > SERVER 10.10.11.166
@@ -37,7 +39,9 @@ trick.htb.              604800  IN      SOA     trick.htb. root.trick.htb. 5 604
 ---
 
 ## SQLi
+---
 <a href="http://preprod-payroll.trick.htb" target="_blank">http://preprod-payroll.trick.htb</a><br/>
+  
 The preprod portal has a login page, which is vulnerable to SQli  
   
 ![sqli](./sqli.png)
@@ -60,3 +64,4 @@ Table: users
 | 1  | 0         | Administrateur | 1    | <blank> | <blank> | SuperGucciRainbowCake | Enemigosss |
 +----+-----------+----------------+------+---------+---------+-----------------------+------------+
 ```
+---
