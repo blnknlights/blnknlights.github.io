@@ -9,19 +9,13 @@
 
 ## Easy
 ---
+<img align="right" width="30" src="/htb/machines/trick/trick.png">
+<p align="left" ><a href="/htb/machines/trick/trick.md">trick</a></p>
 ---
 <br>
 
 ## Medium
 ---
-<img align="right" width="30" src="http://www.fillmurray.com/100/100">
-<p align="left"><a href="/htb/machines/trick">trick</a></p>
-
-<img align="right" width="40" src="http://www.fillmurray.com/100/100">
-<p align="left" ><a href="/htb/machines/trick">trick</a></p>
-
-<img align="right" width="40" src="http://www.fillmurray.com/100/100">
-<p align="left" ><a href="/htb/machines/trick">trick</a></p>
 ---
 <br>
 

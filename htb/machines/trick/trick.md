@@ -1,4 +1,4 @@
-# ENUM
+# Enum
 ```
 22 - OpenSSH 7.9p1 Debian 10+deb10u2
 25 - Postfix
@@ -6,7 +6,7 @@
 80 - nginx 1.14.2 - unconfigured boostrap
 ```
 
-## DNS ENUM
+## DNS Enum
 ```
 (blnkn㉿Kolossus)-[~/sec/htb/machines/trick]─$ nslookup
 > SERVER 10.10.11.166
@@ -16,8 +16,6 @@ Address: 10.10.11.166#53
 166.11.10.10.in-addr.arpa       name = trick.htb.
 >
 ```
-> get the domain name
-
 ```
 (blnkn㉿Kolossus)-[~/sec/htb/machines/trick]─$ dig axfr @10.10.11.166 trick.htb
 
@@ -35,7 +33,11 @@ trick.htb.              604800  IN      SOA     trick.htb. root.trick.htb. 5 604
  WHEN: Mon Jul 04 23:11:04 IST 2022
 ;; XFR size: 6 records (messages 1, bytes 231)
 ```
-> zone transfer
+
+http://preprod-payroll.trick.htb has a login page, which is vulnerable to SQli 
+```
+' OR 1=1 -- -
+```
 
 
 ```
