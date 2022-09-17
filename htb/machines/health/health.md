@@ -160,7 +160,7 @@ func UserSignIn(uname, passwd string) (*User, error) {
         snip
 ```
 
-So the actual encryption function is here: 
+So the actual encoding function is here: 
 ```go
 // use pbkdf2 encode password
 func EncodePassword(rawPwd string, salt string) string {
