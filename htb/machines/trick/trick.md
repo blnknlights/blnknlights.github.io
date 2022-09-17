@@ -1,12 +1,10 @@
-## Nmap 
+## Enumeration
 ```bash
 22 - OpenSSH 7.9p1 Debian 10+deb10u2
 25 - Postfix
 53 - BIND "9.11.5-P4-5.1+deb10u7-Debian"
 80 - nginx 1.14.2 - unconfigured boostrap
 ```
-
-## DNS Enum
 ```bash
 nslookup
 > SERVER 10.10.11.166
