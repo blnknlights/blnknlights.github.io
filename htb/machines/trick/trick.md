@@ -43,7 +43,7 @@ The preprod portal has a login page, which is vulnerable to SQli<br/>
 
 We now have access to the payroll portal, it might be worth testing the site for more SQLi vulns  
 After tryin sqlmap on various forms, the 'save deduction' form seems to be vulnerable<br/>
-![save-deductions-form](./deductions.png)
+![deductions](./deductions.png)
 
 ```
 sqlmap -r save_deductions.req --batch --threads 10 -D payroll_db -T users --dump
