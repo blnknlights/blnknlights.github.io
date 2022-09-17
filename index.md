@@ -1,13 +1,19 @@
-<img align="center" width="250" src="https://avatars.githubusercontent.com/u/34801215?v=4">
-<h1 align="center">HTB Writeups</h1>
+<div align="center">
+  <img width="250" src="https://avatars.githubusercontent.com/u/34801215?v=4">
+  <h1>HTB Writeups</h1>
+</div>
 
 ## Easy
 ---
 ---
 ## Medium
 ---
-<div align="center">
-  <img align="right" width="20" src="http://www.fillmurray.com/100/100">
-  <a align="left" href="/htb/machines/trick">trick</a>
-</div>
+<img align="right" width="20" src="http://www.fillmurray.com/100/100">
+<p align="left" ><a href="/htb/machines/trick">trick</a></p>
+
+<img align="right" width="20" src="http://www.fillmurray.com/100/100">
+<p align="left" ><a href="/htb/machines/trick">trick</a></p>
+
+<img align="right" width="20" src="http://www.fillmurray.com/100/100">
+<p align="left" ><a href="/htb/machines/trick">trick</a></p>
 ---
