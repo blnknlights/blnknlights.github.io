@@ -1,5 +1,5 @@
 <p align="center"><img src="https://avatars.githubusercontent.com/u/34801215?v=4" width="250"></p>
-<h1 align="center">HTB Writeups</h3>
+<h1 align="center">HTB Writeups</h1>
 
 ## Easy
 ---
