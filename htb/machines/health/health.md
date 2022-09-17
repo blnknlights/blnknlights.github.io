@@ -367,7 +367,7 @@ mysql> select * from tasks;
 so if we're quick enough we can update those tasks and instead of monitoring a validated url  
 we can set watever we want here without any restrictions, so we can just dump the id_rsa for root  
 ```bash
-ql> select * from tasks;
+mysql> select * from tasks;
 +--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
 | id                                   | webhookUrl               | onlyError | monitoredUrl             | frequency   | created_at          | updated_at          |
 +--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
