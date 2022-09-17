@@ -67,7 +67,7 @@ python3 smtp_brute.py
 ## SQLi
 [http://preprod-payroll.trick.htb](http://preprod-payroll.trick.htb)  
   
-the payroll portal can be found using gobuster vhost
+we saw the the payroll portal from the dig earlier, but it can be found using gobuster vhost too
 it has a login page, which is vulnerable to SQli  
   
 ![sqli](./sqli.png)
