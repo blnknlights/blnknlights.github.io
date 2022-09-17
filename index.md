@@ -9,7 +9,7 @@
 
 ## Easy
 ---
-<img align="right" width="25" src="/htb/machines/trick/trick.png">
+<img align="right" width="40" src="/htb/machines/trick/trick.png">
 <p align="left" ><a href="/htb/machines/trick/trick">HackTheBox - Trick</a></p>
 ---
 <br>
