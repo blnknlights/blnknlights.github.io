@@ -16,6 +16,8 @@
 
 ## Medium
 ---
+<img align="right" width="35" src="/htb/machines/health/health.png">
+<p align="left" ><a href="/htb/machines/health/health">HackTheBox - Health</a></p>
 ---
 <br>
 
