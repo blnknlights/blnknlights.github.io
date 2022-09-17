@@ -7,7 +7,7 @@
 ## Medium
 ---
 <div align="center">
-  <img align="right" width="100" src="http://www.fillmurray.com/100/100">
-  <a href="/htb/trick">trick</a>
+  <img align="right" width="20" src="http://www.fillmurray.com/100/100">
+  <a align="left" href="/htb/machines/trick">trick</a>
 </div>
 ---
