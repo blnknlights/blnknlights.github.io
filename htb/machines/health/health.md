@@ -176,7 +176,7 @@ hashcat -h|grep -i pbkdf2|head -4
   10900 | PBKDF2-HMAC-SHA256                                  | Generic KDF
   12100 | PBKDF2-HMAC-SHA512                                  | Generic KDF
 ```
-[https://forum.hashkiller.io/index.php?threads/help-identifying-this-hash.38156/](https://forum.hashkiller.io/index.php?threads/help-identifying-this-hash.38156/)
+[https://forum.hashkiller.io/index.php?threads/help-identifying-this-hash.38156/](https://forum.hashkiller.io/index.php?threads/help-identifying-this-hash.38156/)  
 found the expected hashcat format in the link above,  
 we need to transform the hex hash to b64  
 ```
