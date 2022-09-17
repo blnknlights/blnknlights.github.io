@@ -238,3 +238,4 @@ bash -p
 bash-5.0# wc -c /root/root.txt
 33 /root/root.txt
 ```
+let's not forget to put things back how they were, removing the config file from home and removing the suid flag from bash
