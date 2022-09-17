@@ -58,7 +58,7 @@ Table: users
 ---+-----------+----------------+------+---------+---------+-----------------------+------------+
 | 1  | 0         | Administrateur | 1    | <blank> | <blank> | SuperGucciRainbowCake | Enemigosss |
 +----+-----------+----------------+------+---------+---------+-----------------------+------------+
-```bash
+```
 
 The SQli can also be leveraged to dump files that www-data has access to:  
 ```bash
