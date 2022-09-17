@@ -9,8 +9,12 @@
 
 ## Easy
 ---
-<img align="right" width="30" src="/htb/machines/trick/trick.png">
-<p align="left" ><a href="/htb/machines/trick/trick.md">trick</a></p>
+<img align="right" width="25" src="/htb/machines/trick/trick.png">
+<p align="left" ><a href="/htb/machines/trick/trick">trick</a></p>
+<img align="right" width="25" src="/htb/machines/trick/trick.png">
+<p align="left" ><a href="/htb/machines/trick/trick">trick</a></p>
+<img align="right" width="25" src="/htb/machines/trick/trick.png">
+<p align="left" ><a href="/htb/machines/trick/trick">trick</a></p>
 ---
 <br>
 

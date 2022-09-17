@@ -34,10 +34,8 @@ trick.htb.              604800  IN      SOA     trick.htb. root.trick.htb. 5 604
 ;; XFR size: 6 records (messages 1, bytes 231)
 ```
 
-http://preprod-payroll.trick.htb has a login page, which is vulnerable to SQli 
-```
-' OR 1=1 -- -
-```
+[http://preprod-payroll.trick.htb](http://preprod-payroll.trick.htb) has a login page, which is vulnerable to SQli 
+![sqli](./sqli.png)
 
 
 ```
