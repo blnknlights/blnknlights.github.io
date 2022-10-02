@@ -415,3 +415,54 @@ mattermost=> select username,password,email,position from users;
  josh          | $2a$10$jcaXTs90C0vdQHI70yNnieFSsV7QLiinC5xzmLvwDaHIAqeWitz2W | josh@shoppy.htb         | Full Stack Developer
 (8 rows)
 ```
+### Port 9093
+it's ran by mattermost
+```bash
+root@shoppy:~# netstat -tulpen|grep 9093
+tcp6       0      0 :::9093                 :::*                    LISTEN      998        20482      1543/plugins/playbo
+root@shoppy:~# ps -ef|grep 1543
+matterm+    1543     997  0 16:16 ?        00:00:00 plugins/playbooks/server/dist/plugin-linux-amd64
+root        3972    2335  0 17:13 pts/1    00:00:00 grep 1543
+```
+it's a mattermost plugin:  
+maybe there's another way in with this  
+```json
+{
+    "id": "playbooks",
+    "name": "Playbooks",
+    "description": "Mattermost Playbooks enable reliable and repeatable processes for your teams using checklists, automation, and retrospectives.",
+    "homepage_url": "https://github.com/mattermost/mattermost-plugin-playbooks/",
+    "support_url": "https://github.com/mattermost/mattermost-plugin-playbooks/issues",
+    "release_notes_url": "https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.29.1",
+    "icon_path": "assets/plugin_icon.svg",
+    "version": "1.29.1",
+    "min_server_version": "6.3.0",
+    "server": {
+        "executables": {
+            "darwin-amd64": "server/dist/plugin-darwin-amd64",
+            "darwin-arm64": "server/dist/plugin-darwin-arm64",
+            "linux-amd64": "server/dist/plugin-linux-amd64",
+            "linux-arm64": "server/dist/plugin-linux-arm64",
+            "windows-amd64": "server/dist/plugin-windows-amd64.exe"
+        },
+        "executable": ""
+    },
+    "webapp": {
+        "bundle_path": "webapp/dist/main.js"
+    },
+    "settings_schema": {
+        "header": "",
+        "footer": "",
+        "settings": [
+            {
+                "key": "EnableExperimentalFeatures",
+                "display_name": "Enable Experimental Features:",
+                "type": "bool",
+                "help_text": "Enable experimental features that come with in-progress UI, bugs, and cool stuff.",
+                "placeholder": "",
+                "default": null
+            }
+        ]
+    }
+}
+```
