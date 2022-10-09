@@ -304,6 +304,8 @@ curl -s \
   -H "X-Consul-Token: ${token}" \
   -X GET 'http://127.0.0.1:8500/v1/agent/services' |\
   jq "."
+```
+```json
 {
   "meow": {
     "ID": "meow",
@@ -353,6 +355,8 @@ curl -s \
   -H "X-Consul-Token: ${token}" \
   -X GET 'http://127.0.0.1:8500/v1/agent/service/meow' |\
   jq "."
+```
+```json
 {
   "ID": "meow",
   "Service": "meow",
@@ -419,6 +423,8 @@ curl -s \
   -H "X-Consul-Token: ${token}" \
   -X GET 'http://127.0.0.1:8500/v1/agent/service/blnkn' |\
   jq "."
+```
+```json
 {
   "ID": "blnkn",
   "Service": "blnkn",
