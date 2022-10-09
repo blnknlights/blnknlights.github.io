@@ -9,6 +9,8 @@
 
 ## Easy
 ---
+<img align="right" width="35" src="/htb/machines/photobomb/photobomb.png">
+<p align="left" ><a href="/htb/machines/photobomb/photobomb">HackTheBox - Photobomb</a></p>
 <img align="right" width="35" src="/htb/machines/trick/trick.png">
 <p align="left" ><a href="/htb/machines/trick/trick">HackTheBox - Trick</a></p>
 <img align="right" width="35" src="/htb/machines/shoppy/shoppy.png">
