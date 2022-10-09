@@ -18,6 +18,8 @@
 
 ## Medium
 ---
+<img align="right" width="35" src="/htb/machines/ambassador/ambassador.png">
+<p align="left" ><a href="/htb/machines/ambassador/ambassador">HackTheBox - Ambassador</a></p>
 <img align="right" width="35" src="/htb/machines/outdated/outdated.png">
 <p align="left" ><a href="/htb/machines/outdated/outdated">HackTheBox - Outdated</a></p>
 <img align="right" width="35" src="/htb/machines/scrambled/scrambled.png">
