@@ -138,7 +138,7 @@ http://panda.htb:8080 [200 OK] Content-Language[en-US], Country[RESERVED][ZZ], H
 ```
 
 ## Java SpringBoot - SSTI
-We know it's running springboot, so it's some kind of java app, and we controll the search field as an input.  
+We know it's running springboot, so it's some kind of java app, and we control the search field as an input.  
 [PayloadsAllTheThings - basic SSTI](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection#java---basic-injection)  
 
 when attempting a `${7*7}` we get an error, saying that some of the characters we used are banned, cool, that's something  
@@ -149,7 +149,7 @@ trying chars one by one, the one that's banned is the dollar sign, but the solut
 Multiple variable expressions can be used, if ${...} doesn't work try #{...}, *{...}, @{...} or ~{...}.
 ```
 
-`*`&`#`&`@` work, but `~` is also banned 
+`*`&`#`&`@` work, but `~` is also banned  
 ![at.png](at.png)
 
 Using this tool to generate java ssti payloads [https://github.com/VikasVarshney/ssti-payload](https://github.com/VikasVarshney/ssti-payload)  
@@ -703,7 +703,7 @@ cat << EOF > /dev/shm/privesc_creds.xml
 EOF
 ```
 
-note that the exact artist in the jpg needs to match the exact path the exact path in the curl, that is the same number of dot dot slash too, because of this line:  
+Note that the exact artist in the jpg needs to match the exact path in the curl, that is the same number of dot dot slash too, because of this line:  
 ```java
 if(el.getChild("uri").getText().equals(uri))
 ```
@@ -737,18 +737,3 @@ RwNRnQ60aT55qz5sV7N9AAAADXJvb3RAcmVkcGFuZGE=
 ```
 
 Done! That was fun
-```bash
-```
-```bash
-```
-```bash
-```
-```bash
-```
-```bash
-```
-```bash
-```
-```bash
-```
-
