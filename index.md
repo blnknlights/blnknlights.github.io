@@ -28,5 +28,8 @@
 <p align="left" ><a href="/htb/machines/scrambled/scrambled">HackTheBox - Scrambled</a></p>
 <img align="right" width="35" src="/htb/machines/health/health.png">
 <p align="left" ><a href="/htb/machines/health/health">HackTheBox - Health</a></p>
+<img align="right" width="35" src="/htb/machines/faculty/faculty.png">
+<p align="left" ><a href="/htb/machines/faculty/faculty">HackTheBox - Faculty</a></p>
+
 ---
 <br>
