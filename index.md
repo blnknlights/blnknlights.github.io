@@ -15,6 +15,8 @@
 <p align="left" ><a href="/htb/machines/trick/trick">HackTheBox - Trick</a></p>
 <img align="right" width="35" src="/htb/machines/shoppy/shoppy.png">
 <p align="left" ><a href="/htb/machines/shoppy/shoppy">HackTheBox - Shoppy</a></p>
+<img align="right" width="35" src="/htb/machines/red_panda/red_panda.png">
+<p align="left" ><a href="/htb/machines/red_panda/red_panda">HackTheBox - Red Panda</a></p>
 ---
 <br>
 
