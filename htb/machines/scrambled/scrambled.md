@@ -75,7 +75,7 @@ john kerbrute-key.txt --wordlist=/usr/share/wordlists/rockyou.txt
 Pegasus60
 ```
 
-### Silver Ticket Attack
+## Silver Ticket Attack
 ```
 - Golden ticket - Access to the whole Domain by stealing the krbtgt NT-Hash allowing to forge a TGT  
 - Silver ticket - Access to a single service by stealing the svc NT-Hash allowing to forge a TGS  
