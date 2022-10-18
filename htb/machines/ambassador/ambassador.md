@@ -175,7 +175,8 @@ developer@ambassador:~$ wc -c user.txt
 33 user.txt
 ```
 
-## Privesc
+## Forraging git history for tokens
+
 ```bash
 sudo -l
 [sudo] password for developer:
@@ -254,7 +255,7 @@ there's also the Django secret key, I believe that might allow us to do some att
 ```
 
 
-## Exploring Consul
+## Exploring the inner workings of Consul
 I know very little about consul, but from what I started reading this is a mesh networking solution for microservice oriented architectures. So in theory this is used to connect various containers accross nodes and datacenters. I don't believe there's any kubernetes running here, but there's lxd. I'll need to poke around to understand what consul really offers and how it works.  
 
 ports that seem related to consul
@@ -291,7 +292,8 @@ consul reload
 consul exec -node=ambassador 'ip a'   # Not working 
 ```
 
-## Talking directly to the API
+## Command Execution with the Consul Service API
+
 [https://www.consul.io/api-docs/api-structure](https://www.consul.io/api-docs/api-structure)   
 [https://www.consul.io/api-docs/agent/service#register-service](https://www.consul.io/api-docs/agent/service#register-service)   
 first I'll be forwarding the agent port to my local machine so I can use jq
