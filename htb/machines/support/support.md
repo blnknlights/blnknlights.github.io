@@ -307,9 +307,9 @@ And after looking at this data in bloodhound we can see that support has “Gene
 
 [https://cybergladius.com/htb-walkthrough-support](https://cybergladius.com/htb-walkthrough-support)
 
-On the DC we'll be using powermad to add a user, the built in AD tools to give it Constrained Delegation Priviledges, Rubeus to generate hashes for the account. 
+On the DC we'll be using powermad to add a user, then built in AD tools to give it Constrained Delegation Priviledges, Rubeus to generate hashes for the account. 
 
-The from our own system we'll use impacket to leverage the fake user and request a TGT as the Administrator user.
+Then from our own system we'll use impacket to leverage the fake user and request a TGT as the Administrator user.
 
 ```bash
 git clone https://github.com/Kevin-Robertson/Powermad.git
