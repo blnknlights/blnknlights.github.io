@@ -14,7 +14,7 @@
 <img align="right" width="35" src="/htb/machines/shoppy/shoppy.png">
 <p align="left" ><a href="/htb/machines/shoppy/shoppy">HackTheBox - Shoppy</a></p>
 <img align="right" width="35" src="/htb/machines/support/support.png">
-<p align="left" ><a href="/htb/machines/support/support">HackTheBox - Support</a></p>
+<p align="left" ><a href="/htb/machines/support/support">HackTheBox - Suppor/a></p>
 <img align="right" width="35" src="/htb/machines/red_panda/red_panda.png">
 <p align="left" ><a href="/htb/machines/red_panda/red_panda">HackTheBox - Red Panda</a></p>
 <img align="right" width="35" src="/htb/machines/trick/trick.png">

