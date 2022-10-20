@@ -230,7 +230,7 @@ func SearchUserByName(opt SearchOption) (us []*User, err error) {
 }
 ```
 
-oposed fix is to use a prepared statement, instead of a simple string concatenation
+The proposed fix is to use a prepared statement, instead of a simple string concatenation, pretty classic.
 ```go
 err = x.Limit(opt.Limit).Where("type=0").And("lower_name like ?", "%" + opt.Keyword + "%").Find(&us)
 ```
