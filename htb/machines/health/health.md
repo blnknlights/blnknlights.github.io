@@ -235,7 +235,7 @@ The proposed fix is to use a prepared statement, instead of a simple string conc
 err = x.Limit(opt.Limit).Where("type=0").And("lower_name like ?", "%" + opt.Keyword + "%").Find(&us)
 ```
 
-The query is done with XORM - eXtra ORM for Go, ORM stands for Object-Relational-Mapper, Object-relational-mapping is the idea of being able to write SQL queries using the object-oriented paradigm of your preferred programming language. So at a glance the query shoul look approximately like that:
+The query is done with XORM - eXtra ORM for Go, ORM stands for Object-Relational-Mapper, Object-relational-mapping is the idea of being able to write SQL queries using the object-oriented paradigm of your preferred programming language. So at a glance the query should look approximately like that:
 ```sql
 select * from user where (type=0 and lower_name like '%<keyword>%');
 ```
