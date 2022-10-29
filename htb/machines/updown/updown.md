@@ -26,10 +26,10 @@ Service detection performed. Please report any incorrect results at https://nmap
 # Nmap done at Thu Sep 15 15:13:11 2022 -- 1 IP address (1 host up) scanned in 7.62 seconds
 ```
 
-Landing page shows siteisup.htb so we can start to look for subdomains of it with gobuster in the background. As this is running we can start playing with the site, we can use the website check to call our own box:
+Landing page shows siteisup.htb so we can start to look for subdomains of it with gobuster in the background. As this is running we can start playing with the site, we can use the website check to call our own box:  
 ![siteisup.png](siteisup.png)
 
-It can call itself too 
+It can call itself too:  
 ![itself.png](itself.png)
 
 In the meantime gobuster found the dev.siteisup.htb subdomain, but it returns 403  
@@ -55,7 +55,7 @@ Progress: 48788 / 151266 (32.25%)
 We might also be able to connect to filtered ports behind a firewall?  
 Lets have nmap run on all ports just in case
 
-Can we get a response from dev.siteisup.htb from the health page?.. no
+Can we get a response from dev.siteisup.htb from the health page?.. no  
 ![isdown.png](isdown.png)
 
 since we receive connections on our own machine we can setup a server that will respond 302 redirect to wherever we want.
@@ -161,7 +161,7 @@ Target: http://siteisup.htb/
 
 
 ## Sensitive Information Disclosure - Git repo
-We could download things manually but this tool can help automating the process:
+We could download things manually but this tool can help automating the process:  
 [https://github.com/arthaud/git-dumper](https://github.com/arthaud/git-dumper)
 ```bash 
 python3 ~/git-dumper/git_dumper.py http://siteisup.htb/dev/ .
@@ -275,7 +275,7 @@ curl -siH "Special-Dev: only4dev" http://dev.siteisup.htb|head -1
 HTTP/1.1 200 OK
 ```
 
-Lets setup Burp to add that header on all requests for us:
+Lets setup Burp to add that header on all requests for us:  
 ![headers.png](headers.png)  
 
 And we now have access to the dev vhost, that's a similar app to the main one, but we can scan lists of hosts instead of just one
@@ -584,7 +584,7 @@ clicking those paths and this works, as until the server stops listening to viva
 
 
 ## Exploring system files with the RCE
-A quick look the disabled functions and we know we're probably not gonna be able to do a reverse shell directly, but we know we can use `file_get_contents()` as we saw it used in checker.php, maybe we can use that read some files on the box instead? 
+A quick look the disabled functions and we know we're probably not gonna be able to do a reverse shell directly, but we know we can use `file_get_contents()` as we saw it used in checker.php, maybe we can use that read some files on the box instead?   
 ![disabled.png](disabled.png)
 
 ```php
@@ -652,7 +652,7 @@ no we can't, this is apache so we're probably running as www-data, trying to thi
 
 
 ## Further enumeraton of the PHP Server
-![disabled.png](disabled.png)
+![disabled.png](disabled.png)  
 
 ```bash
 printf 'pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wifcontinued,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_get_handler,pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,pcntl_async_signals,pcntl_unshare,error_log,system,exec,shell_exec,popen,passthru,link,symlink,syslog,ld,mail,stream_socket_sendto,dl,stream_socket_client,fsockopen'|tr "," "\n"
