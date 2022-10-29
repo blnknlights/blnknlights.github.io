@@ -26,6 +26,8 @@
 ---
 <img align="right" width="35" src="/htb/machines/ambassador/ambassador.png">
 <p align="left" ><a href="/htb/machines/ambassador/ambassador">HackTheBox - Ambassador</a></p>
+<img align="right" width="35" src="/htb/machines/updown/updown.png">
+<p align="left" ><a href="/htb/machines/updown/updown">HackTheBox - Updown</a></p>
 <img align="right" width="35" src="/htb/machines/health/health.png">
 <p align="left" ><a href="/htb/machines/health/health">HackTheBox - Health</a></p>
 <img align="right" width="35" src="/htb/machines/outdated/outdated.png">
