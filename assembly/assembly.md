@@ -7,7 +7,7 @@ NASM - uses the Intel syntax
 ## GAS example (AT&T)
 
 A simple program that exits 2
-```gas
+```asm
 .section .data
 .section .text
 .globl _start
@@ -130,7 +130,7 @@ Full-32 bit:           EIP, ESP, EBP
 ```
 ```
 IP -> Instruction Pointer - stores the offset address of the next instruction
-SP -> Stack Pointer       - stores the offset withing the program stack
+SP -> Stack Pointer       - stores the offset within the program stack
 BP -> Base Pointer        - stores param variables passed to a subroutine
 ```
 
