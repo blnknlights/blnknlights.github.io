@@ -35,11 +35,11 @@ PE   - Portable Executable Format  - (Windows)
 
 ## Memory structure:
 ```
-.text - the actual assembler instructions of the program. RO
-.data - global and static variables that are explicitly initialized by the program.
+stack - grows down (like stalactites) - LIFO - last in first out - return address, parameters, frame pointers 
+heap  - grows up (like stalactites) - dynamically allocated program memory
 .bss  - statically allocated variables represented exclusively by 0 bits
-heap  - grows up to the higher memory address
-stack - grous down - iast in first out - return address, parameters, frame pointers
+.data - global and static variables that are explicitly initialized by the program.
+.text - the actual assembler instructions of the program. RO
 ```
 
 ## Modern memory protections:
