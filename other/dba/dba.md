@@ -1,8 +1,5 @@
-# CRUD Operation in a few DBMS
-
-
 ## MongoDB CRUD
-```
+```sql
 mongosh
 show dbs
 use users
@@ -18,7 +15,7 @@ db.staff_info.find() # this reads all items in the collection "staff_info"
 mongoimport -d cities -c cityinfo —type CSV —file ./cities.csv —headerline	
 mongoexport --uri="mongodb://127.0.0.1:27017/super" --collection=users --out=mongotest.json
 ```
-```
+```sql
 db.getUsers()
 db.createUser(
   {
@@ -39,7 +36,7 @@ db.dropUser("bruce")
 ```
 
 ## Couchbase CRUD
-```
+```sql
 export PATH=$PATH:/opt/couchbase/bin
 couchbase-cli bucket-create -c 127.0.0.1:8091 --username Administrator --password Omgpassword! --bucket example-bucket --bucket-type couchbase --bucket-ramsize 512
 Log in to CBQ:
@@ -55,7 +52,7 @@ couchbase-cli bucket-delete -c 127.0.0.1:8091 --username Administrator --passwor
 ```
 
 ## PostgreSQL CRUD
-```
+```sql
 psql  
 psql -U mmuser -W -d mattermost
 \l          # list databases
@@ -100,7 +97,7 @@ from '/var/lib/pgsql/content-db-essentials/cities.csv' DELIMITER ',' CSV HEADER;
 
 
 ## MySQL/MariaDB
-```
+```sql
 mysql -u root -p
 mysql -u grafana -p -h example.org -D grafana
 show databases;	
@@ -143,7 +140,7 @@ LOAD DATA INFILE '/var/lib/mysql/cities.csv' INTO table city_info Fields termina
 
 	
 ## MsSQL CRUD
-```
+```sql
 /opt/mssql-tools/sqlcmd
 sqlcmd -S 127.0.0.1 -U sa -P 'OmgPassw0rd!'
 select name from sys.databases                    # list databases 
@@ -166,7 +163,7 @@ move 'AdventureworksDW2017_log' to '/var/opt/mssql/data/AdventureworksDW2017.ldf
 ```
 	
 ## Sqlite CRUD
-```
+```sql
 .databases                    # display attached databases
 .tables                       # display tables 
 .schema users                 # show the schema of table users
@@ -177,17 +174,17 @@ select * from key_names;
 ```
 
 create and attach test.db
-```
+```sql
 sqlite3 test.db 
 ```
 
 attach an existing db
-```
+```sql
 ATTACH DATABASE 'testDB.db' as 'TEST';
 ```
 
 create a table schema
-```
+```sql
 CREATE TABLE users(
    id INT PRIMARY KEY     NOT NULL,
    username       TEXT    NOT NULL,
@@ -197,14 +194,13 @@ CREATE TABLE users(
 ```
 
 insert items in the table 
-```
+```sql
 INSERT INTO users (id, username, hash, salt)
 VALUES (1, 'Paul', '5f4dcc3b5aa765d61d8327deb882cf99', 'salty');
 ```
-```
 
 ## Redis CRUD
-```
+```sql
 redis-cli -h localhost -p 6379
 redis-cli
 INFO                 # if NOAUTH Authentication required, then auth is needed 
