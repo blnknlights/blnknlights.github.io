@@ -24,6 +24,8 @@
 
 ## Medium
 ---
+<img align="right" width="35" src="/htb/machines/awkward/awkward.png">
+<p align="left" ><a href="/htb/machines/awkward/awkward">HackTheBox - Awkward</a></p>
 <img align="right" width="35" src="/htb/machines/ambassador/ambassador.png">
 <p align="left" ><a href="/htb/machines/ambassador/ambassador">HackTheBox - Ambassador</a></p>
 <img align="right" width="35" src="/htb/machines/updown/updown.png">
