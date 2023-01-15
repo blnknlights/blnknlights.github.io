@@ -115,7 +115,7 @@ There's a sign up page, we create an account and then sign in, this gives us a t
 ![verify.png](verify.png)  
 
 Looking at the http history in burp, this looks like the feature isn't implemented over http but over websocket  
-![verify.png](verify.png)  
+![switching.png](switching.png)  
 
 So we switch to websocket in burp and find that we're just sending a single key,value pair json dict, and after playing around in the repeater we find it to be vulnerable to SQLi   
 ![socket_1.png](socket_1.png)   
