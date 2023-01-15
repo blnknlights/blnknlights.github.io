@@ -225,7 +225,7 @@ Table: accounts
 +---------+-------------------+----------------------+----------+
 ```
 
-## Privesc
+## Privesc with doas + dstat plugins
 
 We have doas as SUID
 ```bash
