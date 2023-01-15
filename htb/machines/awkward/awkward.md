@@ -789,7 +789,7 @@ So this happens because our sketchy item id needs be present in the cart file fo
 }
 ```
 
-Looking at the code for the add to cart, it takes the item id from our payload and copies the content of the filename corresponding to the item id we provided, those files are in `/var/www/store/product-details` and we have write access in there, so let's go write a new product id file ad id 4 for instance, and put our sketchy item id in there:
+Looking at the code for the add to cart, it takes the item id from our payload and copies the content of the filename corresponding to the item id we provided, those files are in `/var/www/store/product-details` and we have write access in there, so let's go write a new product id file add id 4 for instance, and put our sketchy item id in there:
 ```bash
 -bash-5.1$ pwd
 /var/www/store/product-details
