@@ -382,7 +382,7 @@ Connection to 127.0.0.1 closed.
 
 wink wink
 ```bash
-printf '' > ~/.ssh/authorized_keys
+> ~/.ssh/authorized_keys
 sudo systemctl stop ssh                                                                                                                                                                130 ⨯
 sudo systemctl disable ssh
 ```
