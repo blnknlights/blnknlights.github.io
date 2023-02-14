@@ -296,8 +296,7 @@ q=214684938946805172920744670003068652739359145901721000338824398887748768263089
 
 ## Calculations
 
-Let's imagine we only have the public key   
-q is all we need to reconstitute the private key  
+Let's imagine we have the public key, but only part of the private key, like, from a screenshot, or an improperly sanitized pentest report. q is all we need to reconstitute the private key:
 
 Making p out of n and q
 ```python
