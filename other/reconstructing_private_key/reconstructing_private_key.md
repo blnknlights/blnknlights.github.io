@@ -342,7 +342,7 @@ python RsaCtfTool.py \
     -e 65537
 ```
 
-That can be used straight away or converted into an OpenSSH format PEM, like this:
+That can be used straight away or converted into an OpenSSH format, like this:
 ```bash
 chmod 400 none.reconstructed
 ssh-keygen -p -N "" -f none.reconstructed
