@@ -358,26 +358,24 @@ ssh-keygen -lf none.reconstructed
 3072 SHA256:hu3uUbm8VTDrnsvq5j/A+/2dkT40ysQvtAW891mFy30  (RSA)
 ```
 
-Which means this should be good to use:
+Which means this reconstructed key should also be good to use, and it is:
 ```bash
-[blnkn@Kolossus]:~/ssh_fiend% cat none.pub > ~/.ssh/authorized_keys
-[blnkn@Kolossus]:~/ssh_fiend% env|grep SSH
+cat none.pub > ~/.ssh/authorized_keys
+env|grep SSH
 SSH_AGENT_PID=1001
 SSH_AUTH_SOCK=/tmp/ssh-XXXXXXqkNOZh/agent.941
 
-[blnkn@Kolossus]:~/ssh_fiend% ssh -i none blnkn@127.0.0.1
-blnkn@Kolossus]:~% env|grep SSH
+ssh -i none blnkn@127.0.0.1
+env|grep SSH
 SSH_CLIENT=127.0.0.1 53594 22
 SSH_CONNECTION=127.0.0.1 53594 127.0.0.1 22
 SSH_TTY=/dev/pts/2
-[blnkn@Kolossus]:~%
 Connection to 127.0.0.1 closed.
 
-[blnkn@Kolossus]:~/ssh_fiend% ssh -i none.reconstructed blnkn@127.0.0.1
-[blnkn@Kolossus]:~% env|grep SSH
+ssh -i none.reconstructed blnkn@127.0.0.1
+env|grep SSH
 SSH_CLIENT=127.0.0.1 48906 22
 SSH_CONNECTION=127.0.0.1 48906 127.0.0.1 22
 SSH_TTY=/dev/pts/3
-[blnkn@Kolossus]:~%
 Connection to 127.0.0.1 closed.
 ```
