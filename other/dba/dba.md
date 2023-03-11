@@ -193,10 +193,40 @@ CREATE TABLE users(
 );
 ```
 
+```
+CREATE TABLE pies(
+   ip           TEXT    NOT NULL,
+   banner       TEXT,
+   auth         TEXT,
+   UNIQUE(ip)
+);
+```
+
+```
+INSERT INTO raspbian VALUES('asdf','asdf');
+```
+
 insert items in the table 
 ```sql
 INSERT INTO users (id, username, hash, salt)
 VALUES (1, 'Paul', '5f4dcc3b5aa765d61d8327deb882cf99', 'salty');
+```
+
+```sql
+ALTER TABLE table_name
+  ADD new_column_name column_definition;
+```
+
+delete rows in a table
+```sql
+DELETE FROM raspbian WHERE rowid = 2;
+DELETE FROM raspbian WHERE banner like '%Raspbian%';
+delete from raspbian where banner not like '%Raspbian%';
+```
+
+delete table
+```sql
+DROP TABLE table_name 
 ```
 
 ## Redis CRUD
