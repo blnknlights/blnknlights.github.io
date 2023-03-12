@@ -883,7 +883,7 @@ SELECT * FROM cmd_exec;
 DELETE FROM cmd_exec WHERE cmd_output IS NOT NULL;
 OP table cmd_exec;
 ```
-```sql
+
 This works because we're unning as superuser, in our case that would give us exec on the postgres container. but if the DB was on the host. that could have been interesting 
 ```sql
 \du
