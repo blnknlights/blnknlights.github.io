@@ -893,7 +893,7 @@ This works because we're unning as superuser, in our case that would give us exe
  postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
 ```
 
-using the socks proxy to scan the environment
+Using the socks proxy to scan the environment
 ```bash
 proxychains -q nmap --min-rate 10000 127.0.0.1 -oN scans/nmap.alpine
 PORT     STATE SERVICE
