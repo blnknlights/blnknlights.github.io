@@ -453,7 +453,7 @@ curl -X POST \
 Frank does not have the user flag, but we can drop a pubkey in `authorized_keys` and get a better shell for more enumeration
 
 Once we ssh to phil's shell, we can see that /bin/bash is already suid. Left by another HTB user.  
-We're here to learn so, I'm using the suid shell to login as root, and remove the suid from /bin/bas I'm using the suid shell to login as root, and remove the suid from /bin/bash. 
+We're here to learn so, I'm using the suid shell to login as root, and remove the suid from /bin/bash. 
 Finally I log out and back in with the proper shell.  
 ```bash
 bash-5.0# /bin/bash -p
