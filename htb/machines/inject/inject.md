@@ -461,7 +461,7 @@ bash-5.0# chmod -s /bin/bash
 bash-5.0# exit
 ```
 
-Starting pspy64 there's an ansible job that triggers every 2 min, that's probably our golden ticker as it globs every file in the task folder 
+Starting pspy64 there's an ansible job that triggers every 2 min, that's probably our golden ticket as it globs every file in the task folder, and it runs as root.
 ```
 2023/03/13 18:44:01 CMD: UID=0    PID=77819  | /bin/sh -c /usr/local/bin/ansible-parallel /opt/automation/tasks/*.yml
 ```
