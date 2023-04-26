@@ -96,7 +96,7 @@ SNIP
 ```
 
 So now we can login as admin with that token, and admin has access to an additionnal feature in the webapp, to dump the db, how convenient
-```
+```js
 router.get('/admin/export', AuthMiddleware, async (req, res, next) => {
     if (!req.user.is_admin) return res.redirect('/dashboard');
 
