@@ -11,7 +11,7 @@ Also in Fallout 3 The Vault 101 entrance password is "Amata".
 ```
 But absolutely none of that is relevant to the challenge, so, feel free to not read it :D
 
-Looking at the source all user passwords were generated with funny bash oneliner:
+Looking at the source all user passwords were generated with a funny bash oneliner:
 ```bash
 function genPass() {
     echo -n $RANDOM | md5sum | head -c 32
