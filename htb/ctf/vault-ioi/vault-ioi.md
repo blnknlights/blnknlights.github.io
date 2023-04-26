@@ -25,7 +25,7 @@ while true;do echo $RANDOM;done
 
 So we just have to bruteforce IDOR that, I did it in node for learning sake, but you could do that with the language of your choice
 
-```node
+```js
 const fetch = require('node-fetch');
 const crypto = require('crypto');
 
