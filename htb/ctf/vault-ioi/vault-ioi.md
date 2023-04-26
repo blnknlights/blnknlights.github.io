@@ -139,7 +139,7 @@ And it's looting time
 
 LOCK TABLES `saved_passwords` WRITE;
 /*!40000 ALTER TABLE `saved_passwords` DISABLE KEYS */;
-INSERT INTO `saved_passwords` VALUES (1,'admin','Web','ioivault.htb','admin','admin123','HTB{1d0r5_4r3_3v3rywh3r3!!!}'),(2,'louisbarnett','Web','spotify.com','louisbarnett','YMgC41@)pT+BV','student sub'),(3,'louisbarnett','Email','dmail.com','louisbarnett@dmail.com','L-~I6pOy42MYY#y','private mail'),(4,'ninaviola','Web','office365.com','ninaviola1','OfficeSpace##1','company email'),(5,'alvinfisher','App','Netflix','alvinfisher1979','efQKL2pJAWDM46L7','Family Netflix'),(6,'alvinfisher','Web','twitter.com','alvinfisher1979','7wYz9pbbaH3S64LG','old twitter account');
+INSERT INTO `saved_passwords` VALUES (1,'admin','Web','ioivault.htb','admin','admin123','HTB{***********************}'),(2,'louisbarnett','Web','spotify.com','louisbarnett','YMgC41@)pT+BV','student sub'),(3,'louisbarnett','Email','dmail.com','louisbarnett@dmail.com','L-~I6pOy42MYY#y','private mail'),(4,'ninaviola','Web','office365.com','ninaviola1','OfficeSpace##1','company email'),(5,'alvinfisher','App','Netflix','alvinfisher1979','efQKL2pJAWDM46L7','Family Netflix'),(6,'alvinfisher','Web','twitter.com','alvinfisher1979','7wYz9pbbaH3S64LG','old twitter account');
 /*!40000 ALTER TABLE `saved_passwords` ENABLE KEYS */;
 UNLOCK TABLES;
 ```
