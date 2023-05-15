@@ -100,6 +100,7 @@ from '/var/lib/pgsql/content-db-essentials/cities.csv' DELIMITER ',' CSV HEADER;
 ```sql
 mysql -u root -p
 mysql -u grafana -p -h example.org -D grafana
+select current_user;
 show databases;	
 use <db-name>;
 show tables;
@@ -136,6 +137,11 @@ City varchar(50),
 State varchar(50)
 ) ;
 LOAD DATA INFILE '/var/lib/mysql/cities.csv' INTO table city_info Fields terminated by ',' ENclosed by '"' Lines terminated by '\n' Ignore 1 ROWS;
+show grants;
+select * from mysql.user;
+select user,file_priv from mysql.user where file_priv='Y';
+select user,Super_priv from mysql.user where Super_priv='Y';
+select user();
 ```
 
 	
