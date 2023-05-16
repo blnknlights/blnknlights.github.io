@@ -40,8 +40,8 @@ Expires: Thu, 19 Nov 1981 08:52:00 GMT
 Pragma: no-cache
 ```
 
-[wap.png](wap.png)  
-[not.png](not.png)  
+![wap.png](wap.png)  
+![not.png](not.png)  
 
 That's a php app running cacti, cacti 1.2.22, and that has a CVE, which has a bunch of readily available POCs
 ```bash
