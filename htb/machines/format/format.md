@@ -430,8 +430,8 @@ it would correspond to this in redis-cli:
 redis-cli -s unix:/var/run/redis/redis.sock HSET asdf pro true
 ```
 
-And it is interesting to note that apparently curl will let you do that
-Let's try it out
+And it is interesting to note that apparently curl will let you do that...  
+So let's try it out
 ```bash
 curl -XHSET http://microblog.htb/static/unix:/var/run/redis/redis.sock:asdf%20pro%20true%20/asdf
 <html>
@@ -448,7 +448,7 @@ Nice!
 
 ## Automating the exploit
 
-The users are getting wiped quite frequently, and automating that looked like a fun exercise. Also because python requests wouldn't let us do the cool trick did with curl, using an invalid HTTP method... I had to do it in raw bytes in a TCP socket. I think it helped me a lot in getting a better understanding of how the proxy exploit works since we're working directly with what the actual bytes look like in the HTTP request. 
+The users are getting wiped quite frequently, and automating that looked like a fun exercise. Also because python requests wouldn't let us do the cool trick we did with curl, using an invalid HTTP method... I had to do it in raw bytes in a TCP socket. I think it helped me a lot in getting a better understanding of how the proxy exploit works since we're working directly with what the actual bytes look like in the HTTP request. 
 ```python
 import requests
 import socket
@@ -547,7 +547,7 @@ In depth explanation of how to reverse png compression filters to embed php in I
 This article is also really good an gives a great of all the different ways to embed php in images:  
 [https://www.synacktiv.com/en/publications/persistent-php-payloads-in-pngs-how-to-inject-php-code-in-an-image-and-keep-it-there](https://www.synacktiv.com/en/publications/persistent-php-payloads-in-pngs-how-to-inject-php-code-in-an-image-and-keep-it-there)  
 
-In french but also great content:
+In french but also great content:  
 [https://phil242.wordpress.com/2014/02/23/la-png-qui-se-prenait-pour-du-php/](https://phil242.wordpress.com/2014/02/23/la-png-qui-se-prenait-pour-du-php/)  
 
 Notes of some php things I could do
@@ -567,10 +567,10 @@ I spent a bunch of time trying to include a php shell embeded in an image, as de
 - png with php in idat -> not caught
 
 The extension of the uploaded things are still png though, so they need to be included somehow  
-I think it is probably possible, but I just didn't manage to make it work.  
-I'm sure if it is possible ippsec will show us the way in a few month.  
+Maybe it's possible, maybe it isn't, in any case I just didn't manage to make it work.  
+I'm sure if it is possible IppSec will show us the way in a few month.  
 
-That beeing said, once we have pro, we have write access to `/var/www/microblog/blnkn/uploads/` so we can use the same nginx misconfig we used to change the key in redis to write to the filesystem 
+That beeing said, once we have pro, we have write access to `/var/www/microblog/blnkn/uploads/` so we can use the same bug that gave us LFI earlier to write a php shell in uploads, since we controll the path.  
 ![info-burp.png](info-burp.png)  
 
 Then just visit the upload path and we got RCE
