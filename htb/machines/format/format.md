@@ -132,7 +132,7 @@ X-Frame-Options: SAMEORIGIN
 
 We can now read through the source code, and there are a lot of interesting things to note.  
 
-There's a `pro` feature that give an additional feature to upload images in the blogs, it has some input validation, but maybe we can get around those to upload a shell for some sort
+There's a `pro` feature that gives an additional feature to upload images in the blogs, it has some input validation, but maybe we can get around those to upload a shell of some sort
 
 
 ## XSS (red herring)
@@ -209,7 +209,7 @@ git:x:104:111:Git Version Control,,,:/home/git:/bin/bash
 
 ## Nginx proxy misconfiguration leading to a blind redis injection 
 
-At this stage it's pretty obvious that the app is using redis, and is connecting to it through a unix domain socket, but to be honest, I wouldn've never figured out any of the following without a hint.  
+At this stage it's pretty obvious that the app is using redis, and is connecting to it through a unix domain socket, but to be honest, I would've never figured out any of the following without a hint.  
 
 I was pointed to this writeup by `detectify`: [nginx proxy misconfig](https://labs.detectify.com/2021/02/18/middleware-middleware-everywhere-and-lots-of-misconfigurations-to-fix/)    
 
@@ -367,7 +367,7 @@ tcp        0      0 0.0.0.0:6379            0.0.0.0:*               LISTEN      
 tcp6       0      0 :::6379                 :::*                    LISTEN      0          1458108    470/redis-server *:
 ```
 
-Looking at my [notes](/other/dba/dba.md) to try and remember how things work in redis 
+Looking at my [notes](/other/dba/dba) to try and remember how things work in redis 
 ```bash
 root@3a4dd12cf617:/data# redis-cli -s /var/run/redis/redis.sock
 redis /var/run/redis/redis.sock> MSET hacked true
