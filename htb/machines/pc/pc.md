@@ -29,7 +29,7 @@ Nmap done: 1 IP address (1 host up) scanned in 2.19 seconds
 ```
 
 ```bash
-sudo nmap -Pn -sU --min-rate 10000 10.10.11.214 -oN scans/nmap.udp
+sudo nmap -Pn -p- 10.10.11.214 -oN scans/nmap.udp
 Starting Nmap 7.93 ( https://nmap.org ) at 2023-05-21 08:51 IST
 Nmap scan report for 10.10.11.214
 Host is up.
