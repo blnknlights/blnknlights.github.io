@@ -322,7 +322,7 @@ nJnpqg3f
 
 In the `Verfify Signature` section of [https://ssa.htb/guide](https://ssa.htb/guide), once provided with a valid Clearsign signature and the corresponding pub-key, the web-app returns a message parsed by the flask app, to confirm that the signature is valid. In that message we can see that the UID of the key is displayed, we control that UID since we created the key ourselves, and because this is Flask, The templating engine is likely Jinja, so, let's try to do SSTI from the UID of the key.
 
-Generating a new key-pair with a name of '{{ 7 * 7 }}'
+Generating a new key-pair with a name of {{ 7 * 7 }}
 ```bash
 gpg --gen-key                          2 ⨯
 gpg (GnuPG) 2.2.40; Copyright (C) 2022 g10 Code GmbH
