@@ -141,7 +141,7 @@ It also exposes the api's swagger
 
 
 ## SQL injection
-Now even though the aforementionned vuln isn't of much interest to us now, it hints to the fact that we have some abount of control over the queries that are beeing made to the backend db. And if we look at the requests made by the dashboard in burp, our amount of control is pretty obvious: 
+Now even though the aforementionned vuln isn't of much interest to us now, it hints to the fact that we have some amount of control over the queries that are beeing made to the backend db. And if we look at the requests made by the dashboard in burp, our amount of control is pretty obvious: 
 
 ![burp.jpg](burp.jpg)  
 
@@ -329,7 +329,7 @@ ls -la network-simulation.yml
 -rw-rw-rw- 1 juno juno 815 Mar  7 12:28 network-simulation.yml
 ```
 
-So after playing around for a while, tring to spin up revshells and the like, this is what ended up sticking, not that the folder when you put your bash needs to be writable by juno as well.
+So after playing around for a while, tring to spin up revshells and the like, this is what ended up sticking, note that the folder when you put your bash needs to be writable by juno as well.
 ```yaml
 general:
   # stop after 10 simulated seconds
@@ -414,7 +414,7 @@ Things are pretty straightforward from here
 ## Privesc reverse engineering a custom binary (sattrack)
 
 Now that we have a shell as jovian, we check his sudoers, and he has access to this satelite tracking app.  
-There are projects caled sattrack, but I believe this thing specifically is unique to the box as I couldn't find anything on the internet specifically matching it.  
+There are projects called sattrack, but I believe this thing specifically is unique to the box as I couldn't find anything on the internet specifically matching it.  
 Also the first seen date on virus total matches the release date of the box.  
 ```bash
 jovian@jupiter:~$ id
