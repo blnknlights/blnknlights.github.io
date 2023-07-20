@@ -280,6 +280,7 @@ xdebug.remote_enable=1
 xdebug.remote_port=9003
 ```
 
+## ImageMagic foothold
 This took me some time as I'm working on an arm machine, but I finally decided myself to spin up a droplet to try and see what exact version of imagemagick is comming with the app:
 ```bash
 scp -i ~/.ssh/do magick root@161.35.43.182:~
@@ -342,8 +343,7 @@ bob|bob
 a|a
 ```
 
-
-## Privesc
+## Binwalk privesc
 
 Looking around with pspy64, there's a process called by root that's running a shell script called malwarescan.sh
 ```bash
