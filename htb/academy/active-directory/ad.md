@@ -186,13 +186,13 @@ runas /netonly /user:Domain_Name\Domain_USER mmc
 
 ### LDAP Search Criterias
 ```
-Equal to        (attribute=123)     (&(objectclass=user)(displayName=Smith)
-Not equal to    (!(attribute=123))  (!objectClass=group)
-Present         (attribute=*)       (department=*)
-Not present     (!(attribute=*))    (!homeDirectory=*)
-Greater than    (attribute>=123)    (maxStorage=100000)
-Less than       (attribute<=123)    (maxStorage<=100000)
-Wildcards       (attribute=*A)      (givenName=*Sam)
+Equal to             (attribute=123)     (&(objectclass=user)(displayName=Smith)
+Not equal to         (!(attribute=123))  (!objectClass=group)
+Present              (attribute=*)       (department=*)
+Not present          (!(attribute=*))    (!homeDirectory=*)
+Greater than         (attribute>=123)    (maxStorage=100000)
+Less than            (attribute<=123)    (maxStorage<=100000)
+Wildcards            (attribute=*A)      (givenName=*Sam)
 Approximate match    (attribute~=123)    (sAMAccountName~=Jason)
 ```
 
@@ -202,7 +202,6 @@ Approximate match    (attribute~=123)    (sAMAccountName~=Jason)
 1.2.840.113556.1.4.804     LDAP_MATCHING_RULE_BIT_OR     A match is found if any bits from the attribute match the value. This rule is equivalent to a bitwise OR operator.
 1.2.840.113556.1.4.1941    LDAP_MATCHING_RULE_IN_CHAIN   This rule is limited to filters that apply to the DN. This is a special "extended" match operator that walks the chain of ancestry in objects all the way to the root until it finds a match.
 ```
-
 
 ## Filter types:
 ```
@@ -313,4 +312,5 @@ ldapsearch -h 10.129.1.207 -p 389 -x -b "dc=inlanefreight,dc=local"
 ./ldapsearch-ad.py -l 10.129.1.207 -d inlanefreight -u james.cross -p Summer2020 -t pass-pols
 ./ldapsearch-ad.py -l 10.129.1.207 -d inlanefreight -u james.cross -p Summer2020 -t kerberoast | grep servicePrincipalName:
 ./ldapsearch-ad.py -l 10.129.1.207 -d inlanefreight -u james.cross -p Summer2020 -t asreproast
+```
 
