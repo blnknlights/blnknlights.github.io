@@ -434,7 +434,7 @@ openssl x509 -in ldap-cert.pem -noout -text |grep Alternative -A1
 `htb.corp` is though so if we point it there and import the cert from the server in the PWM client, we get a working connection to the ldap server.
 ![ldap.png](ldap.png)  
 
-This means it has a valid user:password to connect to ldap, and since we can control where to point it to, we can just point it to ourselves:
+This means it has a valid user:password to connect to ldap, and since we can control where to point it to, we can just point it to ourselves:  
 ![intercept.png](intercept.png)  
 
 Setup a basic listener and hit the `Test Ldap Profile` button to get the password
