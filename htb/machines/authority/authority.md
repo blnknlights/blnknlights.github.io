@@ -555,7 +555,7 @@ Mode                LastWriteTime         Length Name
 ## Exploiting CVE-2022–26923 by Abusing Active Directory Certificate Services (ADCS)
 
 [https://systemweakness.com/exploiting-cve-2022-26923-by-abusing-active-directory-certificate-services-adcs-a511023e5366](https://systemweakness.com/exploiting-cve-2022-26923-by-abusing-active-directory-certificate-services-adcs-a511023e5366)  
-[https://tryhackme.com/room/cve202226923)](https://tryhackme.com/room/cve202226923))  
+[https://tryhackme.com/room/cve202226923)](https://tryhackme.com/room/cve202226923)  
 
 See available templates with the built in windows tools, we could grep through those 37 templates manually to find if any of those are vulnerable.
 ```bash
