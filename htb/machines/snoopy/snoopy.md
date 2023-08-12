@@ -543,7 +543,7 @@ key "rndc-key" {
 ## Exploiting Bind DNS
 
 Because we have the hmac sha, we can authenticate to the DNS server to make DNS record changes.  
-And we have access to the password reset page in the mattermost instance, which sends password reset erequests to users emails, so, we can highjack the mail server address, and reset people's passwords
+And we have access to the password reset page in the mattermost instance, which sends password reset requests to users emails, so, we can highjack the mail server address, and reset people's passwords
 ```bash
 cat commands
 server 10.10.11.212 53
@@ -788,8 +788,6 @@ End Date:   2023:08:12 14:55:40
 ```
 
 It works, but we don't have really have a way to leverage that on the remote machine because of the strict regex on the sudo command. We could probably successfully match the file by using a symlink on the path we control to `/root/id_rsa` but again, because of the strict regex validation, we can't leverage that to copy the infected files over with the `--copy` flag... Back to the drawing board
-```bash
-```
 
 [CVE-2023-20052](https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-clamav-xxe-TcSZduhN) affects clamav =< 1.0.0
 ```bash
