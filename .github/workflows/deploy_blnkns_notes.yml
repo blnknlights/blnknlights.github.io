@@ -34,6 +34,7 @@ jobs:
       - name: Run ghp-import
         run: | 
           ls -la
+          ls -la ../
           #ghp-import -n -p -f build/html
 
 
