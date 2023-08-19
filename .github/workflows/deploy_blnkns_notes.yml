@@ -33,7 +33,8 @@ jobs:
 
       - name: Run ghp-import
         run: | 
-          ghp-import -n -p -f build/html
+          ls -la
+          #ghp-import -n -p -f build/html
 
 
 #      - uses: blnknlights/blnknlights.github.io@main
