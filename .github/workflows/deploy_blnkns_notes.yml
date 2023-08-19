@@ -1,15 +1,14 @@
-name: "Deploy Sphinx Docs"
+name: "Deploy blnkns notes"
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
-  workflow_dispatch:
-
 jobs:
-  deploy:
+  deploy-blnkns-notes:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
