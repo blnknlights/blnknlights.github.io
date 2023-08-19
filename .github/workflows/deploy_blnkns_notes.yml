@@ -33,8 +33,10 @@ jobs:
 
       - name: Run ghp-import
         run: | 
+          pwd
           ls -la
-          ls -la ../
+          cd docs
+          ls -la
           #ghp-import -n -p -f build/html
 
 
