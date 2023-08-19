@@ -33,15 +33,4 @@ jobs:
 
       - name: Run ghp-import
         run: | 
-          pwd
-          ls -la
-          cd docs
-          ls -la
-          #ghp-import -n -p -f build/html
-
-
-#      - uses: blnknlights/blnknlights.github.io@main
-#        with:
-#          docs-folder: "docs/"
-
-
+          ghp-import -n -p -f docs/build/html
