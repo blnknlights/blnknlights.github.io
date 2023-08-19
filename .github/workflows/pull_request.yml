@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: ammaraskar/sphinx-action@master
+    - uses: blnknlights/blnknlights.github.io@main
       with:
         docs-folder: "docs/"
