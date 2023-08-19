@@ -9,7 +9,7 @@
 3000 - Graffana v8.2.0 - d7f71e9eae
 3306 - MySQL 8.0.30-0 ubuntu0.20.04.2
 ```
-the page on port 80 says devops will give you the password to developer. ok.
+The page on port 80 says devops will give you the password to developer. ok.
 ```bash
  dirsearch -u http://example.org                                                                                                                                                         130 ⨯
 
