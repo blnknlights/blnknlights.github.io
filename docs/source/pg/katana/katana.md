@@ -149,8 +149,7 @@ Target: http://192.168.168.83:8088/
 Task Completed
 ```
 
-According to the docs that would be version 1.5  
-![version.png](version.png)  
+According to the docs that would be version 1.5   
 
 The msf module works but we just get html out, the same as if we just curled it without the null byte
 ```bash
