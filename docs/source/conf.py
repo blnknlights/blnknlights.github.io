@@ -13,6 +13,7 @@ extensions = [
     "sphinx_favicon"
 ]
 exclude_patterns = [
+    "pg/katana/katana*",
     "htb/machines/hard/gofer/gofer*",
     "htb/machines/hard/mailroom/mailroom*",
     "htb/machines/hard/intensions/intensions*",
