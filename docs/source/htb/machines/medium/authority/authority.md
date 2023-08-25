@@ -111,7 +111,7 @@ Nmap done: 1 IP address (1 host up) scanned in 31.59 seconds
 ```
 
 Visiting port 8443 gives us the domain name
-[directory.png](directory.png)  
+![directory.png](directory.png)  
 
 Fuzzing that we get more subdomains
 ```
