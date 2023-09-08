@@ -14,7 +14,8 @@
 [https://www.hacklikeapornstar.com/new-release-hack-like-legend/](https://www.hacklikeapornstar.com/new-release-hack-like-legend/)  
 
 
-## More Wordlists
+## More Wordlists & Rules
+[https://github.com/d4rkduck1/OneRuleToRuleThemAll](https://github.com/d4rkduck1/OneRuleToRuleThemAll)  
 [https://github.com/praetorian-inc/Hob0Rules.git](https://github.com/praetorian-inc/Hob0Rules.git)  
 [https://github.com/danielmiessler/SecLists.git](https://github.com/danielmiessler/SecLists.git)  
 [https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.html](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.html)  

@@ -61,3 +61,15 @@ RSA
 ECDSA
 Diffie-Hellman
 ```
+
+
+## ColabCat
+
+Tried this colabcat thing, which runs hashcat on google Colab, which is some kind of jupiter notebook service on spare GCP GPU instances apparently, and for free, but my account has been blocked apparently. Maybe they cracked down on this now, that wouldn't be surprising.
+[https://github.com/someshkar/colabcat](https://github.com/someshkar/colabcat)  
+
+```
+Connection failed
+This account has been blocked from accessing Colab runtimes due to suspected abusive activity. This does not impact access to other Google products. If you believe this has been done in error, review the usage limitations and file an appeal.
+```
+Yea. No kidding

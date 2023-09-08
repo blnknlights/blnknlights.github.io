@@ -27,3 +27,4 @@ Other
    stego/stego
    tcpdump-vuln/tcpdump-vuln
    wordlists/wordlists
+   c/c
