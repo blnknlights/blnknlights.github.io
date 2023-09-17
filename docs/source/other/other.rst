@@ -28,3 +28,4 @@ Other
    tcpdump-vuln/tcpdump-vuln
    wordlists/wordlists
    c/c
+   air-ungap/air-ungap
