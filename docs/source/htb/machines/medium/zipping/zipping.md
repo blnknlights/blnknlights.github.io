@@ -125,7 +125,7 @@ Content-Disposition: form-data; name=\"submit\"
 
 After experimenting a little it looks like we can't really do this with requests, as far as I can tell requests doesn't provide that level of granularity, and just automatically matches name with the filename.   
 
-So I ended up borrowing a chunk of code form stack overflow to build the payload manually with htt.client
+So I ended up borrowing a chunk of code form stack overflow to build the payload manually with http.client
 ```python
 import subprocess
 import argparse
@@ -260,7 +260,7 @@ python3 zipper.py -p /var/www/html/shop/cart.php > ../loot/cart.php
 ## SQL injection
 
 Looking at cart.php, it's kinda funny to read, the dev is basically like: "Yea... I don't really like my boss, sooo I like to spice things up a little".
-```sql
+```php
 <?php
 // If the user clicked the add to cart button on the product page we can check for the form data
 if (isset($_POST['product_id'], $_POST['quantity'])) {
