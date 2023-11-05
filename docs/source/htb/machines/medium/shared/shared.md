@@ -242,7 +242,7 @@ So so far we have a lot of information, and a lot of noise but the things potent
 - PrestaShop 1.7
 - PrestaShop blockwishlist 2.0.1 
 
-# Blockwishlist sqli:
+## Blockwishlist sqli:
 [https://www.cybersecurity-help.cz/vdb/SB2022072609](https://www.cybersecurity-help.cz/vdb/SB2022072609)  
 [https://github.com/PrestaShop/blockwishlist/commit/b3ec4b85af5fd73f74d55390b226d221298ca084](https://github.com/PrestaShop/blockwishlist/commit/b3ec4b85af5fd73f74d55390b226d221298ca084)
 
