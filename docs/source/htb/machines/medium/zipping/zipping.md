@@ -304,7 +304,7 @@ function pdo_connect_mysql() {
     // Update the details below with your MySQL details
     $DATABASE_HOST = 'localhost';
     $DATABASE_USER = 'root';
-    $DATABASE_PASS = 'MySQL_P@ssw0rd!';
+    $DATABASE_PASS = 'M**************';
     $DATABASE_NAME = 'zipping';
     try {
         return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
@@ -317,7 +317,7 @@ function pdo_connect_mysql() {
 
 Building a test setup for the mysql db
 ```bash
-docker run --rm --name mysql -e MYSQL_ROOT_PASSWORD='MySQL_P@ssw0rd!' -d -p 127.0.0.1:3306:3306 mysql
+docker run --rm --name mysql -e MYSQL_ROOT_PASSWORD='M**************' -d -p 127.0.0.1:3306:3306 mysql
 21d6b47dc4080acbedc0495e3a9426b079eafeb2bd7c3bccb32c98918d432981
 ```
 I'll just change localhost to 127.0.0.1 explicitely for the local version
@@ -342,7 +342,7 @@ MySQL [(none)]> Bye
 
 Connecting to zipping and creating the products table based on the error we get when hitting the website
 ```bash
-mysql -u root -h 127.0.0.1 --password='MySQL_P@ssw0rd!' -D zipping
+mysql -u root -h 127.0.0.1 --password='M**************' -D zipping
 mysql: Deprecated program name. It will be removed in a future release, use '/usr/bin/mariadb' instead
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MySQL connection id is 9
