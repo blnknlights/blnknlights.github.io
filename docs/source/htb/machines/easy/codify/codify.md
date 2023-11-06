@@ -160,7 +160,7 @@ drwxrwxr-x 2 svc  svc   4096 Apr 21  2023 templates
 -rw-r--r-- 1 svc  svc  20480 Sep 12 17:45 tickets.db
 ```
 
-We don't have a slite3 client here but we can just exfiltrate the database with netcat
+We don't have a sqlite3 client here but we can just exfiltrate the database with netcat
 ```bash
 svc@codify:/var/www/contact$ md5sum tickets.db
 md5sum tickets.db
@@ -211,7 +211,7 @@ User joshua may run the following commands on codify:
     (root) /opt/scripts/mysql-backup.sh
 ```
 
-## Privesc through 
+## Privesc through shell glob matching
 
 This is what the script looks like
 ```bash
