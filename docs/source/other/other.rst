@@ -29,3 +29,4 @@ Other
    wordlists/wordlists
    c/c
    air-ungap/air-ungap
+   sast/sast
