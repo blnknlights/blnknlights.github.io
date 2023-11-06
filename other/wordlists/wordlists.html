@@ -1,0 +1,501 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="C" href="../c/c.html" /><link rel="prev" title="TCPdump" href="../tcpdump-vuln/tcpdump-vuln.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Making Custom Wordlists - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../htb/htb.html">Hack The Box</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../htb/academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../htb/machines/machines.html">Lab Machines</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/medium/medium.html">Medium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../other.html">Other</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="making-custom-wordlists">
+<h1>Making Custom Wordlists<a class="headerlink" href="#making-custom-wordlists" title="Permalink to this heading">#</a></h1>
+<section id="crunch">
+<h2>Crunch<a class="headerlink" href="#crunch" title="Permalink to this heading">#</a></h2>
+<p>Crunch can create wordlists based on parameters such as words of a specific length, a limited character set, or a certain pattern. It can generate both permutations and combinations</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">pattern</span><span class="o">&gt;</span> 
+<span class="o">-</span><span class="n">o</span> <span class="o">&lt;</span><span class="n">output</span> <span class="n">file</span><span class="o">&gt;</span>
+<span class="o">-</span><span class="n">d</span> <span class="n">limit</span> <span class="n">the</span> <span class="n">ammount</span> <span class="n">of</span> <span class="n">dup</span> <span class="nb">chr</span> <span class="n">ex</span> <span class="o">=</span> <span class="mi">2</span><span class="o">@</span> <span class="n">limits</span> <span class="n">the</span> <span class="n">lower</span> <span class="n">case</span> <span class="n">alphabet</span> <span class="n">to</span> <span class="n">output</span> <span class="n">like</span> <span class="n">aab</span> <span class="ow">and</span> <span class="n">aac</span> <span class="ow">not</span> <span class="n">aaa</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">@</span>  <span class="n">lower</span> <span class="n">case</span> <span class="nb">chr</span>
+<span class="p">,</span>  <span class="n">upper</span> <span class="n">case</span> <span class="nb">chr</span>
+<span class="o">%</span>  <span class="nb">int</span>
+<span class="o">^</span>  <span class="n">symbols</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>crunch<span class="w"> </span>&lt;minimum<span class="w"> </span>length&gt;<span class="w"> </span>&lt;maximum<span class="w"> </span>length&gt;<span class="w"> </span>&lt;charset&gt;<span class="w"> </span>-t<span class="w"> </span>&lt;pattern&gt;<span class="w"> </span>-o<span class="w"> </span>&lt;output<span class="w"> </span>file&gt;
+crunch<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">8</span><span class="w"> </span>-o<span class="w"> </span>wordlist<span class="w">   </span><span class="c1"># generate a wordlist of 4 to 8 characters, using the default character set</span>
+crunch<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">17</span><span class="w"> </span>-t<span class="w"> </span>ILFREIGHT201%@@@@<span class="w"> </span>-o<span class="w"> </span>wordlist<span class="w">    </span><span class="c1">#generate a wordlist 17 characters, ILFREIGHT201[0..9]&lt;uid&gt;</span>
+crunch<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span><span class="w"> </span>-t<span class="w"> </span><span class="m">10031998</span>@@@@<span class="w"> </span>-d<span class="w"> </span><span class="m">1</span><span class="w"> </span>-o<span class="w"> </span>wordlist
+crunch<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">8</span><span class="w"> </span>+<span class="w"> </span>+<span class="w"> </span><span class="m">12345</span><span class="w"> </span>-t<span class="w"> </span>apple@1%<span class="w"> </span>-l<span class="w"> </span>aaaaa@aa
+</pre></div>
+</div>
+</section>
+<section id="cupp">
+<h2>CUPP<a class="headerlink" href="#cupp" title="Permalink to this heading">#</a></h2>
+<p>Common User Password Profiler</p>
+<p>Used to create highly targeted and customized wordlists based on information gained from social engineering and OSINT.
+People tend to use personal information while creating passwords, such as phone numbers, pet names, birth dates, etc.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">i</span> <span class="n">interactive</span> 
+<span class="o">-</span><span class="n">l</span> <span class="n">load</span> <span class="n">wordlists</span> <span class="kn">from</span> <span class="nn">repo</span>
+</pre></div>
+</div>
+</section>
+<section id="kwprocessor">
+<h2>Kwprocessor<a class="headerlink" href="#kwprocessor" title="Permalink to this heading">#</a></h2>
+<p>Keyboard walks processor</p>
+<p>Tool that creates wordlists from keyboard walks logics</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">s</span>  <span class="n">shift</span> <span class="o">-</span> <span class="n">include</span> <span class="nb">chr</span> <span class="n">reachable</span> <span class="n">by</span> <span class="n">holding</span> <span class="n">shift</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./kwp<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>...<span class="w"> </span>basechars-file<span class="w"> </span>keymap-file<span class="w"> </span>routes-file
+./kwp<span class="w"> </span>-s<span class="w"> </span><span class="m">1</span><span class="w"> </span>basechars/full.base<span class="w"> </span>keymaps/en-us.keymap<span class="w"> </span>routes/2-to-10-max-3-direction-changes.route
+</pre></div>
+</div>
+</section>
+<section id="prince-processor">
+<h2>Prince processor<a class="headerlink" href="#prince-processor" title="Permalink to this heading">#</a></h2>
+<p>PRobability INfinite Chained Elements</p>
+<p><a class="reference external" href="https://github.com/hashcat/princeprocessor.git">https://github.com/hashcat/princeprocessor.git</a><br />
+Generates passwords using the PRINCE algorithm.<br />
+The program takes in a wordlist and creates chains of words taken from this wordlist.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">keyspace</span>          <span class="o">-</span> <span class="n">find</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">combinations</span> <span class="n">produced</span> <span class="kn">from</span> <span class="nn">the</span> <span class="nb">input</span> <span class="n">wordlist</span>
+<span class="o">--</span><span class="n">pw</span><span class="o">-</span><span class="nb">min</span><span class="o">=</span><span class="n">NUM</span>        <span class="o">-</span> <span class="n">change</span> <span class="nb">min</span> <span class="k">pass</span> <span class="n">length</span>
+<span class="o">--</span><span class="n">pw</span><span class="o">-</span><span class="nb">max</span><span class="o">=</span><span class="n">NUM</span>        <span class="o">-</span> <span class="n">default</span> <span class="ow">is</span> <span class="mi">16</span> <span class="nb">chr</span>
+<span class="o">--</span><span class="n">elem</span><span class="o">-</span><span class="n">cnt</span><span class="o">-</span><span class="nb">min</span><span class="o">=</span><span class="n">NUM</span>  <span class="o">-</span> <span class="n">Minimum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">elements</span> <span class="n">per</span> <span class="n">chain</span>
+<span class="o">--</span><span class="n">elem</span><span class="o">-</span><span class="n">cnt</span><span class="o">-</span><span class="nb">max</span><span class="o">=</span><span class="n">NUM</span>  <span class="o">-</span> <span class="n">Maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">elements</span> <span class="n">per</span> <span class="n">chain</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./pp64.bin<span class="w"> </span>-h
+./pp64.bin<span class="w"> </span>--keyspace<span class="w"> </span>&lt;<span class="w"> </span>words<span class="w">                               </span><span class="c1"># find the number of combinations produced from the input wordlist</span>
+./pp64.bin<span class="w"> </span>-o<span class="w"> </span>wordlist.txt<span class="w"> </span>&lt;<span class="w"> </span>words<span class="w">                          </span><span class="c1"># output a worldlist based on words</span>
+./pp64.bin<span class="w"> </span>--pw-min<span class="o">=</span><span class="m">10</span><span class="w"> </span>--pw-max<span class="o">=</span><span class="m">25</span><span class="w"> </span>-o<span class="w"> </span>wordlist.txt<span class="w"> </span>&lt;<span class="w"> </span>words<span class="w">  </span><span class="c1"># output a worldlist based on words with a min size of 10 and max size 25</span>
+./pp64.bin<span class="w"> </span>--elem-cnt-min<span class="o">=</span><span class="m">3</span><span class="w"> </span>-o<span class="w"> </span>wordlist.txt<span class="w"> </span>&lt;<span class="w"> </span>words<span class="w">         </span><span class="c1"># The command above will output words with three elements or more, i.e.,&quot; dogdogdog`.&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="cewl">
+<h2>CeWL<a class="headerlink" href="#cewl" title="Permalink to this heading">#</a></h2>
+<p>Spiders and scrapes a website and creates a list of the words that are present.
+This kind of wordlist is effective, as people tend to use passwords associated with the content they write or operate on
+CeWL also supports the extraction of emails from websites.
+It’s helpful to get this information when phishing, password spraying, or brute-forcing passwords later.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">d</span> <span class="o">&lt;</span><span class="n">depth</span> <span class="n">to</span> <span class="n">spider</span><span class="o">&gt;</span> 
+<span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">minimum</span> <span class="n">word</span> <span class="n">length</span><span class="o">&gt;</span> 
+<span class="o">-</span><span class="n">w</span> <span class="o">&lt;</span><span class="n">output</span> <span class="n">wordlist</span><span class="o">&gt;</span>
+<span class="o">-</span><span class="n">e</span> <span class="n">extract</span> <span class="n">emails</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cewl<span class="w"> </span>-d<span class="w"> </span>&lt;depth<span class="w"> </span>to<span class="w"> </span>spider&gt;<span class="w"> </span>-m<span class="w"> </span>&lt;minimum<span class="w"> </span>word<span class="w"> </span>length&gt;<span class="w"> </span>-w<span class="w"> </span>&lt;output<span class="w"> </span>wordlist&gt;<span class="w"> </span>&lt;url<span class="w"> </span>of<span class="w"> </span>website&gt;
+cewl<span class="w"> </span>-d<span class="w"> </span><span class="m">5</span><span class="w"> </span>-m<span class="w"> </span><span class="m">6</span><span class="w"> </span>-e<span class="w"> </span>http://inlanefreight.com/blog<span class="w"> </span>-w<span class="w"> </span>wordlist.txt
+</pre></div>
+</div>
+</section>
+<section id="hashcat-utils">
+<h2>Hashcat-utils<a class="headerlink" href="#hashcat-utils" title="Permalink to this heading">#</a></h2>
+<p>The Hashcat-utils repo contains many utilities that can be useful for more advanced password cracking.
+The tool maskprocessor, for example, can be used to create wordlists using a given mask.
+Detailed usage for this tool can be found here: -&gt; <a class="reference external" href="https://hashcat.net/wiki/doku.php?id=maskprocessor">https://hashcat.net/wiki/doku.php?id=maskprocessor</a></p>
+<p>Hashcat.potfile</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-d:<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span>-<span class="w"> </span>~/hashcat.potfile
+hcat<span class="w"> </span>--show
+</pre></div>
+</div>
+</section>
+<section id="bopscrk">
+<h2>Bopscrk<a class="headerlink" href="#bopscrk" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./bopscrk.py<span class="w"> </span>-m<span class="w"> </span><span class="m">8</span><span class="w"> </span>-M<span class="w"> </span><span class="m">10</span><span class="w"> </span>-c<span class="w"> </span>-l<span class="w"> </span>-w<span class="w"> </span>apple
+./bopscrk.py<span class="w"> </span>-i
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../c/c.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">C</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../tcpdump-vuln/tcpdump-vuln.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">TCPdump</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Making Custom Wordlists</a><ul>
+<li><a class="reference internal" href="#crunch">Crunch</a></li>
+<li><a class="reference internal" href="#cupp">CUPP</a></li>
+<li><a class="reference internal" href="#kwprocessor">Kwprocessor</a></li>
+<li><a class="reference internal" href="#prince-processor">Prince processor</a></li>
+<li><a class="reference internal" href="#cewl">CeWL</a></li>
+<li><a class="reference internal" href="#hashcat-utils">Hashcat-utils</a></li>
+<li><a class="reference internal" href="#bopscrk">Bopscrk</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

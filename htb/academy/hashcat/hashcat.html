@@ -1,0 +1,796 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="OS Fundamentals" href="../os-fundamentals/os-fundamentals.html" /><link rel="prev" title="Linux Buffer Overflows" href="../buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Hashcat - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../academy.html">Academy</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../machines/machines.html">Lab Machines</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../machines/hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../machines/medium/medium.html">Medium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/medium/zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../machines/easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machines/easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="hashcat">
+<h1>Hashcat<a class="headerlink" href="#hashcat" title="Permalink to this heading">#</a></h1>
+<section id="useful-documentation-stuff">
+<h2>Useful documentation &amp; stuff<a class="headerlink" href="#useful-documentation-stuff" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://hashcat.net/wiki/doku.php?id=maskprocessor">https://hashcat.net/wiki/doku.php?id=maskprocessor</a><br />
+<a class="reference external" href="https://hashcat.net/wiki/doku.php?id=rule_based_attack">https://hashcat.net/wiki/doku.php?id=rule_based_attack</a><br />
+<a class="reference external" href="https://hashcat.net/wiki/doku.php?id=rule_based_attack#implemented_compatible_functions">https://hashcat.net/wiki/doku.php?id=rule_based_attack#implemented_compatible_functions</a><br />
+<a class="reference external" href="https://hashcat.net/wiki/doku.php?id=rule_based_attack#rules_used_to_reject_plains">https://hashcat.net/wiki/doku.php?id=rule_based_attack#rules_used_to_reject_plains</a><br />
+<a class="reference external" href="https://hashcat.net/wiki/doku.php?id=mask_attack">https://hashcat.net/wiki/doku.php?id=mask_attack</a><br />
+<a class="reference external" href="https://hashcat.net/wiki/doku.php?id=example_hashes">https://hashcat.net/wiki/doku.php?id=example_hashes    </a><br />
+<a class="reference external" href="https://hashcat.net/wiki/doku.php?id=frequently_asked_questions">https://hashcat.net/wiki/doku.php?id=frequently_asked_questions</a><br />
+<a class="reference external" href="https://hashcat.net/wiki/doku.php?id=frequently_asked_questions#i_may_have_the_wrong_driver_installed_what_should_i_do">https://hashcat.net/wiki/doku.php?id=frequently_asked_questions#i_may_have_the_wrong_driver_installed_what_should_i_do</a><br />
+<a class="reference external" href="https://hashcat.net/wiki/doku.php?id=frequently_asked_questions#how_to_create_more_work_for_full_speed">https://hashcat.net/wiki/doku.php?id=frequently_asked_questions#how_to_create_more_work_for_full_speed</a><br />
+<a class="reference external" href="https://www.hacklikeapornstar.com/new-release-hack-like-legend/">https://www.hacklikeapornstar.com/new-release-hack-like-legend/</a></p>
+</section>
+<section id="more-wordlists-rules">
+<h2>More Wordlists &amp; Rules<a class="headerlink" href="#more-wordlists-rules" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/d4rkduck1/OneRuleToRuleThemAll">https://github.com/d4rkduck1/OneRuleToRuleThemAll</a><br />
+<a class="reference external" href="https://github.com/praetorian-inc/Hob0Rules.git">https://github.com/praetorian-inc/Hob0Rules.git</a><br />
+<a class="reference external" href="https://github.com/danielmiessler/SecLists.git">https://github.com/danielmiessler/SecLists.git</a><br />
+<a class="reference external" href="https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.html">https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.html</a></p>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">b</span>               <span class="n">benchmark</span>
+<span class="o">-</span><span class="n">a</span>               <span class="n">attack</span> <span class="n">mode</span>
+<span class="o">-</span><span class="n">m</span>               <span class="n">module</span> <span class="o">-</span> <span class="nb">hash</span> <span class="nb">type</span>
+<span class="o">-</span><span class="n">r</span>               <span class="n">ruleset</span> 
+<span class="o">-</span><span class="n">o</span>               <span class="n">output</span>
+<span class="o">--</span><span class="n">username</span>       <span class="n">also</span> <span class="n">output</span> <span class="n">the</span> <span class="n">associated</span> <span class="n">username</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">outfile</span>
+<span class="o">-</span><span class="n">w</span>               <span class="n">workload</span> <span class="n">profile</span>
+<span class="o">-</span><span class="n">O</span>               <span class="o">--</span><span class="n">optimized</span><span class="o">-</span><span class="n">kernel</span><span class="o">-</span><span class="n">enable</span> <span class="n">TLDR</span> <span class="o">-</span> <span class="n">always</span> <span class="n">start</span> <span class="k">with</span> <span class="n">that</span> 
+<span class="o">--</span><span class="n">force</span>          <span class="n">disables</span> <span class="n">warnings</span> <span class="ow">and</span> <span class="n">should</span> <span class="n">be</span> <span class="n">descouraged</span>
+<span class="o">--</span><span class="n">stdout</span>         <span class="n">send</span> <span class="n">tries</span> <span class="n">to</span> <span class="n">stdout</span> <span class="k">for</span> <span class="n">debugging</span>
+<span class="o">-</span><span class="mi">1</span>               <span class="n">options</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">4</span> <span class="n">to</span> <span class="n">define</span> <span class="n">custom</span> <span class="n">charset</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">mask</span> <span class="n">attack</span>
+<span class="o">--</span><span class="n">increment</span>      <span class="n">increment</span> <span class="n">the</span> <span class="n">mask</span> <span class="n">length</span> <span class="n">automatically</span>
+<span class="o">--</span><span class="n">increment</span><span class="o">-</span><span class="nb">max</span>  <span class="nb">max</span> <span class="n">increment</span> <span class="n">length</span> <span class="n">limit</span>
+<span class="o">--</span><span class="n">show</span>           <span class="n">show</span> <span class="n">cracked</span> <span class="n">hashes</span>
+<span class="o">--</span><span class="n">left</span>           <span class="n">show</span> <span class="n">uncracked</span> <span class="n">hashes</span>
+<span class="o">--</span><span class="n">example</span><span class="o">-</span><span class="n">hashes</span> <span class="n">show</span> <span class="n">examples</span> <span class="n">of</span> <span class="n">hashes</span>
+<span class="o">-</span><span class="n">j</span> <span class="o">--</span><span class="n">rule</span><span class="o">-</span><span class="n">left</span>
+<span class="o">-</span><span class="n">k</span> <span class="o">--</span><span class="n">rule</span><span class="o">-</span><span class="n">right</span>
+<span class="o">-</span><span class="n">g</span>  <span class="n">generate</span> <span class="n">random</span> <span class="n">rules</span> <span class="n">on</span> <span class="n">the</span> <span class="n">fly</span> <span class="ow">and</span> <span class="n">apply</span> <span class="n">them</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">wordlist</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<p>helpful commands</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>--example-hashes
+hashcat<span class="w"> </span>--show
+hashcat<span class="w"> </span>--left
+hashcat<span class="w"> </span>-b<span class="w"> </span>-m<span class="w"> </span><span class="m">0</span><span class="w">    </span><span class="c1"># benchmark test (performances) for hash type 0</span>
+</pre></div>
+</div>
+<p>dictionary attacks</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span>&lt;<span class="nb">hash</span><span class="w"> </span>type&gt;<span class="w"> </span>&lt;<span class="nb">hash</span><span class="w"> </span>file&gt;<span class="w"> </span>&lt;wordlist&gt;
+hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">1400</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span>/usr/share/wordlists/rockyou.txt<span class="w">                               </span><span class="c1"># sha256</span>
+hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">3200</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span>wordlist<span class="w"> </span>-r<span class="w"> </span>Hob0Rules/d3adhob0.rule<span class="w"> </span>-o<span class="w"> </span>cracked.txt<span class="w"> </span>-w<span class="w"> </span><span class="m">3</span><span class="w"> </span>-O<span class="w">     </span><span class="c1"># Bcrypt with toggle rules</span>
+hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span>/usr/share/wordlists/rockyou.txt<span class="w"> </span>-r<span class="w"> </span>rule.txt<span class="w">                    </span><span class="c1"># sha1 with custom ruleset</span>
+hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">100</span><span class="w"> </span>-g<span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span>/usr/share/wordlists/rockyou.txt
+</pre></div>
+</div>
+<p>combination attacks</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">1</span><span class="w"> </span>--stdout<span class="w"> </span>file1<span class="w"> </span>file2<span class="w">    </span><span class="c1"># just print to stdout</span>
+hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">1</span><span class="w"> </span>-m<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span>file1<span class="w"> </span>file2<span class="w">   </span><span class="c1"># md5</span>
+</pre></div>
+</div>
+<p>Brute-force mask attacks &amp; Hybrid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">3</span><span class="w"> </span>-m<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span>-1<span class="w"> </span><span class="m">01</span><span class="w"> </span><span class="s1">&#39;ILFREIGHT?l?l?l?l?l20?1?d&#39;</span>
+hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">3</span><span class="w"> </span>-m<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span>-1<span class="w"> </span><span class="m">02</span><span class="w"> </span><span class="s1">&#39;HASHCAT?l?l?l?l?l20?1?d&#39;</span><span class="w"> </span>-O
+hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">6</span><span class="w"> </span>-m<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span>/usr/share/wordlists/rockyou.txt<span class="w"> </span><span class="s1">&#39;?d?s&#39;</span><span class="w">          </span><span class="c1"># Hybrid - Wordlist + Mask -&gt; rockyou + 1 int + 1 special char</span>
+hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">6</span><span class="w"> </span>-m<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span>/usr/share/wordlists/rockyou.txt<span class="w"> </span><span class="s1">&#39;?d?s&#39;</span><span class="w">        </span><span class="c1"># Hybrid - Wordlist + Mask -&gt; rockyou + 1 int + 1 special char on a SHA1</span>
+hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">7</span><span class="w"> </span>-m<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span>-1<span class="w"> </span><span class="m">01</span><span class="w"> </span><span class="s1">&#39;20?1?d&#39;</span><span class="w"> </span>/usr/share/wordlists/rockyou.txt<span class="w">  </span><span class="c1"># Hybrid - Mask + Wordlist -&gt; 20[0..19] + rockyou</span>
+</pre></div>
+</div>
+</section>
+<section id="attack-modes">
+<h2>Attack Modes<a class="headerlink" href="#attack-modes" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">|</span> <span class="n">Straight</span>
+<span class="mi">1</span> <span class="o">|</span> <span class="n">Combination</span>
+<span class="mi">3</span> <span class="o">|</span> <span class="n">Brute</span><span class="o">-</span><span class="n">force</span> <span class="p">(</span><span class="n">Mask</span><span class="p">)</span> 
+<span class="mi">6</span> <span class="o">|</span> <span class="n">Hybrid</span> <span class="n">Wordlist</span> <span class="o">+</span> <span class="n">Mask</span>
+<span class="mi">7</span> <span class="o">|</span> <span class="n">Hybrid</span> <span class="n">Mask</span> <span class="o">+</span> <span class="n">Wordlist</span>
+<span class="mi">9</span> <span class="o">|</span> <span class="n">Association</span>
+</pre></div>
+</div>
+</section>
+<section id="mask-attacks">
+<h2>Mask attacks<a class="headerlink" href="#mask-attacks" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>?l    lower-case ASCII letters (a-z)
+?u    upper-case ASCII letters (A-Z)
+?d    digits (0-9)
+?h    0123456789abcdef hex lower
+?H    0123456789ABCDEF hex upper
+?s    special characters («space»!&quot;#$%&amp;&#39;()*+,-./:;&lt;=&gt;?@[]^_`{
+?a    ?l?u?d?s
+?b    0x00 - 0xff  
+
+?1    custom charset 1
+?2    custom charset 2
+?3    custom charset 3
+?4    custom charset 4
+</pre></div>
+</div>
+<p>example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ILFREIGHT&lt;userid&gt;  &lt;year&gt;
+ILFREIGHT?l?l?l?l?l20[0-1]?d
+</pre></div>
+</div>
+</section>
+<section id="rule-based-attacks">
+<h2>Rule based attacks<a class="headerlink" href="#rule-based-attacks" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>l   Convert all letters to lowercase
+u   Convert all letters to uppercase
+c   capitalize  first letter lowercase the rest
+C   lowercase first letter and invert the rest 
+t   Toggle case : whole word
+T   Toggle case : at position N
+d   Duplicate word
+s   Substitute character
+q   Duplicate all characters
+z   Duplicate first character
+Z   Duplicate last character
+{   Rotate word left
+}   Rotate word right
+^X  Prepend character X
+$X  Append character X
+r   Reverse
+</pre></div>
+</div>
+<p>Reject rules - only when using -j or -k with Hashcat</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">N</span>  <span class="n">reject</span> <span class="n">words</span> <span class="k">with</span> <span class="n">length</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">N</span> 
+<span class="o">&lt;</span><span class="n">N</span>  <span class="n">reject</span> <span class="n">words</span> <span class="k">with</span> <span class="n">length</span> <span class="n">smaller</span> <span class="n">than</span> <span class="n">N</span> 
+</pre></div>
+</div>
+<p>Default rules</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hashcat</span><span class="o">/</span><span class="n">rules</span><span class="o">/</span>
+<span class="o">-</span><span class="n">g</span>  <span class="c1"># generate random rules on the fly and apply them to the input wordlist.</span>
+</pre></div>
+</div>
+<p>Custom rules
+<a class="reference external" href="https://github.com/NSAKEY/nsa-rules">https://github.com/NSAKEY/nsa-rules</a><br />
+<a class="reference external" href="https://github.com/praetorian-code/Hob0Rules">https://github.com/praetorian-code/Hob0Rules</a><br />
+<a class="reference external" href="https://github.com/HackLikeAPornstar/StratJumbo/blob/master/chap3/corporate.rule">https://github.com/HackLikeAPornstar/StratJumbo/blob/master/chap3/corporate.rule</a></p>
+<p>Self made rules</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;password_ilfreight&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>test.txt
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;so0 si1 se3 ss5 sa@ c $2 $0 $1 $9&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>rule.txt
+../hashcat<span class="w"> </span>-r<span class="w"> </span>rule.txt<span class="w"> </span>test.txt<span class="w"> </span>--stdout
+P@55w0rd_1lfr31ght2019
+
+hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span>/usr/share/wordlists/rockyou.txt<span class="w"> </span>-r<span class="w"> </span>rule.txt
+</pre></div>
+</div>
+</section>
+<section id="db-dumps">
+<h2>DB Dumps<a class="headerlink" href="#db-dumps" title="Permalink to this heading">#</a></h2>
+<p>SHA1, MD5, BCRYPT are often seen in database dumps</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>words
+winter!
+baseball1
+waterslide
+summertime
+baconandeggs
+beach1234
+sunshine1
+welcome1
+password123
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>cat<span class="w"> </span>words<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sha1sum<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39; -&#39;</span><span class="p">;</span><span class="k">done</span><span class="w"> </span>&gt;<span class="w"> </span>hashes
+cat<span class="w"> </span>hashes
+fa3c9ecfc251824df74026b4f40e4b373fd4fc46
+e6852777c0260493de41fb43918ab07bbb3a659c
+0c3feaa16f73493f998970e22b2a02cb9b546768
+b863c49eada14e3a8816220a7ab7054c28693664
+b0feedd70a346f7f75086026169825996d7196f9
+f47f832cba913ec305b07958b41babe2e0ad0437
+08b314f0e1e2c41ec92c3735910658e5a82c6ba7
+e35bece6c5e6e0e86ca51d0440e92282a9d6ac8a
+cbfdac6008f9cab4083784cbd1874f76618d2a97
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>../hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">100</span><span class="w"> </span>hashes<span class="w"> </span>/opt/wordlists/rockyou.txt<span class="w"> </span><span class="c1"># sha1</span>
+</pre></div>
+</div>
+</section>
+<section id="linux-shadow">
+<h2>Linux shadow<a class="headerlink" href="#linux-shadow" title="Permalink to this heading">#</a></h2>
+<p>SHA512CRYPT are commonly found in Linx /etc/shadow</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root:$6$tOA0cyybhb/Hr7DN$htr2vffCWiPGnyFOicJiXJVMbk1muPORR.eRGYfBYUnNPUjWABGPFiphjIjJC5xPfFUASIbVKDAHS3vTW1qU.1:18285:0:99999:7:::
+$6 -&gt; type 6 = SHA512
+$tOA0cyybhb/Hr7DN -&gt; 16chr Salt
+$htr2vffCWiPGnyFOicJiXJVMbk1muPORR.eRGYfBYUnNPUjWABGPFiphjIjJC5xPfFUASIbVKDAHS3vTW1qU.1 -&gt; Actual hash
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">1800</span><span class="w"> </span>nix_hash<span class="w"> </span>/opt/worldlists/rockyou.txt<span class="w">  </span><span class="c1"># sha512crypt</span>
+</pre></div>
+</div>
+</section>
+<section id="active-directory">
+<h2>Active directory<a class="headerlink" href="#active-directory" title="Permalink to this heading">#</a></h2>
+<p>NTLM</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hashlib</span><span class="o">,</span><span class="nn">binascii</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;md4&#39;</span><span class="p">,</span> <span class="s2">&quot;Password01&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-16le&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="nb">hash</span><span class="p">))</span>
+<span class="go">b&#39;7100a909c7ff05b266af3c42ec058c33&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;7100a909c7ff05b266af3c42ec058c33&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>ntlm_example
+../hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">1000</span><span class="w"> </span>ntlm_example<span class="w"> </span>/opt/wordlists/rockyou.txt<span class="w"> </span>-r<span class="w"> </span>../rules/hybrid/append_ds.rule<span class="w">  </span><span class="c1"># NTLM</span>
+../hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">6</span><span class="w"> </span>-m<span class="w"> </span><span class="m">1000</span><span class="w"> </span>ntlm_example<span class="w"> </span>/opt/wordlists/rockyou.txt<span class="w"> </span><span class="s1">&#39;?d?s&#39;</span><span class="w">                             </span><span class="c1"># NTLM</span>
+</pre></div>
+</div>
+<p>NetNTLMv1
+NetNTLMv2</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sqladmin</span><span class="p">::</span><span class="n">INLANEFREIGHT</span><span class="p">:</span><span class="n">f54d6f198a7a47d4</span><span class="p">:</span><span class="mi">7</span><span class="n">FECABAE13101DAAA20F1B09F7F7A4EA</span><span class="p">:</span><span class="mi">0101000000000000</span><span class="n">C0653150DE09D20126F3F71DF13C1FD8000000000200080053004D004200330001001E00570049004E002D00500052004800340039003200520051004100460056000400140053004D00420033002E006C006F00630061006C0003003400570049004E002D00500052004800340039003200520051004100460056002E0053004D00420033002E006C006F00630061006C000500140053004D00420033002E006C006F00630061006C0007000800C0653150DE09D201060004000200000008003000300000000000000000000000003000001A67637962F2B7BF297745E6074934196D5F4371B6BA3E796F2997306FD4C1C00A001000000000000000000000000000000000000900280063006900660073002F003100390032002E003100360038002E003100390035002E00310037003000000000000000000000000000</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>../hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">5600</span><span class="w"> </span>inlanefreight_ntlmv2<span class="w"> </span>/opt/wordlists/rockyou.txt<span class="w">   </span><span class="c1"># NetNTLMv2</span>
+</pre></div>
+</div>
+<p>Kerberos 5 TGS-REP</p>
+</section>
+<section id="john-the-ripper-extract-tools">
+<h2>John the ripper extract tools<a class="headerlink" href="#john-the-ripper-extract-tools" title="Permalink to this heading">#</a></h2>
+<p>Install the tools</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/magnumripper/JohnTheRipper.git
+<span class="nb">cd</span><span class="w"> </span>JohnTheRipper/src
+sudo<span class="w"> </span>./configure<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make
+</pre></div>
+</div>
+<p>MS office</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>office2john.py<span class="w"> </span>hashcat_Word_example.docx<span class="w"> </span>
+hashcat_Word_example.docx:<span class="nv">$office$*</span><span class="m">2013</span>*100000*256*16*6e059661c3ed733f5730eaabb41da13a*aa38e007ee01c07e4fe95495934cf68f*2f1e2e9bf1f0b320172cd667e02ad6be1718585b6594691907b58191a6
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>../hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">9600</span><span class="w"> </span>office_hash<span class="w"> </span>/opt/wordlists/rockyou.txt<span class="w">  </span><span class="c1"># office</span>
+</pre></div>
+</div>
+<p>Zip files</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip<span class="w"> </span>--password<span class="w"> </span>zippyzippy<span class="w"> </span>blueprints.zip<span class="w"> </span>dummy.pdf
+python3<span class="w"> </span>zip2john.py<span class="w"> </span>./blueprints.zip
+ver<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>efh<span class="w"> </span><span class="m">5455</span><span class="w"> </span>efh<span class="w"> </span><span class="m">7875</span><span class="w"> </span>blueprints.zip/dummy.pdf<span class="w"> </span>PKZIP<span class="w"> </span>Encr:<span class="w"> </span>2b<span class="w"> </span>chk,<span class="w"> </span>TS_chk,<span class="w"> </span><span class="nv">cmplen</span><span class="o">=</span><span class="m">26</span>,<span class="w"> </span><span class="nv">decmplen</span><span class="o">=</span><span class="m">14</span>,<span class="w"> </span><span class="nv">crc</span><span class="o">=</span><span class="m">54961861</span><span class="w"> </span><span class="nv">ts</span><span class="o">=</span>A03A<span class="w"> </span><span class="nv">cs</span><span class="o">=</span>a03a<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="m">0</span>
+blueprints.zip/dummy.pdf:<span class="nv">$pkzip$1</span>*2*2*0*1a*e*54961861*0*43*0*1a*a03a*ceba04fce27f62009718d425edf297457615d4117e4cdd3d3cea*$/pkzip$:dummy.pdf:blueprints.zip::./blueprints.zip
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>../hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">17200</span><span class="w"> </span>zip<span class="w"> </span>/opt/wordlists/rockyou.txt<span class="w">  </span><span class="c1"># zip</span>
+</pre></div>
+</div>
+<p>Keepass</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>keepass2john.py<span class="w"> </span>Master.kbdx
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>../hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">13400</span><span class="w"> </span>keepass_hash<span class="w"> </span>/opt/wordlists/rockyou.txt<span class="w">  </span><span class="c1"># Keepass</span>
+</pre></div>
+</div>
+<p>Protected pdf files</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~arthur/JohnTheRipper/run/pdf2john.pl<span class="w"> </span>inventory.pdf
+<span class="nv">$pdf$4</span>*4*128*-1028*1*16*f7d77b3d22b9f92829d49ff5d78b8f28*32*d33f35f776215527d65155f79d9ed79800000000000000000000000000000000*32*6cfb859c107acaae8c0ca9ceec56fd91ff75fe7b1cddb03f629ca3583f59e52f
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>../hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">10500</span><span class="w"> </span>pdf_hash<span class="w"> </span>/opt/wordlists/rockyou.txt<span class="w"> </span><span class="c1"># pdf</span>
+</pre></div>
+</div>
+</section>
+<section id="mic-wpa-4-way-handshake">
+<h2>MIC (WPA 4-way handshake)<a class="headerlink" href="#mic-wpa-4-way-handshake" title="Permalink to this heading">#</a></h2>
+<p>Lexicon</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">MSK</span> <span class="o">-</span> <span class="n">Master</span> <span class="n">Session</span> <span class="n">Key</span>
+<span class="o">-</span> <span class="n">PMK</span> <span class="o">-</span> <span class="n">Pairwise</span> <span class="n">Master</span> <span class="n">Key</span>
+<span class="o">-</span> <span class="n">GMK</span> <span class="o">-</span> <span class="n">Group</span> <span class="n">Master</span> <span class="n">Key</span>
+<span class="o">-</span> <span class="n">PTK</span> <span class="o">-</span> <span class="n">Pairwise</span> <span class="n">Transit</span> <span class="n">Key</span>
+<span class="o">-</span> <span class="n">GTK</span> <span class="o">-</span> <span class="n">Group</span> <span class="n">Temporal</span> <span class="n">Key</span>
+<span class="o">-</span> <span class="n">ANonce</span>
+<span class="o">-</span> <span class="n">SNonce</span>
+<span class="o">-</span> <span class="n">MIC</span> <span class="o">-</span> <span class="n">Message</span> <span class="n">Integrity</span> <span class="n">Check</span>
+</pre></div>
+</div>
+<p>The handshake</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        ╔══════════════╗                 ╔══════════════╗
+        ║ Supplicant   ║                 ║Authenticator ║
+        ║ Auth/Assoc   ║                 ║   Auth/Assoc ║
+        ║ 802.1X       ║                 ║       802.1X ║
+        ║ Blocked      ║                 ║      Blocked ║
+        ║ PMK          ║                 ║          PMK ║
+        ╠══════════════╝                 ╚══════════════╣
+        ║                                               ║
+        ║                                               ║
+        ║     &lt;═══════════════M1:AA,ANonce,sn═══════════╣
+        ║                                               ║
+        ╠══════════════╗                                ║
+        ║ Derive PTK   ║                                ║
+        ╠══════════════╝                                ║
+        ║                                               ║
+        ╠══════════════M2:SPA,SNonce,sn,MIC═══════&gt;     ║
+        ║                                               ║
+        ║                                ╔══════════════╣
+        ║                                ║   Derive PTK ║
+        ║                                ║ Generate GTK ║
+        ║                                ╚══════════════╣
+        ║                                               ║
+        ║     &lt;═════M3:AA,ANonce,GTK,sn+1,MIC═══════════╣
+        ║                                               ║
+        ║                                               ║
+        ║                                               ║
+        ║                                               ║
+        ║                                               ║
+        ╠═════════════M4:SPA,no+1,MIC═════════════&gt;     ║
+        ║                                               ║
+        ║                                               ║
+        ╠══════════════╗                 ╔══════════════╣
+        ║ PTK &amp; GTK    ║                 ║    PTK &amp; GTK ║
+        ║ 802.1X       ║                 ║       802.1X ║
+        ║ Unblocked    ║                 ║    Unblocked ║
+        ╚══════════════╝                 ╚══════════════╝
+</pre></div>
+</div>
+<p>The attack flow</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">Attacker</span> <span class="n">Sends</span> <span class="n">deauth</span> <span class="n">to</span> <span class="n">client</span> <span class="n">to</span> <span class="n">force</span> <span class="n">disconnection</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">AP</span>
+<span class="o">-</span> <span class="n">Client</span> <span class="n">attempts</span> <span class="n">to</span> <span class="n">re</span><span class="o">-</span><span class="n">authenticate</span>
+<span class="o">-</span> <span class="n">Attacker</span> <span class="n">snifs</span> <span class="ow">and</span> <span class="n">captures</span> <span class="n">the</span> <span class="n">handshake</span> <span class="k">with</span> <span class="n">airodump</span><span class="o">-</span><span class="n">ng</span>
+<span class="o">-</span> <span class="n">The</span> <span class="n">handshake</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">collection</span> <span class="n">of</span> <span class="n">keys</span> <span class="n">used</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">a</span> <span class="n">common</span> <span class="n">key</span> <span class="n">called</span> <span class="n">MIC</span>
+<span class="o">-</span> <span class="n">Format</span> <span class="n">required</span> <span class="n">by</span> <span class="n">hashcat</span> <span class="ow">is</span> <span class="n">hccapx</span><span class="p">,</span> <span class="n">conversion</span> <span class="n">tools</span><span class="p">:</span> 
+<span class="o">-</span> <span class="n">online</span> <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">hashcat</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">cap2hccapx</span>
+<span class="o">-</span> <span class="n">offline</span> <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hashcat</span><span class="o">/</span><span class="n">hashcat</span><span class="o">-</span><span class="n">utils</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/hashcat/hashcat-utils.git
+<span class="nb">cd</span><span class="w"> </span>hashcat-utils/src
+make
+./cap2hccapx.bin<span class="w"> </span>input.pcap<span class="w"> </span>mic_to_crack.hccapx
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>../hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">2500</span><span class="w"> </span>mic_to_crack.hccapx<span class="w"> </span>/opt/wordlists/rockyou.txt<span class="w">  </span><span class="c1"># wpa mic</span>
+</pre></div>
+</div>
+</section>
+<section id="pmkid-wpa-wpa2-psk-1st-packet-handshake">
+<h2>PMKID (WPA/WPA2-PSK - 1st packet/handshake)<a class="headerlink" href="#pmkid-wpa-wpa2-psk-1st-packet-handshake" title="Permalink to this heading">#</a></h2>
+<p>Lexicon</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">PMKID</span> <span class="o">-</span> <span class="n">Pairwise</span> <span class="n">Master</span> <span class="n">Key</span> <span class="n">Identifier</span>
+	<span class="o">-</span> <span class="n">Unique</span> <span class="n">ID</span> <span class="n">to</span> <span class="n">keep</span> <span class="n">track</span> <span class="n">of</span> <span class="n">the</span> <span class="n">PMK</span> <span class="n">used</span> <span class="n">by</span> <span class="n">a</span> <span class="n">given</span> <span class="n">client</span>
+	<span class="o">-</span> <span class="n">It</span><span class="s1">&#39;s essentially an HMAC-SHA1 of:</span>
+	    <span class="o">-</span> <span class="n">The</span> <span class="n">PMK</span>
+	    <span class="o">-</span> <span class="n">The</span> <span class="nb">str</span> <span class="s2">&quot;PMK Name&quot;</span>
+	    <span class="o">-</span> <span class="n">The</span> <span class="n">MAC</span> <span class="n">addr</span> <span class="n">of</span> <span class="n">the</span> <span class="n">AP</span>
+	    <span class="o">-</span> <span class="n">The</span> <span class="n">MAC</span> <span class="n">addr</span> <span class="n">of</span> <span class="n">the</span> <span class="n">station</span>
+</pre></div>
+</div>
+<p>Diagram of PMKID</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        ╔══════════════╗        ╔═════════════╗         ╔══════════════╗
+        ║   PMK Name   ║        ║   MAC_AP    ║         ║    MAC_STA   ║
+        ╚══════════════╣        ╚══════╦══════╝         ╠══════════════╝
+                       ║               ║                ║               
+                       ╚═══════════════╬════════════════╝ 
+                                       ║
+                 ╔═════════════════════╩═══════════════════════╗
+        PMK ---&gt; ║ HMAC-SHA1-128(PMK,&quot;PMK Name&quot;,MAC_AP,MAC_STA)║ ---&gt; PMKID
+                 ╚═════════════════════════════════════════════╝
+</pre></div>
+</div>
+<p>The attack flow</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">To</span> <span class="n">attack</span> <span class="n">PSK</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">attack</span> <span class="n">the</span> <span class="n">AP</span> <span class="n">directly</span>
+<span class="o">-</span> <span class="n">No</span> <span class="n">deauth</span> <span class="ow">is</span> <span class="n">needed</span> 
+<span class="o">-</span> <span class="n">Take</span> <span class="n">a</span> <span class="n">capture</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ZerBea/hcxtools.git
+<span class="nb">cd</span><span class="w"> </span>hcxtools<span class="w"> </span>
+sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libcurl-devel
+git<span class="w"> </span>checkout<span class="w"> </span>7cc478632870744ca3c4ca13c7b129e2163c132a
+make<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>install
+./hcxpcaptool<span class="w"> </span>-z<span class="w"> </span>pmkidhash_corp<span class="w"> </span>cracking_pmkid.cap
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>../hashcat<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-m<span class="w"> </span><span class="m">16800</span><span class="w"> </span>pmkidhash_corp<span class="w"> </span>/opt/wordlists/rockyou.txt<span class="w">  </span><span class="c1"># wpa pmkid</span>
+</pre></div>
+</div>
+</section>
+<section id="more-tools">
+<h2>More tools<a class="headerlink" href="#more-tools" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Responder</span>
+<span class="n">SMB</span> <span class="n">Relay</span> <span class="n">attach</span>
+<span class="n">Kerberoasting</span>
+<span class="n">NtdsAudit</span> 
+<span class="n">DPAT</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../os-fundamentals/os-fundamentals.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">OS Fundamentals</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Linux Buffer Overflows</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Hashcat</a><ul>
+<li><a class="reference internal" href="#useful-documentation-stuff">Useful documentation &amp; stuff</a></li>
+<li><a class="reference internal" href="#more-wordlists-rules">More Wordlists &amp; Rules</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#attack-modes">Attack Modes</a></li>
+<li><a class="reference internal" href="#mask-attacks">Mask attacks</a></li>
+<li><a class="reference internal" href="#rule-based-attacks">Rule based attacks</a></li>
+<li><a class="reference internal" href="#db-dumps">DB Dumps</a></li>
+<li><a class="reference internal" href="#linux-shadow">Linux shadow</a></li>
+<li><a class="reference internal" href="#active-directory">Active directory</a></li>
+<li><a class="reference internal" href="#john-the-ripper-extract-tools">John the ripper extract tools</a></li>
+<li><a class="reference internal" href="#mic-wpa-4-way-handshake">MIC (WPA 4-way handshake)</a></li>
+<li><a class="reference internal" href="#pmkid-wpa-wpa2-psk-1st-packet-handshake">PMKID (WPA/WPA2-PSK - 1st packet/handshake)</a></li>
+<li><a class="reference internal" href="#more-tools">More tools</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

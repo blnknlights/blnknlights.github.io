@@ -1,0 +1,774 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Kerberos" href="../kerberos/kerberos.html" /><link rel="prev" title="Active Directory" href="../active-directory.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Active Directory - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../academy.html">Academy</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../active-directory.html">Active Directory</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../machines/machines.html">Lab Machines</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../machines/hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../machines/medium/medium.html">Medium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/medium/zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../machines/easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../machines/easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="active-directory">
+<h1>Active Directory<a class="headerlink" href="#active-directory" title="Permalink to this heading">#</a></h1>
+<section id="lexicon-acronyms">
+<h2>Lexicon &amp; Acronyms<a class="headerlink" href="#lexicon-acronyms" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CIM</span>  <span class="o">-</span> <span class="n">Common</span> <span class="n">Information</span> <span class="n">Model</span>              <span class="o">-</span> <span class="n">Object</span><span class="o">-</span><span class="n">oriented</span> <span class="n">data</span> <span class="n">model</span> <span class="n">that</span> <span class="n">contains</span> <span class="n">information</span> <span class="n">about</span> <span class="n">different</span> <span class="n">parts</span> <span class="n">of</span> <span class="n">an</span> <span class="n">enterprise</span>
+<span class="n">WMI</span>  <span class="o">-</span> <span class="n">Windows</span> <span class="n">Management</span> <span class="n">Instrumentation</span>    <span class="o">-</span> <span class="n">Windows</span> <span class="n">implementation</span> <span class="n">of</span> <span class="n">CIM</span><span class="p">,</span> <span class="n">now</span> <span class="n">deprecated</span> <span class="ow">in</span> <span class="n">favor</span> <span class="n">of</span> <span class="n">CIMv2</span> <span class="ow">in</span> <span class="n">Powershell</span> <span class="n">Core</span>
+<span class="n">ADSI</span> <span class="o">-</span> <span class="n">Active</span> <span class="n">Directory</span> <span class="n">Service</span> <span class="n">Interfaces</span>   <span class="o">-</span> 
+<span class="n">UAC</span>  <span class="o">-</span> <span class="n">User</span> <span class="n">Account</span> <span class="n">Controls</span>                 <span class="o">-</span> 
+<span class="n">MMC</span>  <span class="o">-</span> <span class="n">Microsof</span> <span class="n">Management</span> <span class="n">Console</span>           <span class="o">-</span>
+<span class="n">OID</span>  <span class="o">-</span> <span class="n">Object</span> <span class="n">Identifier</span>                     <span class="o">-</span>
+<span class="n">SPN</span>  <span class="o">-</span> <span class="n">Service</span> <span class="n">Principal</span> <span class="n">Name</span>                <span class="o">-</span> 
+</pre></div>
+</div>
+<blockquote>
+<div><p>https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx</p>
+</div></blockquote>
+</section>
+<section id="ad-users">
+<h2>AD Users<a class="headerlink" href="#ad-users" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>https://ldapwiki.com/wiki/Active%20Directory%20User%20Related%20Searches</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># select name` | List disabled users
+Get-ADUser -LDAPFilter &#39;(userAccountControl:1.2.840.113556.1.4.803:=2)&#39;
+
+# Find admin users that don&#39;t require Kerberos Pre-Auth (for Kerberoasting Or ASREPRoasted)
+# The adminCount attribute. The group with this attribute set to 1 are protected by AdminSDHolder and known as protected groups
+Get-ADUser -Filter {adminCount -eq &#39;1&#39; -and DoesNotRequirePreAuth -eq &#39;True&#39;}
+Get-ADUser -Filter {adminCount -eq &#39;1&#39;} -Properties * | where servicePrincipalName -ne $null | select SamAccountName,MemberOf,ServicePrincipalName | fl
+Get-ADUser -Filter {DoesNotRequirePreAuth -eq &#39;True&#39;}
+Get-ADUser -Filter {DoesNotRequirePreAuth -eq &#39;True&#39;} -Properties *|select name,memberOf
+Get-ADUser -Filter &#39;useraccountcontrol -band 4194304&#39; -Properties useraccountcontrol | Format-Table name
+
+# Count all users in an OU
+(Get-ADUser -SearchBase &quot;OU=Employees,DC=INLANEFREIGHT,DC=LOCAL&quot; -Filter *).count
+
+# Get all users
+Get-ADObject -LDAPFilter &#39;(&amp;(objectCategory=person)(objectClass=user))&#39;
+
+# Get all administratively disabled accounts in the domain
+Get-ADObject -LDAPFilter &#39;(&amp;(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))&#39; | select samaccountname,useraccountcontrol
+
+# Will return all administratively disabled user accounts (bitwise and)
+Get-ADUser -LDAPFilter &#39;(userAccountControl:1.2.840.113556.1.4.803:=2)&#39; | select name
+
+# All accounts that do not have a blank description
+Get-ADUser -Properties * -LDAPFilter &#39;(&amp;(objectCategory=user)(description=*))&#39; | select samaccountname,description
+
+# Find all users or computers marked as trusted for delegation
+Get-ADUser -Properties * -LDAPFilter &#39;(userAccountControl:1.2.840.113556.1.4.803:=524288)&#39; | select Name,memberof, servicePrincipalName,TrustedForDelegation | fl
+
+# Users with the &quot;adminCount&quot; attribute set to 1 whose &quot;useraccountcontrol&quot; attribute is set with the flag &quot;PASSWD_NOTREQD,&quot; 
+# meaning that the account can have a blank password set. 
+Get-AdUser -LDAPFilter &#39;(&amp;(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=32))(adminCount=1)&#39; -Properties * | select name,memberof | fl
+
+# Enumerate UAC values for admin users
+Get-ADUser -Filter {adminCount -gt 0} -Properties admincount,useraccountcontrol
+
+# Enumerate User-Account-Control Attributes
+Get-ADUser -Filter {adminCount -gt 0} -Properties admincount,useraccountcontrol | select Name,useraccountcontrol
+</pre></div>
+</div>
+</section>
+<section id="ad-groups">
+<h2>AD Groups<a class="headerlink" href="#ad-groups" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>https://ldapwiki.com/wiki/Active%20Directory%20Group%20Related%20Searches</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get information about an AD group</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADGroup</span> <span class="o">-</span><span class="n">Identity</span> <span class="s2">&quot;&lt;GROUP NAME&quot;</span> <span class="o">-</span><span class="n">Properties</span> <span class="o">*</span>
+
+<span class="c1"># select Name` | Get all administrative groups</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADGroup</span> <span class="o">-</span><span class="n">Filter</span> <span class="s2">&quot;adminCount -eq 1&quot;</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADGroup</span> <span class="o">-</span><span class="n">Filter</span> <span class="s2">&quot;adminCount -eq 1&quot;</span> <span class="o">|</span> <span class="n">select</span> <span class="n">Name</span>
+
+<span class="c1"># LDAP query to return all AD groups</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADObject</span> <span class="o">-</span><span class="n">LDAPFilter</span> <span class="s1">&#39;(objectClass=group)&#39;</span>
+
+<span class="c1"># This matching rule will find all groups that the user Harry Jones is a member of using the Matching rule in chain OID operand</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADGroup</span> <span class="o">-</span><span class="n">LDAPFilter</span> <span class="s1">&#39;(member:1.2.840.113556.1.4.1941:=CN=Harry Jones,OU=Network Ops,OU=IT,OU=Employees,DC=INLANEFREIGHT,DC=LOCAL)&#39;</span> <span class="o">|</span> <span class="n">select</span> <span class="n">Name</span>
+
+<span class="c1"># Get all members of the Security Operations group</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADGroupMember</span> <span class="o">-</span><span class="n">Identity</span> <span class="s2">&quot;Security Operations&quot;</span>
+
+<span class="c1"># Check what groups user harry.jones is a member of </span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADUser</span> <span class="o">-</span><span class="n">Identity</span> <span class="n">harry</span><span class="o">.</span><span class="n">jones</span> <span class="o">-</span><span class="n">Properties</span> <span class="o">*</span> <span class="o">|</span> <span class="n">select</span> <span class="n">memberof</span> <span class="o">|</span> <span class="n">ft</span> <span class="o">-</span><span class="n">Wrap</span>
+
+<span class="c1"># Enumerating nested group membership </span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADGroup</span> <span class="o">-</span><span class="n">Filter</span> <span class="s1">&#39;member -RecursiveMatch &quot;CN=Harry Jones,OU=Network Ops,OU=IT,OU=Employees,DC=INLANEFREIGHT,DC=LOCAL&quot;&#39;</span> <span class="o">|</span> <span class="n">select</span> <span class="n">name</span>
+
+<span class="c1"># Enumerating nested group membership with ldap OID matching rule</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADGroup</span> <span class="o">-</span><span class="n">LDAPFilter</span> <span class="s1">&#39;(member:1.2.840.113556.1.4.1941:=CN=Harry Jones,OU=Network Ops,OU=IT,OU=Employees,DC=INLANEFREIGHT,DC=LOCAL)&#39;</span> <span class="o">|</span><span class="n">select</span> <span class="n">Name</span>
+</pre></div>
+</div>
+</section>
+<section id="ad-computers">
+<h2>AD Computers<a class="headerlink" href="#ad-computers" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>https://ldapwiki.com/wiki/Active%20Directory%20Computer%20Related%20LDAP%20Query</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get hostnames with the word &quot;SQL&quot; in their hostname</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADComputer</span> <span class="o">-</span><span class="n">Filter</span> <span class="s2">&quot;DNSHostName -like &#39;SQL*&#39;&quot;</span>
+
+<span class="c1"># Get all computers</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADObject</span> <span class="o">-</span><span class="n">LDAPFilter</span> <span class="s1">&#39;(objectCategory=Computer)&#39;</span>
+
+<span class="c1"># Get domain controllers</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADObject</span> <span class="o">-</span><span class="n">LDAPFilter</span> <span class="s1">&#39;(&amp;(objectCategory=Computer)(userAccountControl:1.2.840.113556.1.4.803:=8192))&#39;</span>
+
+<span class="c1"># Find trusted computers</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADComputer</span> <span class="o">-</span><span class="n">Properties</span> <span class="o">*</span> <span class="o">-</span><span class="n">LDAPFilter</span> <span class="s1">&#39;(userAccountControl:1.2.840.113556.1.4.803:=524288)&#39;</span> <span class="o">|</span> <span class="n">select</span> <span class="n">DistinguishedName</span><span class="p">,</span><span class="n">servicePrincipalName</span><span class="p">,</span><span class="n">TrustedForDelegation</span> <span class="o">|</span> <span class="n">fl</span>
+
+</pre></div>
+</div>
+</section>
+<section id="searchbase-searchscope">
+<h2>SearchBase &amp; SearchScope<a class="headerlink" href="#searchbase-searchscope" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># SearchScope Base or 0 will only return the exact search base </span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADUser</span> <span class="o">-</span><span class="n">SearchBase</span> <span class="s2">&quot;OU=Employees,DC=INLANEFREIGHT,DC=LOCAL&quot;</span> <span class="o">-</span><span class="n">SearchScope</span> <span class="n">Base</span> <span class="o">-</span><span class="n">Filter</span> <span class="o">*</span>     <span class="c1"># returns nothing as expected</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADObject</span> <span class="o">-</span><span class="n">SearchBase</span> <span class="s2">&quot;OU=Employees,DC=INLANEFREIGHT,DC=LOCAL&quot;</span> <span class="o">-</span><span class="n">SearchScope</span> <span class="n">Base</span> <span class="o">-</span><span class="n">Filter</span> <span class="o">*</span>   <span class="c1"># returns the employee OU</span>
+
+<span class="c1"># SearchScope OneLevel or 1</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">ADUser</span> <span class="o">-</span><span class="n">SearchBase</span> <span class="s2">&quot;OU=Employees,DC=INLANEFREIGHT,DC=LOCAL&quot;</span> <span class="o">-</span><span class="n">SearchScope</span> <span class="n">OneLevel</span> <span class="o">-</span><span class="n">Filter</span> <span class="o">*</span>
+
+<span class="c1"># SearchScope Subtree or 2</span>
+<span class="p">(</span><span class="n">Get</span><span class="o">-</span><span class="n">ADUser</span> <span class="o">-</span><span class="n">SearchBase</span> <span class="s2">&quot;OU=Employees,DC=INLANEFREIGHT,DC=LOCAL&quot;</span> <span class="o">-</span><span class="n">SearchScope</span> <span class="n">Subtree</span> <span class="o">-</span><span class="n">Filter</span> <span class="o">*</span><span class="p">)</span><span class="o">.</span><span class="n">count</span>
+
+</pre></div>
+</div>
+</section>
+<section id="rsat">
+<h2>RSAT<a class="headerlink" href="#rsat" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Check if RSAT tools are installed
+Get-WindowsCapability -Name RSAT* -Online | Select-Object -Property Name, State
+
+# Install all RSAT tools
+Add-WindowsCapability -Name RSAT* -Online | Add-WindowsCapability –Online
+
+# Install a specific RSAT tool
+Add-WindowsCapability -Name Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0  –Online
+</pre></div>
+</div>
+</section>
+<section id="query-cim-wmi-objects">
+<h2>Query CIM / WMI Objects<a class="headerlink" href="#query-cim-wmi-objects" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Query for installed software</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">CimInstance</span> <span class="n">win32_product</span> <span class="o">|</span> <span class="n">fl</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">CimInstance</span> <span class="n">win32_product</span> <span class="o">-</span><span class="n">Filter</span> <span class="s2">&quot;NOT Vendor like &#39;%Microsoft%&#39;&quot;</span> <span class="o">|</span> <span class="n">fl</span>
+
+<span class="c1"># Get AD groups using WMI</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">WmiObject</span> <span class="o">-</span><span class="n">Class</span> <span class="n">win32_group</span> <span class="o">-</span><span class="n">Filter</span> <span class="s2">&quot;Domain=&#39;INLANEFREIGHT&#39;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="use-adsi">
+<h2>Use ADSI<a class="headerlink" href="#use-adsi" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use ADSI to search for all computers</span>
+<span class="p">([</span><span class="n">adsisearcher</span><span class="p">]</span><span class="s2">&quot;(&amp;(objectClass=Computer))&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">FindAll</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="other">
+<h2>Other<a class="headerlink" href="#other" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># xfreeRDP to target</span>
+<span class="n">xfreerdp</span> <span class="o">/</span><span class="n">v</span><span class="p">:</span><span class="o">&lt;</span><span class="n">target</span> <span class="n">IP</span> <span class="n">address</span><span class="o">&gt;</span> <span class="o">/</span><span class="n">u</span><span class="p">:</span><span class="n">htb</span><span class="o">-</span><span class="n">student</span> <span class="o">/</span><span class="n">p</span><span class="p">:</span><span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span>
+
+<span class="c1"># View a user&#39;s current rights </span>
+<span class="n">whoami</span> <span class="o">/</span><span class="n">priv</span>
+
+<span class="c1"># Run a utility as another user</span>
+<span class="n">runas</span> <span class="o">/</span><span class="n">netonly</span> <span class="o">/</span><span class="n">user</span><span class="p">:</span><span class="n">htb</span><span class="o">.</span><span class="n">local</span>\<span class="n">jackie</span><span class="o">.</span><span class="n">may</span> <span class="n">powershell</span> <span class="o">|</span> <span class="n">select</span> <span class="n">cn</span> 
+
+<span class="c1"># Run mmc as a domain user</span>
+<span class="n">runas</span> <span class="o">/</span><span class="n">netonly</span> <span class="o">/</span><span class="n">user</span><span class="p">:</span><span class="n">Domain_Name</span>\<span class="n">Domain_USER</span> <span class="n">mmc</span>
+</pre></div>
+</div>
+<section id="powershell-filter-operators">
+<h3>Powershell Filter Operators<a class="headerlink" href="#powershell-filter-operators" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">eq</span>        <span class="n">Equal</span> <span class="n">to</span>
+<span class="o">-</span><span class="n">le</span>        <span class="n">Less</span> <span class="n">than</span> <span class="ow">or</span> <span class="n">equal</span> <span class="n">to</span>
+<span class="o">-</span><span class="n">ge</span>        <span class="n">Greater</span> <span class="n">than</span> <span class="ow">or</span> <span class="n">equal</span> <span class="n">to</span>
+<span class="o">-</span><span class="n">ne</span>        <span class="n">Not</span> <span class="n">equal</span> <span class="n">to</span>
+<span class="o">-</span><span class="n">lt</span>        <span class="n">Less</span> <span class="n">than</span>
+<span class="o">-</span><span class="n">gt</span>        <span class="n">Greater</span> <span class="n">than</span>
+<span class="o">-</span><span class="n">approx</span>    <span class="n">Approximately</span> <span class="n">equal</span> <span class="n">to</span>
+<span class="o">-</span><span class="n">bor</span>       <span class="n">Bitwise</span> <span class="n">OR</span>
+<span class="o">-</span><span class="n">band</span>      <span class="n">Bitwise</span> <span class="n">AND</span>
+<span class="o">-</span><span class="n">like</span>      <span class="n">Like</span>
+<span class="o">-</span><span class="n">notlike</span>   <span class="n">Not</span> <span class="n">like</span>
+<span class="o">-</span><span class="ow">and</span>       <span class="n">Boolean</span> <span class="n">AND</span>
+<span class="o">-</span><span class="ow">or</span>        <span class="n">Boolean</span> <span class="n">OR</span>
+<span class="o">-</span><span class="ow">not</span>       <span class="n">Boolean</span> <span class="n">NOT</span>
+<span class="o">-</span><span class="n">recursivematch</span>    <span class="n">Recursive</span> <span class="n">match</span>
+</pre></div>
+</div>
+</section>
+<section id="ldap-filter-operators">
+<h3>LDAP Filter Operators<a class="headerlink" href="#ldap-filter-operators" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&amp;    and
+|    or
+!    not
+</pre></div>
+</div>
+</section>
+<section id="ldap-search-criterias">
+<h3>LDAP Search Criterias<a class="headerlink" href="#ldap-search-criterias" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Equal to             (attribute=123)     (&amp;(objectclass=user)(displayName=Smith)
+Not equal to         (!(attribute=123))  (!objectClass=group)
+Present              (attribute=*)       (department=*)
+Not present          (!(attribute=*))    (!homeDirectory=*)
+Greater than         (attribute&gt;=123)    (maxStorage=100000)
+Less than            (attribute&lt;=123)    (maxStorage&lt;=100000)
+Wildcards            (attribute=*A)      (givenName=*Sam)
+Approximate match    (attribute~=123)    (sAMAccountName~=Jason)
+</pre></div>
+</div>
+</section>
+<section id="oid-matches">
+<h3>OID Matches<a class="headerlink" href="#oid-matches" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.2.840.113556.1.4.803</span>     <span class="n">LDAP_MATCHING_RULE_BIT_AND</span>    <span class="n">A</span> <span class="n">match</span> <span class="ow">is</span> <span class="n">found</span> <span class="n">only</span> <span class="k">if</span> <span class="nb">all</span> <span class="n">bits</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">attribute</span> <span class="n">match</span> <span class="n">the</span> <span class="n">value</span><span class="o">.</span> <span class="n">This</span> <span class="n">rule</span> <span class="ow">is</span> <span class="n">equivalent</span> <span class="n">to</span> <span class="n">a</span> <span class="n">bitwise</span> <span class="n">AND</span> <span class="n">operator</span><span class="o">.</span>
+<span class="mf">1.2.840.113556.1.4.804</span>     <span class="n">LDAP_MATCHING_RULE_BIT_OR</span>     <span class="n">A</span> <span class="n">match</span> <span class="ow">is</span> <span class="n">found</span> <span class="k">if</span> <span class="nb">any</span> <span class="n">bits</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">attribute</span> <span class="n">match</span> <span class="n">the</span> <span class="n">value</span><span class="o">.</span> <span class="n">This</span> <span class="n">rule</span> <span class="ow">is</span> <span class="n">equivalent</span> <span class="n">to</span> <span class="n">a</span> <span class="n">bitwise</span> <span class="n">OR</span> <span class="n">operator</span><span class="o">.</span>
+<span class="mf">1.2.840.113556.1.4.1941</span>    <span class="n">LDAP_MATCHING_RULE_IN_CHAIN</span>   <span class="n">This</span> <span class="n">rule</span> <span class="ow">is</span> <span class="n">limited</span> <span class="n">to</span> <span class="n">filters</span> <span class="n">that</span> <span class="n">apply</span> <span class="n">to</span> <span class="n">the</span> <span class="n">DN</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">special</span> <span class="s2">&quot;extended&quot;</span> <span class="n">match</span> <span class="n">operator</span> <span class="n">that</span> <span class="n">walks</span> <span class="n">the</span> <span class="n">chain</span> <span class="n">of</span> <span class="n">ancestry</span> <span class="ow">in</span> <span class="n">objects</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">way</span> <span class="n">to</span> <span class="n">the</span> <span class="n">root</span> <span class="n">until</span> <span class="n">it</span> <span class="n">finds</span> <span class="n">a</span> <span class="n">match</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="filter-types">
+<h2>Filter types:<a class="headerlink" href="#filter-types" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=</span>     <span class="n">Equal</span> <span class="n">to</span>
+<span class="o">~=</span>    <span class="n">Approximately</span> <span class="n">equal</span> <span class="n">to</span>
+<span class="o">&gt;=</span>    <span class="n">Greater</span> <span class="n">than</span> <span class="ow">or</span> <span class="n">equal</span> <span class="n">to</span>
+<span class="o">&lt;=</span>    <span class="n">Less</span> <span class="n">than</span> <span class="ow">or</span> <span class="n">equal</span> <span class="n">to</span>
+</pre></div>
+</div>
+</section>
+<section id="item-types">
+<h2>Item types:<a class="headerlink" href="#item-types" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=</span>              <span class="n">Simple</span>
+<span class="o">=*</span>             <span class="n">Present</span>
+<span class="o">=</span><span class="n">something</span><span class="o">*</span>    <span class="n">Substring</span>
+<span class="n">Extensible</span>     <span class="n">varies</span> <span class="n">depending</span> <span class="n">on</span> <span class="nb">type</span>
+</pre></div>
+</div>
+</section>
+<section id="characters-that-need-to-be-escaped">
+<h2>Characters that need to be escaped<a class="headerlink" href="#characters-that-need-to-be-escaped" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span>      \<span class="mi">2</span><span class="n">a</span>
+<span class="p">(</span>      \<span class="mi">28</span>
+<span class="p">)</span>      \<span class="mi">29</span>
+\      \<span class="mi">5</span><span class="n">c</span>
+<span class="n">NUL</span>    \<span class="mi">00</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="user-account-control-values">
+<h1>User Account Control Values<a class="headerlink" href="#user-account-control-values" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>https://academy.hackthebox.com/storage/resources/Convert-UserAccountControlValues.zip</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>         <span class="s2">&quot;SCRIPT&quot;</span>
+<span class="mi">2</span>         <span class="s2">&quot;ACCOUNTDISABLE&quot;</span>
+<span class="mi">8</span>         <span class="s2">&quot;HOMEDIR_REQUIRED&quot;</span>
+<span class="mi">16</span>        <span class="s2">&quot;LOCKOUT&quot;</span>
+<span class="mi">32</span>        <span class="s2">&quot;PASSWD_NOTREQD&quot;</span>
+<span class="mi">128</span>       <span class="s2">&quot;ENCRYPTED_TEXT_PWD_ALLOWED&quot;</span>
+<span class="mi">256</span>       <span class="s2">&quot;TEMP_DUPLICATE_ACCOUNT&quot;</span>
+<span class="mi">512</span>       <span class="s2">&quot;NORMAL_ACCOUNT&quot;</span>
+<span class="mi">2048</span>      <span class="s2">&quot;INTERDOMAIN_TRUST_ACCOUNT&quot;</span>
+<span class="mi">4096</span>      <span class="s2">&quot;WORKSTATION_TRUST_ACCOUNT&quot;</span>
+<span class="mi">8192</span>      <span class="s2">&quot;SERVER_TRUST_ACCOUNT&quot;</span>
+<span class="mi">65536</span>     <span class="s2">&quot;DONT_EXPIRE_PASSWORD&quot;</span>
+<span class="mi">131072</span>    <span class="s2">&quot;MNS_LOGON_ACCOUNT&quot;</span>
+<span class="mi">262144</span>    <span class="s2">&quot;SMARTCARD_REQUIRED&quot;</span>
+<span class="mi">524288</span>    <span class="s2">&quot;TRUSTED_FOR_DELEGATION&quot;</span>
+<span class="mi">1048576</span>   <span class="s2">&quot;NOT_DELEGATED&quot;</span>
+<span class="mi">2097152</span>   <span class="s2">&quot;USE_DES_KEY_ONLY&quot;</span>
+<span class="mi">4194304</span>   <span class="s2">&quot;DONT_REQ_PREAUTH&quot;</span>
+<span class="mi">8388608</span>   <span class="s2">&quot;PASSWORD_EXPIRED&quot;</span>
+<span class="mi">16777</span>     <span class="s2">&quot;TRUSTED_TO_AUTH_FOR_DELEGATION&quot;</span>
+<span class="mi">67108864</span>  <span class="s2">&quot;PARTIAL_SECRETS_ACCOUNT&quot;</span>
+</pre></div>
+</div>
+<section id="powerview">
+<h2>PowerView<a class="headerlink" href="#powerview" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Import</span><span class="o">-</span><span class="n">Module</span> <span class="o">.</span>\<span class="n">PowerView</span><span class="o">.</span><span class="n">ps1</span>
+<span class="n">Get</span><span class="o">-</span><span class="n">DomainUser</span> <span class="o">*</span> <span class="o">-</span><span class="n">AdminCount</span> <span class="o">|</span> <span class="n">select</span> <span class="n">samaccountname</span><span class="p">,</span><span class="n">useraccountcontrol</span>
+</pre></div>
+</div>
+</section>
+<section id="powershell-ad-module">
+<h2>PowerShell AD Module<a class="headerlink" href="#powershell-ad-module" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dsquery</span> <span class="n">user</span> <span class="s2">&quot;OU=Employees,DC=inlanefreight,DC=local&quot;</span> <span class="o">-</span><span class="n">name</span> <span class="o">*</span> <span class="o">-</span><span class="n">scope</span> <span class="n">subtree</span> <span class="o">-</span><span class="n">limit</span> <span class="mi">0</span>
+<span class="n">dsquery</span> <span class="n">user</span> <span class="s2">&quot;OU=Employees,DC=inlanefreight,DC=local&quot;</span> <span class="o">-</span><span class="n">name</span> <span class="o">*</span> <span class="o">-</span><span class="n">scope</span> <span class="n">subtree</span> <span class="o">-</span><span class="n">limit</span> <span class="mi">0</span> <span class="o">|</span> <span class="n">dsget</span> <span class="n">user</span> <span class="o">-</span><span class="n">samid</span> <span class="o">-</span><span class="n">pwdneverexpires</span> <span class="o">|</span> <span class="n">findstr</span> <span class="o">/</span><span class="n">V</span> <span class="n">no</span>
+</pre></div>
+</div>
+</section>
+<section id="ad-ds-tools">
+<h2>AD DS Tools<a class="headerlink" href="#ad-ds-tools" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Get</span><span class="o">-</span><span class="n">ADUser</span> <span class="o">-</span><span class="n">Filter</span> <span class="o">*</span> <span class="o">-</span><span class="n">SearchBase</span> <span class="s1">&#39;OU=Admin,DC=inlanefreight,dc=local&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="the-sysinternals-suite-wmi">
+<h2>The Sysinternals Suite (WMI)<a class="headerlink" href="#the-sysinternals-suite-wmi" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Get</span><span class="o">-</span><span class="n">WmiObject</span> <span class="o">-</span><span class="n">Class</span> <span class="n">win32_group</span> <span class="o">-</span><span class="n">Filter</span> <span class="s2">&quot;Domain=&#39;INLANEFREIGHT&#39;&quot;</span> <span class="o">|</span> <span class="n">Select</span> <span class="n">Caption</span><span class="p">,</span><span class="n">Name</span>
+</pre></div>
+</div>
+</section>
+<section id="the-sysinternals-suite-adsi">
+<h2>The Sysinternals Suite (ADSI)<a class="headerlink" href="#the-sysinternals-suite-adsi" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="n">adsisearcher</span><span class="p">]</span><span class="s2">&quot;(&amp;(objectClass=Computer))&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">FindAll</span><span class="p">()</span> <span class="o">|</span> <span class="n">select</span> <span class="n">Path</span>
+</pre></div>
+</div>
+</section>
+<section id="python-ldap3">
+<h2>Python ldap3<a class="headerlink" href="#python-ldap3" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ldap3</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="s1">&#39;10.129.1.207&#39;</span><span class="p">,</span><span class="n">get_info</span> <span class="o">=</span> <span class="n">ALL</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span>  <span class="n">Connection</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
+<span class="n">s</span><span class="o">.</span><span class="n">info</span>
+</pre></div>
+</div>
+</section>
+<section id="ldapsearch">
+<h2>Ldapsearch<a class="headerlink" href="#ldapsearch" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ldapsearch</span> <span class="o">-</span><span class="n">h</span> <span class="mf">10.129.1.207</span> <span class="o">-</span><span class="n">p</span> <span class="mi">389</span> <span class="o">-</span><span class="n">x</span> <span class="o">-</span><span class="n">b</span> <span class="s2">&quot;dc=inlanefreight,dc=local&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="windapsearch">
+<h2>Windapsearch<a class="headerlink" href="#windapsearch" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">windapsearch</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dc</span><span class="o">-</span><span class="n">ip</span> <span class="mf">10.129.1.207</span> <span class="o">-</span><span class="n">u</span> <span class="s2">&quot;&quot;</span> <span class="o">--</span><span class="n">functionality</span>
+<span class="o">./</span><span class="n">windapsearch</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dc</span><span class="o">-</span><span class="n">ip</span> <span class="mf">10.129.1.207</span> <span class="o">-</span><span class="n">u</span> <span class="s2">&quot;&quot;</span> <span class="o">-</span><span class="n">C</span>
+<span class="o">./</span><span class="n">windapsearch</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dc</span><span class="o">-</span><span class="n">ip</span> <span class="mf">10.129.1.207</span> <span class="o">-</span><span class="n">u</span> <span class="s2">&quot;&quot;</span> <span class="o">-</span><span class="n">U</span>
+<span class="o">./</span><span class="n">windapsearch</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dc</span><span class="o">-</span><span class="n">ip</span> <span class="mf">10.129.1.207</span> <span class="o">-</span><span class="n">u</span> <span class="n">inlanefreight</span>\\<span class="n">james</span><span class="o">.</span><span class="n">cross</span> <span class="o">--</span><span class="n">da</span>
+<span class="o">./</span><span class="n">windapsearch</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dc</span><span class="o">-</span><span class="n">ip</span> <span class="mf">10.129.1.207</span> <span class="o">-</span><span class="n">d</span> <span class="n">inlanefreight</span><span class="o">.</span><span class="n">local</span> <span class="o">-</span><span class="n">u</span> <span class="n">inlanefreight</span>\\<span class="n">james</span><span class="o">.</span><span class="n">cross</span> <span class="o">--</span><span class="n">unconstrained</span><span class="o">-</span><span class="n">users</span>
+</pre></div>
+</div>
+</section>
+<section id="ldapsearch-ad">
+<h2>Ldapsearch-ad<a class="headerlink" href="#ldapsearch-ad" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">ldapsearch</span><span class="o">-</span><span class="n">ad</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">l</span> <span class="mf">192.168.56.20</span> <span class="o">-</span><span class="n">t</span> <span class="n">info</span>
+<span class="o">./</span><span class="n">ldapsearch</span><span class="o">-</span><span class="n">ad</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">l</span> <span class="mf">192.168.56.20</span> <span class="o">-</span><span class="n">d</span> <span class="n">evilcorp</span> <span class="o">-</span><span class="n">u</span> <span class="n">jjohnny</span> <span class="o">-</span><span class="n">p</span> <span class="s1">&#39;P@$$word&#39;</span> <span class="o">-</span><span class="n">t</span> <span class="nb">all</span>
+<span class="o">./</span><span class="n">ldapsearch</span><span class="o">-</span><span class="n">ad</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">l</span> <span class="mf">192.168.56.20</span> <span class="o">-</span><span class="n">d</span> <span class="n">evilcorp</span> <span class="o">-</span><span class="n">u</span> <span class="n">jjohnny</span> <span class="o">-</span><span class="n">hashes</span> <span class="p">:</span><span class="mi">32</span><span class="n">ed87bdb5fdc5e9cba88547376818d4</span> <span class="o">-</span><span class="n">t</span> <span class="n">show</span><span class="o">-</span><span class="n">admins</span>
+<span class="o">./</span><span class="n">ldapsearch</span><span class="o">-</span><span class="n">ad</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">l</span> <span class="mf">10.129.1.207</span> <span class="o">-</span><span class="n">d</span> <span class="n">inlanefreight</span> <span class="o">-</span><span class="n">u</span> <span class="n">james</span><span class="o">.</span><span class="n">cross</span> <span class="o">-</span><span class="n">p</span> <span class="n">Summer2020</span> <span class="o">-</span><span class="n">t</span> <span class="k">pass</span><span class="o">-</span><span class="n">pols</span>
+<span class="o">./</span><span class="n">ldapsearch</span><span class="o">-</span><span class="n">ad</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">l</span> <span class="mf">10.129.1.207</span> <span class="o">-</span><span class="n">d</span> <span class="n">inlanefreight</span> <span class="o">-</span><span class="n">u</span> <span class="n">james</span><span class="o">.</span><span class="n">cross</span> <span class="o">-</span><span class="n">p</span> <span class="n">Summer2020</span> <span class="o">-</span><span class="n">t</span> <span class="n">kerberoast</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">servicePrincipalName</span><span class="p">:</span>
+<span class="o">./</span><span class="n">ldapsearch</span><span class="o">-</span><span class="n">ad</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">l</span> <span class="mf">10.129.1.207</span> <span class="o">-</span><span class="n">d</span> <span class="n">inlanefreight</span> <span class="o">-</span><span class="n">u</span> <span class="n">james</span><span class="o">.</span><span class="n">cross</span> <span class="o">-</span><span class="n">p</span> <span class="n">Summer2020</span> <span class="o">-</span><span class="n">t</span> <span class="n">asreproast</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../kerberos/kerberos.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Kerberos</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../active-directory.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Active Directory</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Active Directory</a><ul>
+<li><a class="reference internal" href="#lexicon-acronyms">Lexicon &amp; Acronyms</a></li>
+<li><a class="reference internal" href="#ad-users">AD Users</a></li>
+<li><a class="reference internal" href="#ad-groups">AD Groups</a></li>
+<li><a class="reference internal" href="#ad-computers">AD Computers</a></li>
+<li><a class="reference internal" href="#searchbase-searchscope">SearchBase &amp; SearchScope</a></li>
+<li><a class="reference internal" href="#rsat">RSAT</a></li>
+<li><a class="reference internal" href="#query-cim-wmi-objects">Query CIM / WMI Objects</a></li>
+<li><a class="reference internal" href="#use-adsi">Use ADSI</a></li>
+<li><a class="reference internal" href="#other">Other</a><ul>
+<li><a class="reference internal" href="#powershell-filter-operators">Powershell Filter Operators</a></li>
+<li><a class="reference internal" href="#ldap-filter-operators">LDAP Filter Operators</a></li>
+<li><a class="reference internal" href="#ldap-search-criterias">LDAP Search Criterias</a></li>
+<li><a class="reference internal" href="#oid-matches">OID Matches</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#filter-types">Filter types:</a></li>
+<li><a class="reference internal" href="#item-types">Item types:</a></li>
+<li><a class="reference internal" href="#characters-that-need-to-be-escaped">Characters that need to be escaped</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#user-account-control-values">User Account Control Values</a><ul>
+<li><a class="reference internal" href="#powerview">PowerView</a></li>
+<li><a class="reference internal" href="#powershell-ad-module">PowerShell AD Module</a></li>
+<li><a class="reference internal" href="#ad-ds-tools">AD DS Tools</a></li>
+<li><a class="reference internal" href="#the-sysinternals-suite-wmi">The Sysinternals Suite (WMI)</a></li>
+<li><a class="reference internal" href="#the-sysinternals-suite-adsi">The Sysinternals Suite (ADSI)</a></li>
+<li><a class="reference internal" href="#python-ldap3">Python ldap3</a></li>
+<li><a class="reference internal" href="#ldapsearch">Ldapsearch</a></li>
+<li><a class="reference internal" href="#windapsearch">Windapsearch</a></li>
+<li><a class="reference internal" href="#ldapsearch-ad">Ldapsearch-ad</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

