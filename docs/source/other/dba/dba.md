@@ -61,6 +61,7 @@ psql -U mmuser -W -d mattermost
 \dt         # list tables from all schemas
 \dn         # list schemas
 \du         # list users
+ALTER ROLE "sonarUser" WITH PASSWORD 'wawawawimuchentropy';
 select  * from users;    # read the whole user table 
 \setenv PAGER 'less -S' # set pager to less for long outputs 
 create database music;
