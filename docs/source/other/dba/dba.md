@@ -66,6 +66,7 @@ select  * from users;    # read the whole user table
 \setenv PAGER 'less -S' # set pager to less for long outputs 
 create database music;
 \c music 
+UPDATE properties SET text_value = 'main,master,develop,trunk' WHERE prop_key = 'sonar.dbcleaner.branchesToKeepWhenInactive';
 CREATE TABLE friends( 
 name varchar(80),
 phone varchar(80),
