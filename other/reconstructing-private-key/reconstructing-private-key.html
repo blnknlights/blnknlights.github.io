@@ -1,0 +1,774 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="RFID" href="../rfid/rfid.html" /><link rel="prev" title="Nmap" href="../nmap/nmap.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Reconstructing a Private Key - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../htb/htb.html">Hack The Box</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../htb/academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/active-directory-enum-and-attacks/active-directory-enum-and-attacks.html">Active Directory Enum and Attacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../htb/academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../htb/machines/machines.html">Lab Machines</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/hard/snoopy/snoopy.html">Snoopy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/medium/medium.html">Medium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/administrator/administrator.html">Administrator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/administrator/administrator.html#ftp-enum">FTP Enum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/medium/zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../htb/machines/easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../htb/machines/easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../other.html">Other</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="reconstructing-a-private-key">
+<h1>Reconstructing a Private Key<a class="headerlink" href="#reconstructing-a-private-key" title="Permalink to this heading">#</a></h1>
+<section id="openssh-privatekey-structure">
+<h2>OpenSSH PrivateKey structure<a class="headerlink" href="#openssh-privatekey-structure" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">;;</span> <span class="n">AUTH_MAGIC</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">hard</span><span class="o">-</span><span class="n">coded</span><span class="p">,</span> <span class="n">null</span><span class="o">-</span><span class="n">terminated</span> <span class="n">string</span><span class="p">,</span>
+<span class="p">;;</span> <span class="nb">set</span> <span class="n">to</span> <span class="s2">&quot;openssh-key-v1&quot;</span><span class="o">.</span>
+<span class="n">byte</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="n">AUTH_MAGIC</span>
+
+<span class="p">;;</span> <span class="n">ciphername</span> <span class="n">determines</span> <span class="n">the</span> <span class="n">cipher</span> <span class="n">name</span> <span class="p">(</span><span class="k">if</span> <span class="nb">any</span>
+<span class="p">;;</span> <span class="ow">or</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">when</span> <span class="n">no</span> <span class="n">encryption</span> <span class="ow">is</span> <span class="n">used</span><span class="o">.</span>
+<span class="n">string</span>   <span class="n">ciphername</span>
+
+<span class="p">;;</span> <span class="n">kdfname</span> <span class="n">determines</span> <span class="n">the</span> <span class="n">KDF</span> <span class="n">function</span> <span class="n">name</span><span class="p">,</span> <span class="n">which</span> <span class="ow">is</span>
+<span class="p">;;</span> <span class="n">either</span> <span class="s2">&quot;bcrypt&quot;</span> <span class="ow">or</span> <span class="s2">&quot;none&quot;</span>
+<span class="n">string</span>   <span class="n">kdfname</span>
+
+<span class="p">;;</span> <span class="n">kdfoptions</span> <span class="n">field</span><span class="o">.</span>
+<span class="p">;;</span> <span class="n">This</span> <span class="n">one</span> <span class="ow">is</span> <span class="n">actually</span> <span class="n">a</span> <span class="n">buffer</span> <span class="k">with</span> <span class="n">size</span> <span class="n">determined</span> <span class="n">by</span> <span class="n">the</span>
+<span class="p">;;</span> <span class="n">uint32</span> <span class="n">value</span><span class="p">,</span> <span class="n">which</span> <span class="n">preceeds</span> <span class="n">it</span><span class="o">.</span>
+<span class="p">;;</span> <span class="n">If</span> <span class="n">no</span> <span class="n">encryption</span> <span class="n">was</span> <span class="n">used</span> <span class="n">to</span> <span class="n">protect</span> <span class="n">the</span> <span class="n">private</span> <span class="n">key</span><span class="p">,</span>
+<span class="p">;;</span> <span class="n">it</span><span class="s1">&#39;s contents will be the [0x00 0x00 0x00 0x00] bytes (empty string).</span>
+<span class="p">;;</span> <span class="n">You</span> <span class="n">should</span> <span class="n">read</span> <span class="n">the</span> <span class="n">embedded</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">only</span> <span class="k">if</span> <span class="n">it</span><span class="s1">&#39;s size is</span>
+<span class="p">;;</span> <span class="n">different</span> <span class="n">than</span> <span class="mf">0.</span>
+<span class="n">uint32</span> <span class="p">(</span><span class="n">size</span> <span class="n">of</span> <span class="n">buffer</span><span class="p">)</span>
+    <span class="n">string</span> <span class="n">salt</span>
+    <span class="n">uint32</span> <span class="n">rounds</span>
+
+<span class="p">;;</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">keys</span> <span class="n">embedded</span> <span class="n">within</span> <span class="n">the</span> <span class="n">blob</span><span class="o">.</span>
+<span class="p">;;</span> <span class="n">This</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">always</span> <span class="nb">set</span> <span class="n">to</span> <span class="mi">1</span><span class="p">,</span> <span class="n">at</span> <span class="n">least</span> <span class="ow">in</span> <span class="n">the</span>
+<span class="p">;;</span> <span class="n">current</span> <span class="n">implementation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">private</span> <span class="n">key</span> <span class="nb">format</span><span class="o">.</span>
+<span class="n">uint32</span> <span class="n">number</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">keys</span>
+
+<span class="p">;;</span> <span class="n">Public</span> <span class="n">key</span> <span class="n">section</span><span class="o">.</span>
+<span class="p">;;</span> <span class="n">This</span> <span class="n">one</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">buffer</span><span class="p">,</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">the</span> <span class="n">public</span> <span class="n">key</span> <span class="n">embedded</span><span class="o">.</span>
+<span class="p">;;</span> <span class="n">Size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="n">determined</span> <span class="n">by</span> <span class="n">the</span> <span class="n">uint32</span> <span class="n">value</span><span class="p">,</span>
+<span class="p">;;</span> <span class="n">which</span> <span class="n">preceeds</span> <span class="n">it</span><span class="o">.</span>
+<span class="p">;;</span> <span class="n">The</span> <span class="n">public</span> <span class="n">components</span> <span class="n">below</span> <span class="n">are</span> <span class="k">for</span> <span class="n">RSA</span> <span class="n">public</span> <span class="n">keys</span><span class="o">.</span>
+<span class="n">uint32</span> <span class="p">(</span><span class="n">size</span> <span class="n">of</span> <span class="n">buffer</span><span class="p">)</span>
+    <span class="n">string</span> <span class="n">keytype</span> <span class="p">(</span><span class="s2">&quot;ssh-rsa&quot;</span><span class="p">)</span>
+    <span class="n">mpint</span>  <span class="n">e</span>       <span class="p">(</span><span class="n">RSA</span> <span class="n">public</span> <span class="n">exponent</span><span class="p">)</span>
+    <span class="n">mpint</span>  <span class="n">n</span>       <span class="p">(</span><span class="n">RSA</span> <span class="n">modulus</span><span class="p">)</span>
+
+<span class="p">;;</span> <span class="n">Encrypted</span> <span class="n">section</span>
+<span class="p">;;</span> <span class="n">This</span> <span class="n">one</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">again</span> <span class="n">a</span> <span class="n">buffer</span> <span class="k">with</span> <span class="n">size</span>
+<span class="p">;;</span> <span class="n">specified</span> <span class="n">by</span> <span class="n">the</span> <span class="n">uint32</span> <span class="n">value</span><span class="p">,</span> <span class="n">which</span> <span class="n">preceeds</span> <span class="n">it</span><span class="o">.</span>
+<span class="p">;;</span> <span class="n">The</span> <span class="n">fields</span> <span class="n">below</span> <span class="n">are</span> <span class="k">for</span> <span class="n">RSA</span> <span class="n">private</span> <span class="n">keys</span><span class="o">.</span>
+<span class="n">uint32</span> <span class="p">(</span><span class="n">size</span> <span class="n">of</span> <span class="n">buffer</span><span class="p">)</span>
+    <span class="n">uint32</span>  <span class="n">check</span><span class="o">-</span><span class="nb">int</span>
+    <span class="n">uint32</span>  <span class="n">check</span><span class="o">-</span><span class="nb">int</span>  <span class="p">(</span><span class="n">must</span> <span class="n">match</span> <span class="k">with</span> <span class="n">previous</span> <span class="n">check</span><span class="o">-</span><span class="nb">int</span> <span class="n">value</span><span class="p">)</span>
+    <span class="n">string</span>  <span class="n">keytype</span>    <span class="p">(</span><span class="s2">&quot;ssh-rsa&quot;</span><span class="p">)</span>
+    <span class="n">mpint</span>   <span class="n">n</span>          <span class="p">(</span><span class="n">RSA</span> <span class="n">modulus</span><span class="p">)</span>
+    <span class="n">mpint</span>   <span class="n">e</span>          <span class="p">(</span><span class="n">RSA</span> <span class="n">public</span> <span class="n">exponent</span><span class="p">)</span>
+    <span class="n">mpint</span>   <span class="n">d</span>          <span class="p">(</span><span class="n">RSA</span> <span class="n">private</span> <span class="n">exponent</span><span class="p">)</span>
+    <span class="n">mpint</span>   <span class="n">iqmp</span>       <span class="p">(</span><span class="n">RSA</span> <span class="n">Inverse</span> <span class="n">of</span> <span class="n">Q</span> <span class="n">Mod</span> <span class="n">P</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">k</span><span class="o">.</span><span class="n">a</span> <span class="n">iqmp</span><span class="p">)</span>
+    <span class="n">mpint</span>   <span class="n">p</span>          <span class="p">(</span><span class="n">RSA</span> <span class="n">prime</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">mpint</span>   <span class="n">q</span>          <span class="p">(</span><span class="n">RSA</span> <span class="n">prime</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Structure according to pyCrypto’s RSA inplementation</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span>    <span class="n">modulus</span>
+<span class="n">e</span>    <span class="n">Public</span> <span class="n">exponent</span>
+<span class="n">d</span>    <span class="n">Private</span> <span class="n">exponent</span>
+<span class="n">p</span>    <span class="n">prime</span> <span class="mi">1</span> <span class="p">(</span><span class="n">First</span> <span class="n">factor</span> <span class="n">of</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">q</span>    <span class="n">prime</span> <span class="mi">2</span> <span class="p">(</span><span class="n">Second</span> <span class="n">factor</span> <span class="n">of</span> <span class="n">n</span><span class="p">)</span>
+<span class="mi">1</span><span class="o">/</span><span class="n">p</span>  <span class="n">CRT</span> <span class="n">coefficient</span>
+</pre></div>
+</div>
+<p>Structure according to <a class="reference external" href="https://www.ietf.org/rfc/rfc3447.txt">RFC3447</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">RSAPrivateKey</span> <span class="p">:</span><span class="o">:=</span> <span class="n">SEQUENCE</span> <span class="p">{</span>
+          <span class="n">version</span>           <span class="n">Version</span><span class="p">,</span>
+          <span class="n">modulus</span>           <span class="n">INTEGER</span><span class="p">,</span>  <span class="o">--</span> <span class="n">n</span>
+          <span class="n">publicExponent</span>    <span class="n">INTEGER</span><span class="p">,</span>  <span class="o">--</span> <span class="n">e</span>
+          <span class="n">privateExponent</span>   <span class="n">INTEGER</span><span class="p">,</span>  <span class="o">--</span> <span class="n">d</span>
+          <span class="n">prime1</span>            <span class="n">INTEGER</span><span class="p">,</span>  <span class="o">--</span> <span class="n">p</span>
+          <span class="n">prime2</span>            <span class="n">INTEGER</span><span class="p">,</span>  <span class="o">--</span> <span class="n">q</span>
+          <span class="n">exponent1</span>         <span class="n">INTEGER</span><span class="p">,</span>  <span class="o">--</span> <span class="n">d</span> <span class="n">mod</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+          <span class="n">exponent2</span>         <span class="n">INTEGER</span><span class="p">,</span>  <span class="o">--</span> <span class="n">d</span> <span class="n">mod</span> <span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+          <span class="n">coefficient</span>       <span class="n">INTEGER</span><span class="p">,</span>  <span class="o">--</span> <span class="p">(</span><span class="n">inverse</span> <span class="n">of</span> <span class="n">q</span><span class="p">)</span> <span class="n">mod</span> <span class="n">p</span>
+          <span class="n">otherPrimeInfos</span>   <span class="n">OtherPrimeInfos</span> <span class="n">OPTIONAL</span>
+      <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="the-entire-public-key-in-hex">
+<h2>The entire public key in hex<a class="headerlink" href="#the-entire-public-key-in-hex" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>none.pub<span class="p">|</span>awk<span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span><span class="p">|</span>base64<span class="w"> </span>-d&gt;<span class="w"> </span>pub.raw
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>hexyl pub.raw
+┌────────┬─────────────────────────┬─────────────────────────┬────────┬────────┐
+│00000000│ 00 00 00 07 73 73 68 2d ┊ 72 73 61 00 00 00 03 01 │000•ssh-┊rsa000••│
+│00000010│ 00 01 00 00 01 81 00 d2 ┊ 86 50 cf 15 8d 66 9e 1c │0•00•×0×┊×P×•×f×•│
+│00000020│ af e6 a1 eb d9 45 9e f6 ┊ c2 69 e3 28 cf c3 90 c6 │×××××E××┊×i×(××××│
+│00000030│ 1c 84 b4 b4 fb b8 f7 a4 ┊ c9 0a 53 bb 07 3c be 89 │•×××××××┊×_S×•&lt;××│
+│00000040│ 21 cb 45 2a 66 d1 a8 66 ┊ b9 09 26 22 30 aa 46 dd │!×E*f××f┊×_&amp;&quot;0×F×│
+│00000050│ 81 39 8e 41 eb 89 b9 81 ┊ 39 f3 cb 0a 5b bf 5a 93 │×9×A××××┊9××_[×Z×│
+│00000060│ a6 30 82 4c 46 39 25 32 ┊ 04 19 28 86 22 64 04 7e │×0×LF9%2┊••(×&quot;d•~│
+│00000070│ 87 4a 72 45 b5 a3 14 ad ┊ e7 97 a9 4f fe 5c d3 89 │×JrE××•×┊×××O×\××│
+│00000080│ b4 8f de 03 f7 f6 04 b4 ┊ a7 c1 09 69 3e 8e 1d e7 │×××•××•×┊××_i&gt;×•×│
+│00000090│ b9 a9 f2 71 ae b3 06 2a ┊ f8 ae c5 a3 f6 08 c6 27 │×××q××•*┊×××××•×&#39;│
+│000000a0│ 3c 77 fb ca f4 88 96 99 ┊ 3a 98 04 63 02 83 52 fe │&lt;w××××××┊:×•c•×R×│
+│000000b0│ 48 78 c8 38 15 50 79 d5 ┊ 9f 1d d3 b4 b1 d1 2d 8f │Hx×8•Py×┊×•××××-×│
+│000000c0│ 2d 7a 14 85 24 1d 91 00 ┊ e8 f1 b3 62 ed 20 b1 eb │-z•×$•×0┊×××b× ××│
+│000000d0│ 0e d8 34 71 ab 25 32 6f ┊ 5a b1 78 93 20 39 8f 13 │•×4q×%2o┊Z×x× 9×•│
+│000000e0│ 31 25 de 94 9c 36 3c 7c ┊ 5d c0 54 5e d3 b1 05 7b │1%×××6&lt;|┊]×T^××•{│
+│000000f0│ b1 25 a1 1d 6a 53 34 b1 ┊ 6b a3 e7 36 a9 15 fc b2 │×%×•jS4×┊k××6×•××│
+│00000100│ 2a a0 e3 22 af ae 5a ab ┊ dd b2 43 2f 9c ec df 92 │*××&quot;××Z×┊××C/××××│
+│00000110│ 66 70 2f bd 5d 85 df 4f ┊ 26 57 55 5b 68 49 4e 15 │fp/×]××O┊&amp;WU[hIN•│
+│00000120│ 3a 85 ee cd 62 e7 c2 d8 ┊ 20 7f 4e 69 05 91 23 5b │:×××b×××┊ •Ni•×#[│
+│00000130│ a8 71 9d 0a 13 2d 8d 6c ┊ f0 c2 8c b1 14 43 c9 05 │×q×_•-×l┊××××•C×•│
+│00000140│ 56 a2 de 99 03 0c a5 fd ┊ 3c 4d 50 2c d4 8c 6a 1a │V×××•_××┊&lt;MP,××j•│
+│00000150│ c2 a7 61 38 44 0b ee 65 ┊ 74 3b 20 68 66 78 6c c4 │××a8D•×e┊t; hfxl×│
+│00000160│ c1 65 90 fc 48 62 b0 79 ┊ e6 71 9b da e0 48 ad 35 │×e××Hb×y┊×q×××H×5│
+│00000170│ ce fe 3a ed 9c 60 bb 26 ┊ 6f 19 61 c0 8d 03 d7 70 │××:××`×&amp;┊o•a××•×p│
+│00000180│ ff 1e 7b eb ec 45 eb 0f ┊ ed 65 43 8d b7 6b ff a5 │×•{××E×•┊×eC××k××│
+│00000190│ 03 4f a2 ed b9 b7 99    ┊                         │•O××××× ┊        │
+└────────┴─────────────────────────┴─────────────────────────┴────────┴────────┘
+</pre></div>
+</div>
+</section>
+<section id="the-entire-private-key-in-hex">
+<h2>The entire private key in hex<a class="headerlink" href="#the-entire-private-key-in-hex" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-v<span class="w"> </span>^---<span class="w"> </span>~/ssh_fiend/none<span class="p">|</span>base64<span class="w"> </span>-d&gt;priv.raw
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>hexyl priv.raw
+┌────────┬─────────────────────────┬─────────────────────────┬────────┬────────┐
+│00000000│ 6f 70 65 6e 73 73 68 2d ┊ 6b 65 79 2d 76 31 00 00 │openssh-┊key-v100│
+│00000010│ 00 00 04 6e 6f 6e 65 00 ┊ 00 00 04 6e 6f 6e 65 00 │00•none0┊00•none0│
+│00000020│ 00 00 00 00 00 00 01 00 ┊ 00 01 97 00 00 00 07 73 │000000•0┊0•×000•s│
+│00000030│ 73 68 2d 72 73 61 00 00 ┊ 00 03 01 00 01 00 00 01 │sh-rsa00┊0••0•00•│
+│00000040│ 81 00 d2 86 50 cf 15 8d ┊ 66 9e 1c af e6 a1 eb d9 │×0××P×•×┊f×•×××××│
+│00000050│ 45 9e f6 c2 69 e3 28 cf ┊ c3 90 c6 1c 84 b4 b4 fb │E×××i×(×┊×××•××××│
+│00000060│ b8 f7 a4 c9 0a 53 bb 07 ┊ 3c be 89 21 cb 45 2a 66 │××××_S×•┊&lt;××!×E*f│
+│00000070│ d1 a8 66 b9 09 26 22 30 ┊ aa 46 dd 81 39 8e 41 eb │××f×_&amp;&quot;0┊×F××9×A×│
+│00000080│ 89 b9 81 39 f3 cb 0a 5b ┊ bf 5a 93 a6 30 82 4c 46 │×××9××_[┊×Z××0×LF│
+│00000090│ 39 25 32 04 19 28 86 22 ┊ 64 04 7e 87 4a 72 45 b5 │9%2••(×&quot;┊d•~×JrE×│
+│000000a0│ a3 14 ad e7 97 a9 4f fe ┊ 5c d3 89 b4 8f de 03 f7 │×•××××O×┊\×××××•×│
+│000000b0│ f6 04 b4 a7 c1 09 69 3e ┊ 8e 1d e7 b9 a9 f2 71 ae │×•×××_i&gt;┊×•××××q×│
+│000000c0│ b3 06 2a f8 ae c5 a3 f6 ┊ 08 c6 27 3c 77 fb ca f4 │×•*×××××┊•×&#39;&lt;w×××│
+│000000d0│ 88 96 99 3a 98 04 63 02 ┊ 83 52 fe 48 78 c8 38 15 │×××:×•c•┊×R×Hx×8•│
+│000000e0│ 50 79 d5 9f 1d d3 b4 b1 ┊ d1 2d 8f 2d 7a 14 85 24 │Py××•×××┊×-×-z•×$│
+│000000f0│ 1d 91 00 e8 f1 b3 62 ed ┊ 20 b1 eb 0e d8 34 71 ab │•×0×××b×┊ ××•×4q×│
+│00000100│ 25 32 6f 5a b1 78 93 20 ┊ 39 8f 13 31 25 de 94 9c │%2oZ×x× ┊9×•1%×××│
+│00000110│ 36 3c 7c 5d c0 54 5e d3 ┊ b1 05 7b b1 25 a1 1d 6a │6&lt;|]×T^×┊×•{×%×•j│
+│00000120│ 53 34 b1 6b a3 e7 36 a9 ┊ 15 fc b2 2a a0 e3 22 af │S4×k××6×┊•××*××&quot;×│
+│00000130│ ae 5a ab dd b2 43 2f 9c ┊ ec df 92 66 70 2f bd 5d │×Z×××C/×┊×××fp/×]│
+│00000140│ 85 df 4f 26 57 55 5b 68 ┊ 49 4e 15 3a 85 ee cd 62 │××O&amp;WU[h┊IN•:×××b│
+│00000150│ e7 c2 d8 20 7f 4e 69 05 ┊ 91 23 5b a8 71 9d 0a 13 │××× •Ni•┊×#[×q×_•│
+│00000160│ 2d 8d 6c f0 c2 8c b1 14 ┊ 43 c9 05 56 a2 de 99 03 │-×l××××•┊C×•V×××•│
+│00000170│ 0c a5 fd 3c 4d 50 2c d4 ┊ 8c 6a 1a c2 a7 61 38 44 │_××&lt;MP,×┊×j•××a8D│
+│00000180│ 0b ee 65 74 3b 20 68 66 ┊ 78 6c c4 c1 65 90 fc 48 │•×et; hf┊xl××e××H│
+│00000190│ 62 b0 79 e6 71 9b da e0 ┊ 48 ad 35 ce fe 3a ed 9c │b×y×q×××┊H×5××:××│
+│000001a0│ 60 bb 26 6f 19 61 c0 8d ┊ 03 d7 70 ff 1e 7b eb ec │`×&amp;o•a××┊•×p×•{××│
+│000001b0│ 45 eb 0f ed 65 43 8d b7 ┊ 6b ff a5 03 4f a2 ed b9 │E×•×eC××┊k××•O×××│
+│000001c0│ b7 99 00 00 05 88 ba 11 ┊ a4 71 ba 11 a4 71 00 00 │××00•××•┊×q×•×q00│
+│000001d0│ 00 07 73 73 68 2d 72 73 ┊ 61 00 00 01 81 00 d2 86 │0•ssh-rs┊a00•×0××│
+│000001e0│ 50 cf 15 8d 66 9e 1c af ┊ e6 a1 eb d9 45 9e f6 c2 │P×•×f×•×┊××××E×××│
+│000001f0│ 69 e3 28 cf c3 90 c6 1c ┊ 84 b4 b4 fb b8 f7 a4 c9 │i×(××××•┊××××××××│
+│00000200│ 0a 53 bb 07 3c be 89 21 ┊ cb 45 2a 66 d1 a8 66 b9 │_S×•&lt;××!┊×E*f××f×│
+│00000210│ 09 26 22 30 aa 46 dd 81 ┊ 39 8e 41 eb 89 b9 81 39 │_&amp;&quot;0×F××┊9×A××××9│
+│00000220│ f3 cb 0a 5b bf 5a 93 a6 ┊ 30 82 4c 46 39 25 32 04 │××_[×Z××┊0×LF9%2•│
+│00000230│ 19 28 86 22 64 04 7e 87 ┊ 4a 72 45 b5 a3 14 ad e7 │•(×&quot;d•~×┊JrE××•××│
+│00000240│ 97 a9 4f fe 5c d3 89 b4 ┊ 8f de 03 f7 f6 04 b4 a7 │××O×\×××┊××•××•××│
+│00000250│ c1 09 69 3e 8e 1d e7 b9 ┊ a9 f2 71 ae b3 06 2a f8 │×_i&gt;×•××┊××q××•*×│
+│00000260│ ae c5 a3 f6 08 c6 27 3c ┊ 77 fb ca f4 88 96 99 3a │××××•×&#39;&lt;┊w××××××:│
+│00000270│ 98 04 63 02 83 52 fe 48 ┊ 78 c8 38 15 50 79 d5 9f │×•c•×R×H┊x×8•Py××│
+│00000280│ 1d d3 b4 b1 d1 2d 8f 2d ┊ 7a 14 85 24 1d 91 00 e8 │•××××-×-┊z•×$•×0×│
+│00000290│ f1 b3 62 ed 20 b1 eb 0e ┊ d8 34 71 ab 25 32 6f 5a │××b× ××•┊×4q×%2oZ│
+│000002a0│ b1 78 93 20 39 8f 13 31 ┊ 25 de 94 9c 36 3c 7c 5d │×x× 9×•1┊%×××6&lt;|]│
+│000002b0│ c0 54 5e d3 b1 05 7b b1 ┊ 25 a1 1d 6a 53 34 b1 6b │×T^××•{×┊%×•jS4×k│
+│000002c0│ a3 e7 36 a9 15 fc b2 2a ┊ a0 e3 22 af ae 5a ab dd │××6×•××*┊××&quot;××Z××│
+│000002d0│ b2 43 2f 9c ec df 92 66 ┊ 70 2f bd 5d 85 df 4f 26 │×C/××××f┊p/×]××O&amp;│
+│000002e0│ 57 55 5b 68 49 4e 15 3a ┊ 85 ee cd 62 e7 c2 d8 20 │WU[hIN•:┊×××b××× │
+│000002f0│ 7f 4e 69 05 91 23 5b a8 ┊ 71 9d 0a 13 2d 8d 6c f0 │•Ni•×#[×┊q×_•-×l×│
+│00000300│ c2 8c b1 14 43 c9 05 56 ┊ a2 de 99 03 0c a5 fd 3c │×××•C×•V┊×××•_××&lt;│
+│00000310│ 4d 50 2c d4 8c 6a 1a c2 ┊ a7 61 38 44 0b ee 65 74 │MP,××j•×┊×a8D•×et│
+│00000320│ 3b 20 68 66 78 6c c4 c1 ┊ 65 90 fc 48 62 b0 79 e6 │; hfxl××┊e××Hb×y×│
+│00000330│ 71 9b da e0 48 ad 35 ce ┊ fe 3a ed 9c 60 bb 26 6f │q×××H×5×┊×:××`×&amp;o│
+│00000340│ 19 61 c0 8d 03 d7 70 ff ┊ 1e 7b eb ec 45 eb 0f ed │•a××•×p×┊•{××E×•×│
+│00000350│ 65 43 8d b7 6b ff a5 03 ┊ 4f a2 ed b9 b7 99 00 00 │eC××k××•┊O×××××00│
+│00000360│ 00 03 01 00 01 00 00 01 ┊ 80 02 d4 33 1a 5f a0 0f │0••0•00•┊×•×3•_×•│
+│00000370│ ae 10 58 f9 3a 1d 50 ea ┊ de c1 cb 29 3a db e9 1f │×•X×:•P×┊×××):××•│
+│00000380│ 46 0a 57 3b a5 47 67 30 ┊ e1 dd d7 a5 81 b3 d2 ae │F_W;×Gg0┊××××××××│
+│00000390│ 12 cf ba 38 77 54 1c d4 ┊ 0e de f3 e8 fc ae 22 76 │•××8wT•×┊•×××××&quot;v│
+│000003a0│ cd e1 8f fb db 5c bf 85 ┊ af 7d 56 a4 13 f4 90 35 │×××××\××┊×}V×•××5│
+│000003b0│ 0c f0 01 af 83 6c 02 60 ┊ 26 16 91 ac 96 84 a3 9d │_×•××l•`┊&amp;•××××××│
+│000003c0│ 13 dc 80 1b 23 94 6e 75 ┊ 49 8b 52 1a b7 70 40 9f │•××•#×nu┊I×R•×p@×│
+│000003d0│ c3 0d d1 11 61 5e 6a fd ┊ 38 ca 9c e7 2b e9 d9 99 │×_×•a^j×┊8×××+×××│
+│000003e0│ c0 d0 88 80 cd 78 ea e4 ┊ 76 f4 93 92 c8 00 0c 71 │×××××x××┊v××××0_q│
+│000003f0│ 32 cc b0 86 e9 a1 ac 5d ┊ 0e ea 6a aa 9e 46 d3 42 │2××××××]┊•×j××F×B│
+│00000400│ d1 ca bd 11 09 7c 6d 8f ┊ 3f 38 92 a4 9d ab 20 ed │×××•_|m×┊?8×××× ×│
+│00000410│ 09 a6 ec 3c 66 b9 21 2b ┊ 0c c6 c4 2d 64 38 95 cb │_××&lt;f×!+┊_××-d8××│
+│00000420│ 42 25 f6 29 de 69 20 d8 ┊ f8 16 3a cb cf f5 40 f9 │B%×)×i ×┊×•:×××@×│
+│00000430│ 1c b8 0a e5 6c 73 2c 79 ┊ 36 bc 96 a1 11 81 91 33 │•×_×ls,y┊6×××•××3│
+│00000440│ 06 fa 56 4c 8c 85 97 20 ┊ 02 d9 dd 30 b0 41 b8 5e │•×VL××× ┊•××0×A×^│
+│00000450│ bb 50 14 cd a2 11 6e 9e ┊ 0c 3b 83 64 38 df 7e d7 │×P•××•n×┊_;×d8×~×│
+│00000460│ 6b 0b fa 4a 9c 85 c5 bf ┊ 86 3e 85 85 af 07 57 61 │k•×J××××┊×&gt;×××•Wa│
+│00000470│ 07 45 51 34 d0 96 3b 6c ┊ d6 2a e0 df f2 79 72 5e │•EQ4××;l┊×*×××yr^│
+│00000480│ 04 f7 db d3 36 66 06 2b ┊ b7 be f9 21 16 e0 aa 69 │•×××6f•+┊×××!•××i│
+│00000490│ 45 d7 2b c2 0b 6e 4f b2 ┊ ce ae 2e 99 11 d2 68 71 │E×+×•nO×┊××.×•×hq│
+│000004a0│ 01 a0 55 e5 d0 a1 79 68 ┊ c6 fd f3 17 cf ce 34 e5 │•×U×××yh┊×××•××4×│
+│000004b0│ 1d cf d7 98 7b ef d0 74 ┊ 4b 1f 6f 4e 9d 7e 95 23 │•×××{××t┊K•oN×~×#│
+│000004c0│ a9 80 27 6e 4a 75 ac e0 ┊ 77 31 d1 ba 79 3d ef 04 │××&#39;nJu××┊w1××y=×•│
+│000004d0│ 98 91 ab 8b da dc 01 95 ┊ 75 bb 9a d1 6e 15 9d 73 │××××××•×┊u×××n•×s│
+│000004e0│ b9 91 45 10 0c 83 99 66 ┊ 3d 00 00 00 c1 00 e8 fd │××E•_××f┊=000×0××│
+│000004f0│ 94 ed 28 90 d3 95 a1 45 ┊ 62 29 f7 e6 c2 f5 e0 25 │××(××××E┊b)×××××%│
+│00000500│ 20 df f2 ec be 5f 49 65 ┊ 99 13 20 25 dc 65 7f ed │ ××××_Ie┊×• %×e•×│
+│00000510│ 9f 1a 5e 75 e2 49 76 de ┊ e6 01 f1 69 71 0a a6 7e │×•^u×Iv×┊×•×iq_×~│
+│00000520│ e3 97 08 9d be d9 cd a3 ┊ 46 7e bf c3 c6 64 17 57 │××•×××××┊F~×××d•W│
+│00000530│ ff 22 2a d6 6b 0a 26 36 ┊ d4 ae 2d 35 31 bd 2d e9 │×&quot;*×k_&amp;6┊××-51×-×│
+│00000540│ 38 95 ae 39 9e d5 6c f7 ┊ 78 fc 47 db 9b 09 9f 0c │8××9××l×┊x×G××_×_│
+│00000550│ e7 ae fd bb 45 85 7b 02 ┊ 2f 5b 93 27 28 6f b3 29 │××××E×{•┊/[×&#39;(o×)│
+│00000560│ e3 ab 1e d4 a0 42 32 49 ┊ 67 01 33 0d 46 d8 65 82 │××•××B2I┊g•3_F×e×│
+│00000570│ 9b d4 cc 31 2c 92 e3 9f ┊ ab f4 24 ea 60 b2 76 c6 │×××1,×××┊××$×`×v×│
+│00000580│ 15 d8 d6 d7 78 59 d9 54 ┊ cb c0 2c 49 e1 dc 7d a5 │•×××xY×T┊××,I××}×│
+│00000590│ 04 2d 9a 1a 5e 63 51 84 ┊ 52 12 f2 03 4e 2a 35 b9 │•-×•^cQ×┊R•×•N*5×│
+│000005a0│ e2 1f da a5 af aa 38 10 ┊ fe cb d7 dc 50 f0 00 00 │×•××××8•┊××××P×00│
+│000005b0│ 00 c1 00 ec 5c 44 ac cc ┊ 1a 5e 29 ef 26 bc 1f c6 │0×0×\D××┊•^)×&amp;×•×│
+│000005c0│ 60 3b 1d 88 71 ea c3 fe ┊ 6f d5 bc c6 a2 33 03 68 │`;•×q×××┊o××××3•h│
+│000005d0│ ca e0 2a f9 bb b8 01 39 ┊ 60 e3 7a 88 0e 02 bf f7 │××*×××•9┊`×z×••××│
+│000005e0│ f5 32 3f eb f1 0f d0 f8 ┊ 0b 44 bd bc 3e 54 77 b6 │×2?××•××┊•D××&gt;Tw×│
+│000005f0│ f2 3d 85 e0 63 1e 7d 0c ┊ a8 65 fd d9 f2 08 0f e6 │×=××c•}_┊×e×××••×│
+│00000600│ b1 2b cb 5d ef 7b d5 16 ┊ 81 64 94 e7 b6 70 98 8d │×+×]×{×•┊×d×××p××│
+│00000610│ f0 9a 65 7c 4b bf 26 7c ┊ ca f8 0c 2c 17 71 b9 75 │××e|K×&amp;|┊××_,•q×u│
+│00000620│ ab 45 cc d1 5f 21 86 4f ┊ 25 42 56 ca a6 f3 3d 09 │×E××_!×O┊%BV×××=_│
+│00000630│ 7a 9b 26 2c c8 67 89 00 ┊ 92 84 0a 7a ed 00 66 cc │z×&amp;,×g×0┊××_z×0f×│
+│00000640│ c7 20 6f 8e 0a 32 ad 88 ┊ 3f 9e 64 15 32 e2 92 d7 │× o×_2××┊?×d•2×××│
+│00000650│ 36 22 2b 54 bf c3 a4 58 ┊ 2c 8e 02 cd 91 29 77 cd │6&quot;+T×××X┊,×•××)w×│
+│00000660│ b6 24 c8 c7 d2 d1 6e 98 ┊ 0f 7c 46 08 e9 2a 32 03 │×$××××n×┊•|F•×*2•│
+│00000670│ c5 71 e7 00 00 00 c1 00 ┊ e4 04 7b b1 63 f3 32 8a │×q×000×0┊×•{×c×2×│
+│00000680│ 10 be 8f 59 81 11 83 23 ┊ b2 15 62 3d 00 68 d0 4e │•××Y×•×#┊×•b=0h×N│
+│00000690│ 47 48 7c bb 36 a1 d2 87 ┊ 9f f9 98 f4 5a a2 a4 a7 │GH|×6×××┊××××Z×××│
+│000006a0│ e3 ba d2 6a 18 3f e4 e6 ┊ ab fe 27 37 8f c4 50 6d │×××j•?××┊××&#39;7××Pm│
+│000006b0│ 0b b7 a0 42 f7 ec e1 72 ┊ 06 9b 8f 35 9d 11 47 1b │•××B×××r┊•××5×•G•│
+│000006c0│ 4a fe f5 6c 79 26 62 bd ┊ 32 e3 f1 cb 3c 36 86 85 │J××ly&amp;b×┊2×××&lt;6××│
+│000006d0│ f0 40 85 b6 fd 12 8f 1c ┊ 48 48 62 0b 52 6f 46 6e │×@×××•×•┊HHb•RoFn│
+│000006e0│ 97 4a 4b a1 01 f1 96 a7 ┊ 5c e9 1a 16 85 a1 4d 10 │×JK×•×××┊\×••××M•│
+│000006f0│ b7 8b c8 67 a0 21 1b 2a ┊ b5 ad ff ca 1e 37 17 25 │×××g×!•*┊××××•7•%│
+│00000700│ bb b2 ae a8 95 e3 12 76 ┊ 8e 81 f6 3a b3 77 9b 23 │××××××•v┊×××:×w×#│
+│00000710│ 2b 0b 20 7e 52 9c c0 65 ┊ 77 3b 8d 94 3f ff 48 4f │+• ~R××e┊w;××?×HO│
+│00000720│ bf 5a a2 bb e5 1b 37 3c ┊ c0 16 1a b5 6a 23 24 cc │×Z×××•7&lt;┊×••×j#$×│
+│00000730│ 02 b8 f6 1c c4 0d 5a 7f ┊ 00 00 00 0e 62 6c 6e 6b │•××•×_Z•┊000•blnk│
+│00000740│ 6e 40 4b 6f 6c 6f 73 73 ┊ 75 73 01 02 03 04       │n@Koloss┊us••••  │
+└────────┴─────────────────────────┴─────────────────────────┴────────┴────────┘
+</pre></div>
+</div>
+</section>
+<section id="manually-extracting-public-key-components">
+<h2>Manually extracting public key components<a class="headerlink" href="#manually-extracting-public-key-components" title="Permalink to this heading">#</a></h2>
+<p>Public key componenets in hex form</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">e</span><span class="o">=</span><span class="mh">0x010001</span>
+
+<span class="n">n</span><span class="o">=</span><span class="mh">0x00D28650CF158D669E1CAFE6A1EBD9459EF6C269E328CFC390C61C84B4B4FBB8F7A4C90A53BB073CBE8921CB452A66D1A866B909262230AA46DD81398E41EB89B98139F3CB0A5BBF5A93A630824C46392532041928862264047E874A7245B5A314ADE797A94FFE5CD389B48FDE03F7F604B4A7C109693E8E1DE7B9A9F271AEB3062AF8AEC5A3F608C6273C77FBCAF48896993A980463028352FE4878C838155079D59F1DD3B4B1D12D8F2D7A1485241D9100E8F1B362ED20B1EB0ED83471AB25326F5AB1789320398F133125DE949C363C7C5DC0545ED3B1057BB125A11D6A5334B16BA3E736A915FCB22AA0E322AFAE5AABDDB2432F9CECDF9266702FBD5D85DF4F2657555B68494E153A85EECD62E7C2D8207F4E690591235BA8719D0A132D8D6CF0C28CB11443C90556A2DE99030CA5FD3C4D502CD48C6A1AC2A76138440BEE65743B206866786CC4C16590FC4862B079E6719BDAE048AD35CEFE3AED9C60BB266F1961C08D03D770FF1E7BEBEC45EB0FED65438DB76BFFA5034FA2EDB9B799</span>
+</pre></div>
+</div>
+<p>Public key componenets in uint32 form</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">e</span><span class="o">=</span><span class="mi">65537</span>
+
+<span class="n">n</span><span class="o">=</span><span class="mi">4777599172574593502939511550517011760886235321482062662983974105030158220247116288324052251506962130639455152208239094201428257599098479770749118725195049125782519040290426843692397785157818032373190949310593496993840861058195279851338824375848143865682101120276154621551361978898232660685696733823543926418641268801023670458227513136839296005884224290551398522752212214433017453236781497668877471616506534869889235802530159372945832853566326463723746717338001493940210288862240608876943525854685158547182591729765766776285905383580683411818020323170480706023414181319781274479995408437876196869849835944052885265817546677023592608994891922988059194385174643972924919188583238547117812021792895573222184535877459016827776172122486382549724839237934502839150692457375405097141592701948171377742590289375005692024807975009404594452409589391189693414062742457407315343786096097453360696774816098675387778667357413075346043549593</span>
+</pre></div>
+</div>
+</section>
+<section id="manually-extracting-private-key-components">
+<h2>Manually extracting private key components<a class="headerlink" href="#manually-extracting-private-key-components" title="Permalink to this heading">#</a></h2>
+<p>Private key components in hex form</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span><span class="o">=</span><span class="mh">0x010001</span>
+
+<span class="n">n</span><span class="o">=</span><span class="mh">0x02D4331A5FA00FAE1058F93A1D50EADEC1CB293ADBE91F460A573BA5476730E1DDD7A581B3D2AE12CFBA3877541CD40EDEF3E8FCAE2276CDE18FFBDB5CBF85AF7D56A413F490350CF001AF836C0260261691AC9684A39D13DC801B23946E75498B521AB770409FC30DD111615E6AFD38CA9CE72BE9D999C0D08880CD78EAE476F49392C8000C7132CCB086E9A1AC5D0EEA6AAA9E46D342D1CABD11097C6D8F3F3892A49DAB20ED09A6EC3C66B9212B0CC6C42D643895CB4225F629DE6920D8F8163ACBCFF540F91CB80AE56C732C7936BC96A11181913306FA564C8C85972002D9DD30B041B85EBB5014CDA2116E9E0C3B836438DF7ED76B0BFA4A9C85C5BF863E8585AF07576107455134D0963B6CD62AE0DFF279725E04F7DBD33666062BB7BEF92116E0AA6945D72BC20B6E4FB2CEAE2E9911D2687101A055E5D0A17968C6FDF317CFCE34E51DCFD7987BEFD0744B1F6F4E9D7E9523A980276E4A75ACE07731D1BA793DEF049891AB8BDADC019575BB9AD16E159D73B99145100C8399663D</span>
+
+<span class="n">d</span><span class="o">=</span><span class="mh">0x00E8FD94ED2890D395A1456229F7E6C2F5E02520DFF2ECBE5F496599132025DC657FED9F1A5E75E24976DEE601F169710AA67EE397089DBED9CDA3467EBFC3C6641757FF222AD66B0A2636D4AE2D3531BD2DE93895AE399ED56CF778FC47DB9B099F0CE7AEFDBB45857B022F5B9327286FB329E3AB1ED4A04232496701330D46D865829BD4CC312C92E39FABF424EA60B276C615D8D6D77859D954CBC02C49E1DC7DA5042D9A1A5E6351845212F2034E2A35B9E21FDAA5AFAA3810FECBD7DC50F0</span>
+
+<span class="n">p</span><span class="o">=</span><span class="mh">0x00EC5C44ACCC1A5E29EF26BC1FC6603B1D8871EAC3FE6FD5BCC6A2330368CAE02AF9BBB8013960E37A880E02BFF7F5323FEBF10FD0F80B44BDBC3E5477B6F23D85E0631E7D0CA865FDD9F2080FE6B12BCB5DEF7BD516816494E7B670988DF09A657C4BBF267CCAF80C2C1771B975AB45CCD15F21864F254256CAA6F33D097A9B262CC867890092840A7AED0066CCC7206F8E0A32AD883F9E641532E292D736222B54BFC3A4582C8E02CD912977CDB624C8C7D2D16E980F7C4608E92A3203C571E7</span>
+
+<span class="n">q</span><span class="o">=</span><span class="mh">0x00E4047BB163F3328A10BE8F5981118323B215623D0068D04E47487CBB36A1D2879FF998F45AA2A4A7E3BAD26A183FE4E6ABFE27378FC4506D0BB7A042F7ECE172069B8F359D11471B4AFEF56C792662BD32E3F1CB3C368685F04085B6FD128F1C4848620B526F466E974A4BA101F196A75CE91A1685A14D10B78BC867A0211B2AB5ADFFCA1E371725BBB2AEA895E312768E81F63AB3779B232B0B207E529CC065773B8D943FFF484FBF5AA2BBE51B373CC0161AB56A2324CC02B8F61CC40D5A7F</span>
+</pre></div>
+</div>
+<p>Private key componenets in uint32 form</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">e</span><span class="o">=</span><span class="mi">65537</span>
+
+<span class="n">n</span><span class="o">=</span><span class="mi">64198523880640607445374303534680618736454960779144928574279169042728892897787938337929796511275381987008042231832711902562075347213925264173076058907806080321120886856179114157264452537899734916386739508736326981431047509670999978148305572990939614544749069337261942593043929550424987737618862629078209186201488728163547821150085940830569081770686089181634251764493491384100678011619709927307129271000682446590216886195116558291160236966043854426559412873434961571166300177466452099064186758069270040084021206609073686029779036142200444147568229701521425171081587201205470411885646482821711068502469384101093876963825210361688245170916122483983301437466730247143321655206906288817592586348331979694923108569945439557711301076515483226245696407741206032488434380850030838014622819034173367146654450134126115546966041089857276656654994080619385946526919765522267842012354577811319698472087107155614693839489536932867477169725</span>
+
+<span class="n">d</span><span class="o">=</span><span class="mi">2193671980100968926591446921612904228010140499858090257896946150498306654772763991150909862524492768392741873141836393694873798153799192392775379303458774088930287415807235483053381687319220471308748691355405752590555639229917097170607741565848987393444226958011982752811846609119124613382347487127833299617590039389301378692908536823796146147562817091299251628260063010438237700208335472080030988582705419402673373284560533938788815052137408423551585828210495728</span>
+
+<span class="n">p</span><span class="o">=</span><span class="mi">2225400252114747238451256004998338504208913391553103445123218478675749427296337542350416118656594629711652036329247695762399750596940082626051833777914528631764700211948260086407257232209854338181746684135508494406464397147026290442540171644222990853175698546497544604747423904073175157852728012331899434635341465992603518550711778096901210702278393559477831216353707552942194581478383924601448824872030882990689887298052611114333158662519565061210522632155656679</span>
+
+<span class="n">q</span><span class="o">=</span><span class="mi">2146849389468051729207446700030686527393591459017210003388243988877487682630897882007947310823429722438614919513095251791502044501069331186083577893000355135084986705561941965449806183898082144277100361295844004716348697846838019268195329280007768394457187386500636453620205381817892293573778875525189424036903735602319542135570397398613367443151242247869738364729676633288700422533030399273101190903098262627588960237760120689501260640613273918786650054782179967</span>
+</pre></div>
+</div>
+</section>
+<section id="calculations">
+<h2>Calculations<a class="headerlink" href="#calculations" title="Permalink to this heading">#</a></h2>
+<p>Let’s imagine we have the public key, but only part of the private key, like, from a screenshot, or an improperly sanitized pentest report. q is all we need to reconstitute the private key:</p>
+<p>Making p out of n and q</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="n">q</span>
+</pre></div>
+</div>
+<p>So this should evaluate to true</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">*</span><span class="n">q</span> <span class="o">==</span> <span class="n">n</span>
+</pre></div>
+</div>
+<p>Making phi out of p and q</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  
+</pre></div>
+</div>
+<p>So phi is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">phi</span><span class="o">=</span><span class="mi">4777599172574593502939511550517011760886235321482062662983974105030158220247116288324052251506962130639455152208239094201428257599098479770749118725195049125782519040290426843692397785157818032373190949310593496993840861058195279851338824375848143865682101120276154621551361978898232660685696733823543926418641268801023670458227513136839296005884224290551398522752212214433017453236781497668877471616506534869889235802530159372945832853566326463723746717338001489567960647279441641218240820825660126944677741159452318264823437830343573484582595964807051225999062031052825432137047854536081098860436023808641214350933779827336675098792840065924643086448692185125879487836084115734022818157483184837721260305118211383941843173941428014920438948170483076332262835368516732851939997778887485095567094774796860262389000627439823511068223358496185681999738867907391540214640477818605824884043012264256084645828377415902659105712948</span>
+</pre></div>
+</div>
+<p>And d is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">=</span><span class="mi">907304260217333578552346930096506223598731782217155986747921658165697990588455518630409605600739287393970716150933728526343532570584245223717038186883402984870977188083901498338275826389279387688126318798841061745050022990528990540149274580493553237900413972915406875807990161120701339623330050950880078554197006751873607313778470612037503671044372728690704579309001529225221405053404680104167859556266541541276552616053379977046307211124807348024867657109552871494924061462073800549341978668479880677380093175924188673939797476791066353191555752902765759170916063269351134906658797283306610867402944173861308174187433415185807380252005545882449728457824174681122054802751162006586325202374776362822204338884923919076860096477943956447499628437826454797005405328235336635415798897661376619305553528039454397145024975343943778609870880874063918064127896455061951409301850663447641736832618683200806101926850257386277907589657</span>
+</pre></div>
+</div>
+<p>We can now use the RSA CTF Tool to reconstitue the key into a RSA Private Key in PEM format</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">n</span><span class="o">=</span><span class="m">4777599172574593502939511550517011760886235321482062662983974105030158220247116288324052251506962130639455152208239094201428257599098479770749118725195049125782519040290426843692397785157818032373190949310593496993840861058195279851338824375848143865682101120276154621551361978898232660685696733823543926418641268801023670458227513136839296005884224290551398522752212214433017453236781497668877471616506534869889235802530159372945832853566326463723746717338001493940210288862240608876943525854685158547182591729765766776285905383580683411818020323170480706023414181319781274479995408437876196869849835944052885265817546677023592608994891922988059194385174643972924919188583238547117812021792895573222184535877459016827776172122486382549724839237934502839150692457375405097141592701948171377742590289375005692024807975009404594452409589391189693414062742457407315343786096097453360696774816098675387778667357413075346043549593</span>
+
+<span class="nv">p</span><span class="o">=</span><span class="m">2225400252114747238451256004998338504208913391553103445123218478675749427296337542350416118656594629711652036329247695762399750596940082626051833777914528631764700211948260086407257232209854338181746684135508494406464397147026290442540171644222990853175698546497544604747423904073175157852728012331899434635341465992603518550711778096901210702278393559477831216353707552942194581478383924601448824872030882990689887298052611114333158662519565061210522632155656679</span>
+
+<span class="nv">q</span><span class="o">=</span><span class="m">2146849389468051729207446700030686527393591459017210003388243988877487682630897882007947310823429722438614919513095251791502044501069331186083577893000355135084986705561941965449806183898082144277100361295844004716348697846838019268195329280007768394457187386500636453620205381817892293573778875525189424036903735602319542135570397398613367443151242247869738364729676633288700422533030399273101190903098262627588960237760120689501260640613273918786650054782179967</span>
+
+python<span class="w"> </span>RsaCtfTool.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--private<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-n<span class="w"> </span><span class="nv">$n</span><span class="se">\</span>
+<span class="w">    </span>-p<span class="w"> </span><span class="nv">$p</span><span class="se">\</span>
+<span class="w">    </span>-q<span class="w"> </span><span class="nv">$q</span><span class="se">\</span>
+<span class="w">    </span>-e<span class="w"> </span><span class="m">65537</span>
+</pre></div>
+</div>
+<p>That can be used straight away or converted into an OpenSSH format, like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>none.reconstructed
+ssh-keygen<span class="w"> </span>-p<span class="w"> </span>-N<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-f<span class="w"> </span>none.reconstructed
+</pre></div>
+</div>
+<p>And now that we have that we can compare the fingerprint of our reconstructed key with the original public and private keys:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-lf<span class="w"> </span>none.pub
+<span class="m">3072</span><span class="w"> </span>SHA256:hu3uUbm8VTDrnsvq5j/A+/2dkT40ysQvtAW891mFy30<span class="w"> </span>blnkn@Kolossus<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+ssh-keygen<span class="w"> </span>-lf<span class="w"> </span>none
+<span class="m">3072</span><span class="w"> </span>SHA256:hu3uUbm8VTDrnsvq5j/A+/2dkT40ysQvtAW891mFy30<span class="w"> </span>blnkn@Kolossus<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+ssh-keygen<span class="w"> </span>-lf<span class="w"> </span>none.reconstructed
+<span class="m">3072</span><span class="w"> </span>SHA256:hu3uUbm8VTDrnsvq5j/A+/2dkT40ysQvtAW891mFy30<span class="w">  </span><span class="o">(</span>RSA<span class="o">)</span>
+</pre></div>
+</div>
+<p>Which means this reconstructed key should also be good to use, and it is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>none.pub<span class="w"> </span>&gt;<span class="w"> </span>~/.ssh/authorized_keys
+env<span class="p">|</span>grep<span class="w"> </span>SSH
+<span class="nv">SSH_AGENT_PID</span><span class="o">=</span><span class="m">1001</span>
+<span class="nv">SSH_AUTH_SOCK</span><span class="o">=</span>/tmp/ssh-XXXXXXqkNOZh/agent.941
+
+ssh<span class="w"> </span>-i<span class="w"> </span>none<span class="w"> </span>blnkn@127.0.0.1
+env<span class="p">|</span>grep<span class="w"> </span>SSH
+<span class="nv">SSH_CLIENT</span><span class="o">=</span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">53594</span><span class="w"> </span><span class="m">22</span>
+<span class="nv">SSH_CONNECTION</span><span class="o">=</span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">53594</span><span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">22</span>
+<span class="nv">SSH_TTY</span><span class="o">=</span>/dev/pts/2
+Connection<span class="w"> </span>to<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>closed.
+
+ssh<span class="w"> </span>-i<span class="w"> </span>none.reconstructed<span class="w"> </span>blnkn@127.0.0.1
+env<span class="p">|</span>grep<span class="w"> </span>SSH
+<span class="nv">SSH_CLIENT</span><span class="o">=</span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">48906</span><span class="w"> </span><span class="m">22</span>
+<span class="nv">SSH_CONNECTION</span><span class="o">=</span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">48906</span><span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">22</span>
+<span class="nv">SSH_TTY</span><span class="o">=</span>/dev/pts/3
+Connection<span class="w"> </span>to<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>closed.
+</pre></div>
+</div>
+<p>wink wink</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>~/.ssh/authorized_keys
+sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>ssh<span class="w">                                                                                                                                                                </span><span class="m">130</span><span class="w"> </span>⨯
+sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>ssh
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../rfid/rfid.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">RFID</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../nmap/nmap.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Nmap</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Reconstructing a Private Key</a><ul>
+<li><a class="reference internal" href="#openssh-privatekey-structure">OpenSSH PrivateKey structure</a></li>
+<li><a class="reference internal" href="#the-entire-public-key-in-hex">The entire public key in hex</a></li>
+<li><a class="reference internal" href="#the-entire-private-key-in-hex">The entire private key in hex</a></li>
+<li><a class="reference internal" href="#manually-extracting-public-key-components">Manually extracting public key components</a></li>
+<li><a class="reference internal" href="#manually-extracting-private-key-components">Manually extracting private key components</a></li>
+<li><a class="reference internal" href="#calculations">Calculations</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>
