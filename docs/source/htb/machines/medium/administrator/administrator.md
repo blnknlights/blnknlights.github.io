@@ -285,7 +285,7 @@ bloodyAD \
 cme ldap 10.10.11.42 -u 'benjamin' -p 'fluffydog17!'
 ```
 
-# FTP Enum
+## FTP Enum
 
 Olivia
 ```bash
