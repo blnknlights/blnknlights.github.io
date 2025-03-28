@@ -191,7 +191,7 @@ hashcat --help|grep -i drupal
    7900 | Drupal7                                                    | Forums, CMS, E-Commerce
 ```
 
-Couldn't really crack anything though, maybe because they're hashed? Or maybe because it's just a really hard hash to crack. I'm not sure.
+Couldn't really crack anything though, maybe because they're salted? Or maybe because it's just a really hard hash to crack. I'm not sure.
 ```bash
 hashcat -m 7900 hash.txt ~/.local/share/seclists/rockyou.txt
 ```
