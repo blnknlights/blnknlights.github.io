@@ -88,7 +88,7 @@ tiffany@dog.htb:B******************
 
 Looking for exploits related to backdrop version '1.27.1' we find this
 
--[https://packetstorm.news/files/id/189764/](https://packetstorm.news/files/id/189764/)
+- [https://packetstorm.news/files/id/189764/](https://packetstorm.news/files/id/189764/)
 
 And run it
 ```bash
@@ -215,8 +215,8 @@ sshpass -p"B******************" ssh johncusack@dog.htb
 johncusack can run bee, which is a non official cli tool for backdrop
 
 
--[https://backdropcms.org/project/bee](https://backdropcms.org/project/bee)
--[https://github.com/backdrop-contrib/bee](https://github.com/backdrop-contrib/bee)
+- [https://backdropcms.org/project/bee](https://backdropcms.org/project/bee)
+- [https://github.com/backdrop-contrib/bee](https://github.com/backdrop-contrib/bee)
 
 ```bash
 sudo -l
