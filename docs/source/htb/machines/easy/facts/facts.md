@@ -207,7 +207,7 @@ mcli admin info facts
 1 drive online, 0 drives offline, EC:0
 ```
 
-And it is vulnerable to `CVE-2025-62506` unfortunately that's not giving us access to any extra buckets or anything, so I don't thinkg that's really helpful to us at this time... Probably just a red-hering.
+And it is vulnerable to `CVE-2025-62506` unfortunately that's not giving us access to any extra buckets or anything, so I don't think that's really helpful to us at this time... Probably just a red-hering.
 ```bash
 python verify_cve_2025_62506.py
 ...
