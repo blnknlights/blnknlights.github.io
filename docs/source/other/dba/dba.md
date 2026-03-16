@@ -220,6 +220,11 @@ INSERT INTO sensitive_data (id, data_type, content) VALUES
    (3, 'flag', 'FLAG{fastmcp_sql_injection_pwned}');
 ```
 
+Or have all that in an init script and initiate it like that:
+```bash
+sqlite3 test.db < init.sql
+```
+
 Now the `sqlite_schema` has our tables
 ```sql
 SELECT * FROM sqlite_schema;
